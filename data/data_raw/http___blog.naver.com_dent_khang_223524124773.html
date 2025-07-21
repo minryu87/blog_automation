@@ -1,0 +1,2459 @@
+    <!-- 포스팅 점수 섹션 -->
+    <div class="col-12">
+        <div class="row">
+                        <p class="mt-1 fs-0875 col-12 bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1 text-center text-black mb-1">
+                포스팅 발행 후 분석 결과입니다.                                        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="row justify-content-end">
+            <button type="button"
+                    class="btn btn-guide justify-content-center float-end py-1 px-3 mt-3 mb-0 me-1 fs-6"
+                    onclick="generateReport('jpg');"
+                    style="width: 160px;">
+                보고서 출력 (JPG)
+            </button>
+            <button type="button"
+                    class="btn btn-guide justify-content-center float-end py-1 px-3 mt-3 mb-0 me-1 fs-6"
+                    onclick="generateReport('pdf');"
+                    style="width: 160px;">
+                보고서 출력 (PDF)
+            </button>
+        </div>
+    </div>
+    <style>
+        .merged-cell {
+            background-color: lightblue;
+            border: none !important;
+        }
+    </style>
+    <!-- html to pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+            integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        async function generateReport(reportType = 'jpg') {
+            try {
+                // 1. 원본 상태 저장
+                const elements = document.querySelectorAll('.flex-nowrap');
+                const originalStates = [];
+                const content = document.getElementById('content');
+                const $box = $("#category-diagnosis-box");
+                const $box2 = $("#morpheme-diagnosis-box");
+                const pieChart = document.getElementById('pieChart');
+                const pieChart2 = document.getElementById('pieChart2');
+
+                // 원본 상태 저장 함수
+                function saveOriginalStates() {
+                    // flex-nowrap 요소들의 원본 상태 저장
+                    elements.forEach((element) => {
+                        originalStates.push({
+                            element: element,
+                            originalClass: element.className,
+                            originalHeight: element.style.height,
+                        });
+                    });
+
+                    // 차트 원본 스타일 저장
+                    const originalChartStyles = {
+                        chart1: pieChart ? {
+                            height: pieChart.style.height,
+                            width: pieChart.style.width,
+                            maxHeight: pieChart.style.maxHeight,
+                            maxWidth: pieChart.style.maxWidth
+                        } : null,
+                        chart2: pieChart2 ? {
+                            height: pieChart2.style.height,
+                            width: pieChart2.style.width,
+                            maxHeight: pieChart2.style.maxHeight,
+                            maxWidth: pieChart2.style.maxWidth
+                        } : null
+                    };
+
+                    return {
+                        boxMaxHeight: $box.css("max-height"),
+                        box2MaxHeight: $box2.css("max-height"),
+                        contentStyle: {
+                            width: content.style.width,
+                            maxWidth: content.style.maxWidth,
+                            overflow: content.style.overflow,
+                            padding: content.style.padding,
+                            margin: content.style.margin
+                        },
+                        chartStyles: originalChartStyles
+                    };
+                }
+
+                // 2. 스타일 변경
+                function applyTemporaryStyles(originalState) {
+                    // flex-nowrap 요소 수정
+                    elements.forEach((element) => {
+                        element.classList.remove('flex-nowrap');
+                        element.classList.add('text-wrap');
+                        element.style.height = 'auto';
+                    });
+
+                    // box 높이 제한 해제
+                    if (originalState.boxMaxHeight === "565px") {
+                        $box.css("max-height", "");
+                    }
+                    if (originalState.box2MaxHeight === "565px") {
+                        $box2.css("max-height", "");
+                    }
+
+                    // 차트 크기 조정
+                    if (pieChart) {
+                        pieChart.style.height = '50px';
+                        pieChart.style.width = '50px';
+                        pieChart.style.maxHeight = '50px';
+                        pieChart.style.maxWidth = '50px';
+                    }
+                    if (pieChart2) {
+                        pieChart2.style.height = '50px';
+                        pieChart2.style.width = '50px';
+                        pieChart2.style.maxHeight = '50px';
+                        pieChart2.style.maxWidth = '50px';
+                    }
+
+                    // content 스타일 수정
+                    content.style.width = '100%';
+                    content.style.maxWidth = 'none';
+                    content.style.overflow = 'visible';
+                    content.style.padding = '0';
+                    content.style.margin = '0';
+
+                    // 이미지 무효 박스 클래스 제거
+                    $("#invaildImageBoxSub").attr('class', 'col-12');
+
+                }
+
+                // 3. 원본 상태 저장
+                const originalState = saveOriginalStates();
+
+                // 4. 임시 스타일 적용
+                applyTemporaryStyles(originalState);
+
+                // 스타일 동적 추가
+                const tableStyleTemp = document.createElement("style");
+                tableStyleTemp.textContent = `
+                  table {
+                    border-collapse: collapse;
+                  }
+
+                  td, th {
+                    border: none !important;
+                    box-shadow: none !important;
+                  }
+                `;
+
+                document.head.appendChild(tableStyleTemp);
+
+                // 5. 캡처 실행
+                const canvas = await html2canvas(document.querySelector("#content"), {
+                    useCORS: true,
+                    allowTaint: false,
+                    scrollY: -window.scrollY,
+                    scale: 1.5,
+                    ignoreElements: (element) => {
+                        return element.tagName === "IMG" && element.complete; // 로드된 이미지는 캡처하지 않음
+                    },
+                    onclone: (clonedDocument) => {
+                        // 병합된 셀 스타일 조정
+                        const table = clonedDocument.querySelector("table");
+                        if (table) {
+                            table.style.borderCollapse = "collapse";
+                        }
+
+                        const cells = clonedDocument.querySelectorAll("td, th");
+                        cells.forEach((cell) => {
+                            cell.style.border = "none";
+                        });
+
+                        const rows = clonedDocument.querySelectorAll("tr");
+                        rows.forEach(row => {
+                            const cells = row.querySelectorAll("td[rowspan], th[rowspan]");
+                            cells.forEach(cell => {
+                                // rowspan이 있는 셀의 border-bottom 제거
+                                cell.style.borderBottom = "none";
+                            });
+                        });
+                    }
+                });
+
+                // 6. 원래 상태로 복원
+                function restoreOriginalState() {
+                    // flex-nowrap 요소 복원
+                    originalStates.forEach((state) => {
+                        const {element, originalClass, originalHeight} = state;
+                        element.className = originalClass;
+                        element.style.height = originalHeight;
+                    });
+
+                    // box 높이 복원
+                    if (originalState.boxMaxHeight === "565px") {
+                        $box.css("max-height", "565px");
+                    }
+                    if (originalState.box2MaxHeight === "565px") {
+                        $box2.css("max-height", "565px");
+                    }
+
+                    // content 스타일 복원
+                    Object.assign(content.style, originalState.contentStyle);
+
+                    // 차트 스타일 복원
+                    if (pieChart && originalState.chartStyles.chart1) {
+                        Object.assign(pieChart.style, originalState.chartStyles.chart1);
+                    }
+                    if (pieChart2 && originalState.chartStyles.chart2) {
+                        Object.assign(pieChart2.style, originalState.chartStyles.chart2);
+                    }
+
+                    // 이미지 무효 박스 클래스 복원
+                    $("#invaildImageBoxSub").attr('class', 'col-12 flex-nowrap overflow-auto d-flex');
+                }
+
+                // 7. 상태 복원
+                restoreOriginalState();
+
+                // 7-2. 상태 복원 - CSS
+                document.head.removeChild(tableStyleTemp);
+
+                // 8. 이미지 저장
+                if (reportType.toLowerCase() === 'pdf') {
+                    // PDF 생성
+                    const imgData = canvas.toDataURL('image/jpeg');
+                    const pdf = new window.jspdf.jsPDF({
+                        orientation: 'p',
+                        unit: 'px',
+                        format: [canvas.width, canvas.height]
+                    });
+
+                    pdf.addImage(imgData, 'JPEG', 0, 0, canvas.width, canvas.height);
+                    pdf.save('포스팅 진단분석 보고서.pdf');
+                } else {
+                    // JPG 생성 (기존 코드)
+                    const imageURL = canvas.toDataURL('image/jpeg');
+                    const link = document.createElement('a');
+                    link.download = '포스팅 진단분석 보고서.jpg';
+                    link.href = imageURL;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+
+            } catch (error) {
+                console.error('Error generating report:', {
+                    message: error.message,
+                    stack: error.stack,
+                    name: error.name,
+                    cause: error.cause
+                });
+
+                // 에러 발생시에도 원래 상태로 복원
+                restoreOriginalState();
+            }
+        }
+
+        // CSS 스타일 추가
+        try {
+            const styleTemp = document.createElement('style');
+
+            styleTemp.textContent = `
+                @media print {
+                    body {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .table-responsive {
+                        overflow: visible !important;
+                        max-width: none !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                    }
+
+                    table {
+                        width: auto !important;
+                        page-break-inside: avoid;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                    }
+
+                    .progress {
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
+                    }
+
+                    .progress-bar {
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
+                    }
+
+                    img {
+                        max-width: 100% !important;
+                        page-break-inside: avoid;
+                    }
+                }
+            `;
+            document.head.appendChild(styleTemp);
+        } catch (e) {
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <div id="content">
+                    <!-- 노출 점수 섹션-->
+            <div class="col-12 mt-3">
+                <div class="bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+                    <div class="row">
+                        <div class="col-12 pe-lg-0 me-lg-0">
+                            <span class="text-cs-s-dark fs-6-0-7">노출 점수</span>
+                        </div>
+                    </div>
+                    <div class="col-12 table-responsive">
+                        <div class="content">
+                            <table class="table table-sm table-fixed table-bordered text-center table-keyword mb-0 mt-3">
+                                <colgroup>
+                                    <col width="100px">
+                                    <col width="100px">
+                                    <col width="100px">
+                                    <col width="100px">
+                                    <!--<col width="60px">-->
+                                    <col width="300px">
+                                </colgroup>
+                                <!-- 블로그 지수 비활성화
+                            <tr class="text-center">
+                                <td id="tr-column">블로그 지수 <i class="bi bi-question-circle-fill"
+                                                             data-bs-toggle="tooltip"
+                                                             data-bs-html="true"
+                                                             data-bs-title=""></i></td>
+                                <td class=""></td>
+                                <td id="tr-column">노출 지수 <i class="bi bi-question-circle-fill"
+                                                            data-bs-toggle="tooltip"
+                                                            data-bs-html="true"
+                                                            data-bs-title=""></i></td>
+                                <td class=""></td>
+                                -->
+                                <!--
+                                <td class="">
+                                    <div class="progress my-1" role="progressbar" style="height:15px">
+                                        <div class="progress-bar text-start bg-primary"
+                                             style="width: %;"><span
+                                                    style="text-indent: 1rem;">%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            -->
+                                <tr class="text-center">
+                                    <td id="tr-column">포스팅 지수 <i class="bi bi-question-circle-fill"
+                                                                 data-bs-toggle="tooltip"
+                                                                 data-bs-html="true"
+                                                                 data-bs-title="입력된 URL 게시물 1개에 대한<br>지수를 평가합니다."></i>
+                                    </td>
+                                    <td class="">준최2-Lv.1</td>
+                                    <td id="tr-column">노출 지수 <i class="bi bi-question-circle-fill"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-html="true"
+                                                                data-bs-title="포스트 지수 상태를 점수화하여<br>100 기준으로 표기합니다."></i>
+                                    </td>
+                                    <td class="">17.36</td>
+                                    <!-- 블로그 지수에 있어야하는데 밑으로 이동 ( 원래 td 태그에 rowspan="2" 이있어야함) -->
+                                    <!--<td class="merged-cell fw-bold">
+                                                                    </td>-->
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-primary"
+                                                 style="width: 17.36%;"><span
+                                                        style="text-indent: 1rem;">17.36%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- 포스팅 점수 섹션 -->
+        <div class="col-12 mt-3">
+            <div class="bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+                <div class="row">
+                    <div class="col-lg-1 col-12 pe-lg-0 me-lg-0">
+                        <span class="text-cs-s-dark fs-6-0-7">포스팅 점수</span>
+                    </div>
+                    <div class="col-lg-11 col-12">
+                        <small class="text-deep-red">** 해당 점수는 제목과 문서를 평가하는 다양한 지표를 활용하여 자체 알고리즘을 기반한
+                            수치입니다.</small>
+                    </div>
+                </div>
+                <div class="col-12 table-responsive">
+                    <div class="content">
+                        <table class="table table-sm table-fixed table-bordered text-center table-keyword mb-0 mt-3">
+                            <colgroup>
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="400px">
+                            </colgroup>
+                            
+                                <tr class="text-center">
+                                    <td id="tr-column">키워드 <i class="bi bi-question-circle-fill"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    data-bs-html="true"
+                                                                                    data-bs-title="제목에 구성된 단어 구성 요소를 분석하여<br>키워드 관련성 정도를 평가합니다."></i>
+                                    </td>
+                                    <td class="">81.68</td>
+                                    <td class="fw-bold">적합</td>
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-success"
+                                                 style="width: 81.68%;"><span
+                                                        style="text-indent: 1rem;">81.68%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="text-center">
+                                    <td id="tr-column">주제 <i class="bi bi-question-circle-fill"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    data-bs-html="true"
+                                                                                    data-bs-title="제목에 구성된 단어 구성 요소가<br>본문과 얼마나 연관성 있는지 평가합니다."></i>
+                                    </td>
+                                    <td class="">77.58</td>
+                                    <td class="fw-bold">적합</td>
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-success"
+                                                 style="width: 77.58%;"><span
+                                                        style="text-indent: 1rem;">77.58%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="text-center">
+                                    <td id="tr-column">콘텐츠 <i class="bi bi-question-circle-fill"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    data-bs-html="true"
+                                                                                    data-bs-title="본문에 대한 전문성, 적합도, 인기도, 신뢰도에 대한<br>좋은 문서 여부를 평가합니다."></i>
+                                    </td>
+                                    <td class="">61.94</td>
+                                    <td class="fw-bold">적합</td>
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-danger"
+                                                 style="width: 61.94%;"><span
+                                                        style="text-indent: 1rem;">61.94%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="text-center">
+                                    <td id="tr-column">형태소 <i class="bi bi-question-circle-fill"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    data-bs-html="true"
+                                                                                    data-bs-title="본문 내용을 분석하여 분포, 정확도, 응집도에 대한<br>형태소 각 유형을 평가합니다."></i>
+                                    </td>
+                                    <td class="">47.05</td>
+                                    <td class="fw-bold">양호</td>
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-danger"
+                                                 style="width: 47.05%;"><span
+                                                        style="text-indent: 1rem;">47.05%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="text-center">
+                                    <td id="tr-column">가독성 <i class="bi bi-question-circle-fill"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    data-bs-html="true"
+                                                                                    data-bs-title="본문 구성 단어, 어휘, 문법 난이도에 따라<br>사용자 읽기 편한지 가독성을 평가합니다."></i>
+                                    </td>
+                                    <td class="">73.94</td>
+                                    <td class="fw-bold">적합</td>
+                                    <td class="">
+                                        <div class="progress my-1" role="progressbar" style="height:15px">
+                                            <div class="progress-bar text-start bg-primary"
+                                                 style="width: 73.94%;"><span
+                                                        style="text-indent: 1rem;">73.94%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                            <tr class="text-center">
+                                <td id="tr-column">후기/정보 <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip"
+                                                            data-bs-html="true"
+                                                            data-bs-title="본문 내용이 얼마나 후기성, 정보성으로<br>적절하게 작성되었는지 평가합니다."></i>
+                                </td>
+                                <td class="">30.00</td>
+                                <td class="fw-bold">후기성                                </td>
+                                <td class="">
+                                    <div class="progress my-1" role="progressbar" style="height:15px">
+                                        <div class="progress-bar text-start bg-primary"
+                                             style="width: 30.00%;">
+                                            <span style="text-indent: 1rem;">30.00%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 포스팅 적합성 섹션 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+            <div class="row">
+                <div class="col-12 pe-lg-0 me-lg-0">
+                    <span class="text-cs-s-dark fs-6-0-7">노출 평가</span>
+                </div>
+            </div>
+            <div class="border py-3 mt-lg-3">
+                                    <p class="fs-7 text-start ms-4 mb-2">발행시간 : 2024-07-24 17:44</p>
+                    <p class="fs-7 text-danger text-start ms-4 mb-2">발행된지 361일 (20시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:38:23 정상 노출됩니다.</p>
+                            </div>
+        </div>
+
+        <!-- 포스팅 분석 섹션 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+            <div class="row">
+                <div class="col-12 pe-lg-0 me-lg-0">
+                    <span class="text-cs-s-dark fs-6-0-7">포스팅 분석</span>
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="table-responsive">
+                    <table class="table table-sm table-fixed table-bordered mb-0" style="border-bottom-color: #ffffff">
+                        <colgroup>
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                        </colgroup>
+                        <thead class="table-light">
+                        <tr class="text-cs-gray border text-center" id="table-column">
+                            <th>제목 글자수 (공백포함)</th>
+                            <th>제목 글자수 (공백제외)</th>
+                            <th>본문 글자수 (공백포함)</th>
+                            <th>본문 글자수 (공백제외)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="text-center">
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">28</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">24</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">3,143</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">2,461</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-fixed table-bordered">
+                        <colgroup>
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                        </colgroup>
+                        <thead class="table-light">
+                        <tr class="text-cs-gray border text-center" id="table-column">
+                            <th>총 형태소 개수 <i class="bi bi-question-circle-fill"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-html="true"
+                                            data-bs-title="자체 알고리즘으로 본문을 분석한<br>형태소(체언, 조사, 용언 등) 총 개수입니다."></i></th>
+                            <th>총 음절 개수 <i class="bi bi-question-circle-fill"
+                                           data-bs-toggle="tooltip"
+                                           data-bs-html="true"
+                                           data-bs-title="본문 내용에 띄어쓰기 기준으로<br>분리된 음절 총 개수입니다."></i></th>
+                            <th>총 단어 개수 <i class="bi bi-question-circle-fill"
+                                           data-bs-toggle="tooltip"
+                                           data-bs-html="true"
+                                           data-bs-title="자체 알고리즘으로 본문을 분석한<br>형태소(체언-단어) 총 개수입니다."></i></th>
+                            <th>어뷰징 단어 개수 <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip"
+                                             data-bs-html="true"
+                                             data-bs-title="<strong>어뷰징 단어</strong>는 하단 [어뷰징 단어] 섹션에<br>19금 단어, 유해 단어, 상업성 단어입니다.<br>과다 단어는 어뷰징 단어가 아닙니다."></i>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="text-center">
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">472</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">683</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">144</td>
+                            <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-danger">6</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+                    <!-- 이미지 분석 섹션 -->
+
+            <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+                <div class="row">
+                    <div class="col-12 pe-lg-0 me-lg-0">
+                        <span class="text-cs-s-dark fs-6-0-7">이미지 분석</span>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-fixed table-bordered">
+                            <colgroup>
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                            </colgroup>
+                            <thead class="table-light">
+                            <tr class="text-cs-gray border text-center" id="table-column">
+                                <th>유효 이미지 <i class="bi bi-question-circle-fill"
+                                              data-bs-toggle="tooltip"
+                                              data-bs-html="true"
+                                              data-bs-title="통합검색 이미지 탭에 실제 노출 여부가<br>확인된 이미지입니다."></i></th>
+                                <th>무효 이미지 <i class="bi bi-question-circle-fill"
+                                              data-bs-toggle="tooltip"
+                                              data-bs-html="true"
+                                              data-bs-title="통합검색 이미지 탭에 실제 노출 여부가<br>확인되지 않은 이미지입니다."></i></th>
+                                <th>글감 이미지 <i class="bi bi-question-circle-fill"
+                                              data-bs-toggle="tooltip"
+                                              data-bs-html="true"
+                                              data-bs-title="네이버에서 제공하는 글감 첨부로<br>삽입된 이미지입니다."></i></th>
+                                <th>업로드 이미지 <i class="bi bi-question-circle-fill"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-html="true"
+                                               data-bs-title="업로드 이미지는 직접 사진 첨부로<br>업로드된 이미지입니다."></i></th>
+                                <th>본문 이미지 <i class="bi bi-question-circle-fill"
+                                              data-bs-toggle="tooltip"
+                                              data-bs-html="true"
+                                              data-bs-title="블로그 본문에 첨부된<br>모든 이미지(업로드 이미지, 링크 첨부 이미지 등)<br>총 개수입니다"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="text-center">
+                                <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">8</td>
+                                <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-danger">0</td>
+                                <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">0</td>
+                                <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">8</td>
+                                <td class="fs-malgun-gothic fs-0875 fw-bold mb-0 mt-2 text-cs-s-dark">8</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        
+        <!-- 포스팅 제목 섹션 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+            <span class="text-cs-s-dark fs-6-0-7">포스팅 - 제목</span>
+            <button type="button" class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                    onclick="copyClipboardDiv('post_diagnosis_result_title','해당 포스트 제목이 ');">제목 복사
+            </button>
+            <div class="d-flex mt-2">
+                <div class="border border-1 w-100 border-cs-black text-start p-2 fs-malgun-gothic fs-0875 mt-lg-3"
+                     id="post_diagnosis_result_title">
+                    외상 : 치아함입(Intrusion), 치조골 골절                </div>
+            </div>
+        </div>
+
+        <!-- 포스팅 본문 섹션 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+            <span class="text-cs-s-dark fs-6-0-7">포스팅 - 본문</span>
+            <button class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                    id="post_diagnosis_result_content_btn"
+                    onclick="show_content()">본문 접기
+            </button>
+            <button type="button" class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                    onclick="copyClipboardDiv('post_diagnosis_result_content','해당 포스트 본문이 ');">본문 복사
+            </button>
+            <div class="d-flex mt-2">
+                <div class="border border-1 w-100 border-cs-black text-start p-2 fs-malgun-gothic fs-0875 mt-lg-3"
+                     id="post_diagnosis_result_content" style="min-height: 50px; line-height: 20px;">
+                    본 케이스는 자기반성과 동시에 혹시라도 이 글을 보시게 되는 치과의사나 관련 종사자분들의 생각과 의견을 공유하기 위함입니다. '이런 케이스를 이렇게 해결해봤는데, 많은 아쉬움이 있었다' 정도의 글이니 가볍게 읽어주시면 감사하겠습니다. ※ 환자정보 : 63Y/M ※ 주소 : 등산하다가 넘어졌는데 앞니가 들어갔어요 ※ 진단 : #11,21 <span class='is-advertising d-inline-block m-0'>치아</span>함입(Intrusion), 협측 치조골 골절, #21 <span class='is-advertising d-inline-block m-0'>치아</span>파절 이전에 일했던 병원에 다니셨던 구환으로, 어느날 오전 갑자기 등산하다 걸려 넘어지셨다는 주소로 오셨습니다. 뒤늦게 자료를 찾아보다 보니 파노라마 사진은 빠져있네요. 일단 임상사진과 CT 사진을 한 번 보겠습니다. #11, 21 <span class='is-advertising d-inline-block m-0'>치아</span>의 Intrusion CT : Labial plate의 파절 및 측방변위 임상사진에서 보시다시피 <span class='is-advertising d-inline-block m-0'>치아</span>가 Intrusion 되었습니다. 협측 Labial plate의 골절은 CT를 보고나서야 진단하였는데, 사실 <span class='is-advertising d-inline-block m-0'>치아</span>의 위치와 Socket의 형태를 고려하면 필히 수반되는 결과가 아닌가 싶습니다. 당시의 저는 4년차 치과의사로 전치부 임플란트에 대해 많은 부담을 앉고 있었던 시절이었던 것 같습니다. 혹시라도 지금 위와 같은 외상으로 내원하신 환자분이 계신다면 아마 바로 발치 진단을 내리지 않았을까 싶기도 하네요. 여튼 당시의 저는 아래와 같은 이유로 일단 <span class='is-advertising d-inline-block m-0'>치아</span>를 살려보기로 했습니다. 1. 전치부 임플란트 및 GBR에 대한 부담 - 임플란트는 구개측에 심으면 되겠지만, labial plate가 파절된 상황에서 Gap filling을 시도했을 경우 안정적으로 유지될지의 여부 - 발치나 수술 중 골편이 <span class='is-commercial d-inline-block m-0'>완전</span> 파절되어 나왔을 경우 아예 Flap을 열고 GBR을 시행하는 게 나을지에 대한 판단의 어려움 2. 임플란트를 진행하기 위해서라도 일단 Favorable한 환경을 먼저 만드는 게 좋지 않을까 하는 생각 - <span class='is-advertising d-inline-block m-0'>치아</span>와 치조골을 정복한 후 <span class='is-commercial d-inline-block m-0'>최소한</span> 치조골만이라도 고정이 되면 전치부 임플란트 및 Gap filling이 용이함 3. 환자의 성향 - 당시 엔도크라운 몇개를 진행하면서, 발치는 둘째치고 엔도크라운 동의도 받기 굉장히 어렵고 까다로웠던 환자 - (뒤에 얘기하겠지만) 큰 치료는 대형 치과에서 하겠다고 말씀하시는 환자 사실 지금이라면 3번과 같은 사항에 대한 건 고려도 하지 않았을 것이지만, 당시의 저는 그렇지 못했습니다. 위와 같은 이유로 환자분께 <span class='is-advertising d-inline-block m-0'>치아</span>와 치조골의 정복, 수개월 동안의 Rigid splinting, 발치 및 임플란트 가능성에 대해 고지한 후 오전 시간의 대부분을 저 케이스로 보냈던 것 같습니다. 저와 같은 선택을 하실 분이 계시질 않길 바라며 과정에 대해 또 한 번 서술해볼게요. <span class='is-advertising d-inline-block m-0'>치아</span> 및 치조골의 정복 (Reduction) <span class='is-advertising d-inline-block m-0'>치아</span> 및 치조골의 정복(Reduction) 치조골도 골절되었고 <span class='is-advertising d-inline-block m-0'>치아</span>도 제 위치가 아니니 동요도가 있을 거라고 생각하기 쉽지만, 사실 그렇지 않았습니다. <span class='is-advertising d-inline-block m-0'>치아</span>가 어딘가에 단단히 고정된 느낌이었고, 손가락으로 움직여지지 않았습니다. 그래서 Elevator를 이용해 <span class='is-advertising d-inline-block m-0'>치아</span>를 변위시켰는데, Forced eruption할 때와 마찬가지로 절대로 Socket 밖으로 <span class='is-advertising d-inline-block m-0'>치아</span>가 탈구되지 않도록 조심히 정복시켰습니다. 적당히 <span class='is-advertising d-inline-block m-0'>치아</span>가 제 위치 되었다고 판단되었을 때, 협측을 손가락으로 누르니 골절되었던 골편이 안으로 쑥 들어가더군요. Splinting (Resin-wire splinting) Resin-wire splinting <span class='is-commercial d-inline-block m-0'>가장</span> 힘들었던 단계가 바로 여기였던 것 같습니다. Wire의 adapatation도 그렇고, 무엇보다 방습이 안되는 환경에서 레진으로 붙여야하니 말입니다. 거기다 #11은 PFM이라 불산을 따로 이용했고, Silane은 따로 없었기에 Single bond universal을 이용해 붙였습니다. (이렇게만 해도 생각보다 Porcelain과 잘 붙어있더군요.) 지혈 후 하느라 레진으로 붙이느라 시간도 오래 걸렸고, 자주하는 술식이 아니다보니 더 그랬던 것 같습니다. 여튼 보람차게(?) 저렇게 묶어드리고 환자분은 '보기 흉하다'는 말씀을 하신 뒤 나가셨죠....... 허탈함과 당황스러움을 뒤로한채 오전 진료를 마쳤습니다. 모든 케이스가 보람차고, 고생한 것에 대한 감사함을 받으면 정말 좋겠지만, 치과일을 하다보니 꼭 그렇지 만은 않더라구요. 내가 생각하는 것과 환자분이 원하는 것이 다를 때가 많다는 걸 지금도 많이 느낍니다. 3개월 뒤(3ML) Rigid splinting 제거 3개월이 지났습니다. s/o 이후에는 #21의 근관치료를 진행했고, 환자분께 3개월 기다린 뒤 <span class='is-advertising d-inline-block m-0'>치아</span>의 동요도가 없으면 #11,21 크라운 재수복을 진행하고 혹 그렇지 않은 경우 발치-임플란트 진행을 수차례 고지해왔습니다. 임상사진을 보면 치은은 아물었고, <span class='is-advertising d-inline-block m-0'>치아</span>도 비교적 괜찮아보입니다. 협측 치은을 손으로 눌러도 아파하지 않으시며, Splinting을 제거하고 나서도 다행히 동요도가 사라졌습니다. 속으로 '이게 되는구나'하며 보람을 느꼈습니다. 한가지 마음에 걸리는 것이 있다면 #11의 치근단 염증입니다. CT를 같이 보시죠. #11의 치근단 염증 CT 상에서 #21 <span class='is-advertising d-inline-block m-0'>치아</span>의 근관치료는 비교적 잘된 것 같고, #11의 치근단 염증이 남아있습니다. 환자분께는 #21은 살리고, #11은 리엔도-크라운이나 발치-임플란트를 설명드렸죠. 저에게 '보기 흉하다'라고 하셨던 환자분께서는 당시 병원의 수가(<span class='is-commercial d-inline-block m-0'>비용</span>)을 들으시고, 큰 치료는 비교적 <span class='is-commercial d-inline-block m-0'>가격</span>이 <span class='is-commercial d-inline-block m-0'>저렴한</span> 대형치과로 가시겠다고 하시더군요.... 허허허 당시 병원의 수가를 여기서 알려드릴수는 없지만, 소위 대형치과에서 광고하는 곳보다는 <span class='is-commercial d-inline-block m-0'>가격</span>이 더 비쌉니다. 치과치료에 <span class='is-commercial d-inline-block m-0'>가격</span>도 매우 큰 고려사항인만큼 그 선택에 대해서 뭐라할 수는 없겠지요. 그저 제가 나름 정성껏 해드린 그동안의 치료가 환자분을 힘들게만 했나보다 생각하고, 다른 치과에서 더 좋은 치료를 받아셨길 바래봅니다. 지금이라면 아마 처음부터 #11,21의 발치를 진단했을 것 같습니다. 그게 환자분을 조금 더 편안하게 해드릴 수 있는 방법이 아니었나 싶구요. 지금도 전치부 임플란트에 대한 확신이 있는 건 아니지만, 그래도 그 때보다는 자신감이 좀 붙었거든요. 긴 글 읽어주셔서 감사합니다. 본 케이스는 자기반성과 동시에 혹시라도 이 글을 보시게 되는 치과의사나 관련 종사자분들의 생각과 의견을 공유하기 위함입니다. '이런 케이스를 이렇게 해결해봤는데, 많은 아쉬움이 있었다' 정도의 글이니 가볍게 읽어주시면 감사하겠습니다.                </div>
+            </div>
+        </div>
+
+        <!-- 어뷰징 단어 섹션 보기 1 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+            <div class="row">
+                <div class="col-lg-1 col-12 pe-lg-0 me-lg-0">
+                    <span class="text-cs-s-dark fs-6-0-7">어뷰징 단어</span>
+                </div>
+                <div class="col-lg-11 col-12">
+                    <small class="text-deep-red">** 각 [19금 단어], [유해 단어], [상업성 단어], [과다 단어] 탭 버튼을 클릭하면 상단 [포스팅 -
+                        본문]에 하이라이트 표기됩니다. (중복 가능)</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mt-3">
+                    <!-- 어뷰징 단어 탭 -->
+                    <ul class="nav nav-tabs rounded-top fs-6-0-7" style="margin-bottom: 0px !important;"
+                        id="wordTypeTabs"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link impact" data-bs-toggle="tab" id="adult-word-button"
+                                    data-bs-target="#adult-word-sub"
+                                    onclick="show_word('adult')"
+                                    role="tab">19금 단어
+                            </button>
+                        </li>
+                        <i class="bi bi-question-circle-fill mt-2 ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                           data-bs-title="19세 미만 청소년에게 노출하기 부적합하여<br>연령 확인이 필요한 단어"></i>
+                    </ul>
+
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom">
+                        <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875 fw-bold"
+                             id="adult-word-last" style="min-height: 30px; white-space: nowrap;"
+                             role="tabpanel">
+                                                    </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <!-- 어뷰징 단어 탭 -->
+                    <ul class="nav nav-tabs rounded-top fs-6-0-7 mt-3" style="margin-bottom: 0px !important;"
+                        id="wordTypeTabs"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link impact" data-bs-toggle="tab" id="harmful-word-button"
+                                    data-bs-target="#harmful-word-sub" onclick="show_word('harmful')"
+                                    tabindex="-1" role="tab">유해 단어
+                            </button>
+                        </li>
+                        <i class="bi bi-question-circle-fill mt-2 ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                           data-bs-title="19세 미만 청소년에게 유해한<br>범죄 및 불법행위, 사행성에 포함된 단어"></i>
+                    </ul>
+
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom">
+                        <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875 fw-bold"
+                             id="harmful-word-last" style="min-height: 30px; white-space: nowrap;"
+                             role="tabpanel">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mt-1">
+                    <!-- 어뷰징 단어 탭 -->
+                    <ul class="nav nav-tabs rounded-top fs-6-0-7 mt-3" style="margin-bottom: 0px !important;"
+                        id="wordTypeTabs"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link impact" data-bs-toggle="tab" id="commercial-word-button"
+                                    data-bs-target="#commercial-word-sub" onclick="show_word('commercial')"
+                                    aria-selected="false"
+                                    tabindex="-1" role="tab">상업성 단어
+                            </button>
+                        </li>
+                        <i class="bi bi-question-circle-fill mt-2 ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                           data-bs-title="광고의 허위 및 과대 소비자를 기만하거나<br>오인, 혼동 우려가 있는 단어"></i>
+                    </ul>
+
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom">
+                        <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875 fw-bold"
+                             id="commercial-word-last" style="min-height: 30px; white-space: nowrap;"
+                             role="tabpanel">
+                            가격(3), 최소한(1), 저렴한(1), 가장(1), 비용(1), 완전(1)                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 mt-1">
+                    <!-- 어뷰징 단어 탭 -->
+                    <ul class="nav nav-tabs rounded-top fs-6-0-7 mt-3" style="margin-bottom: 0px !important;"
+                        id="wordTypeTabs"
+                        role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" id="advertising-word-button"
+                                    data-bs-target="#advertising-word-sub" onclick="show_word('advertising')"
+                                    tabindex="-1" role="tab">과다 단어
+                            </button>
+                        </li>
+                        <i class="bi bi-question-circle-fill mt-2 ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                           data-bs-title="포스팅 - 본문에 형태소(단어) 기준으로<br>10개 이상 개수가 초과된 단어"></i>
+                    </ul>
+
+                    <div class="tab-content p-4 border border-top-0 rounded-bottom">
+                        <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875 fw-bold"
+                             id="advertising-word-last" style="min-height: 30px; white-space: nowrap;"
+                             role="tabpanel">
+                            치아(18)                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 카테고리 분석 & 형태소 분석 -->
+        <div class="row mt-3 position-relative py-2 px-0-5">
+            <!-- 카테고리 분석 -->
+            <div class="col-lg-6 col-12 d-inline-block">
+                <div class="row bg-white rounded-3 shadow-cs-m border border-1 px-2 py-2 me-lg-1 justify-content-center">
+                <span class="text-cs-s-dark fs-6-0-7">카테고리 분석
+                <i class="bi bi-question-circle-fill ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                   data-bs-title="네이버 카테고리 코드에 따라 단어를 분류하여<br>분포(%) 기준으로 내림차순"></i>
+                </span>
+
+                    <!-- 카테고리 분석 -->
+                    <div class="col-12 my-2">
+                        <div class="col-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="pieChart"></canvas>
+                                    <div class="legend-container" id="customLegend"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 카테고리 테마별 탭 -->
+                    <div id="category-diagnosis-box" class="overflow-hidden justify-content-center"
+                         style="max-height: 565px;">
+                                                        <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-1">
+                                            건강·의학                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            47.5%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_0','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_0">
+                                        치아(14), 환자분(9), 치조골(7), 케이스(6), 임플란트(6), 발치(5), 전치부(4), 협측(4), 치료(4), 진단(4), 경우(3), 환자(3), 염증(3), 파절(3), 병원(3), 치근(3), 고려(2), 골편(2), 치은(2), 고정(2), 치과(2), 공유(2), 고지(2), 손가락(2), 선택(2), 부담(2), 말씀(2), 아쉬움(2), 정도(2), 대부분(1), 확신(1), 동안(1), 무엇(1), 발치임플란트(1), 변위(1), 안정적(1), 술식(1), 수가(1), 이후(1), 편안(1), 진료(1), 당황(1), 수개월(1), 앞니(1), 여부(1), 아래(1), 수술(1), 내원(1), 외상(1), 형태(1), 고생(1), 치과의사(1), 치아파절(1), 크라운(1), 느낌(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-2">
+                                            비즈니스·경제                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            19.29%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_1','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_1">
+                                        생각(7), 당시(6), 진행(5), 정복(5), 골절(4), 위치(3), 이용(3), 해결(2), 종사자분들(2), 주소(2), 지금(2), 마찬가지(1), 동의(1), 사항(1), 서술(1), 처음(1), 단계(1), 광고(1), 소위(1), 수차례(1), 구환(1), 성향(1), 가능성(1), 시행(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-3">
+                                            교육·학문                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            5.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_2','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_2">
+                                        비교적(3), 환경(2), 관련(2), 이유(2), 동시(2), 유지지(1), 보람(1), 과정(1), 상황(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-4">
+                                            일상·생각                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            4.64%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_3','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_3">
+                                        감사(4), 자기반성(2), 판단(2), 허탈(1), 얘기(1), 그동안(1), 시절(1), 지혈(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            IT·컴퓨터                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            2.5%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_4','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_4">
+                                        가격(3), 사진(2), 방법(1), 결과(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            인테리어·DIY                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            2.14%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_5','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_5">
+                                        제거(2), 설명(1), 방습(1), 완전(1), 이전(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            사회·정치                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            1.79%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_6','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_6">
+                                        의견(2), 여기(2), 자료(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            세계여행                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            1.79%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_7','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_7">
+                                        오전(3), 시간(2)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            국내여행                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            1.07%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_8','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_8">
+                                        등산(2), 파노라마(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            육아·결혼                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            1.07%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_9','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_9">
+                                        동요도(1), 동요(1), 대형(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            취미                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.71%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_10','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_10">
+                                        레진(2)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            맛집                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.71%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_11','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_11">
+                                        마음(1), 나름(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            반려동물                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.71%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_12','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_12">
+                                        탈구(1), 수반(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            상품리뷰                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.71%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_13','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_13">
+                                        자신감(1), 시도(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            요리·레시피                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_14','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_14">
+                                        치과일(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            문학·책                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_15','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_15">
+                                        최소한(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            음악                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_16','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_16">
+                                        어려움(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-category-5">
+                                            패션·미용                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('category_data_17','해당 카테고리 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="category_data_17">
+                                        거기(1)                                    </div>
+                                </div>
+                                                    </div>
+                                            <button class="btn btn-search2 justify-content-center float-end py-1 px-3 me-1"
+                                id="category-analyze-more-btn"
+                                onclick="show_more_category()">카테고리 분석 더보기
+                        </button>
+                                    </div>
+            </div>
+            <!-- 형태소 분석 -->
+            <div class="col-lg-6 col-12 d-inline-block mt-lg-0 mt-3">
+                <div class="row bg-white rounded-3 shadow-cs-m border border-1 px-2 py-2 ms-lg-1">
+                <span class="text-cs-s-dark fs-6-0-7">형태소 분석
+                <i class="bi bi-question-circle-fill ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                   data-bs-title="한국어 형태소 단어를 12개 형태소로 분류하여<br>분포(%) 기준으로 내림차순"></i>
+                </span>
+
+                    <!-- 형태소 분석 -->
+                    <div class="col-12 my-2">
+                        <div class="col-auto">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="pieChart2"></canvas>
+                                    <div class="legend-container" id="customLegend2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="morpheme-diagnosis-box" class="overflow-hidden" style="max-height: 565px;">
+                        <!-- 형태소 유형별 탭 -->
+                                                        <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-1">
+                                            체언                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            26.8%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_0','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_0">
+                                        치아(15), 환자(13), 것(11), 분(9), 임(9), 플란트(9), 치과(9), 발치(7), 치료(7), 생각(7), 치조골(7), 당시(6), 케이스(6), 진행(5), 정복(5), 측(5), 사진(5), 글(5), 저(5), 치부(4), 골절(4), 협(4), 파절(4), 진단(4), 크라운(4), 감사(4), 뒤(4), 때(4), 임상(3), 위치(3), 번(3), 후(3), 치근(3), 나(3), 대형(3), 제(3), 가격(3), 이용(3), 개월(3), 경우(3), 염증(3), 비교(3), 수(3), 병원(3), 오전(3), 게(2), 골편(2), 판단(2), 환경(2), 이유(2), 선택(2), 제거(2), 레진(2), 근관(2), 치은(2), 수가(2), 여기(2), 손가락(2), 건(2), 지금(2), 고지(2), 시간(2), 동요(2), 말씀(2), 고정(2), 변위(2), 종사자(2), 관련(2), 사나(2), 부담(2), 동시(2), 의견(2), 공유(2), 주소(2), 정도(2), 등산(2), 일(2), 해결(2), 아쉬움(2), 반성(2), 고려(2), 자기(2), 위(2), 내(1), 고생(1), 진료(1), 원(1), 채(1), 걸(1), 처음(1), 그게(1), 당황(1), 편안(1), 허탈(1), 거기(1), 말(1), 자신(1), 방습(1), 산(1), 지혈(1), 술(1), 방법(1), 확신(1), 이후(1), 도(1), 고려사(1), 마음(1), 가지(1), 보람(1), 곳(1), 리엔(1), 비용(1), 광고(1), 설명(1), 이게(1), 속(1), 나름(1), 수차례(1), 수복(1), 뭐(1), 항인(1), 무엇(1), 요도(1), 손(1), 그동안(1), 탈구(1), 의사(1), 차(1), 어려움(1), 시절(1), 시행(1), 년(1), 최소한(1), 개(1), 엔(1), 수반(1), 성향(1), 결과(1), 완전(1), 외상(1), 시도(1), 내원(1), 상황(1), 구개(1), 다면(1), 안정(1), 유지(1), 중(1), 수술(1), 여부(1), 지(1), 동의(1), 얘기(1), 어딘가(1), 느낌(1), 거(1), 함입(1), 이전(1), 앞니(1), 마찬가지(1), 단계(1), 안(1), 아래(1), 밖(1), 서술(1), 과정(1), 사항(1), 자료(1), 파노라마(1), 측방(1), 형태(1), 수개월(1), 동안(1), 대부분(1), 구환(1), 날(1), 가능(1), 정보(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-2">
+                                            조사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            16.29%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_1','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_1">
+                                        의(33), 을(30), 이(20), 에(19), 는(18), 를(17), 가(16), 도(15), 으로(11), 은(9), 과(9), 와(8), 로(8), 에서(7), 보다(5), 만(4), 서(3), 께(3), 에게(1), 만큼(1), 이나(1), 부터(1), 께서(1), 야(1), 나(1), 이라도(1), 엔(1), 다(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-3">
+                                            불능                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            15.03%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_2','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_2">
+                                        .(48), ,(33), #(13), '(10), -(10), 11(9), ((9), )(9), 21(8), 3(6), CT(5), :(4), splinting(4), ※(3), plate(3), Intrusion(3), Rigid(2), Gap(2), filling(2), GBR(2), Socket(2), wire(2), /(2), Labial(2), Reduction(2), Splinting(2), Resin(2), Single(1), Silane(1), bond(1), universal(1), s(1), o(1), 라고(1), ...(1), PFM(1), ML(1), ?(1), ......(1), Porcelain(1), Flap(1), 4(1), 1(1), M(1), Y(1), 63(1), labial(1), 2(1), eruption(1), Wire(1), Forced(1), Elevator(1), Favorable(1), adapatation(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-4">
+                                            용언                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            14.56%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_3','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_3">
+                                        보(14), 하(12), 같(11), 않(10), 있(10), 이(8), 되(6), 대한(5), 그렇(5), 아니(4), 많(4), 없(4), 받(3), 큰(3), 싶(3), 좋(3), 라도(3), 대해(3), 주(3), 읽(3), 붙(2), 튼(2), 위함입니다(2), 치(2), 가볍(2), 보람차(2), 봤(2), 했(2), 입니다(2), 흉하(2), 힘들(2), 눌러(1), 왔(1), 아물(1), 괜찮(1), 기다린(1), 묶(1), 나가(1), 드리(1), 다를(1), 마쳤(1), 뒤로한(1), 그랬(1), 저렇(1), 느낍니다(1), 지났(1), 드렸(1), 해(1), 할(1), 라(1), 대해서(1), 드린(1), 바래(1), 본(1), 긴(1), 해드릴(1), 봅니다(1), 비쌉니다(1), 드릴(1), 된(1), 걸리(1), 느꼈(1), 사라졌(1), 남(1), 살리(1), 알려(1), 가시(1), 들으시고(1), 걸렸(1), 아파하(1), 라고(1), 살려(1), 내리(1), 계신(1), 앉(1), 심(1), 나왔(1), 위해서(1), 나을지(1), 열(1), 아닌가(1), 빠져(1), 다니(1), 들어갔(1), 넘어졌(1), 걸려(1), 넘어지(1), 찾아보(1), 뒤늦(1), 오(1), 만드(1), 둘째치(1), 누르(1), 지(1), 움직여(1), 들어가(1), 였(1), 해도(1), 붙였(1), 붙여야(1), 쉽(1), 가(1), 못했(1), 까다로웠(1), 어렵(1), 보냈(1), 계시(1), 치아(1), 볼게요(1), 바라(1), 붙이(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            어말 어미                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            13.36%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_4','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_4">
+                                        습니다(23), 고(19), 는(15), 던(11), 지(10), 은(10), 게(9), 기(9), 다(8), 니(8), 지만(7), 을(6), 어(6), 는데(5), 면(5), 죠(3), 아(3), 으면(3), 며(3), 더군요(3), 다고(3), 라면(2), 아도(2), 느라(2), 길(2), 네요(2), 다는(2), 여(2), 을까(2), 거든요(1), 더라구요(1), 는구나(1), 다면(1), 구요(1), 지요(1), 나(1), 기에(1), 어요(1), 질(1), 라도(1), 도록(1), 다가(1), 면서(1), 라(1), 다시피(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            접미사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            4.72%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_5','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_5">
+                                        하(23), 되(8), 해(6), 했(5), 한(5), 적(4), 분(3), 함(3), 시켰(2), 된(2), 들(2), 감(1), 합니다(1), 상(1), 식(1), 성(1), 할(1), 될(1), 스러움(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            부사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            4.12%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_6','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_6">
+                                        및(6), 더(4), 사실(3), 혹시(3), 지금(3), 일단(3), 이렇게(3), 바로(2), 따로(2), 잘(2), 아마(2), 혹(1), 많이(1), 꼭(1), 다행히(1), 정말(1), 그저(1), 조금(1), 그래도(1), 좀(1), 정성껏(1), 자주(1), 소위(1), 매우(1), 같이(1), 쑥(1), 굉장히(1), 또(1), 먼저(1), 아예(1), 갑자기(1), 필히(1), 단단히(1), 그래서(1), 가장(1), 안(1), 적당히(1), 조심히(1), 절대로(1), 오래(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            선어말 어미                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            3.26%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_7','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_7">
+                                        었(15), 겠(9), 시(8), 셨(6), 았(4), 신(2), 셔서(1), 으시(1), 입니다(1), 실(1), 였(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            관형사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            1.46%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_8','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_8">
+                                        전(4), 한(3), 단(3), 이런(2), 이(2), 다른(1), 그(1), 동(1), 몇(1), 어느(1), 본(1), 저(1), 모든(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            감탄사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.13%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_9','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_9">
+                                        그(1), 허허허(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            어근                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.13%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_10','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_10">
+                                        저렴(1), 용이(1)                                    </div>
+                                </div>
+                                                                <ul class="nav nav-tabs rounded-top mt-lg-3 mt-3" style="margin-bottom: 0px !important;"
+                                    id="wordTypeTabs" role="tablist">
+                                    <li class="nav-item col-12" role="presentation">
+                                        <div class="opacity-100 d-inline-block border-morpheme-5">
+                                            접두사                                        </div>
+                                        <div class="d-inline-block fw-bold text-primary px-3">
+                                            0.13%
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                                                onclick="copyClipboardDiv('morpheme_data_11','해당 형태소 분석 데이터가 ');">
+                                            복사
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content p-4 border border-top-0">
+                                    <div class="tab-pane fade show active d-flex flex-nowrap overflow-x-auto overflow-y-hidden fs-0875"
+                                         style="height: 30px; white-space: nowrap;" role="tabpanel"
+                                         id="morpheme_data_11">
+                                        재(1), 불(1)                                    </div>
+                                </div>
+                                                    </div>
+                                            <button class="btn btn-search2 justify-content-center float-end py-1 px-3 me-1"
+                                id="morpheme-analyze-more-btn"
+                                onclick="show_more_morpheme()">형태소 분석 더보기
+                        </button>
+                                    </div>
+            </div>
+        </div>
+        
+        <!-- 단어 형태소 보기  -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+        <span class="text-cs-s-dark fs-6-0-7">단어 분석 <i class="bi bi-question-circle-fill"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-html="true"
+                                                       data-bs-title="형태소 비교분석에서 제공된<br>내 글 형태소 분석에 대한<br>형태소와 개수입니다."></i>
+        <button type="button" class="btn btn-guide justify-content-center float-end py-0 px-3 me-1 fs-0875"
+                onclick="getSubTitles(false);">
+                                        복사
+                                    </button>
+        </span>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table table-sm table-fixed table-bordered align-middle m-0 p-0">
+                        <tbody class="text-center">
+                        <tr class="detail_list border-start" id="detail">
+                            <td colspan="9" class="p-0 m-0 border-0">
+                                <div>
+                                    <p class="text-start bg-primary bg-opacity-25 p-2 mb-0">전체
+                                        형태소 <span>144</span>개</p>
+                                    <ul class="sub-list p-0 mb-0">
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치아</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">14</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">환자분</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">9</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">생각</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">7</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치조골</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">7</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">당시</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">6</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">케이스</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">6</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">임플란트</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">6</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">정복</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">5</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">진행</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">5</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">발치</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">5</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">감사</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치료</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">전치부</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">진단</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">골절</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">협측</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">4</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">이용</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">임상사진</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">비교적</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">가격</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">병원</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치근</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">염증</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">오전</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">경우</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">파절</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">환자</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">위치</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">3</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치과</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">지금</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">고지</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">고정</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">골편</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">시간</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">판단</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">환경</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">여기</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치은</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">대형치과</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">근관치료</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">레진</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">손가락</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">이유</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">선택</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">말씀</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치과의사나</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">자기반성</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">동시</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">엔도크라운</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">부담</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">고려</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">관련</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">주소</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">종사자분들</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">제거</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">등산</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">의견</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">사진</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">아쉬움</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">정도</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">공유</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">해결</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">2</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">탈구</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">단계</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">마찬가지</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">무엇</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">허탈</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">당황</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">술식</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">거기</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">방습</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">동안</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">가능성</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">진료</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">사항</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">얘기</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">대부분</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">과정</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">느낌</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">동요</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">서술</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">변위</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수가비용</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">처음</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">그동안</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">고려사항인</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치과치료</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">편안</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">방법</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">동의</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">자신감</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">확신</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">광고</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수가</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">동요도</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">이후</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치과일</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">보람</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">마음</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">설명</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">발치임플란트</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">리엔크라운</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">고생</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">완전</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수개월</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">대형</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">성향</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">최소한</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">지혈</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">뒤로한채</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수차례</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">발치-임플란트</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">크라운</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">어려움</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수술</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">어느날</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치아파절</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">환자정보</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">파노라마</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">측방변위</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">여부</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">계신다면</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">4년차</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">소위</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">나름</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">아래</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">내원</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">외상</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">구개측</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">상황</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">유지지</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">안정적</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">시도</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">시절</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치과의사</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">이전</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">치아함입</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">앞니</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">구환</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">자료</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">결과</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">수반</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">형태</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                                    <li class="sub-title sub-cont text-truncate fs-malgun-gothic">시행</li>
+                                            <li class="sub-cont sub-cont text-truncate fs-malgun-gothic">1</li>
+                                                                            </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 키워드 추출 -->
+        <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+        <span class="text-cs-s-dark fs-6-0-7">키워드 추출 <i class="bi bi-question-circle-fill"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-html="true"
+                                                        data-bs-title="제목에서 구성된 단어를 분석해서<br>검색광고 기준 조회수가 20개 이상 키워드입니다."></i>
+        </span>
+            <div class="row mt-3">
+                <div class="col-12 table-responsive">
+                    <table class="table table-sm table-fixed table-bordered align-middle table-keyword">
+                        <colgroup>
+                            <col width="40px">
+                            <col width="300px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="80px">
+                            <col width="80px">
+                        </colgroup>
+                        <thead>
+                        <tr class="text-cs-gray bg-light border text-center align-middle" id="table-column">
+                            <th rowspan="2" class="align-middle merged-cell">순번</th>
+                            <th rowspan="2" class="align-middle merged-cell">키워드</th>
+                            <th colspan="3">키워드 검색량</th>
+                            <th colspan="2">월평균 클릭수</th>
+                            <th colspan="2">월평균 클릭률</th>
+                            <th rowspan="2" class="align-middle merged-cell">경쟁도</th>
+                            <th rowspan="2" class="align-middle merged-cell">광고수</th>
+                        </tr>
+                        <tr class="text-cs-gray bg-light border text-center align-middle" id="table-column">
+                            <th>전체</th>
+                            <th>PC</th>
+                            <th>모바일</th>
+                            <th>PC</th>
+                            <th>모바일</th>
+                            <th>PC</th>
+                            <th>모바일</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-center">
+                                                            <tr class="fs-12px">
+                                        <td class="text-center">1</td>
+                                        <td class="text-start ms-1">Intrusion                                        </td>
+                                        <td class="text-center">1,780</td>
+                                        <td class="text-center">640</td>
+                                        <td class="text-center">1,140</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-center">낮음</td>
+                                        <td class="text-center">-</td>
+                                    </tr>
+                                                                        <tr class="fs-12px">
+                                        <td class="text-center">2</td>
+                                        <td class="text-start ms-1">치조골골절                                        </td>
+                                        <td class="text-center">80</td>
+                                        <td class="text-center">20</td>
+                                        <td class="text-center">60</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-center">낮음</td>
+                                        <td class="text-center">-</td>
+                                    </tr>
+                                                                        <tr class="fs-12px">
+                                        <td class="text-center">3</td>
+                                        <td class="text-start ms-1">치아함입                                        </td>
+                                        <td class="text-center">60</td>
+                                        <td class="text-center">10</td>
+                                        <td class="text-center">50</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-end">-</td>
+                                        <td class="text-center">중간</td>
+                                        <td class="text-center">1</td>
+                                    </tr>
+                                                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+                    <!-- 동일 주제 포스팅 섹션 -->
+            <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+                <div class="row">
+                    <div class="col-12 pe-lg-0 me-lg-0">
+                <span class="text-cs-s-dark fs-6-0-7">동일 주제 포스팅
+                <i class="bi bi-question-circle-fill ms-2" data-bs-toggle="tooltip" data-bs-html="true"
+                   data-bs-title="[키워드 추출]로 분류된 키워드가<br>분석된 블로그에포스팅 된 총 개수 표기"></i>
+                </span>
+                    </div>
+                </div>
+                <div class="border border-1 w-100 border-cs-black text-start p-3 fs-malgun-gothic fs-0875 mt-lg-3">
+                    Intrusion (3), 치조골골절 (1), 치아함입 (1)                </div>
+            </div>
+            <!-- 본문 링크 유효성 섹션 -->
+            <div class="mt-3 position-relative bg-white rounded-3 py-2 px-2 shadow-cs-m border border-1">
+                <div class="row">
+                    <div class="col-12 pe-lg-0 me-lg-0">
+                    <span class="text-cs-s-dark fs-6-0-7">본문 링크 유효성 <i class="bi bi-question-circle-fill"
+                                                                       data-bs-toggle="tooltip"
+                                                                       data-bs-html="true"
+                                                                       data-bs-title="본문 링크를 추적하여<br>숏도메인 또는 포워딩 링크인 경우 1차,<br>타겟 링크는 2차로 제공합니다."></i></span>
+                    </div>
+                </div>
+                <div class="border border-1 w-100 border-cs-black text-start p-3 fs-malgun-gothic fs-0875 mt-lg-3">
+                    &nbsp;                </div>
+            </div>
+            </div>
+
+
+    <style>
+        /* 카테고리 유형별 */
+        .border-category-1 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-success-rgb), 1);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-category-2 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-success-rgb), 0.8);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-category-3 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-success-rgb), 0.6);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-category-4 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-success-rgb), 0.4);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-category-5 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-success-rgb), 0.2);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+
+        /* 형태소 유형별 */
+        .border-morpheme-1 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-primary-rgb), 1);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-morpheme-2 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.8);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-morpheme-3 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.6);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-morpheme-4 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.4);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .border-morpheme-5 {
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.2);
+            border-left-width: 12px !important;
+            border-right-width: 12px !important;
+        }
+
+        .px-0-5 {
+            padding-left: .125rem !important;
+            padding-right: .125rem !important;
+        }
+
+        /* 스크롤바 전체 스타일 */
+        div::-webkit-scrollbar {
+            height: 8px !important; /* 스크롤바 높이 */
+        }
+
+        .nav-tabs .nav-item .nav-link {
+            background-color: #f8f8f8 !important;
+            color: #8b8b8b !important;
+            --bs-border-opacity: 1;
+            border-color: #e1e1e1 !important;
+            font-size: 0.95rem !important;
+            font-weight: normal;
+        }
+
+        .nav-tabs .nav-item .nav-link.impact {
+            background-color: #6a70bc !important;
+            color: #fff !important;
+            --bs-border-opacity: 1 !important;
+            border-color: #6a70bc !important;
+            font-size: 0.95rem !important;
+            font-weight: normal;
+        }
+
+        .nav-tabs .nav-item .nav-link.impact.active {
+            background-color: #4c52bc !important;
+            color: #FFFFFF !important;
+            --bs-border-opacity: 1;
+            border-color: #4c52bc !important;
+            font-size: 0.95rem !important;
+            font-weight: normal;
+        }
+
+        .text-purple {
+            color: #6f42c1 !important;
+        }
+
+        .legend-container {
+            /*max-height: 150px;*/
+            /*overflow-x: auto;*/
+            white-space: wrap;
+            padding: 10px;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 0.875rem !important;
+        }
+
+        #pieChart {
+            max-height: 100px;
+            max-width: 115px;
+            justify-self: center;
+        }
+
+        #pieChart2 {
+            max-height: 100px;
+            max-width: 115px;
+            justify-self: center;
+        }
+
+        .sub-list {
+            display: grid !important;
+            grid-template-columns: repeat(16, 1fr); /* 16개의 컬럼으로 분할 */
+            list-style-type: none; /* 기본 ul 스타일 제거 */
+            padding: 0;
+            margin: 0;
+        }
+
+        .sub-list > li:not(:nth-child(16n)) {
+            border-right: 0; /* 16번째마다 border-right 제거 */
+        }
+
+        .sub-list > li {
+            width: auto !important;
+        }
+
+        #tr-column {
+            background-color: rgb(240, 240, 240) !important;
+            color: rgb(55, 55, 55) !important;
+        }
+
+        .highlighted-word {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        #table
+    </style>
+    <script>
+        // 단어분석 복사
+        function getSubTitles(includeValue = false) {
+            try {
+                const subList = document.querySelectorAll('.sub-list li');
+                const result = [];
+
+                for (let i = 0; i < subList.length; i += 2) {
+                    const title = subList[i].textContent.trim();
+
+                    // 제목이 공백이거나 &nbsp;인 경우 건너뛰기
+                    if (!title || title === '\u00A0' || title === '&nbsp;') {
+                        continue;
+                    }
+
+                    if (includeValue) {
+                        const value = subList[i + 1]?.textContent.trim() || '';
+                        result.push(`${title}(${value})`);
+                    } else {
+                        result.push(title);
+                    }
+                }
+
+                // 임시 요소 생성 및 텍스트 복사
+                const tempElement = document.createElement('div');
+                tempElement.style.position = 'absolute';
+                tempElement.style.left = '-9999px';
+                tempElement.textContent = result.join(', ');
+                document.body.appendChild(tempElement);
+
+                // 텍스트 선택 및 복사
+                const range = document.createRange();
+                range.selectNode(tempElement);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+
+                const successful = document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+                document.body.removeChild(tempElement);
+
+                if (successful) {
+                    MsgBox.Alert("텍스트가 클립보드에 복사되었습니다.");
+                }
+
+                return result.join(', ');
+            } catch (error) {
+                console.error('복사 중 오류 발생:', error);
+                MsgBox.Alert("복사 중 오류가 발생했습니다.");
+                return '';
+            }
+        }
+
+        function checkButtons() {
+            const elements = document.querySelectorAll('[id*="-word-button"]');
+            for (let element of elements) {
+                if (element.classList.contains('checked')) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function show_word(type) {
+            let typeButton = $('#' + type + '-word-button');
+            let contentBox = $('#post_diagnosis_result_content');
+            let typeElements = document.querySelectorAll("span.is-" + type);
+
+            let typeColor = "";
+            switch (type) {
+                case "adult":
+                    typeColor = "danger";
+                    break;
+                case "harmful":
+                    typeColor = "dark";
+                    break;
+                case "commercial":
+                    typeColor = "primary";
+                    break;
+                case "advertising":
+                    typeColor = "purple";
+                    break;
+                default:
+                    typeColor = "dark";
+                    break;
+            }
+
+            // 해제
+            if (typeButton.hasClass('checked')) {
+                typeButton.removeClass('active');
+                typeButton.removeClass("checked");
+
+                if (!checkButtons()) {
+                    contentBox.removeClass("text-secondary");
+                }
+
+                // 각 요소에 대해 처리
+                typeElements.forEach(element => {
+                    element.classList.remove("text-" + typeColor);
+
+                    // 다른 활성화된 타입이 있는지 확인
+                    let hasOtherActiveType = false;
+                    const types = ["adult", "harmful", "commercial", "advertising"];
+
+                    for (const otherType of types) {
+                        if (otherType === type) continue;
+
+                        if (element.classList.contains("is-" + otherType)) {
+                            const otherButton = $('#' + otherType + '-word-button');
+                            if (otherButton.hasClass('checked')) {
+                                hasOtherActiveType = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    // 다른 활성화된 타입이 없을 때만 fw-bold 제거
+                    if (!hasOtherActiveType) {
+                        element.classList.remove("fw-bold");
+                        element.classList.remove("highlighted-word");
+                    }
+                });
+
+                console.log('off');
+            }
+            // 적용
+            else {
+                typeElements.forEach(element => {
+                    element.classList.add("text-" + typeColor, "fw-bold", "highlighted-word");
+                });
+
+                if (!contentBox.hasClass('text-secondary')) {
+                    contentBox.addClass("text-secondary");
+                }
+                typeButton.addClass("checked");
+            }
+        }
+
+        $(document).ready(function () {
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+
+            const pieCtx2 = document.getElementById('pieChart2').getContext('2d');
+
+            // PHP 데이터를 JavaScript 변수로 변환
+            const labels = ["\uac74\uac15\u00b7\uc758\ud559","\ube44\uc988\ub2c8\uc2a4\u00b7\uacbd\uc81c","\uad50\uc721\u00b7\ud559\ubb38","\uc77c\uc0c1\u00b7\uc0dd\uac01","IT\u00b7\ucef4\ud4e8\ud130","\uae30\ud0c0"];
+            const data = [47.5,19.29,5.36,4.64,2.5,12.14];
+            const backgroundColor = ["rgba(25, 135, 84, 1)","rgba(25, 135, 84, 0.8)","rgba(25, 135, 84, 0.6)","rgba(25, 135, 84, 0.4)","rgba(25, 135, 84, 0.2)","rgba(25, 135, 84, 0.1)"];
+            const borderColor = ["rgba(25, 135, 84, 1.1)","rgba(25, 135, 84, 0.9)","rgba(25, 135, 84, 0.7)","rgba(25, 135, 84, 0.5)","rgba(25, 135, 84, 0.3)","rgba(25, 135, 84, 0.2)"];
+
+            const pieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: backgroundColor,
+                        borderColor: borderColor,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false // 기본 범례 숨기기
+                        }
+                    }
+                }
+            });
+
+            // 커스텀 범례 생성
+            const legendContainer = document.getElementById('customLegend');
+            labels.forEach((label, index) => {
+                const legendItem = document.createElement('div');
+                legendItem.classList.add('legend-item');
+
+                // label이 null이거나 empty면 "미분류"로 대체
+                const displayLabel = label && label.trim() ? label : '미분류';
+
+                legendItem.innerHTML = `
+        <span style="
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            background-color: ${backgroundColor[index]};
+            border: 1px solid ${borderColor[index]};
+        "></span>
+        ${displayLabel}: ${data[index]}%
+    `;
+                legendContainer.appendChild(legendItem);
+            });
+
+
+            // PHP 데이터를 JavaScript 변수로 변환
+            const labels2 = ["\uccb4\uc5b8","\uc870\uc0ac","\ubd88\ub2a5","\uc6a9\uc5b8","\uc5b4\ub9d0 \uc5b4\ubbf8","\uae30\ud0c0"];
+            const data2 = [26.8,16.29,15.03,14.56,13.36,13.95];
+            const backgroundColor2 = ["rgba(13, 110, 235, 1)","rgba(13, 110, 235, 0.8)","rgba(13, 110, 235, 0.6)","rgba(13, 110, 235, 0.4)","rgba(13, 110, 235, 0.2)","rgba(13, 110, 235, 0.1)"];
+            const borderColor2 = ["rgba(13, 110, 253, 1.1)","rgba(13, 110, 253, 0.9)","rgba(13, 110, 253, 0.7)","rgba(13, 110, 253, 0.5)","rgba(13, 110, 253, 0.3)","rgba(13, 110, 253, 0.2)"];
+
+            const pieChart2 = new Chart(pieCtx2, {
+                type: 'pie',
+                data: {
+                    labels: labels2,
+                    datasets: [{
+                        data: data2,
+                        backgroundColor: backgroundColor2,
+                        borderColor: borderColor2,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false // 기본 범례 숨기기
+                        }
+                    }
+                }
+            });
+
+            // 커스텀 범례 생성
+            const legendContainer2 = document.getElementById('customLegend2');
+            labels2.forEach((label, index) => {
+                const legendItem = document.createElement('div');
+                legendItem.classList.add('legend-item');
+
+                // label이 null이거나 empty면 "미분류"로 대체
+                const displayLabel2 = label && label.trim() ? label : '미분류';
+
+                legendItem.innerHTML = `
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 5px;
+                    background-color: ${backgroundColor2[index]};
+                    border: 1px solid ${borderColor2[index]};
+                "></span>
+                ${displayLabel2}: ${data2[index]}%
+            `;
+                legendContainer2.appendChild(legendItem);
+            });
+        });
+
+        // 카테고리 분석 펼치기 / 접기
+        function show_more_category() {
+            let maxHeight = $("#category-diagnosis-box").css("max-height");
+
+            if (maxHeight === "565px") {
+                // max-height를 제한 해제
+                $("#category-diagnosis-box").css("max-height", "");
+                $("#category-analyze-more-btn").addClass("mt-2");
+                $("#category-analyze-more-btn").text("카테고리 분석 접기");
+            } else {
+                // max-height를 565px로 제한
+                $("#category-diagnosis-box").css("max-height", "565px");
+                $("#category-analyze-more-btn").removeClass("mt-2");
+                $("#category-analyze-more-btn").text("카테고리 분석 더보기");
+            }
+        }
+
+        // 형태소 분석 펼치기 / 접기
+        function show_more_morpheme() {
+            let maxHeight = $("#morpheme-diagnosis-box").css("max-height");
+
+            if (maxHeight === "565px") {
+                // max-height를 제한 해제
+                $("#morpheme-diagnosis-box").css("max-height", "");
+                $("#morpheme-analyze-more-btn").addClass("mt-2");
+                $("#morpheme-analyze-more-btn").text("형태소 분석 접기");
+            } else {
+                // max-height를 565px로 제한
+                $("#morpheme-diagnosis-box").css("max-height", "565px");
+                $("#morpheme-analyze-more-btn").removeClass("mt-2");
+                $("#morpheme-analyze-more-btn").text("형태소 분석 더보기");
+            }
+        }
+
+
+        $(document).ready(function () {
+
+            // 모든 툴팁 활성화
+            $("[data-bs-toggle='tooltip']").tooltip();
+
+            // 링크 120자 이상 못넘게 truncate
+            try {
+                const elements = document.querySelectorAll(".text-truncate-120"); // 모든 truncateSpan 클래스를 가진 요소를 찾음
+                const maxLength = 120;
+
+                elements.forEach(element => {
+                    if (element.textContent.length > maxLength) {
+                        element.textContent = element.textContent.substring(0, maxLength) + '...';
+                    }
+                });
+
+            } catch (e) {
+                console.error("An error occurred while truncating text:", e);
+            }
+        });
+
+        // 본문 접기 / 펼치기
+        function show_content() {
+            if ($("#post_diagnosis_result_content").hasClass("d-none")) {
+                $("#post_diagnosis_result_content").removeClass("d-none");
+                $("#post_diagnosis_result_content_btn").text("본문 접기");
+            } else {
+                $("#post_diagnosis_result_content").addClass("d-none");
+                $("#post_diagnosis_result_content_btn").text("본문 보기");
+            }
+        }
+
+        function handleImageError(img, errorImageUrl) {
+            // 원본 이미지 URL 저장
+            const originalImage = img.getAttribute('data-image');
+
+            // 대체 이미지로 변경
+            img.src = errorImageUrl;
+
+            // Modal 기능 비활성화
+            img.removeAttribute('data-bs-toggle');
+            img.removeAttribute('data-bs-target');
+
+            // 클릭 시 새 탭에서 원본 이미지 열기
+            img.onclick = function () {
+                window.open(originalImage, '_blank');
+            };
+        }
+    </script>

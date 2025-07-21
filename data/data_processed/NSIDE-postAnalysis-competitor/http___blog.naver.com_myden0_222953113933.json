@@ -1,0 +1,655 @@
+{
+    "posting_score": "준최2-Lv.1",
+    "exposure_score": "17.79",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "81.51",
+            "evaluation": "적합",
+            "percentage": "81.51%"
+        },
+        {
+            "category": "주제",
+            "score": "79.51",
+            "evaluation": "적합",
+            "percentage": "79.51%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "61.19",
+            "evaluation": "적합",
+            "percentage": "61.19%"
+        },
+        {
+            "category": "형태소",
+            "score": "62.12",
+            "evaluation": "적합",
+            "percentage": "62.12%"
+        },
+        {
+            "category": "가독성",
+            "score": "73.73",
+            "evaluation": "적합",
+            "percentage": "73.73%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "60.00",
+            "evaluation": "정보성",
+            "percentage": "60.00%"
+        }
+    ],
+    "publish_time": "2022-12-12 10",
+    "exposure_status": "발행된지 952일 (4시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:44:55 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "23",
+        "title_without_space": "16",
+        "content_with_space": "1,883",
+        "content_without_space": "1,397"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "265",
+        "syllable_count": "487",
+        "word_count": "100",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "27",
+        "material_images": "0",
+        "uploaded_images": "27",
+        "content_images": "27",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfNjIg/MDAxNjcwODA2MDI1MTg4.0iRJSFYnCvFSCbZYOd5rHvwcYY_0GLsiKs6SYuHWPaog.ZlxA_jDYQ6-S09hocoPUudoVi1Cr6TQoq308XyZPyTcg.PNG.myden0/SE-01994ed0-77a8-4285-8423-67e5f0b690ea.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfMjU3/MDAxNjcwODA4MzMwNDE5.7S76C490hqpVv5HNYZ88o1wvjhUM7EFG-KF5y6E2CNsg.sHFPZcBFqxm7IrBECGALtlCtyuLk6X7IAZShMQC5lb4g.PNG.myden0/SE-002faea5-545e-4625-9421-59533172e4e8.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfMjQ3/MDAxNjcwODA4MzI5OTQ4.gDSjDUyQ7yLF_ki1cKqgEOhXWHxJh6tnVNNRtbKgG2wg.-OuVMm1nb8SfJZH9JuN--ECiepPRWRV8zfVZqI2A5Hwg.PNG.myden0/SE-4291f419-03f1-42e4-bfc9-b570c1a1b51f.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfODYg/MDAxNjcwODA4NDI4NDg0.iJIMif20-Er6cmHnfO_bO5AttEJyRTAvZlPRYm9codgg.ZjTOHQdF5Gpa3PMV2tfIuCBRcsuFDsOMNNmKY5trVwUg.PNG.myden0/SE-e1e0e3aa-5af9-4e6e-b8d3-3476a95fb191.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfMjQg/MDAxNjcwODA4NzY5MDI1.5v-EaDuGarQ46WotWPz5WBsRpl8pJDkQdga5WlnHdWEg.2TXxCz-JC4d5kX4PIrGFGOtiHGtUCIkKW2fXDNlQAlcg.JPEG.myden0/SE-53889edf-fcf2-4eb3-967a-516e32cb9fc2.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfMjkx/MDAxNjcwODA4NzkzMDA3.krEDIly2isS-KrNLA6uXUVgse35our5DhqqRvzHblc4g.iVroclPuTp7Pr_BCewZaguavf9f2NNaxtoTyqpxkfAEg.JPEG.myden0/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTJfMTQx/MDAxNjcwODA4NzkzODg2.eA0s8vl0skzOV8Q_Lewz0RTMl1RoueRA1BySGGPukhMg.xJen-lqLfbypw3VGd_LTJ0WyAPzDX4ma10QqJylRkNsg.JPEG.myden0/%EC%A0%9C%EB%AA%A9%EC%9D%84_%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94_(2).jpg?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTk1/MDAxNjcwODA1ODM5NzA0.g9F95bUOt1ULq18zlMhXEBl-Wkbgh0bgXu0FRWqKH5cg.QSebVnIn4rTEWuWEH2Et7YMQ2Kki2zRLZh0edR9w7XMg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%841.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTQy/MDAxNjcwODA3NDY3ODk3.aRFRfX1Zf26z_Al5JFK9nR8sFLhZfjjgNXd420r70SUg.OlATh9HjSi83n36Yz1KDoNrlJsaCNMfTL4ed6nSmH5sg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%843.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTIy/MDAxNjcwODA3NTYzNzQ1.6Pfx6cNy7FAtX7D-IvNdkHrG7ItAoPwNHeYb1uYtMbsg.lFGObuYtIC0jYmbZk-1AZOBxgMIuDNC4sIiQzhOxp3Ug.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%844.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMjI4/MDAxNjcwODA3NzMwMTgz.jftxWhqDE2EoTiHGGSq1hsMn72XpwNDiM6UaktVnPlQg.-CWa34E39Hj4GHrA3WxsMGID8vGQf5chnZBWj1x9ZTIg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%847.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMjIz/MDAxNjcwODA3ODYyNjEx.brHtDaU8uIWp7MB_HoU8_Y6Sby_WCa8ZJtv9HjXtT88g.pqezHWxqqIh5Wdwd6HGh9iL5DS3ZJ7mJMuNAfUJQHxAg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%849.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMjU1/MDAxNjcwODA3ODY0MDQ4.HUO94wMDcTOYrUx6623GTktovihaH-_nUX4Nnoe93hAg.IOoBMKu-C4WFdakrgN6uUrWdsO0xmsdJ6uNeMAYIUMIg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%848.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTUz/MDAxNjcwODA4MDQ0OTcz.c7Te-3c6wy2PxEPMdl5BCWjR_-AHE7-LzuvQEoHSAEkg.c_k7MUU02UUYK6H5RXNNbkF0z5dHEzIh8Zmtt_edHTIg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8410.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMjMz/MDAxNjcwODA4MDQ0OTg3.Qd7q-GosKjribg400LKxz736bSnDzQb8KRbH60TThpwg.g6tDCFv6mUEFFn_27EgmtUOuuj6mfYv6T5wwgA0jX0sg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8411.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTM5/MDAxNjcwODA4MDQ3NjQ4.hr9e-_WN6vHD3oIgDo7EKvAO3UXfX3RrKG1Gbky942Ag.K-E8fKJrJiTW3dP7Fnk_7PlbbQHgbCIG6wkDssjxZacg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8412.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfODcg/MDAxNjcwODA4MDQ3NjY4.1woXkiO35qwXTNZDOVLshRKQKg-IM5FKDW_U2SFiXGMg.hynUlQGvzfZ8QRgdlYxnnF47RlVD3SbTN0vMlza5cHog.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8413.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTkg/MDAxNjcwODA4MzUzMzI3.i1dWP4USW2tOUFL467Al0IjTKbFDWDKWY7sgbkzQ6_kg.cSJT3zkcT-qHaL8oBgdCfmHEgPvoQ2iGXn7JSyWOol4g.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8422.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTUg/MDAxNjcwODA4MzY4NzY3.RaA5qjhIjH0rH_M4IDeqI3gmQRES5ReGT-FAea6sUtMg.NyyzehB-ST001Fff0FSdy1bG1xHP14QrSBL7TOgaKWog.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%84.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMzgg/MDAxNjcwODA4Mzg1NjQ5.7IZUXTmoM10mQrVO_0FeekylIG7BLuJGA_OMfnISvQQg.MTsQWLNp3dl6PKS3bQaeDbK08b640GqgAchjMYjdmpwg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8415.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfOCAg/MDAxNjcwODA4NDUzMjcy.7C5i5FMrqYQrH5w6q8AFopCSigM7VzGQFR74C3HXzEIg.TJ--RIKjlZaQhw9ARODy3aMFBnwU-iw562vn7YQuJLwg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8419.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTYg/MDAxNjcwODA4NDU2Mjc2.eEvCk33zSgP2WjG3uGvcIItuz0NxI_wskLPcmutBef4g.o-J0Yy1oXJ2L-2gIvWBy64qI8zdeD3uNtdRllfF34gUg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8416.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMyAg/MDAxNjcwODA4NDM2MDQ4.oO31cpDEkt2wQfJEWigusccZ51hCVjuBBH0Arfl4HK8g.6h_rMo-R12DhLKC1XVkMiTIPgHGaYajRzfbeO71QrMAg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8418.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMjU4/MDAxNjcwODA4NDM5NTM3.QrUgLnk8IXI--KkxAV0QC23XzJyJtn5WT-hoGTGOVEMg.qN8K1meGprC2wqYn2LwSD-7S7Iaw-8zoZ1EOPvweMEYg.GIF.myden0/%EC%84%B1%EC%9D%B8%EC%9C%A0%EC%B9%98-%EC%B9%98%EC%95%8417.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfNSAg/MDAxNjcwODA4Nzc3OTIw.8tkfMdmmtXVGMqmu9dpT58T5rWd_CtpCYTVbuQ38YDsg._7srnJt5_TuppxOU5N8YHWbOCthIEKkexncz9Fy2QGEg.GIF.myden0/%EC%A2%85%EA%B0%81%EC%B9%98%EA%B3%BC.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMTU2/MDAxNjcwODA4Nzg5Mjcw.QtTHGQMWirQwSgTV-pjr0VVPRd09N3RWBcFi9P2slCIg.thIjTjDRJySZLs3J12ZJfnKMZtvT3qaFXWt-d4UIxlYg.GIF.myden0/%EA%B5%90%EC%A0%95%EC%B9%98%EA%B3%BC.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMjEyMTJfMzcg/MDAxNjcwODA4NzkwMzk0.x4m8FD9L2IlgZLnjzIrZiTnhpE038L6luCILPOmeuKIg.olCuq0vK9ssDQ87oTZ1hKSlNFiK0rB_GltK_vfCItiIg.GIF.myden0/%EA%B5%90%EC%A0%95%EC%B9%98%EA%B3%BC_(2).gif?type=mp4w800"
+        ]
+    },
+    "post_title": "성인유치 치아 더 이상 사용할 수 없을 때",
+    "post_content": "안녕하세요. 연세마이덴치과입니다. 사람의 치아는 만 6세의 나이부터 어른이라고 하는 영구치가 나오고 만 12세 정도가 되면 구강 내의 모든 치아가 영구치로 바뀌게 됩니다. 그러나 간혹 선천적으로 영구치가 없어서 성인이 되어도 유치가 남아 있는 경우가 있는데 이런 경우 상대적으로 약한 유치가 버티지 못해 상실되거나 발치를 해야 하는 상황이 오게 됩니다. 그 자리에 영구치가 없기 때문에 성인유치 치아를 더 이상 사용할 수 없을 때에는 영구치를 대신할 수 있도록 대체를 해야 하는데 임플란트 식립 밖에는 답이 없는 걸까요? 오늘은 남아 있는 유치를 더 이상 사용할 수 없지만 선천적으로 영구치가 없어 그 자리를 대신할 수 있도록 임플란트를 하지 않고 마무리를 한 케이스를 보겠습니다. 왼쪽 위 크라운 씌운 곳 염증이 심해요 사용하던 크라운에 염증이 심해 내원하신 분입니다. 파노라마를 찍어 확인을 해보니 선천적 영구치 결손으로 유치가 남아 있는 모습입니다. 오른쪽 아래 임플란트가 되어 있는 치아를 포함하여 작은 어금니인 제 2소구치가 결손된 상태로 성인유치 치아가 영구치 대신 남아 있었습니다. 남아 있던 유치는 신경치료와 크라운까지 하여 쭉 사용하고 계셨지만 뿌리 염증이 심해 더 이상 사용할 수 없는 상황이어서 발치 후 치료를 진행하기로 했습니다. 뿌리 염증이 심해 더 이상 사용할 수 없는 유치는 발치를 하고 교정장치를 부착하여 주변 치아들을 빈 공간으로 이동시켜 공간을 닫는 치아교정을 진행하기로 했습니다. 밑 앞니와 양쪽 작은 어금니 부위에 되어 있는 크라운은 크기가 작은 임시크라운으로 교체하여 공간을 줄이는 방식으로 교정을 진행하기로 계획했습니다. ↓ 성인유치 치아 발치 후 임플란트를 할 수도 있지만 임플란트를 최소화할 수 있도록 치아교정 진행 예상 소요 기간 : 2년~2년 반 밑에 남아 있는 75번 유구치가 남아 있을 경우 뿌리가 나눠져 있어 교합을 맞추는데 한계가 있어 발치를 해야 하는 상황이었지만 임플란트를 최소화하고 싶어 왼쪽 아래 75번 유구치는 사용하시다 빠지면 추후에 임플란트가 필요하다고 설명드렸습니다. 2019년 10월 교정 시작 잔존유치 발치 후 브라켓 부착 2020년 10월(교정 시작 1년 후) 2021년 4월(교정 시작 1년 반 후) 남아 있던 유치 발치 후 교정을 시작한 지 1년과 1년 반 후의 엑스레이 사진을 보면 빈 공간으로 치아들이 이동해 채워지고 있는 모습입니다. 2021년 7월(교정 시작 1년 9개월 후) 2021년 7월(교정 시작 1년 9개월 후) 성인 잔존 유치 치아 발치 후 치아교정을 시작한 지 1년 9개월 후에는 발치 공간이 거의 닫힌 모습을 볼 수 있습니다. 오른쪽 송곳니 부분에 약간의 공간이 남아 교정을 조금 더 진행하기로 했습니다. 임플란트 보철 앞니 보철 교정을 진행하기 위해 임시치아로 교체했던 임플란트 보철과 앞니 보철은 교정된 공간에 맞춰 다시 제작을 해주었습니다. 2022년 6월 교정 마무리 총 교정 기간 약 2년 반 전 / 후 전 / 후 전 / 후 전 / 후 전 / 후 약 2년 반 진행된 치아교정이 마무리가 되었습니다. 성인유치 치아 발치 후 빈 공간에 임플란트를 하지 않고 주변 치아를 이동시켜 임플란트 개수를 줄여 치료를 마무리할 수 있었습니다. 교정 후 돌출되어 보이던 부분도 해소가 되어 심미적인 요소도 만족할 수 있는 치아교정으로 잘 마무리가 되었습니다. 선천적으로 영구치가 없는 경우에는 남은 유치를 최대한 쓸 때까지 쓰지만 유치는 뿌리나 다른 부분이 영구치에 비해 약하기 때문에 어느 순간 발치를 해야 하는 순간이 올 수 있습니다. 성인 잔존 유치 치아를 발치해야 한다면 임플란트를 할 수도 있지만 치아교정을 통해 임플란트를 최소화할 수 있는 방법도 있습니다. 잔존유치로 어떤 진료를 받아야 할지 고민 중이시라면 내원하여 검진과 상담받아보시길 바랍니다. 감사합니다.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "최대한(1)",
+        "excessive_words": "치아(19), 유치(17), 임플란트(13), 발치(12), 영구치(10)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "59.04%",
+            "keywords": "임플란트(13), 발치(12), 유치(11), 영구치(10), 치아(10), 교정(9), 치아교정(5), 염증(4), 이상(4), 선천적(4), 경우(4), 보철(4), 크라운(4), 앞니(3), 모습(3), 최소화(3), 부분(3), 왼쪽(2), 오른쪽(2), 치료(2), 치아들(2), 자리(2), 어금니(2), 결손(2), 아래(2), 내원(2), 구강(1), 케이스(1), 필요(1), 교합(1), 고민(1), 신경치료(1), 검진(1), 심미적(1), 대체(1), 식립(1), 추후(1), 송곳니(1), 상태(1), 약간(1), 엑스레이(1), 개수(1), 상실(1), 부위(1), 양쪽(1), 방식(1), 진료(1), 정도(1), 돌출(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "10.04%",
+            "keywords": "진행(7), 마무리(5), 대신(3), 때문(2), 요소(1), 한계(1), 해소(1), 어른(1), 사람(1), 상대적(1), 계획(1), 오늘(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "6.43%",
+            "keywords": "사용(7), 이동(2), 교체(2), 부착(2), 크기(1), 사진(1), 방법(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "5.22%",
+            "keywords": "공간(8), 성인(3), 예상(1), 감사(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "4.02%",
+            "keywords": "시작(7), 상황(3)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.81%",
+            "keywords": "뿌리(4), 순간(2), 제작(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.2%",
+            "keywords": "잔존(2), 안녕(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.2%",
+            "keywords": "기간(2), 상담(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "1.2%",
+            "keywords": "유구(1), 파노라마(1), 소요(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "0.8%",
+            "keywords": "확인(1), 설명(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.8%",
+            "keywords": "이동해(1), 포함(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.8%",
+            "keywords": "주변(2)"
+        },
+        {
+            "category_name": "자동차",
+            "percentage": "0.4%",
+            "keywords": "브라켓(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.4%",
+            "keywords": "나이(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.4%",
+            "keywords": "만족(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "39.65%",
+            "words": "교정(20), 후(18), 유치(17), 년(17), 치아(17), 수(14), 임(13), 플란트(13), 발치(12), 영구치(10), 공간(8), 시작(7), 사용(7), 진행(7), 성인(7), 월(6), 마무리(5), 반(5), 크라운(5), 전(5), 잔존(4), 뿌리(4), 선천(4), 이상(4), 염증(4), 보철(4), 경우(4), 앞니(3), 최소(3), 대신(3), 치료(3), 부분(3), 상황(3), 모습(3), 개월(3), 어금니(2), 주변(2), 세(2), 부착(2), 기간(2), 지(2), 순간(2), 번(2), 아래(2), 임시(2), 교체(2), 이동(2), 밑(2), 내원(2), 때(2), 자리(2), 오른쪽(2), 왼쪽(2), 때문(2), 결손(2), 이동해(1), 약간(1), 송곳니(1), 내(1), 구강(1), 대체(1), 설명(1), 연세(1), 브라(1), 엑스레이(1), 켓(1), 사진(1), 개수(1), 고민(1), 진료(1), 방법(1), 중(1), 검진(1), 감사(1), 상담(1), 상대(1), 만족(1), 필요(1), 상실(1), 돌출(1), 해소(1), 요소(1), 심미(1), 제작(1), 한계(1), 장치(1), 분(1), 곳(1), 사람(1), 케이스(1), 위(1), 안녕(1), 나이(1), 소구치(1), 포함(1), 상태(1), 신경(1), 파노라마(1), 확인(1), 양쪽(1), 부위(1), 치과(1), 식(1), 어른(1), 정도(1), 유구(1), 교합(1), 소요(1), 예상(1), 걸까요(1), 크기(1), 답(1), 방식(1), 립(1), 계획(1), 추후(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "15.38%",
+            "words": "를(28), 가(21), 을(15), 에(14), 이(13), 으로(10), 는(8), 로(8), 도(5), 의(5), 은(3), 과(3), 까지(2), 와(2), 만(2), 나(1), 밖에(1), 부터(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "15.17%",
+            "words": "있(25), 남(10), 하(9), 없(9), 되(7), 해야(4), 입니다(4), 보(4), 이(4), 했(3), 작(3), 심해(3), 빈(3), 해(2), 할(2), 치아(2), 됩니다(2), 인(2), 받(2), 않(2), 바랍니다(1), 할지(1), 주(1), 맞춰(1), 위해(1), 지(1), 볼(1), 줄여(1), 닫힌(1), 쓸(1), 약하(1), 올(1), 한다면(1), 비해(1), 채워(1), 통해(1), 쓰(1), 보이(1), 싶(1), 심해요(1), 찍(1), 바뀌(1), 씌운(1), 약한(1), 버티(1), 오(1), 한(1), 계셨(1), 나오(1), 못해(1), 치(1), 빠지(1), 맞추(1), 나눠져(1), 덴(1), 닫(1), 줄이(1), 드렸(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "12.35%",
+            "words": "는(20), 습니다(14), 아(10), 어(9), 기(7), 고(7), 지만(6), 던(5), 여(5), 은(4), 도록(3), 면(3), 지(3), 는데(3), 을(2), 어서(2), 게(2), 아야(1), 라면(1), 길(1), 다고(1), 다(1), 니(1), 거나(1), 라고(1), 어도(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.69%",
+            "words": ".(23), 1(7), 2(5), /(5), ((4), )(4), 2021(3), 9(3), 7(2), 10(2), 6(2), 75(2), ?(1), 12(1), 2022(1), 4(1), ↓(1), 2020(1), ~(1), :(1), 2019(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "5.53%",
+            "words": "하(16), 할(10), 적(6), 화(3), 된(3), 했(2), 한(2), 시켜(2), 들(2), 되(2), 합니다(1), 해야(1), 치가(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "1.63%",
+            "words": "더(5), 다시(1), 조금(1), 잘(1), 최대한(1), 거의(1), 쭉(1), 그러나(1), 간혹(1), 오늘(1), 마이(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.3%",
+            "words": "었(6), 시(3), 신(1), 겠(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "1.08%",
+            "words": "약(2), 그(2), 어떤(1), 어느(1), 다른(1), 총(1), 이런(1), 모든(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.11%",
+            "words": "유구(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.11%",
+            "words": "제(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "100",
+        "words": [
+            {
+                "word": "임플란트",
+                "count": "13"
+            },
+            {
+                "word": "발치",
+                "count": "12"
+            },
+            {
+                "word": "유치",
+                "count": "11"
+            },
+            {
+                "word": "치아",
+                "count": "10"
+            },
+            {
+                "word": "영구치",
+                "count": "10"
+            },
+            {
+                "word": "교정",
+                "count": "9"
+            },
+            {
+                "word": "공간",
+                "count": "8"
+            },
+            {
+                "word": "사용",
+                "count": "7"
+            },
+            {
+                "word": "진행",
+                "count": "7"
+            },
+            {
+                "word": "시작",
+                "count": "7"
+            },
+            {
+                "word": "마무리",
+                "count": "5"
+            },
+            {
+                "word": "치아교정",
+                "count": "5"
+            },
+            {
+                "word": "선천적",
+                "count": "4"
+            },
+            {
+                "word": "뿌리",
+                "count": "4"
+            },
+            {
+                "word": "염증",
+                "count": "4"
+            },
+            {
+                "word": "보철",
+                "count": "4"
+            },
+            {
+                "word": "크라운",
+                "count": "4"
+            },
+            {
+                "word": "이상",
+                "count": "4"
+            },
+            {
+                "word": "성인유치",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "모습",
+                "count": "3"
+            },
+            {
+                "word": "부분",
+                "count": "3"
+            },
+            {
+                "word": "상황",
+                "count": "3"
+            },
+            {
+                "word": "최소화",
+                "count": "3"
+            },
+            {
+                "word": "대신",
+                "count": "3"
+            },
+            {
+                "word": "성인",
+                "count": "3"
+            },
+            {
+                "word": "앞니",
+                "count": "3"
+            },
+            {
+                "word": "내원",
+                "count": "2"
+            },
+            {
+                "word": "자리",
+                "count": "2"
+            },
+            {
+                "word": "결손",
+                "count": "2"
+            },
+            {
+                "word": "때문",
+                "count": "2"
+            },
+            {
+                "word": "이동",
+                "count": "2"
+            },
+            {
+                "word": "순간",
+                "count": "2"
+            },
+            {
+                "word": "교체",
+                "count": "2"
+            },
+            {
+                "word": "치아들",
+                "count": "2"
+            },
+            {
+                "word": "치료",
+                "count": "2"
+            },
+            {
+                "word": "잔존",
+                "count": "2"
+            },
+            {
+                "word": "주변",
+                "count": "2"
+            },
+            {
+                "word": "오른쪽",
+                "count": "2"
+            },
+            {
+                "word": "왼쪽",
+                "count": "2"
+            },
+            {
+                "word": "어금니",
+                "count": "2"
+            },
+            {
+                "word": "아래",
+                "count": "2"
+            },
+            {
+                "word": "기간",
+                "count": "2"
+            },
+            {
+                "word": "부착",
+                "count": "2"
+            },
+            {
+                "word": "7월(교정",
+                "count": "2"
+            },
+            {
+                "word": "잔존유치",
+                "count": "2"
+            },
+            {
+                "word": "추후",
+                "count": "1"
+            },
+            {
+                "word": "유구",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "한계",
+                "count": "1"
+            },
+            {
+                "word": "설명",
+                "count": "1"
+            },
+            {
+                "word": "필요",
+                "count": "1"
+            },
+            {
+                "word": "크기",
+                "count": "1"
+            },
+            {
+                "word": "약간",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "임시크라운",
+                "count": "1"
+            },
+            {
+                "word": "방식",
+                "count": "1"
+            },
+            {
+                "word": "계획",
+                "count": "1"
+            },
+            {
+                "word": "교합",
+                "count": "1"
+            },
+            {
+                "word": "심미적",
+                "count": "1"
+            },
+            {
+                "word": "진료",
+                "count": "1"
+            },
+            {
+                "word": "방법",
+                "count": "1"
+            },
+            {
+                "word": "검진",
+                "count": "1"
+            },
+            {
+                "word": "상담",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "만족",
+                "count": "1"
+            },
+            {
+                "word": "요소",
+                "count": "1"
+            },
+            {
+                "word": "개수",
+                "count": "1"
+            },
+            {
+                "word": "제작",
+                "count": "1"
+            },
+            {
+                "word": "돌출",
+                "count": "1"
+            },
+            {
+                "word": "해소",
+                "count": "1"
+            },
+            {
+                "word": "교정장치",
+                "count": "1"
+            },
+            {
+                "word": "임시치아",
+                "count": "1"
+            },
+            {
+                "word": "예상",
+                "count": "1"
+            },
+            {
+                "word": "이동해",
+                "count": "1"
+            },
+            {
+                "word": "엑스레이",
+                "count": "1"
+            },
+            {
+                "word": "송곳니",
+                "count": "1"
+            },
+            {
+                "word": "고민",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "4월(교정",
+                "count": "1"
+            },
+            {
+                "word": "10월(교정",
+                "count": "1"
+            },
+            {
+                "word": "식립",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "양쪽",
+                "count": "1"
+            },
+            {
+                "word": "소요",
+                "count": "1"
+            },
+            {
+                "word": "브라켓",
+                "count": "1"
+            },
+            {
+                "word": "사람",
+                "count": "1"
+            },
+            {
+                "word": "나이",
+                "count": "1"
+            },
+            {
+                "word": "파노라마",
+                "count": "1"
+            },
+            {
+                "word": "케이스",
+                "count": "1"
+            },
+            {
+                "word": "확인",
+                "count": "1"
+            },
+            {
+                "word": "포함",
+                "count": "1"
+            },
+            {
+                "word": "상태",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "대체",
+                "count": "1"
+            },
+            {
+                "word": "어른",
+                "count": "1"
+            },
+            {
+                "word": "정도",
+                "count": "1"
+            },
+            {
+                "word": "상대적",
+                "count": "1"
+            },
+            {
+                "word": "상실",
+                "count": "1"
+            },
+            {
+                "word": "신경치료",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "성인유치",
+            "search_volume_total": "210",
+            "search_volume_pc": "30",
+            "search_volume_mobile": "180",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "1"
+        }
+    ],
+    "same_topic_posting": "성인유치 (9)"
+}

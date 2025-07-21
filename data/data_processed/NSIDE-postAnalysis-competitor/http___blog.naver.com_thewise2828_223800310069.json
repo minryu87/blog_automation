@@ -1,0 +1,629 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "81.73",
+            "evaluation": "적합",
+            "percentage": "81.73%"
+        },
+        {
+            "category": "주제",
+            "score": "78.13",
+            "evaluation": "적합",
+            "percentage": "78.13%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "59.43",
+            "evaluation": "적합",
+            "percentage": "59.43%"
+        },
+        {
+            "category": "형태소",
+            "score": "82.45",
+            "evaluation": "적합",
+            "percentage": "82.45%"
+        },
+        {
+            "category": "가독성",
+            "score": "77.86",
+            "evaluation": "적합",
+            "percentage": "77.86%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "66.00",
+            "evaluation": "정보성",
+            "percentage": "66.00%"
+        }
+    ],
+    "publish_time": "2025-03-20 12",
+    "exposure_status": "발행된지 123일 (3시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:15:34 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "22",
+        "title_without_space": "16",
+        "content_with_space": "1,649",
+        "content_without_space": "1,258"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "275",
+        "syllable_count": "392",
+        "word_count": "97",
+        "abusing_word_count": "0"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "8",
+        "material_images": "0",
+        "uploaded_images": "8",
+        "content_images": "8",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMTIz/MDAxNzQ1Mzg2MjA1NDkz.hWg5Y-Ng-BE7bFvadKQAXYRoz8RXBOughYCMH_gySl8g.xPT77gRdS-HkBJEAH3YPNlOb3qso4EVmplYRraCWoMog.PNG/%EC%9E%87%EB%AA%B8_%EB%AC%BC%EC%A7%91.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMjMy/MDAxNzQ1Mzg2MzIyOTMx.IXe8pDHqnte3LrC0W2ohkOyyt_EFULMofIEtl-CQkX0g.BAJu5KqGfZqIr9MruD3HCwdWTAJ5ddZs19LtKXTwwN4g.PNG/03.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMTU4/MDAxNzQ1Mzg2MzI2MTc1.VRSSDD6VVzuCcr9_VNJZkPCOrBJSSsEFKF9CPUZKv0Qg.gOgiC3D7aoo3JFwZz6-LO6tGUs8YE2JZdWror7EyM_gg.PNG/03.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfODkg/MDAxNzQ1Mzg2MzI5OTQ2.LZNfn2N1Coqti-XE2494Mj-8g5o0qkupvxWqJqgQtFog.L2HSKts6RhIqoc6_iISzOz_TTwA-1Cah0G6lkGXaDu0g.PNG/03.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMzEg/MDAxNzQ1Mzg2MzMzMDQ5.RjLDBB6qy2ayvKg0kg81l6Mz38vxC8g0VJN8CMqrqDAg.CjI0KzrfUgNJxKVugRH4sCs0BmxZvSvcRLYa7Z5BsZQg.PNG/03.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMTQ3/MDAxNzQ1Mzg2MzE2Nzcy.nYY-ApEMXlIlmBS47fpa9_N9n4jygFw_YX-6rIOsd5Qg.aJdfVDkFXDeJmZRlxJdWasB7crPsKgRrcrD8OGpgiosg.JPEG/2025_%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%82%AC%EC%9A%A9%EC%9D%B4%EB%AF%B8%EC%A7%80_%EC%A3%BC%EC%86%8C.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMjUg/MDAxNzQ1Mzg2MzE2Nzc2.qm0Djg4rNivqZ_L6g1mJMIhIdk5MEvwWI25_aiUrp3gg.bQZZM5B3O7YLmLWYNnJZWYXKP687Od627Y0KqZrzh8cg.JPEG/2025_%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%82%AC%EC%9A%A9%EC%9D%B4%EB%AF%B8%EC%A7%80_%EC%A7%84%EB%A3%8C%EA%B3%BC%EB%AA%A9.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjNfMzgg/MDAxNzQ1Mzg2MzE2Nzgy.Ao3eUVlUs-JEPGD9ax9sJo2P7QpwGjsAZho7sh9lBoIg.HByMi491I9g04tflINNnWpk6bAX_ad8NqQfW9bWBbu0g.JPEG/2025_%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%82%AC%EC%9A%A9%EC%9D%B4%EB%AF%B8%EC%A7%80_%EC%A7%84%EB%A3%8C%EC%8B%9C%EA%B0%84.jpg?type=w800"
+        ]
+    },
+    "post_title": "잇몸 물집, 하얀 물집 발생 원인 4가지",
+    "post_content": "스트레스와 피로가 쌓이면 신체는 여러 반응을 보이곤 합니다. 이때 잇몸에서도 물집이 생기는 문제가 발생해요. 단순히 몸의 면역력이 떨어져 잇몸에 생기는 것이죠. 그런데 면역력 외에도 다른 문제로도 흔하게 물집이 생길 수 있어요. 따라서 오늘은 잇몸 물집 발생 원인, 증상 등에 대해 자세히 알아보려고 하는데요. 함께 알아볼까요? 잇몸에 물집이 생겼어요! 치료가 필요한가요? 우리 몸은 피로가 쌓이거나 과도한 스트레스를 받을 때 여러 방식으로 신호를 보냅니다. 사실 잇몸은 면역력과 매우 밀접한 곳으로 면역이 떨어지면 생길 수 있어요. 이때 단순히 피로로 인해 잇몸 물집이 생겼다면 자연스럽게 시간이 지나면 호전됩니다. 다만 사라지지 않고 계속 지속된다면 잇몸에 염증이 생겼다는 신호예요. 잇몸 하얀 물집 발생 원인을 확인해 보세요! 1. 면역력 저하 대표적으로는 피로나 스트레스로 인해 면역이 떨어지면 잇몸에 문제가 생겨요. 우리 몸은 과도한 스트레스를 받으면 코르티솔이라는 호르몬이 분비가 됩니다. 이때 수치가 너무 높아지면 면역력이 떨어져요. 이렇게 면역체계가 약해지면 세균이 활발하게 번식하는 환경이 조성됩니다. 때문에 잇몸 안쪽으로 쉽게 침투해 잇몸 물집이 생기는 것이랍니다. 2. 치주농양 잇몸 염증으로 발생한 농양입니다. 잇몸 안에 염증이 발생해 치아와 잇몸이 벌어져 있는 사이에 세균이 침입한 상태예요. 이 질환은 부어오르는 것이 특징이죠. 만약 이때 잇몸뼈까지 침투한다면 잇몸뼈가 녹기도 하고 최악의 경우 치아를 발치하는 상황까지 올 수 있답니다. 3. 위생관리 부족 평상시 위생관리가 부족해도 잇몸 물집이 쉽게 발생할 수 있어요. 양치질이 제대로 이루어지지 않아 치아와 잇몸 사이에 치태와 치석이 쌓여 쉽게 번식하는 것이죠. 또한 구강 위생이 좋지 않으면 나쁜 균이 증가합니다. 우리 몸은 이러한 반응에 대항하기 위해 면역 반응을 일으켜 농양이 형성될 수 있답니다. 4. 치은염&치주염 잇몸에 염증에 생긴 치주 질환입니다. 치태와 치석이 잇몸에 쌓이면서 세균이 증식한 상태예요. 때문에 잇몸이 붉어지고 통증이 느껴지거나 부어오르는 증상이 동반될 수 있습니다. 치은염은 염증이 잇몸에만 있는 상태예요. 그러나 치료를 하지 않고 염증이 점점 깊어지면 치주염으로 발전됩니다. 치주염으로 이어졌다면 잇몸뼈까지 이어졌을 가능성이 높습니다. 잇몸 물집은 원인에 따라 치료 방법이 달라져요 발생 원인에 따라 적절한 치료가 진행됩니다. 간단한 염증이라면 스케일링을 통해 문제를 해결할 수 있어요. 치주농양이나 치은염, 치주염이라면 잇몸치료를 통해 염증을 제거해 주셔야 합니다. 물집 터트리면 안 돼요! 2차 문제가 생길 위험 잇몸 하얀 물집이 생겼다면 직접 손이나 면봉을 이용해 짜거나 만지시곤 합니다. 하지만 이렇게 물집을 터뜨린다면 2차 감염으로 이어질 가능성이 높아요. 즉, 고의로 제거하려고 하시면 안 됩니다. 특히나 물집을 제거했다고 해도 염증이 제거된 것은 아니에요. 염증으로 생겼다면 시간이 지나면 다시 재발하곤 해요. 지금까지 잇몸 물집 다양한 원인 등에 대해 자세히 알아보는 시간이었습니다. 물집이 금방 사라진다면 대부분 면역이 원인일 가능성이 많아요. 다만 오랜 시간 동안 사라지지 않고 재발된다면 잇몸에 문제가 생겼다고 유추할 수 있답니다. 그럼 설명드린 내용이 도움이 되셨길 바라며 여기서 포스팅 마치겠습니다. 감사합니다.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "",
+        "excessive_words": "잇몸(28), 물집(15), 염증(10)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "63.72%",
+            "keywords": "잇몸(24), 염증(10), 발생(7), 원인(6), 면역력(5), 스트레스(4), 면역(4), 피로(4), 치료(4), 이때(4), 상태(3), 치아(3), 세균(3), 반응(3), 잇몸뼈(3), 치주염(3), 증상(2), 농양(2), 치은염(2), 재발(2), 치석(2), 부족(2), 사이(2), 질환(2), 치태(2), 특징(1), 잇몸치료(1), 통증(1), 치주(1), 코르티솔(1), 다양(1), 호전(1), 호르몬(1), 필요(1), 평상시(1), 자연(1), 밀접(1), 발치(1), 방식(1), 동안(1), 대표적(1), 과도(1), 구강(1), 대부분(1), 수치(1), 신체(1), 저하(1), 증가(1), 증식(1), 경우(1), 감염(1), 안쪽(1), 양치질(1), 지속(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "8.37%",
+            "keywords": "우리(3), 가능성(3), 때문(2), 진행(1), 해결(1), 포스팅(1), 지금(1), 이용(1), 내용(1), 대항(1), 도움(1), 오늘(1), 조성(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "7.44%",
+            "keywords": "물집(15), 분비(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "6.51%",
+            "keywords": "문제(6), 제거(4), 침투(2), 확인(1), 설명(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "2.33%",
+            "keywords": "시간(4), 유추(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "1.86%",
+            "keywords": "환경(1), 형성(1), 위생(1), 상황(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.4%",
+            "keywords": "신호(2), 여기(1)"
+        },
+        {
+            "category_name": "원예·재배",
+            "percentage": "0.93%",
+            "keywords": "번식(2)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.47%",
+            "keywords": "최악(1)"
+        },
+        {
+            "category_name": "사진",
+            "percentage": "0.47%",
+            "keywords": "침입(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.47%",
+            "keywords": "위험(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "0.47%",
+            "keywords": "방법(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "0.47%",
+            "keywords": "감사(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.47%",
+            "keywords": "동반(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "0.47%",
+            "keywords": "면봉(1)"
+        },
+        {
+            "category_name": "스포츠",
+            "percentage": "0.47%",
+            "keywords": "발전(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "0.47%",
+            "keywords": "스케일링(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "33.38%",
+            "words": "잇몸(28), 물집(15), 염증(10), 수(8), 발생(7), 문제(6), 원인(6), 면역(5), 치료(5), 면역력(5), 것(5), 시간(4), 피로(4), 치주염(4), 농양(4), 제거(4), 스트레스(4), 몸(4), 뼈(3), 치주(3), 위생(3), 치아(3), 상태(3), 치은염(3), 세균(3), 이때(3), 반응(3), 우리(3), 가능(3), 재발(2), 침투(2), 때문(2), 번식(2), 부족(2), 치태(2), 치석(2), 관리(2), 차(2), 질환(2), 사이(2), 신호(2), 때(2), 증상(2), 등(2), 해결(1), 스케일링(1), 오늘(1), 외(1), 위험(1), 진행(1), 필요(1), 동반(1), 통증(1), 발전(1), 손(1), 증식(1), 방법(1), 면봉(1), 내용(1), 설명(1), 유추(1), 도움(1), 여기(1), 감사(1), 포스팅(1), 동안(1), 대부분(1), 다면(1), 이용(1), 감염(1), 신체(1), 다양(1), 지금(1), 형성(1), 증가(1), 안(1), 대표(1), 저하(1), 확인(1), 지속(1), 침입(1), 과도(1), 코르티솔(1), 분비(1), 수치(1), 환경(1), 조성(1), 안쪽(1), 호르몬(1), 호전(1), 특징(1), 양치질(1), 평상시(1), 방식(1), 구강(1), 체계(1), 균(1), 밀접(1), 곳(1), 자연(1), 만약(1), 최악(1), 경우(1), 상황(1), 발치(1), 대항(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "18.21%",
+            "words": "이(43), 에(20), 가(13), 은(9), 으로(9), 을(8), 를(7), 와(5), 까지(4), 도(4), 로(3), 만(2), 이나(2), 는(2), 나(2), 의(2), 서(1), 과(1), 에서(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "16.89%",
+            "words": "있(10), 이(8), 생겼(6), 않(5), 지(4), 하(4), 예요(4), 쌓이(3), 쉽(3), 높(3), 생길(3), 생기(3), 합니다(3), 하얀(2), 입니다(2), 이어졌(2), 따라(2), 통해(2), 부어오르(2), 사라지(2), 됩니다(2), 받(2), 지나(2), 떨어지(2), 알아보(2), 인해(2), 대해(2), 짜(1), 지시(1), 되(1), 터트리(1), 터뜨린(1), 주(1), 달라져요(1), 돼요(1), 드린(1), 일(1), 해요(1), 사라진다면(1), 깊(1), 마치(1), 아니(1), 바라(1), 많(1), 해도(1), 이어질(1), 벌어져(1), 보냅니다(1), 보(1), 생겨요(1), 떨어져요(1), 볼까요(1), 알(1), 보이(1), 떨어져(1), 흔하(1), 약해(1), 녹(1), 위해(1), 일으켜(1), 생긴(1), 붉어지(1), 나쁜(1), 좋(1), 올(1), 이루어지(1), 쌓여(1), 느껴(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "11.61%",
+            "words": "는(11), 면(10), 게(6), 어요(5), 지(5), 고(5), 습니다(4), 다면(4), 죠(3), 아(3), 답니다(3), 곤(3), 거나(3), 아요(2), 기(2), 다고(2), 으면(2), 을(2), 라면(2), 려고(2), 길(1), 에요(1), 며(1), 다는(1), 는데요(1), 라는(1), 랍니다(1), 면서(1), 어(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.92%",
+            "words": ".(45), 2(3), !(3), ,(3), ?(2), &(1), 4(1), 1(1), 3(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "6.07%",
+            "words": "한(10), 하(7), 해(5), 됩니다(4), 성(3), 할(3), 합니다(2), 될(2), 된다면(2), 했(1), 된(1), 한다면(1), 스럽(1), 적(1), 해요(1), 한가요(1), 해도(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.83%",
+            "words": "이렇게(2), 다만(2), 단순히(2), 자세히(2), 안(2), 하지만(1), 직접(1), 즉(1), 고의로(1), 그럼(1), 금방(1), 다시(1), 특히(1), 점점(1), 제대로(1), 함께(1), 따라서(1), 그런데(1), 사실(1), 매우(1), 또한(1), 너무(1), 계속(1), 그러나(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "0.79%",
+            "words": "셨(1), 겠(1), 었(1), 시(1), 셔야(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.66%",
+            "words": "여러(2), 오랜(1), 다른(1), 이(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.66%",
+            "words": "간단(1), 적절(1), 이러(1), 활발(1), 과도(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "97",
+        "words": [
+            {
+                "word": "잇몸",
+                "count": "24"
+            },
+            {
+                "word": "물집",
+                "count": "15"
+            },
+            {
+                "word": "염증",
+                "count": "10"
+            },
+            {
+                "word": "발생",
+                "count": "7"
+            },
+            {
+                "word": "문제",
+                "count": "6"
+            },
+            {
+                "word": "원인",
+                "count": "6"
+            },
+            {
+                "word": "면역력",
+                "count": "5"
+            },
+            {
+                "word": "피로",
+                "count": "4"
+            },
+            {
+                "word": "스트레스",
+                "count": "4"
+            },
+            {
+                "word": "제거",
+                "count": "4"
+            },
+            {
+                "word": "면역",
+                "count": "4"
+            },
+            {
+                "word": "시간",
+                "count": "4"
+            },
+            {
+                "word": "이때",
+                "count": "4"
+            },
+            {
+                "word": "치료",
+                "count": "4"
+            },
+            {
+                "word": "잇몸뼈",
+                "count": "3"
+            },
+            {
+                "word": "치주염",
+                "count": "3"
+            },
+            {
+                "word": "가능성",
+                "count": "3"
+            },
+            {
+                "word": "상태",
+                "count": "3"
+            },
+            {
+                "word": "우리",
+                "count": "3"
+            },
+            {
+                "word": "치아",
+                "count": "3"
+            },
+            {
+                "word": "반응",
+                "count": "3"
+            },
+            {
+                "word": "세균",
+                "count": "3"
+            },
+            {
+                "word": "농양",
+                "count": "2"
+            },
+            {
+                "word": "침투",
+                "count": "2"
+            },
+            {
+                "word": "사이",
+                "count": "2"
+            },
+            {
+                "word": "재발",
+                "count": "2"
+            },
+            {
+                "word": "때문",
+                "count": "2"
+            },
+            {
+                "word": "치석",
+                "count": "2"
+            },
+            {
+                "word": "치태",
+                "count": "2"
+            },
+            {
+                "word": "질환",
+                "count": "2"
+            },
+            {
+                "word": "위생관리",
+                "count": "2"
+            },
+            {
+                "word": "치주농양",
+                "count": "2"
+            },
+            {
+                "word": "번식",
+                "count": "2"
+            },
+            {
+                "word": "부족",
+                "count": "2"
+            },
+            {
+                "word": "증상",
+                "count": "2"
+            },
+            {
+                "word": "신호",
+                "count": "2"
+            },
+            {
+                "word": "치은염",
+                "count": "2"
+            },
+            {
+                "word": "통증",
+                "count": "1"
+            },
+            {
+                "word": "형성",
+                "count": "1"
+            },
+            {
+                "word": "증식",
+                "count": "1"
+            },
+            {
+                "word": "동반",
+                "count": "1"
+            },
+            {
+                "word": "방법",
+                "count": "1"
+            },
+            {
+                "word": "발전",
+                "count": "1"
+            },
+            {
+                "word": "대항",
+                "count": "1"
+            },
+            {
+                "word": "증가",
+                "count": "1"
+            },
+            {
+                "word": "최악",
+                "count": "1"
+            },
+            {
+                "word": "특징",
+                "count": "1"
+            },
+            {
+                "word": "발치",
+                "count": "1"
+            },
+            {
+                "word": "상황",
+                "count": "1"
+            },
+            {
+                "word": "위생",
+                "count": "1"
+            },
+            {
+                "word": "양치질",
+                "count": "1"
+            },
+            {
+                "word": "진행",
+                "count": "1"
+            },
+            {
+                "word": "해결",
+                "count": "1"
+            },
+            {
+                "word": "설명",
+                "count": "1"
+            },
+            {
+                "word": "유추",
+                "count": "1"
+            },
+            {
+                "word": "내용",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "여기",
+                "count": "1"
+            },
+            {
+                "word": "다양",
+                "count": "1"
+            },
+            {
+                "word": "지금",
+                "count": "1"
+            },
+            {
+                "word": "잇몸치료",
+                "count": "1"
+            },
+            {
+                "word": "침입",
+                "count": "1"
+            },
+            {
+                "word": "면봉",
+                "count": "1"
+            },
+            {
+                "word": "이용",
+                "count": "1"
+            },
+            {
+                "word": "감염",
+                "count": "1"
+            },
+            {
+                "word": "스케일링",
+                "count": "1"
+            },
+            {
+                "word": "신체",
+                "count": "1"
+            },
+            {
+                "word": "대부분",
+                "count": "1"
+            },
+            {
+                "word": "터뜨린다면",
+                "count": "1"
+            },
+            {
+                "word": "동안",
+                "count": "1"
+            },
+            {
+                "word": "포스팅",
+                "count": "1"
+            },
+            {
+                "word": "필요",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "위험",
+                "count": "1"
+            },
+            {
+                "word": "치주",
+                "count": "1"
+            },
+            {
+                "word": "경우",
+                "count": "1"
+            },
+            {
+                "word": "저하",
+                "count": "1"
+            },
+            {
+                "word": "평상시",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "치은염&치주염",
+                "count": "1"
+            },
+            {
+                "word": "방식",
+                "count": "1"
+            },
+            {
+                "word": "밀접",
+                "count": "1"
+            },
+            {
+                "word": "분비",
+                "count": "1"
+            },
+            {
+                "word": "호르몬",
+                "count": "1"
+            },
+            {
+                "word": "수치",
+                "count": "1"
+            },
+            {
+                "word": "면역체계",
+                "count": "1"
+            },
+            {
+                "word": "조성",
+                "count": "1"
+            },
+            {
+                "word": "환경",
+                "count": "1"
+            },
+            {
+                "word": "코르티솔",
+                "count": "1"
+            },
+            {
+                "word": "과도",
+                "count": "1"
+            },
+            {
+                "word": "호전",
+                "count": "1"
+            },
+            {
+                "word": "자연",
+                "count": "1"
+            },
+            {
+                "word": "지속",
+                "count": "1"
+            },
+            {
+                "word": "확인",
+                "count": "1"
+            },
+            {
+                "word": "대표적",
+                "count": "1"
+            },
+            {
+                "word": "안쪽",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "잇몸물집",
+            "search_volume_total": "2,620",
+            "search_volume_pc": "240",
+            "search_volume_mobile": "2,380",
+            "clicks_pc": "-",
+            "clicks_mobile": "1",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.03%",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "잇몸물집 (2)"
+}

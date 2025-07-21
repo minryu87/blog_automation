@@ -1,0 +1,913 @@
+{
+    "posting_score": "준최5-Lv.1",
+    "exposure_score": "33.04",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "78.26",
+            "evaluation": "적합",
+            "percentage": "78.26%"
+        },
+        {
+            "category": "주제",
+            "score": "70.11",
+            "evaluation": "적합",
+            "percentage": "70.11%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "70.26",
+            "evaluation": "적합",
+            "percentage": "70.26%"
+        },
+        {
+            "category": "형태소",
+            "score": "60.50",
+            "evaluation": "적합",
+            "percentage": "60.50%"
+        },
+        {
+            "category": "가독성",
+            "score": "72.80",
+            "evaluation": "적합",
+            "percentage": "72.80%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "86.00",
+            "evaluation": "정보성",
+            "percentage": "86.00%"
+        }
+    ],
+    "publish_time": "2024-08-05 19",
+    "exposure_status": "발행된지 349일 (19시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:43:27 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "58",
+        "title_without_space": "47",
+        "content_with_space": "2,340",
+        "content_without_space": "1,832"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "362",
+        "syllable_count": "509",
+        "word_count": "159",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "21",
+        "material_images": "0",
+        "uploaded_images": "14",
+        "content_images": "21",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMTAzMjhfMTE4/MDAxNjE2OTM4MjUxMzg1.3Ovlnb9Wb59LvbZGxjPzljC-GPyeauR5HxXfh214NPcg.Cf30NhlPqItnaQuvUbfwyShfv9unxAHCcOu_gSgu0Vsg.PNG.sunnyflow/L2_Logo_6.png?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMTAzMjlfMTcy/MDAxNjE3MDIwNzkxNDEw.nBpc19jyZu8UOsDDaqFlVgHn4Oh2YaSqnwue4Y0i0vAg.1hdbV1w4MWgCWqHI2gs1w201Tkc8FHMhuZNF8wLHaIcg.PNG.sunnyflow/%EC%97%98%ED%88%AC%EC%B9%98%EA%B3%BC_%EC%95%BD%EB%A0%A54.png?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMjUx/MDAxNzIyODUyODE2NTQ2.-lOrP8Ht5cyIu6kRp-6eF0emrB71pfQ6lOOA3f_ZeKkg.5Gaxd9NpL1ic_WdzE7-xdc_eOWd9AChAtoQ--zyXoUEg.PNG/image.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMTg5/MDAxNzIyODM3MjE4MDQy.x8QsPQyQyxJIrQYys8p_UZEgLR6nHx7Y4DKRli0_Ibcg.aXuG_3_ovR8Tq7cuuiJkiDBwFDbZbufv17aZ6_qiISgg.JPEG/L2D_8564.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfODYg/MDAxNzIyODM3MjE4MjI2.dQP51qZjGpc4l_Bu4a2BjHrrmk4aRyfF5ML46o_akD8g.ATTU6tZhsytR9Q7dXfalHpNVjFRjekQ7knGYcsR3Ylgg.JPEG/L2D_8559.JPG?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMjk0/MDAxNzIyODM3MjQ4ODcw.RuX-mfkyUZnVK4OzDBPG2_eVDQ80SZ-WJVUPBNDLDnUg.N4Tnh6rGgH-Y8FJIt0eQF2BhJRkXWKFChmnZndeFUbYg.JPEG/SE-fcc2bd4c-7f95-4f52-af24-3a6875b80c34.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMjY4/MDAxNzIyODM3MjU4OTk5.si4nLOYgcbqHSEH8LXh6W4td5XjDtiXrTEaDwlBaRz8g._iQr_OyZofF7oRBS4Ar6b40ICs62wEdRC7bKII2v0lEg.JPEG/%EC%B5%9C%EB%AC%B4%EB%8A%AC_20230202_195659.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfNDcg/MDAxNzIyODM3NDk5Nzg5.IoWKpybAPZy-ekdEmkyRoLManmInI537p4wkWh3T9Ikg.62smtJIU9El-tBRHn-cAl2REyMGy1S_AX96RBK230Ncg.JPEG/%EC%B5%9C%EB%AC%B4%EB%8A%AC_20230418_174221.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMTA5/MDAxNzIyODM3NDk5Nzky.s2hC3og0-MaLlTmbAlqqsbMrJZWp-XnibavTA2MmBdMg.DfwB68LmtRz_GfreTL2P6RvzIh2EJZaI_daXhPM-_LQg.JPEG/%EC%B5%9C%EB%AC%B4%EB%8A%AC_20230425_181811.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfNDQg/MDAxNzIyODM3NTQxMTQ1.vwZvER5zcyub6DAJobttIpZe8V4_3tJns432tkZdMDAg.gTiVdR99c2lpsCCFQ3sKPL_iQIRdshIUGiRYUUlpwk4g.JPEG/%EC%B5%9C%EB%AC%B4%EB%8A%AC_20230509_113444.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMTM0/MDAxNzIyODQwMTQ4NDIy.yjoSvXny3xdshw7DP4ivFls2ARyzTjrF3zESOIFhgRgg.tgYLuRY8m3p4BtO1vfrGPCKXR8xEkoMYfVvwa8UVeX8g.PNG/image.png?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMjg5/MDAxNzIyODQwMTY3MTg3.6khVz0Baj_2OGEpxC6Bc_GFczau7JtPxZorZ5n1pwxsg.0_C4ZTgXblmXJoByhi_6IJu-EZpP2Rn47YNf2kNsB9Ag.PNG/image.png?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMTkz/MDAxNzIyODQwMjQwMTcx.yXoN9cMCoB1R75s1X78biTusHe0-vQ9V0o_YDUf0lF4g.QXvjflTm9pBI-4TcfRSj_dheOjo4ZUytkf47Wgiox48g.PNG/image.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfNDIg/MDAxNzIyODM3NTczOTc4.1LfLci4HSZEoIBnFGjBEUH43PnHH7k5ZxRnMjmlvPaUg.7wR6YJLQuvTLFvcXhSgMvBuZVxbq-u0uuBQZKhwpiBUg.JPEG/L2D_0327.JPG?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfNDQg/MDAxNzIyODM3NTQxMTQ1.vwZvER5zcyub6DAJobttIpZe8V4_3tJns432tkZdMDAg.gTiVdR99c2lpsCCFQ3sKPL_iQIRdshIUGiRYUUlpwk4g.JPEG/%EC%B5%9C%EB%AC%B4%EB%8A%AC_20230509_113444.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfMTMz/MDAxNzIyODM3OTkxMjYy.hA899_S8asvrqTolvo_yWQOvzwESswrEPZwBTG5ICNgg.E5HwP5sCc3VQvOk-xjHzIX98cPErZs2nKSD7bzIja3Mg.PNG/collage1.png?type=w800",
+            "https://postfiles.pstatic.net/MjAyMzA5MjJfNjgg/MDAxNjk1MzY4NDA3MjQ2.O7JBvUHTj6NQcddvT-yDUazk6CzNbcgjddw21JRTuGUg.AiuGCT78dUuj12uQyBUI2KU0fEHtRmlDi_ulxfuiJLcg.PNG.sunnyflow/%EB%84%A4%EC%9D%B4%EB%B2%84%EC%98%88%EC%95%BD,_%ED%86%A1%ED%86%A1.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMzA5MjJfMTY5/MDAxNjk1MzY4NDA3MjQ1.QdkpOAyqmV5cu-slt4_4ccGzQwFvBpMbg_YP2az4P2Eg.m7SVz7UqkLc7CeKSOvulTyrbr5AUr11csJnRNM-polUg.PNG.sunnyflow/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMzA5MjJfMTM0/MDAxNjk1MzY4NDA3MjUw.N_Ti9J1SBDN1Yb8TGz5TC9eoMRMOcXUBGe8dN9AQ7vUg.TMloxc8k7xqxuap5d7RSQMZ5g1icXA2ID4laXHUowQYg.PNG.sunnyflow/%EC%A0%84%ED%99%94.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMzA5MjJfMiAg/MDAxNjk1MzY4NDA3MjY3.2lxXXI7luO9AZJJE80Iz1Qtapb82PgfTaUE84V1WeFgg.v3iXo4jSH-1qEIpaTsWWbR-xWeMlcuXMbGJYzgkX2fUg.PNG.sunnyflow/%EB%B9%84%EC%9A%A9%EC%95%88%EB%82%B4.png?type=w773",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDVfNzEg/MDAxNzIyODM3MTk1Nzky.ZbRTUyMk1ljAHFO7WDdLTWMcrfpdaVRPva52_2TfLSUg.B5XA78Mq6lattXTCIXYoemBVcnxtDsdDnUpi7Npugqkg.PNG/SE-5e122144-9a39-4fd9-82fc-b401797abb6b.png?type=w800"
+        ]
+    },
+    "post_title": "변색된 앞니 실활치미백: 충치/교정치료 후 신경 죽어 앞니신경치료 후 레진코어로 종료.치아사이틈 레진까지",
+    "post_content": "안녕하세요, 엘투치과 대표원장 치의학박사 & 치주과 전문의 최순호입니다 :) 모든 글은 엘투치과 최순호 원장에 의해 직접 작성됩니다. 사진 및및 내용에 대한 무단 도용 및 복제는 불가합니다. 엘투치과 : 서울 강남구 삼성동 봉은사로 469 에스타워 - 삼성중앙역 1번출구(도보1분), 선정릉역 2번출구(도보7분), 청담역 7번출구(도보10분) 앞니 부위의 변색은 여러가지 원인들에 의해 나타날 수 있는데, 단순 \"착색\"이 아닌 경우에는 치아 내부의 신경이 죽어서 나타나는 경우가 대부분입니다. 치아 외상으로 인해 급성적으로 변색이 나타나는 경우에는 위의 사례처럼 치아가 충혈되는 듯한 양상으로 나타나기도 합니다. 만성적인 자극이나 (깊은 충치치료) 교정치료와 같은 외부적인 자극에 의해 점차점차 신경이 죽은 경우, 그리고 시간이 오래 지속되었을 경우에는 이처럼 노란색깔로 변색이 진행되는 경우가 많습니다. 블로그 포스팅을 통해 변색된 앞니에 대해 말씀드린 케이스들은 대부분 아래와 같이 \"신경치료 및 크라운치료를 했던\" 치아들의 변색 케이스였습니다. 앞니 재치료가 필요한 상황에서의 변색. https://blog.naver.com/sunnyflow/222960416193 오늘 소개시켜드릴 사례는 이전 교정치료/충치치료 이후 오랜 기간에 걸쳐 치아 변색이 진행되었고, 검진 결과 치아 신경이 죽은 것이 확인되어 신경치료를 진행하고 실활치미백 치료를 한 뒤 레진 코어로만 마무리를 한 사례입니다. 10여년 전에 교정치료를 마무리한 환자분으로, 충치치료 시기는 잘 기억이 나지 않는다며 아마 교정치료할때 같이했었던 것 같다고 하셨습니다. 가운데 앞니의 누런 변색이 관찰됩니다. 변색된 앞니에 냉온자극을 가해보고 전기치수검사를 하였을때 음성반응이 나타나 치아 신경이 죽었음을 확인할 수 있었습니다. 따라서 해당치아에 대해서는 신경치료 및 실활치미백 치료를 진행하고. 추후 레진 코어로 마무리 하는 것으로 계획을 잡았습니다. 신경치료가 들어가고, 레진치료가 깊었던 부위가 있었으며, 치아 사이 틈도 벌어진 케이스여서 크라운 치료로 마무리하는게 권장되었지만, \"앞니부위에 대한 심미적 요구도\"가 낮은 환자분이어서 레진코어로만 마무리를 하고, 레진 치료를 통해 치아사이틈을 메우기로 하였습니다. (변색된 것도 알고 있었고, 치아 사이틈도 알고 있었지만, 그냥 그렇게 살아오셨다고....ㅎ) 신경치료를 진행하였고, 깨끗하게 신경치료가 마무리된 뒤 실활치미백제를 넣어 치아를 밝게 하였습니다. 실활치미백 1회차 치아의 색상은 많이 개선이 되었지만, 그래도 주변 치아에 비해서는 어두운 모습이었습니다. 오랜기간 변색이 지속되었을 경우에는 실활치미백제에 대한 반응이 떨어지는 경우가 많습니다. 레진 코어로만 마무리 하는 경우에 대한 이야기. 기존 충치의 범위가 광범위 했거나, 치아가 외상을 입었거나 하는 경우에는 크라운 치료가 추천되지만, 교정치료에 의해서 치아 신경이 죽고 변색이 되는 경우가 있는데 이러한 경우에는 레진코어만으로도 충분히 마무리가 가능합니다. 신경치료 후에도 구조적인 안정성이 깨지지 않는 경우에는요. 다시 오늘 사례로 돌아와서, 치아는 원래의 색상을 회복하였고 실활치미백치료에 대한 것은 종료가 되었습니다. 이후 치아 사이틈에 대한 레진치료가 진행되었는데요. 치아 사이 공간이 매우 작은 편이었고, 양쪽을 대칭적으로 만들기 위해서는 치아의 삭제가 어느정도 필요한 상황. 이러한 경우에는 환자분 얼굴의 중심선 위치에 따라 한쪽에만 레진치료를 하기도 하는데요. 물론 어느정도의 치아 비대칭은 나타나지만, 심미적 요구도가 크지 않은 경우에는 위와 같이 마무리를 할 수 있습니다. 신경치료 및 실활치미백, 그리고 치아사이틈에 대한 레진치료가 완료된 모습입니다. 사진상 왼쪽 치아가 실활치미백을 진행한 치아이고, 오른쪽 치아가 레진을 덧댄 치아입니다. 자세히 관찰하면, 비대칭을 느낄 수 있지만, 얼굴전체에서 바라보는 모습에서는 큰 비대칭은 아니기에, \"치아를 최대한 건드리지 않는\" 개념 속에서는 만족스러운 치료가 된 것 같습니다. 오늘 포스팅 또한 많은 분들에게 도움이 되길 바랍니다. 이상 엘투치과 대표원장 치의학박사 최순호였습니다. 감사합니다. 위 영역을 터치하시면 네이버예약, 톡톡으로 연결됩니다. 위 영역을 터치하시면 엘투치과 카카오톡 채널로 연결됩니다. 위 영역을 터치하시면 엘투치과 전화걸기로 연결됩니다. <의료법 관련 Notice> 본 포스팅에 사용된 증례 사진은 환자분의 동의 하에 업로드 됩니다. 치료 시작 : 2023.05.22 치료 종료 : 2023.06.25 레진/인레이/크라운/라미네이트 등 보존-보철치료 관련 발생 가능한 부작용 및 합병증 : 치아시림 및 통증으로 인한 신경치료 가능성 : 수복물 및 보철물의 파절 혹은 탈락 : 변색 및 이차우식증의 발생",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "최대한(1)",
+        "excessive_words": "치아(28), 경우(15), 변색(13)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "55.25%",
+            "keywords": "치아(15), 경우(15), 변색(12), 신경치료(8), 치료(8), 엘투치과(6), 앞니(5), 신경(5), 환자분(4), 비대칭(3), 교정치료(3), 모습(3), 필요(2), 케이스(2), 대부분(2), 대표원장(2), 크라운(2), 사이틈(2), 충치치료(2), 심미적(2), 레진코어(2), 지속(2), 관찰(2), 부위(2), 발생(2), 사이(2), 외상(2), 이후(2), 원래(1), 추천(1), 충치(1), 반응(1), 요구(1), 양쪽(1), 얼굴(1), 시기(1), 외부적(1), 아래(1), 충혈(1), 치아들(1), 크라운치료(1), 분들(1), 원인들(1), 안정성(1), 보철물(1), 통증(1), 한쪽(1), 회복(1), 파절(1), 말씀(1), 내부(1), 오른쪽(1), 치주(1), 수복물(1), 증례(1), 기존(1), 합병증(1), 중심선(1), 이상(1), 왼쪽(1), 검진(1), 무단(1), 권장(1), 기억(1), 추후(1), 대칭적(1), 구조적(1), 개선(1), 광범위(1), 치아시림(1), 부작용(1), 만성적(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "11.53%",
+            "keywords": "마무리(9), 진행(7), 포스팅(3), 도움(1), 내용(1), 소개(1), 양상(1), 계획(1), 해당치아(1), 위치(1), 에스타워(1), 오늘(1), 동의(1), 삼성동(1), 삼성중앙역(1), 가능성(1), 도용(1), 개념(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "6.78%",
+            "keywords": "연결(3), 터치(3), 색상(2), 종료(2), 사진(2), 삭제(1), 채널(1), 케이스들(1), 사용(1), 카카오톡(1), 결과(1), 복제(1), 업로드(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.39%",
+            "keywords": "영역(3), 가능(2), 상황(2), 관련(2), 시작(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "2.37%",
+            "keywords": "코어(3), 공간(1), 감사(1), 가운데(1), 블로그(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "2.03%",
+            "keywords": "레진(5), 만족(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.69%",
+            "keywords": "불가(1), 선정릉역(1), 네이버예약(1), 이야기(1), 안녕(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "1.36%",
+            "keywords": "확인(2), 강남구(1), 이전(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.36%",
+            "keywords": "톡톡(1), 청담역(1), 주변(1), 원장(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "1.36%",
+            "keywords": "사례(4)"
+        },
+        {
+            "category_name": "스포츠",
+            "percentage": "1.02%",
+            "keywords": "최순호(3)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.02%",
+            "keywords": "범위(1), 전문(1), 단순(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "1.02%",
+            "keywords": "자극(2), 완료(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.68%",
+            "keywords": "기간(1), 작성(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.68%",
+            "keywords": "봉은사(1), 서울(1)"
+        },
+        {
+            "category_name": "사진",
+            "percentage": "0.34%",
+            "keywords": "사진상(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.34%",
+            "keywords": "시간(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "38.31%",
+            "words": "치료(33), 치아(21), 경우(15), 신경(14), 변색(13), 레진(12), 마무리(9), 치미(8), 활(8), 분(7), 진행(7), 앞니(6), 투(6), 치과(6), 것(6), 사이(6), 백(6), 위(5), 틈(5), 코어(5), 교정(5), 사례(4), 수(4), 크라운(4), 환자(4), 충치(4), 비대칭(3), 모습(3), 가능(3), 포스팅(3), 연결(3), 영역(3), 자극(3), 케이스(3), 터치(3), 도보(3), 부위(3), 사진(3), 최순호(3), 출구(3), 번(3), 원장(3), 때(2), 이(2), 발생(2), 필요(2), 확인(2), 상황(2), 이후(2), 관찰(2), 심미(2), 백제(2), 색상(2), 대표(2), 종료(2), 의학박사(2), 얼굴(2), 정도(2), 반응(2), 지속(2), 기간(2), 외상(2), 관련(2), 대부분(2), 삭제(1), 전화(1), 편(1), 양쪽(1), 대칭(1), 중심선(1), 한쪽(1), 차(1), 카카오톡(1), 위치(1), 채널(1), 공간(1), 업로드(1), 후(1), 구조(1), 사용(1), 우식증(1), 추천(1), 안정(1), 증례(1), 걸기(1), 동의(1), 회복(1), 의료법(1), 원래(1), 파절(1), 구도(1), 등(1), 합병증(1), 네이트(1), 만족(1), 개념(1), 속(1), 도움(1), 부작용(1), 보철(1), 보존(1), 감사(1), 네이버(1), 이상(1), 라미(1), 인레이(1), 물(1), 왼쪽(1), 보철물(1), 시작(1), 완료(1), 톡(1), 수복(1), 오른쪽(1), 전체(1), 시림(1), 예약(1), 통증(1), 광범위(1), 기억(1), 청담역(1), 가지(1), 원인(1), 역(1), 선정릉(1), 삼성(1), 중앙역(1), 단순(1), 착색(1), 양상(1), 만성(1), 듯(1), 충혈(1), 내부(1), 급성(1), 타워(1), 에스(1), 작성(1), 내용(1), 글(1), 전문(1), 엘(1), 치주(1), 무단(1), 도용(1), 삼성동(1), 봉은사(1), 강남구(1), 서울(1), 복제(1), 불가(1), 외부(1), 시간(1), 해당(1), 추후(1), 계획(1), 음성(1), 검사(1), 전기(1), 치수(1), 게(1), 권장(1), 이야기(1), 기존(1), 주변(1), 개선(1), 요구(1), 회(1), 냉온(1), 가운데(1), 오늘(1), 소개(1), 아래(1), 말씀(1), 색깔(1), 블로그(1), 이전(1), 검진(1), 시기(1), 안녕(1), 전(1), 년(1), 결과(1), 뒤(1), 범위(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "17.31%",
+            "words": "에(31), 가(22), 이(21), 는(18), 의(16), 를(15), 을(14), 로(11), 으로(9), 은(8), 도(8), 만(5), 엘(5), 에서(4), 와(3), 처럼(2), 에게(1), 요(1), 같이(1), 과(1), 이나(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "11.86%",
+            "words": "하(8), 있(8), 대한(7), 치아(7), 죽(5), 입니다(5), 나타나(5), 이(4), 되(4), 않(4), 같(3), 실(3), 많(3), 의해(3), 인(3), 였(2), 깊(2), 한(2), 및(2), 알(2), 통해(2), 어두운(1), 비해서(1), 만들(1), 작(1), 돌아와서(1), 위해서(1), 의해서(1), 깨지(1), 입(1), 떨어지(1), 덧댄(1), 건드리(1), 아니(1), 된(1), 바랍니다(1), 인한(1), 본(1), 큰(1), 바라보(1), 크(1), 요(1), 할(1), 가(1), 느낄(1), 따라(1), 들어가(1), 했(1), 드린(1), 드릴(1), 걸쳐(1), 나(1), 대해(1), 노란(1), 나타날(1), 아닌(1), 인해(1), 합니다(1), 했었(1), 누런(1), 메우(1), 낮(1), 살아오(1), 뒤(1), 넣(1), 여서(1), 벌어진(1), 가해(1), 보(1), 대해서(1), 잡(1), 밝(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "11.51%",
+            "words": ".(42), ,(26), \"(8), /(8), :(8), )(6), ((5), 1(3), 2023(2), 7(2), 10(2), -(2), >(1), Notice(1), <(1), 25(1), ...(1), 22(1), 05(1), 06(1), naver(1), https(1), 2(1), 469(1), &(1), blog(1), sunnyflow(1), com(1), 222960416193(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "7.91%",
+            "words": "고(14), 습니다(13), 는(13), 은(8), 지만(6), 면(4), 지(4), 기(4), 던(3), 게(2), 거나(2), 는데요(2), 다고(2), 는데(2), 을(2), 어서(2), 어(2), 길(1), 기에(1), 으며(1), 는다며(1), 음(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "6.15%",
+            "words": "하(14), 되(9), 한(8), 적(7), 된(6), 됩니다(6), 들(4), 합니다(3), 성(2), 할(2), 치(2), 상(1), 분(1), 스러운(1), 했(1), 시켜(1), 차(1), 여(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.08%",
+            "words": "및(8), 같이(2), 그리고(2), 오늘(2), 점차(2), 자세히(1), 물론(1), 매우(1), 최대한(1), 혹은(1), 탈락(1), 다시(1), 톡(1), 또한(1), 많이(1), 아마(1), 잘(1), 오래(1), 따라서(1), 그냥(1), 그래도(1), 직접(1), 그렇게(1), 충분히(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.9%",
+            "words": "었(16), 실(5), 였(4), 시(3), 셨(2), 였을(1), 세요(1), 았(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.53%",
+            "words": "어느(2), 오랜(2), 여러(1), 모든(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.26%",
+            "words": "이러(2), 깨끗(1)"
+        },
+        {
+            "morpheme_type": "감탄사",
+            "percentage": "0.09%",
+            "words": "ㅎ(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.09%",
+            "words": "재(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "159",
+        "words": [
+            {
+                "word": "경우",
+                "count": "15"
+            },
+            {
+                "word": "치아",
+                "count": "15"
+            },
+            {
+                "word": "변색",
+                "count": "12"
+            },
+            {
+                "word": "마무리",
+                "count": "9"
+            },
+            {
+                "word": "치료",
+                "count": "8"
+            },
+            {
+                "word": "신경치료",
+                "count": "8"
+            },
+            {
+                "word": "진행",
+                "count": "7"
+            },
+            {
+                "word": "엘투치과",
+                "count": "6"
+            },
+            {
+                "word": "신경",
+                "count": "5"
+            },
+            {
+                "word": "앞니",
+                "count": "5"
+            },
+            {
+                "word": "레진",
+                "count": "5"
+            },
+            {
+                "word": "사례",
+                "count": "4"
+            },
+            {
+                "word": "레진치료",
+                "count": "4"
+            },
+            {
+                "word": "환자분",
+                "count": "4"
+            },
+            {
+                "word": "영역",
+                "count": "3"
+            },
+            {
+                "word": "터치",
+                "count": "3"
+            },
+            {
+                "word": "연결",
+                "count": "3"
+            },
+            {
+                "word": "비대칭",
+                "count": "3"
+            },
+            {
+                "word": "코어",
+                "count": "3"
+            },
+            {
+                "word": "모습",
+                "count": "3"
+            },
+            {
+                "word": "포스팅",
+                "count": "3"
+            },
+            {
+                "word": "최순호",
+                "count": "3"
+            },
+            {
+                "word": "교정치료",
+                "count": "3"
+            },
+            {
+                "word": "필요",
+                "count": "2"
+            },
+            {
+                "word": "확인",
+                "count": "2"
+            },
+            {
+                "word": "외상",
+                "count": "2"
+            },
+            {
+                "word": "케이스",
+                "count": "2"
+            },
+            {
+                "word": "관찰",
+                "count": "2"
+            },
+            {
+                "word": "지속",
+                "count": "2"
+            },
+            {
+                "word": "사이틈",
+                "count": "2"
+            },
+            {
+                "word": "부위",
+                "count": "2"
+            },
+            {
+                "word": "가능",
+                "count": "2"
+            },
+            {
+                "word": "색상",
+                "count": "2"
+            },
+            {
+                "word": "레진코어",
+                "count": "2"
+            },
+            {
+                "word": "심미적",
+                "count": "2"
+            },
+            {
+                "word": "자극",
+                "count": "2"
+            },
+            {
+                "word": "사진",
+                "count": "2"
+            },
+            {
+                "word": "대부분",
+                "count": "2"
+            },
+            {
+                "word": "치의학박사",
+                "count": "2"
+            },
+            {
+                "word": "대표원장",
+                "count": "2"
+            },
+            {
+                "word": "발생",
+                "count": "2"
+            },
+            {
+                "word": "충치치료",
+                "count": "2"
+            },
+            {
+                "word": "이후",
+                "count": "2"
+            },
+            {
+                "word": "사이",
+                "count": "2"
+            },
+            {
+                "word": "종료",
+                "count": "2"
+            },
+            {
+                "word": "관련",
+                "count": "2"
+            },
+            {
+                "word": "상황",
+                "count": "2"
+            },
+            {
+                "word": "크라운",
+                "count": "2"
+            },
+            {
+                "word": "시기",
+                "count": "1"
+            },
+            {
+                "word": "음성반응",
+                "count": "1"
+            },
+            {
+                "word": "전기치수검사",
+                "count": "1"
+            },
+            {
+                "word": "기억",
+                "count": "1"
+            },
+            {
+                "word": "해당치아",
+                "count": "1"
+            },
+            {
+                "word": "냉온자극",
+                "count": "1"
+            },
+            {
+                "word": "반응",
+                "count": "1"
+            },
+            {
+                "word": "기간",
+                "count": "1"
+            },
+            {
+                "word": "충치",
+                "count": "1"
+            },
+            {
+                "word": "개선",
+                "count": "1"
+            },
+            {
+                "word": "요구",
+                "count": "1"
+            },
+            {
+                "word": "권장",
+                "count": "1"
+            },
+            {
+                "word": "계획",
+                "count": "1"
+            },
+            {
+                "word": "말씀",
+                "count": "1"
+            },
+            {
+                "word": "충혈",
+                "count": "1"
+            },
+            {
+                "word": "양상",
+                "count": "1"
+            },
+            {
+                "word": "급성적",
+                "count": "1"
+            },
+            {
+                "word": "내부",
+                "count": "1"
+            },
+            {
+                "word": "범위",
+                "count": "1"
+            },
+            {
+                "word": "만성적",
+                "count": "1"
+            },
+            {
+                "word": "외부적",
+                "count": "1"
+            },
+            {
+                "word": "크라운치료",
+                "count": "1"
+            },
+            {
+                "word": "치아들",
+                "count": "1"
+            },
+            {
+                "word": "아래",
+                "count": "1"
+            },
+            {
+                "word": "케이스들",
+                "count": "1"
+            },
+            {
+                "word": "시간",
+                "count": "1"
+            },
+            {
+                "word": "소개",
+                "count": "1"
+            },
+            {
+                "word": "사용",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "분들",
+                "count": "1"
+            },
+            {
+                "word": "만족",
+                "count": "1"
+            },
+            {
+                "word": "얼굴전체",
+                "count": "1"
+            },
+            {
+                "word": "톡톡",
+                "count": "1"
+            },
+            {
+                "word": "채널",
+                "count": "1"
+            },
+            {
+                "word": "가능성",
+                "count": "1"
+            },
+            {
+                "word": "보철물",
+                "count": "1"
+            },
+            {
+                "word": "통증",
+                "count": "1"
+            },
+            {
+                "word": "원인들",
+                "count": "1"
+            },
+            {
+                "word": "전화걸기",
+                "count": "1"
+            },
+            {
+                "word": "사진상",
+                "count": "1"
+            },
+            {
+                "word": "완료",
+                "count": "1"
+            },
+            {
+                "word": "회복",
+                "count": "1"
+            },
+            {
+                "word": "공간",
+                "count": "1"
+            },
+            {
+                "word": "원래",
+                "count": "1"
+            },
+            {
+                "word": "안정성",
+                "count": "1"
+            },
+            {
+                "word": "구조적",
+                "count": "1"
+            },
+            {
+                "word": "양쪽",
+                "count": "1"
+            },
+            {
+                "word": "대칭적",
+                "count": "1"
+            },
+            {
+                "word": "한쪽",
+                "count": "1"
+            },
+            {
+                "word": "치아사이틈",
+                "count": "1"
+            },
+            {
+                "word": "위치",
+                "count": "1"
+            },
+            {
+                "word": "얼굴",
+                "count": "1"
+            },
+            {
+                "word": "삭제",
+                "count": "1"
+            },
+            {
+                "word": "추천",
+                "count": "1"
+            },
+            {
+                "word": "개념",
+                "count": "1"
+            },
+            {
+                "word": "10여년",
+                "count": "1"
+            },
+            {
+                "word": "교정치료할때",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "검진",
+                "count": "1"
+            },
+            {
+                "word": "교정치료/충치치료",
+                "count": "1"
+            },
+            {
+                "word": "가운데",
+                "count": "1"
+            },
+            {
+                "word": "하였을때",
+                "count": "1"
+            },
+            {
+                "word": "이야기",
+                "count": "1"
+            },
+            {
+                "word": "기존",
+                "count": "1"
+            },
+            {
+                "word": "오랜기간",
+                "count": "1"
+            },
+            {
+                "word": "주변",
+                "count": "1"
+            },
+            {
+                "word": "추후",
+                "count": "1"
+            },
+            {
+                "word": "이전",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "강남구",
+                "count": "1"
+            },
+            {
+                "word": "삼성동",
+                "count": "1"
+            },
+            {
+                "word": "서울",
+                "count": "1"
+            },
+            {
+                "word": "도용",
+                "count": "1"
+            },
+            {
+                "word": "무단",
+                "count": "1"
+            },
+            {
+                "word": "에스타워",
+                "count": "1"
+            },
+            {
+                "word": "삼성중앙역",
+                "count": "1"
+            },
+            {
+                "word": "블로그",
+                "count": "1"
+            },
+            {
+                "word": "\"신경치료",
+                "count": "1"
+            },
+            {
+                "word": "단순",
+                "count": "1"
+            },
+            {
+                "word": "청담역",
+                "count": "1"
+            },
+            {
+                "word": "선정릉역",
+                "count": "1"
+            },
+            {
+                "word": "광범위",
+                "count": "1"
+            },
+            {
+                "word": "어느정도",
+                "count": "1"
+            },
+            {
+                "word": "파절",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "수복물",
+                "count": "1"
+            },
+            {
+                "word": "치아시림",
+                "count": "1"
+            },
+            {
+                "word": "합병증",
+                "count": "1"
+            },
+            {
+                "word": "치주",
+                "count": "1"
+            },
+            {
+                "word": "전문",
+                "count": "1"
+            },
+            {
+                "word": "복제",
+                "count": "1"
+            },
+            {
+                "word": "불가",
+                "count": "1"
+            },
+            {
+                "word": "내용",
+                "count": "1"
+            },
+            {
+                "word": "작성",
+                "count": "1"
+            },
+            {
+                "word": "원장",
+                "count": "1"
+            },
+            {
+                "word": "부작용",
+                "count": "1"
+            },
+            {
+                "word": "보존-보철치료",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "네이버예약",
+                "count": "1"
+            },
+            {
+                "word": "오른쪽",
+                "count": "1"
+            },
+            {
+                "word": "왼쪽",
+                "count": "1"
+            },
+            {
+                "word": "중심선",
+                "count": "1"
+            },
+            {
+                "word": "카카오톡",
+                "count": "1"
+            },
+            {
+                "word": "<의료법",
+                "count": "1"
+            },
+            {
+                "word": "시작",
+                "count": "1"
+            },
+            {
+                "word": "레진/인레이/크라운/라미네이트",
+                "count": "1"
+            },
+            {
+                "word": "업로드",
+                "count": "1"
+            },
+            {
+                "word": "동의",
+                "count": "1"
+            },
+            {
+                "word": "증례",
+                "count": "1"
+            },
+            {
+                "word": "봉은사",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "실활치미백",
+            "search_volume_total": "680",
+            "search_volume_pc": "200",
+            "search_volume_mobile": "480",
+            "clicks_pc": "-",
+            "clicks_mobile": "1",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.29%",
+            "competition": "중간",
+            "ad_count": "8"
+        },
+        {
+            "rank": "2",
+            "keyword": "교정치료",
+            "search_volume_total": "330",
+            "search_volume_pc": "80",
+            "search_volume_mobile": "250",
+            "clicks_pc": "-",
+            "clicks_mobile": "0",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.11%",
+            "competition": "높음",
+            "ad_count": "9"
+        }
+    ],
+    "same_topic_posting": "교정치료 (197), 실활치미백 (82)"
+}

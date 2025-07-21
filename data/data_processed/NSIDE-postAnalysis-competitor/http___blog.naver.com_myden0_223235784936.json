@@ -1,0 +1,943 @@
+{
+    "posting_score": "준최2-Lv.1",
+    "exposure_score": "17.36",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "80.70",
+            "evaluation": "적합",
+            "percentage": "80.70%"
+        },
+        {
+            "category": "주제",
+            "score": "66.98",
+            "evaluation": "적합",
+            "percentage": "66.98%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "62.49",
+            "evaluation": "적합",
+            "percentage": "62.49%"
+        },
+        {
+            "category": "형태소",
+            "score": "56.24",
+            "evaluation": "적합",
+            "percentage": "56.24%"
+        },
+        {
+            "category": "가독성",
+            "score": "72.54",
+            "evaluation": "적합",
+            "percentage": "72.54%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "77.00",
+            "evaluation": "정보성",
+            "percentage": "77.00%"
+        }
+    ],
+    "publish_time": "2023-10-26 15",
+    "exposure_status": "발행된지 633일 (23시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:11:59 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "52",
+        "title_without_space": "41",
+        "content_with_space": "1,894",
+        "content_without_space": "1,460"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "343",
+        "syllable_count": "435",
+        "word_count": "164",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "18",
+        "material_images": "0",
+        "uploaded_images": "14",
+        "content_images": "18",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMTA1/MDAxNjk3MDIxOTk3Mzg2.1RTqMz0n94IV_qRw6GPJu1ENZ14JK-Mrk1tmpUefP6sg.FW7m81NcoKFh67ic5zepsBp5eBVnYJJmQ3Uom0z7NtYg.JPEG.myden0/YU_HYEJIN_20210831_160242.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMjUg/MDAxNjk3MDIxOTk3NTAy.eLy9y6GDLuiN9eUT1rAIJRJpgtn5Ip19zcYxTFj13mEg.cjUDTcwjhFgQEzRP1gtaj-kxQWXzzN91jIslW5FLo0Ag.JPEG.myden0/YU_HYEJIN_20210831_172829.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMjg4/MDAxNjk3MDIxOTk3OTA1.HiQQ8K1y4Kvk8HWzppt2iMboPJlnh0a2UQ8g6QQ1N_Eg.Y7Ef4zpy3X6ufL3X8sZaYbj_SyxpVNNlx-O7jxfCdtEg.JPEG.myden0/YU_HYEJIN_20211201_144643.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMTkw/MDAxNjk3MDIxOTk4MTU1.o28DcJqPw0zvzABwEj8J5-x-Tn8clW_pQj9Uc9FM-w0g.Fj6bl_jeEEwdCc7o-CPF89PqD8aUTZ4saoXdEFOw4wUg.JPEG.myden0/YU_HYEJIN_20211201_144646.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMTI1/MDAxNjk3MDIxOTk4MjI2.ADvyckjzsRhpCemFMUY-gLV_RArjA5YuccAAcWMqzKMg.KvERBqg21yQ1C5acnCrh1BrzGb9U8lQSi9D4-4i4SPUg.JPEG.myden0/YU_HYEJIN_20211214_131353.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfMTAx/MDAxNjk3MTc2Nzk0NDQ1.cCGzhIaeeOHS7o8WxcYtjyAevyKT5Al_oa_3h-YxklYg.l22TKjWMUaSZP31eYRvuN8h9zyrKQwsqS2Iehjllkmog.JPEG.myden0/YU_HYEJIN_20211221_122525.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfMjU3/MDAxNjk3MTc2Nzk0NDQ0.RNckZDWGthalToKKcnEiqj4cI0h2M2WqQrcwshdlQzUg.LJdN6yC_mWS2C6ZxAIR8q4S77DzgjhVsU3qQiPRie4Eg.JPEG.myden0/YU_HYEJIN_20211228_120809.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfMTE5/MDAxNjk3MTc2Nzk1MTg2.GzAo49y2umffXABQziOZ0IQ3_oQvItcshSlHwAZYIEsg.HrYe7u0xxR7PLvBB1UGPgWXmvQ2TfPc_aW27BcujG8Qg.JPEG.myden0/YU_HYEJIN_20220330_105211.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfMjMy/MDAxNjk3MTc2OTE4NzEy.0P8JEHYPsxHKTuiSVDQSvzE2d3Nc6K0xrFH9k4DrhIAg.M6cGZ8YUgYqAZ14qJl-xAJ-JY9NJ9nDLenyEPMzvzXUg.JPEG.myden0/YU_HYEJIN_20220103_103426.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMjY0/MDAxNjk3MDIxOTk3ODE1.8-E9Ij4UsdpalbA27NbrOAOvr2zoeSufqPnLfYm4db8g.kueKmuELGQ_kK0zSWsW8FOHrFrtYbtVF_aAmXf0VXXkg.JPEG.myden0/YU_HYEJIN_20211130_121653.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfMTE5/MDAxNjk3MTc5MDA1NTg2.WwLpFJYpWevpVJOQit7YPFd1eeLXqB0jF5eXqjGEbl8g.NdLYOdGEXD48pBvWFudwGDqNVlAosbXi51zbNrpODQQg.JPEG.myden0/SE-8fee0a8d-197a-4ede-ba1c-1113b78f9c6b.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTNfOCAg/MDAxNjk3MTc5MDA0NTg3._4zgpJQ88Wo0-KdbDxWw9eZhJKo5gQYmJTe4LZtmFJIg.p9qUA6jjPjnC-scXGtka31q6eHDd5gDp__pht5ZbCP4g.JPEG.myden0/SE-39decb96-5bb3-42d5-ad6d-e2e8a5e2e5a7.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMjAz/MDAxNjk3MDIxOTk5NTA3.FbERQYKAT6GSsuJ3BGywrK_zaxtg0eEdhz9bjeydCNwg.4ILB7YedGmu1FEPbVU2UsEaa4dfQhOdlDJkw8Zq4v9Qg.JPEG.myden0/YU_HYEJIN_20230904_101301.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEwMTFfMjIw/MDAxNjk3MDIxOTk4OTMy.GQvRSQY6pzDlPlsG2CPd0WNEs0exT10bmDIGvVnTqzog.F1g9pNC4o3ipAVozBkaYQNIl_jsKuCPxEe1sbwrbsMgg.JPEG.myden0/YU_HYEJIN_20221026_102004.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA3MjVfMTcw/MDAxNjkwMjU0MTY4Mzgw.m5Mwpl2sUHWlF7tJrOGDSKAjpN732IHIV72suDuCrbwg.0r2koNE3fG5xbWr_MNEaNDZ5L1RxeEe3bYlu6IiJ1dcg.GIF.myden0/%EC%A2%85%EA%B0%81%EC%B9%98%EA%B3%BC.gif?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA3MjVfMjE2/MDAxNjkwMjU0MTY4NzA0.Rd3JAP7Evy8iY_sf0gWXFxlrgWPShEv59iciPJ2QUfMg.nd_SBw6w3l3vPn-YvMbRW1flPbU08vGDheI1Vx1SZmIg.GIF.myden0/%EC%84%9C%EB%8C%80%EB%AC%B8%EC%97%AD%EC%B9%98%EA%B3%BC_(3).gif?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA3MjVfOTkg/MDAxNjkwMjU0MTY4NDA0.NQcmRIdBxYzlIeuGMKVgblLdkfosuOqVy-lvwoA3oBgg.wzl0vpBB_wU2IKyI6VDIMk6VJaX_XoVp2hoI753b9AAg.GIF.myden0/%EC%A2%85%EA%B0%81%EC%B9%98%EA%B3%BC_(6).gif?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA3MjVfMjE2/MDAxNjkwMjU0MTY4NDI1.36Clthl_ycSkdsM_kLg7Y9fNZr3pVRtxa6n4JvLjeGYg.kz3Z7tGpQ2gJ6NxVAIkaalxkNxwpJBaRu4XVECyik6Ig.GIF.myden0/%EC%A2%85%EA%B0%81%EC%B9%98%EA%B3%BC_(7).gif?type=w1"
+        ]
+    },
+    "post_title": "앞니 재신경치료 티 안 나게 치료한 후기(재 신경치료/재 신경치료 주의사항/재 신경치료 전후)",
+    "post_content": "안녕하세요! 내 치아 지키는 연세마이덴 치과 블로그에 오신 여러분을 따뜻하게 환영합니다! 겨울이 점점 다가오는 이 시기에 여러분의 구강 건강을 지키기 위해 유익한 정보를 전달해 드리고자 합니다^^ 앞니 재신경치료 티 안 나게 할 수 있나요? 환자분께서 잇몸 염증으로 인해 병원에 내원해 주셨고, 치료 전 치아 내부의 문제를 확인하기 위해 X선 또는 ct, 파노라마 촬영을 통해 치아 상태를 정확히 파악하였습니다. 또한 육안으로 보았을 때 잇몸 주변으로 변색된 것을 확인할 수 있었는데요. 내부의 염증과 치아 외부의 변색으로 인해 재신경치료를 진행하기로 결정하였습니다. 재신경치료는 이전에 치료했던 신경관이 감염되거나, 제대로 치료되지 못했거나, 새로운 문제가 발생했을 때 시행하는 치과 시술로, 기존의 근관 충전재를 제거하고 치아 내부의 문제를 해결하기 위해 치료를 진행합니다. 저희 연세마이덴치과에서는 모든 과정에서 시술 중 편안함을 보장하기 위해 무통마취를 시행하고 있습니다. 우선적으로 오래된 충전재를 제거한 후 신경관을 철저히 세척하고 소독합니다. 이 단계는 관 내부에서 박테리아, 잔해 및 감염된 조직을 씻어내기 위해 소독 용액을 사용합니다. 환자마다 개별 상황에 따라 다르고 재신경치료 시술 과정에서 겪는 어려움에 따라 달라지므로 본인의 상황에 맞는 맞춤형 조언을 해줄 수 있는 병원을 선택하시는 것이 좋습니다. 신경관이 청소가 되고 적절하게 모양을 갖추면, 치아머리 부분에 남아있는 공간을 차단하기 위한 밀봉재와 함께 가타퍼차라고 불리는 생체적합성 물질로 채워줍니다. 마무리 레진 코어까지 해 주시면 치료의 80%가 끝납니다. 재신경치료가 끝난 치아는 구조적으로 손상되는 경우가 많기 때문에 치아 보호를 위해 치관과 같은 일시적이거나 영구적인 크라운을 사용하여 씌워줍니다. 또한 환자분과 함께 크라운 색을 결정하여 심미적으로 티가 나지 않는 자연스러운 보철을 만들어 드립니다^^ 재신경치료 후 주의사항은 무엇인가요? 통증 관리 수술 후 통증이 발생할 수 있으므로 치과 의사의 처방된 통증 약물을 정확히 따르는 것이 중요합니다. 통증이 심할 경우 가까운 응급실에 가서 치료를 받으셔야 합니다. 식사 끈적한 음식이나 너무 딱딱한 음식은 피해주세요. 면역력 강화 면역력을 강화하기 위해 영양을 충분히 섭취하고 충분한 휴식을 취하세요. 면역력이 약화될 수 있으므로 건강한 생활 습관을 유지하는 것이 중요합니다. 치아 관리 치아를 적절하게 관리하고 일상적인 칫솔질 및 치실 사용을 유지하세요. 수술 후 치아와 구강 위생을 소홀히 하지 않도록 주의하세요. 정기적인 검사 수술 후에는 정기적으로 치과를 방문하여 회복 상황을 평가하고 문제를 방지하세요. 의사의 지시를 따르고 추가 치료나 조언이 필요한 경우에는 그에 따르세요. 주의사항 및 질문 수술 후에 무슨 질문이나 우려사항이 있으면 병원에 연락해 주세요. 주의사항을 철저히 준수하면 치료의 성공과 빠른 회복이 될 것이며, 치아와 구강 건강을 유지하는 데 도움이 될 것입니다. 치료 전 & 후 비교 재신경치료가 끝나고, 심미적으로 자연스러운 크라운까지 완료 된 모습입니다. 환자분께서는 치료 결과에 매우 만족하시며 감사하다는 말씀을 전해주셨습니다^^ 추운 겨울철에도 건강한 웃음으로 즐거운 일상을 보낼 수 있도록 함께 해나가고자 합니다. 겨울은 구강 건강에 영향을 미칠 수 있는 다양한 요소들이 존재합니다. 구강 관리와 예방책, 올바른 식습관 등을 통해 추운 겨울 동안도 건강한 웃음을 유지할 수 있도록 도움을 드리겠습니다. 연세마이덴 치과였습니다. 읽어주셔서 감사합니다. ▽연세마이덴치과 더 많은 글 보기▽ ▽연세마이덴치과 예약하기▽ #앞니변색치료 #앞니크라운 #앞니티안나는치료 #앞니치료 #앞니신경치료잘하는곳 #남택진원장님 #보존과전문의치과 #앞니심미보철 #재신경치료 #청진동잘하는치과 #내치아살리기 #연세마이덴치과 #실활치미백",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "영구적(1)",
+        "excessive_words": "치료(22)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "52.29%",
+            "keywords": "치료(10), 치아(8), 건강(6), 구강(5), 치과(5), 수술(4), 내부(4), 관리(4), 통증(4), 유지(4), 병원(3), 시술(3), 크라운(3), 경우(3), 면역력(3), 자연(2), 정기적(2), 중요(2), 회복(2), 심미적(2), 연세마이덴치과(2), 감염(2), 잇몸(2), 환자분(2), 음식(2), 발생(2), 변색(2), 강화(2), 염증(2), 영향(1), 영구적(1), 약화(1), 손상(1), 보장(1), 부분(1), 선택(1), 조직(1), 약물(1), 편안(1), 맞춤형(1), 우선적(1), 무통마취(1), 요소들(1), 치관(1), 보철(1), 모양(1), 필요(1), 환자(1), 처방(1), 기존(1), 박테리아(1), 근관(1), 내원(1), 칫솔질(1), 상태(1), 앞니(1), 식습관(1), 시기(1), 치아머리(1), 모습(1), 구조적(1), 동안(1), 말씀(1), 겨울철(1), 주의사항(1), 개별(1), 저희(1), 환자분과(1), 전달(1), x선(0)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "8.4%",
+            "keywords": "의사(2), 시행(2), 진행(2), 도움(2), 일시적(1), 연락(1), 존재(1), 밀봉재(1), 성공(1), 때문(1), 해결(1), 단계(1), 추가(1), 마무리(1), 환영(1), 검사(1), 방지(1), 본인(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "5.34%",
+            "keywords": "문제(4), 확인(2), 제거(2), 이전(1), 청소(1), 물질(1), 세척(1), 외부(1), 잔해(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "3.82%",
+            "keywords": "감사(2), 주의(1), 휴식(1), 코어(1), 일상(1), 응급실(1), 블로그(1), 공간(1), 섭취(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.82%",
+            "keywords": "상황(3), 과정(2), 평가(1), 위생(1), 습관(1), 생활(1), 영양(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "3.44%",
+            "keywords": "주사항(2), 연세(2), 치실(1), 차단(1), 정보(1), 완료(1), 비교(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "2.67%",
+            "keywords": "신경관(3), 충전재(2), 소독(2)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "2.67%",
+            "keywords": "결정(2), 지시(1), 준수(1), 파악(1), 촬영(1), 보호(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.91%",
+            "keywords": "질문(2), 용액(1), 방문(1), 주변(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "1.53%",
+            "keywords": "여러분(2), 일상적(1), 예방책(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "1.53%",
+            "keywords": "사용(3), 결과(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "1.53%",
+            "keywords": "겨울(3), 예약(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.15%",
+            "keywords": "육안(1), 안녕(1), 식사(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.76%",
+            "keywords": "만족(1), 레진(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.76%",
+            "keywords": "조언(2)"
+        },
+        {
+            "category_name": "공연·전시",
+            "percentage": "0.76%",
+            "keywords": "웃음(2)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.38%",
+            "keywords": "어려움(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.38%",
+            "keywords": "파노라마(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "36.8%",
+            "words": "치료(22), 치과(11), 신경(9), 수(8), 앞니(7), 후(7), 치아(7), 것(6), 건강(6), 구강(5), 연세(5), 문제(4), 유지(4), 환자(4), 크라운(4), 사항(4), 관리(4), 수술(4), 내부(4), 통증(4), 변색(3), 면역력(3), 심미(3), 경우(3), 신경관(3), 병원(3), 상황(3), 겨울(3), 티(3), 시술(3), 주(3), 사용(3), 제거(2), 조언(2), 충전재(2), 강화(2), 회복(2), 웃음(2), 감사(2), 소독(2), 일상(2), 도움(2), 정기(2), 질문(2), 의사(2), 과정(2), 음식(2), 확인(2), 자연(2), 시행(2), 전(2), 보철(2), 여러분(2), 잇몸(2), 염증(2), 때(2), 중요(2), 진행(2), 결정(2), 발생(2), 감염(2), 영양(1), 주의(1), 검사(1), 처방(1), 방문(1), 위생(1), 치실(1), 응급실(1), 습관(1), 생활(1), 약화(1), 식사(1), 약물(1), 칫솔질(1), 섭취(1), 평가(1), 휴식(1), 만족(1), 동안(1), 글(1), 예약(1), 등(1), 식습관(1), 존재(1), 예방책(1), 곳(1), 남택진(1), 활(1), 치미(1), 백(1), 청진동(1), 전문(1), 원장(1), 보존(1), 요소(1), 영향(1), 우려(1), 연락(1), 준수(1), 그(1), 필요(1), 지시(1), 추가(1), 성공(1), 데(1), 말씀(1), 겨울철(1), 결과(1), 모습(1), 비교(1), 완료(1), 방지(1), 합성(1), 세마(1), 중(1), 편안(1), 저희(1), 해결(1), 기존(1), 근관(1), 보장(1), 무통(1), 관(1), 박테리아(1), 단계(1), 세척(1), 마취(1), 우선(1), 이전(1), 외부(1), 정보(1), 전달(1), 시기(1), 환영(1), 내(1), 블로그(1), 내원(1), 선(1), 육안(1), 주변(1), 파악(1), 상태(1), 파노라마(1), 촬영(1), 잔해(1), 조직(1), 코어(1), 구조(1), 레진(1), 마무리(1), 안녕(1), 물질(1), 손상(1), 때문(1), 분과(1), 색(1), 영구(1), 일시(1), 보호(1), 치관(1), 생체(1), 차(1), 맞춤(1), 선택(1), 본인(1), 어려움(1), 용액(1), 개별(1), 청소(1), 모양(1), 밀봉재(1), 가타(1), 차단(1), 공간(1), 치아머리(1), 부분(1), 무엇(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "15.69%",
+            "words": "을(31), 에(18), 를(15), 의(15), 이(14), 으로(10), 가(7), 는(7), 에서(4), 와(4), 과(4), 로(3), 은(3), 이나(2), 도(2), 까지(2), 께서(2), 마다(1), 나(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "13.64%",
+            "words": "있(11), 위해(7), 주(6), 덴(5), 치아(4), 하(3), 해(3), 나(3), 따르(3), 인(3), 합니다(3), 이(3), 입니다(2), 추운(2), 않(2), 많(2), 줍니다(2), 지키(2), 될(2), 따라(2), 통해(2), 인해(2), 보(2), 드리(2), 살리(1), 가까운(1), 만들(1), 심할(1), 드립니다(1), 인가요(1), 가(1), 읽(1), 내치(1), 피해(1), 전해(1), 미칠(1), 나가(1), 즐거운(1), 끝나(1), 올바른(1), 보낼(1), 취하(1), 빠른(1), 였(1), 받(1), 라고(1), 내(1), 씻(1), 다르(1), 겪(1), 달라지(1), 된(1), 연(1), 다가오(1), 오(1), 할(1), 못했(1), 새로운(1), 맞(1), 줄(1), 채워(1), 불리(1), 끝납니다(1), 끝난(1), 같(1), 퍼(1), 위한(1), 좋(1), 되(1), 갖추(1), 남(1), 씌워(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "9.74%",
+            "words": "는(18), 기(12), 고(11), 습니다(7), 게(4), 거나(3), 지(3), 여(3), 도록(3), 어(3), 면(3), 아(2), 며(2), 고자(2), 으므로(2), 을(2), 은(2), 으면(1), 다는(1), 서(1), 덴(1), 나요(1), 는데요(1), 던(1), 므로(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "9.09%",
+            "words": "하(32), 적(10), 한(10), 합니다(8), 된(4), 할(3), 해(3), 되(3), 스러운(2), 했(2), 분(2), 님(1), 들(1), 될(1), 함(1), 형(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.25%",
+            "words": ".(28), #(13), ,(10), ▽(4), ^^(3), !(2), ?(2), &(1), ct(1), X(1), 80(1), %(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.25%",
+            "words": "마이(5), 및(3), 함께(3), 잘(2), 또한(2), 철저히(2), 안(2), 정확히(2), 매우(1), 점점(1), 더(1), 소홀히(1), 너무(1), 오래(1), 또는(1), 제대로(1), 충분히(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.38%",
+            "words": "세요(8), 시(3), 였(2), 셨(2), 실(1), 셔서(1), 겠(1), 었(1), 신(1), 았(1), 으셔야(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.87%",
+            "words": "재(8)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.87%",
+            "words": "적절(2), 충분(1), 다양(1), 딱딱(1), 끈적(1), 유익(1), 따뜻(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.43%",
+            "words": "이(2), 무슨(1), 모든(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "164",
+        "words": [
+            {
+                "word": "치료",
+                "count": "10"
+            },
+            {
+                "word": "치아",
+                "count": "8"
+            },
+            {
+                "word": "건강",
+                "count": "6"
+            },
+            {
+                "word": "구강",
+                "count": "5"
+            },
+            {
+                "word": "치과",
+                "count": "5"
+            },
+            {
+                "word": "문제",
+                "count": "4"
+            },
+            {
+                "word": "유지",
+                "count": "4"
+            },
+            {
+                "word": "내부",
+                "count": "4"
+            },
+            {
+                "word": "수술",
+                "count": "4"
+            },
+            {
+                "word": "관리",
+                "count": "4"
+            },
+            {
+                "word": "통증",
+                "count": "4"
+            },
+            {
+                "word": "신경관",
+                "count": "3"
+            },
+            {
+                "word": "사용",
+                "count": "3"
+            },
+            {
+                "word": "상황",
+                "count": "3"
+            },
+            {
+                "word": "겨울",
+                "count": "3"
+            },
+            {
+                "word": "병원",
+                "count": "3"
+            },
+            {
+                "word": "시술",
+                "count": "3"
+            },
+            {
+                "word": "면역력",
+                "count": "3"
+            },
+            {
+                "word": "크라운",
+                "count": "3"
+            },
+            {
+                "word": "재신경치료",
+                "count": "3"
+            },
+            {
+                "word": "경우",
+                "count": "3"
+            },
+            {
+                "word": "심미적",
+                "count": "2"
+            },
+            {
+                "word": "자연",
+                "count": "2"
+            },
+            {
+                "word": "시행",
+                "count": "2"
+            },
+            {
+                "word": "과정",
+                "count": "2"
+            },
+            {
+                "word": "주사항",
+                "count": "2"
+            },
+            {
+                "word": "충전재",
+                "count": "2"
+            },
+            {
+                "word": "조언",
+                "count": "2"
+            },
+            {
+                "word": "정기적",
+                "count": "2"
+            },
+            {
+                "word": "웃음",
+                "count": "2"
+            },
+            {
+                "word": "발생",
+                "count": "2"
+            },
+            {
+                "word": "감사",
+                "count": "2"
+            },
+            {
+                "word": "도움",
+                "count": "2"
+            },
+            {
+                "word": "중요",
+                "count": "2"
+            },
+            {
+                "word": "음식",
+                "count": "2"
+            },
+            {
+                "word": "의사",
+                "count": "2"
+            },
+            {
+                "word": "제거",
+                "count": "2"
+            },
+            {
+                "word": "연세마이덴치과",
+                "count": "2"
+            },
+            {
+                "word": "연세",
+                "count": "2"
+            },
+            {
+                "word": "질문",
+                "count": "2"
+            },
+            {
+                "word": "회복",
+                "count": "2"
+            },
+            {
+                "word": "감염",
+                "count": "2"
+            },
+            {
+                "word": "소독",
+                "count": "2"
+            },
+            {
+                "word": "여러분",
+                "count": "2"
+            },
+            {
+                "word": "강화",
+                "count": "2"
+            },
+            {
+                "word": "환자분",
+                "count": "2"
+            },
+            {
+                "word": "결정",
+                "count": "2"
+            },
+            {
+                "word": "진행",
+                "count": "2"
+            },
+            {
+                "word": "잇몸",
+                "count": "2"
+            },
+            {
+                "word": "확인",
+                "count": "2"
+            },
+            {
+                "word": "염증",
+                "count": "2"
+            },
+            {
+                "word": "변색",
+                "count": "2"
+            },
+            {
+                "word": "때문",
+                "count": "1"
+            },
+            {
+                "word": "손상",
+                "count": "1"
+            },
+            {
+                "word": "구조적",
+                "count": "1"
+            },
+            {
+                "word": "물질",
+                "count": "1"
+            },
+            {
+                "word": "보호",
+                "count": "1"
+            },
+            {
+                "word": "코어",
+                "count": "1"
+            },
+            {
+                "word": "보철",
+                "count": "1"
+            },
+            {
+                "word": "약물",
+                "count": "1"
+            },
+            {
+                "word": "가타차",
+                "count": "1"
+            },
+            {
+                "word": "처방",
+                "count": "1"
+            },
+            {
+                "word": "영구적",
+                "count": "1"
+            },
+            {
+                "word": "일시적",
+                "count": "1"
+            },
+            {
+                "word": "치관",
+                "count": "1"
+            },
+            {
+                "word": "맞춤형",
+                "count": "1"
+            },
+            {
+                "word": "환자",
+                "count": "1"
+            },
+            {
+                "word": "어려움",
+                "count": "1"
+            },
+            {
+                "word": "용액",
+                "count": "1"
+            },
+            {
+                "word": "조직",
+                "count": "1"
+            },
+            {
+                "word": "응급실",
+                "count": "1"
+            },
+            {
+                "word": "본인",
+                "count": "1"
+            },
+            {
+                "word": "선택",
+                "count": "1"
+            },
+            {
+                "word": "공간",
+                "count": "1"
+            },
+            {
+                "word": "차단",
+                "count": "1"
+            },
+            {
+                "word": "부분",
+                "count": "1"
+            },
+            {
+                "word": "모양",
+                "count": "1"
+            },
+            {
+                "word": "청소",
+                "count": "1"
+            },
+            {
+                "word": "밀봉재",
+                "count": "1"
+            },
+            {
+                "word": "동안",
+                "count": "1"
+            },
+            {
+                "word": "만족",
+                "count": "1"
+            },
+            {
+                "word": "말씀",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "모습",
+                "count": "1"
+            },
+            {
+                "word": "준수",
+                "count": "1"
+            },
+            {
+                "word": "성공",
+                "count": "1"
+            },
+            {
+                "word": "겨울철",
+                "count": "1"
+            },
+            {
+                "word": "일상",
+                "count": "1"
+            },
+            {
+                "word": "단계",
+                "count": "1"
+            },
+            {
+                "word": "예약",
+                "count": "1"
+            },
+            {
+                "word": "존재",
+                "count": "1"
+            },
+            {
+                "word": "요소들",
+                "count": "1"
+            },
+            {
+                "word": "영향",
+                "count": "1"
+            },
+            {
+                "word": "연락",
+                "count": "1"
+            },
+            {
+                "word": "우려사항",
+                "count": "1"
+            },
+            {
+                "word": "습관",
+                "count": "1"
+            },
+            {
+                "word": "일상적",
+                "count": "1"
+            },
+            {
+                "word": "약화",
+                "count": "1"
+            },
+            {
+                "word": "휴식",
+                "count": "1"
+            },
+            {
+                "word": "섭취",
+                "count": "1"
+            },
+            {
+                "word": "위생",
+                "count": "1"
+            },
+            {
+                "word": "주의",
+                "count": "1"
+            },
+            {
+                "word": "지시",
+                "count": "1"
+            },
+            {
+                "word": "필요",
+                "count": "1"
+            },
+            {
+                "word": "방지",
+                "count": "1"
+            },
+            {
+                "word": "평가",
+                "count": "1"
+            },
+            {
+                "word": "방문",
+                "count": "1"
+            },
+            {
+                "word": "영양",
+                "count": "1"
+            },
+            {
+                "word": "#앞니신경치료잘하는곳",
+                "count": "1"
+            },
+            {
+                "word": "치실",
+                "count": "1"
+            },
+            {
+                "word": "검사",
+                "count": "1"
+            },
+            {
+                "word": "칫솔질",
+                "count": "1"
+            },
+            {
+                "word": "생활",
+                "count": "1"
+            },
+            {
+                "word": "식사",
+                "count": "1"
+            },
+            {
+                "word": "추가",
+                "count": "1"
+            },
+            {
+                "word": "주의사항",
+                "count": "1"
+            },
+            {
+                "word": "식습관",
+                "count": "1"
+            },
+            {
+                "word": "#앞니변색치료",
+                "count": "1"
+            },
+            {
+                "word": "예방책",
+                "count": "1"
+            },
+            {
+                "word": "완료",
+                "count": "1"
+            },
+            {
+                "word": "비교",
+                "count": "1"
+            },
+            {
+                "word": "무엇인가요",
+                "count": "1"
+            },
+            {
+                "word": "환자분과",
+                "count": "1"
+            },
+            {
+                "word": "근관",
+                "count": "1"
+            },
+            {
+                "word": "저희",
+                "count": "1"
+            },
+            {
+                "word": "파노라마",
+                "count": "1"
+            },
+            {
+                "word": "X선",
+                "count": "1"
+            },
+            {
+                "word": "앞니",
+                "count": "1"
+            },
+            {
+                "word": "박테리아",
+                "count": "1"
+            },
+            {
+                "word": "잔해",
+                "count": "1"
+            },
+            {
+                "word": "마무리",
+                "count": "1"
+            },
+            {
+                "word": "레진",
+                "count": "1"
+            },
+            {
+                "word": "생체적합성",
+                "count": "1"
+            },
+            {
+                "word": "치아머리",
+                "count": "1"
+            },
+            {
+                "word": "개별",
+                "count": "1"
+            },
+            {
+                "word": "#앞니크라운",
+                "count": "1"
+            },
+            {
+                "word": "#앞니티안나는치료",
+                "count": "1"
+            },
+            {
+                "word": "주변",
+                "count": "1"
+            },
+            {
+                "word": "외부",
+                "count": "1"
+            },
+            {
+                "word": "육안",
+                "count": "1"
+            },
+            {
+                "word": "파악",
+                "count": "1"
+            },
+            {
+                "word": "상태",
+                "count": "1"
+            },
+            {
+                "word": "이전",
+                "count": "1"
+            },
+            {
+                "word": "기존",
+                "count": "1"
+            },
+            {
+                "word": "무통마취",
+                "count": "1"
+            },
+            {
+                "word": "우선적",
+                "count": "1"
+            },
+            {
+                "word": "보장",
+                "count": "1"
+            },
+            {
+                "word": "편안",
+                "count": "1"
+            },
+            {
+                "word": "해결",
+                "count": "1"
+            },
+            {
+                "word": "촬영",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "#재신경치료",
+                "count": "1"
+            },
+            {
+                "word": "#청진동잘하는치과",
+                "count": "1"
+            },
+            {
+                "word": "#앞니심미보철",
+                "count": "1"
+            },
+            {
+                "word": "#보존과전문의치과",
+                "count": "1"
+            },
+            {
+                "word": "#앞니치료",
+                "count": "1"
+            },
+            {
+                "word": "#연세마이덴치과",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "정보",
+                "count": "1"
+            },
+            {
+                "word": "전달",
+                "count": "1"
+            },
+            {
+                "word": "시기",
+                "count": "1"
+            },
+            {
+                "word": "환영",
+                "count": "1"
+            },
+            {
+                "word": "블로그",
+                "count": "1"
+            },
+            {
+                "word": "세척",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "티나",
+            "search_volume_total": "2,990",
+            "search_volume_pc": "410",
+            "search_volume_mobile": "2,580",
+            "clicks_pc": "2",
+            "clicks_mobile": "35",
+            "ctr_pc": "0.42%",
+            "ctr_mobile": "1.46%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "재신경치료",
+            "search_volume_total": "1,560",
+            "search_volume_pc": "330",
+            "search_volume_mobile": "1,230",
+            "clicks_pc": "1",
+            "clicks_mobile": "4",
+            "ctr_pc": "0.16%",
+            "ctr_mobile": "0.37%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "3",
+            "keyword": "앞니재신경치료",
+            "search_volume_total": "50",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "40",
+            "clicks_pc": "-",
+            "clicks_mobile": "1",
+            "ctr_pc": "-",
+            "ctr_mobile": "1.35%",
+            "competition": "중간",
+            "ad_count": "5"
+        }
+    ],
+    "same_topic_posting": "재신경치료 (466), 앞니재신경치료 (138), 티나 (0)"
+}

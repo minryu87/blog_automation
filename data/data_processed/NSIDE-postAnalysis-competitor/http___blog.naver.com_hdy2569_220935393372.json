@@ -1,0 +1,842 @@
+{
+    "posting_score": "최적4-Lv.2",
+    "exposure_score": "98.29",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "79.19",
+            "evaluation": "적합",
+            "percentage": "79.19%"
+        },
+        {
+            "category": "주제",
+            "score": "70.20",
+            "evaluation": "적합",
+            "percentage": "70.20%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "61.56",
+            "evaluation": "적합",
+            "percentage": "61.56%"
+        },
+        {
+            "category": "형태소",
+            "score": "63.82",
+            "evaluation": "적합",
+            "percentage": "63.82%"
+        },
+        {
+            "category": "가독성",
+            "score": "74.54",
+            "evaluation": "적합",
+            "percentage": "74.54%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "10.00",
+            "evaluation": "후기성",
+            "percentage": "10.00%"
+        }
+    ],
+    "publish_time": "2017-02-14 20",
+    "exposure_status": "발행된지 3078일 (18시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:56:39 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "28",
+        "title_without_space": "22",
+        "content_with_space": "1,816",
+        "content_without_space": "1,367"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "326",
+        "syllable_count": "450",
+        "word_count": "131",
+        "abusing_word_count": "5"
+    },
+    "image_analysis": {
+        "valid_images": "7",
+        "invalid_images": "10",
+        "material_images": "0",
+        "uploaded_images": "17",
+        "content_images": "17",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfNDcg/MDAxNDg3MDYxMzY1NDM4.NroLBIFvw4HI_a5pk2zW4SQCSI3Kb2AXaPCS7zk29iEg.DKk0Y3Y4tfHNuCrUTRLd5h3PtbIkfoy_s4_7dB-4zAwg.JPEG.hdy2569/%EC%B4%88%EC%A7%84%EC%83%81%EC%95%85.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfOTcg/MDAxNDg3MDYxMzY2MDA0.3YwXJHg41yEAU9G-5Xs7GkK0Fqqux8waQ4vsWPHVbEUg.AneoLn-9QKHQY6Dvq5rs9rfegWKACtY_5rt9o3f6Qpsg.JPEG.hdy2569/%ED%99%8D%EB%AF%B8%ED%9D%AC_%EC%B4%88%EC%A7%84%ED%8C%8C%EB%85%B8%EB%9D%BC%EB%A7%88.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMjU0/MDAxNDg3MDcxMjQxMDQz.qYbJtDm425slES8T9vKOcUsbQKPPYPTWk1jlQLI2jasg.AK7nrwI8rQ-0SW0SaM62HiVr0ZnLcv-3_8je29HiWFog.JPEG.hdy2569/%EF%BF%BD%EB%BE%BC%E9%87%89%EB%9A%AE%EC%A0%8F%EF%BF%BD%EC%94%AA%EF%BF%BD%EC%94%A0%EF%BF%BD%EB%9F%BA%EF%BF%BD%EB%93%83.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMTQ5/MDAxNDg3MDYxMzY2MzY5.Mc0ruKIcLRfWjqf50LtXTw8RV9j3kJzWUFsk_6m2nvkg.E7mlhj1zkAJ_bfGjvUr0pfygjxEc1AcS6wDywLVwV6Eg.JPEG.hdy2569/%EC%B4%88%EC%A7%84%EC%83%81%EC%95%85.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMzgg/MDAxNDg3MDYxMzY2NjY4.t8ZgCkPsxPLhtrCeatbbGTb-4yUJSHxsCf-EUQdL1Cgg.tSbxvWHQy3NyB1EC8J62ZNPqcMsgvRlCa5jzUIWCEuYg.JPEG.hdy2569/%EB%B3%B4%EC%B2%A0%EB%AC%BC%EC%A0%9C%EA%B1%B0%ED%9B%84.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMjYg/MDAxNDg3MDYxMzY3MDcz.6jlc0q8qKZybb93cTqUYmWPKqBHjgLruFR3rg3Kj1NQg.8uYkCKUkPHGvcyiebRL4QHr9UeDb-ER5BBa6lecBZv8g.JPEG.hdy2569/%ED%99%8D%EB%AF%B8%ED%9D%AC_%ED%81%AC%EB%9D%BC%EC%9A%B42.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMjc0/MDAxNDg3MDcyNDIzMTI5.MiO3XDcu5TLzF9xm9pXovej9S9-_wsLMFi0OxIUij9kg.R08-PZ5XvihsyvN_81KlI0WztlhYpuhkqb7DXyhGaXMg.JPEG.hdy2569/%E8%B9%82%EB%8C%81%EC%BF%8B%E8%87%BE%EF%BF%BD_%EF%BF%BD%EC%9F%BB%EF%BF%BD%EB%B9%80.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMjAz/MDAxNDg3MDcyNDA0NTc4.bqiSK93cy4muL_fyMPIZzqx8mJOXThayucsG7F9oAEEg.M-PJWVuS62jySZjSESKw7d4pbLlepIU1L4ggdiChu1cg.JPEG.hdy2569/%EC%B5%9C%EC%A2%852.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfMjA4/MDAxNDg3MDcyNjI3MDI3.MyR6RcKZvmTziwQyfLr9s8zkD09gTFduEW-_9kh-D7Eg.aaCtRmwgutathv7v_BvW8xv1iratt_3daai6qpSG8ncg.JPEG.hdy2569/%EF%BF%BD%EB%A3%AF%EF%BF%BD%EB%9C%86%E5%BD%9B%EB%94%89%EC%98%99%EF%BF%BD%EC%A0%9F%E7%AD%8C%EB%A1%B3%EC%98%99.jpg?type=w2",
+            "https://mblogthumb-phinf.pstatic.net/MjAxNzAyMTRfODgg/MDAxNDg3MDcyNjEwODI5.HTM7ITk-NfwG6-Xd9Y-YspfNs4h4zChINiwCo3TnRrog.FUEpYLYcAwZ303mDSh1EMuCFwKvwzfeX__2vIWfsT9og.JPEG.hdy2569/%EF%A7%A4%EC%92%96%EC%A5%8C.jpg?type=w2"
+        ]
+    },
+    "post_title": "앞니 크라운, 잇몸 내려앉음과 변색을 동반한 재치료",
+    "post_content": "추운 겨울, 한파를 뚫고 치과를 찾아 주신 30대 여성 환자분. 초진 차트에 적어 주신 불편 사항은 '앞니 보철물 교체' 셨다. 5 ~ 7년전 쯤 위 / 앞니 보철 치료를 받았다 하셨다. 구강 검진을 해보니 치아 보철물 끝 일부가 깨져 있었고, 치경부(=치아의 잇몸 사이) 잇몸 퇴축으로 인해 노출 된 변색 부위가 가장 큰 불만이셨다. 보철물 문제만은 아니였다. 환자분은 잘 모르셨던 #11 치아의 (오른쪽 대문니) 뿌리 쪽에 염증 소견도 있었다. (뽈록하게 부푼 쪽) 보철물 교체를 결정하실 경우, 기존 보철물을 제거 한 후 / 뿌리 끝 염증 치료도 병행해야 한다. 전치부 보철물의 재치료를 원하는 가장 많은 이유는, '금속 & 도재 보철물 = PFM' 으로 수복한 치아가 시간이 지나면서 잇몸 주위로 금속이 비쳐보이 경우일 때다. 엄브렐라 이펙트(umbrella effect)라고도 한다. (엄브렐라 이펙트 예시) 헌데, 이 환자분의 경우는 앞니 보철물이 '금속 & 도재 보철물 = PFM' 이 아니였다. 금속성 크라운과는 전혀 무관한 올세라믹 크라운이였던 것.... 어째서 올세라믹 크라운인데도 PFM 크라운의 문제성과 유사한 불편함이 생겼던 걸까. 간단히 이유를 설명하자면 1) 시간이 지나면서 잇몸이 퇴축이 되었고 2) 그로 인해 노출 된 변색 치아가 거무튀튀하게 비쳐 보였기 때문이다. 그렇다면 잇몸은 왜 퇴축이 되었을까. 검진 결과로 봤을 때 이 환자는 치아 주변 잇몸의 두께가 상당히 얇은 편이셨다. ( 이를 thin biotype 이라 한다.) (좌: thick biotype / 우: thin biotype) 치아 주변 잇몸이 두께가 얇은 경우에는 두꺼운 사람에 비해서 자극이나 염증에 의한 잇몸 퇴축이 더 쉽게 일어난다. 때문에 이러한 케이스의 환자분들은 보철물 치료 과정&보철물 디자인에 더욱 신경을 쓰고 주의를 기울여야 한다. 훗날의 보철물과 치아 상태까지도 고려해야 한다는 의미.. 상담 후 앞니 보철물 교체를 결정해주셨고, 웃을 때 보이는 왼쪽에 작은 어금니(치아 번호 #25번) 골드 크라운도 같이 교체하기로 했다. 기존 보철물 제거 후 사진이다. 일단 보이는 것은 변색치아와 충치, 그리고 표시된 #11번 치아의 치경부는 갈색으로 변색이 되어 있다. 잇몸이 올라감으로써 저 부분이 노출이 되면서 검게 변한 것이다. 변색과 충치 제거와 함께 재신경 치료도 마무리 하였다. (뽈록했던 염증 주머니 없어짐) 신경치료 마무리 후 속 재료를 채워 말끔히 보강을 했고 더 환한 미소를 가지고 싶으신 환자분을 위해 미백을 서비스로 해드렸다. 미백 된 치아 색상에 맞춰 추후 앞니 보철물이 제작이 된다. 올세라믹 크라운이 제작되었다, 보철물 내면의 모습. 보철물 시적을 했다. 함께 교체한 #25번 치아 크라운도 굉장히 자연스럽게 제작이 되었다. 치아와 치아 사이에 미세한 공간이 있어서 검게 뚫려 보이지만, 환자분 잇몸 형태에 대한 적절한 재료 선택과 디자인 구상을 충분히 고려했기 때문에 머지 않아 더욱 자연스러운 잇몸 반응이 일어날 것을 관찰해 볼 것이다. 환자분은 100점 만점에 90점의 점수를 주셨지만 일주일 후 다시 체크 약속을 해드렸다. 그리고 일주일 후 ! 확실히 잇몸 라인과 치아사이 공간이 일주일 사이에 더 자연스러워졌다. 미세한 변화의 차이지만 예후를 기대했던 원장님과 직원들은 보자마자 '오~~~~~' 를 외쳤고 환자분은 영문은 모른채 '멍........' (ㅋㅋㅋ) 치료 전사진과 후사진을 비교하여 보여드린 후에야 함께 '오~~~~~~'를 외칠 수 있었다.. 전 후 단순히, 그냥, 막, 보철물 교체와 제작을 하는게 아닌 환자 개인의 모든 구강 상태를 고려하여 앞을 내다본 최상의 진료가 아니었나 한다.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "가장(2), 100점(1), 최상의(1), 확실히(1), 상담(1)",
+        "excessive_words": "보철물(18), 잇몸(12)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "55.46%",
+            "keywords": "보철물(17), 잇몸(12), 치아(8), 환자분(7), 크라운(7), 치료(5), 앞니(4), 퇴축(4), 경우(4), 염증(4), 변색(4), 고려(3), 자연(3), 올세라믹(3), 사이(3), 충치(2), 재료(2), 상태(2), 기존(2), 구강(2), 두께(2), 불편(2), 검진(2), 환자(2), 재신경(1), 치아사이(1), 신경치료(1), 변화(1), 예후(1), 진료(1), 형태(1), 선택(1), 부분(1), 미소(1), 반응(1), 관찰(1), 치과(1), 신경(1), 여성(1), 수복(1), 부위(1), 모습(1), 왼쪽(1), 체크(1), 치경부(1), 전치부(1), 보철(1), 케이스(1), 추후(1), 대문니(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "7.98%",
+            "keywords": "때문(3), 노출(3), 마무리(2), 개인(1), 기대(1), 점수(1), 차이(1), 서비스(1), 차트(1), 사람(1), 사항(1), 의미(1), 일부(1), 골드(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "5.04%",
+            "keywords": "교체(6), 사진(1), 색상(1), 표시(1), 소견(1), 번호(1), 결과(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.36%",
+            "keywords": "이유(2), 디자인(2), 영문(1), 병행(1), 금속(1), 불만(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "3.36%",
+            "keywords": "제작(4), 뿌리(2), 비교(1), 자극(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "3.36%",
+            "keywords": "이펙트(2), 미백(2), 주변(2), 문제성(1), 주위(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.94%",
+            "keywords": "제거(3), 후사진(1), 만점(1), 문제(1), 설명(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "2.1%",
+            "keywords": "공간(2), 약속(1), 주의(1), 보강(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.68%",
+            "keywords": "결정(2), 유사(1), 라인(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "1.68%",
+            "keywords": "시간(2), 최상(1), 겨울(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "1.26%",
+            "keywords": "내면(1), 엄브렐라(1), 훗날(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "1.26%",
+            "keywords": "초진(1), 예시(1), 시적(1)"
+        },
+        {
+            "category_name": "자동차",
+            "percentage": "0.84%",
+            "keywords": "한파(1), 금속성(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.84%",
+            "keywords": "구상(1), 주머니(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "0.42%",
+            "keywords": "전사진(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.42%",
+            "keywords": "상담(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.42%",
+            "keywords": "갈색(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "34.76%",
+            "words": "보철물(18), 치아(12), 잇몸(12), 환자(10), 후(9), 크라운(7), 치료(7), 교체(6), 분(6), 앞니(5), 변색(5), 것(5), 금속(4), 일(4), 사이(4), 퇴축(4), 제작(4), 염증(4), 경우(4), 세라믹(3), 노출(3), 때문(3), 사진(3), 주일(3), 제거(3), 번(3), 고려(3), 때(3), 신경(3), 자연(3), 이펙트(2), 엄브렐라(2), 시간(2), 도재(2), 디자인(2), 미백(2), 공간(2), 점(2), 오(2), 재료(2), 마무리(2), 이유(2), 상태(2), 충치(2), 주변(2), 두께(2), 구강(2), 전(2), 문제(2), 치경(2), 부(2), 뿌리(2), 쪽(2), 기존(2), 결정(2), 끝(2), 불편(2), 관찰(1), 여성(1), 형태(1), 초진(1), 구상(1), 선택(1), 반응(1), 차트(1), 서비스(1), 미소(1), 보강(1), 사항(1), 색상(1), 추후(1), 모습(1), 내면(1), 대(1), 시적(1), 약속(1), 비교(1), 채(1), 영문(1), 한파(1), 수(1), 게(1), 진료(1), 최상(1), 앞(1), 개인(1), 직원(1), 원장(1), 속(1), 체크(1), 치과(1), 점수(1), 라인(1), 변화(1), 기대(1), 예후(1), 차이(1), 만점(1), 표시(1), 그(1), 설명(1), 걸까(1), 유사(1), 결과(1), 겨울(1), 좌(1), 이(1), 편(1), 부위(1), 불만(1), 소견(1), 수복(1), 병행(1), 주위(1), 보이(1), 예시(1), 오른쪽(1), 대문니(1), 사람(1), 자극(1), 위(1), 골드(1), 보철(1), 번호(1), 치부(1), 갈색(1), 주머니(1), 년(1), 부분(1), 어금니(1), 왼쪽(1), 일부(1), 과정(1), 케이스(1), 주의(1), 훗날(1), 상담(1), 의미(1), 검진(1), 짐(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "15.76%",
+            "words": "이(22), 를(16), 에(15), 의(14), 을(13), 은(10), 과(8), 도(8), 가(7), 는(6), 로(5), 와(4), 으로(3), 으로써(1), 야(1), 이나(1), 만(1), 까지(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "14.25%",
+            "words": ".(37), ,(12), )(12), ((10), '(9), #(4), =(3), PFM(3), /(3), &(3), biotype(3), 25(2), thin(2), 11(2), :(2), ~~~~~'(1), .......'(1), thick(1), 100(1), ~~~~~~'(1), 90(1), !(1), umbrella(1), ~(1), 5(1), 30(1), 7(1), effect(1), 1(1), ...(1), 2(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "13.33%",
+            "words": "이(8), 있(5), 되(5), 한다(5), 치아(4), 주(4), 했(4), 보이(3), 하(3), 해(3), 아니(3), 검(3), 드렸(2), 지나(2), 얇(2), 비쳐(2), 인해(2), 보(2), 위해(1), 올라감(1), 작(1), 맞춰(1), 변한(1), 없(1), 싶(1), 환한(1), 채워(1), 가지(1), 않(1), 보여(1), 모른(1), 드린(1), 외칠(1), 내다본(1), 아닌(1), 외쳤(1), 지만(1), 대한(1), 뚫려(1), 머(1), 일어날(1), 볼(1), 된다(1), 비해서(1), 부푼(1), 모르(1), 원하(1), 많(1), 다(1), 큰(1), 깨져(1), 찾(1), 뚫(1), 적(1), 셨(1), 받(1), 라고(1), 인데(1), 일어난다(1), 쉽(1), 쓰(1), 기울여야(1), 한다는(1), 의한(1), 추운(1), 보였(1), 생겼(1), 그렇(1), 봤(1), 두꺼운(1), 웃(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "8.81%",
+            "words": "다(22), 고(8), 게(6), 던(5), 는(4), 은(4), 면서(3), 기(3), 어(3), 여(2), 지만(2), 을(2), 아(2), 지(1), 자마자(1), 자면(1), 나(1), 어서(1), 을까(1), 진(1), 니(1), 라(1), 다면(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "4.52%",
+            "words": "한(9), 하(7), 된(4), 들(2), 해(2), 성(2), 분(2), 했(2), 해야(2), 스러운(1), 스러워졌(1), 님(1), 함(1), 쯤(1), 되(1), 스럽(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.48%",
+            "words": "더(3), 함께(3), 가장(2), 더욱(2), 그리고(2), 뽈록(2), 굉장히(1), 다시(1), 단순히(1), 그냥(1), 멍(1), 확실히(1), 말끔히(1), 충분히(1), 같이(1), 전혀(1), 잘(1), 어째서(1), 간단히(1), 상당히(1), 왜(1), 일단(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.67%",
+            "words": "었(8), 셨(6), 였(4), 신(2), 으신(1), 실(1), 았(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "1.04%",
+            "words": "올(3), 이(2), 전(2), 모든(1), 저(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.7%",
+            "words": "미세(2), 적절(1), 이러(1), 거무튀튀(1), 무관(1)"
+        },
+        {
+            "morpheme_type": "감탄사",
+            "percentage": "0.46%",
+            "words": "막(1), ㅋㅋㅋ(1), 우(1), 헌데(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.23%",
+            "words": "재(2)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "131",
+        "words": [
+            {
+                "word": "보철물",
+                "count": "17"
+            },
+            {
+                "word": "잇몸",
+                "count": "12"
+            },
+            {
+                "word": "치아",
+                "count": "8"
+            },
+            {
+                "word": "크라운",
+                "count": "7"
+            },
+            {
+                "word": "환자분",
+                "count": "7"
+            },
+            {
+                "word": "교체",
+                "count": "6"
+            },
+            {
+                "word": "치료",
+                "count": "5"
+            },
+            {
+                "word": "퇴축",
+                "count": "4"
+            },
+            {
+                "word": "제작",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "앞니",
+                "count": "4"
+            },
+            {
+                "word": "염증",
+                "count": "4"
+            },
+            {
+                "word": "변색",
+                "count": "4"
+            },
+            {
+                "word": "고려",
+                "count": "3"
+            },
+            {
+                "word": "때문",
+                "count": "3"
+            },
+            {
+                "word": "자연",
+                "count": "3"
+            },
+            {
+                "word": "제거",
+                "count": "3"
+            },
+            {
+                "word": "사이",
+                "count": "3"
+            },
+            {
+                "word": "노출",
+                "count": "3"
+            },
+            {
+                "word": "올세라믹",
+                "count": "3"
+            },
+            {
+                "word": "결정",
+                "count": "2"
+            },
+            {
+                "word": "환자",
+                "count": "2"
+            },
+            {
+                "word": "이유",
+                "count": "2"
+            },
+            {
+                "word": "디자인",
+                "count": "2"
+            },
+            {
+                "word": "상태",
+                "count": "2"
+            },
+            {
+                "word": "재료",
+                "count": "2"
+            },
+            {
+                "word": "공간",
+                "count": "2"
+            },
+            {
+                "word": "두께",
+                "count": "2"
+            },
+            {
+                "word": "시간",
+                "count": "2"
+            },
+            {
+                "word": "미백",
+                "count": "2"
+            },
+            {
+                "word": "'금속",
+                "count": "2"
+            },
+            {
+                "word": "기존",
+                "count": "2"
+            },
+            {
+                "word": "뿌리",
+                "count": "2"
+            },
+            {
+                "word": "불편",
+                "count": "2"
+            },
+            {
+                "word": "이펙트",
+                "count": "2"
+            },
+            {
+                "word": "구강",
+                "count": "2"
+            },
+            {
+                "word": "검진",
+                "count": "2"
+            },
+            {
+                "word": "충치",
+                "count": "2"
+            },
+            {
+                "word": "마무리",
+                "count": "2"
+            },
+            {
+                "word": "주변",
+                "count": "2"
+            },
+            {
+                "word": "갈색",
+                "count": "1"
+            },
+            {
+                "word": "부분",
+                "count": "1"
+            },
+            {
+                "word": "치경부",
+                "count": "1"
+            },
+            {
+                "word": "표시",
+                "count": "1"
+            },
+            {
+                "word": "보강",
+                "count": "1"
+            },
+            {
+                "word": "미소",
+                "count": "1"
+            },
+            {
+                "word": "내면",
+                "count": "1"
+            },
+            {
+                "word": "색상",
+                "count": "1"
+            },
+            {
+                "word": "서비스",
+                "count": "1"
+            },
+            {
+                "word": "변색치아",
+                "count": "1"
+            },
+            {
+                "word": "환자분들",
+                "count": "1"
+            },
+            {
+                "word": "자극",
+                "count": "1"
+            },
+            {
+                "word": "사람",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "설명",
+                "count": "1"
+            },
+            {
+                "word": "케이스",
+                "count": "1"
+            },
+            {
+                "word": "시적",
+                "count": "1"
+            },
+            {
+                "word": "왼쪽",
+                "count": "1"
+            },
+            {
+                "word": "훗날",
+                "count": "1"
+            },
+            {
+                "word": "주의",
+                "count": "1"
+            },
+            {
+                "word": "신경",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "개인",
+                "count": "1"
+            },
+            {
+                "word": "영문",
+                "count": "1"
+            },
+            {
+                "word": "직원들",
+                "count": "1"
+            },
+            {
+                "word": "원장님",
+                "count": "1"
+            },
+            {
+                "word": "기대",
+                "count": "1"
+            },
+            {
+                "word": "전사진",
+                "count": "1"
+            },
+            {
+                "word": "후사진",
+                "count": "1"
+            },
+            {
+                "word": "진료",
+                "count": "1"
+            },
+            {
+                "word": "최상",
+                "count": "1"
+            },
+            {
+                "word": "유사",
+                "count": "1"
+            },
+            {
+                "word": "비교",
+                "count": "1"
+            },
+            {
+                "word": "예후",
+                "count": "1"
+            },
+            {
+                "word": "차이",
+                "count": "1"
+            },
+            {
+                "word": "관찰",
+                "count": "1"
+            },
+            {
+                "word": "반응",
+                "count": "1"
+            },
+            {
+                "word": "구상",
+                "count": "1"
+            },
+            {
+                "word": "선택",
+                "count": "1"
+            },
+            {
+                "word": "만점",
+                "count": "1"
+            },
+            {
+                "word": "점수",
+                "count": "1"
+            },
+            {
+                "word": "변화",
+                "count": "1"
+            },
+            {
+                "word": "라인",
+                "count": "1"
+            },
+            {
+                "word": "약속",
+                "count": "1"
+            },
+            {
+                "word": "형태",
+                "count": "1"
+            },
+            {
+                "word": "'오",
+                "count": "1"
+            },
+            {
+                "word": "상담",
+                "count": "1"
+            },
+            {
+                "word": "의미",
+                "count": "1"
+            },
+            {
+                "word": "과정&보철물",
+                "count": "1"
+            },
+            {
+                "word": "(좌",
+                "count": "1"
+            },
+            {
+                "word": "어금니(치아",
+                "count": "1"
+            },
+            {
+                "word": "번호",
+                "count": "1"
+            },
+            {
+                "word": "신경치료",
+                "count": "1"
+            },
+            {
+                "word": "주머니",
+                "count": "1"
+            },
+            {
+                "word": "재신경",
+                "count": "1"
+            },
+            {
+                "word": "골드",
+                "count": "1"
+            },
+            {
+                "word": "(엄브렐라",
+                "count": "1"
+            },
+            {
+                "word": "엄브렐라",
+                "count": "1"
+            },
+            {
+                "word": "'앞니",
+                "count": "1"
+            },
+            {
+                "word": "초진",
+                "count": "1"
+            },
+            {
+                "word": "여성",
+                "count": "1"
+            },
+            {
+                "word": "겨울",
+                "count": "1"
+            },
+            {
+                "word": "7년전",
+                "count": "1"
+            },
+            {
+                "word": "보철",
+                "count": "1"
+            },
+            {
+                "word": "비쳐보이",
+                "count": "1"
+            },
+            {
+                "word": "전치부",
+                "count": "1"
+            },
+            {
+                "word": "(오른쪽",
+                "count": "1"
+            },
+            {
+                "word": "추후",
+                "count": "1"
+            },
+            {
+                "word": "모습",
+                "count": "1"
+            },
+            {
+                "word": "소견",
+                "count": "1"
+            },
+            {
+                "word": "대문니",
+                "count": "1"
+            },
+            {
+                "word": "문제",
+                "count": "1"
+            },
+            {
+                "word": "불만",
+                "count": "1"
+            },
+            {
+                "word": "병행",
+                "count": "1"
+            },
+            {
+                "word": "수복",
+                "count": "1"
+            },
+            {
+                "word": "금속성",
+                "count": "1"
+            },
+            {
+                "word": "예시",
+                "count": "1"
+            },
+            {
+                "word": "금속",
+                "count": "1"
+            },
+            {
+                "word": "주위",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "치경부치아",
+                "count": "1"
+            },
+            {
+                "word": "'멍",
+                "count": "1"
+            },
+            {
+                "word": "모른채",
+                "count": "1"
+            },
+            {
+                "word": "치아사이",
+                "count": "1"
+            },
+            {
+                "word": "체크",
+                "count": "1"
+            },
+            {
+                "word": "한파",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "일부",
+                "count": "1"
+            },
+            {
+                "word": "사항",
+                "count": "1"
+            },
+            {
+                "word": "차트",
+                "count": "1"
+            },
+            {
+                "word": "문제성",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "잇몸내려앉음",
+            "search_volume_total": "19,160",
+            "search_volume_pc": "2,160",
+            "search_volume_mobile": "17,000",
+            "clicks_pc": "5",
+            "clicks_mobile": "285",
+            "ctr_pc": "0.24%",
+            "ctr_mobile": "1.8%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "앞니크라운",
+            "search_volume_total": "3,330",
+            "search_volume_pc": "410",
+            "search_volume_mobile": "2,920",
+            "clicks_pc": "-",
+            "clicks_mobile": "5",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.19%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "3",
+            "keyword": "크라운잇몸",
+            "search_volume_total": "80",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "70",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "1"
+        },
+        {
+            "rank": "4",
+            "keyword": "내려앉음",
+            "search_volume_total": "40",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "30",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        },
+        {
+            "rank": "5",
+            "keyword": "크라운잇몸내려앉음",
+            "search_volume_total": "30",
+            "search_volume_pc": "-",
+            "search_volume_mobile": "30",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        },
+        {
+            "rank": "6",
+            "keyword": "앞니크라운잇몸",
+            "search_volume_total": "30",
+            "search_volume_pc": "-",
+            "search_volume_mobile": "30",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "2"
+        }
+    ],
+    "same_topic_posting": "크라운잇몸 (7), 앞니크라운잇몸 (3), 앞니크라운 (3), 잇몸내려앉음 (2), 내려앉음 (2), 크라운잇몸내려앉음 (1)"
+}

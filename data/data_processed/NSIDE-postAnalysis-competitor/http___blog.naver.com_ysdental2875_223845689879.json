@@ -1,0 +1,805 @@
+{
+    "posting_score": "준최2-Lv.1",
+    "exposure_score": "17.36",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "78.41",
+            "evaluation": "적합",
+            "percentage": "78.41%"
+        },
+        {
+            "category": "주제",
+            "score": "79.73",
+            "evaluation": "적합",
+            "percentage": "79.73%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "61.19",
+            "evaluation": "적합",
+            "percentage": "61.19%"
+        },
+        {
+            "category": "형태소",
+            "score": "52.64",
+            "evaluation": "적합",
+            "percentage": "52.64%"
+        },
+        {
+            "category": "가독성",
+            "score": "74.79",
+            "evaluation": "적합",
+            "percentage": "74.79%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "96.00",
+            "evaluation": "정보성",
+            "percentage": "96.00%"
+        }
+    ],
+    "publish_time": "2025-04-25 08",
+    "exposure_status": "발행된지 87일 (7시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:49:36 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "17",
+        "title_without_space": "13",
+        "content_with_space": "1,762",
+        "content_without_space": "1,347"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "325",
+        "syllable_count": "416",
+        "word_count": "138",
+        "abusing_word_count": "3"
+    },
+    "image_analysis": {
+        "valid_images": "5",
+        "invalid_images": "9",
+        "material_images": "0",
+        "uploaded_images": "14",
+        "content_images": "14",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfMjk0/MDAxNzQ1MjIzNjM2Nzc4.-TKRZccwvV4mzEUq1FrfEnA4fG45-nqtJ_IWax6JsH4g.dXMfL5Z8kOGcMNmcBZi91bu-aIl6w4e7RlQVZtAXDEog.JPEG/%EC%82%AC%EC%A0%84%EC%95%88%EB%82%B4.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfMTA0/MDAxNzQ1MjIzNzQ2MjMw.lsz8Z5uslCKLb3NJ-gLo0gisrsUnyLcChnjlUNVFqjEg.343RqD7pp533Ol-Wf13cWUp-v3_BTCWSl9-RQwrSJWkg.JPEG/2-11.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfODIg/MDAxNzQ1MjIzNzUwNTEy.HK9wi8aROrLQgFJ-r_N_6zZIRsCQeu71Wl361JyYtoAg.vRuO7REU5curhatL_Egzv4Owr2EIXuk327LvjafvzwIg.JPEG/3-13.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfMTE0/MDAxNzQ1MjIzNzY1MDg3.5SMyvK54oBJDYOlqSOdFv4AncnnkYhstzmDXRfvUwUEg.NV3v8N_4KSTqt_S6lMcoL3p6vj4EZ7qw1YtfMr3oagog.JPEG/4-13.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfNiAg/MDAxNzQ1MjIzNzcyMTEy.Xz-c-BoYSE-rMv2k2DtzveFA_E4fLZ3FftM53S5cfaog._PO00jNEJ6tgAMZfO_urDMEkuGlxw7cQ9FJT2RuNzd4g.JPEG/5-13.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfMTYw/MDAxNzQ1MjIzODE3Mjkx.E-Q0CeIkFlLjneZM6lTP1Opon2MyNf1SPeYmWsvNMJsg.eZAanCwH2Fi1k-NEt56VpGMYdif8ZL5fblQManRdBsMg.JPEG/%EC%98%88%EC%95%BD_%EB%B0%8F_%EB%AC%B8%EC%9D%98.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfMTY2/MDAxNzQ1MjIzODIyOTUw.L_hwxuS5wKY0SoulRLNqEBQof9AvoIAgrr6hRIFHTxkg.BoI7NB6CuMyTt4zBDXny0AZB9Fv7fx9dwkNcBUlmD5cg.JPEG/%EC%A7%84%EB%A3%8C%EC%8B%9C%EA%B0%84.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MjFfOCAg/MDAxNzQ1MjIzODI3NzE0._koEAPxHXmFP_T5OBWkysmofqtp78eDbhomeN6sjH9Yg.ktukb-CQ5XwjmT_96DHv7_GQ8Rip43CQ1-VIYAvxHMog.JPEG/%EC%A0%95%EB%B3%B4%EC%A0%9C%EA%B3%B5.jpg?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyNTA0MjFfMjMx/MDAxNzQ1MjIzNjMyMDQx.wIFCqBAArZNS0Si3pfYk1aqjP3xGkmTfJOMkd87ZHHwg.uRxUpEzHrnJBv9Z_4L9DGOnTJe-2kgyMFcjK3oQg0UEg.GIF/top_02.gif?type=mp4w800"
+        ]
+    },
+    "post_title": "송곳니 충치로 임플란트 한 사연",
+    "post_content": "반갑습니다. 연세위드치과 대표원장 손선보입니다. 오늘은 송곳니에 깊은 충치가 생긴 치과 환자분 사례로 도움드리겠습니다. 먼저 성년의 치아 개수는 몇 개일까요? 사랑니를 제외하고 28개인데요. 아시겠지만, 각각의 치아들은 위치에 따라 역할이 조금씩 다릅니다. 앞니는 음식을 잘라주며 심미적으로 중요하고, 어금니는 단단 음식을 잘게 부수어 주는 기능에 중점적인 역할을 합니다. 마지막으로 송곳니는 앞니와 어금니 사이에 위치해 서로 간의 마찰을 줄여주는 치아의 기둥이라고 할 수 있습니다. 특히 송곳니는 이의 중심, 기둥 역할인 만큼 상실했을 때 대체적인 치료로 회복하는 것이 중요한데요. 아래는 충치로 인해 임플란트까지 이른 사연입니다. 1. 내원 당시 상태 이전부터 송곳니 시림이 지속되며, 불편감이 있으셨다고 하셨습니다. 육안상 주변 치아들과 비교 시 별다른 이상이 없어 보입니다. 2. 정밀 진단 (X-ray) & 계획 내원 당시 X-ray 정밀한 진단을 위해 X-ray 검사를 진행했습니다. 검사를 통해 살펴보니 우측 상악 송곳니에 문제가 발견되었습니다. 자세히 보시면 꺼뭇꺼뭇하게 충치가 관찰되는데요. 충치가 송곳니 안쪽으로 깊이 진행되고 있던 상태였습니다. 충치의 진행 정도에 따라 치료 방법이 달라지는데요. 뿌리까지 이어진 충치로 인해, 골소실 충치가 송곳니 뿌리까지 이어지며 서서히 흡수되고 있었습니다. (꺼뭇꺼뭇한 충치) 따라서 더 이상 보존적인 진료로는 자연치를 살리기 어려운 상태였기에 결국 이를 발치한 후 임플란트 수술을 계획하게 되었습니다. 3. 치료 중 발치 즉시 임플란트 진행 임플란트, 일반과 즉시의 차이점 일반적인 경우는 발치를 한 후, 잇몸이 아물 수 있도록 치유 기간을 가집니다. 그 후 식립을 하고 골결합이 되기를 기다린 후, 인공치아를 부착합니다. 이와 달리 즉시의 경우 자연치를 발치한 뒤 치유 기간 없이 바로 식립을 하게 됩니다. 잇몸이 치유되기를 기다리지 않고 바로 식립하기 때문에 전체적인 기간을 줄인다는 점이 특징입니다. (개인 상태에 따라 적합하지 않은 경우도 존재합니다.) 발치 즉시 임플란트, 가능한 대상? 1. 치주 질환으로 이를 발치해야 하는데, 염증이 심하지 않을 때 2. 발거 후 잇몸뼈 상태가 양호할 때 3. 이가 빠진 뒤 오랜 시간이 지나지 않았을 때 임시치아 상태 해당 치아는 앞니와 이어지는 곳으로 심미적인 요소를 고려한 식립 위치에 심어드렸으며, 생활을 편하게 할 수 있도록 시술 당일 임시치아까지 부착을 하였습니다. 이 상태에서 식립한 인공치근과 잇몸뼈가 단단하게 결합되기를 기다립니다. 4. 치료 종료 약 3개월이 지난 후 골결합이 완료되어 최종적인 인공치를 제작했습니다. 어색하지 않도록, 주변 이들과 색상은 물론 모양까지 세심하게 제작을 도와드려 심미성까지 말끔하게 회복시켜 드렸습니다. 실제 치아라고 해도 믿어질 만큼 자연스럽습니다. 최종 사진 임플란트 주변으로 잇몸뼈 잘 차올랐고, 안정적인 상태로 마무리되었습니다. 추후 정기 체크를 통해 환자분의 증상을 살펴볼 예정이며, 만족감이 좋았던 케이스였습니다. 지금까지 송곳니 깊은 충치로 인해 발치에 이른 사연을 보여드렸습니다. 해당 환자분 같은 경우는 깊은 충치로 인해 발치를 진행한 케이스였지만, 모든 환자분께 해당되는 것은 아닙니다. 무엇보다 중요한 것은 정기적인 검진을 통한 예방, 혹여 발생한 충치의 빠른 치료입니다. 따라서 경험이 많은 의료진을 찾아 꼼꼼한 검진으로 자연치아를 지켜가실 바라며 마치겠습니다. 긴 글 읽어주셔서 감사합니다. 연세위드치과 대표원장 손선보였습니다. < 상담 연락처 > < 찾아오시는 길 >",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "안정적인(1), 연락처(1), 상담(1)",
+        "excessive_words": "충치(11)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "66.53%",
+            "keywords": "충치(11), 송곳니(8), 발치(8), 상태(8), 임플란트(6), 치료(5), 식립(5), 치아(4), 환자분(4), 경우(4), 앞니(3), 역할(3), 치유(3), 잇몸뼈(3), 심미적(2), 자연치(2), 중요(2), 정밀(2), 진단(2), 만큼(2), 치아들(2), 회복(2), 잇몸(2), 대표원장(2), 연세위드치과(2), 케이스(2), 음식(2), 어금니(2), 검진(2), 이상(2), 내원(2), 무엇(1), 발생(1), 손선보(1), 세심(1), 만족감(1), 관찰(1), 기능(1), 개수(1), 고려(1), 수술(1), 모양(1), 염증(1), 정도(1), 정기적(1), 증상(1), 질환(1), 체크(1), 전체적(1), 자연(1), 안정적(1), 의료진(1), 인공치근(1), 인공치아(1), 심미성(1), 보존적(1), 치과(1), 추후(1), 우측(1), 안쪽(1), 각각(1), 최종(1), 차이점(1), 일반(1), 중점적(1), 지속(1), 진료(1), 특징(1), 아래(1), 치주(1), 사랑니(1), 발거(1), 당일(1), 일반적(1), 사이(1), 상악(1), 불편감(1), 시술(1), 상실(1), 육안상(1), 골소실(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "13.81%",
+            "keywords": "진행(5), 위치(3), 해당(3), 사연(2), 계획(2), 검사(2), 당시(2), 예정(1), 양호(1), 요소(1), 존재(1), 최종적(1), 지금(1), 마무리(1), 때문(1), 제외(1), 대체적(1), 중심(1), 대상(1), 경험(1), 도움(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "4.18%",
+            "keywords": "제작(2), 즉시(2), 뿌리(2), 완료(1), 시림(1), 흡수(1), 비교(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "3.35%",
+            "keywords": "부착(2), 종료(1), 색상(1), 연락처(1), 사진(1), 방법(1), 결합(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.09%",
+            "keywords": "기둥(2), 이전(1), 문제(1), 발견(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.67%",
+            "keywords": "기간(3), 상담(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.26%",
+            "keywords": "주변(3)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "0.84%",
+            "keywords": "생활(1), 가능(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "0.84%",
+            "keywords": "예방(1), 마찰(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.84%",
+            "keywords": "시간(1), 마지막(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "0.42%",
+            "keywords": "감사(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.42%",
+            "keywords": "사례(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "0.42%",
+            "keywords": "정기(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "0.42%",
+            "keywords": "성년(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "35.97%",
+            "words": "충치(11), 치아(10), 송곳니(8), 상태(8), 발치(8), 후(6), 이(6), 플란트(6), 진행(5), 잇몸(5), 립(5), 식(5), 치료(5), 경우(4), 환자(4), 임(4), 때(4), 골(3), 결합(3), 주변(3), 치유(3), 인공(3), 치과(3), 기간(3), 앞니(3), 수(3), 뼈(3), 해당(3), 분(3), 역할(3), 위치(3), 것(3), 당시(2), 계획(2), 제작(2), 일반(2), 최종(2), 뿌리(2), 자연치(2), 즉시(2), 검사(2), 이상(2), 자연(2), 정밀(2), 진단(2), 내원(2), 정기(2), 만큼(2), 개(2), 사연(2), 심미(2), 중요(2), 임시(2), 손(2), 위드(2), 대표(2), 원장(2), 어금니(2), 음식(2), 부착(2), 기둥(2), 케이스(2), 검진(2), 연세(2), 뒤(2), 회복(2), 발거(1), 치근(1), 양호(1), 당일(1), 요소(1), 생활(1), 곳(1), 시술(1), 고려(1), 시간(1), 추후(1), 발생(1), 경험(1), 예방(1), 무엇(1), 만족감(1), 지금(1), 의료진(1), 바(1), 연락처(1), 길(1), 상담(1), 감사(1), 글(1), 예정(1), 증상(1), 모양(1), 세심(1), 색상(1), 완료(1), 개월(1), 심미성(1), 실제(1), 염증(1), 체크(1), 마무리(1), 안정(1), 사진(1), 종료(1), 보존(1), 상실(1), 대체(1), 중심(1), 마찰(1), 간(1), 아래(1), 이전(1), 육안(1), 불편(1), 지속(1), 시림(1), 사이(1), 마지막(1), 성년(1), 도움(1), 사례(1), 선보(1), 개수(1), 사랑니(1), 중점(1), 기능(1), 각각(1), 제외(1), 비교(1), 우측(1), 점(1), 전체(1), 때문(1), 차이점(1), 특징(1), 개인(1), 치주(1), 대상(1), 가능(1), 존재(1), 중(1), 수술(1), 관찰(1), 발견(1), 문제(1), 상악(1), 안쪽(1), 정도(1), 진료(1), 흡수(1), 소실(1), 방법(1), 질환(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "15.09%",
+            "words": "를(17), 을(17), 이(16), 에(11), 는(10), 의(10), 가(8), 로(8), 까지(7), 으로(7), 은(5), 과(4), 와(3), 보다(1), 께(1), 도(1), 부터(1), 에서(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "14.86%",
+            "words": "인(10), 있(6), 하(6), 않(5), 입니다(4), 인해(4), 주(4), 였(4), 따라(3), 드렸(3), 깊(3), 이(2), 통해(2), 이어지(2), 이른(2), 되(2), 할(2), 임(2), 도와(1), 질(1), 지난(1), 차올랐(1), 믿(1), 기다립니다(1), 편하(1), 라고(1), 심(1), 드려(1), 해도(1), 통한(1), 마치(1), 라며(1), 가(1), 긴(1), 읽(1), 찾아오(1), 선보였(1), 지켜(1), 찾(1), 같(1), 보여(1), 좋(1), 아닙니다(1), 지나(1), 많(1), 빠른(1), 살펴볼(1), 한(1), 합니다(1), 부수(1), 줄여(1), 별다른(1), 보입니다(1), 없(1), 잘(1), 잘라(1), 드리(1), 생긴(1), 일까요(1), 인데요(1), 다릅니다(1), 아(1), 위해(1), 살펴보(1), 기다린(1), 가집니다(1), 됩니다(1), 기다리(1), 심하(1), 줄인다는(1), 아물(1), 반갑(1), 달라지(1), 보(1), 이어진(1), 살리(1), 어려운(1), 빠진(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "10.61%",
+            "words": ".(43), ,(16), -(3), ray(3), )(3), 3(3), X(3), ((3), ?(2), >(2), 1(2), 2(2), <(2), &(1), 28(1), 4(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "9.91%",
+            "words": "습니다(18), 게(8), 고(7), 어(6), 는(6), 은(6), 기(6), 지(5), 며(4), 도록(3), 을(3), 지만(2), 던(2), 는데요(2), 으며(1), 아(1), 는데(1), 라고(1), 니(1), 면(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "7.19%",
+            "words": "한(10), 되(10), 하(10), 적(10), 들(3), 했(3), 합니다(3), 할(1), 시켜(1), 분(1), 스럽(1), 해야(1), 치(1), 상(1), 씩(1), 해(1), 한데요(1), 감(1), 시(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.71%",
+            "words": "즉시(2), 바로(2), 꺼뭇꺼뭇(2), 따라서(2), 없이(1), 달리(1), 먼저(1), 물론(1), 혹여(1), 잘(1), 조금(1), 결국(1), 서로(1), 자세히(1), 깊이(1), 서서히(1), 더(1), 오늘(1), 특히(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2%",
+            "words": "었(4), 시(3), 겠(3), 았(2), 셔서(1), 실(1), 였(1), 셨(1), 으셨다고(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.83%",
+            "words": "약(1), 모든(1), 이(1), 오랜(1), 한(1), 그(1), 몇(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.83%",
+            "words": "단단(2), 꼼꼼(1), 말끔(1), 적합(1), 중요(1), 어색(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "138",
+        "words": [
+            {
+                "word": "충치",
+                "count": "11"
+            },
+            {
+                "word": "발치",
+                "count": "8"
+            },
+            {
+                "word": "송곳니",
+                "count": "8"
+            },
+            {
+                "word": "상태",
+                "count": "8"
+            },
+            {
+                "word": "임플란트",
+                "count": "6"
+            },
+            {
+                "word": "식립",
+                "count": "5"
+            },
+            {
+                "word": "치료",
+                "count": "5"
+            },
+            {
+                "word": "진행",
+                "count": "5"
+            },
+            {
+                "word": "치아",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "환자분",
+                "count": "4"
+            },
+            {
+                "word": "역할",
+                "count": "3"
+            },
+            {
+                "word": "앞니",
+                "count": "3"
+            },
+            {
+                "word": "위치",
+                "count": "3"
+            },
+            {
+                "word": "해당",
+                "count": "3"
+            },
+            {
+                "word": "치유",
+                "count": "3"
+            },
+            {
+                "word": "기간",
+                "count": "3"
+            },
+            {
+                "word": "주변",
+                "count": "3"
+            },
+            {
+                "word": "잇몸뼈",
+                "count": "3"
+            },
+            {
+                "word": "검사",
+                "count": "2"
+            },
+            {
+                "word": "뿌리",
+                "count": "2"
+            },
+            {
+                "word": "사연",
+                "count": "2"
+            },
+            {
+                "word": "회복",
+                "count": "2"
+            },
+            {
+                "word": "자연치",
+                "count": "2"
+            },
+            {
+                "word": "중요",
+                "count": "2"
+            },
+            {
+                "word": "골결합",
+                "count": "2"
+            },
+            {
+                "word": "제작",
+                "count": "2"
+            },
+            {
+                "word": "검진",
+                "count": "2"
+            },
+            {
+                "word": "부착",
+                "count": "2"
+            },
+            {
+                "word": "심미적",
+                "count": "2"
+            },
+            {
+                "word": "잇몸",
+                "count": "2"
+            },
+            {
+                "word": "즉시",
+                "count": "2"
+            },
+            {
+                "word": "케이스",
+                "count": "2"
+            },
+            {
+                "word": "만큼",
+                "count": "2"
+            },
+            {
+                "word": "내원",
+                "count": "2"
+            },
+            {
+                "word": "기둥",
+                "count": "2"
+            },
+            {
+                "word": "연세위드치과",
+                "count": "2"
+            },
+            {
+                "word": "음식",
+                "count": "2"
+            },
+            {
+                "word": "대표원장",
+                "count": "2"
+            },
+            {
+                "word": "당시",
+                "count": "2"
+            },
+            {
+                "word": "어금니",
+                "count": "2"
+            },
+            {
+                "word": "임시치아",
+                "count": "2"
+            },
+            {
+                "word": "정밀",
+                "count": "2"
+            },
+            {
+                "word": "치아들",
+                "count": "2"
+            },
+            {
+                "word": "이상",
+                "count": "2"
+            },
+            {
+                "word": "진단",
+                "count": "2"
+            },
+            {
+                "word": "계획",
+                "count": "2"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "양호",
+                "count": "1"
+            },
+            {
+                "word": "질환",
+                "count": "1"
+            },
+            {
+                "word": "가능",
+                "count": "1"
+            },
+            {
+                "word": "생활",
+                "count": "1"
+            },
+            {
+                "word": "존재",
+                "count": "1"
+            },
+            {
+                "word": "인공치근",
+                "count": "1"
+            },
+            {
+                "word": "고려",
+                "count": "1"
+            },
+            {
+                "word": "요소",
+                "count": "1"
+            },
+            {
+                "word": "시간",
+                "count": "1"
+            },
+            {
+                "word": "수술",
+                "count": "1"
+            },
+            {
+                "word": "진료",
+                "count": "1"
+            },
+            {
+                "word": "보존적",
+                "count": "1"
+            },
+            {
+                "word": "흡수",
+                "count": "1"
+            },
+            {
+                "word": "방법",
+                "count": "1"
+            },
+            {
+                "word": "결합",
+                "count": "1"
+            },
+            {
+                "word": "일반",
+                "count": "1"
+            },
+            {
+                "word": "전체적",
+                "count": "1"
+            },
+            {
+                "word": "때문",
+                "count": "1"
+            },
+            {
+                "word": "인공치아",
+                "count": "1"
+            },
+            {
+                "word": "일반적",
+                "count": "1"
+            },
+            {
+                "word": "특징",
+                "count": "1"
+            },
+            {
+                "word": "심미성",
+                "count": "1"
+            },
+            {
+                "word": "정기적",
+                "count": "1"
+            },
+            {
+                "word": "무엇",
+                "count": "1"
+            },
+            {
+                "word": "지금",
+                "count": "1"
+            },
+            {
+                "word": "만족감",
+                "count": "1"
+            },
+            {
+                "word": "발생",
+                "count": "1"
+            },
+            {
+                "word": "경험",
+                "count": "1"
+            },
+            {
+                "word": "정도",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "자연치아",
+                "count": "1"
+            },
+            {
+                "word": "의료진",
+                "count": "1"
+            },
+            {
+                "word": "예정",
+                "count": "1"
+            },
+            {
+                "word": "증상",
+                "count": "1"
+            },
+            {
+                "word": "모양",
+                "count": "1"
+            },
+            {
+                "word": "색상",
+                "count": "1"
+            },
+            {
+                "word": "인공치",
+                "count": "1"
+            },
+            {
+                "word": "최종적",
+                "count": "1"
+            },
+            {
+                "word": "세심",
+                "count": "1"
+            },
+            {
+                "word": "자연",
+                "count": "1"
+            },
+            {
+                "word": "체크",
+                "count": "1"
+            },
+            {
+                "word": "마무리",
+                "count": "1"
+            },
+            {
+                "word": "안정적",
+                "count": "1"
+            },
+            {
+                "word": "완료",
+                "count": "1"
+            },
+            {
+                "word": "손선보",
+                "count": "1"
+            },
+            {
+                "word": "최종",
+                "count": "1"
+            },
+            {
+                "word": "종료",
+                "count": "1"
+            },
+            {
+                "word": "당일",
+                "count": "1"
+            },
+            {
+                "word": "시술",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "추후",
+                "count": "1"
+            },
+            {
+                "word": "연락처",
+                "count": "1"
+            },
+            {
+                "word": "상담",
+                "count": "1"
+            },
+            {
+                "word": "예방",
+                "count": "1"
+            },
+            {
+                "word": "정기",
+                "count": "1"
+            },
+            {
+                "word": "발거",
+                "count": "1"
+            },
+            {
+                "word": "치주",
+                "count": "1"
+            },
+            {
+                "word": "우측",
+                "count": "1"
+            },
+            {
+                "word": "비교",
+                "count": "1"
+            },
+            {
+                "word": "중심",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "상악",
+                "count": "1"
+            },
+            {
+                "word": "골소실",
+                "count": "1"
+            },
+            {
+                "word": "대상",
+                "count": "1"
+            },
+            {
+                "word": "(개인",
+                "count": "1"
+            },
+            {
+                "word": "차이점",
+                "count": "1"
+            },
+            {
+                "word": "사례",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "시림",
+                "count": "1"
+            },
+            {
+                "word": "이전",
+                "count": "1"
+            },
+            {
+                "word": "아래",
+                "count": "1"
+            },
+            {
+                "word": "대체적",
+                "count": "1"
+            },
+            {
+                "word": "지속",
+                "count": "1"
+            },
+            {
+                "word": "불편감",
+                "count": "1"
+            },
+            {
+                "word": "관찰",
+                "count": "1"
+            },
+            {
+                "word": "발견",
+                "count": "1"
+            },
+            {
+                "word": "문제",
+                "count": "1"
+            },
+            {
+                "word": "육안상",
+                "count": "1"
+            },
+            {
+                "word": "상실",
+                "count": "1"
+            },
+            {
+                "word": "마찰",
+                "count": "1"
+            },
+            {
+                "word": "제외",
+                "count": "1"
+            },
+            {
+                "word": "사랑니",
+                "count": "1"
+            },
+            {
+                "word": "개수",
+                "count": "1"
+            },
+            {
+                "word": "성년",
+                "count": "1"
+            },
+            {
+                "word": "각각",
+                "count": "1"
+            },
+            {
+                "word": "기능",
+                "count": "1"
+            },
+            {
+                "word": "사이",
+                "count": "1"
+            },
+            {
+                "word": "마지막",
+                "count": "1"
+            },
+            {
+                "word": "중점적",
+                "count": "1"
+            },
+            {
+                "word": "안쪽",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "임플란트",
+            "search_volume_total": "42,040",
+            "search_volume_pc": "7,640",
+            "search_volume_mobile": "34,400",
+            "clicks_pc": "21",
+            "clicks_mobile": "153",
+            "ctr_pc": "0.28%",
+            "ctr_mobile": "0.48%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "송곳니충치",
+            "search_volume_total": "310",
+            "search_volume_pc": "20",
+            "search_volume_mobile": "290",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        },
+        {
+            "rank": "3",
+            "keyword": "충치임플란트",
+            "search_volume_total": "110",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "100",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "임플란트 (81), 충치임플란트 (44), 송곳니충치 (6)"
+}

@@ -1,0 +1,970 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "77.29",
+            "evaluation": "적합",
+            "percentage": "77.29%"
+        },
+        {
+            "category": "주제",
+            "score": "77.51",
+            "evaluation": "적합",
+            "percentage": "77.51%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "74.87",
+            "evaluation": "적합",
+            "percentage": "74.87%"
+        },
+        {
+            "category": "형태소",
+            "score": "75.53",
+            "evaluation": "적합",
+            "percentage": "75.53%"
+        },
+        {
+            "category": "가독성",
+            "score": "78.59",
+            "evaluation": "적합",
+            "percentage": "78.59%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "10.00",
+            "evaluation": "후기성",
+            "percentage": "10.00%"
+        }
+    ],
+    "publish_time": "2025-04-09 22",
+    "exposure_status": "발행된지 102일 (16시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:14:19 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "36",
+        "title_without_space": "28",
+        "content_with_space": "2,760",
+        "content_without_space": "2,093"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "433",
+        "syllable_count": "668",
+        "word_count": "177",
+        "abusing_word_count": "5"
+    },
+    "image_analysis": {
+        "valid_images": "1",
+        "invalid_images": "19",
+        "material_images": "0",
+        "uploaded_images": "20",
+        "content_images": "20",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjgw/MDAxNzQ0MjA1NDU0MDcz.bHmr9FMBkm_E1Yz9mQXiFmlsKpyARYZnYwlBEsbMgH4g._NOm8XN3anwUb9d2lG4QLnBcx2QqjuWnMWluKZNPJ7Yg.JPEG/1.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTMz/MDAxNzQ0MjA2MDE2OTU4.6StzZLr-ODhZ8X3LDSe6w5LGstkcKm_g7yUAByR4CDUg.lN2H1F0Ci6L3mXOcF6opcyGPHD02INQlAIPlgQhUzbcg.JPEG/60%EB%8C%80_%EC%B9%98%EA%B3%BC_%ED%95%A0%EB%A7%A4_4.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTY0/MDAxNzQ0MjA1NTUyMjA5.oaFhrF0FXceU2PM6_MtLvB2yFH21v-zsK7aZ37z4SyMg.eI3mrumwaSrKnDWj1VdZsD1xYHUJssjvR70Um4y0nTAg.JPEG/%EB%8B%A8%EB%8B%A8%ED%95%9C_%EC%9D%8C%EC%8B%9D_50%EB%8C%80_%EB%8F%99%EC%96%91%EC%97%AC.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTU4/MDAxNzQ0MjA1NTczODg2.2zFcop4ThfWk0TIL7nvY-T1aOjCiTH5t_JGt08QutV8g.LvWrXAV-qxZRHbvb9tJSAhaY-qQ2M_t4atQNXAzHX7Eg.JPEG/%EC%96%B4%EB%A6%B0%EC%9D%B4_%EB%84%98%EC%96%B4%EC%A7%90_1.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTEz/MDAxNzQ0MjA1NTg3MjY5.SlygCI6NO-XEIbWmkTCeCmRNGWpcTgeD4KYFVZHYU3sg.Ezs-sEAVrZh88Ja6gfgEAwEXEN-uCXuYz6Fb5tK0jy4g.JPEG/%EC%9D%B4%EA%B0%88%EC%9D%B4_1.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjMg/MDAxNzQ0MjA1NjA2MjEz.RLIkhKeh0e7MIP8KwuQkE0n2J3CtFmWT7HafsudF370g.l8cIjaaCm7jXgtRWdOUEucngU4iP5StzwnXYk0EIexgg.JPEG/%EC%B9%98%EC%95%84_%EB%B6%80%EC%84%9C%EC%A7%90_3.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTIy/MDAxNzQ0MjA1NjM0NDEz.pbcYMIJ1Nddluc4ZCSI_yf0mCH4zEIqkSL_5sEdZ624g.A3qx4vuICx_edLMXM-3PV8hE_hfz9qAuvcosxI9h9Vkg.JPEG/%EC%95%9E%EB%8B%88_%EA%B9%A8%EC%A7%90_50%EB%8C%80_%EB%8F%99%EC%96%91%EC%97%AC.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfNDkg/MDAxNzQ0MjA1NzU3NTQx.3wH1_OxIhSwEyDTGzsu7fqRuLpM3OqE4srxPdqJ-xmkg.KDqYhS4KK3on8SSVdf_GrlDDWpfBKrm9dyLrB09Gj4Yg.JPEG/%EC%95%9E%EB%8B%88_%EA%B9%A8%EC%A7%90_30%EB%8C%80_%EB%8F%99%EC%96%91%EC%97%AC_3.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfNDUg/MDAxNzQ0MjA1NzczNzgw.Xqkca8d7_oISUA73RfBfIpfbHSKCInw6sYeUFNcYqbgg.-Crkxe5xV3BcC_3j24RqBYPhjg_6AP3KrSbaBFgBMX4g.JPEG/SE-3af44241-f3e5-4756-88d9-869db8b50647.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjQ1/MDAxNzQ0MjA1NzkzMDI3.4L7gDefNom6u9qm4L5P4IKcQ3l9cpOAFPkvULH4WnQcg.RJVv8SRy_uW--DR9Mrq8q5U6mtDd11SHEkcWSEIJmBEg.JPEG/%ED%8C%8C%EC%A0%88%EB%A1%9C_%EC%B9%98%EC%88%98_%EC%86%90%EC%83%81.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjgw/MDAxNzQ0MjA1ODA2NzIy.V7i1AdYsSUfnilu7IU4njrT0nTImA3mJWv8AmnoTL0Ag.bXCLunMUg83umaHJfuBsr7oA3dXCAO_YIHLD9Ykc_eUg.PNG/%EC%B9%98%EA%B7%BC_%ED%8C%8C%EC%A0%88.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfODAg/MDAxNzQ0MjA1ODMxNjM0.k_fZ3hmeGOhotFSevy4t0t2K66yXvwAb0TzQIZKh6Z0g.QHZv-IDa1nEXYxp_90mMvYmj8hUGTBbRASx08EdcS5og.JPEG/%EC%95%9E%EB%8B%88_%ED%8C%8C%EC%A0%88_30%EB%8C%80_%EB%8F%99%EC%96%91%EC%97%AC.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTkw/MDAxNzQ0MjA1ODU5NzM0.eTa_Zwqdum6nbsLngGvjcvw_fQAH-HZ9LKtBnEDroEEg.m4Lo08mfPIl5C2MNu9OUMIHKacmtn7BLTNmijXXUstAg.JPEG/%EB%94%B1%EB%94%B1%ED%95%9C_%EC%9D%8C%EC%8B%9D.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjYy/MDAxNzQ0MjA1ODczMzI2.f0z_JNwY1yXPmpDggbIVRi-3A2V4Vzg-GnDd97krLeAg.HVU_X8plTSdwfOwnN9hdPR01NvTexcs2ushmP8tRkD0g.JPEG/2024-06-18.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfNDEg/MDAxNzQ0MjA1ODgxOTAw.jzjnt67XO8RUU7havrXEXd_K2tSxc5Nh3hBLTQhc8hwg.0KYJXA_F10V-KMzgGiNE_7yVodHt4diH5ogskCYenvwg.JPEG/SE-1ff75e8c-09f1-4cd1-8fca-13ccdd7cb0d7.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjI3/MDAxNzQ0MjA1OTE1MTQ3.ca5XDP5Rs0NKdrqiKdj0qvUWhHrrf8VShssXFAgzVXIg.dZhIpb3AZgx2Vj_cnzh8C_89TapqCigXtMVz9PmQZu0g.JPEG/%EC%96%91%EC%B9%98%EC%A7%88_40%EB%8C%80_%EB%8F%99%EC%96%91%EC%9D%B8_%EC%97%AC%EC%84%B1.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMTI4/MDAxNzQ0MjA1OTMyMzE1.3ChlGTWOCIjPkuFGoxaqB611ugvEOBnGgLhSc8NRz1Yg.LRzCyxuFEtLy5nrPsW010dwcls5IF5qSUxa6imJtu1Eg.JPEG/30%EB%8C%80_%EC%B9%98%EA%B3%BC%ED%99%98%EC%9E%90_2.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjU5/MDAxNzQ0MjA1OTQ0NDQ4.4BGCq15BYS2KvEW4N17x7OaDqkldOJo3i2FPyOj3RMEg.TUOna3Nj2pv1tfg4rAbaeU9DOs6qfqKVpLuXfQuTzmgg.JPEG/SE-230dcb02-d83a-4d26-9f35-9353b69b58da.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDlfMjI2/MDAxNzQ0MjA1OTY1MDE5.4LXQecjG7PRpujrL4v1ilBUBynnOFnyuwXguGhx9jB4g.nG1p1dEyCm6-gZ6JfmjRwQHEFmXUIv7Jm9FfnaG444kg.JPEG/%EA%B3%B5%EC%9D%B5.jpg?type=w800"
+        ]
+    },
+    "post_title": "주례 치아 부러졌다면? 치아 파절 원인부터 응급처치까지 Key 3",
+    "post_content": "주례 치아 부러졌다면? 치아 파절 원인부터 응급처치까지 Key 3 \"정직한 마음으로 바르게 진료하겠습니다.\" 안녕하세요! 치주과전문의 김성호 원장입니다. 며칠 전, 주례 인근에서 내원하신 환자분 한 분이 매우 당황한 얼굴로 치과에 들어오셨습니다. 갑자기 어금니 하나가 부러졌다고 하시더군요. 평소에 이갈이 증상이 조금 있었던 건 알고 계셨지만, 이렇게까지 문제가 생길 줄은 몰랐다고 하시며 심한 걱정을 호소하셨습니다. 이런 상황은 치과에서 자주 접하는 사례 중 하나입니다. 겉으로는 멀쩡해 보였던 치아가 어느 날 갑자기 ‘툭’ 하고 부러져버리는 일이 생각보다 많기 때문입니다. 그럼 차근차근 한번 알아보실까요!? 1. 치아 파절의 원인과 예고 없이 찾아오는 위기 치아 파절은 단순히 딱딱한 음식을 씹었을 때만 발생하는 것이 아닙니다. 다양한 원인들이 복합적으로 작용하면서 치아는 쉽게 손상될 수 있습니다. 먼저, 가장 흔한 원인은 외부 충격입니다. 넘어지면서 얼굴을 부딪히거나, 스포츠 중 부딪히는 사고, 교통사고 등의 물리적 충격은 앞니와 같은 눈에 띄는 부위에 치명적인 손상을 줄 수 있습니다. 또 하나 놓치기 쉬운 원인은 바로 이갈이나 이악물기 습관입니다. 특히 잠잘 때 무의식적으로 이를 강하게 악무는 사람들, 스트레스가 많아 턱에 힘을 자주 주는 사람들은 시간이 지나면서 치아가 내부에서부터 미세하게 금이 가기 시작합니다. 이런 금은 초기에는 눈에 띄지 않지만, 어느 날 갑자기 딱딱한 음식을 씹거나 큰 하품을 하다가 부러져버릴 수 있습니다. 치아 내부에 이미 충치가 있거나 신경 치료를 받은 경우도 파절에 매우 취약합니다. 내부 구조가 약해져 있기 때문에 외부의 힘을 제대로 견디지 못하고 쉽게 깨지거나 쪼개질 수 있습니다. 특히 신경치료 후 크라운을 씌우지 않고 오랜 기간 방치한 치아는, 거의 ‘폭탄’처럼 언제든지 깨질 수 있는 상태로 남아있는 경우가 많습니다. 치아는 단단한 조직이지만, 무리한 힘이 가해지거나 내부가 약해진 상태라면 파절은 언제든지 발생할 수 있습니다. 대부분은 예고 없이, 갑작스럽게 찾아옵니다. 치아가 부러지는 순간의 그 충격과 당황스러움은 경험해보지 않은 사람은 상상하기 어려울 정도입니다. 2. 치아가 부러졌을 때 해야 할 응급조치와 치료 방법 만약 치아가 갑자기 부러졌다면 어떻게 해야 할까요? 가장 중요한 것은 당황하지 않고 빠르게 대처하는 것입니다. 피가 나는 경우에는 깨끗한 거즈나 티슈로 지혈을 시도하고, 입 안을 헹굴 때는 물로 가볍게 헹군 후 무리하게 양치를 하지는 말아야 합니다. 그리고 반드시 가능한 한 빠르게 치과를 방문해야 합니다. 치아가 부러졌을 때 초기 대응이 빠르면 빠를수록 치료 범위도 줄고, 치아를 최대한 살릴 수 있는 가능성이 높아집니다. 치아 파절의 치료 방법은 부러진 정도에 따라 다양합니다. 단순히 가장자리만 살짝 깨졌다면 레진을 이용한 수복 치료로 끝낼 수 있습니다. 하지만 치아의 중심까지 깊이 파절되었다면 신경 치료가 필요할 수도 있습니다. 경우에 따라 크라운 등 보철치료가 필요할 수 있습니다. 치아가 잇몸 아래까지 파절된 경우라면 상황이 더욱 복잡해집니다. 이럴 경우 발치 후 임플란트 치료를 고려해야 하는 경우도 있습니다. 어느 쪽이든, 파절된 치아를 방치할수록 감염의 위험이 높아지기 때문에 치료는 절대 미뤄서는 안 됩니다. 특히 주례 지역과 같은 도심 속 바쁜 일상에서는, 치료 시기를 놓쳐 더 큰 문제로 이어지는 사례가 많습니다. 출퇴근 시간에 맞춰 진료를 받을 수 있는 치과를 미리 알아두는 것도 현명한 방법입니다. 이왕이면 치주과 전문의가 상주하는 치과를 선택하여 보다 정밀하고 장기적인 치료계획을 세우는 것이 좋습니다. 3. 치아 파절을 예방하고 건강한 치아를 유지하는 방법 치아는 한번 손상되면 자연적으로 복구되지 않는 조직입니다. 그렇기 때문에 치아가 부러지기 전에 미리 예방하고, 현재의 상태를 점검하는 것이 매우 중요합니다. 평소 딱딱한 음식이나 질긴 음식을 무리하게 씹는 습관이 있다면 반드시 조절이 필요한데요. 특히 얼음을 씹는 습관은 치아 건강에 매우 해롭습니다. 이갈이 또는 이악물기 습관이 의심된다면 전문적인 검사와 마우스피스 제작을 고려해야 합니다. 단순한 생활습관처럼 보일 수 있지만, 이는 치아뿐 아니라 턱관절까지 영향을 줄 수 있기 때문에 반드시 교정이 필요한 부분입니다. 정기적인 치과 검진 역시 매우 중요합니다. 눈에 보이지 않는 미세한 금이나 균열은 치과의 정밀 촬영으로만 확인이 가능합니다. 특히 신경치료를 받은 치아, 충치 치료를 반복한 치아는 반드시 정기적으로 체크받아야 하며, 필요하다면 조기에 보철치료를 통해 파절을 사전에 방지할 수 있습니다. 또한 올바른 칫솔질과 식습관 관리, 그리고 무엇보다도 자신의 구강 상태에 대한 이해가 필요합니다. 평소에 자주 피가 나거나 잇몸이 붓는 경우는 치주 질환의 징조일 수 있으므로 방치하지 말고 전문가의 진단을 받는 것이 좋습니다. 마지막으로, 치아가 부러졌다고 해서 너무 낙심하거나 두려워할 필요는 없습니다. 현대 치의학은 매우 빠르게 발전하고 있으며, 다양한 수복 치료 방법과 보철 기술이 있어 대부분의 경우 충분히 원래의 기능과 심미성을 회복할 수 있습니다. 중요한 것은 조기 발견과 적절한 치료, 그리고 꾸준한 관리입니다. 오늘은 이렇게 \"주례 치아 부러졌다면? 치아 파절 원인부터 응급처치까지 Key 3\"에 대해서 알아보았습니다. 이상 치주과전문의 김성호 원장이었습니다. 감사합니다. 주례 치아 부러졌다면? 치아 파절 원인부터 응급처치까지 Key 3 치과 홈페이지 네이버 예약 (바로가기) 카카오톡 상담 (바로가기) 네이버 톡톡 상담 (바로가기)",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "반드시(4), 바로가기(3), 상담(2), 가장(2), 최대한(1)",
+        "excessive_words": "치아(32), 치료(17), 파절(13)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "65.64%",
+            "keywords": "치아(23), 파절(13), 치료(12), 경우(9), 치과(8), 필요(7), 원인(6), 상태(4), 내부(4), 음식(4), 중요(4), 방치(3), 충격(3), 손상(3), 평소(3), 응급처치(3), 무리(3), 당황(3), 정기적(2), 정밀(2), 조직(2), 정도(2), 조기(2), 충치(2), 치주(2), 신경치료(2), 크라운(2), 잇몸(2), 초기(2), 진료(2), 건강(2), 발생(2), 신경(2), 고려(2), 얼굴(2), 대부분(2), 관리(2), 수복(2), 의심(1), 자신(1), 이해(1), 유지(1), 응급조치(1), 영향(1), 스트레스(1), 선택(1), 시기(1), 아래(1), 자연적(1), 양치(1), 원래(1), 전문적(1), 다양(1), 회복(1), 턱관절(1), 심미성(1), 무엇(1), 생활습관(1), 현재(1), 칫솔질(1), 부분(1), 전문의(1), 조절(1), 진단(1), 체크(1), 질환(1), 장기적(1), 교정(1), 복합적(1), 부위(1), 발치(1), 무의식적(1), 검진(1), 치명적(1), 사고(1), 증상(1), 작용(1), 이상(1), 어금니(1), 앞니(1), 식습관(1), 며칠(1), 하품(1), 감염(1), 원인들(1), 인근(1), 구조(1), 대처(1), 기능(1), 교통사고(1), 임플란트(1), 환자분(1), 호소(1), 내원(1), 구강(1), 보철(1), 반복(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "7.06%",
+            "keywords": "때문(5), 예고(2), 이용(1), 생각(1), 사전(1), 중심(1), 징조(1), 현명(1), 폭탄(1), 사람(1), 기술(1), 취약(1), 위기(1), 가능성(1), 검사(1), 도심(1), 경험(1), 방지(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.37%",
+            "keywords": "습관(4), 가능(2), 상황(2), 전문가(1), 시작(1), 걱정(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "3.37%",
+            "keywords": "방법(5), 네이버(2), 얼음(1), 복구(1), 카카오톡(1), 물리적(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.76%",
+            "keywords": "문제(2), 외부(2), 점검(1), 확인(1), 발견(1), 균열(1), 상주(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "2.15%",
+            "keywords": "언제(2), 예방(2), 거즈(1), 홈페이지(1), 스포츠(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.84%",
+            "keywords": "주례(4), 티슈(1), 마음(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.84%",
+            "keywords": "일상(1), 지혈(1), 낙심(1), 감사(1), 출퇴근(1), 만약(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "1.53%",
+            "keywords": "제작(1), 시도(1), 순간(1), 마우스피스(1), 현대(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.53%",
+            "keywords": "김성호(2), 상담(2), 기간(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.23%",
+            "keywords": "촬영(1), 대응(1), 단순(1), 범위(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "1.23%",
+            "keywords": "시간(2), 마지막(1), 예약(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.92%",
+            "keywords": "이갈이(3)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "0.92%",
+            "keywords": "사람들(2), 지역(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.92%",
+            "keywords": "사례(2), 위험(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.92%",
+            "keywords": "원장(2), 방문(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.31%",
+            "keywords": "레진(1)"
+        },
+        {
+            "category_name": "스포츠",
+            "percentage": "0.31%",
+            "keywords": "발전(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.31%",
+            "keywords": "상상(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "31.63%",
+            "words": "치아(21), 치료(17), 수(16), 파절(13), 경우(9), 치과(8), 것(8), 원인(7), 필요(7), 때문(5), 방법(5), 주례(5), 습관(5), 때(5), 음식(4), 중요(4), 내부(4), 상태(4), 치주(4), 신경(4), 방치(3), 가능(3), 무리(3), 보철(3), 눈(3), 후(3), 충격(3), 금(3), 사람(3), 힘(3), 손상(3), 전문(3), 하나(3), 평소(3), 이갈이(3), 응급처치(3), 당황(3), 충치(2), 네이버(2), 전(2), 관리(2), 분(2), 상황(2), 시간(2), 원장(2), 초기(2), 김성호(2), 상담(2), 피(2), 정도(2), 정기(2), 대부분(2), 조직(2), 조기(2), 크라운(2), 언제(2), 진료(2), 얼굴(2), 이(2), 건강(2), 예고(2), 정밀(2), 고려(2), 수복(2), 문제(2), 날(2), 사례(2), 중(2), 잇몸(2), 예방(2), 외부(2), 발생(2), 등(2), 계획(1), 시기(1), 장기(1), 얼음(1), 턱관절(1), 복구(1), 점검(1), 영향(1), 현재(1), 의심(1), 상주(1), 생활(1), 번(1), 조절(1), 유지(1), 검사(1), 마우스피스(1), 현명(1), 제작(1), 출퇴근(1), 단순(1), 전문의(1), 자연(1), 선택(1), 칫솔질(1), 발전(1), 기술(1), 원래(1), 의학(1), 현대(1), 진단(1), 마지막(1), 낙심(1), 기능(1), 심미성(1), 홈페이지(1), 예약(1), 카카오톡(1), 감사(1), 이상(1), 회복(1), 발견(1), 전문가(1), 징조(1), 확인(1), 반복(1), 체크(1), 촬영(1), 균열(1), 부분(1), 검진(1), 사전(1), 방지(1), 구강(1), 이해(1), 질환(1), 자신(1), 무엇(1), 일상(1), 식습관(1), 교정(1), 나(1), 교통사고(1), 물리(1), 앞니(1), 사고(1), 스포츠(1), 복합(1), 작용(1), 부위(1), 치명(1), 하품(1), 취약(1), 구조(1), 시작(1), 턱(1), 무의식(1), 스트레스(1), 위기(1), 생각(1), 인근(1), 내원(1), 환자(1), 며칠(1), 안녕(1), 정직(1), 마음(1), 어금니(1), 증상(1), 겉(1), 일(1), 호소(1), 걱정(1), 건(1), 줄(1), 기간(1), 폭탄(1), 이용(1), 중심(1), 아래(1), 레진(1), 자리(1), 범위(1), 다양(1), 발치(1), 임(1), 지역(1), 도심(1), 위험(1), 감염(1), 플란트(1), 쪽(1), 대응(1), 방문(1), 조치(1), 만약(1), 대처(1), 응급(1), 상상(1), 순간(1), 경험(1), 거즈(1), 티슈(1), 물(1), 양치(1), 안(1), 입(1), 지혈(1), 시도(1), 속(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "17.13%",
+            "words": "에(25), 가(23), 이(23), 을(21), 은(19), 는(17), 의(16), 를(16), 과(10), 으로(8), 까지(7), 로(6), 도(6), 와(3), 부터(3), 만(3), 에서(3), 든지(2), 처럼(2), 이나(2), 보다(2), 나(2), 뿐(1), 에서부터(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "15.97%",
+            "words": "있(24), 입니다(11), 치아(11), 부러졌(8), 하(6), 않(6), 받(5), 많(4), 빠르(4), 인(4), 씹(4), 가(4), 줄(3), 이(3), 합니다(3), 같(2), 부딪히(2), 큰(2), 띄(2), 좋(2), 따라(2), 악물(2), 쉽(2), 지(2), 부러지(2), 말(2), 알(2), 높(2), 부러져(2), 라면(2), 알아보(2), 미뤄서(1), 헹굴(1), 이럴(1), 헹군(1), 가볍(1), 빠를수록(1), 집니다(1), 됩니다(1), 부러진(1), 살릴(1), 깨졌(1), 끝낼(1), 그렇(1), 붓(1), 나(1), 대한(1), 올바른(1), 일(1), 해서(1), 대해서(1), 없(1), 두려워할(1), 통해(1), 보이(1), 두(1), 맞춰(1), 이어지(1), 놓쳐(1), 세우(1), 질긴(1), 아니(1), 보일(1), 해롭(1), 바쁜(1), 가해(1), 넘어지(1), 흔한(1), 아닙니다(1), 놓치(1), 쉬운(1), 악무(1), 강하(1), 잠잘(1), 찾아오(1), 버리(1), 계셨(1), 들어오(1), 바르(1), 생길(1), 몰랐(1), 보였(1), 접하(1), 심한(1), 주(1), 지나(1), 찾(1), 갑작스럽(1), 약해진(1), 옵니다(1), 보(1), 해야(1), 할(1), 어려울(1), 남(1), 깨(1), 견디(1), 약해져(1), 버릴(1), 못하(1), 깨지(1), 씌우(1), 질(1), 쪼개(1), 할까요(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "11.78%",
+            "words": "는(27), 습니다(22), 기(14), 게(12), 고(11), 지(9), 다면(8), 거나(7), 아(6), 은(5), 을(4), 지만(4), 면서(3), 다고(3), 면(2), 아야(2), 며(2), 던(2), 으므로(1), 어(1), 으며(1), 라(1), 다가(1), 더군요(1), 질(1), 든(1), 여(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "8.29%",
+            "words": ".(54), ,(22), ?(5), 3(4), \"(4), Key(3), ((3), )(3), ‘(2), !(2), ’(2), 2(1), 1(1), 하고(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "7.05%",
+            "words": "하(24), 한(23), 적(9), 합니다(8), 할(5), 해야(4), 들(3), 되(3), 된(2), 해(2), 한데요(1), 치(1), 할수록(1), 된다면(1), 스러움(1), 될(1), 성(1), 해집니다(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "5.27%",
+            "words": "매우(6), 특히(5), 반드시(4), 갑자기(4), 바로(4), 그리고(3), 가장(3), 자주(3), 이렇게(2), 단순히(2), 없이(2), 미리(2), 톡톡(1), 안(1), 절대(1), 이왕이면(1), 더(1), 오늘(1), 역시(1), 또한(1), 더욱(1), 또는(1), 너무(1), 충분히(1), 보다(1), 어떻게(1), 한번(1), 먼저(1), 차근차근(1), 그럼(1), 조금(1), 툭(1), 또(1), 이미(1), 살짝(1), 하지만(1), 최대한(1), 거의(1), 제대로(1), 깊이(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "1.01%",
+            "words": "딱딱(3), 미세(2), 다양(2), 적절(1), 꾸준(1), 복잡(1), 단단(1), 멀쩡(1), 깨끗(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.01%",
+            "words": "었(4), 시(2), 셨(2), 았(1), 실까요(1), 세요(1), 신(1), 겠(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.85%",
+            "words": "한(3), 어느(3), 이런(2), 이(1), 오랜(1), 그(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "177",
+        "words": [
+            {
+                "word": "치아",
+                "count": "23"
+            },
+            {
+                "word": "파절",
+                "count": "13"
+            },
+            {
+                "word": "치료",
+                "count": "12"
+            },
+            {
+                "word": "경우",
+                "count": "9"
+            },
+            {
+                "word": "치과",
+                "count": "8"
+            },
+            {
+                "word": "필요",
+                "count": "7"
+            },
+            {
+                "word": "원인",
+                "count": "6"
+            },
+            {
+                "word": "때문",
+                "count": "5"
+            },
+            {
+                "word": "방법",
+                "count": "5"
+            },
+            {
+                "word": "중요",
+                "count": "4"
+            },
+            {
+                "word": "상태",
+                "count": "4"
+            },
+            {
+                "word": "습관",
+                "count": "4"
+            },
+            {
+                "word": "주례",
+                "count": "4"
+            },
+            {
+                "word": "내부",
+                "count": "4"
+            },
+            {
+                "word": "음식",
+                "count": "4"
+            },
+            {
+                "word": "방치",
+                "count": "3"
+            },
+            {
+                "word": "무리",
+                "count": "3"
+            },
+            {
+                "word": "충격",
+                "count": "3"
+            },
+            {
+                "word": "손상",
+                "count": "3"
+            },
+            {
+                "word": "이갈이",
+                "count": "3"
+            },
+            {
+                "word": "응급처치",
+                "count": "3"
+            },
+            {
+                "word": "평소",
+                "count": "3"
+            },
+            {
+                "word": "당황",
+                "count": "3"
+            },
+            {
+                "word": "발생",
+                "count": "2"
+            },
+            {
+                "word": "사람들",
+                "count": "2"
+            },
+            {
+                "word": "시간",
+                "count": "2"
+            },
+            {
+                "word": "상황",
+                "count": "2"
+            },
+            {
+                "word": "원장",
+                "count": "2"
+            },
+            {
+                "word": "언제",
+                "count": "2"
+            },
+            {
+                "word": "얼굴",
+                "count": "2"
+            },
+            {
+                "word": "문제",
+                "count": "2"
+            },
+            {
+                "word": "정도",
+                "count": "2"
+            },
+            {
+                "word": "고려",
+                "count": "2"
+            },
+            {
+                "word": "예방",
+                "count": "2"
+            },
+            {
+                "word": "건강",
+                "count": "2"
+            },
+            {
+                "word": "보철치료",
+                "count": "2"
+            },
+            {
+                "word": "가능",
+                "count": "2"
+            },
+            {
+                "word": "대부분",
+                "count": "2"
+            },
+            {
+                "word": "치주전문",
+                "count": "2"
+            },
+            {
+                "word": "조직",
+                "count": "2"
+            },
+            {
+                "word": "정기적",
+                "count": "2"
+            },
+            {
+                "word": "신경치료",
+                "count": "2"
+            },
+            {
+                "word": "초기",
+                "count": "2"
+            },
+            {
+                "word": "수복",
+                "count": "2"
+            },
+            {
+                "word": "신경",
+                "count": "2"
+            },
+            {
+                "word": "외부",
+                "count": "2"
+            },
+            {
+                "word": "진료",
+                "count": "2"
+            },
+            {
+                "word": "김성호",
+                "count": "2"
+            },
+            {
+                "word": "사례",
+                "count": "2"
+            },
+            {
+                "word": "크라운",
+                "count": "2"
+            },
+            {
+                "word": "예고",
+                "count": "2"
+            },
+            {
+                "word": "잇몸",
+                "count": "2"
+            },
+            {
+                "word": "상담",
+                "count": "2"
+            },
+            {
+                "word": "네이버",
+                "count": "2"
+            },
+            {
+                "word": "치주",
+                "count": "2"
+            },
+            {
+                "word": "조기",
+                "count": "2"
+            },
+            {
+                "word": "충치",
+                "count": "2"
+            },
+            {
+                "word": "정밀",
+                "count": "2"
+            },
+            {
+                "word": "관리",
+                "count": "2"
+            },
+            {
+                "word": "점검",
+                "count": "1"
+            },
+            {
+                "word": "현재",
+                "count": "1"
+            },
+            {
+                "word": "조절",
+                "count": "1"
+            },
+            {
+                "word": "자연적",
+                "count": "1"
+            },
+            {
+                "word": "복구",
+                "count": "1"
+            },
+            {
+                "word": "유지",
+                "count": "1"
+            },
+            {
+                "word": "검사",
+                "count": "1"
+            },
+            {
+                "word": "생활습관",
+                "count": "1"
+            },
+            {
+                "word": "치료계획",
+                "count": "1"
+            },
+            {
+                "word": "단순",
+                "count": "1"
+            },
+            {
+                "word": "제작",
+                "count": "1"
+            },
+            {
+                "word": "의심",
+                "count": "1"
+            },
+            {
+                "word": "전문적",
+                "count": "1"
+            },
+            {
+                "word": "얼음",
+                "count": "1"
+            },
+            {
+                "word": "위험",
+                "count": "1"
+            },
+            {
+                "word": "아래",
+                "count": "1"
+            },
+            {
+                "word": "감염",
+                "count": "1"
+            },
+            {
+                "word": "중심",
+                "count": "1"
+            },
+            {
+                "word": "이용",
+                "count": "1"
+            },
+            {
+                "word": "다양",
+                "count": "1"
+            },
+            {
+                "word": "레진",
+                "count": "1"
+            },
+            {
+                "word": "지역",
+                "count": "1"
+            },
+            {
+                "word": "일상",
+                "count": "1"
+            },
+            {
+                "word": "상주",
+                "count": "1"
+            },
+            {
+                "word": "선택",
+                "count": "1"
+            },
+            {
+                "word": "전문의",
+                "count": "1"
+            },
+            {
+                "word": "현명",
+                "count": "1"
+            },
+            {
+                "word": "시기",
+                "count": "1"
+            },
+            {
+                "word": "장기적",
+                "count": "1"
+            },
+            {
+                "word": "체크",
+                "count": "1"
+            },
+            {
+                "word": "발전",
+                "count": "1"
+            },
+            {
+                "word": "기술",
+                "count": "1"
+            },
+            {
+                "word": "낙심",
+                "count": "1"
+            },
+            {
+                "word": "마지막",
+                "count": "1"
+            },
+            {
+                "word": "전문가",
+                "count": "1"
+            },
+            {
+                "word": "진단",
+                "count": "1"
+            },
+            {
+                "word": "원래",
+                "count": "1"
+            },
+            {
+                "word": "기능",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "가능성",
+                "count": "1"
+            },
+            {
+                "word": "발견",
+                "count": "1"
+            },
+            {
+                "word": "회복",
+                "count": "1"
+            },
+            {
+                "word": "심미성",
+                "count": "1"
+            },
+            {
+                "word": "징조",
+                "count": "1"
+            },
+            {
+                "word": "질환",
+                "count": "1"
+            },
+            {
+                "word": "촬영",
+                "count": "1"
+            },
+            {
+                "word": "확인",
+                "count": "1"
+            },
+            {
+                "word": "균열",
+                "count": "1"
+            },
+            {
+                "word": "부분",
+                "count": "1"
+            },
+            {
+                "word": "영향",
+                "count": "1"
+            },
+            {
+                "word": "교정",
+                "count": "1"
+            },
+            {
+                "word": "반복",
+                "count": "1"
+            },
+            {
+                "word": "사전",
+                "count": "1"
+            },
+            {
+                "word": "자신",
+                "count": "1"
+            },
+            {
+                "word": "이해",
+                "count": "1"
+            },
+            {
+                "word": "무엇",
+                "count": "1"
+            },
+            {
+                "word": "칫솔질",
+                "count": "1"
+            },
+            {
+                "word": "방지",
+                "count": "1"
+            },
+            {
+                "word": "턱관절",
+                "count": "1"
+            },
+            {
+                "word": "호소",
+                "count": "1"
+            },
+            {
+                "word": "\"주례",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "보철",
+                "count": "1"
+            },
+            {
+                "word": "현대",
+                "count": "1"
+            },
+            {
+                "word": "식습관",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "홈페이지",
+                "count": "1"
+            },
+            {
+                "word": "예약",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "증상",
+                "count": "1"
+            },
+            {
+                "word": "인근",
+                "count": "1"
+            },
+            {
+                "word": "마음",
+                "count": "1"
+            },
+            {
+                "word": "카카오톡",
+                "count": "1"
+            },
+            {
+                "word": "검진",
+                "count": "1"
+            },
+            {
+                "word": "마우스피스",
+                "count": "1"
+            },
+            {
+                "word": "스포츠",
+                "count": "1"
+            },
+            {
+                "word": "사고",
+                "count": "1"
+            },
+            {
+                "word": "위기",
+                "count": "1"
+            },
+            {
+                "word": "어금니",
+                "count": "1"
+            },
+            {
+                "word": "며칠",
+                "count": "1"
+            },
+            {
+                "word": "환자분",
+                "count": "1"
+            },
+            {
+                "word": "교통사고",
+                "count": "1"
+            },
+            {
+                "word": "기간",
+                "count": "1"
+            },
+            {
+                "word": "도심",
+                "count": "1"
+            },
+            {
+                "word": "출퇴근",
+                "count": "1"
+            },
+            {
+                "word": "임플란트",
+                "count": "1"
+            },
+            {
+                "word": "발치",
+                "count": "1"
+            },
+            {
+                "word": "만약",
+                "count": "1"
+            },
+            {
+                "word": "걱정",
+                "count": "1"
+            },
+            {
+                "word": "생각",
+                "count": "1"
+            },
+            {
+                "word": "응급조치",
+                "count": "1"
+            },
+            {
+                "word": "대처",
+                "count": "1"
+            },
+            {
+                "word": "상상",
+                "count": "1"
+            },
+            {
+                "word": "사람",
+                "count": "1"
+            },
+            {
+                "word": "순간",
+                "count": "1"
+            },
+            {
+                "word": "경험",
+                "count": "1"
+            },
+            {
+                "word": "거즈",
+                "count": "1"
+            },
+            {
+                "word": "티슈",
+                "count": "1"
+            },
+            {
+                "word": "방문",
+                "count": "1"
+            },
+            {
+                "word": "대응",
+                "count": "1"
+            },
+            {
+                "word": "양치",
+                "count": "1"
+            },
+            {
+                "word": "시도",
+                "count": "1"
+            },
+            {
+                "word": "지혈",
+                "count": "1"
+            },
+            {
+                "word": "폭탄",
+                "count": "1"
+            },
+            {
+                "word": "구조",
+                "count": "1"
+            },
+            {
+                "word": "물리적",
+                "count": "1"
+            },
+            {
+                "word": "앞니",
+                "count": "1"
+            },
+            {
+                "word": "작용",
+                "count": "1"
+            },
+            {
+                "word": "복합적",
+                "count": "1"
+            },
+            {
+                "word": "원인들",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "치명적",
+                "count": "1"
+            },
+            {
+                "word": "하품",
+                "count": "1"
+            },
+            {
+                "word": "취약",
+                "count": "1"
+            },
+            {
+                "word": "시작",
+                "count": "1"
+            },
+            {
+                "word": "스트레스",
+                "count": "1"
+            },
+            {
+                "word": "무의식적",
+                "count": "1"
+            },
+            {
+                "word": "범위",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "치아파절",
+            "search_volume_total": "4,760",
+            "search_volume_pc": "1,150",
+            "search_volume_mobile": "3,610",
+            "clicks_pc": "0",
+            "clicks_mobile": "3",
+            "ctr_pc": "0.01%",
+            "ctr_mobile": "0.1%",
+            "competition": "높음",
+            "ad_count": "10"
+        }
+    ],
+    "same_topic_posting": "치아파절 (63)"
+}

@@ -1,0 +1,806 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "79.89",
+            "evaluation": "적합",
+            "percentage": "79.89%"
+        },
+        {
+            "category": "주제",
+            "score": "72.07",
+            "evaluation": "적합",
+            "percentage": "72.07%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "69.00",
+            "evaluation": "적합",
+            "percentage": "69.00%"
+        },
+        {
+            "category": "형태소",
+            "score": "77.11",
+            "evaluation": "적합",
+            "percentage": "77.11%"
+        },
+        {
+            "category": "가독성",
+            "score": "71.98",
+            "evaluation": "적합",
+            "percentage": "71.98%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "35.00",
+            "evaluation": "정보성",
+            "percentage": "35.00%"
+        }
+    ],
+    "publish_time": "2023-09-20 00",
+    "exposure_status": "발행된지 670일 (15시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:44:21 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "53",
+        "title_without_space": "43",
+        "content_with_space": "2,324",
+        "content_without_space": "1,781"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "337",
+        "syllable_count": "544",
+        "word_count": "140",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "1",
+        "invalid_images": "13",
+        "material_images": "0",
+        "uploaded_images": "14",
+        "content_images": "14",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMjUx/MDAxNjk1MDIyODc2ODM1.KCG5z2nMDjecfNWx70HRryOXyNBknR6YLmxqJWoh4Vog.C93vddgs3bQndUtOwEVrkmwsVusgsDMs2N_LpaRd_eEg.PNG.homeplant/KakaoTalk_20230915_164701309.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMjcw/MDAxNjk1MDIyODc2ODc5.n1fo7rpsYOzOV0EOPmMEHjIHUM0EacyoTrhbpeDFuQYg.pevQ-ygnEE3Q0WyAxbj6I8Q7aS0KZxGlMnvHyXxzixsg.PNG.homeplant/KakaoTalk_20230915_164701309_01.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMjEz/MDAxNjk1MDIyODc2ODU2.xL2GpUmflh61sZfNdsgredZkLg68yQOIoVguM1wFQE8g.Pt38LBrKTK6VY1d8EMOW8d1GqAOEz0HCXEqUDNb9Mmgg.PNG.homeplant/KakaoTalk_20230915_164701309_02.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMTEg/MDAxNjk1MDIyODc2ODUx.H0d57U6VFU2aMOIvNrzVG-SapH33JtZZLLJEMFV-Wkkg.8H_SU339trzNNPYuQKQcGoQzJ9HbomaBxYXJi4N02R4g.PNG.homeplant/KakaoTalk_20230915_164701309_03.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMjEw/MDAxNjk1MDIyODc2ODgx.wv7F1Xomrd_iYEi3A48d0Bw5C5JiIWItq9AhWxupHYwg.qnOdnxgy5m4U6mFtwshL9gTYtAXJzHnzj2xAAbhUGVog.PNG.homeplant/KakaoTalk_20230915_164701309_04.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMjM3/MDAxNjk1MDIyODc2OTIy.TqhXeffEpOkaGwz4SHWudPzon1xF6fGfnWGZa3Gsn-cg.xBKpwOcrXPaukVnBIxx6pzlJuhJpzRxor9gkOk39gvwg.PNG.homeplant/KakaoTalk_20230915_164701309_05.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMTc1/MDAxNjk1MDIyODc3MDYy.471l3BeMv5506N6quVcLU2uq7XPvYjNJ-JHLFhKoEVog.U_Ap3DdAnOmXAUPxDEyv7A-d1XNpIEpTwW6L8gq9REAg.PNG.homeplant/KakaoTalk_20230915_164701309_06.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMTUw/MDAxNjk1MDIyODc3MTQ0.Xapg2pkEBot7UvRf1hPbReQ-HIHa60yq_GIAfXLHz8og.1Iw5aEgR8M8XdZ4n2vWfKBFhXR-QUyoEzHSzgAtSSNIg.PNG.homeplant/KakaoTalk_20230915_164701309_08.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMTQg/MDAxNjk1MDIyODc3MjIz.g5kj9u1ZenzcEAr8b8XHy7vWB7UIh6EiROu0gfJRPFwg.FJ5ggVfpZKtZLnBUk5TkzzJTpzJ4t-PIr8QHwbrsCpEg.PNG.homeplant/KakaoTalk_20230915_164701309_09.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfNDYg/MDAxNjk1MDIyODc3Mjk1.cPhPvxHidd5bSEINhOQ3Vww19TBxbMcnwLeT6GSfQm4g.on_ZjDpSAw6JLOCPlKGsE5HtLNAJnaDwzhjZx3devCkg.PNG.homeplant/KakaoTalk_20230915_164701309_10.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MThfMTQz/MDAxNjk1MDIyODc3MjQ5.XslGNaWir6TTpKUgwb6WgxTLJ09EQiwnaGd8_zv_kyMg.-amIN8I_3SKmxtCAJfsRli2ed6GVBpyi_UEPLklDsswg.PNG.homeplant/KakaoTalk_20230915_164701309_11.png?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzA5MTlfMTQ0/MDAxNjk1MTAxNTE1NTY5.82Kud7jmjiZdWFUBoSI5dQ-bH2jjojYsCWzDWtd2Mj8g.BgRMr4Qt-gd8qXG4wayNSVUqnMpO_1rePeTwn3vQGm0g.GIF.homeplant/KakaoTalk_20230919_143012371.gif?type=mp4w800",
+            "https://phinf.pstatic.net/image.nmv/blog_2023_09_19_2743/132bd84f-568a-11ee-8bd9-505dac8c3607_01.jpg"
+        ]
+    },
+    "post_title": "치아 뿌리에 세로로 금이 갔다면?? 수직 치근 파절 (Vertical root fracture)",
+    "post_content": "수직 치근 파절 (vertical root fracture) 안녕하세요. 서초동 홈플란트치과 홈플쌤 입니다. 지난 시간에 치아크랙(cracked tooth)에 대한 원인과 종류, 치료방법에 대해 포스팅 해 드렸는데, 오늘은 치료가 불가능하여 발치까지 해야 하는 ‘뿌리에 세로로 금이 간 치아 크랙(Vertical root fracture)’에 대해 설명을 드리고자 합니다. 수직 치근 파절 (Vertical root fracture)이란? 치아의 뿌리(치근)에 수직으로 균열(crack)이 발생한 경우입니다. 보이지 않는 곳에서 균열이 시작되기 때문에 발견이 어려우며 안타깝게도 치아를 발치 하는 경우가 많습니다. 치아 파절 서초동치과 일단 치아에 크랙이 발생하면 육안으로 잘 확인이 안되며, X-ray로도 보이지 않는 경우가 많아서 정확한 진단의 어려움이 많습니다. 미세한 크랙의 경우 직접적인 진단이 어렵기 때문에 환자의 증상이 매우 중요합니다. 환자가 느끼는 증상으로 크랙에 대한 특정 임상과 방사선 사진상의 소견으로 증상을 예측하고 치료를 하게 되는 것입니다. 수직 치근 파절시 나타나는 증상들 Q. 환자가 알수 있는 ‘수직 치근 파절’ (Vertical root fracture) 의심 증상들은? 1.특정 부위에 딱딱한 음식을 씹었을 때 깜짝 놀랄 만한 통증이 있을 때 2.물었다 떼는 순간이 더 아플 때 3.차고 뜨거운 음료에 민감하게 반응할 때 4.잇몸고름 주머니(Sinus Tract)이 하나 또는 여러 개 생겼을 경우 수직 치근 파절의 진단과 특징들 수직 치근 파절 진단 Key Point 그럼 ‘수직치근파절’시 나타나는 특정 임상과 엑스레이, CT상 특징을알아볼까요? 치근의 수직 파절 진단 Key Point 1. 통증 : mild pain, 저작시 자발통 2. 잇몸 고름 주머니(Sinus Tract) : 하나 또는 여러개 3. 좁고 깊은 치주낭 : 치은열구~근첨까지 4. 농양(abscess) : 치주염 양상 5. 파절 라인 : 완전파절 or 불완전파절 6. 치주인대 확장 7. 치조골 소실 : 방사선 사진에서 J-type 병소 8. 방사선 halo : 치근 분지부가 포함되었을 가능성 있음 9. 근관 충전재가 근단공에서빠져 나옴 10. 치근이 분리됨 11. 치근단 부분의 위치 이동 수직 치근 파절시 연조직의 양상 교대역치과 연조직의 Swelling 양상 a. 치근단 농양이 원인인 경우 b. 치근 수직 파절이 원인인 경우 하악 제1 대구치의 수직 치근 파절로 인해 협측 치은의 Swelling이 관찰됨 하악 구치의 수직 파절 mesiobuccal root의 수직 파절로 인해 넓은 범위의 연조직 swelling이 나타남 상악 소구치의 수직 치근 파절로 인해 여러개의 sinus tract이 나타남 (농양형성) 여러개의 Sinus tract이 나타나는 경우 치근의 수직 파절을 의심해 볼 수 있음 수직 치근 파절로 인해 좁고 깊은 치조골의 소실이 나타남 치주낭의 형태 (probing pattern) a. 치주염이 진행된 경우 전체적인 치조골 소실 b. 치근 수직 파절이 진행된 경우 파절선을 따라 좁고 길게 치조골이 소실 (다른 부분은 정상적인 치조골의 형태를 유지함) 상악 중절치의 수직 치근 파절로 좁고 깊은 치주낭이 형성됨 (서초동치과) 상악 중절치의 수직 치근 파절(협설측) 순측의 좁고 깊은 치주낭이 측정됨 근심측 치조골의 정상 형태를 유지함 상악 제1소구치의 근원심 수직 치근 파절, 근원심 파절 방향으로 좁고 깊은 치조골 소실이 보이지만 협설측의 치조골은 정상적인 형태를 유지하고 있음. 상악 우측 제1소구치 근원심 수직 파절 근심과 원심측의 좁고 깊은 치조골 소실 양상 협측과 설측은 정상적인 치조골 형태를 유지함 상악 중철치의 완전 수직 치근 파절 & 상악 소구치의 불완전 수직 치근 파절 1. 상악 중절치 완전 수직 파절 2. 상악 제2소구치 불완전 수직 파절 (협설방향) 뿌리 방향에서 시작된 파절, V자형 골흡수 양상을 나타냄 치아의 뿌리에 세로로 금이 가는(수직 치근 파절) 증상이 있으면 발치의 가능성이 높아집니다. 치아 뿌리부터 세로 금이 가는 ‘수직 치근 파절’ (Vertical root fracture) 이 발생하면 크랙되어 벌어진 부분으로 치수괴사(pulp necrosis)가 일어나고 세균이 침입하여 주변 뼈가 녹아버리게 되어, 결국 발치를 하게 됩니다. 만약 치아에 찌릿한 증상이 있다면 참지 마시고 빨리 치과에 내원하셔서 치아크랙을 발견한다면 크라운으로 치아를 씌워주는 치료로 치아를 유지 보존할 수 있습니다. 하지만 무섭다고 미루다가 시기가 늦어지면 발치 하는 상황이 올 수도 있는 만큼 치아 크랙에도 관심을 갖아 주시기 바랍니다. 추석연휴특별진료예약 서초동치과 수직치근파절 서초동치과",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "완전(2)",
+        "excessive_words": "파절(35), 수직(29), 치근(28), 치아(13), 치조골(10), 경우(10)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "63.66%",
+            "keywords": "파절(27), 치근(25), 치아(10), 치조골(10), 경우(10), 상악(9), 소실(6), 유지(5), 진단(5), 형태(5), 증상(5), 발치(5), 치주낭(4), 부분(3), 원인(3), 치료(3), 방사선(3), 중절치(3), 서초동치과(3), 환자(3), 정상적(3), 근원심(3), 발생(3), 소구치(2), 파절시(2), 치주염(2), 협측(2), 연조직(2), 의심(2), 통증(2), 특정(2), 농양(2), 분지부(1), 설측(1), 세균(1), 부위(1), 반응(1), 내원(1), 대구치(1), 시기(1), 보존(1), 중철치(1), 크라운(1), 특징(1), 파절선(1), 치은(1), 치수괴사(1), 전체적(1), 근심(1), 치과(1), 음식(1), 정상(1), 치주인대(1), 만큼(1), 자발통(1), 직접적(1), 우측(1), 엑스레이(1), 관찰(1), 고름(1), 잇몸(1), 홈플란트치과(1), 종류(1), 하악(1), 뿌리치근(1), 알수(1), 중요(1), 홈플쌤(1), 금이(1), 근관(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "12.31%",
+            "keywords": "수직(26), 크랙(6), 발견(2), 완전(2), 균열(2), 설명(1), 확인(1), 확장(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "6.91%",
+            "keywords": "양상(5), 가능성(2), 불완전(2), 진행(2), 때문(2), 분리(1), 정확(1), 측정(1), 관심(1), 예측(1), 포스팅(1), 결국(1), 오늘(1), 위치(1), 서초동(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.4%",
+            "keywords": "뿌리(4), 세로(3), 순간(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "1.8%",
+            "keywords": "시작(2), 임상(2), 형성(1), 상황(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.2%",
+            "keywords": "방향(2), 범위(1), 라인(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.9%",
+            "keywords": "포함(1), 구치(1), 시간(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "0.9%",
+            "keywords": "사진(1), 이동(1), 소견(1)"
+        },
+        {
+            "category_name": "사진",
+            "percentage": "0.6%",
+            "keywords": "침입(1), 사진상(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.6%",
+            "keywords": "주머니(2)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "0.6%",
+            "keywords": "육안(1), 안녕(1)"
+        },
+        {
+            "category_name": "요리·레시피",
+            "percentage": "0.3%",
+            "keywords": "음료(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "0.3%",
+            "keywords": "충전재(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.3%",
+            "keywords": "병소(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.3%",
+            "keywords": "주변(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.3%",
+            "keywords": "어려움(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "39.92%",
+            "words": "파절(35), 수직(29), 치근(28), 경우(10), 치조골(10), 치아(9), 상악(9), 측(8), 크랙(8), 증상(7), 치과(7), 소실(6), 발치(5), 뿌리(5), 진단(5), 양상(5), 협(5), 형태(5), 서초동(5), 소구치(5), 유지(5), 때(4), 정상(4), 원심(4), 설(4), 치주(4), 개(4), 수(4), 치료(4), 농양(3), 방사선(3), 근(3), 특정(3), 가능(3), 방향(3), 완전(3), 세로(3), 낭(3), 중(3), 절치(3), 발생(3), 조직(3), 원인(3), 부분(3), 환자(3), 시(2), 하나(2), 주머니(2), 홈(2), 고름(2), 연(2), 근심(2), 잇몸(2), 진행(2), 형성(2), 불완전(2), 치주염(2), 특징(2), 사진(2), 금(2), 임상(2), 발견(2), 시작(2), 때문(2), 의심(2), 균열(2), 통증(2), 주변(1), 뼈(1), 주낭(1), 연휴(1), 전체(1), 침입(1), 특별(1), 보존(1), 예약(1), 하악(1), 중철(1), 구치(1), 선(1), 범위(1), 진료(1), 추석(1), 상황(1), 시기(1), 흡수(1), 골(1), 자형(1), 관찰(1), 크라운(1), 만큼(1), 관심(1), 세균(1), 괴사(1), 우측(1), 내원(1), 치수(1), 측정(1), 첨(1), 정확(1), 확인(1), 육안(1), 곳(1), 어려움(1), 직접(1), 것(1), 예측(1), 소견(1), 중요(1), 설명(1), 간(1), 쌤(1), 플(1), 플란트(1), 안녕(1), 시간(1), 종류(1), 금이(1), 포스팅(1), 방법(1), 부위(1), 음식(1), 충전재(1), 근관(1), 포함(1), 지부(1), 단공(1), 분리(1), 대구치(1), 교대역(1), 이동(1), 위치(1), 병소(1), 확장(1), 엑스레이(1), 반응(1), 음료(1), 순간(1), 저작(1), 자발통(1), 인대(1), 라인(1), 열구(1), 치은(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "17.34%",
+            "words": ".(35), ((19), )(19), ,(8), :(7), 1(6), root(6), fracture(5), ’(4), Vertical(4), ‘(4), 2(4), ?(3), Sinus(3), Swelling(2), Tract(2), a(2), Point(2), tract(2), b(2), Key(2), 4(2), 3(2), -(2), necrosis(1), pulp(1), 11(1), 10(1), 9(1), V(1), halo(1), mesiobuccal(1), pattern(1), probing(1), sinus(1), swelling(1), 8(1), &(1), ~(1), ray(1), Q(1), CT(1), X(1), crack(1), cracked(1), tooth(1), vertical(1), mild(1), 6(1), 7(1), J(1), or(1), 5(1), pain(1), abscess(1), type(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "14.44%",
+            "words": "의(33), 이(33), 에(16), 가(10), 를(9), 을(9), 로(9), 으로(7), 과(6), 은(5), 도(4), 에서(4), 까지(2), 부터(1), 이란(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "11.24%",
+            "words": "있(9), 인(7), 좁(7), 깊(6), 치아(4), 인해(4), 보이(3), 입니다(3), 되(3), 하(3), 나타남(3), 나타나(3), 많(3), 가(2), 알(2), 주(2), 대한(2), 대해(2), 않(2), 벌어진(1), 높(1), 집니다(1), 따라(1), 일어나(1), 나타냄(1), 길(1), 볼(1), 마시(1), 지(1), 늦(1), 올(1), 갖(1), 바랍니다(1), 미루(1), 무섭(1), 버리(1), 됩니다(1), 참(1), 씌워(1), 녹(1), 볼까요(1), 안타깝(1), 어려우(1), 어렵(1), 느끼(1), 씹(1), 합니다(1), 드리(1), 지난(1), 해(1), 드렸(1), 해야(1), 놀(1), 만한(1), 치(1), 빠져(1), 나옴(1), 연(1), 생겼(1), 뜨거운(1), 물(1), 떼(1), 아플(1), 차(1), 넓(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "8.04%",
+            "words": "는(16), 고(12), 은(8), 게(6), 아(4), 을(4), 지(3), 음(3), 어(3), 면(3), 기(3), 습니다(3), 여(2), 며(2), 으면(1), 다고(1), 다가(1), 지만(1), 다면(1), 고자(1), 아서(1), 는데(1), 랄(1), 다(1), 악(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "5.04%",
+            "words": "하(12), 한(5), 적(5), 됨(4), 들(3), 함(3), 되(3), 된(3), 치(2), 성(2), 할(2), 상(2), 시(2), 한다면(1), 합니다(1), 해(1), 분(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "1.45%",
+            "words": "또는(2), 완전(1), 그럼(1), 결국(1), 만약(1), 하지만(1), 빨리(1), 더(1), 잘(1), 일단(1), 안(1), 매우(1), 깜짝(1), 오늘(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.97%",
+            "words": "여러(4), 단(2), 근(2), 순(1), 다른(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "0.58%",
+            "words": "었(3), 시(1), 셔서(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.58%",
+            "words": "제(4), 불(2)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.39%",
+            "words": "찌릿(1), 민감(1), 딱딱(1), 미세(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "140",
+        "words": [
+            {
+                "word": "파절",
+                "count": "27"
+            },
+            {
+                "word": "수직",
+                "count": "26"
+            },
+            {
+                "word": "치근",
+                "count": "25"
+            },
+            {
+                "word": "경우",
+                "count": "10"
+            },
+            {
+                "word": "치조골",
+                "count": "10"
+            },
+            {
+                "word": "치아",
+                "count": "10"
+            },
+            {
+                "word": "상악",
+                "count": "9"
+            },
+            {
+                "word": "크랙",
+                "count": "6"
+            },
+            {
+                "word": "소실",
+                "count": "6"
+            },
+            {
+                "word": "유지",
+                "count": "5"
+            },
+            {
+                "word": "증상",
+                "count": "5"
+            },
+            {
+                "word": "형태",
+                "count": "5"
+            },
+            {
+                "word": "진단",
+                "count": "5"
+            },
+            {
+                "word": "양상",
+                "count": "5"
+            },
+            {
+                "word": "발치",
+                "count": "5"
+            },
+            {
+                "word": "치주낭",
+                "count": "4"
+            },
+            {
+                "word": "뿌리",
+                "count": "4"
+            },
+            {
+                "word": "환자",
+                "count": "3"
+            },
+            {
+                "word": "발생",
+                "count": "3"
+            },
+            {
+                "word": "정상적",
+                "count": "3"
+            },
+            {
+                "word": "치료",
+                "count": "3"
+            },
+            {
+                "word": "부분",
+                "count": "3"
+            },
+            {
+                "word": "방사선",
+                "count": "3"
+            },
+            {
+                "word": "서초동치과",
+                "count": "3"
+            },
+            {
+                "word": "원인",
+                "count": "3"
+            },
+            {
+                "word": "근원심",
+                "count": "3"
+            },
+            {
+                "word": "세로",
+                "count": "3"
+            },
+            {
+                "word": "중절치",
+                "count": "3"
+            },
+            {
+                "word": "파절시",
+                "count": "2"
+            },
+            {
+                "word": "증상들",
+                "count": "2"
+            },
+            {
+                "word": "발견",
+                "count": "2"
+            },
+            {
+                "word": "주머니",
+                "count": "2"
+            },
+            {
+                "word": "임상",
+                "count": "2"
+            },
+            {
+                "word": "진행",
+                "count": "2"
+            },
+            {
+                "word": "때문",
+                "count": "2"
+            },
+            {
+                "word": "방향",
+                "count": "2"
+            },
+            {
+                "word": "가능성",
+                "count": "2"
+            },
+            {
+                "word": "농양",
+                "count": "2"
+            },
+            {
+                "word": "소구치",
+                "count": "2"
+            },
+            {
+                "word": "치주염",
+                "count": "2"
+            },
+            {
+                "word": "통증",
+                "count": "2"
+            },
+            {
+                "word": "특정",
+                "count": "2"
+            },
+            {
+                "word": "시작",
+                "count": "2"
+            },
+            {
+                "word": "협측",
+                "count": "2"
+            },
+            {
+                "word": "의심",
+                "count": "2"
+            },
+            {
+                "word": "균열",
+                "count": "2"
+            },
+            {
+                "word": "연조직",
+                "count": "2"
+            },
+            {
+                "word": "불완전",
+                "count": "2"
+            },
+            {
+                "word": "완전",
+                "count": "2"
+            },
+            {
+                "word": "수직치근파절시",
+                "count": "1"
+            },
+            {
+                "word": "분지부",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "포함",
+                "count": "1"
+            },
+            {
+                "word": "특징",
+                "count": "1"
+            },
+            {
+                "word": "분리",
+                "count": "1"
+            },
+            {
+                "word": "치은",
+                "count": "1"
+            },
+            {
+                "word": "특징들",
+                "count": "1"
+            },
+            {
+                "word": "대구치",
+                "count": "1"
+            },
+            {
+                "word": "충전재",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "사진상",
+                "count": "1"
+            },
+            {
+                "word": "중요",
+                "count": "1"
+            },
+            {
+                "word": "직접적",
+                "count": "1"
+            },
+            {
+                "word": "어려움",
+                "count": "1"
+            },
+            {
+                "word": "소견",
+                "count": "1"
+            },
+            {
+                "word": "예측",
+                "count": "1"
+            },
+            {
+                "word": "음료",
+                "count": "1"
+            },
+            {
+                "word": "순간",
+                "count": "1"
+            },
+            {
+                "word": "음식",
+                "count": "1"
+            },
+            {
+                "word": "관찰",
+                "count": "1"
+            },
+            {
+                "word": "반응",
+                "count": "1"
+            },
+            {
+                "word": "형성",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "침입",
+                "count": "1"
+            },
+            {
+                "word": "세균",
+                "count": "1"
+            },
+            {
+                "word": "크라운",
+                "count": "1"
+            },
+            {
+                "word": "보존",
+                "count": "1"
+            },
+            {
+                "word": "정확",
+                "count": "1"
+            },
+            {
+                "word": "관심",
+                "count": "1"
+            },
+            {
+                "word": "상황",
+                "count": "1"
+            },
+            {
+                "word": "시기",
+                "count": "1"
+            },
+            {
+                "word": "치수괴사",
+                "count": "1"
+            },
+            {
+                "word": "중철치",
+                "count": "1"
+            },
+            {
+                "word": "파절협설측",
+                "count": "1"
+            },
+            {
+                "word": "파절선",
+                "count": "1"
+            },
+            {
+                "word": "전체적",
+                "count": "1"
+            },
+            {
+                "word": "범위",
+                "count": "1"
+            },
+            {
+                "word": "측정",
+                "count": "1"
+            },
+            {
+                "word": "협설측",
+                "count": "1"
+            },
+            {
+                "word": "설측",
+                "count": "1"
+            },
+            {
+                "word": "원심측",
+                "count": "1"
+            },
+            {
+                "word": "근심",
+                "count": "1"
+            },
+            {
+                "word": "구치",
+                "count": "1"
+            },
+            {
+                "word": "근관",
+                "count": "1"
+            },
+            {
+                "word": "라인",
+                "count": "1"
+            },
+            {
+                "word": "고름",
+                "count": "1"
+            },
+            {
+                "word": "잇몸",
+                "count": "1"
+            },
+            {
+                "word": "자발통",
+                "count": "1"
+            },
+            {
+                "word": "완전파절",
+                "count": "1"
+            },
+            {
+                "word": "불완전파절",
+                "count": "1"
+            },
+            {
+                "word": "위치",
+                "count": "1"
+            },
+            {
+                "word": "병소",
+                "count": "1"
+            },
+            {
+                "word": "확장",
+                "count": "1"
+            },
+            {
+                "word": "치주인대",
+                "count": "1"
+            },
+            {
+                "word": "저작시",
+                "count": "1"
+            },
+            {
+                "word": "엑스레이",
+                "count": "1"
+            },
+            {
+                "word": "종류",
+                "count": "1"
+            },
+            {
+                "word": "홈플쌤",
+                "count": "1"
+            },
+            {
+                "word": "홈플란트치과",
+                "count": "1"
+            },
+            {
+                "word": "서초동",
+                "count": "1"
+            },
+            {
+                "word": "포스팅",
+                "count": "1"
+            },
+            {
+                "word": "금이",
+                "count": "1"
+            },
+            {
+                "word": "4.잇몸고름",
+                "count": "1"
+            },
+            {
+                "word": "1.특정",
+                "count": "1"
+            },
+            {
+                "word": "알수",
+                "count": "1"
+            },
+            {
+                "word": "이동",
+                "count": "1"
+            },
+            {
+                "word": "교대역치과",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "수직치근파절",
+                "count": "1"
+            },
+            {
+                "word": "추석연휴특별진료예약",
+                "count": "1"
+            },
+            {
+                "word": "만큼",
+                "count": "1"
+            },
+            {
+                "word": "시간",
+                "count": "1"
+            },
+            {
+                "word": "치료방법",
+                "count": "1"
+            },
+            {
+                "word": "육안",
+                "count": "1"
+            },
+            {
+                "word": "뿌리치근",
+                "count": "1"
+            },
+            {
+                "word": "설명",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "결국",
+                "count": "1"
+            },
+            {
+                "word": "주변",
+                "count": "1"
+            },
+            {
+                "word": "우측",
+                "count": "1"
+            },
+            {
+                "word": "정상",
+                "count": "1"
+            },
+            {
+                "word": "근심측",
+                "count": "1"
+            },
+            {
+                "word": "하악",
+                "count": "1"
+            },
+            {
+                "word": "제1소구치",
+                "count": "1"
+            },
+            {
+                "word": "제2소구치",
+                "count": "1"
+            },
+            {
+                "word": "가는(수직",
+                "count": "1"
+            },
+            {
+                "word": "골흡수",
+                "count": "1"
+            },
+            {
+                "word": "V자형",
+                "count": "1"
+            },
+            {
+                "word": "확인",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "치아뿌리",
+            "search_volume_total": "500",
+            "search_volume_pc": "70",
+            "search_volume_mobile": "430",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "치아뿌리 (291)"
+}

@@ -1,0 +1,775 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "81.09",
+            "evaluation": "적합",
+            "percentage": "81.09%"
+        },
+        {
+            "category": "주제",
+            "score": "73.08",
+            "evaluation": "적합",
+            "percentage": "73.08%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "69.09",
+            "evaluation": "적합",
+            "percentage": "69.09%"
+        },
+        {
+            "category": "형태소",
+            "score": "57.35",
+            "evaluation": "적합",
+            "percentage": "57.35%"
+        },
+        {
+            "category": "가독성",
+            "score": "69.94",
+            "evaluation": "적합",
+            "percentage": "69.94%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "23.00",
+            "evaluation": "정보성",
+            "percentage": "23.00%"
+        }
+    ],
+    "publish_time": "2022-12-20 17",
+    "exposure_status": "발행된지 943일 (22시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:52:44 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "40",
+        "title_without_space": "33",
+        "content_with_space": "1,384",
+        "content_without_space": "1,092"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "331",
+        "syllable_count": "293",
+        "word_count": "116",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "10",
+        "invalid_images": "32",
+        "material_images": "0",
+        "uploaded_images": "42",
+        "content_images": "42",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfODgg/MDAxNjcxNTI1Njc4ODYz.vgF3-eCfsNI0q87tXmSoHyqIHmRjWEWKNvy8HtnMgWEg.xAcUHLoRvUd-5hLZV750VxM47NHC9N5EHjiRsPOUBLcg.JPEG.seoul_den/%EC%9C%A0%EC%88%98%EC%97%B0(a5141)_20221117_10.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjA4/MDAxNjcxNTIzMDM1MTcz.XbCylhLImXTsWLMGcGuin5eqohR3r4m_TkqTLFnlOZMg.pm5oKtD70KtrKRLsWat--lJZ0ub-8XoJAYILihOfV8gg.JPEG.seoul_den/109_5188.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfNDAg/MDAxNjcxNTIzMzA1MTIz.OMJ2uU0M9u3Ud6jMmI9VGbR2Ha_B0Yt35_lG_f_rfh0g.hBAEPqj29WM9FKajxwp7_zuDfbk2JBJCTEfSCQpYQ2Ig.JPEG.seoul_den/%EC%9C%A0%EC%88%98%EC%97%B0(a5141)_20220608.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTE1/MDAxNjcxNTIzMDM1MTgy.kY_NlIebugv5OtTnI1zaB3n8X2p7LJWgWXlPduijgDUg.v7f0nclF0g5z7vtQWvRh4M2kuyNbYT3OtuLzCTyT4dQg.JPEG.seoul_den/109_5189.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjQ4/MDAxNjcxNTIzMDM0NDQx.SRYvLalU6uzfFbaViumrDiPvEhT7s-Zz6FrVct1Pkoog.DDRHZ5HjcGUL5jLE6BDfo4ZGL6Q67y6FKknXCL8fA-wg.JPEG.seoul_den/109_5190.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTk5/MDAxNjcxNTIzMDM0OTA2.oyTS5NuMGSp0iOkXvGIbC5te41tPdJtwIGkQKtSlkVAg.CKtMwoFNcFyZghkDS2diPgFVbYykOEABXT8zKQvCle0g.JPEG.seoul_den/109_5192.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTg4/MDAxNjcxNTIzMDM1NTQ1.N3JWLdVs8r1eYwRskEMPYJVtFEIY4zmqtLv9S7xbCcAg.hjzkS32rN6YLnIdoU9Z36-YY8ChfWUSqXOvLm1B1szUg.JPEG.seoul_den/109_5193.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTkz/MDAxNjcxNTIzMDM1NDQ2.6nZ-EJWyuFUB1qcAAROXPs9Q-_tLGTLMfOvBG-EEuyIg.XjU4GBMhAmRe9Uh54e1qcFFR1uHBHJ-jWPnATAU4S70g.JPEG.seoul_den/109_5194.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTE0/MDAxNjcxNTIzMDM2MTU1.EbYufMbUPoYryJbhglDZSTYeoC_bM2yv0nOpdaB2hdQg.XCsbjm4ZwmeTyyJgKQOm7o43NjLOgqjlYy1CTU_pQq8g.JPEG.seoul_den/109_5196.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjU2/MDAxNjcxNTIzMDM2MjMw.Fr-0BTCGlEQAiGaFjW4-iJggVYnp9sfElr_ZhGyiLv0g.kIpYWS5lMf49WO-5nSpryKkw3Odkx6RyCW9fMAdqfykg.JPEG.seoul_den/109_5197.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTIz/MDAxNjcxNTIzMDM2NzY2.FqoDYebGdvC0HPW6TS5WRMxIbXnHC_eznZ11ZKePStUg.RNoCqhAsju6vtjdlCbDW417kT-ZfvQ-AprAejdZzC6Ag.JPEG.seoul_den/109_5198.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTE3/MDAxNjcxNTI0ODc0ODkz.G3Lw1VP3a-OhRjovUC9qD_FO3BAHfkj-VE0Ot_Lnfb4g.wrDOJW4r6cV9H9BBCvyzl_ZOsK497CVaF-66_cSJSM8g.JPEG.seoul_den/SE-a85abbce-91ea-4f94-abc1-41b8f0bb9dea.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjky/MDAxNjcxNTIzMDc5MzA3.7qIju9DYI1kRdkhYVP0oeWxpGGoQ_xMOGZGiOuRaLYkg.S4IOSUuP-oe0dSbRmpqJu5OQhH25ywDB3cNxDCeA17cg.JPEG.seoul_den/109_0054.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTAz/MDAxNjcxNTI0ODk2ODMx.dCGerCZrL66rcukCNTMpV_wKlz0JzJkMsg0TROIsTvwg.18fxcNT-4Dq5WoD2s75vWPAytfs-ogpr1glAnggrW9Mg.JPEG.seoul_den/SE-8c4058f9-f994-4168-9503-6fe7350cecde.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfNDkg/MDAxNjcxNTIzMDc4OTgx.b7vBESRfXo30dNHTkFdmWrRUsXwm9WCbCjOkr19t4_Qg.4TKa7n4nDbyxY7j75smakdHnfRYEaKXw8gRcrm7t9p4g.JPEG.seoul_den/109_5925.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfNTMg/MDAxNjcxNTIzNjk4MTE0.2SD0C6XAAaVweqcaiTz-Jok8cfgJb0L_pqCj74V9oIQg.FfvxSm-6aaSCAJ9m14MW8Pcl_khMptu518e8V7mqExEg.JPEG.seoul_den/%EC%9C%A0%EC%88%98%EC%97%B0(a5141)_20220624_06.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTU5/MDAxNjcxNTI1MTMzNDIw.5qpof247Octk4f3t8beyPbCal8cGMYBvoQY13rD_t7og.CuXMV0etAJUodJDj3TOs3RtcVz4stbFzQKpUpDWdYAwg.JPEG.seoul_den/SE-e54e2199-c788-4cc2-9d3e-8a680e4e9641.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjYy/MDAxNjcxNTI1MTQ1NjQ4.7OXexFPyYRF26mreKnFAzvkTnSW2D2MGbUb3lxDQo5Mg._7s3lGp78kv6uDKSCnVXRNigM5nOcak6sX-M1iTnyK4g.JPEG.seoul_den/SE-aeb0ff86-4070-42fa-9777-6e7af9623a7b.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTA1/MDAxNjcxNTI1MTc2NzEw.Zq3VtCp3RSUms-YPTZeB2VCfKUEbOnD2RCpGnzufZgYg.puvdOcICky9q261b1qEOewIdIuR8LAX8RGgl9yqfcuQg.JPEG.seoul_den/SE-dfb8bfc6-0967-4618-9c5e-0bc7724c7f44.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjMx/MDAxNjcxNTIzMDgwMTI3.-iUrjP8dCCcOpPQ5i3Bmud3N1lGNvlc0od-eSFrE3hwg.tH-rZpTjkT7uW-5BpxftQnuOobSFYlttu90JZMC2SXUg.JPEG.seoul_den/209_3139.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTY4/MDAxNjcxNTIzMDgwNjI1.gkZ9kjupTEXqowtr5Mu_nI0QTfassjEpKA9b1tS47iAg.Rx6bIHh11IENbGQQEe2Co7h4H4mIlKGvjmTg1rt5VYEg.JPEG.seoul_den/209_3631.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTA0/MDAxNjcxNTIzMDgxNTM3.j4_xjSJVKL5mHdqA9hzntjyN_QIxNzhKEdd9a_TNI1wg.om9e0O87hO-FItD7SXJRIlAx8A8OQrHLmUgrFnQsjMog.JPEG.seoul_den/209_4096.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjUz/MDAxNjcxNTIzNjk4NDQ2.neZOfQ_zyn--MfQh9-2cxF-Z6q4xMxnQ6WRXWBJ6M-Ug.n8Jfi81oedznk_6m5pL3oGaHfmohuR9yxc7tEDeH1Fwg.JPEG.seoul_den/%EC%9C%A0%EC%88%98%EC%97%B0(a5141)_20221101_11.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTM0/MDAxNjcxNTIzMDgxNjM1.wyUHobBevrIZK4M4SFEFFkMyR6O1om_NKXftjt8CXZMg.Qn9ToUoqjixX7svUOYezZddT49r3wB93Anv4k1SVOxcg.JPEG.seoul_den/209_4664.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjAx/MDAxNjcxNTIzMDgxMjY3.ABX8p77NWvmmZtXfi9Z0Fx4sBuekZngumhHIfS4Z5_wg.gPCs5aS8kspuan6V7Gshcew1MHUbF1dYf75w0MB_WCsg.JPEG.seoul_den/209_4663.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjMg/MDAxNjcxNTIzMDgxODA0.YPuHZtXy6XmKRWezTBPtfm1Z3sWcBHmmWknsTBY89_Qg.UF14e0dYr-7fe6mJxzSDGMkPwkDvNVBXlGNKmIjMat8g.JPEG.seoul_den/209_4665.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjQy/MDAxNjcxNTIzNTAwODUz.Vme3oy9cTbaqgfvnGMv-x1jwNQccMkn9lh4qHtjMl7Mg.UE0m7bbMs7xQ7Oe90jxn8JYthi2rQ0KCL_d3BlGuTewg.JPEG.seoul_den/%EC%9C%A0%EC%88%98%EC%97%B0(a5141)_20221117_10.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfODIg/MDAxNjcxNTIzMDgxOTY3.rOrVFjWoTCxW9FfbbCtQCjAh6OFIFscOLAkXw7aY5nsg.2yBDK7xVgHcfZIpqmQIkuxT3smEO9IHbeTN_6b0lQdgg.JPEG.seoul_den/209_4667.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjAz/MDAxNjcxNTI1NDU0NzA3.dNDPpOmeOUlDhIfMMQfXamK-0lS1FIqXJ15jH8qtOSog.81JxofedUOwXehO4UgfChIyVcd8Ejcg1XCzzwR98azkg.JPEG.seoul_den/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7(7698)_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfOTkg/MDAxNjcxNTI0NTE0ODE1.BGknf1Qps5QdTqLr748hcm_A6I3PRaY2kk4mz5i8MjIg.28Somq5e_kmbefAigXUeaVlH9AW8Coj25QJTG6khz7Yg.JPEG.seoul_den/SE-f226df20-42dd-4e82-acf2-17485e770abf.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMTEw/MDAxNjcxNTI0NDkyOTIw.DYgtp5zkaSDJqEr6W_X3291y1noT_NHRCaZKFfS35DAg.UHN-YrKo_lUvB-Le3aSXjgX8IVnfXYFslgIcdmAGHOQg.JPEG.seoul_den/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7(7697)_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMjEyMjBfMjUw/MDAxNjcxNTI1Njk1MzI2.mb-WSLtzHAbM6PuiwxU4ur8PFV_FjIZdHomtltoPcZgg.RekstoeJjibj3qFImu0-b1KjLB9jsC2xFOY80AguvNwg.JPEG.seoul_den/%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8%EC%99%B8%ED%98%95.JPG?type=w800"
+        ]
+    },
+    "post_title": "Pulpotomy 펄포토미 재신경치료 실패해서 어금니 임플란트 치료 사례",
+    "post_content": "재신경치료가 될까 해서 오셨는데 결국 발치하고 임플란트 한 환자 이야기=_= 멀쩡해보이지만 문제는 치간부 골소실 furcation involvement인데 이건 치주문제, 잇몸문제가 아니고 치근단문제, periapical leision이 분지부까지 이환된것 잘 치료되면 뼈가 생기긴 하는데 저게 pulpotomy 펄포토미 해놓은거라 이게 재치료가 잘 안된다는거 pulpotomy해놓으면 치수석회화가 이뤄져서 근관찾기 대박 어려움 항상 발치가능성 설명드리고 진행함 잘되는 케이스도 있지만 발치하기도 합니다. 뭐 일단 해봅니다 지르코니아 크라운 철거 어라 삭제량이 좀 많네-_- 삭제를 fossa를 좀 더 오목하게 했으면 , 일자로 교합면 날린게 아니면 삭제량좀 줄일수 있었을텐데 아쉽 철거 다 하고 ..내부에 충치도 좀 있음 생존에는 무관함 신경관만 다 찾으면 근데 2개밖에 안나옴-_- 이거 4개짜린데 염증이 사라질수가 없음.. 발치 말씀드림,,, 발치즉시 임플란트 계획하고 발치 임플란트 식립 발치한자리 가운데 심기 어려움 일단 septum 치아사이 furcation 분지부 자리에 드릴링하고 위치 확인한후에 양옆 앞뒤 뺨족 다 골이식 듬뿍 초기고정이 아주 높게 나오면 바로 힐링어버트먼트 달아도 되긴 하는데 저는 그러다가 환자가 어머 이쪽으로 씹지 말라는걸깜빡했네? 하고 씹었다가 흔들려서 제거한경우가 좀 있어서 왠만하면 다 묻는 방식 submerge시킵니다 가족이니까 실패해도 이해해주시겠지 하고 아버지 발치즉시임플란트 즉시로딩-_-했다가 탈난적도 있고.. 뭐 그래서 왠만하면 안전제일.. 발치즉시 임플란트 수술 특성상 상부는 열려있어서 골이식재 빠져나오거나 감염 안되도록 주의 1주 간격으로 한달정도 내원하십닏아. 4주-6주 지나면 실밥 뺄정도로 낫습니다. 그동안 골성숙이 이뤄짐 뼈 폭은 줄어든거 없이 든든함 임플란트 2차수술 2nd op하고 힐링어버트먼트 꽂아주고 이걸로 인상채득 커스텀어버트먼트 끼우고 .임시치아 끼웠는데 그거 사진은 어디갔는지 사라져서 없음-_- SCRP , 오스템에서는 ER이라고 하는 스크루가 풀렸을때 대처 가능한 구멍뚫린 임플란트 크라운 최종접착하고 hole composite 충전 잘맞는 엑스레이 사진 교합조정 잘맞는, 잇몸 폭이 꺼진게 전혀 없는 임플란트 외형 원래 다 그런거 아닌가? 싶은분을 위한 비교, 위 사진상 오른쪽이 뼈이식해서 치조골 외형 복구시킨 임플란트 좌측이 그렇지 못한 임플란트 골이식 외형 CBCT 렌더링 이미지 비교 신경치료 해서 치아 다시한번 살려보려고 (....)오셨지만 그게 안되서 발치즉시 임플란트 크라운으로 끝낸 환자 사례 끗 의료법52조 관련 공지 모든사진은 환자 동의하에 게재 치료내용:임플란트수술 발생가능한부작용:임플란트골유착실패, 임플란트 주위염 치료시작 20220608 치료종료 20221127",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "대박(1)",
+        "excessive_words": "임플란트(14)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "48.61%",
+            "keywords": "임플란트(11), 발치(7), 환자(4), 크라운(3), 힐링어버트먼트(2), 골이식재(1), 치아사이(1), 뺨족(1), 치간부(1), 주위염(1), 골소실(1), 골이식(1), 분지부(1), 신경치료(1), 스크루(1), 뼈이식(1), 어디(1), 오른쪽(1), 오스템(1), 골성숙(1), 특성상(1), 지르코니아(1), 펄포토미(1), 발치즉시임플란트(1), 즉시로딩(1), 커스텀어버트먼트(1), 치조골(1), 실밥(1), 실패(1), 양옆(1), 엑스레이(1), 수술(1), 방식(1), 교합(1), 내원(1), 말씀(1), 염증(1), 이미지(1), 치료(1), 케이스(1), 근관(1), 감염(1), 충치(1), 충전(1), 이해(1), 잇몸(1), 자리(1), 식립(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "5.56%",
+            "keywords": "일자(1), 진행(1), 드릴링(1), 위치(1), 공지(1), 결국(1), 계획(1), 게재(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "4.86%",
+            "keywords": "철거(2), 그런거(1), 그거(1), 주의(1), 그동안(1), 가운데(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "4.17%",
+            "keywords": "외형(3), 비교(2), 아버지(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "3.47%",
+            "keywords": "확인후(1), 이쪽(1), 안전제일(1), 이야기(1), 대박(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "3.47%",
+            "keywords": "사진(2), 복구(1), 삭제(1), 렌더링(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.78%",
+            "keywords": "상부(1), 구멍(1), 설명(1), 문제(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "1.39%",
+            "keywords": "신경관(1), 생존(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.39%",
+            "keywords": "어려움(2)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "1.39%",
+            "keywords": "가능(1), 관련(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "0.69%",
+            "keywords": "동의하(1)"
+        },
+        {
+            "category_name": "사진",
+            "percentage": "0.69%",
+            "keywords": "사진상(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.69%",
+            "keywords": "좌측(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.69%",
+            "keywords": "간격(1)"
+        },
+        {
+            "category_name": "자동차",
+            "percentage": "0.69%",
+            "keywords": "앞뒤(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.69%",
+            "keywords": "사례(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.69%",
+            "keywords": "가족(1)"
+        },
+        {
+            "category_name": "원예·재배",
+            "percentage": "0.69%",
+            "keywords": "심기(1)"
+        },
+        {
+            "category_name": "게임",
+            "percentage": "0.69%",
+            "keywords": "이거(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "39.58%",
+            "words": "플란트(14), 임(13), 발치(10), 치료(7), 골(6), 거(4), 문제(4), 사진(4), 환자(4), 가능(3), 외형(3), 크라운(3), 수술(3), 주(3), 뼈(3), 트(3), 버트먼(3), 폭(2), 철거(2), 자리(2), 신경(2), 잇몸(2), 제량(2), 교합(2), 개(2), 식(2), 비교(2), 수(2), 게(2), 어려움(2), 힐링(2), 분(2), 즉시(2), 지부(2), 실패(2), 정도(2), 때(1), 그거(1), 식재(1), 상부(1), 임시(1), 커스텀(1), 이야기(1), 템(1), 오스(1), 채득(1), 어디(1), 스크루(1), 주의(1), 짐(1), 달(1), 성숙(1), 동안(1), 내원(1), 간격(1), 간부(1), 감염(1), 실밥(1), 이걸로(1), 차(1), 인상(1), 엑스레이(1), 관련(1), 공지(1), 동의(1), 조(1), 료법(1), 사례(1), 끗(1), 게재(1), 내용(1), 시작(1), 종료(1), 주위염(1), 유착(1), 발생(1), 부작용(1), 그게(1), 번(1), 조정(1), 결국(1), 특성(1), 충전(1), 최종(1), 접착(1), 위(1), 오른쪽(1), 렌더링(1), 이미지(1), 좌측(1), 복구(1), 이식(1), 치조골(1), 구멍(1), 가족(1), 삭제(1), 일자(1), 치주(1), 코니아(1), 케이스(1), 지르(1), 텐데(1), 쉽(1), 이거(1), 염증(1), 신경관(1), 생존(1), 내부(1), 충치(1), 진행(1), 설명(1), 펄(1), 포토(1), 저게(1), 이(1), 이환(1), 것(1), 미(1), 치근(1), 근관(1), 대박(1), 석회화(1), 치수(1), 이게(1), 말씀(1), 드림(1), 걸(1), 제거(1), 이쪽(1), 저(1), 고정(1), 이건(1), 경우(1), 방식(1), 난적(1), 안전제일(1), 로딩(1), 아버지(1), 이해(1), 초기(1), 족(1), 치아(1), 사이(1), 심기(1), 가운데(1), 계획(1), 립(1), 드릴링(1), 위치(1), 앞뒤(1), 뺨(1), 양옆(1), 후(1), 확인(1), 소실(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "14.9%",
+            "words": "하(7), 있(6), 되(4), 없(3), 오(2), 찾(2), 이(2), 나오(2), 맞(2), 치아(2), 이뤄(2), 놓(2), 아니(2), 주(2), 씹(2), 했(2), 임(1), 꽂(1), 끼우(1), 낫(1), 열려(1), 빠져(1), 지나(1), 뺄(1), 줄어든(1), 뚫린(1), 못한(1), 그렇(1), 살려(1), 보(1), 끝낸(1), 위한(1), 싶(1), 사라져서(1), 갔(1), 풀렸(1), 꺼진(1), 아닌가(1), 끼웠(1), 그러(1), 드리(1), 져서(1), 합니다(1), 해(1), 봅니다(1), 된다는(1), 라(1), 해서(1), 보이(1), 인데(1), 생기(1), 어라(1), 많(1), 될까(1), 달(1), 말(1), 깜빡했(1), 흔들려서(1), 높(1), 사라질(1), 면(1), 날린(1), 줄일(1), 나옴(1), 묻(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "11.22%",
+            "words": "고(13), 면(6), 는(6), 는데(4), 지(3), 다가(3), 음(3), 으면(3), 지만(3), 기(2), 네(2), 어서(2), 은(2), 긴(2), 게(2), 아(2), 을(2), 는지(1), 라고(1), 려고(1), 습니다(1), 서(1), 라는(1), 아도(1), 니까(1), 거나(1), 도록(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "9.94%",
+            "words": ".(12), ,(10), -_-(4), 2(3), 4(2), ?(2), pulpotomy(2), furcation(2), :(2), composite(1), SCRP(1), ER(1), hole(1), CBCT(1), 52(1), 20221127(1), 20220608(1), op(1), ....)(1), ((1), 1(1), fossa(1), leision(1), periapical(1), involvement(1), septum(1), submerge(1), 6(1), -(1), 닏아(1), =_=(1), nd(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "7.85%",
+            "words": "이(10), 가(9), 에(5), 는(5), 도(4), 으로(3), 은(3), 로(2), 를(2), 에서(1), 의(1), 을(1), 만(1), 까지(1), 밖에(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "6.41%",
+            "words": "잘(5), 좀(5), 다(5), 안(4), 즉시(3), 일단(2), 삭(2), 없이(1), 그래서(1), 대처(1), 전혀(1), 다시(1), 원래(1), 바로(1), 듬뿍(1), 오목(1), 더(1), 근데(1), 항상(1), 식(1), 아주(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "5.45%",
+            "words": "하(10), 한(5), 해(4), 함(3), 상(2), 해서(2), 해도(1), 시킨(1), 시킵니다(1), 짜린데(1), 된(1), 되(1), 성(1), 분(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.12%",
+            "words": "셨(2), 었(2), 십(1), 시(1), 겠(1)"
+        },
+        {
+            "morpheme_type": "감탄사",
+            "percentage": "1.12%",
+            "words": "어(3), 뭐(2), 어머(1), 치(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "1.12%",
+            "words": "한(3), 모든(1), 그런(1), 그(1), 단(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.8%",
+            "words": "왠만(2), 든든(1), 무관(1), 멀쩡(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.48%",
+            "words": "재(2), 탈(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "116",
+        "words": [
+            {
+                "word": "임플란트",
+                "count": "11"
+            },
+            {
+                "word": "발치",
+                "count": "7"
+            },
+            {
+                "word": "환자",
+                "count": "4"
+            },
+            {
+                "word": "외형",
+                "count": "3"
+            },
+            {
+                "word": "크라운",
+                "count": "3"
+            },
+            {
+                "word": "비교",
+                "count": "2"
+            },
+            {
+                "word": "사진",
+                "count": "2"
+            },
+            {
+                "word": "힐링어버트먼트",
+                "count": "2"
+            },
+            {
+                "word": "어려움",
+                "count": "2"
+            },
+            {
+                "word": "철거",
+                "count": "2"
+            },
+            {
+                "word": "일자",
+                "count": "1"
+            },
+            {
+                "word": "삭제",
+                "count": "1"
+            },
+            {
+                "word": "진행",
+                "count": "1"
+            },
+            {
+                "word": "설명",
+                "count": "1"
+            },
+            {
+                "word": "교합",
+                "count": "1"
+            },
+            {
+                "word": "케이스",
+                "count": "1"
+            },
+            {
+                "word": "말씀",
+                "count": "1"
+            },
+            {
+                "word": "발치가능성",
+                "count": "1"
+            },
+            {
+                "word": "계획",
+                "count": "1"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "신경관",
+                "count": "1"
+            },
+            {
+                "word": "생존",
+                "count": "1"
+            },
+            {
+                "word": "충치",
+                "count": "1"
+            },
+            {
+                "word": "치료종료",
+                "count": "1"
+            },
+            {
+                "word": "발생가능한부작용:임플란트골유착실패",
+                "count": "1"
+            },
+            {
+                "word": "주위염",
+                "count": "1"
+            },
+            {
+                "word": "치료내용:임플란트수술",
+                "count": "1"
+            },
+            {
+                "word": "게재",
+                "count": "1"
+            },
+            {
+                "word": "공지",
+                "count": "1"
+            },
+            {
+                "word": "치료시작",
+                "count": "1"
+            },
+            {
+                "word": "자리",
+                "count": "1"
+            },
+            {
+                "word": "치수석회화",
+                "count": "1"
+            },
+            {
+                "word": "치료",
+                "count": "1"
+            },
+            {
+                "word": "잇몸문제",
+                "count": "1"
+            },
+            {
+                "word": "문제",
+                "count": "1"
+            },
+            {
+                "word": "근관",
+                "count": "1"
+            },
+            {
+                "word": "제거경우",
+                "count": "1"
+            },
+            {
+                "word": "가능",
+                "count": "1"
+            },
+            {
+                "word": "구멍",
+                "count": "1"
+            },
+            {
+                "word": "스크루",
+                "count": "1"
+            },
+            {
+                "word": "오스템",
+                "count": "1"
+            },
+            {
+                "word": "어디",
+                "count": "1"
+            },
+            {
+                "word": "최종접착",
+                "count": "1"
+            },
+            {
+                "word": "사진상",
+                "count": "1"
+            },
+            {
+                "word": "좌측",
+                "count": "1"
+            },
+            {
+                "word": "동의하",
+                "count": "1"
+            },
+            {
+                "word": "복구",
+                "count": "1"
+            },
+            {
+                "word": "뼈이식",
+                "count": "1"
+            },
+            {
+                "word": "오른쪽",
+                "count": "1"
+            },
+            {
+                "word": "골성숙",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "관련",
+                "count": "1"
+            },
+            {
+                "word": "가족",
+                "count": "1"
+            },
+            {
+                "word": "이쪽",
+                "count": "1"
+            },
+            {
+                "word": "초기고정",
+                "count": "1"
+            },
+            {
+                "word": "확인후",
+                "count": "1"
+            },
+            {
+                "word": "실패",
+                "count": "1"
+            },
+            {
+                "word": "이해",
+                "count": "1"
+            },
+            {
+                "word": "간격",
+                "count": "1"
+            },
+            {
+                "word": "상부",
+                "count": "1"
+            },
+            {
+                "word": "특성상",
+                "count": "1"
+            },
+            {
+                "word": "즉시로딩",
+                "count": "1"
+            },
+            {
+                "word": "드릴링",
+                "count": "1"
+            },
+            {
+                "word": "치조골",
+                "count": "1"
+            },
+            {
+                "word": "가운데",
+                "count": "1"
+            },
+            {
+                "word": "심기",
+                "count": "1"
+            },
+            {
+                "word": "발치한자리",
+                "count": "1"
+            },
+            {
+                "word": "식립",
+                "count": "1"
+            },
+            {
+                "word": "이거",
+                "count": "1"
+            },
+            {
+                "word": "치아사이",
+                "count": "1"
+            },
+            {
+                "word": "분지부",
+                "count": "1"
+            },
+            {
+                "word": "뺨족",
+                "count": "1"
+            },
+            {
+                "word": "방식",
+                "count": "1"
+            },
+            {
+                "word": "앞뒤",
+                "count": "1"
+            },
+            {
+                "word": "양옆",
+                "count": "1"
+            },
+            {
+                "word": "위치",
+                "count": "1"
+            },
+            {
+                "word": "아쉽",
+                "count": "1"
+            },
+            {
+                "word": "줄일수",
+                "count": "1"
+            },
+            {
+                "word": "골소실",
+                "count": "1"
+            },
+            {
+                "word": "치주문제",
+                "count": "1"
+            },
+            {
+                "word": "치간부",
+                "count": "1"
+            },
+            {
+                "word": "이야기",
+                "count": "1"
+            },
+            {
+                "word": "결국",
+                "count": "1"
+            },
+            {
+                "word": "치근단문제",
+                "count": "1"
+            },
+            {
+                "word": "이환된것",
+                "count": "1"
+            },
+            {
+                "word": "지르코니아",
+                "count": "1"
+            },
+            {
+                "word": "대박",
+                "count": "1"
+            },
+            {
+                "word": "안된다는거",
+                "count": "1"
+            },
+            {
+                "word": "펄포토미",
+                "count": "1"
+            },
+            {
+                "word": "아버지",
+                "count": "1"
+            },
+            {
+                "word": "발치즉시임플란트",
+                "count": "1"
+            },
+            {
+                "word": "엑스레이",
+                "count": "1"
+            },
+            {
+                "word": "교합조정",
+                "count": "1"
+            },
+            {
+                "word": "충전",
+                "count": "1"
+            },
+            {
+                "word": "풀렸을때",
+                "count": "1"
+            },
+            {
+                "word": "그거",
+                "count": "1"
+            },
+            {
+                "word": "잇몸",
+                "count": "1"
+            },
+            {
+                "word": "그런거",
+                "count": "1"
+            },
+            {
+                "word": "신경치료",
+                "count": "1"
+            },
+            {
+                "word": "이미지",
+                "count": "1"
+            },
+            {
+                "word": "렌더링",
+                "count": "1"
+            },
+            {
+                "word": "골이식",
+                "count": "1"
+            },
+            {
+                "word": "커스텀어버트먼트",
+                "count": "1"
+            },
+            {
+                "word": "인상채득",
+                "count": "1"
+            },
+            {
+                "word": "감염",
+                "count": "1"
+            },
+            {
+                "word": "주의",
+                "count": "1"
+            },
+            {
+                "word": "골이식재",
+                "count": "1"
+            },
+            {
+                "word": "수술",
+                "count": "1"
+            },
+            {
+                "word": "안전제일",
+                "count": "1"
+            },
+            {
+                "word": "한달정도",
+                "count": "1"
+            },
+            {
+                "word": "실밥",
+                "count": "1"
+            },
+            {
+                "word": "2차수술",
+                "count": "1"
+            },
+            {
+                "word": "줄어든거",
+                "count": "1"
+            },
+            {
+                "word": "이뤄짐",
+                "count": "1"
+            },
+            {
+                "word": "그동안",
+                "count": "1"
+            },
+            {
+                "word": "사례",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "재신경치료",
+            "search_volume_total": "1,560",
+            "search_volume_pc": "330",
+            "search_volume_mobile": "1,230",
+            "clicks_pc": "1",
+            "clicks_mobile": "4",
+            "ctr_pc": "0.16%",
+            "ctr_mobile": "0.37%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "Pulpotomy",
+            "search_volume_total": "390",
+            "search_volume_pc": "170",
+            "search_volume_mobile": "220",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        },
+        {
+            "rank": "3",
+            "keyword": "펄포토미",
+            "search_volume_total": "70",
+            "search_volume_pc": "20",
+            "search_volume_mobile": "50",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        }
+    ],
+    "same_topic_posting": "재신경치료 (283), Pulpotomy (45), 펄포토미 (10)"
+}

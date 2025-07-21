@@ -1,0 +1,816 @@
+{
+    "posting_score": "준최2-Lv.1",
+    "exposure_score": "17.79",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "82.09",
+            "evaluation": "적합",
+            "percentage": "82.09%"
+        },
+        {
+            "category": "주제",
+            "score": "77.33",
+            "evaluation": "적합",
+            "percentage": "77.33%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "67.73",
+            "evaluation": "적합",
+            "percentage": "67.73%"
+        },
+        {
+            "category": "형태소",
+            "score": "61.46",
+            "evaluation": "적합",
+            "percentage": "61.46%"
+        },
+        {
+            "category": "가독성",
+            "score": "74.53",
+            "evaluation": "적합",
+            "percentage": "74.53%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "14.00",
+            "evaluation": "후기성",
+            "percentage": "14.00%"
+        }
+    ],
+    "publish_time": "2024-08-02 15",
+    "exposure_status": "발행된지 352일 (23시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:51:21 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "30",
+        "title_without_space": "24",
+        "content_with_space": "2,209",
+        "content_without_space": "1,681"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "306",
+        "syllable_count": "529",
+        "word_count": "138",
+        "abusing_word_count": "5"
+    },
+    "image_analysis": {
+        "valid_images": "1",
+        "invalid_images": "21",
+        "material_images": "0",
+        "uploaded_images": "22",
+        "content_images": "22",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTQx/MDAxNzIyNTgwNTEwMzAx.Lh_grvLaAuF_IbADc9eJDVzRxl0-nrvZbCDM3LR_66og.hLKguM7n7r-P3iHoYRZTH5nFOUxUgiNTo2-3n_Tntl8g.JPEG/%EC%B9%98%EC%A7%88%EC%9D%B4_%EB%B6%80%EC%A1%B1%ED%95%9C_%EC%B9%98%EC%95%84%EB%8A%94_%EB%BD%91%EC%95%84%EC%95%BC_%ED%95%A0%EA%B9%8C%EC%9A%94_1.5.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTAg/MDAxNzIyNTgwNTE2MDU1.8LlO471TygL8mYoJ0tFLF0iJ0ZMH6ykN30Zdm8hB4Dwg.xTkE5I4JGQHgvY0GpouqyZ3mTcIz2dWjL9z-xDRr6jsg.JPEG/%EC%B9%98%EC%A7%88%EC%9D%B4_%EB%B6%80%EC%A1%B1%ED%95%9C_%EC%B9%98%EC%95%84%EB%8A%94_%EB%BD%91%EC%95%84%EC%95%BC_%ED%95%A0%EA%B9%8C%EC%9A%94_2.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMjk3/MDAxNzIyNTgxODA1MDQw.NBcZS_BMUY6iChINbyvwZ8-KId02C5UVACb6H8B0rtog.f-87AKNGYj30hwoAOThqtn_6mnQf0Tm19K47F8OmYgIg.JPEG/4444_01.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMjc2/MDAxNzIyNTgxODA1MDQ2.crvAj3-zsPJTSjKHt71K2WZdlC7_VxCqVqXE8Uznatsg.iNwMZU7-V3x5VRFKn0jX1f_AU240CwE3akpLtMNo4PQg.JPEG/4444_02.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTU0/MDAxNzIyNTgxODA1NDUz.EngQkMju9TdER21OP8oyYcBEYr3qEIYMneJ1Yf9r9dwg.GpxzPndqAZ3nMYHFgi9Mec8FHgNOSbNJlOjWA2ahZCsg.JPEG/4444_03.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTYz/MDAxNzIyNTgxODA1MDQ2.ZxISfw6izmC4JEQyHAHWHNtOAvhNXblRNPhL_TwR_mkg.ucjKOTTWaPlcIXsFiR43OuFnpcb_8K2LNUvM2UpNUx0g.JPEG/4444_04.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTgy/MDAxNzIyNTgxODA1NDUy.Q_hyVpTOfhiHmdoO1f7_02yGxMZ8XA5ogxOPawkAqNUg.ngm6YeQL4nMxqRxqKd8PaRby8u9n4UjfefpfOy1L8Pog.JPEG/4444_05.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMjI3/MDAxNzIyNTgxODA1MDQy.s-fulcpLOJuc5xZvD1rKyYCwITPhb4CGea__TksFcdMg.OEKfh4IUtyY0iNFC2Ru2BxKaja1wz_qYT0ixRdQVL3Qg.JPEG/4444_06.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTUg/MDAxNzIyNTgxODA1NDU2.J1raUi9u1fbeMJdMnrd2FqArwCoERO9UWWCQEuSiuYgg.VLRLpj7vRK5plGkDj5vob-eYXgoAK19osH91f_cX8DIg.JPEG/4444_07.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMjcg/MDAxNzIyNTgxODA1MDM4.w3ek6vDfmk-LgeV8MJRxUsiEP_3-zE4HXBNyFWwMVkEg.Mo0N7VljadkI0R3lLSckWT_ywMBDEKtid0gZyUYGluog.JPEG/4444_08.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfNCAg/MDAxNzIyNTgxODA1MDQy.-Sja1zYB2XqoUao5q1hind67dokCWa6yZglRQzUxsokg.0SDS3oziFKLHmWGJo19mSeWlTyzOQudTzYNV6vr0YG0g.JPEG/4444_09.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMjAx/MDAxNzIyNTgxODEwNzM3.PTD2DnuE28RJcjOwka077M-hSa0pTA9uvpZzohtNAegg.2MyidupM0P_xwUHXmQSUrIE81qNY2iQPSN5ey1unA7og.JPEG/4444_10.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTg4/MDAxNzIyNTgxODEwNzQw.9V96sSXoqThxXTbu7sONy5d4O1Bb_GZtJDLGgAsmM5Ug.P7ZxOugwxFXtmzRVvufwTqa8qxaES2YZug_RNVKlhyMg.JPEG/4444_11.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTE1/MDAxNzIyNTgxODEwNzQy.xP40BnOSw44CQyx3FU48bhmodw1Uv7FlpwcZdRXAhXEg.ej0su_9_MbncmLY88yEGv59kjd6UGHYFb-r64VZdzlgg.JPEG/4444_12.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTE5/MDAxNzIyNTgxODEwNzQx.Zz_3mPPUCb7MJXqcGukGFn-armd848pDAHR7_SwJBjwg.D1xAOzYG149ds9eCrW51R8zrHSWzlAuy43Rej_Ycokgg.JPEG/4444_13.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfNDYg/MDAxNzIyNTgxODEwNzQ5.C4-405KN_1JEI-vTHX-AHROTre8iWbIYjuULeUP25oMg.6rcOzYJ8-W3UBSMG18XeKwl76j6U4k1SlYcDTScjlIMg.JPEG/4444_14.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTQ0/MDAxNzIyNTgxODEwNzU0.Gro_fyPJe10udS2AJcdBGZ-GjbmdfoWahX17t0ws6-wg.zMFRQAaPO0mLFQlTwlXYytR4XW2spu9sCy9KvbBbio4g.JPEG/4444_15.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTMz/MDAxNzIyNTgxODExMDg2.ENW8i0XceFDlvk3ho9B0HJSh4yAgLt8K4ewvudD42wEg.0M6R-pjz9XqpHZ8ujgkTwOVwPJ61mcgXghGx3IqrvO8g.JPEG/4444_16.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfMTgw/MDAxNzIyNTgxODExMDg1.54u9inhwrzj-y9FaLFu_t9h4dBtLixxjlK71MPBzK7Yg.kLvH9rbxavrede7QDSpPB9ozOoIhGMVr8VhCaKPXqfMg.JPEG/4444_17.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA4MDJfODgg/MDAxNzIyNTgxODExMDg0.nZiKB_7R1z347lnE-BOee21N5ZstLL4QsKvdOnyLZkgg.PWJAojuqyR1EA5f_fFBp594YYYc012HpCW9AY_Mphicg.JPEG/4444_18.jpg?type=w800",
+            "https://phinf.pstatic.net/image.nmv/blog_2024_08_02_1345/gUxeVXPfhH_03.jpg"
+        ]
+    },
+    "post_title": "이빨깨짐으로 치질이 부족한 치아 평택치과 이빨깨짐 사례",
+    "post_content": "앞니가 깨져 크라운 치료를 받은 사례를 보고싶으시면 아래 글을 보고오시는걸 추천드립니다~ 이빨 심지가 완전히 깨지거나 빠졌을 경우 아래 글을 보시면 됩니다 치질이 부족한 치아는 뽑아야 할까요? 평택역 주변에 위치한 우리치과 어금니 포스트 크라운 치료 사례 안녕하세요, 여러분! 오늘은 이빨깨짐으로 \"치질이 부족한 치아는 뽑아야 할까요?\"라는 주제로 어금니 한 개가 깨져서 포스트 크라운 치료를 받은 사례를 소개하려고 합니다. 이 글을 통해 어금니 치아 이빨깨짐 문제를 어떻게 해결할 수 있는지 알아보겠습니다. 사례 소개 김OO 씨는 40대 직장인으로, 이빨깨짐 문제가 생겨 어금니 한 개가 심하게 깨져서 평택치과를 찾았습니다. 깨진 치아로 인해 이빨깨짐 통증과 불편함을 느끼고 있었습니다. 초기 사진을 보면 어금니의 절반 이상이 손상되어 있었고, 치질이 부족하여 고민이 많았습니다. 진단 및 상담 김OO 씨는 평택 우리치과의 김민수 원장님과 상담을 진행했습니다. X-레이와 구강 검사를 통해 치아의 상태를 정확히 파악한 김 원장님은 포스트 크라운 치료가 가장 적합하다는 결론을 내렸습니다. 포스트 크라운 치료는 손상된 치아에 기둥(포스트)을 심고, 그 위에 크라운을 씌워 치아를 복원하는 방법입니다. 포스트 크라운 치료 과정 준비 단계 먼저, 김민수 원장님은 김OO 씨의 구강을 청결하게 유지하고, 치아 이빨깨짐의 치아 주변을 정리했습니다. 염증이 있는 부분을 치료한 후, 포스트를 심기 위한 준비를 마쳤습니다. 포스트 심기 손상된 치아에 기둥(포스트)을 심어 튼튼한 기반을 제공했습니다. 포스트는 주로 티타늄이나 강화된 플라스틱으로 만들어져서 뼈와 잘 결합됩니다. 임시 크라운 부착 포스트가 제대로 심어진 후, 임시 크라운을 부착했습니다. 이는 치유 기간 동안 사용되며, 치아 이빨깨짐 문제를 해결함으로 일상 생활을 지속할 수 있도록 도와줍니다. 영구 크라운 제작 및 부착 치유 과정이 끝난 후, 김OO 씨는 이빨깨짐을 영구 크라운을 부착하게 되었습니다. 영구 크라운은 자연 치아와 유사한 색상과 형태로 제작되어 외관상 자연스럽게 보입니다. 치료 후 관리 초기 회복 관리 초기 회복 기간 동안 김OO 씨는 부드러운 음식을 섭취하고, 뜨겁거나 딱딱한 음식은 피했습니다. 김민수 원장님이 처방한 약물을 정확히 복용하여 염증과 통증을 관리했습니다. 정기 검진 김OO 씨는 정기적으로 평택치과를 방문하여 검진을 받았습니다. 정기 검진을 통해 김 원장님은 포스트 크라운의 상태를 확인하고, 필요 시 추가 관리를 제공했습니다. 구강 위생 관리 철저한 구강 위생 관리를 통해 포스트 크라운을 건강하게 유지했습니다. 하루 두 번 양치질을 하고, 치실을 사용하여 치아와 잇몸 사이의 플라크를 제거했습니다. 또한, 구강 청결제를 사용하여 구강 내 세균을 줄였습니다. 무리한 활동 자제 치료 후 초기 기간 동안 김OO 씨는 무리한 활동을 자제했습니다. 무거운 물건을 들거나 강한 충격을 받을 수 있는 활동을 피함으로써 포스트 크라운이 안정적으로 자리잡을 수 있도록 했습니다. 치료 결과 및 환자의 변화 포스트 크라운 치료를 받은 김OO 씨는 놀라운 변화를 경험했습니다. 깨진 어금니가 완벽하게 복원되어 자연스러운 외관을 되찾았고, 통증과 민감함이 사라졌습니다. 김OO 씨는 치료 후 자신감을 회복하고 다시 밝은 미소를 지을 수 있게 되었습니다. 또한, 포스트 크라운 덕분에 단단한 음식도 문제없이 씹을 수 있게 되어 식사도 훨씬 편안해졌습니다. 김OO 씨의 소감 치아 이빨깨짐 \"처음 어금니가 깨졌을 때 정말 걱정이 많았어요. 하지만 평택치과에서 김민수 원장님의 포스트 크라운 치료를 받고 나서 모든 것이 달라졌습니다. 원장님과 치과 직원들의 세심한 진료와 관리 덕분에 치아가 완벽하게 복원되었고, 이제는 자신감 있게 웃을 수 있게 되었어요. 치질이 부족한 치아 문제로 고민하시는 분들께 평택치과를 강력히 추천드립니다.\" 결론 및 추천 포스트 크라운 치료는 평택치과 우리치과에서 어금니 이빨깨짐 문제를 효과적으로 복원하는 방법입니다. 평택치과에서는 전문적인 진단과 세심한 치료 과정을 통해 환자들의 이빨깨짐 문제를 해결하고 있습니다. 이 사례를 통해 포스트 크라운 치료의 효과와 중요성을 다시 한 번 확인할 수 있었습니다. 여러분도 치질이 부족한 치아 문제로 고민하고 계신다면, 평택치과에서 상담을 받아보세요. 전문적인 진단과 치료를 통해 건강한 치아와 밝은 미소를 되찾을 수 있습니다. 평택치과는 여러분의 구강 건강을 위해 항상 최선을 다하겠습니다. 감사합니다.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "상담(3), 복원(2), 완전히(1), 가장(1), 추천(1)",
+        "excessive_words": "크라운(20), 포스트(19), 치아(18), 치료(17), 이빨(11)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "59.41%",
+            "keywords": "크라운(20), 치료(17), 치아(16), 이빨(11), 어금니(8), 평택치과(8), 구강(7), 관리(7), 부족(5), 초기(4), 김민수(4), 치질(4), 자연(3), 음식(3), 통증(3), 우리치과(3), 회복(3), 추천(3), 건강(3), 검진(3), 손상(3), 고민(3), 동안(3), 진단(2), 변화(2), 치유(2), 미소(2), 기둥포스트(2), 무리(2), 제공(2), 상태(2), 유지(2), 아래(2), 염증(2), 자제(2), 전문적(2), 안정적(1), 정기적(1), 자리(1), 진료(1), 양치질(1), 약물(1), 충격(1), 환자(1), 효과(1), 효과적(1), 형태(1), 플라크(1), 철저(1), 세균(1), 편안(1), 처방(1), 평택(1), 불편(1), 강화(1), 지속(1), 잇몸(1), 외관상(1), 이상(1), 치과(1), 부분(1), 복용(1), 분들(1), 평택역(1), 경우(1), 필요(1), 앞니(1), 사이(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "5.88%",
+            "keywords": "영구(3), 해결(3), 결론(2), 소개(2), 경험(1), 물건(1), 외관(1), 추가(1), 위치(1), 기반(1), 단계(1), 검사(1), 직장인(1), 진행(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "5.88%",
+            "keywords": "포스트(17), 식사(1), 안녕(1), 심지(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "5.29%",
+            "keywords": "복원(4), 부착(4), 사용(3), 방법(2), 색상(1), 소감(1), 사진(1), 결합(1), 결과(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "3.82%",
+            "keywords": "문제(8), 확인(2), 제거(1), 플라스틱(1), 청결(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.24%",
+            "keywords": "과정(3), 위생(2), 준비(2), 걱정(1), 정리(1), 생활(1), 주제(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.06%",
+            "keywords": "자신감(2), 제작(2), 치실(1), 이제(1), 절반(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.76%",
+            "keywords": "상담(3), 기간(3)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.47%",
+            "keywords": "주변(2), 청결제(1), 티타늄(1), 방문(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "1.47%",
+            "keywords": "사례(5)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "1.18%",
+            "keywords": "활동(3), 하루(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.18%",
+            "keywords": "최선(1), 섭취(1), 감사(1), 일상(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.18%",
+            "keywords": "정기(2), 유사(1), 파악(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "0.88%",
+            "keywords": "여러분(3)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.59%",
+            "keywords": "완벽(2)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.59%",
+            "keywords": "임시(2)"
+        },
+        {
+            "category_name": "자동차",
+            "percentage": "0.59%",
+            "keywords": "덕분(2)"
+        },
+        {
+            "category_name": "스포츠",
+            "percentage": "0.29%",
+            "keywords": "중요성(1)"
+        },
+        {
+            "category_name": "원예·재배",
+            "percentage": "0.29%",
+            "keywords": "심기(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "39.2%",
+            "words": "크라운(20), 포스트(19), 치아(18), 치료(17), 치과(12), 김(12), 이빨(11), 씨(10), 평택(9), 수(9), 어금니(8), 문제(8), 구강(7), 원장(7), 관리(7), 후(6), 치질(5), 사례(5), 부족(5), 부착(4), 초기(4), 김민수(4), 복원(4), 손상(3), 고민(3), 사용(3), 음식(3), 동안(3), 정기(3), 진단(3), 영구(3), 과정(3), 회복(3), 기간(3), 자연(3), 상담(3), 검진(3), 통증(3), 활동(3), 여러분(3), 해결(3), 글(3), 추천(3), 건강(3), 우리(3), 변화(2), 치유(2), 완벽(2), 효과(2), 덕분(2), 제공(2), 미소(2), 환자(2), 전문(2), 염증(2), 위생(2), 번(2), 무리(2), 확인(2), 자제(2), 제작(2), 임시(2), 기둥(2), 방법(2), 결론(2), 주변(2), 소개(2), 개(2), 준비(2), 상태(2), 아래(2), 청결(2), 유지(2), 충격(1), 안녕(1), 물건(1), 자리(1), 위치(1), 결과(1), 주제(1), 안정(1), 세균(1), 사이(1), 잇몸(1), 치실(1), 플라크(1), 제거(1), 경험(1), 내(1), 감사(1), 외관(1), 걱정(1), 때(1), 중요(1), 걸(1), 것(1), 자신(1), 진료(1), 직원(1), 최선(1), 처음(1), 경우(1), 자신감(1), 분(1), 심지(1), 양치질(1), 소감(1), 편안(1), 식사(1), 평택역(1), 직장인(1), 일상(1), 위(1), 이(1), 생활(1), 지속(1), 유사(1), 검사(1), 파악(1), 앞니(1), 결합(1), 기반(1), 심기(1), 부분(1), 단계(1), 티타늄(1), 뼈(1), 플라스틱(1), 강(1), 색상(1), 형태(1), 필요(1), 불편(1), 방문(1), 시(1), 추가(1), 대(1), 철저(1), 정리(1), 사진(1), 절반(1), 진행(1), 레이(1), 외관상(1), 이상(1), 섭취(1), 복용(1), 약물(1), 처방(1), 하루(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "16.25%",
+            "words": "을(38), 를(28), 는(17), 의(14), 이(14), 가(10), 과(8), 와(7), 으로(7), 에(6), 은(6), 로(5), 에서(4), 도(3), 께(1), 으로써(1), 이나(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "11.28%",
+            "words": "있(14), 깨(11), 통해(7), 받(7), 보(6), 되(4), 심(4), 되찾(2), 많(2), 하(2), 입니다(2), 깨져서(2), 깨진(2), 밝(2), 뽑(2), 인(2), 할까요(2), 드립니다(2), 들(1), 강한(1), 무거운(1), 위해(1), 부드러운(1), 뜨겁(1), 피했(1), 계신다면(1), 줄였(1), 잡(1), 사라졌(1), 지(1), 나(1), 달라졌(1), 웃(1), 씹(1), 했(1), 놀라운(1), 피함(1), 마쳤(1), 합니다(1), 알아보(1), 생겨(1), 심하(1), 라는(1), 됩니다(1), 싶(1), 오(1), 깨지(1), 빠졌(1), 찾(1), 인해(1), 져서(1), 진(1), 도와(1), 줍니다(1), 만들(1), 깨져(1), 느끼(1), 내렸(1), 씌워(1), 위한(1), 끝난(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "10.99%",
+            "words": "습니다(29), 고(15), 게(11), 짐(10), 을(7), 어(7), 는(6), 은(5), 여(5), 면(3), 거나(3), 어요(2), 아야(2), 도록(2), 졌을(1), 서(1), 아(1), 기(1), 려고(1), 다는(1), 는지(1), 며(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "8.41%",
+            "words": "하(22), 한(18), 했(10), 님(7), 적(5), 되(5), 할(3), 함(3), 들(3), 된(3), 감(1), 합니다(1), 해졌(1), 성(1), 됩니다(1), 화(1), 스럽(1), 제(1), 스러운(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.93%",
+            "words": ".(40), ,(18), OO(10), \"(4), ((2), ?(2), )(2), -(1), 40(1), ~(1), !(1), X(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.49%",
+            "words": "및(4), 정확히(2), 다시(2), 또한(2), 정말(1), 하지만(1), 훨씬(1), 강력히(1), 다(1), 항상(1), 없이(1), 이제(1), 제대로(1), 어떻게(1), 오늘(1), 가장(1), 먼저(1), 잘(1), 주로(1), 완전히(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.01%",
+            "words": "었(7), 았(5), 시(3), 겠(2), 세요(2), 입니다(1), 으시(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.76%",
+            "words": "한(3), 이(2), 모든(1), 그(1), 두(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.67%",
+            "words": "세심(2), 단단(1), 민감(1), 딱딱(1), 튼튼(1), 적합(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "138",
+        "words": [
+            {
+                "word": "크라운",
+                "count": "20"
+            },
+            {
+                "word": "치료",
+                "count": "17"
+            },
+            {
+                "word": "포스트",
+                "count": "17"
+            },
+            {
+                "word": "치아",
+                "count": "16"
+            },
+            {
+                "word": "이빨",
+                "count": "11"
+            },
+            {
+                "word": "평택치과",
+                "count": "8"
+            },
+            {
+                "word": "문제",
+                "count": "8"
+            },
+            {
+                "word": "어금니",
+                "count": "8"
+            },
+            {
+                "word": "관리",
+                "count": "7"
+            },
+            {
+                "word": "원장님",
+                "count": "7"
+            },
+            {
+                "word": "구강",
+                "count": "7"
+            },
+            {
+                "word": "부족",
+                "count": "5"
+            },
+            {
+                "word": "사례",
+                "count": "5"
+            },
+            {
+                "word": "복원",
+                "count": "4"
+            },
+            {
+                "word": "치질",
+                "count": "4"
+            },
+            {
+                "word": "초기",
+                "count": "4"
+            },
+            {
+                "word": "부착",
+                "count": "4"
+            },
+            {
+                "word": "김민수",
+                "count": "4"
+            },
+            {
+                "word": "통증",
+                "count": "3"
+            },
+            {
+                "word": "추천",
+                "count": "3"
+            },
+            {
+                "word": "손상",
+                "count": "3"
+            },
+            {
+                "word": "해결",
+                "count": "3"
+            },
+            {
+                "word": "사용",
+                "count": "3"
+            },
+            {
+                "word": "활동",
+                "count": "3"
+            },
+            {
+                "word": "건강",
+                "count": "3"
+            },
+            {
+                "word": "음식",
+                "count": "3"
+            },
+            {
+                "word": "고민",
+                "count": "3"
+            },
+            {
+                "word": "영구",
+                "count": "3"
+            },
+            {
+                "word": "과정",
+                "count": "3"
+            },
+            {
+                "word": "여러분",
+                "count": "3"
+            },
+            {
+                "word": "우리치과",
+                "count": "3"
+            },
+            {
+                "word": "검진",
+                "count": "3"
+            },
+            {
+                "word": "기간",
+                "count": "3"
+            },
+            {
+                "word": "상담",
+                "count": "3"
+            },
+            {
+                "word": "동안",
+                "count": "3"
+            },
+            {
+                "word": "자연",
+                "count": "3"
+            },
+            {
+                "word": "회복",
+                "count": "3"
+            },
+            {
+                "word": "제공",
+                "count": "2"
+            },
+            {
+                "word": "확인",
+                "count": "2"
+            },
+            {
+                "word": "염증",
+                "count": "2"
+            },
+            {
+                "word": "유지",
+                "count": "2"
+            },
+            {
+                "word": "무리",
+                "count": "2"
+            },
+            {
+                "word": "방법",
+                "count": "2"
+            },
+            {
+                "word": "진단",
+                "count": "2"
+            },
+            {
+                "word": "전문적",
+                "count": "2"
+            },
+            {
+                "word": "기둥포스트",
+                "count": "2"
+            },
+            {
+                "word": "덕분",
+                "count": "2"
+            },
+            {
+                "word": "미소",
+                "count": "2"
+            },
+            {
+                "word": "자신감",
+                "count": "2"
+            },
+            {
+                "word": "완벽",
+                "count": "2"
+            },
+            {
+                "word": "상태",
+                "count": "2"
+            },
+            {
+                "word": "치유",
+                "count": "2"
+            },
+            {
+                "word": "제작",
+                "count": "2"
+            },
+            {
+                "word": "임시",
+                "count": "2"
+            },
+            {
+                "word": "소개",
+                "count": "2"
+            },
+            {
+                "word": "아래",
+                "count": "2"
+            },
+            {
+                "word": "정기",
+                "count": "2"
+            },
+            {
+                "word": "준비",
+                "count": "2"
+            },
+            {
+                "word": "주변",
+                "count": "2"
+            },
+            {
+                "word": "위생",
+                "count": "2"
+            },
+            {
+                "word": "결론",
+                "count": "2"
+            },
+            {
+                "word": "변화",
+                "count": "2"
+            },
+            {
+                "word": "자제",
+                "count": "2"
+            },
+            {
+                "word": "사이",
+                "count": "1"
+            },
+            {
+                "word": "치실",
+                "count": "1"
+            },
+            {
+                "word": "플라크",
+                "count": "1"
+            },
+            {
+                "word": "양치질",
+                "count": "1"
+            },
+            {
+                "word": "세균",
+                "count": "1"
+            },
+            {
+                "word": "철저",
+                "count": "1"
+            },
+            {
+                "word": "물건",
+                "count": "1"
+            },
+            {
+                "word": "청결제",
+                "count": "1"
+            },
+            {
+                "word": "제거",
+                "count": "1"
+            },
+            {
+                "word": "섭취",
+                "count": "1"
+            },
+            {
+                "word": "충격",
+                "count": "1"
+            },
+            {
+                "word": "형태",
+                "count": "1"
+            },
+            {
+                "word": "색상",
+                "count": "1"
+            },
+            {
+                "word": "처방",
+                "count": "1"
+            },
+            {
+                "word": "약물",
+                "count": "1"
+            },
+            {
+                "word": "정기적",
+                "count": "1"
+            },
+            {
+                "word": "복용",
+                "count": "1"
+            },
+            {
+                "word": "방문",
+                "count": "1"
+            },
+            {
+                "word": "편안",
+                "count": "1"
+            },
+            {
+                "word": "효과적",
+                "count": "1"
+            },
+            {
+                "word": "분들",
+                "count": "1"
+            },
+            {
+                "word": "이제",
+                "count": "1"
+            },
+            {
+                "word": "환자들",
+                "count": "1"
+            },
+            {
+                "word": "효과",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "최선",
+                "count": "1"
+            },
+            {
+                "word": "중요성",
+                "count": "1"
+            },
+            {
+                "word": "진료",
+                "count": "1"
+            },
+            {
+                "word": "직원들",
+                "count": "1"
+            },
+            {
+                "word": "경험",
+                "count": "1"
+            },
+            {
+                "word": "환자",
+                "count": "1"
+            },
+            {
+                "word": "자리",
+                "count": "1"
+            },
+            {
+                "word": "외관",
+                "count": "1"
+            },
+            {
+                "word": "식사",
+                "count": "1"
+            },
+            {
+                "word": "걱정",
+                "count": "1"
+            },
+            {
+                "word": "유사",
+                "count": "1"
+            },
+            {
+                "word": "안정적",
+                "count": "1"
+            },
+            {
+                "word": "심기",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "잇몸",
+                "count": "1"
+            },
+            {
+                "word": "하루",
+                "count": "1"
+            },
+            {
+                "word": "소감",
+                "count": "1"
+            },
+            {
+                "word": "\"처음",
+                "count": "1"
+            },
+            {
+                "word": "심지",
+                "count": "1"
+            },
+            {
+                "word": "앞니",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "추가",
+                "count": "1"
+            },
+            {
+                "word": "필요",
+                "count": "1"
+            },
+            {
+                "word": "절반",
+                "count": "1"
+            },
+            {
+                "word": "평택역",
+                "count": "1"
+            },
+            {
+                "word": "경우",
+                "count": "1"
+            },
+            {
+                "word": "평택",
+                "count": "1"
+            },
+            {
+                "word": "단계",
+                "count": "1"
+            },
+            {
+                "word": "외관상",
+                "count": "1"
+            },
+            {
+                "word": "일상",
+                "count": "1"
+            },
+            {
+                "word": "위치",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "기반",
+                "count": "1"
+            },
+            {
+                "word": "부분",
+                "count": "1"
+            },
+            {
+                "word": "정리",
+                "count": "1"
+            },
+            {
+                "word": "티타늄",
+                "count": "1"
+            },
+            {
+                "word": "강화",
+                "count": "1"
+            },
+            {
+                "word": "생활",
+                "count": "1"
+            },
+            {
+                "word": "결합",
+                "count": "1"
+            },
+            {
+                "word": "플라스틱",
+                "count": "1"
+            },
+            {
+                "word": "청결",
+                "count": "1"
+            },
+            {
+                "word": "파악",
+                "count": "1"
+            },
+            {
+                "word": "불편",
+                "count": "1"
+            },
+            {
+                "word": "직장인",
+                "count": "1"
+            },
+            {
+                "word": "주제",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "검사",
+                "count": "1"
+            },
+            {
+                "word": "진행",
+                "count": "1"
+            },
+            {
+                "word": "지속",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "평택치과",
+            "search_volume_total": "12,670",
+            "search_volume_pc": "3,600",
+            "search_volume_mobile": "9,070",
+            "clicks_pc": "9",
+            "clicks_mobile": "24",
+            "ctr_pc": "0.26%",
+            "ctr_mobile": "0.3%",
+            "competition": "높음",
+            "ad_count": "10"
+        }
+    ],
+    "same_topic_posting": "평택치과 (51)"
+}

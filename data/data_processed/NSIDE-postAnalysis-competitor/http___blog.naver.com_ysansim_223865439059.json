@@ -1,0 +1,967 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "89.03",
+            "evaluation": "적합",
+            "percentage": "89.03%"
+        },
+        {
+            "category": "주제",
+            "score": "79.25",
+            "evaluation": "적합",
+            "percentage": "79.25%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "71.46",
+            "evaluation": "적합",
+            "percentage": "71.46%"
+        },
+        {
+            "category": "형태소",
+            "score": "80.10",
+            "evaluation": "적합",
+            "percentage": "80.10%"
+        },
+        {
+            "category": "가독성",
+            "score": "75.05",
+            "evaluation": "적합",
+            "percentage": "75.05%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "99.00",
+            "evaluation": "정보성",
+            "percentage": "99.00%"
+        }
+    ],
+    "publish_time": "2025-05-15 11",
+    "exposure_status": "발행된지 67일 (3시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:49:18 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "24",
+        "title_without_space": "19",
+        "content_with_space": "2,521",
+        "content_without_space": "1,899"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "364",
+        "syllable_count": "623",
+        "word_count": "170",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "1",
+        "invalid_images": "10",
+        "material_images": "0",
+        "uploaded_images": "6",
+        "content_images": "11",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA1MTRfNDYg/MDAxNzQ3MTkxNDAzMDA5.cg2UcFpP-96EI6XAbdjCFCC11Zv79fFPDHSrzBzQrecg.AP1pEWLf6MEIFcqWn5PAJ02TnIQ1EOXHnWWOcIb3Ux0g.PNG/SE-e8e8ee1c-7fad-4116-8ade-e3aa8891df30.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA3MTVfNjcg/MDAxNzUyNTQ5NjUxNDY4.N4cL_DHfp6QMRCHWMxfW-iIndRCumggRMhoSonWZVEkg.uccdXBjJmuD1ApAqvngeVnzwOTiZxgwVRxa_53WvvVMg.PNG/250514_%EC%B9%98%EC%95%84%EB%B8%8C%EB%A6%BF%EC%A7%80%EA%B5%90%EC%B2%B4%EC%8B%9C%EA%B8%B01_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA3MTVfMjEx/MDAxNzUyNTUwNzMyMDYy.uS-YKU7G6TXDDyagXWg5wV3yv1nVvqjBKDc372e85D8g.wrwOTP7VeC7reA6SfHGv-_8iYCVSfQiE6W1iB2MZUeYg.PNG/250514_%EC%B9%98%EC%95%84%EB%B8%8C%EB%A6%BF%EC%A7%80%EA%B5%90%EC%B2%B4%EC%8B%9C%EA%B8%B03_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA3MTVfMTUw/MDAxNzUyNTUxMzk3MjQz.wzKAldCZLMFcxbbryG0_NDwp3KZxNeK4e5ddfEM9F6Ug.TgCDSzv5w0154VN6nbevzdHu-op1kXtjNywf-pbRKukg.PNG/250514_%EC%B9%98%EC%95%84%EB%B8%8C%EB%A6%BF%EC%A7%80%EA%B5%90%EC%B2%B4%EC%8B%9C%EA%B8%B02_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA3MTVfNyAg/MDAxNzUyNTU1NzA2OTU2.pucxw-ThHD4R_eNi61wDSg2zbiqMHGMcB361dgyJWjog.OMFPD6LWxo5ZPyj1EO_75GfMopDC1PIDyeqYUXW4MKog.PNG/250514_%EC%B9%98%EC%95%84%EB%B8%8C%EB%A6%BF%EC%A7%80%EA%B5%90%EC%B2%B4%EC%8B%9C%EA%B8%B012_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA1MjNfOTgg/MDAxNzQ3OTkwNzg0ODEw.RCjQWEUEinVMHFIGkliVWhg5o9zZ5aJjzT6mlmh-l5Ig.LbH8fp6xlxR27GkhIzCaiwL_7__N2-J0fuwcqw4VcdEg.PNG/%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%98%A4%EC%8B%9C%EB%8A%94%EA%B8%B8_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC.png?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMDhfMTMy/MDAxNzM2MzE0MDQzMDEz.HdNhj5U7Xw8LC-LtwW-V_bMxTiX9bz92hEGgFA8blVQg.nKZvs7Ulu-5yg3VZqaOylRV9fjAlSeuEFWd9CynxWsog.PNG/250108_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC_%EC%9B%90%EB%82%B4%EC%9D%B4%EB%AF%B8%EC%A7%803-1.png?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMDhfMjYw/MDAxNzM2MzE0MDQyOTQ3.upyBdz7Kx0gqSXwwlaZm2jH4776IvtKBbeNaJWiCYUwg.xTqsuLHzX5wx54p3ywKa91h4QOcBbBvXsV_wqjm63TIg.PNG/250108_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC_%EC%9B%90%EB%82%B4%EC%9D%B4%EB%AF%B8%EC%A7%803-2.png?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMDhfNSAg/MDAxNzM2MzE0MDQyOTk4.gil6w-75AhzKrOAJEN-2iTRMJWD6dSGaLlKFnItFLgIg.RXx15QIIbCpesvsG5Lhyy08B3paX1c06LAJWApORleQg.PNG/250108_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC_%EC%9B%90%EB%82%B4%EC%9D%B4%EB%AF%B8%EC%A7%803-3.png?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMDhfMTEy/MDAxNzM2MzE0MDQyOTUy.d3JvXxxk8O7CY1Fp3imcxznmlVnkjB167-kymbv8nbcg.0lUfEbWn-orQjVTcpkz4IWdY8sqCGIUiCJkC70wgrlMg.PNG/250108_%EC%97%B0%EC%84%B8%EC%95%88%EC%8B%AC%EC%B9%98%EA%B3%BC_%EC%9B%90%EB%82%B4%EC%9D%B4%EB%AF%B8%EC%A7%803-4.png?type=w1"
+        ]
+    },
+    "post_title": "수원역치과, 치아 브릿지 수명 교체 시기는?",
+    "post_content": "촬영 일자 : 2024년 8월 13일 안녕하세요. 수원역치과 수원연세안심치과입니다. 치아를 상실하게 되면 저작 기능 저하뿐 아니라, 심미적인 문제까지 함께 발생하게 됩니다. 이러한 기능적·심미적인 문제를 해결하기 위해 많은 분들이 치아 브릿지 치료를 진행하게 됩니다. 치아 브릿지는 상실된 치아를 대체하는 대표적인 보철 치료 중 하나로, 상실된 치아 양옆의 치아를 지지대로 삼아 그 위에 인공 치아를 연결하는 방식으로 제작하게 됩니다. 보철물로써 안정성과 기능성이 높아 비교적 빠른 회복이 가능하고, 임플란트에 비해 수술 부담이 적다는 장점이 있습니다. 하지만 다른 치아 치료와 마찬가지로 치아 브릿지도 사용 기간이 길어질수록 브릿지를 지지하고 있는 옆 치아에 부담이 쌓이고 주변 잇몸 조직이나 보철물 자체의 마모·손상으로 교체가 필요한 시점이 찾아오게 됩니다. 그렇다면 치아 브릿지 수명과 교체 시기는 어떻게 될까요? 치아 브릿지 수명 치아 브릿지의 수명은 일반적으로 7~10년 정도로 알려져 있습니다. 하지만 개인의 구강 위생 관리 상태, 식습관, 보철물의 재료 등에 따라 브릿지 수명은 더 짧거나 길어질 수 있습니다. 특히 브릿지를 지지해 주는 양옆 치아가 손상되면 브릿지 교체 시기가 앞당겨질 수 있어 정기적인 검진이 매우 중요합니다. 치아 브릿지 교체 원인 1. 브릿지 파손 또는 금이 간 경우 오랜 사용으로 인해 브릿지의 세라믹 부분이 깨지거나 금이 갈 수 있습니다. 이는 기능적 문제뿐 아니라 심미적인 문제도 발생시킬 수 있습니다. 2. 브릿지 내부 충치가 생긴 경우 브릿지는 치아를 완전히 덮는 구조이기 때문에 내부에서 충치가 진행되어도 증상이 나타나기 전까지 발견하기 어렵습니다. 충치가 진행된 경우 신경치료나 브릿지 교체가 필요할 수 있습니다. 3. 잇몸과 브릿지 사이에 공간이 생긴 경우 시간이 지나면서 잇몸이 내려가거나 변형되면 브릿지 아래 틈이 생겨 음식물 끼임, 구취 등의 문제가 발생할 수 있습니다. 4. 브릿지 접착력 저하 시멘트 접착력이 떨어지면 브릿지가 헐겁거나 빠질 수 있습니다. 이때 내부 치아 상태에 따라 재접착 또는 새 브릿지 제작이 필요합니다. 이처럼 문제가 생긴 브릿지를 방치하면 주변 치아나 잇몸 건강에도 영향을 줄 수 있으므로 정기적인 검진을 통해 문제를 조기에 발견하고 치료를 받는 것이 중요합니다. 치아 브릿지 교체 원인 중 브릿지 파손을 방치할 경우 어떤 문제가 발생할 수 있으며, 어떻게 치료하는지 아래 예시를 통해 살펴보겠습니다. 브릿지 파손을 방치할 경우 발생하는 문제점 촬영 일자 : 2024년 8월 13일 오른쪽 아래 PFM 브릿지의 도자기 부분이 깨져있습니다. PFM 보철은 내부는 금속, 외부는 도자기 재질로 구성되어 있습니다. 하지만 오랜 기간 사용하다 보면 도자기 부분이 깨지는 경우가 종종 있습니다. 이처럼 치아 브릿지의 도자기 부분이 깨진 상태로 오랜 시간 방치되면 치아가 자연스럽게 빈 공간을 메우려는 성질로 인해 교합에 변화가 생길 수 있습니다. 정출 및 인접 치아가 기울어지는 현상 대표적으로 맞물리는 반대편 치아가 아래로 내려오는 정출 현상이나 인접한 치아가 서서히 기울어지며 쓰러지는 현상이 나타날 수 있습니다. 촬영 일자 : 2024년 8월 13일 정출은 치아가 제 위치에서 벗어나 서서히 위아래로 이동하는 현상으로, 교합이 어긋나거나 추후 보철물 제작 시에도 영향을 줄 수 있어 주의가 필요합니다. 정출된 치아는 그 정도에 따라 단순한 교합조정으로 개선이 가능한 경우도 있지만, 정출이 심한 경우에는 크라운 치료가 필요할 수 있습니다. 정출된 상태를 그대로 두고 반대편 보철물을 제작하게 되면 새로운 보철물도 기존 파절된 형태에 맞춰 제작될 수밖에 없어 기능적인 면이나 장기적인 안정성에 불리할 수 있습니다. 따라서 브릿지 교체 전, 정출된 치아에 대한 선행 치료 여부를 고려하여 정확한 진단과 교합 상태 분석이 필요합니다. 치아 브릿지 교체, 어떻게 진행될까요? 정출된 치아나 주변 치아 상태를 먼저 정리한 뒤, 치아 브릿지 교체가 진행됩니다. 기존 브릿지를 제거한 후 내부 치아의 상태를 확인하고 필요시 신경치료나 보강 치료를 진행합니다. 브릿지는 양쪽 치아를 지지대로 사용하기 때문에 지대치의 건강 상태가 매우 중요하며, 지대치 상태에 따라 치료 계획이 달라질 수 있습니다. 주변 치아와의 조화를 고려해 새로운 브릿지를 제작하게 됩니다. 촬영 일자 : 2024년 10월 2일 치아 브릿지는 일정 기간 사용 후 다양한 이유로 교체가 필요해질 수 있습니다. 브릿지 수명은 개인의 구강 상태와 관리 방법에 따라 달라질 수 있으므로, 이상 증상이 있거나 장기간 사용한 경우에는 현재 상태를 확인해 보는 것이 도움이 될 수 있습니다. 감사합니다. 치료 기간 : 24.08.13 ~ 24.10.02 본 포스팅은 의료법 제56조 1항을 준수하여 대표원장이 직접 작성하였습니다. 해당 사진은 환자분의 동의하에 동일한 조건으로 촬영하였으며 무단 복제, 사용을 금합니다. 보존/보철치료는 시린 증상, 통증, 수복물 파절 혹은 탈락 등의 부작용이 있을 수 있습니다. 수원역치과 연세안심치과 전문의 3인 구강악안면외과 치주과 치과보존과",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "완전히(1)",
+        "excessive_words": "브릿지(35), 치아(35), 치료(13), 상태(11), 경우(10), 교체(10)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "56.06%",
+            "keywords": "치아(26), 상태(11), 치료(10), 경우(10), 정출(8), 필요(7), 보철물(6), 발생(5), 내부(5), 방치(4), 잇몸(4), 아래(4), 부분(4), 교합(3), 충치(3), 증상(3), 중요(3), 상실(3), 심미적(2), 수원역치과(2), 정도(2), 정기적(2), 신경치료(2), 저하(2), 안정성(2), 관리(2), 구강(2), 보철(2), 건강(2), 고려(2), 검진(2), 인접(2), 파절(2), 시기(2), 양옆(2), 기능적(2), 기존(2), 부담(2), 대표적(2), 영향(2), 원인(2), 진단(1), 위아래(1), 여부(1), 손상(1), 성질(1), 지대(1), 조화(1), 장기적(1), 장점(1), 조기(1), 일반적(1), 자연(1), 회복(1), 지대치(1), 수복물(1), 구강악안면외과(1), 분들(1), 마모손상(1), 치과보존(1), 치주(1), 임플란트(1), 사이(1), 형태(1), 환자분(1), 다양(1), 크라운(1), 대표원장(1), 통증(1), 방식(1), 양쪽(1), 추후(1), 식습관(1), 탈락(1), 의료법(1), 필요시(1), 오른쪽(1), 조직(1), 재료(1), 장기간(1), 저작(1), 이상(1), 이때(1), 수술(1), 무단(1), 인공(1), 대체(1), 변형(1), 변화(1), 부작용(1), 기능성(1), 구조(1), 금이(1), 기능(1), 구취(1), 연세안심치과(1), 개선(1), 분석(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "10.1%",
+            "keywords": "브릿지(35), 시간(2), 반대편(2), 일정(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "7.07%",
+            "keywords": "진행(6), 일자(4), 개인(2), 때문(2), 지지(2), 조건(1), 정확(1), 해결(1), 위치(1), 포스팅(1), 3인(1), 도움(1), 해당(1), 계획(1), 구성(1), 마찬가지(1), 시점(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "6.06%",
+            "keywords": "문제(8), 현상(4), 파손(3), 발견(2), 확인(2), 제거(1), 재질(1), 외부(1), 시멘트(1), 세라믹(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "5.56%",
+            "keywords": "교체(10), 사용(7), 연결(1), 사진(1), 방법(1), 복제(1), 불리(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.27%",
+            "keywords": "제작(6), 접착력(2), 음식물(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "2.02%",
+            "keywords": "가능(2), 이유(1), 정리(1), 비교적(1), 위생(1), 금속(1), 선행(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "2.02%",
+            "keywords": "촬영(5), 동의하(1), 단순(1), 전문(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.52%",
+            "keywords": "공간(2), 주의(1), 감사(1), 보강(1), 문제점(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "1.26%",
+            "keywords": "수명(5)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.26%",
+            "keywords": "기간(4), 작성(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.01%",
+            "keywords": "주변(4)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "1.01%",
+            "keywords": "도자기(4)"
+        },
+        {
+            "category_name": "원예·재배",
+            "percentage": "0.51%",
+            "keywords": "지지대(2)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "0.51%",
+            "keywords": "자체(1), 안녕(1)"
+        },
+        {
+            "category_name": "공연·전시",
+            "percentage": "0.25%",
+            "keywords": "이동하(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "0.25%",
+            "keywords": "예시(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "41.89%",
+            "words": "브릿지(35), 치아(26), 수(21), 치료(13), 상태(11), 경우(10), 교체(10), 정출(8), 문제(8), 사용(7), 필요(7), 진행(6), 제작(6), 보철물(6), 년(5), 촬영(5), 발생(5), 치과(5), 수명(5), 내부(5), 기능(5), 부분(4), 주변(4), 기간(4), 현상(4), 교합(4), 잇몸(4), 방치(4), 아래(4), 일자(4), 일(4), 월(4), 이(3), 파손(3), 보철(3), 대표(3), 충치(3), 구강(3), 중요(3), 심미(3), 등(3), 상실(3), 도자기(3), 증상(3), 양옆(2), 관리(2), 정기(2), 원인(2), 검진(2), 것(2), 후(2), 확인(2), 시간(2), 공간(2), 수원역(2), 지대(2), 접착력(2), 신경(2), 발견(2), 영향(2), 연세(2), 건강(2), 때문(2), 전(2), 안심(2), 개인(2), 반대편(2), 부담(2), 보존(2), 지지(2), 가능(2), 안정(2), 지지대(2), 기존(2), 파절(2), 중(2), 고려(2), 인접(2), 시기(2), 정도(2), 저하(2), 손상(2), 정리(1), 형태(1), 보강(1), 양쪽(1), 계획(1), 개선(1), 크라운(1), 제거(1), 장기(1), 뒤(1), 정확(1), 선행(1), 진단(1), 분석(1), 여부(1), 필요시(1), 불리(1), 면(1), 도움(1), 복제(1), 통증(1), 수복(1), 무단(1), 조건(1), 환자(1), 동의(1), 물(1), 탈락(1), 안면(1), 외과(1), 치주(1), 악(1), 인(1), 부작용(1), 전문(1), 사진(1), 해당(1), 이상(1), 장기간(1), 조정(1), 방법(1), 이유(1), 일정(1), 다양(1), 감사(1), 본(1), 원장(1), 작성(1), 항(1), 조(1), 포스팅(1), 의료법(1), 조화(1), 문제점(1), 시점(1), 일반(1), 해결(1), 마모(1), 조직(1), 자체(1), 위생(1), 저작(1), 간(1), 세라믹(1), 금이(1), 재료(1), 식습관(1), 분(1), 대체(1), 하나(1), 비교(1), 방식(1), 연결(1), 위(1), 인공(1), 회복(1), 임(1), 마찬가지(1), 옆(1), 장점(1), 수술(1), 플란트(1), 금(1), 수원(1), 성질(1), 변화(1), 자연(1), 자기(1), 재질(1), 구성(1), 제(1), 위치(1), 시(1), 주의(1), 추후(1), 이동하(1), 위아래(1), 외부(1), 금속(1), 음식물(1), 구취(1), 틈(1), 변형(1), 구조(1), 사이(1), 시멘트(1), 이때(1), 예시(1), 오른쪽(1), 조기(1), 안녕(1), 접착(1), 단순(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "17.27%",
+            "words": "이(33), 가(23), 를(23), 에(21), 의(16), 는(13), 로(11), 을(9), 으로(8), 도(7), 은(7), 과(6), 나(4), 이나(3), 와(3), 뿐(2), 처럼(2), 에서(2), 까지(2), 밖에(1), 로써(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "11.66%",
+            "words": "있(28), 치아(9), 인(8), 됩니다(5), 따라(5), 생긴(3), 인해(2), 기울어지(2), 달라질(2), 길(2), 줄(2), 아니(2), 되(2), 통해(2), 깨지(2), 새로운(2), 보(2), 맞물리(1), 깨진(1), 살펴보(1), 받(1), 깨져(1), 빈(1), 메우(1), 생길(1), 심한(1), 될(1), 대한(1), 준(1), 하(1), 시린(1), 금합니다(1), 없(1), 맞춰(1), 나타날(1), 쓰러지(1), 벗어나(1), 어긋나(1), 두(1), 내려오(1), 지나(1), 쌓이(1), 질수록(1), 찾아오(1), 그렇(1), 알려져(1), 될까요(1), 적(1), 비해(1), 많(1), 위해(1), 삼(1), 높(1), 빠른(1), 짧(1), 질(1), 내려가(1), 입니다(1), 생겨(1), 임(1), 헐겁(1), 떨어지(1), 어렵(1), 나타나(1), 앞당겨질(1), 주(1), 갈(1), 덮(1), 이(1), 빠질(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "9.2%",
+            "words": ".(46), ,(18), :(5), 2024(4), 13(4), 10(3), 8(3), ·(2), PFM(2), 24(2), 2(2), 3(2), 1(2), ?(2), ~(2), 56(1), /(1), 02(1), 08(1), 7(1), 4(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "8.33%",
+            "words": "습니다(22), 는(13), 게(8), 면(8), 거나(6), 어(6), 고(6), 기(5), 며(2), 으므로(2), 여(2), 라(2), 아(2), 려는(1), 지만(1), 다(1), 을(1), 다면(1), 다는(1), 은(1), 어도(1), 면서(1), 으며(1), 는지(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "8.15%",
+            "words": "하(25), 적(13), 한(11), 된(8), 합니다(7), 할(7), 되(5), 해(3), 성(3), 치(2), 됩니다(1), 분(1), 될까요(1), 해질(1), 시킬(1), 들(1), 끼(1), 스럽(1), 될(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.1%",
+            "words": "어떻게(3), 하지만(3), 서서히(2), 또는(2), 매우(2), 따라서(1), 혹은(1), 먼저(1), 현재(1), 직접(1), 그대로(1), 종종(1), 더(1), 특히(1), 완전히(1), 함께(1), 및(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.7%",
+            "words": "오랜(3), 그(2), 어떤(1), 새(1), 다른(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "0.35%",
+            "words": "였으며(1), 였(1), 겠(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.18%",
+            "words": "제(1), 재(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.18%",
+            "words": "동일(1), 이러(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "170",
+        "words": [
+            {
+                "word": "브릿지",
+                "count": "35"
+            },
+            {
+                "word": "치아",
+                "count": "26"
+            },
+            {
+                "word": "상태",
+                "count": "11"
+            },
+            {
+                "word": "교체",
+                "count": "10"
+            },
+            {
+                "word": "경우",
+                "count": "10"
+            },
+            {
+                "word": "치료",
+                "count": "10"
+            },
+            {
+                "word": "문제",
+                "count": "8"
+            },
+            {
+                "word": "정출",
+                "count": "8"
+            },
+            {
+                "word": "필요",
+                "count": "7"
+            },
+            {
+                "word": "사용",
+                "count": "7"
+            },
+            {
+                "word": "진행",
+                "count": "6"
+            },
+            {
+                "word": "보철물",
+                "count": "6"
+            },
+            {
+                "word": "제작",
+                "count": "6"
+            },
+            {
+                "word": "내부",
+                "count": "5"
+            },
+            {
+                "word": "발생",
+                "count": "5"
+            },
+            {
+                "word": "수명",
+                "count": "5"
+            },
+            {
+                "word": "촬영",
+                "count": "5"
+            },
+            {
+                "word": "기간",
+                "count": "4"
+            },
+            {
+                "word": "부분",
+                "count": "4"
+            },
+            {
+                "word": "도자기",
+                "count": "4"
+            },
+            {
+                "word": "방치",
+                "count": "4"
+            },
+            {
+                "word": "현상",
+                "count": "4"
+            },
+            {
+                "word": "일자",
+                "count": "4"
+            },
+            {
+                "word": "주변",
+                "count": "4"
+            },
+            {
+                "word": "잇몸",
+                "count": "4"
+            },
+            {
+                "word": "아래",
+                "count": "4"
+            },
+            {
+                "word": "충치",
+                "count": "3"
+            },
+            {
+                "word": "상실",
+                "count": "3"
+            },
+            {
+                "word": "중요",
+                "count": "3"
+            },
+            {
+                "word": "증상",
+                "count": "3"
+            },
+            {
+                "word": "교합",
+                "count": "3"
+            },
+            {
+                "word": "파손",
+                "count": "3"
+            },
+            {
+                "word": "정도",
+                "count": "2"
+            },
+            {
+                "word": "정기적",
+                "count": "2"
+            },
+            {
+                "word": "개인",
+                "count": "2"
+            },
+            {
+                "word": "시기",
+                "count": "2"
+            },
+            {
+                "word": "가능",
+                "count": "2"
+            },
+            {
+                "word": "검진",
+                "count": "2"
+            },
+            {
+                "word": "부담",
+                "count": "2"
+            },
+            {
+                "word": "지지",
+                "count": "2"
+            },
+            {
+                "word": "고려",
+                "count": "2"
+            },
+            {
+                "word": "확인",
+                "count": "2"
+            },
+            {
+                "word": "안정성",
+                "count": "2"
+            },
+            {
+                "word": "영향",
+                "count": "2"
+            },
+            {
+                "word": "공간",
+                "count": "2"
+            },
+            {
+                "word": "발견",
+                "count": "2"
+            },
+            {
+                "word": "신경치료",
+                "count": "2"
+            },
+            {
+                "word": "때문",
+                "count": "2"
+            },
+            {
+                "word": "기능적",
+                "count": "2"
+            },
+            {
+                "word": "양옆",
+                "count": "2"
+            },
+            {
+                "word": "원인",
+                "count": "2"
+            },
+            {
+                "word": "접착력",
+                "count": "2"
+            },
+            {
+                "word": "구강",
+                "count": "2"
+            },
+            {
+                "word": "보철",
+                "count": "2"
+            },
+            {
+                "word": "지지대",
+                "count": "2"
+            },
+            {
+                "word": "수원역치과",
+                "count": "2"
+            },
+            {
+                "word": "저하",
+                "count": "2"
+            },
+            {
+                "word": "관리",
+                "count": "2"
+            },
+            {
+                "word": "파절",
+                "count": "2"
+            },
+            {
+                "word": "대표적",
+                "count": "2"
+            },
+            {
+                "word": "심미적",
+                "count": "2"
+            },
+            {
+                "word": "기존",
+                "count": "2"
+            },
+            {
+                "word": "건강",
+                "count": "2"
+            },
+            {
+                "word": "인접",
+                "count": "2"
+            },
+            {
+                "word": "반대편",
+                "count": "2"
+            },
+            {
+                "word": "시간",
+                "count": "2"
+            },
+            {
+                "word": "주의",
+                "count": "1"
+            },
+            {
+                "word": "위아래",
+                "count": "1"
+            },
+            {
+                "word": "단순",
+                "count": "1"
+            },
+            {
+                "word": "위치",
+                "count": "1"
+            },
+            {
+                "word": "이동하",
+                "count": "1"
+            },
+            {
+                "word": "장기적",
+                "count": "1"
+            },
+            {
+                "word": "불리",
+                "count": "1"
+            },
+            {
+                "word": "변화",
+                "count": "1"
+            },
+            {
+                "word": "여부",
+                "count": "1"
+            },
+            {
+                "word": "형태",
+                "count": "1"
+            },
+            {
+                "word": "개선",
+                "count": "1"
+            },
+            {
+                "word": "교합조정",
+                "count": "1"
+            },
+            {
+                "word": "변형",
+                "count": "1"
+            },
+            {
+                "word": "구조",
+                "count": "1"
+            },
+            {
+                "word": "사이",
+                "count": "1"
+            },
+            {
+                "word": "손상",
+                "count": "1"
+            },
+            {
+                "word": "일반적",
+                "count": "1"
+            },
+            {
+                "word": "시점",
+                "count": "1"
+            },
+            {
+                "word": "정확",
+                "count": "1"
+            },
+            {
+                "word": "조기",
+                "count": "1"
+            },
+            {
+                "word": "구성",
+                "count": "1"
+            },
+            {
+                "word": "자연",
+                "count": "1"
+            },
+            {
+                "word": "재질",
+                "count": "1"
+            },
+            {
+                "word": "외부",
+                "count": "1"
+            },
+            {
+                "word": "예시",
+                "count": "1"
+            },
+            {
+                "word": "성질",
+                "count": "1"
+            },
+            {
+                "word": "조화",
+                "count": "1"
+            },
+            {
+                "word": "동의하",
+                "count": "1"
+            },
+            {
+                "word": "조건",
+                "count": "1"
+            },
+            {
+                "word": "환자분",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "작성",
+                "count": "1"
+            },
+            {
+                "word": "보존보철치료",
+                "count": "1"
+            },
+            {
+                "word": "부작용",
+                "count": "1"
+            },
+            {
+                "word": "마모손상",
+                "count": "1"
+            },
+            {
+                "word": "치과보존",
+                "count": "1"
+            },
+            {
+                "word": "치주",
+                "count": "1"
+            },
+            {
+                "word": "전문",
+                "count": "1"
+            },
+            {
+                "word": "대표원장",
+                "count": "1"
+            },
+            {
+                "word": "포스팅",
+                "count": "1"
+            },
+            {
+                "word": "지대치",
+                "count": "1"
+            },
+            {
+                "word": "지대",
+                "count": "1"
+            },
+            {
+                "word": "제거",
+                "count": "1"
+            },
+            {
+                "word": "정리",
+                "count": "1"
+            },
+            {
+                "word": "분석",
+                "count": "1"
+            },
+            {
+                "word": "계획",
+                "count": "1"
+            },
+            {
+                "word": "다양",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "방법",
+                "count": "1"
+            },
+            {
+                "word": "이유",
+                "count": "1"
+            },
+            {
+                "word": "진단",
+                "count": "1"
+            },
+            {
+                "word": "크라운",
+                "count": "1"
+            },
+            {
+                "word": "금속",
+                "count": "1"
+            },
+            {
+                "word": "추후",
+                "count": "1"
+            },
+            {
+                "word": "오른쪽",
+                "count": "1"
+            },
+            {
+                "word": "문제점",
+                "count": "1"
+            },
+            {
+                "word": "재접착",
+                "count": "1"
+            },
+            {
+                "word": "선행",
+                "count": "1"
+            },
+            {
+                "word": "필요시",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "일정",
+                "count": "1"
+            },
+            {
+                "word": "양쪽",
+                "count": "1"
+            },
+            {
+                "word": "보강",
+                "count": "1"
+            },
+            {
+                "word": "이때",
+                "count": "1"
+            },
+            {
+                "word": "시멘트",
+                "count": "1"
+            },
+            {
+                "word": "수술",
+                "count": "1"
+            },
+            {
+                "word": "위생",
+                "count": "1"
+            },
+            {
+                "word": "인공",
+                "count": "1"
+            },
+            {
+                "word": "기능",
+                "count": "1"
+            },
+            {
+                "word": "저작",
+                "count": "1"
+            },
+            {
+                "word": "식습관",
+                "count": "1"
+            },
+            {
+                "word": "재료",
+                "count": "1"
+            },
+            {
+                "word": "구취",
+                "count": "1"
+            },
+            {
+                "word": "음식물",
+                "count": "1"
+            },
+            {
+                "word": "세라믹",
+                "count": "1"
+            },
+            {
+                "word": "금이",
+                "count": "1"
+            },
+            {
+                "word": "장기간",
+                "count": "1"
+            },
+            {
+                "word": "의료법",
+                "count": "1"
+            },
+            {
+                "word": "방식",
+                "count": "1"
+            },
+            {
+                "word": "기능성",
+                "count": "1"
+            },
+            {
+                "word": "연결",
+                "count": "1"
+            },
+            {
+                "word": "대체",
+                "count": "1"
+            },
+            {
+                "word": "분들",
+                "count": "1"
+            },
+            {
+                "word": "비교적",
+                "count": "1"
+            },
+            {
+                "word": "회복",
+                "count": "1"
+            },
+            {
+                "word": "조직",
+                "count": "1"
+            },
+            {
+                "word": "마찬가지",
+                "count": "1"
+            },
+            {
+                "word": "장점",
+                "count": "1"
+            },
+            {
+                "word": "임플란트",
+                "count": "1"
+            },
+            {
+                "word": "해결",
+                "count": "1"
+            },
+            {
+                "word": "기능적심미적",
+                "count": "1"
+            },
+            {
+                "word": "통증",
+                "count": "1"
+            },
+            {
+                "word": "수복물",
+                "count": "1"
+            },
+            {
+                "word": "복제",
+                "count": "1"
+            },
+            {
+                "word": "무단",
+                "count": "1"
+            },
+            {
+                "word": "해당",
+                "count": "1"
+            },
+            {
+                "word": "탈락",
+                "count": "1"
+            },
+            {
+                "word": "연세안심치과",
+                "count": "1"
+            },
+            {
+                "word": "수원연세안심치과",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "구강악안면외과",
+                "count": "1"
+            },
+            {
+                "word": "3인",
+                "count": "1"
+            },
+            {
+                "word": "자체",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "치아브릿지",
+            "search_volume_total": "3,610",
+            "search_volume_pc": "720",
+            "search_volume_mobile": "2,890",
+            "clicks_pc": "0",
+            "clicks_mobile": "7",
+            "ctr_pc": "0.06%",
+            "ctr_mobile": "0.27%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "수원역치과",
+            "search_volume_total": "780",
+            "search_volume_pc": "210",
+            "search_volume_mobile": "570",
+            "clicks_pc": "1",
+            "clicks_mobile": "4",
+            "ctr_pc": "0.29%",
+            "ctr_mobile": "0.8%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "3",
+            "keyword": "치아브릿지수명",
+            "search_volume_total": "60",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "50",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "2"
+        },
+        {
+            "rank": "4",
+            "keyword": "브릿지수명",
+            "search_volume_total": "50",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "40",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "2"
+        }
+    ],
+    "same_topic_posting": "치아브릿지 (33), 수원역치과 (30), 브릿지수명 (4), 치아브릿지수명 (4)"
+}

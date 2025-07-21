@@ -1,0 +1,661 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "82.38",
+            "evaluation": "적합",
+            "percentage": "82.38%"
+        },
+        {
+            "category": "주제",
+            "score": "79.33",
+            "evaluation": "적합",
+            "percentage": "79.33%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "67.12",
+            "evaluation": "적합",
+            "percentage": "67.12%"
+        },
+        {
+            "category": "형태소",
+            "score": "60.94",
+            "evaluation": "적합",
+            "percentage": "60.94%"
+        },
+        {
+            "category": "가독성",
+            "score": "75.51",
+            "evaluation": "적합",
+            "percentage": "75.51%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "56.00",
+            "evaluation": "정보성",
+            "percentage": "56.00%"
+        }
+    ],
+    "publish_time": "2024-12-08 19",
+    "exposure_status": "발행된지 224일 (19시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:05:50 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "24",
+        "title_without_space": "18",
+        "content_with_space": "1,164",
+        "content_without_space": "917"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "261",
+        "syllable_count": "248",
+        "word_count": "98",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "12",
+        "invalid_images": "17",
+        "material_images": "0",
+        "uploaded_images": "29",
+        "content_images": "29",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjIw/MDAxNzI4OTg2NTk2MDMx.09NljwINs7lQT2LdF-lFr-TJ_XotAx6tGS4yfnfZcKMg.kYC8_A9eTgTOjHKo5QUUPztZJOEbO05SmBJ1wqoEFoAg.JPEG/308_0050_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNjUg/MDAxNzI4OTg3MDEyNTAw.Iu5PdVvfNcuSh8Lbn2tXtOHIT3L9kUTOfKFIhuHWqOMg.wvGi4akBXYpumV4tHnKN25v-QiCnlR4keYtrcs_COwMg.JPEG/oov_export_20241015_190407_117_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTkx/MDAxNzI4OTg3MDEyMzIw.6eKpUIeDUmyg9NnaCrX1hcz0B1uWZTlhTjjbBFrdZ_wg.u3JWudsgLUFTZFMtmO3Jm6iEOCxVvv4ZW1_4mrC6pEkg.PNG/oov_export_20241015_190407_117_cr%EB%B3%91%EC%86%8C.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNzYg/MDAxNzI4OTg3MDEyMzIx.6Ki0IRKHVzgJR3caHqqExLl26uTw96lFb4XD9aJE6gsg.QPjwMmt9yI20lMyCh3BrCzUH1N-snPPFkNzSPQBnKaAg.PNG/oov_export_20241015_190407_117_cr%EC%99%B8%ED%9D%A1%EC%88%98.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNTIg/MDAxNzI4OTg2NTk2MDg5.rBRos8Cni1DTYPbIEiIGNzUxf0BRSyr_A_YrH-j8aaYg.CWyBFZUWRNwLkXyBfwzUBX8Og0FanZtruB6vO7he0nAg.JPEG/308_0089_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTkz/MDAxNzI4OTg2NTk5MzY3.RYb9Fj-CWoFwL8qru5hMmFiL5AeUG8UcXR1b8K8TZEIg.TvbzajS-IuEzVCRKvz5alxa6uDPmlFM6LqJknG7BQdog.JPEG/308_0090_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNTcg/MDAxNzI4OTg2NTk4OTcz.YKAl0735dkvCfSnQfM-8ZrCsoi1geR5f9PPgBi4J8_Ag._Qdg5wQ9CDpnKXr4IWz_jhZg3n2dD4NJUfHc9eEXemsg.JPEG/308_0091_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNzYg/MDAxNzI4OTg2NTk2MDg2.365Bs8M9xh0PsGAutd26Cu0OdOzRO47bwUMgzGvEfKkg.rY0vY_V7blUDNVEesZ3frt7LtL-76e9bJO6tYTLZLQwg.JPEG/308_2904_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMzcg/MDAxNzI4OTg2NTk5MDAw.bsJG7L2LOIvqHxoEk00277mipD4uQzCe_m4DzD1JaNog.xQQWOaFQ30jKxv6Hw-9NIIKroJG3KenQ1IzuSXy0LCYg.JPEG/308_4894_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTYz/MDAxNzI4OTg3MDEyMzIz.x27zZoZ5M4tOgHEqeZL0KLdqi24a_gHEoa5ex8UzwDgg.BvoVtaUoYo6v_rLMUNgmoAOaIvWa9txyaS91ZL9qxTog.JPEG/oov_export_20241015_190415_098.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjI3/MDAxNzI4OTg2NTk4MTM0.hKLA70Rp6PaBgO1kqvoZj22qu8zD8mLBaCK6FrWIBSEg.v__TQFWmBQqY1Aigcoshlml1ZdsVAZSr5tgLewdKifgg.JPEG/308_4895_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjUy/MDAxNzI4OTg2NTk3OTQ2.-Ply2CJumNY_D_x2KmrwJTnkRnNW12KgBW5k3s9G478g.LXjLpg17B45H_cchqRKuCeWPjSoxbEnaN4gQwQSNjyQg.JPEG/308_4896_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTU5/MDAxNzI4OTg2NTk3MDAw.pWrw_PL2Iswi1uAJinZy9RoutA_fjzmugmr_nBm9zSUg.h3BULFItYQ3hvwIx6GE5zXK27ogTTEkLJs7w7USGG7gg.JPEG/308_4897_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfNzYg/MDAxNzI4OTg2NTk2OTk2.mDnOPolm1pvFi8dge-CihYlMIV4W6x0mEsfJcfmbZIcg.KH9gu8qX6vhdgKBLWVyagwstwNUmiORUFV9rqknuzTUg.JPEG/308_4899_cr.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjEy/MDAxNzI4OTg3MDEyNDk2.c14quiOWnTu3wikCgBTX7V49vQ6g-Q1mCVsJFHnOn9cg.fTfheGYmGPjAiDPDx98VaeSYdI3jqeHcZIVUOdb22yYg.JPEG/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7(1745)_cr.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTg1/MDAxNzI4OTg3MDEyMzE3.LeiBRObOojfUISBS9S2U9ME6gdLGruyDbebjSRfILfAg.iESLIB-5g0sJzjgv0RHFsnMhP5VmlC0lsCedK46IBgkg.JPEG/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7(1747)_cr.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjY1/MDAxNzI4OTg2NTk4MjQx.lT65iwKYvjWJSfNGwDlRNAitKZcZMmG7UwsdaZI9o-0g.zII81ycNWOsJkqXab8sXIv6yP9s_XPkWbB7IBoZyO84g.JPEG/308_0049_cr-tile%EC%A0%84%ED%9B%84.jpg?type=w800"
+        ]
+    },
+    "post_title": "앞니 뿌리 염증 치아 내흡수, 앞니 신경치료",
+    "post_content": "치과의사 투쓰맨 치료 내용 정리 치료한 앞니 크라운이 깨지고 불편해서 오신 환자분입니다. 가운데 앞니 2개와, 우측 측절치 하나를 치료하신 분입니다. 잇몸이 다 부어있고 특히 중절치쪽 잇몸이 많이 부어있습니다. 아픈곳은 여기 엑스레이에서 보면 신경치료 안한 작은앞니쪽이 뿌리쪽에 고름주머니가 있습니다. 차이가 보이실까요? 그리고 이분 좀 더 특이한것이 하나 있는데 뿌리가운데 신경관, root canal 모양이 특이합니다. 태어날때부터 있던 변이일수도 있고, 치수괴사, 치수염이 생기면서 생기는 흡수 (보통 이경우는 내흡수 입니다)일수 있습니다. 잘보면 잇몸쪽 색상이 좀 다릅니다. 고름주머니가 한번 터졌다가 가라앉은 흔적이 보입니다. 크라운제거후 신경치료, 그리고 크라운 치료 다시해드리기로 합니다. 크라운을 뜯어냅니다. 제가 하는 삭제형태는 이것과는 좀 다를것 같습니다 레진코어형태로 봐서는 치아사이 충치때문에 크라운치료 하시게 된거 같습니다. 처음부터 왜 신경치료 안했냐? 라고 할수 있지만 안할수 있으면 안하는것도 좋습니다. 탈이 났을때 알아채려면 신경치료가 안되어있는 편이낫습니다. (신경치료 되있어도 많이 탈나면 알아채긴 합니다) 신경치료를 위해서 안쪽에서 구멍을 뚫습니다. access opening을 하면 지금처럼 치아 내부에서 피고름이 올라옵니다. 약 3회에 걸쳐 신경치료를 완료합니다. 그동안은 임시크라운 상태로 지냅니다. 신경치료를 하고나면 지금처럼 치아 뿌리끝의 병소부근에 실러가 넘어가는것을 볼수 있습니다 sealer puff라고 합니다. 치아 남은 양을 가늠해볼때 레진코어를 제거하고 보면 잔존치질이 부족하여 fiber post 처치를 하기로 합니다. 기둥으로 치아 강성을 보강해준뒤 치아의 색조 채득 shade taking을 합니다. 크라운 시적 잘 맞습니다. 색조는 엄청 이쁜건 아닌데 주변치아 크라운이 색조가 다 이상해서 -_- 이정도가 최선인거 같습니다. 신경치료후 모습 다음에 오실때 저 앞니쪽 구멍난것도 같이 치료하셨으면 합니다. 사진감상 새로한 치아가 제일 낫습니다. 치료 전후 과정 요약 의료법52조 관련공지 모든사진은 환자동의하에 게재 치료내용: 앞니 신경치료 및 크라운치료 발생가능한부작용: 염증이 치료되지 않으면 발치가 필요할수 있음 치료시작 20240717 치료종료 20241015 환자분이 내원간격이 길고 사정이 있어서 늦게 완료됨",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "제일(1)",
+        "excessive_words": ""
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "49.21%",
+            "keywords": "신경치료(8), 치료(7), 크라운(5), 앞니(3), 잇몸(2), 고름주머니(2), 크라운치료(2), 환자분(2), 치아(2), 이분(1), 레진코어(1), 발치(1), 주변치아(1), 앞니쪽(1), 뿌리끝(1), 측절치(1), 치아사이(1), 치수괴사(1), 이것(1), 모습(1), 뿌리쪽(1), 모양(1), 채득(1), 치수염(1), 전후(1), 처치(1), 안쪽(1), 이상(1), 염증(1), 우측(1), 치과(1), 상태(1), 불편(1), 부족(1), 피고름(1), 특이(1), 내부(1), 엑스레이(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "5.56%",
+            "keywords": "지금(2), 다를것(1), 처음(1), 차이(1), 게재(1), 내용(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "3.17%",
+            "keywords": "흔적(1), 제거(1), 기둥(1), 구멍(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "3.17%",
+            "keywords": "색조(3), 실러(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "3.17%",
+            "keywords": "변이수(1), 정리(1), 요약(1), 과정(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "2.38%",
+            "keywords": "할수(1), 사정(1), 가운데(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.38%",
+            "keywords": "완료(2), 흡수(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "1.59%",
+            "keywords": "신경관(1), 시적(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "1.59%",
+            "keywords": "색상(1), 다음(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.79%",
+            "keywords": "사진감상(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.79%",
+            "keywords": "볼수(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.79%",
+            "keywords": "된거(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "0.79%",
+            "keywords": "여기(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "37.02%",
+            "words": "치료(22), 신경(10), 크라운(9), 수(6), 쪽(5), 것(5), 앞니(5), 때(4), 치아(4), 잇몸(3), 환자(3), 분(3), 뿌리(3), 색조(3), 흡수(2), 특이(2), 레진(2), 구멍(2), 지금(2), 완료(2), 코어(2), 주머니(2), 후(2), 형태(2), 제거(2), 거(2), 가운데(2), 절치(2), 고름(2), 내용(2), 건(1), 시(1), 채득(1), 주변(1), 정도(1), 모습(1), 최선(1), 사(1), 이상(1), 보강(1), 잔(1), 가늠(1), 양(1), 실러(1), 존치(1), 부족(1), 다음(1), 기둥(1), 처치(1), 뒤(1), 사진감(1), 발치(1), 염증(1), 부작용(1), 가능(1), 필요(1), 시작(1), 사정(1), 간격(1), 내원(1), 종료(1), 발생(1), 게재(1), 료법(1), 요약(1), 과정(1), 전후(1), 조(1), 관련(1), 동의(1), 사진(1), 공지(1), 부근(1), 상태(1), 경우(1), 보통(1), 하나(1), 치수염(1), 내(1), 색상(1), 측(1), 흔적(1), 번(1), 괴사(1), 치수(1), 여기(1), 엑스레이(1), 이분(1), 차이(1), 신경관(1), 모양(1), 중(1), 변이(1), 곳(1), 제(1), 삭제(1), 피고름(1), 내부(1), 정리(1), 안쪽(1), 회(1), 투(1), 끝(1), 임시(1), 그동안(1), 편(1), 탈(1), 불편(1), 개(1), 이것(1), 우측(1), 사이(1), 충치(1), 처음(1), 치과(1), 때문(1), 병소(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "17.6%",
+            "words": "있(14), 합니다(6), 하(6), 치아(4), 입니다(3), 같(3), 보(3), 일(2), 생기(2), 낫(2), 볼(2), 라고(2), 오(2), 부(2), 할(2), 알아채(2), 걸쳐(1), 탈(1), 지냅니다(1), 위해서(1), 뚫(1), 올라옵니다(1), 맞(1), 난(1), 않(1), 길(1), 늦(1), 인(1), 아닌데(1), 넘어가(1), 남(1), 준(1), 이쁜(1), 나(1), 된(1), 태어날(1), 다릅니다(1), 터졌(1), 가라앉(1), 보이(1), 작(1), 깨지(1), 아픈(1), 한(1), 보입니다(1), 해(1), 쓰(1), 했(1), 좋(1), 났(1), 봐서(1), 다를(1), 드리(1), 뜯(1), 냅니다(1), 되(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "13.97%",
+            "words": "이(19), 가(10), 을(7), 에(6), 를(6), 는(5), 로(4), 의(4), 에서(3), 은(3), 도(3), 처럼(2), 부터(2), 으로(1), 와(1), 과(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "10.71%",
+            "words": "습니다(12), 고(6), 는(5), 면(5), 어(4), 으면(3), 은(3), 게(2), 기(2), 긴(1), 나면(1), 어도(1), 여(1), 지(1), 어서(1), 음(1), 려면(1), 을(1), 맨(1), 다가(1), 던(1), 는데(1), 냐(1), 나(1), 지만(1), 면서(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "9.62%",
+            "words": ".(24), ,(5), )(2), :(2), ((2), ?(2), taking(1), shade(1), 20241015(1), 52(1), post(1), 20240717(1), -_-(1), 3(1), canal(1), root(1), 2(1), access(1), opening(1), puff(1), sealer(1), fiber(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "4.54%",
+            "words": "안(5), 좀(3), 다(2), 그리고(2), 잘(2), 많이(2), 새로(1), 제일(1), 및(1), 같이(1), 왜(1), 더(1), 특히(1), 다시(1), 엄청(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "4.36%",
+            "words": "하(6), 한(4), 되(2), 해(2), 합니다(2), 해서(2), 할(1), 됨(1), 상(1), 성(1), 질(1), 적(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.09%",
+            "words": "신(2), 셨(1), 실(1), 시(1), 실까요(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.91%",
+            "words": "모든(1), 저(1), 이(1), 약(1), 한(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.18%",
+            "words": "강(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "98",
+        "words": [
+            {
+                "word": "신경치료",
+                "count": "8"
+            },
+            {
+                "word": "치료",
+                "count": "7"
+            },
+            {
+                "word": "크라운",
+                "count": "5"
+            },
+            {
+                "word": "색조",
+                "count": "3"
+            },
+            {
+                "word": "앞니",
+                "count": "3"
+            },
+            {
+                "word": "지금",
+                "count": "2"
+            },
+            {
+                "word": "치아",
+                "count": "2"
+            },
+            {
+                "word": "고름주머니",
+                "count": "2"
+            },
+            {
+                "word": "완료",
+                "count": "2"
+            },
+            {
+                "word": "크라운치료",
+                "count": "2"
+            },
+            {
+                "word": "환자분",
+                "count": "2"
+            },
+            {
+                "word": "잇몸",
+                "count": "2"
+            },
+            {
+                "word": "삭제형태",
+                "count": "1"
+            },
+            {
+                "word": "흔적",
+                "count": "1"
+            },
+            {
+                "word": "색상",
+                "count": "1"
+            },
+            {
+                "word": "이것",
+                "count": "1"
+            },
+            {
+                "word": "충치때문",
+                "count": "1"
+            },
+            {
+                "word": "치수염",
+                "count": "1"
+            },
+            {
+                "word": "구멍",
+                "count": "1"
+            },
+            {
+                "word": "안쪽",
+                "count": "1"
+            },
+            {
+                "word": "처음",
+                "count": "1"
+            },
+            {
+                "word": "레진코어형태",
+                "count": "1"
+            },
+            {
+                "word": "뿌리쪽",
+                "count": "1"
+            },
+            {
+                "word": "엑스레이",
+                "count": "1"
+            },
+            {
+                "word": "불편",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "치료종료",
+                "count": "1"
+            },
+            {
+                "word": "내부",
+                "count": "1"
+            },
+            {
+                "word": "차이",
+                "count": "1"
+            },
+            {
+                "word": "특이",
+                "count": "1"
+            },
+            {
+                "word": "모양",
+                "count": "1"
+            },
+            {
+                "word": "특이것",
+                "count": "1"
+            },
+            {
+                "word": "변이수",
+                "count": "1"
+            },
+            {
+                "word": "레진코어",
+                "count": "1"
+            },
+            {
+                "word": "사진감상",
+                "count": "1"
+            },
+            {
+                "word": "구멍것",
+                "count": "1"
+            },
+            {
+                "word": "다음",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "환자동의하",
+                "count": "1"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "사정",
+                "count": "1"
+            },
+            {
+                "word": "내원간격",
+                "count": "1"
+            },
+            {
+                "word": "발치",
+                "count": "1"
+            },
+            {
+                "word": "시적",
+                "count": "1"
+            },
+            {
+                "word": "기둥",
+                "count": "1"
+            },
+            {
+                "word": "실러",
+                "count": "1"
+            },
+            {
+                "word": "병소부근",
+                "count": "1"
+            },
+            {
+                "word": "뿌리끝",
+                "count": "1"
+            },
+            {
+                "word": "상태",
+                "count": "1"
+            },
+            {
+                "word": "치료시작",
+                "count": "1"
+            },
+            {
+                "word": "제거",
+                "count": "1"
+            },
+            {
+                "word": "처치",
+                "count": "1"
+            },
+            {
+                "word": "부족",
+                "count": "1"
+            },
+            {
+                "word": "잔존치질",
+                "count": "1"
+            },
+            {
+                "word": "피고름",
+                "count": "1"
+            },
+            {
+                "word": "과정",
+                "count": "1"
+            },
+            {
+                "word": "입니다)일수",
+                "count": "1"
+            },
+            {
+                "word": "내흡수",
+                "count": "1"
+            },
+            {
+                "word": "(보통",
+                "count": "1"
+            },
+            {
+                "word": "흡수",
+                "count": "1"
+            },
+            {
+                "word": "잇몸쪽",
+                "count": "1"
+            },
+            {
+                "word": "크라운제거후",
+                "count": "1"
+            },
+            {
+                "word": "된거",
+                "count": "1"
+            },
+            {
+                "word": "치아사이",
+                "count": "1"
+            },
+            {
+                "word": "다를것",
+                "count": "1"
+            },
+            {
+                "word": "치수괴사",
+                "count": "1"
+            },
+            {
+                "word": "신경관",
+                "count": "1"
+            },
+            {
+                "word": "우측",
+                "count": "1"
+            },
+            {
+                "word": "가운데",
+                "count": "1"
+            },
+            {
+                "word": "정리",
+                "count": "1"
+            },
+            {
+                "word": "내용",
+                "count": "1"
+            },
+            {
+                "word": "측절치",
+                "count": "1"
+            },
+            {
+                "word": "중절치쪽",
+                "count": "1"
+            },
+            {
+                "word": "뿌리가운데",
+                "count": "1"
+            },
+            {
+                "word": "이분",
+                "count": "1"
+            },
+            {
+                "word": "여기",
+                "count": "1"
+            },
+            {
+                "word": "할수",
+                "count": "1"
+            },
+            {
+                "word": "안할수",
+                "count": "1"
+            },
+            {
+                "word": "전후",
+                "count": "1"
+            },
+            {
+                "word": "앞니쪽",
+                "count": "1"
+            },
+            {
+                "word": "오실때",
+                "count": "1"
+            },
+            {
+                "word": "모습",
+                "count": "1"
+            },
+            {
+                "word": "요약",
+                "count": "1"
+            },
+            {
+                "word": "관련공지",
+                "count": "1"
+            },
+            {
+                "word": "발생가능한부작용",
+                "count": "1"
+            },
+            {
+                "word": "치료내용",
+                "count": "1"
+            },
+            {
+                "word": "게재",
+                "count": "1"
+            },
+            {
+                "word": "신경치료후",
+                "count": "1"
+            },
+            {
+                "word": "최선인거",
+                "count": "1"
+            },
+            {
+                "word": "임시크라운",
+                "count": "1"
+            },
+            {
+                "word": "(신경치료",
+                "count": "1"
+            },
+            {
+                "word": "났을때",
+                "count": "1"
+            },
+            {
+                "word": "볼수",
+                "count": "1"
+            },
+            {
+                "word": "가늠해볼때",
+                "count": "1"
+            },
+            {
+                "word": "주변치아",
+                "count": "1"
+            },
+            {
+                "word": "채득",
+                "count": "1"
+            },
+            {
+                "word": "보강해준뒤",
+                "count": "1"
+            },
+            {
+                "word": "필요할수",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "앞니뿌리",
+            "search_volume_total": "120",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "110",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        },
+        {
+            "rank": "2",
+            "keyword": "뿌리염증",
+            "search_volume_total": "90",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "80",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        },
+        {
+            "rank": "3",
+            "keyword": "치아내흡수",
+            "search_volume_total": "70",
+            "search_volume_pc": "20",
+            "search_volume_mobile": "50",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "낮음",
+            "ad_count": "-"
+        },
+        {
+            "rank": "4",
+            "keyword": "앞니뿌리염증",
+            "search_volume_total": "30",
+            "search_volume_pc": "-",
+            "search_volume_mobile": "30",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "1"
+        }
+    ],
+    "same_topic_posting": "앞니뿌리 (365), 뿌리염증 (318), 앞니뿌리염증 (221), 치아내흡수 (71)"
+}

@@ -1,0 +1,922 @@
+{
+    "posting_score": "최적2-Lv.2",
+    "exposure_score": "78.86",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "79.85",
+            "evaluation": "적합",
+            "percentage": "79.85%"
+        },
+        {
+            "category": "주제",
+            "score": "73.26",
+            "evaluation": "적합",
+            "percentage": "73.26%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "72.78",
+            "evaluation": "적합",
+            "percentage": "72.78%"
+        },
+        {
+            "category": "형태소",
+            "score": "47.88",
+            "evaluation": "양호",
+            "percentage": "47.88%"
+        },
+        {
+            "category": "가독성",
+            "score": "76.46",
+            "evaluation": "적합",
+            "percentage": "76.46%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "44.00",
+            "evaluation": "정보성",
+            "percentage": "44.00%"
+        }
+    ],
+    "publish_time": "2025-04-09 11",
+    "exposure_status": "발행된지 103일 (3시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:54:58 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "29",
+        "title_without_space": "20",
+        "content_with_space": "2,539",
+        "content_without_space": "1,948"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "410",
+        "syllable_count": "592",
+        "word_count": "165",
+        "abusing_word_count": "0"
+    },
+    "image_analysis": {
+        "valid_images": "4",
+        "invalid_images": "11",
+        "material_images": "0",
+        "uploaded_images": "15",
+        "content_images": "15",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMjYw/MDAxNzQ0MDc5MDI4ODM3.qd5eyctJxllARezoBhYjtPcH4IIT3FfIX8MZbCJsfpwg.L3NiuwgqJKcAq4iaUxHjdsUjXfAAyFlu-dzO7Uqqudcg.JPEG/2504081126.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMTQ5/MDAxNzQ0MDc5MDI4NTE1.ZJA0kqe0yqxxnbQXTYZmjDCKUM5hFuj7vjUguoxYJxMg.uTNJ6PvqcBJ0ET1xOF8gGPV9KAqNZb3oShEqZ1BOkbgg.JPEG/2504081127.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMTgg/MDAxNzQ0MDc5MDQ1MzM2.-Bfgt_yWIjFVi8Ssfggp-lJsBJSr5BxqCif8cx1UuaAg.57kZ3yRuFoAUc6jDwljRiXQmhEaNOgB0HwSxW2eicuAg.JPEG/2504081120.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMTIz/MDAxNzQ0MDc5MDQ2NTkx.wDiczxDmJ_BT7mHPvA1GbURzpeIBVV9FNefLWfD4FZog.P9S08-H4QpZluQSOXj1NQ7LzYq7D3fa53lXXlePT1k0g.JPEG/2504081121.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMTM5/MDAxNzQ0MDc5MDQ1MDQ0.TGp0L9cxrOo9rQh6dcoTmS-XzQ1EPLz7mCCp1eLe0E0g.7bPWZK0of07eMXyWDY94mdOdqvSIIainKO7qcZWKEJYg.JPEG/2504081122.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMTU0/MDAxNzQ0MDc5MDQ2MTE3.N9a42wlZ4dlGkvivSzqKT0PjOM9yg3vdGRDPaaIX-kQg.iNn6ZuygKd6gwDZnBUu2WSHEQEJEORIOIpbG-uCMGPMg.JPEG/2504081123.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfNTAg/MDAxNzQ0MDc5MDQ2MDYx.pfk758ZkVDQ0p7b3iJ8ZmKPcktsWrWvmRln3Yo_hSE8g.0CAln0ytdwEpcW4y5oIcnGR4UpZNRlWTESa3KTPnFksg.JPEG/2504081124.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNTA0MDhfMjIy/MDAxNzQ0MDc5MDQ2NDg5.xbSxJ14VsYHKkuEkMckzNxcN6AsOZYVmlICr7hMIrBAg.Tvj_jPrTdg-newDKq8FunMbPrTe33YEzpdUgnpmc5jEg.JPEG/2504081128.jpg?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyNTA0MDdfMTI1/MDAxNzQ0MDAwNzU1ODAz.ku61umaV8nJ60UE1QXUzS1uq8vs6r28iN9uhlElcUiIg.9G721GIKVRSUlYKK6PGUWKCGFKUNlCnbgX-dD4-od-gg.GIF/%EA%B0%95%EB%A6%89_25%EB%85%84_%EC%A0%95%EB%B3%B4%EC%84%B1_%EC%BD%98%ED%85%90%EC%B8%A0_%EC%A0%9C%EA%B3%B5%EC%95%88%EB%82%B4G_-4.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyNTA0MDdfMjI0/MDAxNzQ0MDAwODI2NTQ2.8WRhzoiIilNDjuEYtOiLhmsiVOuHP45pZa4ynurCNs8g.OLB4tUT9k35QHVk-Qb_lS-4tkQ5rC-VDgB5kt6P-tsEg.GIF/4-1-3.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyNTA0MDdfMjMz/MDAxNzQ0MDAwODkzNzYy.9BOHO4DwWt4jqkLJe-aOqEY9arYV17EyfliOwXMqFogg.0SNLgDojaJQPZ-QRnuLPEg5r1OkokVv8SX3G5ZjQS5sg.GIF/%EA%B0%95%EB%A6%89_G.gif?type=mp4w800"
+        ]
+    },
+    "post_title": "어금니 레진 깨짐 탈락 주의 및 감염 염증 예방 관리",
+    "post_content": "어금니 레진 깨짐이나 탈락 등으로 감염 및 염증이 발생하지 않도록 유의하길 바라요. 치과에서 사용하는 수복재는 충치나 파절 등으로 자연치에 부분적인 손상이 발생하였을 때 사용하는 재료에요. 파손된 부위를 다듬어 filling 재료가 안착이 될 수 있도록 ‘와동’을 형성해준 이후에 충전하는 방법으로, 하루에 모든 처치를 마무리할 수 있어 상대적으로 간단한 방법에 해당하죠. 깊이와 증상에 따라서는 통증을 완화시키기 위하여 국소마취를 시행하곤 하는데요, 신경관에 가까워 질수록 치질의 삭제 시 시림 반응을 보일 수 있기 때문이에요. #어금니레진깨짐 #어금니레진 과거부터 주로 사용하던 합금재료인 ‘아말감’은 압축력이 높다는 장점이 있지만, 유지력을 위해서는 와동을 깊게 형성해야 하며 눈에 띄는 은색의 재료라는 단점이 존재해요. 또한 장기간 사용을 하다 보면 건전했던 치질에 변색을 유발하여 심미성이 저하될 수 있죠. 종종 아말감으로 충전을 한 부위 주변으로 다른 금속으로 제작된 보철물이 들어가거나, 수저 및 젓가락이 닿았을 때 ‘갈바니즘’ 반응이 일어나 불편을 겪기도 해요, 그렇기에, 아말감의 특성을 극복할 수 있도록 강화된 레진이나 글래스아이오노머 재료를 택하기도 하는데요. 따라서, Glass ionomer는 흰색을 띠고 있기 때문에 잘 티가 나지 않을 뿐더러 치질의 강화와 충치예방에 도움을 주는 ‘불소’가 유리되기 때문에 어린이의 우식 처치에 흔히 적용되고 있어요. 상대적으로 접착력이 높은 편이기에 보철물을 부착할 때에도 사용되는데요, 다만 넓은 부위에 적용을 하거나 저작력이 크게 발생하는 구치부의 경우에는 일부 어금니 레진 깨짐이나 탈락이 이루어질 수 있어요. 그러므로, 충전을 한 이후에는 정기적으로 검진을 해야 하며 평소 이갈이나 이악물기 습관이 있거나 강하게 교합력이 가해지는 부분이 있다면 저항력이 높은 수복재로 교체할 확률이 있어요. Resin은 어금니에 수복을 할 수 있는 만큼 단단함이 높은 편인데요, 그러므로 permanent tooth에 대중적으로 사용되고 있어요. 대구치의 넓은 면을 충전하기에도 적절하며, 다양한 shade로 이루어져 있어 자연치 색상에 유사하게 충전을 할 수 있다는 장점이 있어요. 유아의 구치부는 뒤늦게 흔들려서 빠지기에 장기적으로 사용해야 할 부분인데요, 이 곳에 우식증이 생겨 처치가 이루어져야 하는 부위도 레진으로 때워 보존을 하곤 하죠. 우리나라에서는 만 12세 이하라면 어른니에 한하여 충치가 생긴 부위를 건/보를 적용한 resin충천처치를 받을 수 있어요. 다만, 오랜 기간 사용하다 보면 치질과 재료의 경계부위에 미세한 틈이 생기거나 식성에 따라서 외인성 착색이 생기기도 하므로 주기적으로 검진을 받는 것이 좋아요. 어금니 레진 깨짐이 발생한다면 좁은 틈으로 치태 등의 이물질이 들어가 수복물 하방으로 2차적인 충치가 발생할 수 있어 주의해야 해요. 겉으로 보기에는 resin재료만 관찰이 되기에 자칫 2nd caries를 발견하지 못하고 방치를 하기도 하는데요, 추후에 통증이 생기거나 크게 filling재료가 떨어져 나가는 등 손상범위가 커질 수 있어 초기에 체크를 하도록 해야 하죠. 육안상 보이지 않는 이차우식증은 방사선사진으로 check를 해볼 수 있는데요, 무기질이 탈회된 부위이기에 검은색 상으로 확인을 할 수 있어요. 이에 반해 충전재는 불투과성이고, 건전한 치질은 무기질의 함량이 높기 때문에 흰색으로 표시가 이루어지죠. 만일 어금니 레진 깨짐의 범위가 크거나 추가적으로 치질이 파절되었다면 다시금 resin으로 때우기가 어려울 수 있어요. 넓은 범위일수록 탈락할 확률이 높아지기 때문인데요, 이러한 케이스라면 inlay나 onlay를 제작하여 부분적으로 덮어 씌우거나 치아 전체 둘레를 감싸는 모양의 크라운을 제작해야 할 수 있어요. 어금니 레진 깨짐 이후에 통증이나 시림 증상이 나타나는 경우에는 근관치까지 진행이 이루어질 수 있죠. 큰 충격으로 filling재의 파손이 생겼다면 간혹 내부까지 크랙이 가해졌을 수 있어 처치 이후에 지속적으로 아픔이 생기기도 해요. 그러므로 보철물로 뒤덮었다 하더라도 지속적으로 follow up하며 증상을 관찰하도록 해야 하죠. 이처럼 보존적인 treatment를 받았다 하더라도 추후에 어금니 레진 깨짐이나 변색, 탈락, 2차 우식증 등이 발생할 확률이 있기에 6개월에 한번씩 검진을 받는 것을 권장해요. 또한 센 힘이 집중되는 부분에서 주로 파손이 발생하기 때문에 양쪽 이로 골고루 식사하는 습관을 형성하는 것이 바람직하며, 질기고 단단한 음식물을 자주 섭취하지 않도록 주의해야 하죠. 급하게 저작을 하지 않고 천천히, 여러 번에 나누어서 식사를 하는 것도 보철물의 수명을 늘리는데 도움이 될 수 있어요. 더구나, 교합 시 ‘딱’하는 소리가 들리거나 조각이 떨어져 나왔다면 바로 검사를 받아야 하는데요, 만일 빠르게 내.원을 하지 못하는 경우엔 해당 부위로 식사를 자제하여야 하며, 2차적인 충격이 가해지지 않도록 관리를 해주어야 해요. 깨짐 부위는 날카로울 수 있기에 혀나 손으로 만지지 않아야 하고 패인 부분으로 치태가 침착되지 않도록 적절한 양치 및 가글로 빼내준 후 주치의의 안내를 받아주시길 바래요.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "",
+        "excessive_words": ""
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "57.71%",
+            "keywords": "부위(8), 어금니(7), 발생(7), 치질(6), 재료(5), 충전(5), 처치(4), 부분(4), 이후(4), 보철물(4), 탈락(3), 통증(3), 충치(3), 검진(3), 증상(3), 적용(3), 경우(3), 확률(3), 아말감(3), 수복재(2), 추후(2), 자연치(2), 충격(2), 부분적(2), 우식증(2), 치태(2), 파절(2), 강화(2), 반응(2), 변색(2), 관찰(2), 장점(2), 지속적(2), 장기적(1), 저작(1), 어른니(1), 자제(1), 방사선사진(1), 수복(1), 방치(1), 모양(1), 보존(1), 소리(1), 저항력(1), 아픔(1), 탈회(1), 대중적(1), 크라운(1), 체크(1), 케이스(1), 초기(1), 저작력(1), 집중(1), 주기적(1), 정기적(1), 교합력(1), 주치의(1), 대구치(1), 보존적(1), 글래스아이오노머(1), 장기간(1), 교합(1), 저하(1), 전체(1), 치과(1), 완화(1), 염증(1), 불편(1), 손상(1), 양쪽(1), 양치(1), 평소(1), 육안상(1), 외인성(1), 만큼(1), 관리(1), 권장(1), 깊이(1), 구치부(1), 국소마취(1), 감염(1), 우식(1), 수복물(1), 심미성(1), 내부(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "11.11%",
+            "keywords": "때문(6), 해당(2), 상대적(2), 와동(2), 도움(2), 검사(1), 안내(1), 진행(1), 하방(1), 침착(1), 유리(1), 우리나라(1), 존재(1), 시행(1), 마무리(1), 단점(1), 안착(1), 유발(1), 과거(1), 일부(1), 유의(1), 특성(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "5.38%",
+            "keywords": "사용(8), 방법(2), 표시(1), 색상(1), 교체(1), 삭제(1), 부착(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "3.58%",
+            "keywords": "제작(3), 시림(2), 흰색(2), 접착력(1), 불소(1), 음식물(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "3.58%",
+            "keywords": "파손(3), 무기질(2), 크랙(1), 확인(1), 검은색(1), 은색(1), 발견(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "2.87%",
+            "keywords": "형성(3), 습관(2), 어린이(1), 금속(1), 압축력(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "2.87%",
+            "keywords": "레진(8)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "2.51%",
+            "keywords": "유아(1), 충전재(1), 신경관(1), 하루(1), 수저(1), 젓가락(1), 극복(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.43%",
+            "keywords": "착색(1), 둘레(1), 유지력(1), 주변(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.43%",
+            "keywords": "식사(3), 조각(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "1.08%",
+            "keywords": "이갈이(1), 함량(1), 수명(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.08%",
+            "keywords": "주의(2), 섭취(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.08%",
+            "keywords": "범위(2), 유사(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.36%",
+            "keywords": "날카(1)"
+        },
+        {
+            "category_name": "요리·레시피",
+            "percentage": "0.36%",
+            "keywords": "식성(1)"
+        },
+        {
+            "category_name": "방송",
+            "percentage": "0.36%",
+            "keywords": "갈바니즘(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.36%",
+            "keywords": "기간(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "29.48%",
+            "words": "수(21), 레진(10), 부위(9), 어금니(9), 사용(8), 재료(8), 발생(7), 부분(6), 치질(6), 때문(6), 처치(5), 충전(5), 등(5), 것(4), 보철물(4), 이후(4), 차(4), 충치(4), 적용(3), 우식증(3), 통증(3), 식사(3), 확률(3), 경우(3), 증상(3), 탈락(3), 때(3), 파손(3), 제작(3), 범위(3), 이(3), 검진(3), 아말감(3), 형성(3), 편(2), 도움(2), 저작(2), 강화(2), 흰색(2), 보존(2), 지속(2), 관찰(2), 충격(2), 추후(2), 무기질(2), 주의(2), 변색(2), 수복(2), 틈(2), 번(2), 치태(2), 습관(2), 교합(2), 해당(2), 시(2), 시림(2), 반응(2), 방법(2), 와동(2), 복재(2), 파절(2), 자연치(2), 손상(2), 장점(2), 상대(2), 투과성(1), 함량(1), 표시(1), 충전재(1), 확인(1), 탈회(1), 색(1), 만일(1), 추가(1), 크라운(1), 근관(1), 모양(1), 둘레(1), 케이스(1), 전체(1), 단점(1), 사진(1), 겉(1), 안착(1), 발견(1), 유발(1), 심미성(1), 물(1), 하방(1), 방치(1), 눈(1), 존재(1), 방사선(1), 육안(1), 체크(1), 장기간(1), 초기(1), 진행(1), 치과(1), 관리(1), 날(1), 카(1), 자제(1), 원(1), 조각(1), 검사(1), 혀(1), 손(1), 주치의(1), 안내(1), 후(1), 글(1), 침착(1), 양치(1), 소리(1), 수명(1), 아픔(1), 개월(1), 유의(1), 크랙(1), 재의(1), 내부(1), 염증(1), 권장(1), 음식물(1), 섭취(1), 감염(1), 양쪽(1), 힘(1), 집중(1), 물질(1), 하루(1), 금속(1), 부착(1), 주변(1), 접착력(1), 유지(1), 어린이(1), 우식(1), 구치(1), 부(1), 평소(1), 이갈이(1), 신경관(1), 정기(1), 삭제(1), 일부(1), 유리(1), 불소(1), 특성(1), 극복(1), 불편(1), 니즘(1), 젓가락(1), 갈바(1), 압축력(1), 글래스(1), 예방(1), 과거(1), 뿐(1), 티(1), 이오노머(1), 합금(1), 시행(1), 마취(1), 니(1), 보(1), 충천(1), 어른(1), 세(1), 우리(1), 나라(1), 기간(1), 경계(1), 주기(1), 마무리(1), 착색(1), 외인성(1), 은색(1), 식성(1), 저하(1), 깊이(1), 만큼(1), 대중(1), 완화(1), 국소(1), 저항력(1), 교체(1), 대구치(1), 면(1), 장기(1), 곳(1), 치부(1), 유아(1), 색상(1), 유사(1), 수저(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "20.16%",
+            "words": "이(48), 에(41), 을(31), 으로(27), 를(19), 의(15), 가(14), 는(12), 도(9), 로(6), 이나(5), 은(4), 나(4), 에서(3), 까지(2), 만(2), 와(2), 처럼(1), 엔(1), 요(1), 과(1), 아(1), 부터(1), 더러(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "16.95%",
+            "words": "있(29), 하(26), 깨(8), 않(8), 높(6), 받(6), 할(5), 인(5), 지(4), 해요(4), 생기(4), 이(4), 해야(3), 크(3), 넓(3), 주(3), 인데요(3), 보(3), 따라서(2), 떨어져(2), 해(2), 가해(2), 이루어질(2), 준(2), 될(2), 못하(2), 한(2), 들어가(2), 치아(1), 감싸(1), 때우(1), 반해(1), 검(1), 볼(1), 이루(1), 어려울(1), 덮(1), 라면(1), 일수록(1), 씌우(1), 생겼(1), 빠르(1), 나왔(1), 들리(1), 내(1), 만지(1), 바래요(1), 빼내(1), 패인(1), 늘리(1), 나누(1), 가해졌(1), 보이(1), 큰(1), 뒤덮(1), 센(1), 급하(1), 질기(1), 나타나(1), 생겨(1), 닿(1), 라는(1), 띄(1), 일어나(1), 겪(1), 택하(1), 그렇(1), 깊(1), 위해서(1), 다듬(1), 바라(1), 위하(1), 가까워(1), 보일(1), 질수록(1), 띠(1), 나(1), 건(1), 생긴(1), 좋(1), 좁(1), 나가(1), 되(1), 한하(1), 때워(1), 이루어져(1), 악물(1), 뒤늦(1), 흔들려서(1), 이루어져야(1), 빠지(1), 커질(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "14.62%",
+            "words": "는(21), 기(20), 지(10), 어요(10), 거나(8), 짐(8), 고(8), 죠(8), 게(8), 도록(8), 은(8), 어(8), 며(6), 는데요(6), 을(4), 다면(4), 다(4), 여(4), 기에(3), 아(2), 더라도(2), 아야(2), 곤(2), 길(2), 다는(2), 면(2), 던(2), 는데(1), 요(1), 여야(1), 어야(1), 어서(1), 지만(1), 므로(1), 아요(1), 에요(1), 라면(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.47%",
+            "words": ".(30), ,(24), ‘(5), ’(5), 2(4), filling(3), resin(3), #(2), inlay(1), check(1), treatment(1), 6(1), caries(1), up(1), follow(1), onlay(1), 12(1), Resin(1), ionomer(1), Glass(1), permanent(1), tooth(1), /(1), shade(1), nd(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "6.99%",
+            "words": "하(26), 적(14), 한(8), 되(7), 할(7), 해야(5), 된(4), 력(3), 상(2), 해요(2), 치(1), 씩(1), 로울(1), 해(1), 한다면(1), 될(1), 시키(1), 함(1), 했(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.17%",
+            "words": "및(3), 그러므로(3), 다만(2), 또한(2), 주로(2), 자주(1), 천천히(1), 딱(1), 만일(1), 바로(1), 골고루(1), 더구나(1), 자칫(1), 따라서(1), 종종(1), 잘(1), 흔히(1), 간혹(1), 다시금(1), 탈락(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.96%",
+            "words": "단단(2), 적절(2), 건전(2), 이러(1), 바람직(1), 미세(1), 다양(1), 간단(1), 강(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.56%",
+            "words": "이(2), 여러(1), 한(1), 오랜(1), 모든(1), 다른(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "0.48%",
+            "words": "었(2), 았(2), 시(1), 였을(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.16%",
+            "words": "불(1), 구(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "165",
+        "words": [
+            {
+                "word": "레진",
+                "count": "8"
+            },
+            {
+                "word": "사용",
+                "count": "8"
+            },
+            {
+                "word": "부위",
+                "count": "8"
+            },
+            {
+                "word": "발생",
+                "count": "7"
+            },
+            {
+                "word": "어금니",
+                "count": "7"
+            },
+            {
+                "word": "때문",
+                "count": "6"
+            },
+            {
+                "word": "치질",
+                "count": "6"
+            },
+            {
+                "word": "재료",
+                "count": "5"
+            },
+            {
+                "word": "충전",
+                "count": "5"
+            },
+            {
+                "word": "부분",
+                "count": "4"
+            },
+            {
+                "word": "보철물",
+                "count": "4"
+            },
+            {
+                "word": "처치",
+                "count": "4"
+            },
+            {
+                "word": "이후",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "3"
+            },
+            {
+                "word": "적용",
+                "count": "3"
+            },
+            {
+                "word": "검진",
+                "count": "3"
+            },
+            {
+                "word": "확률",
+                "count": "3"
+            },
+            {
+                "word": "제작",
+                "count": "3"
+            },
+            {
+                "word": "식사",
+                "count": "3"
+            },
+            {
+                "word": "통증",
+                "count": "3"
+            },
+            {
+                "word": "탈락",
+                "count": "3"
+            },
+            {
+                "word": "아말감",
+                "count": "3"
+            },
+            {
+                "word": "파손",
+                "count": "3"
+            },
+            {
+                "word": "충치",
+                "count": "3"
+            },
+            {
+                "word": "형성",
+                "count": "3"
+            },
+            {
+                "word": "증상",
+                "count": "3"
+            },
+            {
+                "word": "습관",
+                "count": "2"
+            },
+            {
+                "word": "주의",
+                "count": "2"
+            },
+            {
+                "word": "도움",
+                "count": "2"
+            },
+            {
+                "word": "흰색",
+                "count": "2"
+            },
+            {
+                "word": "관찰",
+                "count": "2"
+            },
+            {
+                "word": "강화",
+                "count": "2"
+            },
+            {
+                "word": "충격",
+                "count": "2"
+            },
+            {
+                "word": "반응",
+                "count": "2"
+            },
+            {
+                "word": "지속적",
+                "count": "2"
+            },
+            {
+                "word": "범위",
+                "count": "2"
+            },
+            {
+                "word": "무기질",
+                "count": "2"
+            },
+            {
+                "word": "추후",
+                "count": "2"
+            },
+            {
+                "word": "장점",
+                "count": "2"
+            },
+            {
+                "word": "치태",
+                "count": "2"
+            },
+            {
+                "word": "우식증",
+                "count": "2"
+            },
+            {
+                "word": "자연치",
+                "count": "2"
+            },
+            {
+                "word": "시림",
+                "count": "2"
+            },
+            {
+                "word": "파절",
+                "count": "2"
+            },
+            {
+                "word": "해당",
+                "count": "2"
+            },
+            {
+                "word": "변색",
+                "count": "2"
+            },
+            {
+                "word": "수복재",
+                "count": "2"
+            },
+            {
+                "word": "상대적",
+                "count": "2"
+            },
+            {
+                "word": "방법",
+                "count": "2"
+            },
+            {
+                "word": "와동",
+                "count": "2"
+            },
+            {
+                "word": "부분적",
+                "count": "2"
+            },
+            {
+                "word": "발견",
+                "count": "1"
+            },
+            {
+                "word": "하방",
+                "count": "1"
+            },
+            {
+                "word": "주기적",
+                "count": "1"
+            },
+            {
+                "word": "식성",
+                "count": "1"
+            },
+            {
+                "word": "방치",
+                "count": "1"
+            },
+            {
+                "word": "착색",
+                "count": "1"
+            },
+            {
+                "word": "확인",
+                "count": "1"
+            },
+            {
+                "word": "탈회",
+                "count": "1"
+            },
+            {
+                "word": "경계부위",
+                "count": "1"
+            },
+            {
+                "word": "방사선사진",
+                "count": "1"
+            },
+            {
+                "word": "체크",
+                "count": "1"
+            },
+            {
+                "word": "초기",
+                "count": "1"
+            },
+            {
+                "word": "손상범위",
+                "count": "1"
+            },
+            {
+                "word": "색상",
+                "count": "1"
+            },
+            {
+                "word": "수복",
+                "count": "1"
+            },
+            {
+                "word": "대중적",
+                "count": "1"
+            },
+            {
+                "word": "교체",
+                "count": "1"
+            },
+            {
+                "word": "저항력",
+                "count": "1"
+            },
+            {
+                "word": "이갈이",
+                "count": "1"
+            },
+            {
+                "word": "교합력",
+                "count": "1"
+            },
+            {
+                "word": "대구치",
+                "count": "1"
+            },
+            {
+                "word": "충전재",
+                "count": "1"
+            },
+            {
+                "word": "보존",
+                "count": "1"
+            },
+            {
+                "word": "우리나라",
+                "count": "1"
+            },
+            {
+                "word": "장기적",
+                "count": "1"
+            },
+            {
+                "word": "유아",
+                "count": "1"
+            },
+            {
+                "word": "유사",
+                "count": "1"
+            },
+            {
+                "word": "어른니",
+                "count": "1"
+            },
+            {
+                "word": "침착",
+                "count": "1"
+            },
+            {
+                "word": "소리",
+                "count": "1"
+            },
+            {
+                "word": "조각",
+                "count": "1"
+            },
+            {
+                "word": "수명",
+                "count": "1"
+            },
+            {
+                "word": "저작",
+                "count": "1"
+            },
+            {
+                "word": "음식물",
+                "count": "1"
+            },
+            {
+                "word": "섭취",
+                "count": "1"
+            },
+            {
+                "word": "검사",
+                "count": "1"
+            },
+            {
+                "word": "자제",
+                "count": "1"
+            },
+            {
+                "word": "주치의",
+                "count": "1"
+            },
+            {
+                "word": "안내",
+                "count": "1"
+            },
+            {
+                "word": "정기적",
+                "count": "1"
+            },
+            {
+                "word": "날카",
+                "count": "1"
+            },
+            {
+                "word": "관리",
+                "count": "1"
+            },
+            {
+                "word": "집중",
+                "count": "1"
+            },
+            {
+                "word": "권장",
+                "count": "1"
+            },
+            {
+                "word": "둘레",
+                "count": "1"
+            },
+            {
+                "word": "모양",
+                "count": "1"
+            },
+            {
+                "word": "케이스",
+                "count": "1"
+            },
+            {
+                "word": "추가적",
+                "count": "1"
+            },
+            {
+                "word": "표시",
+                "count": "1"
+            },
+            {
+                "word": "크라운",
+                "count": "1"
+            },
+            {
+                "word": "근관치",
+                "count": "1"
+            },
+            {
+                "word": "아픔",
+                "count": "1"
+            },
+            {
+                "word": "보존적",
+                "count": "1"
+            },
+            {
+                "word": "크랙",
+                "count": "1"
+            },
+            {
+                "word": "내부",
+                "count": "1"
+            },
+            {
+                "word": "진행",
+                "count": "1"
+            },
+            {
+                "word": "함량",
+                "count": "1"
+            },
+            {
+                "word": "시행",
+                "count": "1"
+            },
+            {
+                "word": "양쪽",
+                "count": "1"
+            },
+            {
+                "word": "교합",
+                "count": "1"
+            },
+            {
+                "word": "filling재의",
+                "count": "1"
+            },
+            {
+                "word": "전체",
+                "count": "1"
+            },
+            {
+                "word": "육안상",
+                "count": "1"
+            },
+            {
+                "word": "검은색",
+                "count": "1"
+            },
+            {
+                "word": "양치",
+                "count": "1"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "안착",
+                "count": "1"
+            },
+            {
+                "word": "하루",
+                "count": "1"
+            },
+            {
+                "word": "손상",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "유의",
+                "count": "1"
+            },
+            {
+                "word": "수복물",
+                "count": "1"
+            },
+            {
+                "word": "외인성",
+                "count": "1"
+            },
+            {
+                "word": "장기간",
+                "count": "1"
+            },
+            {
+                "word": "수저",
+                "count": "1"
+            },
+            {
+                "word": "#어금니레진",
+                "count": "1"
+            },
+            {
+                "word": "삭제",
+                "count": "1"
+            },
+            {
+                "word": "감염",
+                "count": "1"
+            },
+            {
+                "word": "갈바니즘",
+                "count": "1"
+            },
+            {
+                "word": "글래스아이오노머",
+                "count": "1"
+            },
+            {
+                "word": "만큼",
+                "count": "1"
+            },
+            {
+                "word": "기간",
+                "count": "1"
+            },
+            {
+                "word": "평소",
+                "count": "1"
+            },
+            {
+                "word": "일부",
+                "count": "1"
+            },
+            {
+                "word": "우식",
+                "count": "1"
+            },
+            {
+                "word": "마무리",
+                "count": "1"
+            },
+            {
+                "word": "깊이",
+                "count": "1"
+            },
+            {
+                "word": "특성",
+                "count": "1"
+            },
+            {
+                "word": "극복",
+                "count": "1"
+            },
+            {
+                "word": "불편",
+                "count": "1"
+            },
+            {
+                "word": "젓가락",
+                "count": "1"
+            },
+            {
+                "word": "금속",
+                "count": "1"
+            },
+            {
+                "word": "충치예방",
+                "count": "1"
+            },
+            {
+                "word": "불소",
+                "count": "1"
+            },
+            {
+                "word": "부착",
+                "count": "1"
+            },
+            {
+                "word": "저작력",
+                "count": "1"
+            },
+            {
+                "word": "접착력",
+                "count": "1"
+            },
+            {
+                "word": "어린이",
+                "count": "1"
+            },
+            {
+                "word": "유리",
+                "count": "1"
+            },
+            {
+                "word": "주변",
+                "count": "1"
+            },
+            {
+                "word": "저하",
+                "count": "1"
+            },
+            {
+                "word": "과거",
+                "count": "1"
+            },
+            {
+                "word": "합금재료",
+                "count": "1"
+            },
+            {
+                "word": "신경관",
+                "count": "1"
+            },
+            {
+                "word": "국소마취",
+                "count": "1"
+            },
+            {
+                "word": "완화",
+                "count": "1"
+            },
+            {
+                "word": "압축력",
+                "count": "1"
+            },
+            {
+                "word": "유지력",
+                "count": "1"
+            },
+            {
+                "word": "유발",
+                "count": "1"
+            },
+            {
+                "word": "심미성",
+                "count": "1"
+            },
+            {
+                "word": "존재",
+                "count": "1"
+            },
+            {
+                "word": "단점",
+                "count": "1"
+            },
+            {
+                "word": "은색",
+                "count": "1"
+            },
+            {
+                "word": "구치부",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "어금니레진",
+            "search_volume_total": "910",
+            "search_volume_pc": "140",
+            "search_volume_mobile": "770",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        },
+        {
+            "rank": "2",
+            "keyword": "레진탈락",
+            "search_volume_total": "50",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "40",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "1"
+        }
+    ],
+    "same_topic_posting": "어금니레진 (56), 레진탈락 (22)"
+}

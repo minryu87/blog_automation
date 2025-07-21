@@ -1,0 +1,995 @@
+{
+    "posting_score": "준최5-Lv.1",
+    "exposure_score": "33.29",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "80.06",
+            "evaluation": "적합",
+            "percentage": "80.06%"
+        },
+        {
+            "category": "주제",
+            "score": "71.48",
+            "evaluation": "적합",
+            "percentage": "71.48%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "71.05",
+            "evaluation": "적합",
+            "percentage": "71.05%"
+        },
+        {
+            "category": "형태소",
+            "score": "73.54",
+            "evaluation": "적합",
+            "percentage": "73.54%"
+        },
+        {
+            "category": "가독성",
+            "score": "69.95",
+            "evaluation": "적합",
+            "percentage": "69.95%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "89.00",
+            "evaluation": "정보성",
+            "percentage": "89.00%"
+        }
+    ],
+    "publish_time": "2024-11-15 13",
+    "exposure_status": "발행된지 248일 (1시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:05:19 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "59",
+        "title_without_space": "44",
+        "content_with_space": "2,420",
+        "content_without_space": "1,923"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "397",
+        "syllable_count": "498",
+        "word_count": "182",
+        "abusing_word_count": "4"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "21",
+        "material_images": "0",
+        "uploaded_images": "21",
+        "content_images": "21",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjA4/MDAxNzMxNjQzMzYzNzAx.g1GDasxbCPhaBScZNZKYoafTVqf3DlWfiBBjmJzpOQ8g.r19a2QjLglyLGFD-Uw0mp0edwKdPYiktW8UZPldsRCcg.PNG/collage.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfNzEg/MDAxNzMxNjQ0MjA2NjQ4.ShidIhMEeNHlYiSkHPm3KITgOrcm0_JW0D6OeII7ON4g.M1dz6WF-fBFXL4nCLUpNF6OLe4GXbHwF8ua33n7y4Nog.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20210622_193608.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjU1/MDAxNzMxNjQ0MjA2Njc2.XhwEdpQ1lm1ryNdp1oA1x4GWqMYADw9gN6Vf-Qoovr0g.Qq6NaWntMxJwepEf8Hrjp6KCu4xMfAtnpfSG17F-FlEg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20210622_194008.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjE4/MDAxNzMxNjQzNTU3NDI4._wGE3rY-tx4LPfE74_dIYtfFUKK109Sw8fAhVzdKP2Ag.ixkRAa_eiF1v1K77fHJY9SSoFAR5eBHHvgpBMiGD6ykg.JPEG/L2D_5609.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjM2/MDAxNzMxNjQzNTc2ODk4.w9Oqnq_p83REZ8cgaUGcTA9OcoBzkbaknBMT-c6aGrIg.TFeiOjd0W_gvB5m6gXdcOvn6zgja2I4g-tVJjpSbdoMg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20230213_111308.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjgy/MDAxNzMxNjQ1MzU2OTc5.QR68PrEq4lhJsa5VwaiQXEiq5zpAHsgHlgtT3Lm3HyUg.xX2aIcjspS2KxEGyBEBN_cr86Rk7Rc2lRiG8VIRLToMg.PNG/image.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTc2/MDAxNzMxNjQzNjExMDgy.YSlKvVhIdcEHchxj05qStdYqN9uXbfmAnwUUgFWM7fMg.XZSQtJged6OlDdXWhD0punD3CMDKxlAwf4kri6GI2CMg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20230816_110027.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfODMg/MDAxNzMxNjQzNjExMTA5.WlJT4Zu2XtFzYnqoeXz5vO0GhcOUz6OxN0Zu8e6nlu8g.HovtEzI7WwMO6yyF8QDjOHK0APILdcssx3FBZqBn1uwg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20230816_110210.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMzEg/MDAxNzMxNjQzNjM3MjQ2.5GW_--XJMX11xv3ML9PPB03LUJkWveBbx0YSbhBn_5Eg.XxUqyYyz8RYluG0dMGeUFeLjdHrmYIbjAAse9wuXt1Yg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20230915_154324.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjc3/MDAxNzMxNjQzNjc4NDYz.3vptQlDD4x8SDq63hPm-XpaZzvWA_Je5Xcw8ikeG1kcg.5Z_CnqEAfctA_LkIITiph4i3mIfwxwE3IHBUF1a-rH8g.JPEG/L2D_7481.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfNzcg/MDAxNzMxNjQ0MzE5MDc0.UjBNNg0Aen-jG5Uwwc7Hwh_T1EF-lKy6jgLubAawcs0g.oL5AxDmPe43uJXq14RbsHs-wJ49U2ODoXGWWSmkrNEog.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20231004_170140.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTA4/MDAxNzMxNjQ0MzE5MDA1.HPotg3ElRhFOsOPygjaFM1ks7iNNBpg4Gxv_gxPS6f8g.g1ZcrdbIih7e6Poq9wLeFQ6LHSzMjXFiXfQ8mRSgmu4g.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20231004_170143.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTU0/MDAxNzMxNjQ0NDE5NTE5.PV9XxQgch4nkInCYEP8lVuCabSTLpJ9pU1BZnCWV_d0g.ET8Yl-0vCYdJAginJMLbeRiNV6FmLM29wD1vHyqlLRwg.JPEG/L2D_8489.JPG?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjIg/MDAxNzMxNjQ1NzU0MjA2.QHI32MHU5U_H_DTjfqhcRhdRF2mOllb6xxPWSjVEzj0g.LVRITPi-9L7_PJkS9-EvoIH5CouGfPL0BTGvUqttds4g.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20240418_164905.jpg?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfODMg/MDAxNzMxNjQ1NzU0MjYx.xG7ACvOzNCU6oVWiLjnkYfP9XJ5I0QAM_vt6TDTTJkwg.G4cCKkdKjno8-h8fLA8ZSFlJA2fXI-bp-kKbpQkZ1KAg.JPEG/%ED%95%9C%EC%9C%A0%ED%99%94_20241114_152729.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjE0/MDAxNzMxNjQ0NDM2NDMz.yzn0N89_ZJ54W_7ZIMsUjww9vvqOwmdCQMCwMGBqlGAg.Tk3QGAJyuFP6BkzTP1iCzuq7FbaKs3hxxPdDCN3Q-oUg.JPEG/L2D_8740.JPG?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTc0/MDAxNzMxNjQ0NDM2MDMy.0jhH2e1ZefGWGzmI6Zu_Ky_kZg-1OGservXquTfTmiog.bEJAmTKznAXf_4uQckXWkMx8AP0zoMOxCE9BIDkX5fUg.JPEG/L2D_8746.JPG?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTQx/MDAxNzMxNjQ0NDU3NDQz.-8mpscRBb9xsjNtGXkFOsXY3Hvu6IqrF1weDS_I2wKQg.TdhZEUjPTBxAve8zw0qAWPAHdFKXJb694K5XnPavf4Eg.PNG/collage.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjAg/MDAxNzMxNjQ0NDU4NDE5.YPjQ2vulzgQ_C8ZCOROJEcDvZSIaT6CvsF0oCLQLWKog.wfJJUS9Ixk3WPFarBFzCEGTJaAU7vLvWPDn8pr0JxhQg.PNG/collage2.png?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMjgy/MDAxNzMxNjQ0NDU3OTI0.sr1tzLrV0r8TqHnU-6VCPblCY2SqfjlSOkU6FQ-KEpEg.t9JBEQ_PdIkky6Kq0pdDkc_rUhxvq4WWtSqM7F9EMR4g.PNG/collage1.png?type=w400",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDExMTVfMTg5/MDAxNzMxNjQ0NDc4NzE5.yofIN84SiYFUpUjk3J_BJXNKR1Ln31lLOymDgwPlJnwg.IjpY22OOHpBtBVZDPucKrSEn7ZsJ6BMY7vU_8MhzCBIg.PNG/collage3.png?type=w800"
+        ]
+    },
+    "post_title": "앞니 깨짐 크라운 - 앞니지르코니아 : 외상으로 깨진 앞니의 신경 죽었을 때, 신경치료 후 크라운 보철치료",
+    "post_content": "안녕하세요, 엘투치과 대표원장 치의학박사 & 치주과 전문의 최순호입니다. 모든 글은 최순호 원장에 의해 직접 작성됩니다. 컨텐츠에 대한 무단 도용 및 복제는 불가합니다. 엘투치과의원 : 서울 강남구 삼성동 봉은사로 469 에스타워 : 삼성중앙역 1번출구(도보1분), 선정릉역 2번출구(도보7분), 청담역 7번출구(도보10분) 앞니 부위는 구강 내에서 가장 전방에 있기 때문에 외상에 가장 취약한 부위입니다. 외상으로 인해 앞니가 깨진 경우에는 치아가 받은 충격의 정도에 따라 레진 / 라미네이트 / 크라운치료 등 여러가지 옵션 중에서 치료방법을 선택하게 되는데요. 기존 포스팅에서 레진 치료 / 라미네이트에 대한 얘기를 해드린 바가 있는데, https://blog.naver.com/sunnyflow/223620384486 https://blog.naver.com/sunnyflow/223635370648 오늘은 외상으로 인해 앞니 신경이 죽어서 신경치료 후 크라운치료를 하게 된 사례에 대해 안내해드리도록 하겠습니다. 레진/라미네이트/크라운치료 : 앞니가 깨졌을 때, 특정한 치료 방법이 항상 더 우수한 것은 아닙니다. 환자분의 상황에 맞는 가장 적합한 치료방법이 있을 뿐입니다. 어떠한 치료 방법이 더 적합한지는, 정확한 진단 후에 환자분들과의 상담과정에서 결정되는 것입니다. 저희 엘투치과에 내원하시어 정기적으로 검진 받으시던 환자분입니다. 특이사항은 없어 주기적인 스케일링만 받던 분입니다. 어느 날, 넘어지면서 앞니부위를 쎄게 부딪혀 치아가 깨진 상태로 내원하셨습니다. 강한 충격으로 인해 가운데 앞니의 경우 위치가 변한 것이 확인되었고, (환자분 표현대로...강제교정 당한...) 전기치수검사에서 약한 반응이 확인되었습니다. 또한 두번째 앞니의 경우 위치 변화는 없지만, (사진상에서는 잘 보이지는 않는데) 큰 균열선이 입천장 방향(뒷쪽)에서 관찰이 되었습니다. \"깨진 정도\"로만 보면, 간단하게 레진치료만으로 마무리 할 수 있을 것 같지만, 치아 이동으로 인해 조기접촉 교합이 생겨버려 치아의 외형적인 변화가 필요하였으며, 균열선이 강하게 관찰되었기에 우선 크라운 치료를 진행하기로 하였습니다. 또한 \"신경치료 여부\"는 당장에 결정을 하지 않고, 3개월 간의 경과관찰을 통해 결정하기로 하였습니다. 임시치아로 사용하며 지내시던 중... 환자분은 뜻밖의 2번째 사고를 겪고 내원하셨습니다. 임시치아는 부러진 상태였으며, 가운데 앞니와 두번째 앞니 또한 신경이 죽어버린 것이 확인되었습니다. 따라서 최종적인 치료 계획은 \"앞니 신경치료 앞니 지르코니아 크라운\" 으로 확정되었습니다. 3회에 걸친 앞니 신경치료를 마무리하였고, 지대치형성(치아다듬기, tooth prep)을 하였습니다. Cord packing을 통해 정확한 크라운 경계가 확인되도록 하였고, 여러 각도에서 shade taking하여 자연스러운 크라운을 제작할 수 있도록 기공소에 색상정보를 전달하였습니다. 저희 앞니 기공물을 담당해주시는 훤 기공소장님의 뛰어난 실력으로 매우 자연스러운 앞니 지르코니아 크라운이 제작되어왔고, 수정과정 없이 바로 세팅할 수 있었습니다. 얼마 전, 1년 체크업을 오셨습니다. 환자분은 특별한 불편감 없이 잘 사용하고 계셨고, 엑스레이 소견 또한 매우 양호하였습니다. 지르코니아 크라운 주변으로 경미한 수준의 치은염 소견이 있었으나, 전반적으로 스케일링 주기가 도래하여 나타나는 수준이었습니다. 심미적으로나 기능적으로나 매우 만족스러운 결과여서 내심 뿌듯했던 케이스입니다. 지르코니아 크라운의 경우에도 기공과정에서 staining 작업을 통해 거의 자연치와 유사한 크라운을 제작할 수 있습니다. line 형태의 white spot 또한 매우 자연스럽게 형성된 모습을 볼 수 있습니다. 오늘은 앞니 외상으로 인해 치아가 깨지고 , 치아 신경이 손상되어 신경치료 후 크라운 보철치료로 마무리 한 사례에 대해 소개해드렸습니다. 언제나 그렇듯, 진심을 다하는 최선의 진료로 환자분들을 대하겠습니다. 이 글을 읽으시는 많은 분들께 도움이 되길 바라며. 이상 엘투치과 대표원장 치의학박사 최순호였습니다. 감사합니다. <의료법 관련 Notice> 본 포스팅에 사용된 증례 사진은 환자분의 동의 하에 업로드 됩니다. 치료 시작 : 2023.06.12 치료 종료 : 2023.09.27 보존-보철치료 관련 발생 가능한 부작용 및 합병증 : 치아시림 및 통증으로 인한 신경치료 가능성 : 수복물 및 보철물의 파절 혹은 탈락 : 변색 및 이차우식증의 발생 앞니깨짐 앞니깨짐크라운 앞니지르코니아 지르코니아크라운 앞니외상 앞니깨짐 깨진앞니 깨진이빨 앞니신경치료 앞니신경죽음 앞니신경죽었을때 앞니크라운 앞니크라운보철 앞니보철치료 크라운보철치료 크라운치료 앞니깨짐 앞니깨짐크라운 앞니지르코니아 지르코니아크라운 앞니외상 앞니깨짐 깨진앞니 깨진이빨 앞니신경치료 앞니신경죽음 앞니신경죽었을때 앞니크라운 앞니크라운보철 앞니보철치료 크라운보철치료 크라운치료",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "가장(3), 뛰어난(1), 적합한(1), 상담(1)",
+        "excessive_words": "앞니(39)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "51.02%",
+            "keywords": "앞니(17), 크라운(9), 치료(7), 환자분(5), 신경치료(5), 외상(4), 지르코니아(4), 경우(4), 치아(4), 크라운치료(4), 신경(3), 내원(3), 자연(3), 대표원장(2), 라미네이트(2), 엘투치과(2), 균열선(2), 앞니크라운(2), 지르코니아크라운(2), 앞니지르코니아(2), 충격(2), 저희(2), 부위(2), 상태(2), 변화(2), 관찰(2), 정도(2), 발생(2), 주기(1), 주기적(1), 정기적(1), 전반적(1), 손상(1), 선택(1), 여부(1), 외형적(1), 진료(1), 전달(1), 전방(1), 특정(1), 기공물(1), 보철물(1), 심미적(1), 분들(1), 자연치(1), 치주(1), 불편감(1), 통증(1), 사고(1), 필요(1), 형태(1), 케이스(1), 담당(1), 치은염(1), 수복물(1), 증례(1), 변색(1), 부작용(1), 엑스레이(1), 합병증(1), 입천장(1), 이상(1), 파절(1), 무단(1), 기존(1), 기능적(1), 진단(1), 당장(1), 모습(1), 교합(1), 경계(1), 구강(1), 치아시림(1), 엘투치과의원(1), 각도(1), 반응(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "10.54%",
+            "keywords": "마무리(3), 포스팅(2), 위치(2), 정확(2), 수준(2), 오늘(1), 양호(1), 안내(1), 진행(1), 소개(1), 최종적(1), 취약(1), 도움(1), 때문(1), 확정(1), 가능성(1), 옵션(1), 얼마(1), 동의(1), 삼성동(1), 삼성중앙역(1), 계획(1), 도용(1), 에스타워(1), 도래(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "4.42%",
+            "keywords": "사용(3), 방법(2), 소견(2), 업로드(1), 사진(1), 이동(1), 결과(1), 종료(1), 복제(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "2.04%",
+            "keywords": "가운데(2), 최선(1), 얘기(1), 뜻밖(1), 감사(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.04%",
+            "keywords": "확인(4), 작업(1), 강남구(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.04%",
+            "keywords": "제작(3), 스케일링(2), 체크업(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "2.04%",
+            "keywords": "결정(3), 특별(1), 유사(1), 전문(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "2.04%",
+            "keywords": "관련(2), 형성(1), 상황(1), 가능(1), 시작(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.36%",
+            "keywords": "진심(1), 안녕(1), 불가(1), 선정릉역(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "1.36%",
+            "keywords": "세팅(1), 주변(1), 원장(1), 청담역(1)"
+        },
+        {
+            "category_name": "스포츠",
+            "percentage": "1.02%",
+            "keywords": "최순호(3)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "1.02%",
+            "keywords": "레진(2), 만족(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "1.02%",
+            "keywords": "봉은사(1), 서울(1), 내심(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.68%",
+            "keywords": "사례(2)"
+        },
+        {
+            "category_name": "게임",
+            "percentage": "0.34%",
+            "keywords": "컨텐츠(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "0.34%",
+            "keywords": "실력(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.34%",
+            "keywords": "작성(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "40.27%",
+            "words": "앞니(39), 치료(29), 크라운(24), 신경(15), 분(11), 치아(10), 보철(8), 코니아(8), 환자(8), 지르(8), 외상(6), 번(6), 것(5), 수(5), 경우(4), 확인(4), 레진(4), 치과(4), 투(4), 방법(4), 제작(3), 과정(3), 부위(3), 결정(3), 최순호(3), 때(3), 자연(3), 후(3), 네이트(3), 라미(3), 사용(3), 원장(3), 내원(3), 도보(3), 출구(3), 마무리(3), 관찰(3), 사진(2), 변화(2), 균열선(2), 형성(2), 소견(2), 포스팅(2), 물(2), 위치(2), 스케일링(2), 저희(2), 주기(2), 임시(2), 정확(2), 기공(2), 가운데(2), 상태(2), 수준(2), 사례(2), 정도(2), 가능(2), 충격(2), 글(2), 발생(2), 이빨(2), 관련(2), 의학박사(2), 죽음(2), 중(2), 대표(2), 파절(1), 체크(1), 년(1), 보철물(1), 전(1), 얼마(1), 특별(1), 통증(1), 시림(1), 불편(1), 세팅(1), 업(1), 수복(1), 담당(1), 색상(1), 정보(1), 공소(1), 우식증(1), 경계(1), 각도(1), 차(1), 전달(1), 공소장(1), 실력(1), 합병증(1), 변색(1), 이(1), 수정(1), 주변(1), 작업(1), 도움(1), 자연치(1), 케이스(1), 이상(1), 결과(1), 내심(1), 유사(1), 다듬기(1), 손상(1), 진심(1), 모습(1), 형태(1), 진료(1), 최선(1), 감사(1), 의료법(1), 전반(1), 보존(1), 종료(1), 치은염(1), 소개(1), 부작용(1), 양호(1), 시작(1), 도래(1), 만족(1), 증례(1), 기능(1), 심미(1), 업로드(1), 동의(1), 엑스레이(1), 쪽(1), 전방(1), 때문(1), 취약(1), 내(1), 구강(1), 선정릉(1), 역(1), 청담역(1), 등(1), 가지(1), 바(1), 오늘(1), 안내(1), 얘기(1), 기존(1), 옵션(1), 선택(1), 중앙역(1), 삼성(1), 컨텐츠(1), 무단(1), 도용(1), 작성(1), 전문(1), 엘(1), 치주(1), 복제(1), 불가(1), 봉은사(1), 에스(1), 타워(1), 삼성동(1), 강남구(1), 의원(1), 서울(1), 특정(1), 상황(1), 진행(1), 여부(1), 당장(1), 필요(1), 외형(1), 조기(1), 접촉(1), 교합(1), 개월(1), 간(1), 계획(1), 확정(1), 회(1), 최종(1), 사고(1), 경과(1), 뜻밖(1), 이동(1), 안녕(1), 특이(1), 사항(1), 날(1), 정기(1), 상담(1), 뿐(1), 진단(1), 표현(1), 강제(1), 반응(1), 입천장(1), 방향(1), 검사(1), 치수(1), 교정(1), 전기(1), 지대(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "14.02%",
+            "words": ".(45), ,(23), /(13), :(10), ((7), )(6), \"(6), 1(3), sunnyflow(2), 2023(2), 3(2), com(2), ..(2), naver(2), 7(2), https(2), 2(2), blog(2), <(1), Notice(1), spot(1), white(1), >(1), 27(1), 06(1), 09(1), line(1), 12(1), -(1), ..)(1), 223620384486(1), 223635370648(1), 10(1), 469(1), &(1), tooth(1), prep(1), taking(1), shade(1), packing(1), Cord(1), staining(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "13.21%",
+            "words": "에(20), 의(17), 이(16), 을(14), 으로(14), 가(10), 는(9), 은(9), 에서(9), 로(8), 를(7), 엘(3), 만(3), 나(2), 과(2), 와(2), 께(1), 도(1), 대로(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "10.18%",
+            "words": "있(9), 하(8), 입니다(7), 깨(7), 깨진(7), 인해(5), 죽(4), 인(3), 되(3), 통해(3), 받(3), 대해(2), 대한(2), 않(2), 없(2), 계셨(1), 나타나(1), 오(1), 주(1), 버린(1), 였으며(1), 걸친(1), 이(1), 뛰어난(1), 왔(1), 그렇(1), 바라(1), 많(1), 였(1), 본(1), 인한(1), 읽(1), 대하(1), 볼(1), 깨지(1), 드렸(1), 부러진(1), 여서(1), 큰(1), 아닙니다(1), 맞(1), 검(1), 넘어지(1), 드리(1), 된(1), 의해(1), 따라(1), 해(1), 드린(1), 쎄(1), 부딪혀(1), 생겨(1), 버려(1), 강하(1), 지내(1), 같(1), 보(1), 강한(1), 변한(1), 약한(1), 보이(1), 겪(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "8.04%",
+            "words": "습니다(20), 고(9), 기(6), 는(6), 게(6), 짐(6), 어(5), 을(4), 던(4), 도록(3), 지(2), 은(2), 는데(2), 여(2), 며(2), 지만(2), 길(1), 듯(1), 으나(1), 진(1), 는데요(1), 어서(1), 졌을(1), 면서(1), 면(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "7.14%",
+            "words": "하(17), 한(12), 되(9), 적(7), 할(4), 치(3), 스러운(3), 들(3), 째(3), 해(3), 된(2), 분(2), 됩니다(2), 합니다(2), 스럽(1), 당한(1), 성(1), 했(1), 감(1), 한지(1), 님(1), 상(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.04%",
+            "words": "및(5), 또한(5), 매우(4), 가장(3), 없이(2), 잘(2), 더(2), 탈락(1), 언제나(1), 다(1), 혹은(1), 오늘(1), 따라서(1), 항상(1), 우선(1), 직접(1), 바로(1), 거의(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.68%",
+            "words": "었(11), 였(7), 셨(3), 시(3), 으시(2), 겠(2), 였으며(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.71%",
+            "words": "두(2), 여러(2), 뒷(1), 이(1), 어느(1), 모든(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.71%",
+            "words": "적합(2), 경미(1), 뿌듯(1), 훤(1), 간단(1), 어떠(1), 우수(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "182",
+        "words": [
+            {
+                "word": "앞니",
+                "count": "17"
+            },
+            {
+                "word": "크라운",
+                "count": "9"
+            },
+            {
+                "word": "치료",
+                "count": "7"
+            },
+            {
+                "word": "환자분",
+                "count": "5"
+            },
+            {
+                "word": "신경치료",
+                "count": "5"
+            },
+            {
+                "word": "치아",
+                "count": "4"
+            },
+            {
+                "word": "확인",
+                "count": "4"
+            },
+            {
+                "word": "외상",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "지르코니아",
+                "count": "4"
+            },
+            {
+                "word": "크라운치료",
+                "count": "4"
+            },
+            {
+                "word": "사용",
+                "count": "3"
+            },
+            {
+                "word": "자연",
+                "count": "3"
+            },
+            {
+                "word": "내원",
+                "count": "3"
+            },
+            {
+                "word": "제작",
+                "count": "3"
+            },
+            {
+                "word": "결정",
+                "count": "3"
+            },
+            {
+                "word": "최순호",
+                "count": "3"
+            },
+            {
+                "word": "마무리",
+                "count": "3"
+            },
+            {
+                "word": "신경",
+                "count": "3"
+            },
+            {
+                "word": "치료방법",
+                "count": "2"
+            },
+            {
+                "word": "정도",
+                "count": "2"
+            },
+            {
+                "word": "포스팅",
+                "count": "2"
+            },
+            {
+                "word": "충격",
+                "count": "2"
+            },
+            {
+                "word": "앞니보철치료",
+                "count": "2"
+            },
+            {
+                "word": "앞니크라운",
+                "count": "2"
+            },
+            {
+                "word": "앞니크라운보철",
+                "count": "2"
+            },
+            {
+                "word": "사례",
+                "count": "2"
+            },
+            {
+                "word": "크라운보철치료",
+                "count": "2"
+            },
+            {
+                "word": "환자분들",
+                "count": "2"
+            },
+            {
+                "word": "임시치아",
+                "count": "2"
+            },
+            {
+                "word": "수준",
+                "count": "2"
+            },
+            {
+                "word": "앞니신경죽었을때",
+                "count": "2"
+            },
+            {
+                "word": "관찰",
+                "count": "2"
+            },
+            {
+                "word": "균열선",
+                "count": "2"
+            },
+            {
+                "word": "정확",
+                "count": "2"
+            },
+            {
+                "word": "상태",
+                "count": "2"
+            },
+            {
+                "word": "변화",
+                "count": "2"
+            },
+            {
+                "word": "방법",
+                "count": "2"
+            },
+            {
+                "word": "부위",
+                "count": "2"
+            },
+            {
+                "word": "가운데",
+                "count": "2"
+            },
+            {
+                "word": "위치",
+                "count": "2"
+            },
+            {
+                "word": "소견",
+                "count": "2"
+            },
+            {
+                "word": "스케일링",
+                "count": "2"
+            },
+            {
+                "word": "저희",
+                "count": "2"
+            },
+            {
+                "word": "레진",
+                "count": "2"
+            },
+            {
+                "word": "앞니신경죽음",
+                "count": "2"
+            },
+            {
+                "word": "대표원장",
+                "count": "2"
+            },
+            {
+                "word": "치의학박사",
+                "count": "2"
+            },
+            {
+                "word": "관련",
+                "count": "2"
+            },
+            {
+                "word": "라미네이트",
+                "count": "2"
+            },
+            {
+                "word": "깨진이빨",
+                "count": "2"
+            },
+            {
+                "word": "발생",
+                "count": "2"
+            },
+            {
+                "word": "앞니신경치료",
+                "count": "2"
+            },
+            {
+                "word": "앞니외상",
+                "count": "2"
+            },
+            {
+                "word": "깨진앞니",
+                "count": "2"
+            },
+            {
+                "word": "앞니지르코니아",
+                "count": "2"
+            },
+            {
+                "word": "앞니깨짐크라운",
+                "count": "2"
+            },
+            {
+                "word": "지르코니아크라운",
+                "count": "2"
+            },
+            {
+                "word": "엘투치과",
+                "count": "2"
+            },
+            {
+                "word": "전달",
+                "count": "1"
+            },
+            {
+                "word": "색상정보",
+                "count": "1"
+            },
+            {
+                "word": "각도",
+                "count": "1"
+            },
+            {
+                "word": "경계",
+                "count": "1"
+            },
+            {
+                "word": "기공물",
+                "count": "1"
+            },
+            {
+                "word": "확정",
+                "count": "1"
+            },
+            {
+                "word": "계획",
+                "count": "1"
+            },
+            {
+                "word": "체크업",
+                "count": "1"
+            },
+            {
+                "word": "불편감",
+                "count": "1"
+            },
+            {
+                "word": "최종적",
+                "count": "1"
+            },
+            {
+                "word": "특별",
+                "count": "1"
+            },
+            {
+                "word": "세팅",
+                "count": "1"
+            },
+            {
+                "word": "실력",
+                "count": "1"
+            },
+            {
+                "word": "담당",
+                "count": "1"
+            },
+            {
+                "word": "레진치료",
+                "count": "1"
+            },
+            {
+                "word": "방향쪽",
+                "count": "1"
+            },
+            {
+                "word": "이동",
+                "count": "1"
+            },
+            {
+                "word": "반응",
+                "count": "1"
+            },
+            {
+                "word": "전기치수검사",
+                "count": "1"
+            },
+            {
+                "word": "양호",
+                "count": "1"
+            },
+            {
+                "word": "앞니부위",
+                "count": "1"
+            },
+            {
+                "word": "교합",
+                "count": "1"
+            },
+            {
+                "word": "외형적",
+                "count": "1"
+            },
+            {
+                "word": "경과관찰",
+                "count": "1"
+            },
+            {
+                "word": "뜻밖",
+                "count": "1"
+            },
+            {
+                "word": "당장",
+                "count": "1"
+            },
+            {
+                "word": "여부",
+                "count": "1"
+            },
+            {
+                "word": "필요",
+                "count": "1"
+            },
+            {
+                "word": "진행",
+                "count": "1"
+            },
+            {
+                "word": "사고",
+                "count": "1"
+            },
+            {
+                "word": "보철물",
+                "count": "1"
+            },
+            {
+                "word": "최선",
+                "count": "1"
+            },
+            {
+                "word": "진료",
+                "count": "1"
+            },
+            {
+                "word": "진심",
+                "count": "1"
+            },
+            {
+                "word": "소개",
+                "count": "1"
+            },
+            {
+                "word": "손상",
+                "count": "1"
+            },
+            {
+                "word": "보철치료",
+                "count": "1"
+            },
+            {
+                "word": "분들",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "가능성",
+                "count": "1"
+            },
+            {
+                "word": "주기적",
+                "count": "1"
+            },
+            {
+                "word": "통증",
+                "count": "1"
+            },
+            {
+                "word": "가능",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "모습",
+                "count": "1"
+            },
+            {
+                "word": "형성",
+                "count": "1"
+            },
+            {
+                "word": "기능적",
+                "count": "1"
+            },
+            {
+                "word": "만족",
+                "count": "1"
+            },
+            {
+                "word": "심미적",
+                "count": "1"
+            },
+            {
+                "word": "도래",
+                "count": "1"
+            },
+            {
+                "word": "전반적",
+                "count": "1"
+            },
+            {
+                "word": "주기",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "케이스",
+                "count": "1"
+            },
+            {
+                "word": "유사",
+                "count": "1"
+            },
+            {
+                "word": "형태",
+                "count": "1"
+            },
+            {
+                "word": "자연치",
+                "count": "1"
+            },
+            {
+                "word": "작업",
+                "count": "1"
+            },
+            {
+                "word": "기공과정",
+                "count": "1"
+            },
+            {
+                "word": "주변",
+                "count": "1"
+            },
+            {
+                "word": "업로드",
+                "count": "1"
+            },
+            {
+                "word": "\"신경치료",
+                "count": "1"
+            },
+            {
+                "word": "\"앞니",
+                "count": "1"
+            },
+            {
+                "word": "조기접촉",
+                "count": "1"
+            },
+            {
+                "word": "입천장",
+                "count": "1"
+            },
+            {
+                "word": "(환자분",
+                "count": "1"
+            },
+            {
+                "word": "표현대로...강제교정",
+                "count": "1"
+            },
+            {
+                "word": "지대치형성(치아다듬기",
+                "count": "1"
+            },
+            {
+                "word": "수정과정",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            },
+            {
+                "word": "<의료법",
+                "count": "1"
+            },
+            {
+                "word": "내심",
+                "count": "1"
+            },
+            {
+                "word": "치은염",
+                "count": "1"
+            },
+            {
+                "word": "얼마",
+                "count": "1"
+            },
+            {
+                "word": "엑스레이",
+                "count": "1"
+            },
+            {
+                "word": "진단",
+                "count": "1"
+            },
+            {
+                "word": "레진/라미네이트/크라운치료",
+                "count": "1"
+            },
+            {
+                "word": "강남구",
+                "count": "1"
+            },
+            {
+                "word": "삼성동",
+                "count": "1"
+            },
+            {
+                "word": "서울",
+                "count": "1"
+            },
+            {
+                "word": "엘투치과의원",
+                "count": "1"
+            },
+            {
+                "word": "무단",
+                "count": "1"
+            },
+            {
+                "word": "도용",
+                "count": "1"
+            },
+            {
+                "word": "에스타워",
+                "count": "1"
+            },
+            {
+                "word": "삼성중앙역",
+                "count": "1"
+            },
+            {
+                "word": "옵션",
+                "count": "1"
+            },
+            {
+                "word": "기존",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "청담역",
+                "count": "1"
+            },
+            {
+                "word": "선정릉역",
+                "count": "1"
+            },
+            {
+                "word": "증례",
+                "count": "1"
+            },
+            {
+                "word": "동의",
+                "count": "1"
+            },
+            {
+                "word": "때문",
+                "count": "1"
+            },
+            {
+                "word": "취약",
+                "count": "1"
+            },
+            {
+                "word": "전방",
+                "count": "1"
+            },
+            {
+                "word": "봉은사",
+                "count": "1"
+            },
+            {
+                "word": "복제",
+                "count": "1"
+            },
+            {
+                "word": "불가",
+                "count": "1"
+            },
+            {
+                "word": "선택",
+                "count": "1"
+            },
+            {
+                "word": "얘기",
+                "count": "1"
+            },
+            {
+                "word": "상담과정",
+                "count": "1"
+            },
+            {
+                "word": "정기적",
+                "count": "1"
+            },
+            {
+                "word": "상황",
+                "count": "1"
+            },
+            {
+                "word": "특정",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "안내",
+                "count": "1"
+            },
+            {
+                "word": "컨텐츠",
+                "count": "1"
+            },
+            {
+                "word": "작성",
+                "count": "1"
+            },
+            {
+                "word": "합병증",
+                "count": "1"
+            },
+            {
+                "word": "치아시림",
+                "count": "1"
+            },
+            {
+                "word": "부작용",
+                "count": "1"
+            },
+            {
+                "word": "보존-보철치료",
+                "count": "1"
+            },
+            {
+                "word": "시작",
+                "count": "1"
+            },
+            {
+                "word": "종료",
+                "count": "1"
+            },
+            {
+                "word": "수복물",
+                "count": "1"
+            },
+            {
+                "word": "파절",
+                "count": "1"
+            },
+            {
+                "word": "전문",
+                "count": "1"
+            },
+            {
+                "word": "원장",
+                "count": "1"
+            },
+            {
+                "word": "치주",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "변색",
+                "count": "1"
+            },
+            {
+                "word": "특이사항",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "앞니크라운",
+            "search_volume_total": "3,330",
+            "search_volume_pc": "410",
+            "search_volume_mobile": "2,920",
+            "clicks_pc": "-",
+            "clicks_mobile": "5",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.19%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "앞니지르코니아",
+            "search_volume_total": "270",
+            "search_volume_pc": "30",
+            "search_volume_mobile": "240",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "앞니크라운 (260), 앞니지르코니아 (67)"
+}

@@ -1,0 +1,520 @@
+{
+    "posting_score": "준최5-Lv.2",
+    "exposure_score": "35.46",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "76.98",
+            "evaluation": "적합",
+            "percentage": "76.98%"
+        },
+        {
+            "category": "주제",
+            "score": "76.56",
+            "evaluation": "적합",
+            "percentage": "76.56%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "68.15",
+            "evaluation": "적합",
+            "percentage": "68.15%"
+        },
+        {
+            "category": "형태소",
+            "score": "53.68",
+            "evaluation": "적합",
+            "percentage": "53.68%"
+        },
+        {
+            "category": "가독성",
+            "score": "76.71",
+            "evaluation": "적합",
+            "percentage": "76.71%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "67.00",
+            "evaluation": "정보성",
+            "percentage": "67.00%"
+        }
+    ],
+    "publish_time": "2024-03-24 21",
+    "exposure_status": "발행된지 483일 (18시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:46:07 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "28",
+        "title_without_space": "23",
+        "content_with_space": "1,470",
+        "content_without_space": "1,162"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "226",
+        "syllable_count": "309",
+        "word_count": "78",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "9",
+        "invalid_images": "9",
+        "material_images": "0",
+        "uploaded_images": "18",
+        "content_images": "18",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMTY4/MDAxNzExMjc2Mzg4MTM0.ZC6zgpFYsqz29GgHtpXkE3AV7RI2wpiJAqk06L7olmcg.M7fhPz4fek0eNdEZ7atKsfC85s4K0_ugwq6uVc0hnlUg.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_01.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMTQ4/MDAxNzExMjc2Mzg4MTM2.gCuMw29_bYnsW0b4hqKlv0wJBoe4aSHUcfyWglQ2BVQg.q9F1C-F0gG4XqTFaSPSjW4VCh6uUJ2z9xlax3iE-POog.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_02.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMjYy/MDAxNzExMjc2Mzg4MTM4.JJL_VKiwHoHB5kkcOt0lN8Jal_bTuKNi4FFsStz-pY4g.-BJqa1KuCQcQq-Wz0pQM2MR9UDzg6W1d1G4-JCCURMwg.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_03.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMTM2/MDAxNzExMjc2MzkyNTc3.d3YY4oiA_C8IZi-BZ-tDJg9JNZQCP7RzB1UfsZekrFog.UJC8BxMODIP3Z2Y0cEnarLlO3hn0BF9jZfmYJyLwRwUg.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_04.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMzQg/MDAxNzExMjc2MzkyNTc2.nV7qFeg9AoRLLD7beTfxhIuLRhyyKdg9YuQRMRzGkCsg.MPcTNLRD2F3EGSIkfumV-wG2gHr3fq3Q2i2w9IL9RNIg.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_05.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMjQ0/MDAxNzExMjc2MzkyNTg0.UaG0zhuJYAKmt0cnEA-uCtbxJ7nuzISJdaSrKZjebyEg.5a_ec34-ZgpkidSBdgEsXK9d_uDgOeYQHR8KpSXAh54g.JPEG/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C_06.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDAzMjRfMjM2/MDAxNzExMjc1ODk4MTIw.4CgM6k2BfVxSzg-RuiBVltKLhxnaOLi9xejyCqk6eksg.JocRr_WBpDpZ9or_SqFHhtEy3qnYA7X-OdMfXcGNfuMg.JPEG/SE-f2fc3960-59df-4b37-862d-66c9b2cd8ad4.jpg?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyNDAzMjRfMzEg/MDAxNzExMjc1OTI5Nzk4.9NxkXnm3PeXXcEtEaL1Va4axjBK95UMLWOLQW9kfNoYg.qw77Owug8N-6x65hV-1LR9PrsooyNIUx0f98pv5YFD4g.GIF/%EC%B1%84%EC%9B%80%EC%B9%98%EA%B3%BC_%EB%84%A4%EC%9D%B4%EB%B2%84_%ED%86%A1%ED%86%A1_%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0.gif?type=mp4w800",
+            "https://phinf.pstatic.net/image.nmv/blog_2024_03_24_2753/868f4091-e9c8-11ee-8aae-a0369ffabcbc_01.jpg"
+        ]
+    },
+    "post_title": "동탄역미백치과 검게 변한 치아도 미백으로 자연스럽게",
+    "post_content": "동탄역미백치과 검게 변한 치아도 미백으로 자연스럽게 신경이 살아있는 치아는 생활치, 신경이 죽은 치아는 실활치라고 부릅니다. 실활치는 신경 치료를 하거나 신경이 죽은 상태인데 겉에서 봤을 때 치아가 속에서 검은색으로 비춰보이는 경우가 있습니다. 이는 신경치료를 한 지 오래되었을때 치아가 변색이 되어 검은색으로 보이게 됩니다. 이럴 경우 다른 치아와 다르기 때문에 자연스럽게 보이기 위해서 실활치 미백이 필요합니다. 실활치미백이란? 치아 내부에 실활치미백 약제를 넣어서 검은색으로 보이지 않도록 미백치료를 하는 치료입니다. 동탄역미백치과에서는 자연스러운 색상 개선을 위해서 실활치미백은 물론, 전문가치아미백도 하고 있으며, 임상경력이 풍부한 의료진이 상주하여 직접 진단을 하고 있습니다. 오늘은 동탄역미백치과에서 치료를 한 사례를 소개해드려고 합니다. 촬영일 24.02.13 신경치료를 한 치아가 색이 변해서 신경쓰여요. 라는 주소로 저희 동탄역미백치과를 내원해주셨습니다. 해당 환자분의 실제 구강 사진을 촬영했고, 자세히 한번 확인을 해보겠습니다. 촬영일 24.02.13 환자분이 고민이신 부위는 오른쪽 송곳니 #13번 치아입니다. 실제로 확인을 해보니 신경치료를 한 지 오래된 치아였고, 치아 속에서 변색이 되어 치아가 검은색으로 비춰보이고 있었습니다. 촬영일 24.02.13 해당 부위를 조금 더 자세히 확인하기 위해서 측면사진을 촬영했습니다. 환자분은 치료 후 크라운을 씌우지 않고 신경치료를 한 상태입니다. 보통 앞니같은 경우는 크라운을 씌우지 않고 마무리할 수도 있습니다. 대신 이렇게 치아 내부가 변색이 되면, 실활치 미백을 통해서 개선을 해야할 필요가 있습니다. 동탄역미백치과에서는 해당 부위에 실활치미백을 통해서 다른 치아와 색상을 맞추고, 환자분이 전체적으로 밝게 치아미백을 원하셔서 실활치미백 후 전문가치아미백을 할 예정입니다. 촬영일 24.02.29 약속을 잡고 해당 일에 치료를 한 상태입니다. 실활치미백이나 전문가미백같은 경우는 한번에 효과로 당일에 바로 차이를 느껴보실 수 있는 장점을 가지고 있습니다. 동탄역미백치과에서 #13번 치아에 실활치미백을 진행한 상태입니다. 촬영일 24.02.29 치아 속이 변색이되어 검은색으로 비춰보이던 치아가 한번에 치료 효과로 바로 자연스러워졌습니다. 촬영일 24.02.29 동탄역미백치과에서는 이어서 바로 전문가치아미백을 진행하였습니다. 그 전과는 달리 치아가 전체적으로 밝고 하얗게 변한 것이 한눈에 확인할 수가 있습니다. 색이 달리 보였던 #13번 치아도 같이 미백을 해줌으로써 만족스러운 결과를 도래할 수 있었습니다. 고민이 되는 부위를 당일로 하얘지고 싶으시다면? 동탄역미백치과가 고민이시라면 동탄2치과에서 정확한 상담과 진단을 받아보세요! #동탄2치과 채움치과에 상담과 예약을 원하시면 아래 번호로 전화나 네이버 톡톡 링크를 눌리시면 가능하답니다. ☎ 031.8043.2443 #동탄역치아미백 #동탄역미백치과 #치아미백 #동탄역치과 #서이추 #서이추환영",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "상담(2)",
+        "excessive_words": "치아(25)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "53.09%",
+            "keywords": "치아(16), 치료(6), 신경(5), 상태(4), 신경치료(4), 환자분(4), 자연(4), 부위(4), 경우(4), 변색(4), 고민(3), 내부(2), 전체적(2), 효과(2), 개선(2), 크라운(2), 진단(2), 당일(2), 필요(2), 저희(1), 생활치(1), 동탄치과(1), 한눈(1), 의료진(1), 내원(1), 구강(1), 송곳니(1), 아래(1), 오른쪽(1), 앞니(1), 장점(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "10.49%",
+            "keywords": "해당(4), 진행(2), 주소(1), 차이(1), 정확(1), 때문(1), 전화(1), 링크(1), 도래(1), 마무리(1), 소개(1), 예정(1), 대신(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "5.56%",
+            "keywords": "검은색(4), 확인(4), 상주(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "4.94%",
+            "keywords": "촬영(8)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "3.7%",
+            "keywords": "색상(2), 네이버(1), 사진(1), 번호(1), 결과(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "3.09%",
+            "keywords": "미백(4), 실제(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.23%",
+            "keywords": "약제(1), 약속(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "1.23%",
+            "keywords": "상담(2)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "0.62%",
+            "keywords": "만족(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.62%",
+            "keywords": "예약(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "0.62%",
+            "keywords": "보통(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "0.62%",
+            "keywords": "가능(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.62%",
+            "keywords": "사례(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "37.32%",
+            "words": "백(19), 치아(17), 동탄(13), 치과(12), 활(11), 치료(11), 신경(9), 역미(9), 촬영(8), 미백(8), 치미(7), 일(7), 번(5), 환자(4), 수(4), 변색(4), 아미(4), 해당(4), 확인(4), 상태(4), 부위(4), 검은색(4), 경우(4), 자연(4), 가치(3), 고민(3), 전문(3), 색(3), 분(3), 속(3), 크라운(2), 상담(2), 진단(2), 사진(2), 후(2), 개선(2), 역치(2), 필요(2), 지(2), 전체(2), 이추(2), 때(2), 진행(2), 내부(2), 당일(2), 효과(2), 색상(2), 전문가(1), 차이(1), 장점(1), 한눈(1), 전(1), 것(1), 번호(1), 링크(1), 네이버(1), 가능(1), 과(1), 환영(1), 전화(1), 약속(1), 도래(1), 결과(1), 정확(1), 예약(1), 아래(1), 만족(1), 실제(1), 경력(1), 임상(1), 의료진(1), 상주(1), 사례(1), 백도(1), 약제(1), 생활(1), 겉(1), 이(1), 때문(1), 소개(1), 주소(1), 앞니(1), 보통(1), 마무리(1), 대신(1), 실(1), 측면(1), 송곳니(1), 저희(1), 내원(1), 구강(1), 오른쪽(1), 예정(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "16.64%",
+            "words": "을(21), 이(17), 를(16), 가(11), 에(10), 는(10), 에서(9), 으로(8), 로(5), 은(3), 과(3), 서(2), 와(2), 도(2), 으로써(1), 나(1), 이란(1), 의(1), 이나(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "15.03%",
+            "words": "있(11), 되(6), 입니다(6), 한(6), 보이(6), 실(5), 보(4), 위해서(3), 비춰(3), 하(3), 치(3), 치아(3), 않(3), 해(2), 검(2), 원하(2), 변한(2), 밝(2), 씌우(2), 같(2), 할(2), 죽(2), 이(2), 통해서(2), 맞추(1), 잡(1), 보였(1), 받(1), 채움(1), 눌리(1), 싶(1), 하얘지(1), 가지(1), 하얗(1), 해줌(1), 느껴(1), 변해서(1), 됩니다(1), 이럴(1), 봤(1), 인데(1), 살(1), 부릅니다(1), 다르(1), 넣(1), 된(1), 였(1), 주(1), 쓰여요(1), 드(1), 합니다(1), 해야(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "11.54%",
+            "words": ".(39), #(10), ,(7), 13(6), 24(6), 02(6), 29(3), ?(2), 2(2), 8043(1), 2443(1), ☎(1), !(1), 031(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "9.8%",
+            "words": "습니다(13), 고(12), 게(6), 는(6), 은(5), 면(3), 지(3), 기(3), 어(3), 던(2), 을(2), 아(2), 아도(1), 라면(1), 다면(1), 니(1), 답니다(1), 도록(1), 거나(1), 라고(1), 어서(1), 으며(1), 려고(1), 여(1), 라는(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "3.62%",
+            "words": "하(5), 할(3), 한(3), 치(3), 했(2), 스러운(2), 해(2), 적(2), 스럽(2), 스러워졌(1), 분(1), 합니다(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.68%",
+            "words": "바로(3), 오래(2), 자세히(2), 달리(2), 톡톡(1), 같이(1), 이어서(1), 이렇게(1), 조금(1), 직접(1), 물론(1), 오늘(1), 한번(1), 실제로(1), 더(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "2.55%",
+            "words": "실(6), 시(3), 었(3), 으시(1), 세요(1), 였(1), 신(1), 셨(1), 겠(1), 셔서(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.67%",
+            "words": "다른(2), 한(2), 그(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.13%",
+            "words": "풍부(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "78",
+        "words": [
+            {
+                "word": "치아",
+                "count": "16"
+            },
+            {
+                "word": "촬영",
+                "count": "8"
+            },
+            {
+                "word": "동탄역미치과",
+                "count": "7"
+            },
+            {
+                "word": "치료",
+                "count": "6"
+            },
+            {
+                "word": "신경",
+                "count": "5"
+            },
+            {
+                "word": "변색",
+                "count": "4"
+            },
+            {
+                "word": "환자분",
+                "count": "4"
+            },
+            {
+                "word": "확인",
+                "count": "4"
+            },
+            {
+                "word": "부위",
+                "count": "4"
+            },
+            {
+                "word": "신경치료",
+                "count": "4"
+            },
+            {
+                "word": "검은색",
+                "count": "4"
+            },
+            {
+                "word": "해당",
+                "count": "4"
+            },
+            {
+                "word": "미백",
+                "count": "4"
+            },
+            {
+                "word": "자연",
+                "count": "4"
+            },
+            {
+                "word": "상태",
+                "count": "4"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "고민",
+                "count": "3"
+            },
+            {
+                "word": "전문가치아미",
+                "count": "2"
+            },
+            {
+                "word": "효과",
+                "count": "2"
+            },
+            {
+                "word": "진행",
+                "count": "2"
+            },
+            {
+                "word": "상담",
+                "count": "2"
+            },
+            {
+                "word": "전체적",
+                "count": "2"
+            },
+            {
+                "word": "당일",
+                "count": "2"
+            },
+            {
+                "word": "색상",
+                "count": "2"
+            },
+            {
+                "word": "크라운",
+                "count": "2"
+            },
+            {
+                "word": "내부",
+                "count": "2"
+            },
+            {
+                "word": "필요",
+                "count": "2"
+            },
+            {
+                "word": "진단",
+                "count": "2"
+            },
+            {
+                "word": "개선",
+                "count": "2"
+            },
+            {
+                "word": "예정",
+                "count": "1"
+            },
+            {
+                "word": "약속",
+                "count": "1"
+            },
+            {
+                "word": "마무리",
+                "count": "1"
+            },
+            {
+                "word": "차이",
+                "count": "1"
+            },
+            {
+                "word": "전문가미백",
+                "count": "1"
+            },
+            {
+                "word": "사진",
+                "count": "1"
+            },
+            {
+                "word": "주소",
+                "count": "1"
+            },
+            {
+                "word": "소개",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "장점",
+                "count": "1"
+            },
+            {
+                "word": "측면사진",
+                "count": "1"
+            },
+            {
+                "word": "앞니",
+                "count": "1"
+            },
+            {
+                "word": "결과",
+                "count": "1"
+            },
+            {
+                "word": "전화",
+                "count": "1"
+            },
+            {
+                "word": "링크",
+                "count": "1"
+            },
+            {
+                "word": "가능",
+                "count": "1"
+            },
+            {
+                "word": "사례",
+                "count": "1"
+            },
+            {
+                "word": "번호",
+                "count": "1"
+            },
+            {
+                "word": "예약",
+                "count": "1"
+            },
+            {
+                "word": "만족",
+                "count": "1"
+            },
+            {
+                "word": "도래",
+                "count": "1"
+            },
+            {
+                "word": "동탄치과",
+                "count": "1"
+            },
+            {
+                "word": "정확",
+                "count": "1"
+            },
+            {
+                "word": "한눈",
+                "count": "1"
+            },
+            {
+                "word": "대신",
+                "count": "1"
+            },
+            {
+                "word": "송곳니",
+                "count": "1"
+            },
+            {
+                "word": "오른쪽",
+                "count": "1"
+            },
+            {
+                "word": "보통",
+                "count": "1"
+            },
+            {
+                "word": "#동탄2치과",
+                "count": "1"
+            },
+            {
+                "word": "아래",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "실제",
+                "count": "1"
+            },
+            {
+                "word": "동탄역미백치과",
+                "count": "1"
+            },
+            {
+                "word": "오래되었을때",
+                "count": "1"
+            },
+            {
+                "word": "전문가치아미백도",
+                "count": "1"
+            },
+            {
+                "word": "저희",
+                "count": "1"
+            },
+            {
+                "word": "네이버",
+                "count": "1"
+            },
+            {
+                "word": "#동탄역미백치과",
+                "count": "1"
+            },
+            {
+                "word": "약제",
+                "count": "1"
+            },
+            {
+                "word": "미백치료",
+                "count": "1"
+            },
+            {
+                "word": "임상경력",
+                "count": "1"
+            },
+            {
+                "word": "의료진",
+                "count": "1"
+            },
+            {
+                "word": "때문",
+                "count": "1"
+            },
+            {
+                "word": "생활치",
+                "count": "1"
+            },
+            {
+                "word": "#치아미백",
+                "count": "1"
+            },
+            {
+                "word": "#동탄역치과",
+                "count": "1"
+            },
+            {
+                "word": "#서이추",
+                "count": "1"
+            },
+            {
+                "word": "#서이추환영",
+                "count": "1"
+            },
+            {
+                "word": "상주",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": null,
+    "same_topic_posting": ""
+}

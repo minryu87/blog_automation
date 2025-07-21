@@ -1,0 +1,965 @@
+{
+    "posting_score": "준최2-Lv.1",
+    "exposure_score": "17.36",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "88.77",
+            "evaluation": "적합",
+            "percentage": "88.77%"
+        },
+        {
+            "category": "주제",
+            "score": "78.33",
+            "evaluation": "적합",
+            "percentage": "78.33%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "62.57",
+            "evaluation": "적합",
+            "percentage": "62.57%"
+        },
+        {
+            "category": "형태소",
+            "score": "58.45",
+            "evaluation": "적합",
+            "percentage": "58.45%"
+        },
+        {
+            "category": "가독성",
+            "score": "74.55",
+            "evaluation": "적합",
+            "percentage": "74.55%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "32.00",
+            "evaluation": "정보성",
+            "percentage": "32.00%"
+        }
+    ],
+    "publish_time": "2024-10-15 10",
+    "exposure_status": "발행된지 279일 (4시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 14:51:54 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "24",
+        "title_without_space": "19",
+        "content_with_space": "1,884",
+        "content_without_space": "1,428"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "372",
+        "syllable_count": "457",
+        "word_count": "169",
+        "abusing_word_count": "7"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "17",
+        "material_images": "0",
+        "uploaded_images": "16",
+        "content_images": "17",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTU2/MDAxNzI4OTUyNzI2ODM1.fqOT62BgNRNtBIfGK-cQdX3gnN4xs6GsJnTFAW34TZkg.A9DMTDBmS9zPzuzYmt95VXGO4BSryYUMQVq7i1rfAo8g.JPEG/001.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDA3MDdfMjMz/MDAxNzIwMzIzNzE4NDE2.ICLmMeakhRbG94F6h5DPxv-0khbLPH_uj8eBemBhMtIg.a0BU-UnSUJsut6HuK8V_r6lyJUpN0AFEaw3cRxwx-T8g.JPEG/%EB%85%BC%ED%98%84%EC%A0%90-%EC%98%88%EC%95%BD%EC%B0%BD-%EC%9D%B4%EB%AF%B8%EC%A7%80-002_(2).jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTg0/MDAxNzI4OTUyNzI3MzAx.fyyvxyERNb8Fk7t4JFpmTFrr13H8F9A4s5ex-M5MJxgg.z6TZrfSUpvj1hbkW7a_g8G-mDsbFLftXkkai--SONZgg.JPEG/002.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjU4/MDAxNzI4OTUyNzI2ODQ3.B5LoRgxog0jcsW6anz-vAAZSyjIXhOGpWVpnljvfGTIg.NmmdalwmURoDf0SSIgi2BhFyMTikywa6Z0UiKJ4pf7og.JPEG/003.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjQz/MDAxNzI4OTUyNzI2ODIz.AvoHFHW5sHEE-krL9CvOIX0VM1cAL7fR4lEGkC6j4QEg.3lodljWk_i1Lk4soMvGYBZAB8R_ayr7ieC4ciAln260g.JPEG/004.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjcz/MDAxNzI4OTUyNzI2ODQw.bbkJ8YxAj2bMFYRh7FJlYTumierFEVVe7oJzrBLqEwwg.6Qd1xfzTx-kBCpd7HTPILPtMss_wiG1gZr812bsJSzog.JPEG/005.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjkg/MDAxNzI4OTUyNzI2ODM4.UH8VJ4RvWJd_tVjDfJ1XwCem0MK5ji90D0jbgiF8CFMg.ydkvrkMddFC3qrdVL-AaMTs58_SHMK5YuWShSZUANq8g.JPEG/006.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTMg/MDAxNzI4OTUyNzI2ODM3.cMdPLWfHvH-H3eyFZzijp3lp4j8nSU_qgsokh3yjqaQg.3ljKieL2p0smiw2TpenGp7pSQX05NoSaDaGNIsy-8uQg.JPEG/007.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjc4/MDAxNzI4OTUyNzI3MjMx.L5n3j92p6APblVH0OTxL8PYE0GC3OuxonpBypOBJBu8g.pEIz9WH3KNWHwm16I1vPaIC_0-37H7DTiWBQtnIa6Tsg.JPEG/008.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjg0/MDAxNzI4OTUyNzI3MjY2.TtZs38q5CWSVu4Oa-V_5l8NKUMGANUpdM7y3mnP4T8wg._5leKCAwf1xKCS2jri7XzIAX4Dvr6quLQuURnNZnTyYg.JPEG/009.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjUg/MDAxNzI4OTUyNzI3Mjc5.v3Q6-OThmIu47CaKoB5XXtADJcOjp21lRv33l5oUnmwg.WOJyMH2g_OJlplyhi7H-zeSzNY5TziZHyP0RbKhBkV8g.JPEG/010.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjY0/MDAxNzI4OTUyNzI3MjY5.mJOYHdpUTwhSLPSdw-Km3Q2VK8wz91SFybsi5-Jf0j0g.e_MCUWyGfPlZc41MULor21Ea3UgEYtsUVWCZtkvEoJgg.JPEG/011.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTgy/MDAxNzI4OTUyNzI3MzU0.RLXlUiolOFepAQivSzQi6C5vc6dwCItcC4a0feKzj3Eg.H7FoqlRaYQ6LuDtpOu7uB2QfxfF_z9MSPXoWaOZgC6wg.JPEG/012.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTAx/MDAxNzI4OTUyNzI3Njcy.g02S8HD_ry33TA6UmYEOTdMO8sf-iNb15KNHwYCxlY0g.q9d023_gbMzg6EngHo--Z_R0hi-uj8bGVPXnhpiN8Bsg.JPEG/013.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjY1/MDAxNzI4OTUyNzI3Njgx.jbZOf2EbZWz6c-X9ZI99GzkON9gUTILz3hfFlpB-AS8g.Sz4uvIZkbv_amy3toUMNQdOiiRjZcdUSxl_eBrFmF0gg.JPEG/014.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMTU0/MDAxNzI4OTUyNzI3Njg1.EOahHG8HeQ_aRwNbUX9hd4UWPQ1t0OjKw8mDDQddQ0Ug.dPFpP0IVPK5Ff4kbMNsCcdJzQDBE6AFvYy8pdpBTigAg.JPEG/015.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyNDEwMTVfMjg5/MDAxNzI4OTUyNzkzNTA0.hMtKqlAVrkT3O_M0pL_T-GbjhENU0ytsPRKQdEXmnW0g.JnUtp7aUAYSb0lgM44WLZ1sB4-81ppFg4Hhtl44UKzIg.JPEG/013.jpg"
+        ]
+    },
+    "post_title": "논현역치과 레진 인레이 크라운치료 과정 비용",
+    "post_content": "안녕하세요? 비가 오락가락 흐린 화요일 오늘도 활기차게 진료 시작했어요. 논현역치과 스노우치과 언제나 정확한 진단으로 과잉치료를 사전 방지하고 현재 환자분께 가장 필요한 치료를 진행하고 있는 논현역 약 100평 규모의 본원은 원내 자체 기공소를 보유하고 있어 맞춤 보철제작과 수정이 가능한 것은 물론, 보다 합리적인 가격으로 환자분들의 치료비용 부담을 최대한 줄여드릴려고 노력하고 연구하고 있었어요. 최근에는 여러 사람들이 치아 상태 유지에 주목하고 있지만 그럼에도 불구하고 충치는 아직도 자주 발생하는 대표적인 구강 관련 질환 중 하나예요. 자녀를 둔 부모님이시라면 누구나 자녀의 충치 문제로 걱정이 많으실 텐데요. 아이들은 아직 양치질을 꼼꼼하게 하는 것이 자리잡히지 않고, 치아가 성인 치아보다 무르기 때문에 충치가 더욱 생기기 쉬우며 과정 진행 또한 빠르게 이루어지기 때문에 정기적인 검진과 불소도포나 실란트로 미리 예방을 하시는 것도 좋은 방법이예요. 강남 논현역치과를 찾아가려고 하니 필요 이상의 진료를 받게 되는 건 아닌지 이런저런 우려가 드실 거라고 생각돼요. 따라서 올바른 선택을 하실 수 있도록 유용한 정보를 제공해 드릴 예정이니 이제부터 주의 깊게 살펴봐 주세요. ^^ 우선, 충치에 대해 간략히 설명해 드리도록 할께요. 일반적으로 충치라고 일컫는 치아 우식증은 치아 안쪽에 있는 칼슘 또는 인 등의 무기질이 침식되면서 발생하는 질병이예요. 이를 그대로 두면 치아 뿌리까지 영향을 받아 발치해야 할 수도 있으므로, 예방, 조기 발견하는 것이 중요해요. 정기검진, 얼마 주기로 받아야 조기 발견 가능할까요? 성인의 경우 6개월 주기로 받으시는 것을 추천 드려요. 이어서 충치 치료 과정 네 단계와 예방 방법에 대해 설명해 드릴께요. 첫 번째 단계 : 레진 치료 작은 범위의 충치 치료 이 경우에는 간단하게 치아의 표면만 살짝 삭제한 후 해당 부위를 레진으로 채우는 방법을 이용해서 문제를 해결할 수 있었어요. 자신의 원래 치아 색깔과 비슷하게 맞출 수 있다는 점과 하루 안에 모든 과정이 끝난다는 장점을 가지고 있지요. 2단계 : 인레이 치료 충치가 상아질까지 진행되었다면 그 범위가 크고 깊기 때문에 레진으로는 치료가 불가능하게 되요. 해당 경우에는 치아의 본을 뜬 후 기공물을 만들어 부착하는 인레이 방식을 적용해야 하는 것이죠. 인레이치료는 내구성이 뛰어나며 상대적으로 긴 수명을 가지고 있다는 장점이 있었어요. 세 번째 단계 : 크라운치료 신경 치료 및 크라운 씌우기 치아 내부의 신경 조직까지 충치가 번졌을 경우에는 우선 신경치료가 필요하게 되요. 더러워진 신경과 혈관을 깨끗이 없애고 소독한 다음, 그 자리에 인체에 친화적인 재료를 이용해서 채워주게 되지요. 이 과정을 거치고 나면 치아에 영양공급이 제대로 이루어지지 못하니 약해진 치아를 보호하기 위해서 크라운 보철물을 씌워주고 있었어요. 4단계 : 치아 제거 후 임플란트 주위염이 턱뼈까지 확산되었다면 안타깝게도 치아 제거 가능성이 커지게 되요. 치아를 발치하게 된다면 대체치아 치료가 이루어져야해요. 스노우치과 원장님들 <김기영 대표 원장님> <정현준 보철과 원장님> 강남 논현역치과 선택에 대해 많은 고민이 있으실 것이라 생각되는데요. 저희 스노우치과는 의료진들 모두가 서로 협력하고 존중하며 환자분들을 위한 최상의 진료 서비스를 제공하기 위해 노력하고 있어요. 실제로, 양질의 진료를 제공하기 위해서는 전문의의 역량도 중요하겠지만 의사, 치과 위생사, 치기공사 모두가 협력하는 것이 필수적이라고 생각해요. 과도한 진료에 대한 우려를 덜어 드리기 위해 도움이 되는 치아 관련 정보를 지속적으로 가감없이 포스팅하고 있어요. 논현역치과 스노우치과 또한, 신뢰성을 보장하기 위해 X-ray와 같은 입증된 자료를 바탕으로 상세한 설명을 드린 후 진료를 진행하므로 걱정하지 않으셔도 되요.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "합리적인(1), 최대한(1), 누구나(1), 최상의(1), 가격(1), 가장(1), 추천(1)",
+        "excessive_words": "치아(17)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "48.85%",
+            "keywords": "치아(10), 충치(9), 치료(8), 진료(6), 논현역치과(4), 경우(4), 신경(3), 제공(3), 필요(3), 주기(2), 중요(2), 크라운(2), 발생(2), 인레이(2), 강남(2), 장점(2), 조기(2), 선택(2), 우려(2), 발치(2), 양질(1), 정기적(1), 조직(1), 전문의(1), 안쪽(1), 적용(1), 영향(1), 일반적(1), 자신(1), 재료(1), 자리(1), 양치질(1), 턱뼈(1), 상아질(1), 우식증(1), 실란트(1), 주위염(1), 신경치료(1), 기공물(1), 보철물(1), 보철(1), 침식(1), 질병(1), 부위(1), 표면(1), 확산(1), 혈관(1), 지속적(1), 검진(1), 질환(1), 물론(1), 추천(1), 대표적(1), 치과(1), 진단(1), 이상(1), 부담(1), 본원(1), 상태(1), 원내(1), 유지(1), 구강(1), 칼슘(1), 내구성(1), 과도(1), 내부(1), 바탕(1), 방식(1), 고민(1), 크라운치료(1), 임플란트(1), 환자분(1), 기공소(1), 치료비용(1), 저희(1), 보장(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "15.65%",
+            "keywords": "진행(4), 생각(3), 때문(3), 단계(3), 해당(2), 모두(2), 자녀(2), 이용(2), 도움(1), 상대적(1), 예정(1), 해결(1), 포스팅(1), 존중(1), 입증(1), 가능성(1), 오늘(1), 서비스(1), 주목(1), 보유(1), 방지(1), 대표(1), 사전(1), 얼마(1), 정확(1), 의사(1), 연구(1), 최근(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "6.11%",
+            "keywords": "과정(4), 가능(2), 관련(2), 걱정(2), 역량(1), 누구(1), 치기공사(1), 규모(1), 시작(1), 위생사(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "4.2%",
+            "keywords": "설명(3), 제거(2), 발견(2), 문제(2), 무기질(1), 수정(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "3.05%",
+            "keywords": "방법(3), 인체(1), 삭제(1), 부착(1), 가격(1), 다음(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "2.67%",
+            "keywords": "범위(2), 협력(2), 자료(1), 보호(1), 신뢰성(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "2.67%",
+            "keywords": "예방(3), 불소도포(1), 소독(1), 색깔(1), 하루(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.29%",
+            "keywords": "정보(2), 필수적(1), 이제(1), 뿌리(1), 부모님(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "2.29%",
+            "keywords": "노력(2), 성인(2), 아이들(1), 화요일(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "1.91%",
+            "keywords": "스노우치과(4), 합리적(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.53%",
+            "keywords": "가감(1), 논현역(1), 자체(1), 안녕(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "1.15%",
+            "keywords": "레진(3)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.76%",
+            "keywords": "친화적(1), 최상(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.38%",
+            "keywords": "영양공급(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.38%",
+            "keywords": "수명(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "0.38%",
+            "keywords": "사람들(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "35.37%",
+            "words": "치료(13), 치아(11), 충치(9), 치과(9), 것(8), 진료(6), 단계(5), 논현역(5), 진행(4), 과정(4), 가능(4), 후(4), 경우(4), 스노우(4), 수(4), 신경(4), 레진(3), 원장(3), 때문(3), 분(3), 인레이(3), 크라운(3), 환자(3), 예방(3), 필요(3), 설명(3), 생각(3), 제공(3), 방법(3), 발생(2), 검진(2), 제거(2), 정보(2), 걱정(2), 자녀(2), 정기(2), 대표(2), 관련(2), 문제(2), 조기(2), 번(2), 강남(2), 주기(2), 기공(2), 범위(2), 선택(2), 이용(2), 우려(2), 해당(2), 장점(2), 중요(2), 발치(2), 협력(2), 모두(2), 노력(2), 성인(2), 보철(2), 발견(2), 혈관(1), 조직(1), 상아질(1), 안(1), 본(1), 하루(1), 점(1), 자신(1), 색깔(1), 물(1), 부착(1), 상대(1), 수명(1), 내구(1), 적용(1), 방식(1), 내부(1), 보호(1), 의사(1), 위생사(1), 공사(1), 필수(1), 역량(1), 전문의(1), 최상(1), 서비스(1), 양질(1), 과도(1), 도움(1), 입증(1), 자료(1), 바탕(1), 보장(1), 신뢰(1), 지속(1), 가감(1), 포스팅(1), 존중(1), 의료진(1), 영양(1), 공급(1), 해결(1), 재료(1), 친화(1), 다음(1), 자리(1), 인체(1), 보철물(1), 임(1), 정현준(1), 고민(1), 저희(1), 김기영(1), 확산(1), 플란트(1), 주위염(1), 턱뼈(1), 소독(1), 등(1), 비용(1), 부담(1), 연구(1), 가격(1), 합리(1), 제작(1), 수정(1), 최근(1), 사람(1), 질환(1), 중(1), 구강(1), 주목(1), 상태(1), 유지(1), 보유(1), 소(1), 정확(1), 진단(1), 시작(1), 오늘(1), 비(1), 화요일(1), 과잉(1), 사전(1), 원내(1), 자체(1), 본원(1), 규모(1), 방지(1), 평(1), 하나(1), 부모(1), 무기질(1), 침식(1), 질병(1), 안녕(1), 인(1), 안쪽(1), 칼슘(1), 이(1), 뿌리(1), 표면(1), 삭제(1), 추천(1), 개월(1), 영향(1), 얼마(1), 우식증(1), 일반(1), 불소(1), 도포(1), 양치질(1), 아이(1), 누구(1), 텐데요(1), 실란(1), 트(1), 이제(1), 주(1), 예정(1), 거(1), 이상(1), 건(1), 부위(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "16.08%",
+            "words": "를(19), 을(18), 에(17), 의(15), 이(15), 가(12), 는(9), 으로(8), 과(6), 도(6), 까지(4), 로(4), 은(4), 와(2), 나(2), 만(1), 부터(1), 께(1), 보다(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "14.63%",
+            "words": "있(16), 되(7), 이(7), 하(7), 치아(6), 받(4), 인(4), 대해(3), 위해(3), 주(3), 가지(2), 이루어지(2), 드리(2), 않(2), 깊(2), 라고(2), 많(2), 위해서(2), 채워(1), 번졌(1), 만들(1), 뜬(1), 크(1), 뛰어나(1), 긴(1), 더러워진(1), 거치(1), 씌우(1), 없애(1), 씌워(1), 치(1), 위한(1), 대한(1), 덜(1), 드린(1), 같(1), 해요(1), 이루어져야(1), 약해진(1), 못하(1), 안타깝(1), 커지(1), 된다면(1), 나(1), 일컫(1), 무르(1), 자리잡히(1), 생기(1), 쉬우며(1), 좋(1), 빠르(1), 둔(1), 예요(1), 맞춤(1), 활기차(1), 줄여(1), 드릴려고(1), 그럼에도(1), 찾아가(1), 아닌지(1), 드려요(1), 할(1), 드릴께요(1), 작(1), 맞출(1), 채우(1), 두(1), 흐린(1), 올바른(1), 드실(1), 드릴(1), 살펴봐(1), 할께요(1), 끝난다는(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "11.97%",
+            "words": "고(17), 는(15), 게(13), 기(11), 어요(7), 요(4), 은(4), 어(3), 지(3), 니(3), 면(2), 다면(2), 지요(2), 예요(2), 지만(2), 다는(2), 며(2), 도록(2), 라고(1), 므로(1), 는데요(1), 라(1), 을(1), 면서(1), 려고(1), 라면(1), 아(1), 으므로(1), 아야(1), 죠(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "8.65%",
+            "words": "하(28), 적(8), 한(8), 들(6), 님(4), 되(4), 성(3), 해(3), 해요(2), 째(2), 해야(2), 해서(2), 된(1), 할(1), 할까요(1), 했(1), 돼요(1), 네(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "6.21%",
+            "words": ".(27), ,(11), :(4), ?(2), <(2), >(2), X(1), -(1), ray(1), 4(1), ^^(1), 6(1), 2(1), 100(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.44%",
+            "words": "우선(2), 또한(2), 아직(2), 실제로(1), 살짝(1), 이어서(1), 그대로(1), 없이(1), 원래(1), 및(1), 대체(1), 제대로(1), 깨끗이(1), 또는(1), 서로(1), 따라서(1), 물론(1), 보다(1), 가장(1), 현재(1), 언제나(1), 최대한(1), 자주(1), 오락가락(1), 미리(1), 더욱(1), 꼼꼼(1), 간략히(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.77%",
+            "words": "었(6), 세요(2), 으실(2), 시(2), 으셔도(1), 겠(1), 으시(1), 실(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "1.22%",
+            "words": "그(2), 이(2), 모든(1), 세(1), 첫(1), 여러(1), 이런(1), 저런(1), 약(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.55%",
+            "words": "상세(1), 비슷(1), 간단(1), 유용(1), 불구(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.11%",
+            "words": "불(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "169",
+        "words": [
+            {
+                "word": "치아",
+                "count": "10"
+            },
+            {
+                "word": "충치",
+                "count": "9"
+            },
+            {
+                "word": "치료",
+                "count": "8"
+            },
+            {
+                "word": "진료",
+                "count": "6"
+            },
+            {
+                "word": "경우",
+                "count": "4"
+            },
+            {
+                "word": "진행",
+                "count": "4"
+            },
+            {
+                "word": "과정",
+                "count": "4"
+            },
+            {
+                "word": "논현역치과",
+                "count": "4"
+            },
+            {
+                "word": "스노우치과",
+                "count": "4"
+            },
+            {
+                "word": "방법",
+                "count": "3"
+            },
+            {
+                "word": "제공",
+                "count": "3"
+            },
+            {
+                "word": "원장님",
+                "count": "3"
+            },
+            {
+                "word": "때문",
+                "count": "3"
+            },
+            {
+                "word": "설명",
+                "count": "3"
+            },
+            {
+                "word": "생각",
+                "count": "3"
+            },
+            {
+                "word": "예방",
+                "count": "3"
+            },
+            {
+                "word": "신경",
+                "count": "3"
+            },
+            {
+                "word": "단계",
+                "count": "3"
+            },
+            {
+                "word": "필요",
+                "count": "3"
+            },
+            {
+                "word": "레진",
+                "count": "3"
+            },
+            {
+                "word": "선택",
+                "count": "2"
+            },
+            {
+                "word": "발치",
+                "count": "2"
+            },
+            {
+                "word": "문제",
+                "count": "2"
+            },
+            {
+                "word": "우려",
+                "count": "2"
+            },
+            {
+                "word": "중요",
+                "count": "2"
+            },
+            {
+                "word": "걱정",
+                "count": "2"
+            },
+            {
+                "word": "장점",
+                "count": "2"
+            },
+            {
+                "word": "협력",
+                "count": "2"
+            },
+            {
+                "word": "자녀",
+                "count": "2"
+            },
+            {
+                "word": "모두",
+                "count": "2"
+            },
+            {
+                "word": "이용",
+                "count": "2"
+            },
+            {
+                "word": "범위",
+                "count": "2"
+            },
+            {
+                "word": "주기",
+                "count": "2"
+            },
+            {
+                "word": "정보",
+                "count": "2"
+            },
+            {
+                "word": "조기",
+                "count": "2"
+            },
+            {
+                "word": "해당",
+                "count": "2"
+            },
+            {
+                "word": "강남",
+                "count": "2"
+            },
+            {
+                "word": "성인",
+                "count": "2"
+            },
+            {
+                "word": "관련",
+                "count": "2"
+            },
+            {
+                "word": "발생",
+                "count": "2"
+            },
+            {
+                "word": "인레이",
+                "count": "2"
+            },
+            {
+                "word": "발견",
+                "count": "2"
+            },
+            {
+                "word": "크라운",
+                "count": "2"
+            },
+            {
+                "word": "가능",
+                "count": "2"
+            },
+            {
+                "word": "환자분들",
+                "count": "2"
+            },
+            {
+                "word": "노력",
+                "count": "2"
+            },
+            {
+                "word": "제거",
+                "count": "2"
+            },
+            {
+                "word": "인레이치료",
+                "count": "1"
+            },
+            {
+                "word": "적용",
+                "count": "1"
+            },
+            {
+                "word": "부착",
+                "count": "1"
+            },
+            {
+                "word": "내구성",
+                "count": "1"
+            },
+            {
+                "word": "기공물",
+                "count": "1"
+            },
+            {
+                "word": "방식",
+                "count": "1"
+            },
+            {
+                "word": "혈관",
+                "count": "1"
+            },
+            {
+                "word": "상아질",
+                "count": "1"
+            },
+            {
+                "word": "소독",
+                "count": "1"
+            },
+            {
+                "word": "신경치료",
+                "count": "1"
+            },
+            {
+                "word": "조직",
+                "count": "1"
+            },
+            {
+                "word": "수명",
+                "count": "1"
+            },
+            {
+                "word": "내부",
+                "count": "1"
+            },
+            {
+                "word": "상대적",
+                "count": "1"
+            },
+            {
+                "word": "영향",
+                "count": "1"
+            },
+            {
+                "word": "안쪽",
+                "count": "1"
+            },
+            {
+                "word": "무기질",
+                "count": "1"
+            },
+            {
+                "word": "우식증",
+                "count": "1"
+            },
+            {
+                "word": "일반적",
+                "count": "1"
+            },
+            {
+                "word": "자리",
+                "count": "1"
+            },
+            {
+                "word": "이제",
+                "count": "1"
+            },
+            {
+                "word": "침식",
+                "count": "1"
+            },
+            {
+                "word": "질병",
+                "count": "1"
+            },
+            {
+                "word": "해결",
+                "count": "1"
+            },
+            {
+                "word": "자신",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "삭제",
+                "count": "1"
+            },
+            {
+                "word": "뿌리",
+                "count": "1"
+            },
+            {
+                "word": "표면",
+                "count": "1"
+            },
+            {
+                "word": "색깔",
+                "count": "1"
+            },
+            {
+                "word": "가감",
+                "count": "1"
+            },
+            {
+                "word": "과도",
+                "count": "1"
+            },
+            {
+                "word": "도움",
+                "count": "1"
+            },
+            {
+                "word": "필수적",
+                "count": "1"
+            },
+            {
+                "word": "역량",
+                "count": "1"
+            },
+            {
+                "word": "양질",
+                "count": "1"
+            },
+            {
+                "word": "전문의",
+                "count": "1"
+            },
+            {
+                "word": "지속적",
+                "count": "1"
+            },
+            {
+                "word": "예정",
+                "count": "1"
+            },
+            {
+                "word": "자료",
+                "count": "1"
+            },
+            {
+                "word": "바탕",
+                "count": "1"
+            },
+            {
+                "word": "입증",
+                "count": "1"
+            },
+            {
+                "word": "보장",
+                "count": "1"
+            },
+            {
+                "word": "포스팅",
+                "count": "1"
+            },
+            {
+                "word": "신뢰성",
+                "count": "1"
+            },
+            {
+                "word": "서비스",
+                "count": "1"
+            },
+            {
+                "word": "최상",
+                "count": "1"
+            },
+            {
+                "word": "보철물",
+                "count": "1"
+            },
+            {
+                "word": "주위염",
+                "count": "1"
+            },
+            {
+                "word": "보호",
+                "count": "1"
+            },
+            {
+                "word": "영양공급",
+                "count": "1"
+            },
+            {
+                "word": "친화적",
+                "count": "1"
+            },
+            {
+                "word": "재료",
+                "count": "1"
+            },
+            {
+                "word": "턱뼈",
+                "count": "1"
+            },
+            {
+                "word": "확산",
+                "count": "1"
+            },
+            {
+                "word": "의료진들",
+                "count": "1"
+            },
+            {
+                "word": "존중",
+                "count": "1"
+            },
+            {
+                "word": "고민",
+                "count": "1"
+            },
+            {
+                "word": "보철",
+                "count": "1"
+            },
+            {
+                "word": "가능성",
+                "count": "1"
+            },
+            {
+                "word": "인체",
+                "count": "1"
+            },
+            {
+                "word": "규모",
+                "count": "1"
+            },
+            {
+                "word": "임플란트",
+                "count": "1"
+            },
+            {
+                "word": "대체치아",
+                "count": "1"
+            },
+            {
+                "word": "4단계",
+                "count": "1"
+            },
+            {
+                "word": "다음",
+                "count": "1"
+            },
+            {
+                "word": "2단계",
+                "count": "1"
+            },
+            {
+                "word": "크라운치료",
+                "count": "1"
+            },
+            {
+                "word": "<김기영",
+                "count": "1"
+            },
+            {
+                "word": "대표",
+                "count": "1"
+            },
+            {
+                "word": "위생사",
+                "count": "1"
+            },
+            {
+                "word": "치기공사",
+                "count": "1"
+            },
+            {
+                "word": "치과",
+                "count": "1"
+            },
+            {
+                "word": "의사",
+                "count": "1"
+            },
+            {
+                "word": "<정현준",
+                "count": "1"
+            },
+            {
+                "word": "저희",
+                "count": "1"
+            },
+            {
+                "word": "하루",
+                "count": "1"
+            },
+            {
+                "word": "추천",
+                "count": "1"
+            },
+            {
+                "word": "자체",
+                "count": "1"
+            },
+            {
+                "word": "물론",
+                "count": "1"
+            },
+            {
+                "word": "원내",
+                "count": "1"
+            },
+            {
+                "word": "논현역",
+                "count": "1"
+            },
+            {
+                "word": "화요일",
+                "count": "1"
+            },
+            {
+                "word": "사전",
+                "count": "1"
+            },
+            {
+                "word": "치료비용",
+                "count": "1"
+            },
+            {
+                "word": "상태",
+                "count": "1"
+            },
+            {
+                "word": "정기검진",
+                "count": "1"
+            },
+            {
+                "word": "얼마",
+                "count": "1"
+            },
+            {
+                "word": "칼슘",
+                "count": "1"
+            },
+            {
+                "word": "질환",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "대표적",
+                "count": "1"
+            },
+            {
+                "word": "부모님",
+                "count": "1"
+            },
+            {
+                "word": "주목",
+                "count": "1"
+            },
+            {
+                "word": "유지",
+                "count": "1"
+            },
+            {
+                "word": "최근",
+                "count": "1"
+            },
+            {
+                "word": "사람들",
+                "count": "1"
+            },
+            {
+                "word": "누구",
+                "count": "1"
+            },
+            {
+                "word": "아이들",
+                "count": "1"
+            },
+            {
+                "word": "불소도포",
+                "count": "1"
+            },
+            {
+                "word": "실란트",
+                "count": "1"
+            },
+            {
+                "word": "검진",
+                "count": "1"
+            },
+            {
+                "word": "정기적",
+                "count": "1"
+            },
+            {
+                "word": "양치질",
+                "count": "1"
+            },
+            {
+                "word": "연구",
+                "count": "1"
+            },
+            {
+                "word": "부담",
+                "count": "1"
+            },
+            {
+                "word": "방지",
+                "count": "1"
+            },
+            {
+                "word": "환자분",
+                "count": "1"
+            },
+            {
+                "word": "과잉치료",
+                "count": "1"
+            },
+            {
+                "word": "진단",
+                "count": "1"
+            },
+            {
+                "word": "시작",
+                "count": "1"
+            },
+            {
+                "word": "정확",
+                "count": "1"
+            },
+            {
+                "word": "본원",
+                "count": "1"
+            },
+            {
+                "word": "기공소",
+                "count": "1"
+            },
+            {
+                "word": "합리적",
+                "count": "1"
+            },
+            {
+                "word": "가격",
+                "count": "1"
+            },
+            {
+                "word": "수정",
+                "count": "1"
+            },
+            {
+                "word": "보철제작",
+                "count": "1"
+            },
+            {
+                "word": "보유",
+                "count": "1"
+            },
+            {
+                "word": "이상",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "크라운치료",
+            "search_volume_total": "13,500",
+            "search_volume_pc": "2,000",
+            "search_volume_mobile": "11,500",
+            "clicks_pc": "1",
+            "clicks_mobile": "15",
+            "ctr_pc": "0.06%",
+            "ctr_mobile": "0.14%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "레진인레이",
+            "search_volume_total": "1,160",
+            "search_volume_pc": "230",
+            "search_volume_mobile": "930",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        },
+        {
+            "rank": "3",
+            "keyword": "논현역치과",
+            "search_volume_total": "970",
+            "search_volume_pc": "170",
+            "search_volume_mobile": "800",
+            "clicks_pc": "0",
+            "clicks_mobile": "0",
+            "ctr_pc": "0.06%",
+            "ctr_mobile": "0.04%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "4",
+            "keyword": "크라운치료과정",
+            "search_volume_total": "290",
+            "search_volume_pc": "60",
+            "search_volume_mobile": "230",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "중간",
+            "ad_count": "2"
+        }
+    ],
+    "same_topic_posting": "논현역치과 (1111), 크라운치료 (149), 크라운치료과정 (84), 레진인레이 (52)"
+}

@@ -1,0 +1,961 @@
+{
+    "posting_score": "최적4-Lv.1",
+    "exposure_score": "92.71",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "84.67",
+            "evaluation": "적합",
+            "percentage": "84.67%"
+        },
+        {
+            "category": "주제",
+            "score": "71.56",
+            "evaluation": "적합",
+            "percentage": "71.56%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "60.33",
+            "evaluation": "적합",
+            "percentage": "60.33%"
+        },
+        {
+            "category": "형태소",
+            "score": "61.60",
+            "evaluation": "적합",
+            "percentage": "61.60%"
+        },
+        {
+            "category": "가독성",
+            "score": "67.78",
+            "evaluation": "적합",
+            "percentage": "67.78%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "93.00",
+            "evaluation": "정보성",
+            "percentage": "93.00%"
+        }
+    ],
+    "publish_time": "2023-12-14 00",
+    "exposure_status": "발행된지 585일 (15시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:13:13 정상 노출됩니다.",
+    "text_analysis": {
+        "title_with_space": "36",
+        "title_without_space": "28",
+        "content_with_space": "3,020",
+        "content_without_space": "2,389"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "391",
+        "syllable_count": "632",
+        "word_count": "176",
+        "abusing_word_count": "1"
+    },
+    "image_analysis": {
+        "valid_images": "0",
+        "invalid_images": "11",
+        "material_images": "0",
+        "uploaded_images": "11",
+        "content_images": "11",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMTAg/MDAxNzAyMTcxNjIzOTkz.08Kj6Wf2VaaBxvvUlalytt4pWqvqW0gCPZ6NaBIfYoEg.m2r3Q-R8Q_NlWrWHU2adQ2iPhKn-1B_-m9gAUM58HzUg.PNG.homeplant/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-12-10_102647.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMjUx/MDAxNzAyMTcxMzExNjk2.nT63JW83tzYZzciyW5gHSeE5CneDgb4dkxoAujXl9CAg.TsgXZi_nR2b3uIJ8EjwLKYlr79WmgckXe_sLAWFUAjQg.PNG.homeplant/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-12-10_102057.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfMjk1/MDAxNzAyMTc0OTQ3Njc4.2bVcE_yXCT8ek1VAlPf33aLIJkcxFLHFd07gxJ06-Hwg.sufiNolkTiwZPrshRwm9_NhMk57wWqGDUgoEl2SEZI8g.PNG.homeplant/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-12-10_112203.png?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMTBfNDAg/MDAxNzAyMTc0NzkyNTI4.CnnkOUl6EXxWYwFsNjfYlj8F5hA5ViSNQnXr7Bb2_bcg.I4hNankpYg9znybfd74lDOX8q22MU0HVpzPOukdeh00g.PNG.homeplant/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2023-12-10_111934.png?type=w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfNTgg/MDAxNzAyNDc4NzAxNTA0.zqAjDISgkMhibCmV8fYRvt3We_sQCoMdNBitW9p5rY8g.BPbvHnfglvlDsa5XTd2n40IOmoLl5P--T4Yl5sVeyTgg.GIF.homeplant/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94__(10).gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfMjEx/MDAxNzAyNDc1NzM4MDk3.Uf_-vRwYYe_Jjpb5dZSthU7Xa1kRzrEGbTmbKsxl_IIg.hl5l9MwFIBmHNz0Q5JFLnYkhD5z-nIjxF3fcWC81s20g.GIF.homeplant/%EC%99%84%EC%84%B11.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfNTkg/MDAxNzAyNDc1ODEwOTQy.EZ7V-RaIOWsws2v8iKevig9sPJUHopnZR7_BqhIyAUcg.1QKotZge0iWdlQq__qMaZb9yn3OsgBFFtzA4EN2XakUg.GIF.homeplant/%EC%99%84%EC%84%B12.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfMTk1/MDAxNzAyNDc1ODQzNDA3.kr3AWwQvCYIhdsi5KpXN1FwHV706b9IRH4wLs4uo47Ig.cHEWtYBPU2AwoBL8AzQKsctF8DAq_hK3rMg-0-MeISIg.GIF.homeplant/%EC%99%84%EC%84%B13.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfMTUy/MDAxNzAyNDc1ODg1NjQw.suUOsxMSgqmsMQ9KsE1WxsHPe_pi-XFK5CvEu3SimK4g.XESGQxTyTCW6IqanF62Lt4tD3iccRtez17AadXvJ1bAg.GIF.homeplant/%EC%99%84%EC%84%B14.gif?type=mp4w800",
+            "https://mblogvideo-phinf.pstatic.net/MjAyMzEyMTNfMTcx/MDAxNzAyNDc1OTA1NDQy.Xe53pCxTaqK7xKC5OasW74LwtgBrg2go_UyuTjVKrJQg.OZC3YA1AYkxZZ9GQS-KLzy8yS0s0c2MKyNoG6c9IdCkg.GIF.homeplant/%EC%99%84%EC%84%B15.gif?type=mp4w800",
+            "https://phinf.pstatic.net/image.nmv/blog_2023_12_10_2032/b3428b13-9704-11ee-a1a1-a0369ffaba80_01.jpg"
+        ]
+    },
+    "post_title": "미성숙 영구치의 근관치료 (치아 뿌리가 덜 자란 치아의 신경치료)",
+    "post_content": "안녕하세요. 내 치아 살리기와 아프지 않은 신경치료를 위해서 열공하는 서초동 홈플란트치과 Dr. 홈플쌤 입니다. 아직 나이가 어린 10대 학생의 경우, 아무리 부모님이 치아 관리를 잘 해준다고 하지만 충치에 취약할 수 있습니다. 만약 평생 사용해야 할 영구치에 충치가 심하다면 어린 나이에 신경치료를 해야 하는 건지,, 특히 아직 다 자라지 않은 미성숙 영구치의 경우라면 어떤 치료를 해야 하는지 관련 내용들을 설명드릴까 합니다. 자연치아살리기 홈플란트치과의원 근관치료란? 치수질환과 치근단 질환을 대상으로 시행하는 근관치료는 근관 속의 세균과 감염된 치수를 기계 화학적 방법으로 제거 (근관 형성, canal preparation) 한 후에 근관 내부를 밀폐 (근관충전, canal obturation) 함으로써 근관이 다시 감염되지 않도록 차단하는 술식으로 이루어진다. 신경 치료라고도 불리지만 치아의 신경만을 치료하는 것은 아니고 치아의 내부, 즉 치근관(root canal)의 연조직(치수)을 제거하는 치료이므로 근관 치료라 부르는 것이 옳다 출처:위키백과,https://ko.wikipedia.org/wiki/근관_치료 아직 영구치가 다 자라지 않은 상태에서 충치가 깊은 경우에는 어른들처럼 신경치료를 하지 않습니다. 먼저 근관치료(신경치료) 방법은 치수가 살아 있는지 괴사하였는지에 따라 ‘생활치(치수가 살이 있는 경우) 치료'와 ‘실활치(치수가 괴사된 경우) '치료로 나누어 설명드리겠습니다. 생활치 치료 (살아있는 치수 치료) ※ 치수절단술 (Pulpotomy) 보통 6~12세 아동의 유치나 미완성 영구치의 경우(뿌리가 완전히 자라지 않은 영구치)의 치아 뿌리 쪽에는 이상이 없고 치관부에만 국한된 염증의 경우의 술식입니다. 치관부의 신경과 혈관을 완전히 제거하고 치아 뿌리 쪽 신경은 약재를 이용하여 치수 조직을 보존하는 치료방법으로 치수의 생활력을 유지하며 건전한 치근부의 치수는 남기는 술식입니다. 미성숙 영구치의 치수절단술 (사진출처 : medicaldialogues.in/dentistry) 미성숙 영구치를 신경치료로 치수를 제거하게 되면 뿌리가 열려 있는 채로 성장이 끝나게 되는 것입니다. 뿌리 쪽 신경이 남아 있어야만 치아에 영양 공급도 가능하기 때문에 장기적인 치아 건강을 위해 뿌리 쪽 신경을 제거하지 않고 치수절단술로 보존해 주는 것입니다. 생활력이 유지된 치근부 치수에 의해 치수 생활력 보존 및 유지와 치근단이 정상 발육할 수 있도록 유도해 줍니다. 신경 일부를 남겨 놓다 보니 남은 신경이 괴사하고 세균이 증식할 가능성이 있어서 실패할 가능성이 높기 때문에 성인 치료로는 제한적 치료방법이지만 (성인의 경우에는 통증 완화를 위한 응급처치로 시술해 주며 신경관이 석회화된 경우 무리하게 근관치료를 하지 않고 치료방법을 사용합니다). 단,치수 절단술은 모든 환자에게 적용 가능한 시술은 아니며 수술 과정에서 구강 상태에 따라 수술 방법이 변경되거나 추가될 수도 있습니다. 성인의 치수절단술 (pulpotomy) (사진출처 : onlinelibrary.wiley.com) ※ 치근단 유도술 (Apexogenesis) 치수절단술(Pulpotomy) 보다 치수 감염이 넓을 경우(1/3이 넘은 경우)의 시술 방법으로 치근단이 아직 다 완성되지 않은 미완성 영구치의 신경치료로 치근단의 형성을 유도해 주는 것은 동일한 치료 방법이지만, 치근단 유도술은 유치에는 시술하지 않으며 미성숙 영구치(뿌리가 아직 다 자라지 않은 치아)의 치료방법입니다. (미성숙 영구치 치근단 유도술) 사진출처 : Dundee School of Dentistry 사진출처 : Dundee School of Dentistry 사진출처 : Dundee School of Dentistry 사진출처 : Dundee School of Dentistry 사진출처 : Dundee School of Dentistry 미성숙 영구치에 신경치료를 하여 치수를 제거하는 치근단절제술(Pulpectomy)을 하게 되면 치아는 더 이상 영양을 공급받지 못해서 뿌리가 열린 채로 치아의 성장이 끝나게 되면서 치아는 점차 약해지게 됩니다. 치수를 보존하여 치아 뿌리 형성을 유도해 주는 치료가 필요한 것입니다. 실활치수치료 (치수가 괴사된 경우) ※치근단형성술 (Apexification) 미성숙 영구 치아의 근관내 생활 치수가 괴사된 경우, 약제로 근단부의 형성을 도모하는 방법입니다. 수산화칼슘(calcium hydroxide)으로 충전한 후, 3개월 정도 정기 내원하여 방사선 촬영으로 근첨 벽면(apical barrier) 형성을 확인한 뒤, 수산화칼슘을 교체해 줍니다. 치료 기간은 환자의 나이, 감염 상태 등에 따라 다르며, 근첨 벽면 형성이 확인되면 근관충전이 가능한지 치료 방법을 결정하게 됩니다. 미성숙 영구치의 치근단형성 (사진출처 : www.youtube.com/watch?app=desktop&v=W89lypLUfRU) 치근단형성술 (사진출처 : www.youtube.com/watch?app=desktop&v=W89lypLUfRU) 결론 미성숙 영구치의 충치가 심해서 근관치료가 필요한 경우에는 신속히 치과에 방문하셔서 검진을 하셔야 합니다. 치수 감염으로 치통이 생긴 경우 진통제를 복용하며 참고 계신 분들이 많은데 치수가 괴사되어 근단에 농양이 생긴 경우에는 근관 치료 후에도 예후가 좋지 않을 수 있으며 심지어 발치 후 임플란트 치료를 고려해야만 하는 상황에 직면할 수도 있습니다. 충치가 깊어서 신경치료를 해야 하는데 혹시나 발치가 필요하지 않을까, 신경치료 후 치아의 수명이 오래가지 않을까 걱정하며 질문을 주시는 환자분들도 계시는데 제대로 근관치료를 받고 나서 감염 증상이 사라지고 크라운을 씌우게 되면 치아는 정상적인 저작기능이 가능하며 이후 유지 관리만 잘 해주신다면 치아의 수명도 줄어들지 않으니 크게 걱정하실 필요는 없습니다. 소중한 우리 학생들의 치아 보존을 위해서 치과 검진과 충치치료는 미루지 않도록 당부의 말씀을 전하며 오늘은 여기까지 말씀드리도록 하겠습니다. 궁금하신 점은 아래의 댓글로 남겨주시면 자세히 답변드리도록 하겠습니다. 감사합니다. 근관치료 교대역치과",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "완전히(2)",
+        "excessive_words": "치료(39), 치수(27), 치아(19), 경우(16), 영구치(13)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "59.27%",
+            "keywords": "치아(15), 경우(15), 치수(15), 치료(15), 영구치(12), 신경(8), 신경치료(8), 미성숙(8), 괴사(6), 감염(6), 근관(5), 보존(5), 충치(5), 유지(4), 필요(4), 시술(4), 치근(4), 상태(3), 술식(3), 유도술(3), 치근부(2), 수산화칼슘(2), 환자(2), 치근단(2), 근첨(2), 발치(2), 성장(2), 세균(2), 말씀(2), 관리(2), 치과(2), 검진(2), 수술(2), 내부(2), 이상(2), 유치(2), 증상(1), 증식(1), 질환(1), 근관충전(1), 진통제(1), 조직(1), 자연(1), 장기적(1), 정상적(1), 제한적(1), 충전(1), 분들(1), 충치치료(1), 농양(1), 치근관(1), 크라운(1), 응급처치(1), 완화(1), 생활치(1), 혈관(1), 예후(1), 석회화(1), 치통(1), 무리(1), 임플란트(1), 열공(1), 홈플란트치과(1), 홈플쌤(1), 약재(1), 이후(1), 정상(1), 정도(1), 통증(1), 적용(1), 구강(1), 건강(1), 방사선(1), 복용(1), 실패(1), 아래(1), 발육(1), 도모(1), 고려(1), 국한(1), 내원(1), 답변(1), 염증(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "6.53%",
+            "keywords": "사진출처(5), 가능성(2), 때문(2), 공급(2), 완성(1), 오늘(1), 우리(1), 이용(1), 추가(1), 일부(1), 동일(1), 당부(1), 영구(1), 시행(1), 취약(1), 서초동(1), 결론(1), 대상(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "6.27%",
+            "keywords": "형성(6), 가능(4), 생활력(3), 영양(2), 걱정(2), 과정(1), 상황(1), 아동(1), 평생(1), 생활(1), 관련(1), 기계(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "3.13%",
+            "keywords": "제거(6), 확인(2), 설명(2), 벽면(2)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "2.87%",
+            "keywords": "방법(7), 사용(2), 변경(1), 교체(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.61%",
+            "keywords": "뿌리(7), 차단(1), 부모님(1), 밀폐(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.57%",
+            "keywords": "직면(1), 여기(1), 학생(1), 촬영(1), 결정(1), 정기(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.31%",
+            "keywords": "미완성(2), 댓글(1), 보통(1), 안녕(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.31%",
+            "keywords": "성인(2), 학생들(1), 감사(1), 약제(1)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "1.31%",
+            "keywords": "유도(3), 화학적(1), 신경관(1)"
+        },
+        {
+            "category_name": "반려동물",
+            "percentage": "0.78%",
+            "keywords": "수명(2), 절단술(1)"
+        },
+        {
+            "category_name": "미분류",
+            "percentage": "0.78%",
+            "keywords": "나이(3)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.52%",
+            "keywords": "질문(1), 방문(1)"
+        },
+        {
+            "category_name": "국내여행",
+            "percentage": "0.26%",
+            "keywords": "어른들(1)"
+        },
+        {
+            "category_name": "음악",
+            "percentage": "0.26%",
+            "keywords": "기간(1)"
+        },
+        {
+            "category_name": "사진",
+            "percentage": "0.26%",
+            "keywords": "치치수(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "37.01%",
+            "words": "치료(39), 치수(27), 신경(17), 근관(17), 경우(16), 치아(15), 영구치(13), 치근(13), 방법(11), 출처(10), 미성숙(9), 사진(9), 뿌리(9), 충치(6), 가능(6), 것(6), 감염(6), 제거(6), 형성(6), 절단술(6), 술(6), 괴사(6), 유도(6), 후(5), 치과(5), 수(5), 보존(5), 유지(4), 필요(4), 쪽(4), 시술(4), 상태(3), 홈(3), 나이(3), 생활(3), 성인(3), 충전(3), 식(3), 환자(3), 생활력(3), 단형(3), 단(3), 플란트(3), 미완성(2), 관부(2), 부(2), 이상(2), 정상(2), 분(2), 검진(2), 확인(2), 발치(2), 수명(2), 말씀(2), 걱정(2), 벽면(2), 칼슘(2), 때문(2), 영양(2), 성장(2), 유치(2), 수술(2), 수산화(2), 성술(2), 채(2), 공급(2), 질환(2), 세균(2), 설명(2), 관리(2), 내(2), 학생(2), 내부(2), 사용(2), 조직(2), 활(2), 결론(1), 결정(1), 근(1), 등(1), 방문(1), 치통(1), 쌤(1), 농양(1), 복용(1), 진통제(1), 기간(1), 대(1), 뒤(1), 내원(1), 정기(1), 정도(1), 개월(1), 방사선(1), 촬영(1), 예후(1), 보통(1), 부모(1), 첨(1), 교체(1), 플(1), 오늘(1), 여기(1), 아동(1), 당부(1), 우리(1), 점(1), 아래(1), 교대역(1), 감사(1), 답변(1), 댓글(1), 이후(1), 기능(1), 직면(1), 상황(1), 고려(1), 임(1), 서초동(1), 열공(1), 저작(1), 크라운(1), 증상(1), 질문(1), 취약(1), 단부(1), 대상(1), 어른(1), 건강(1), 장기(1), 시행(1), 발육(1), 의원(1), 자연(1), 실패(1), 증식(1), 일부(1), 속(1), 안녕(1), 이용(1), 연(1), 약재(1), 혈관(1), 염증(1), 치근관(1), 차단(1), 위키백과(1), 기계(1), 화학(1), 밀폐(1), 제한(1), 통증(1), 동일(1), 절제술(1), 단의(1), 완성(1), 추가(1), 건지(1), 세(1), 국한(1), 약제(1), 영구(1), 평생(1), 변경(1), 구강(1), 신경관(1), 살(1), 응급처치(1), 완화(1), 석회(1), 무리(1), 과정(1), 관련(1), 적용(1), 내용(1), 도모(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "15.75%",
+            "words": ".(36), ((26), )(26), ,(15), :(11), /(8), Dundee(5), of(5), Dentistry(5), School(5), =(4), ※(3), ?(3), com(3), canal(3), '(2), Pulpotomy(2), ‘(2), youtube(2), W(2), www(2), v(2), desktop(2), 89(2), lypLUfRU(2), 3(2), watch(2), app(2), &(2), calcium(1), barrier(1), apical(1), hydroxide(1), Apexification(1), Pulpectomy(1), dentistry(1), https(1), ko(1), wikipedia(1), org(1), root(1), obturation(1), Dr(1), 10(1), preparation(1), wiki(1), _(1), pulpotomy(1), onlinelibrary(1), wiley(1), Apexogenesis(1), in(1), medicaldialogues(1), 6(1), ~(1), 12(1), 1(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "15.67%",
+            "words": "의(31), 이(27), 을(23), 에(23), 가(20), 를(20), 는(14), 은(10), 로(10), 으로(8), 도(7), 만(5), 과(4), 와(3), 에서(2), 보다(1), 에게(1), 까지(1), 으로써(1), 처럼(1), 나(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "11.48%",
+            "words": "않(16), 하(12), 있(11), 입니다(8), 주(7), 되(5), 자라(4), 치아(4), 따라(3), 이(3), 드리(3), 해야(3), 줍니다(2), 남겨(2), 살(2), 깊(2), 없(2), 됩니다(2), 받(2), 생긴(2), 남(2), 살리(2), 인(2), 끝나(2), 해(2), 합니다(2), 위해서(2), 아니(2), 어린(2), 심해서(1), 아프(1), 참(1), 다르(1), 약해(1), 지(1), 계신(1), 근(1), 열린(1), 좋(1), 줄어들(1), 크(1), 미루(1), 전하(1), 씌우(1), 사라지(1), 못해서(1), 오래가(1), 계시(1), 나(1), 많(1), 넓(1), 란(1), 남기(1), 열려(1), 드릴까(1), 이루어진다(1), 나누(1), 부르(1), 불리(1), 라고(1), 라면(1), 심하(1), 보(1), 높(1), 위한(1), 라(1), 놓(1), 준다고(1), 위해(1), 할(1), 의해(1), 넘(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "9.57%",
+            "words": "는(20), 지(17), 게(9), 은(9), 고(9), 며(8), 습니다(8), 도록(5), 면(5), 지만(4), 여(4), 기(4), 아(3), 는지(3), 는데(2), 어서(2), 을까(2), 어(2), 으며(2), 을(2), 은데(1), 서(1), 면서(1), 으니(1), 어야(1), 므로(1), 다면(1), 다(1), 니(1), 거나(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "6.18%",
+            "words": "하(29), 한(8), 된(7), 해(6), 되(5), 들(5), 할(5), 적(4), 치(3), 성(3), 합니다(2), 해야(2), 될(1), 한지(1), 님(1), 함(1), 화(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "2.13%",
+            "words": "아직(5), 다(4), 완전히(2), 잘(2), 신속히(1), 첨(1), 심지어(1), 점차(1), 혹시나(1), 자세히(1), 제대로(1), 더(1), 단(1), 다시(1), 특히(1), 즉(1), 먼저(1), 및(1), 아무리(1), 만약(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "1.03%",
+            "words": "겠(3), 실(3), 시(2), 신다면(1), 신(1), 셔서(1), 였(1), 세요(1), 셔야(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "0.74%",
+            "words": "단(5), 근(2), 모든(1), 한(1), 어떤(1)"
+        },
+        {
+            "morpheme_type": "감탄사",
+            "percentage": "0.22%",
+            "words": "치(2), 옳다(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.22%",
+            "words": "궁금(1), 소중(1), 건전(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "176",
+        "words": [
+            {
+                "word": "치아",
+                "count": "15"
+            },
+            {
+                "word": "치수",
+                "count": "15"
+            },
+            {
+                "word": "치료",
+                "count": "15"
+            },
+            {
+                "word": "경우",
+                "count": "15"
+            },
+            {
+                "word": "영구치",
+                "count": "12"
+            },
+            {
+                "word": "신경치료",
+                "count": "8"
+            },
+            {
+                "word": "미성숙",
+                "count": "8"
+            },
+            {
+                "word": "신경",
+                "count": "8"
+            },
+            {
+                "word": "방법",
+                "count": "7"
+            },
+            {
+                "word": "뿌리",
+                "count": "7"
+            },
+            {
+                "word": "괴사",
+                "count": "6"
+            },
+            {
+                "word": "근관치료",
+                "count": "6"
+            },
+            {
+                "word": "형성",
+                "count": "6"
+            },
+            {
+                "word": "감염",
+                "count": "6"
+            },
+            {
+                "word": "제거",
+                "count": "6"
+            },
+            {
+                "word": "사진출처",
+                "count": "5"
+            },
+            {
+                "word": "충치",
+                "count": "5"
+            },
+            {
+                "word": "보존",
+                "count": "5"
+            },
+            {
+                "word": "치수절단술",
+                "count": "5"
+            },
+            {
+                "word": "근관",
+                "count": "5"
+            },
+            {
+                "word": "가능",
+                "count": "4"
+            },
+            {
+                "word": "치료방법",
+                "count": "4"
+            },
+            {
+                "word": "필요",
+                "count": "4"
+            },
+            {
+                "word": "치근",
+                "count": "4"
+            },
+            {
+                "word": "(사진출처",
+                "count": "4"
+            },
+            {
+                "word": "시술",
+                "count": "4"
+            },
+            {
+                "word": "유지",
+                "count": "4"
+            },
+            {
+                "word": "유도",
+                "count": "3"
+            },
+            {
+                "word": "상태",
+                "count": "3"
+            },
+            {
+                "word": "술식",
+                "count": "3"
+            },
+            {
+                "word": "나이",
+                "count": "3"
+            },
+            {
+                "word": "생활력",
+                "count": "3"
+            },
+            {
+                "word": "유도술",
+                "count": "3"
+            },
+            {
+                "word": "때문",
+                "count": "2"
+            },
+            {
+                "word": "치근단",
+                "count": "2"
+            },
+            {
+                "word": "공급",
+                "count": "2"
+            },
+            {
+                "word": "세균",
+                "count": "2"
+            },
+            {
+                "word": "가능성",
+                "count": "2"
+            },
+            {
+                "word": "유치",
+                "count": "2"
+            },
+            {
+                "word": "성장",
+                "count": "2"
+            },
+            {
+                "word": "걱정",
+                "count": "2"
+            },
+            {
+                "word": "설명",
+                "count": "2"
+            },
+            {
+                "word": "말씀",
+                "count": "2"
+            },
+            {
+                "word": "검진",
+                "count": "2"
+            },
+            {
+                "word": "확인",
+                "count": "2"
+            },
+            {
+                "word": "수산화칼슘",
+                "count": "2"
+            },
+            {
+                "word": "환자",
+                "count": "2"
+            },
+            {
+                "word": "수명",
+                "count": "2"
+            },
+            {
+                "word": "성인",
+                "count": "2"
+            },
+            {
+                "word": "수술",
+                "count": "2"
+            },
+            {
+                "word": "치근부",
+                "count": "2"
+            },
+            {
+                "word": "영양",
+                "count": "2"
+            },
+            {
+                "word": "사용",
+                "count": "2"
+            },
+            {
+                "word": "내부",
+                "count": "2"
+            },
+            {
+                "word": "이상",
+                "count": "2"
+            },
+            {
+                "word": "미완성",
+                "count": "2"
+            },
+            {
+                "word": "치근단형성술",
+                "count": "2"
+            },
+            {
+                "word": "치과",
+                "count": "2"
+            },
+            {
+                "word": "발치",
+                "count": "2"
+            },
+            {
+                "word": "관리",
+                "count": "2"
+            },
+            {
+                "word": "근첨",
+                "count": "2"
+            },
+            {
+                "word": "벽면",
+                "count": "2"
+            },
+            {
+                "word": "영구치뿌리",
+                "count": "1"
+            },
+            {
+                "word": "동일",
+                "count": "1"
+            },
+            {
+                "word": "추가",
+                "count": "1"
+            },
+            {
+                "word": "변경",
+                "count": "1"
+            },
+            {
+                "word": "치근절제술",
+                "count": "1"
+            },
+            {
+                "word": "완성",
+                "count": "1"
+            },
+            {
+                "word": "충전",
+                "count": "1"
+            },
+            {
+                "word": "과정",
+                "count": "1"
+            },
+            {
+                "word": "교체",
+                "count": "1"
+            },
+            {
+                "word": "촬영",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "도모",
+                "count": "1"
+            },
+            {
+                "word": "약제",
+                "count": "1"
+            },
+            {
+                "word": "제한적",
+                "count": "1"
+            },
+            {
+                "word": "일부",
+                "count": "1"
+            },
+            {
+                "word": "증식",
+                "count": "1"
+            },
+            {
+                "word": "발육",
+                "count": "1"
+            },
+            {
+                "word": "건강",
+                "count": "1"
+            },
+            {
+                "word": "조직",
+                "count": "1"
+            },
+            {
+                "word": "장기적",
+                "count": "1"
+            },
+            {
+                "word": "실패",
+                "count": "1"
+            },
+            {
+                "word": "기간",
+                "count": "1"
+            },
+            {
+                "word": "석회화",
+                "count": "1"
+            },
+            {
+                "word": "무리",
+                "count": "1"
+            },
+            {
+                "word": "신경관",
+                "count": "1"
+            },
+            {
+                "word": "응급처치",
+                "count": "1"
+            },
+            {
+                "word": "완화",
+                "count": "1"
+            },
+            {
+                "word": "절단술",
+                "count": "1"
+            },
+            {
+                "word": "복용",
+                "count": "1"
+            },
+            {
+                "word": "충치치료",
+                "count": "1"
+            },
+            {
+                "word": "당부",
+                "count": "1"
+            },
+            {
+                "word": "학생들",
+                "count": "1"
+            },
+            {
+                "word": "저작기능",
+                "count": "1"
+            },
+            {
+                "word": "크라운",
+                "count": "1"
+            },
+            {
+                "word": "정상적",
+                "count": "1"
+            },
+            {
+                "word": "오늘",
+                "count": "1"
+            },
+            {
+                "word": "여기",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "이용",
+                "count": "1"
+            },
+            {
+                "word": "답변",
+                "count": "1"
+            },
+            {
+                "word": "댓글",
+                "count": "1"
+            },
+            {
+                "word": "아래",
+                "count": "1"
+            },
+            {
+                "word": "증상",
+                "count": "1"
+            },
+            {
+                "word": "환자분들",
+                "count": "1"
+            },
+            {
+                "word": "치통",
+                "count": "1"
+            },
+            {
+                "word": "진통제",
+                "count": "1"
+            },
+            {
+                "word": "방문",
+                "count": "1"
+            },
+            {
+                "word": "치근단형성",
+                "count": "1"
+            },
+            {
+                "word": "결정",
+                "count": "1"
+            },
+            {
+                "word": "분들",
+                "count": "1"
+            },
+            {
+                "word": "농양",
+                "count": "1"
+            },
+            {
+                "word": "직면",
+                "count": "1"
+            },
+            {
+                "word": "질문",
+                "count": "1"
+            },
+            {
+                "word": "상황",
+                "count": "1"
+            },
+            {
+                "word": "고려",
+                "count": "1"
+            },
+            {
+                "word": "예후",
+                "count": "1"
+            },
+            {
+                "word": "근관충전",
+                "count": "1"
+            },
+            {
+                "word": "방사선",
+                "count": "1"
+            },
+            {
+                "word": "(미성숙",
+                "count": "1"
+            },
+            {
+                "word": "실활치수치료",
+                "count": "1"
+            },
+            {
+                "word": "치근단의",
+                "count": "1"
+            },
+            {
+                "word": "구강",
+                "count": "1"
+            },
+            {
+                "word": "단,치수",
+                "count": "1"
+            },
+            {
+                "word": "적용",
+                "count": "1"
+            },
+            {
+                "word": "영구",
+                "count": "1"
+            },
+            {
+                "word": "근관내",
+                "count": "1"
+            },
+            {
+                "word": "결론",
+                "count": "1"
+            },
+            {
+                "word": "임플란트",
+                "count": "1"
+            },
+            {
+                "word": "정기",
+                "count": "1"
+            },
+            {
+                "word": "정도",
+                "count": "1"
+            },
+            {
+                "word": "생활",
+                "count": "1"
+            },
+            {
+                "word": "통증",
+                "count": "1"
+            },
+            {
+                "word": "정상",
+                "count": "1"
+            },
+            {
+                "word": "평생",
+                "count": "1"
+            },
+            {
+                "word": "관련",
+                "count": "1"
+            },
+            {
+                "word": "홈플쌤",
+                "count": "1"
+            },
+            {
+                "word": "홈플란트치과",
+                "count": "1"
+            },
+            {
+                "word": "서초동",
+                "count": "1"
+            },
+            {
+                "word": "홈플란트치과의원",
+                "count": "1"
+            },
+            {
+                "word": "기계",
+                "count": "1"
+            },
+            {
+                "word": "출처:위키백과,https://ko.wikipedia.org/wiki/근관_치료",
+                "count": "1"
+            },
+            {
+                "word": "보통",
+                "count": "1"
+            },
+            {
+                "word": "(근관충전",
+                "count": "1"
+            },
+            {
+                "word": "밀폐",
+                "count": "1"
+            },
+            {
+                "word": "(근관",
+                "count": "1"
+            },
+            {
+                "word": "이후",
+                "count": "1"
+            },
+            {
+                "word": "우리",
+                "count": "1"
+            },
+            {
+                "word": "근관치료신경치료",
+                "count": "1"
+            },
+            {
+                "word": "생활치치수",
+                "count": "1"
+            },
+            {
+                "word": "어른들",
+                "count": "1"
+            },
+            {
+                "word": "연조직치수",
+                "count": "1"
+            },
+            {
+                "word": "치근관",
+                "count": "1"
+            },
+            {
+                "word": "치치수",
+                "count": "1"
+            },
+            {
+                "word": "생활치",
+                "count": "1"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "혈관",
+                "count": "1"
+            },
+            {
+                "word": "국한",
+                "count": "1"
+            },
+            {
+                "word": "경우뿌리",
+                "count": "1"
+            },
+            {
+                "word": "아동",
+                "count": "1"
+            },
+            {
+                "word": "차단",
+                "count": "1"
+            },
+            {
+                "word": "화학적",
+                "count": "1"
+            },
+            {
+                "word": "학생",
+                "count": "1"
+            },
+            {
+                "word": "부모님",
+                "count": "1"
+            },
+            {
+                "word": "열공",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "교대역치과",
+                "count": "1"
+            },
+            {
+                "word": "취약",
+                "count": "1"
+            },
+            {
+                "word": "내용들",
+                "count": "1"
+            },
+            {
+                "word": "대상",
+                "count": "1"
+            },
+            {
+                "word": "시행",
+                "count": "1"
+            },
+            {
+                "word": "질환",
+                "count": "1"
+            },
+            {
+                "word": "치수질환",
+                "count": "1"
+            },
+            {
+                "word": "자연",
+                "count": "1"
+            },
+            {
+                "word": "약재",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "근관치료",
+            "search_volume_total": "1,330",
+            "search_volume_pc": "310",
+            "search_volume_mobile": "1,020",
+            "clicks_pc": "-",
+            "clicks_mobile": "1",
+            "ctr_pc": "-",
+            "ctr_mobile": "0.08%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "치아뿌리",
+            "search_volume_total": "500",
+            "search_volume_pc": "70",
+            "search_volume_mobile": "430",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "치아뿌리 (291), 근관치료 (94)"
+}

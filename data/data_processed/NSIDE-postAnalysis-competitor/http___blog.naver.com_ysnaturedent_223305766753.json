@@ -1,0 +1,749 @@
+{
+    "posting_score": "일반",
+    "exposure_score": "0.00",
+    "posting_score_details": [
+        {
+            "category": "키워드",
+            "score": "83.94",
+            "evaluation": "적합",
+            "percentage": "83.94%"
+        },
+        {
+            "category": "주제",
+            "score": "0.00",
+            "evaluation": "부적합",
+            "percentage": "0.00%"
+        },
+        {
+            "category": "콘텐츠",
+            "score": "66.67",
+            "evaluation": "적합",
+            "percentage": "66.67%"
+        },
+        {
+            "category": "형태소",
+            "score": "56.29",
+            "evaluation": "적합",
+            "percentage": "56.29%"
+        },
+        {
+            "category": "가독성",
+            "score": "76.83",
+            "evaluation": "적합",
+            "percentage": "76.83%"
+        },
+        {
+            "category": "후기/정보",
+            "score": "94.00",
+            "evaluation": "정보성",
+            "percentage": "94.00%"
+        }
+    ],
+    "publish_time": "2023-12-28 17",
+    "exposure_status": "발행된지 570일 (22시간) 경과되었습니다. 발행된 게시물은 현재시간 2025-07-21 15:47:38 저품1 상태입니다.",
+    "text_analysis": {
+        "title_with_space": "37",
+        "title_without_space": "30",
+        "content_with_space": "2,063",
+        "content_without_space": "1,579"
+    },
+    "morpheme_counts": {
+        "morpheme_count": "320",
+        "syllable_count": "485",
+        "word_count": "120",
+        "abusing_word_count": "4"
+    },
+    "image_analysis": {
+        "valid_images": "13",
+        "invalid_images": "10",
+        "material_images": "0",
+        "uploaded_images": "16",
+        "content_images": "23",
+        "invalid_image_urls": [
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMzMg/MDAxNzAzNzUxNTQyOTMx.6qu9JFWo66k6FZHgpqYHp3feM11jA_obDUqYk2Q5e88g.gkiZAUCABAsHwy31rFcP70nnq0m_yX9vou0E0Mictk4g.JPEG.ysnaturedent/%EC%A7%84%EB%A3%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC-%EB%B3%B5%EA%B5%AC%EB%90%A8_%EB%B3%B5%EC%82%AC.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMTg0/MDAxNzAzNzQ5NzIxMzk4.CaCyZlVmUhH7r2j-H7rPc2BWSFrHlBg6rlh8joyol28g.g_CGmVG_q3gHyA3kPIjde-yF_LJ35SbRaQrrUuGWIZsg.JPEG.ysnaturedent/1.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMTY0/MDAxNzAzNzUxMjQxODcw.pjAr-kU6q1tGcqzYryo-8g4Df4LSUBNh_ci809Mvcgog.u5sSS9P06MQSouM82CFFDfy-yBzOxXyLYq3LBgtQTUUg.JPEG.ysnaturedent/4.jpg?type=w800",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMjQ5/MDAxNzAzNzQ5NzIwOTg0.51uuowfIdmij34_p2lIOf4D6aeYkwjRmyVye5exSaUMg.Wf679KjSVXYds_7yyVEehIZgqGxtA8rZ7nYbV9kx8C0g.JPEG.ysnaturedent/5.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMTgz/MDAxNzAzNzQ5NzIwOTMy.qMDWf0du_t7K4Ral35udOF8CMhZ1sim_ySMj1H_uZJAg.YmQysZADMlmEe4vs_sAtezKSCf8D5Yc2unv_XHYja0Qg.JPEG.ysnaturedent/11.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfNjYg/MDAxNzAzNzQ5NzIxMDQ1.66Rc6V1QAQeIvywUtURFnObW33e-IZw3PmU0M7tMQesg.7X_89XA3iD5QDtqw517dia_fEqRTRKgWYliODDwlc24g.JPEG.ysnaturedent/12.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMTMw/MDAxNzAzNzQ5NzIxMDMx.aH8xUNd96i26K9ZQhmlgqsYrr1l2ux4IP5_KYF5Lgpsg.01TPXJTvHn7h820ISmFOQn4xjMSaFKzh9N0J_pk1iL0g.JPEG.ysnaturedent/10.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMjgw/MDAxNzAzNzQ5NzIwOTk0.iWljlSEXBG_pZMD0N2Dw_P2_Hcst4MV3KETV1YhB-I4g.X8fUWGbn1z4kfR7WnL3DYTtmP2Sf1IHpw4nnAPfQ2R0g.JPEG.ysnaturedent/13.jpg?type=w1",
+            "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMjhfMTM4/MDAxNzAzNzQ5NzIwOTgz.tKC4kQNLInf62rKU8iCTML8M-_KEHezwSHTtXTn9LJQg.2sKTBZgfRnw0vhYoNMe5v1-kpuxCRE7cL0aPX64s8WAg.JPEG.ysnaturedent/16.jpg?type=w1",
+            "https://phinf.pstatic.net/image.nmv/blog_2023_12_28_3047/1262fa55-a55a-11ee-badd-48df37e2c30a_01.jpg"
+        ]
+    },
+    "post_title": "서울역치과, 신경치료를 하는 이유는 무엇일까? 신경치료 이유와 목적",
+    "post_content": "서울역치과, 신경치료를 하는 이유는 무엇일까? 신경치료 이유와 목적 안녕하세요, 고난이도 신경치료 전문 서울역치과 연세네이처치과입니다. 공포스러운 치과치료 중, 많은 분들께서 떠올리실 치료는 충치 치료와 더불어 신경치료라고 예상됩니다. 신경치료라는 용어가 주는 어감과 더불어 해당 치료에 대한 수많은 설화들로 인해 그 이미지는 매우 공포스러운 것이 사실입니다. 이처럼 해당 치료는 실제로 환자분들께서 경험하시는 것보다 그 이름과 어감에서 오는 공포감이 더 큰 편이라 할 수 있습니다. 오늘은 서울역치과 연세네이처치과와 함께 많은 분들께 공포심을 주는 신경치료에 대해 알아볼 텐데요. 그 중에서도 신경치료 이유, 즉 신경치료는 왜 하는 것이며, 또 의학적인 목적은 무엇인지 함께 살펴보겠습니다. 신경치료는 근관치료라고도 부르며, 의학용어로 'Endodontic Therapy’라고 합니다. 사실 해당 이름이 치료가 가진 본래의 목적과 과정에 반드시 부합하지는 않습니다. 영어식 명칭을 자세히 살피면 Endo: 내부, dontic: 치아, therapy: 치료로, 치아의 내부를 치료하는 것이라고 할 수 있습니다. 그렇다면 치료를 진행하는 치아 내부는 어떻게 생겼을까요? 치아의 구조인데요. 영어로 표기되어 있지만 해당 부분들을 무시하고 보자면, 안쪽에 빨간색으로 보이는 부분이 있습니다. 해당 부분이 바로 치과 용어로 ‘치수’입니다. 이 부분이 치아 내부에 해당되는 부위이며, 치아에 영양을 공급해 주는 혈관과 감각을 담당하는 신경이 포함되어 있습니다. 치수는 치아 뿌리의 가느다란 관인 신경관을 타고 뿌리 끝 부분까지 연결되어 있는데요. 이 때문에 치아에 영양과 감각을 공급하고 있습니다. 따라서 신경치료라고 하는 이름은 사실 반쪽짜리 설명이라 수 있습니다. 조금 더 정확하게 표현하면 신경관 치료가 적합할 수 있으며, 더 정확하게 보자면 근관(뿌리관)을 치료하는 것입니다. 즉 뿌리 안에 있는 미세한 관을 치료하는 방법입니다. 이런 이유로 치과학에서는 근관치료라는 명칭을 더욱 많이 사용합니다. 신경치료 이유는? 그렇다면 신경관, 즉 근관은 어떤 이유로 치료하게 되는 것일까요? 신경치료 이유, 가장 중요한 부분은 딱 하나입니다. 우리 치아 내부인 신경관에 나타날 수 있는 세균 감염을 예방하기 위해서 또는 세균 감염을 치료하기 위해서입니다. 치아 내부에 일어난 감염은 주로 충치 균에 의해서 나타나는데요. 만일 때를 놓쳐 신경관에 충치 세균이 침투하여 감염을 일으킬 경우 다양한 증상이 유발될 수 있는데요. 대표적인 것이 바로 우리가 알고 있는 극심한 치통입니다. 이는 밤에 잠을 자던 중에도 통증으로 인해 일어날 정도로 심한 경우도 있습니다. 진통제가 듣지 않을 정도로 심한 통증이 나타나는 게 전형적인 증상이며, 치과에 내원하지 않고는 견딜 수 있는 분들이 많지 않을 정도로 극심한 아픔이 느껴질 수 있습니다. 이 시기를 지나면 신경이 완전히 괴사되고 그 후에는 증상은 일시적으로 사라질 수 있으나 신경관 내의 감염이 뿌리 끝으로 전염되어 또 다양한 증상을 유발할 수 있습니다. 뿌리 끝에 염증이 나타날 경우 주로 음식을 씹을 때나 치아를 건드릴 때 아픔이 느껴지고 간혹 잇몸이 붓거나 고름주머니가 보이기도 합니다. 신경치료의 목적 신경치료 이유에 대해 알아보았는데요. 앞서 설명하였듯이 해당 치료는 신경을 죽이는 것이 아니라 근관 내의 세균감염을 치료하는 것입니다. 때문에 신경을 건드려 상당한 통증을 유발할 것 같은 인상이지만 사실 신경관 내부를 소독하고 약제로 채우는 과정을 말합니다. 그래도 아픈 과정 아닌가요? 실제 근관치료는 심도 깊은 마취 하에 진행되는데요. 이 때문에 마취만 잘해준다면 치료 도중 아무런 통증이 느껴지지 않아야 정상입니다. 다만 마취가 풀린 후에는 2~3일 정도 약간의 욱신거림이 느껴질 수 있습니다. 이는 정상적인 반응으로, 근관 내에 소독액 등이 치아 뿌리 끝을 자극하여 발생하는 것입니다. 대부분은 경미하며 진통제 등만 복용해도 크게 문제가 없는 증상입니다. 오늘은 서울역치과와 함께 근관치료의 이유와 목적을 설명하며 편견으로 인한 오해를 풀어보았는데요. 이를 통해 많은 분들께서 느끼시는 두려움이 조금이라도 해소되면 좋겠습니다. 감사합니다.",
+    "abusing_words": {
+        "adult_words": "",
+        "harmful_words": "",
+        "commercial_words": "반드시(1), 상당한(1), 완전히(1), 가장(1)",
+        "excessive_words": "치료(35), 신경치료(14)"
+    },
+    "category_analysis": [
+        {
+            "category_name": "건강·의학",
+            "percentage": "56.86%",
+            "keywords": "치료(16), 신경치료(14), 치아(8), 내부(7), 부분(5), 증상(5), 감염(5), 정도(4), 신경(4), 분들(4), 통증(4), 세균(3), 충치(3), 마취(3), 경우(3), 근관(3), 감각(2), 진통제(2), 치수(2), 연세네이처치과(2), 무엇(2), 치과(2), 아픔(2), 담당(1), 내원(1), 괴사(1), 대부분(1), 대표적(1), 의학용어(1), 고름주머니(1), 세균감염(1), 무시(1), 두려움(1), 고난이도(1), 오해(1), 정상(1), 정상적(1), 약간(1), 서울역치과(1), 반응(1), 발생(1), 복용(1), 조금(1), 본래(1), 전형적(1), 염증(1), 중요(1), 전염(1), 잇몸(1), 의학적(1), 이미지(1), 인상(1), 안쪽(1), 시기(1), 공포심(1), 혈관(1), 다양(1), 치통(1), 부위(1), 구조(1), 공포감(1), 상당(1), 음식(1)"
+        },
+        {
+            "category_name": "비즈니스·경제",
+            "percentage": "12.94%",
+            "keywords": "해당(7), 목적(5), 때문(3), 유발(3), 진행(2), 공급(2), 용어(2), 정확(2), 우리(2), 해소(1), 부합(1), 표기(1), 경험(1), 일시적(1)"
+        },
+        {
+            "category_name": "교육·학문",
+            "percentage": "5.49%",
+            "keywords": "이유(9), 과정(3), 영양(2)"
+        },
+        {
+            "category_name": "육아·결혼",
+            "percentage": "3.92%",
+            "keywords": "신경관(7), 소독(1), 소독액(1), 예방(1)"
+        },
+        {
+            "category_name": "상품리뷰",
+            "percentage": "2.75%",
+            "keywords": "뿌리(6), 자극(1)"
+        },
+        {
+            "category_name": "IT·컴퓨터",
+            "percentage": "2.35%",
+            "keywords": "이름(3), 사용(1), 연결(1), 방법(1)"
+        },
+        {
+            "category_name": "인테리어·DIY",
+            "percentage": "2.35%",
+            "keywords": "설명(3), 문제(1), 침투(1), 도중(1)"
+        },
+        {
+            "category_name": "일상·생각",
+            "percentage": "1.96%",
+            "keywords": "약제(1), 감사(1), 관인(1), 예상(1), 빨간색(1)"
+        },
+        {
+            "category_name": "취미",
+            "percentage": "1.57%",
+            "keywords": "명칭(2), 공포(2)"
+        },
+        {
+            "category_name": "어학·외국어",
+            "percentage": "1.18%",
+            "keywords": "영어식(1), 표현(1), 영어(1)"
+        },
+        {
+            "category_name": "사회·정치",
+            "percentage": "1.18%",
+            "keywords": "전문(1), 심도(1), 사실(1)"
+        },
+        {
+            "category_name": "맛집",
+            "percentage": "1.18%",
+            "keywords": "어감(2), 안녕(1)"
+        },
+        {
+            "category_name": "문학·책",
+            "percentage": "0.39%",
+            "keywords": "편견(1)"
+        },
+        {
+            "category_name": "패션·미용",
+            "percentage": "0.39%",
+            "keywords": "실제(1)"
+        },
+        {
+            "category_name": "세계여행",
+            "percentage": "0.39%",
+            "keywords": "포함(1)"
+        }
+    ],
+    "morpheme_analysis_details": [
+        {
+            "morpheme_type": "체언",
+            "percentage": "34.91%",
+            "words": "치료(35), 신경(18), 수(11), 것(11), 이유(9), 치아(8), 근관(8), 해당(7), 뿌리(7), 내부(7), 신경관(7), 치과(7), 부분(6), 감염(6), 분(5), 증상(5), 이(5), 목적(5), 정도(4), 세균(4), 끝(4), 통증(4), 이름(3), 중(3), 설명(3), 과정(3), 마취(3), 때문(3), 내(3), 용어(3), 충치(3), 공포(3), 경우(3), 유발(3), 때(3), 우리(2), 등(2), 공급(2), 치수(2), 영양(2), 감각(2), 정상(2), 서울역(2), 진통제(2), 후(2), 관(2), 아픔(2), 정확(2), 서울(2), 의학(2), 어감(2), 영어(2), 무엇(2), 진행(2), 명칭(2), 연세(2), 네이처(2), 역치(2), 고름(1), 잇몸(1), 상당(1), 소독(1), 약제(1), 인상(1), 주머니(1), 전문(1), 괴사(1), 시기(1), 내원(1), 일시(1), 말(1), 염증(1), 전염(1), 음식(1), 고난(1), 편견(1), 문제(1), 복용(1), 대부분(1), 오해(1), 두려움(1), 감사(1), 해소(1), 조금(1), 발생(1), 자극(1), 도중(1), 전형(1), 심도(1), 안녕(1), 일(1), 독액(1), 반응(1), 약간(1), 실제(1), 잠(1), 반쪽(1), 본래(1), 연결(1), 부합(1), 텐데요(1), 표현(1), 방법(1), 안(1), 공포심(1), 관인(1), 식(1), 표기(1), 빨간색(1), 안쪽(1), 부위(1), 구조(1), 포함(1), 담당(1), 혈관(1), 과학(1), 사용(1), 설화(1), 다양(1), 이미지(1), 대표(1), 치통(1), 예상(1), 무시(1), 밤(1), 침투(1), 사실(1), 편(1), 하나(1), 중요(1), 경험(1), 환자(1), 만일(1), 균(1), 예방(1), 게(1)"
+        },
+        {
+            "morpheme_type": "조사",
+            "percentage": "17.26%",
+            "words": "에(24), 을(23), 이(23), 는(18), 로(11), 를(9), 은(9), 의(9), 가(8), 과(7), 도(6), 으로(6), 와(5), 에서(3), 께서(3), 만(2), 까지(1), 나(1), 처럼(1), 보다(1), 께(1)"
+        },
+        {
+            "morpheme_type": "용언",
+            "percentage": "15.14%",
+            "words": "있(19), 입니다(12), 이(8), 않(5), 인(5), 많(4), 치아(4), 하(3), 보(3), 라고(3), 주(3), 그렇(2), 보이(2), 나타나(2), 느껴(2), 지(2), 느껴질(2), 심한(2), 합니다(2), 나타날(2), 위해서(2), 인해(2), 할(2), 대해(2), 라는(2), 더불(2), 아니(1), 채우(1), 같(1), 건드려(1), 죽이(1), 일까(1), 씹(1), 건드릴(1), 떠올리(1), 붓(1), 알아보(1), 아닌가요(1), 풀(1), 인한(1), 통해(1), 느끼(1), 좋(1), 없(1), 크(1), 깊(1), 사라질(1), 해준다면(1), 풀린(1), 욱신거림(1), 아픈(1), 듣(1), 큰(1), 인데요(1), 오(1), 가느다란(1), 타(1), 생겼(1), 살피(1), 부르(1), 인지(1), 가진(1), 알아볼(1), 되(1), 일까요(1), 자(1), 알(1), 일어날(1), 살펴보(1), 견딜(1), 일으킬(1), 놓쳐(1), 수많(1), 일어난(1), 의해서(1), 대한(1), 지나(1)"
+        },
+        {
+            "morpheme_type": "어말 어미",
+            "percentage": "11.3%",
+            "words": "는(27), 습니다(13), 고(8), 어(7), 은(6), 는데요(6), 며(6), 지(5), 게(4), 면(4), 을(3), 라(3), 기(3), 다면(2), 자면(2), 지만(2), 여(2), 듯이(1), 아야(1), 라도(1), 거나(1), 던(1), 라고(1), 으며(1), 을까요(1), 으나(1)"
+        },
+        {
+            "morpheme_type": "불능",
+            "percentage": "7.87%",
+            "words": ".(39), ,(16), ?(5), :(3), ’(2), ((1), )(1), 2(1), 3(1), ~(1), ‘(1), Endo(1), Endodontic(1), '(1), Therapy(1), 라고(1), dontic(1), therapy(1)"
+        },
+        {
+            "morpheme_type": "접미사",
+            "percentage": "6.76%",
+            "words": "하(26), 되(8), 들(7), 한(7), 적(5), 합니다(3), 할(3), 스러운(2), 해도(1), 될(1), 해(1), 됩니다(1), 감(1), 짜리(1)"
+        },
+        {
+            "morpheme_type": "부사",
+            "percentage": "3.94%",
+            "words": "즉(3), 함께(3), 사실(3), 더(3), 또(2), 바로(2), 오늘(2), 주로(2), 완전히(1), 또는(1), 딱(1), 그래도(1), 다만(1), 잘(1), 가장(1), 앞서(1), 간혹(1), 따라서(1), 반드시(1), 왜(1), 실제로(1), 자세히(1), 어떻게(1), 더욱(1), 조금(1), 매우(1), 많이(1)"
+        },
+        {
+            "morpheme_type": "관형사",
+            "percentage": "1.11%",
+            "words": "그(4), 이(4), 아무런(1), 이런(1), 어떤(1)"
+        },
+        {
+            "morpheme_type": "선어말 어미",
+            "percentage": "0.91%",
+            "words": "았(2), 겠(2), 시(2), 였(1), 실(1), 세요(1)"
+        },
+        {
+            "morpheme_type": "어근",
+            "percentage": "0.61%",
+            "words": "극심(2), 경미(1), 다양(1), 적합(1), 미세(1)"
+        },
+        {
+            "morpheme_type": "감탄사",
+            "percentage": "0.1%",
+            "words": "치(1)"
+        },
+        {
+            "morpheme_type": "접두사",
+            "percentage": "0.1%",
+            "words": "소(1)"
+        }
+    ],
+    "word_analysis": {
+        "total_words": "120",
+        "words": [
+            {
+                "word": "치료",
+                "count": "16"
+            },
+            {
+                "word": "신경치료",
+                "count": "14"
+            },
+            {
+                "word": "이유",
+                "count": "9"
+            },
+            {
+                "word": "치아",
+                "count": "8"
+            },
+            {
+                "word": "신경관",
+                "count": "7"
+            },
+            {
+                "word": "해당",
+                "count": "7"
+            },
+            {
+                "word": "내부",
+                "count": "7"
+            },
+            {
+                "word": "뿌리",
+                "count": "6"
+            },
+            {
+                "word": "증상",
+                "count": "5"
+            },
+            {
+                "word": "감염",
+                "count": "5"
+            },
+            {
+                "word": "목적",
+                "count": "5"
+            },
+            {
+                "word": "부분",
+                "count": "5"
+            },
+            {
+                "word": "통증",
+                "count": "4"
+            },
+            {
+                "word": "근관치료",
+                "count": "4"
+            },
+            {
+                "word": "신경",
+                "count": "4"
+            },
+            {
+                "word": "정도",
+                "count": "4"
+            },
+            {
+                "word": "분들",
+                "count": "4"
+            },
+            {
+                "word": "이름",
+                "count": "3"
+            },
+            {
+                "word": "때문",
+                "count": "3"
+            },
+            {
+                "word": "유발",
+                "count": "3"
+            },
+            {
+                "word": "서울역치",
+                "count": "3"
+            },
+            {
+                "word": "설명",
+                "count": "3"
+            },
+            {
+                "word": "충치",
+                "count": "3"
+            },
+            {
+                "word": "마취",
+                "count": "3"
+            },
+            {
+                "word": "세균",
+                "count": "3"
+            },
+            {
+                "word": "경우",
+                "count": "3"
+            },
+            {
+                "word": "근관",
+                "count": "3"
+            },
+            {
+                "word": "과정",
+                "count": "3"
+            },
+            {
+                "word": "치수",
+                "count": "2"
+            },
+            {
+                "word": "진행",
+                "count": "2"
+            },
+            {
+                "word": "영양",
+                "count": "2"
+            },
+            {
+                "word": "명칭",
+                "count": "2"
+            },
+            {
+                "word": "아픔",
+                "count": "2"
+            },
+            {
+                "word": "정확",
+                "count": "2"
+            },
+            {
+                "word": "감각",
+                "count": "2"
+            },
+            {
+                "word": "공급",
+                "count": "2"
+            },
+            {
+                "word": "진통제",
+                "count": "2"
+            },
+            {
+                "word": "치과",
+                "count": "2"
+            },
+            {
+                "word": "어감",
+                "count": "2"
+            },
+            {
+                "word": "무엇",
+                "count": "2"
+            },
+            {
+                "word": "우리",
+                "count": "2"
+            },
+            {
+                "word": "용어",
+                "count": "2"
+            },
+            {
+                "word": "공포",
+                "count": "2"
+            },
+            {
+                "word": "연세네이처치과",
+                "count": "2"
+            },
+            {
+                "word": "음식",
+                "count": "1"
+            },
+            {
+                "word": "염증",
+                "count": "1"
+            },
+            {
+                "word": "전염",
+                "count": "1"
+            },
+            {
+                "word": "잇몸",
+                "count": "1"
+            },
+            {
+                "word": "일시적",
+                "count": "1"
+            },
+            {
+                "word": "고름주머니",
+                "count": "1"
+            },
+            {
+                "word": "상당",
+                "count": "1"
+            },
+            {
+                "word": "세균감염",
+                "count": "1"
+            },
+            {
+                "word": "전형적",
+                "count": "1"
+            },
+            {
+                "word": "다양",
+                "count": "1"
+            },
+            {
+                "word": "침투",
+                "count": "1"
+            },
+            {
+                "word": "예방",
+                "count": "1"
+            },
+            {
+                "word": "중요",
+                "count": "1"
+            },
+            {
+                "word": "대표적",
+                "count": "1"
+            },
+            {
+                "word": "치통",
+                "count": "1"
+            },
+            {
+                "word": "시기",
+                "count": "1"
+            },
+            {
+                "word": "내원",
+                "count": "1"
+            },
+            {
+                "word": "인상",
+                "count": "1"
+            },
+            {
+                "word": "괴사",
+                "count": "1"
+            },
+            {
+                "word": "약간",
+                "count": "1"
+            },
+            {
+                "word": "오해",
+                "count": "1"
+            },
+            {
+                "word": "편견",
+                "count": "1"
+            },
+            {
+                "word": "서울역치과",
+                "count": "1"
+            },
+            {
+                "word": "두려움",
+                "count": "1"
+            },
+            {
+                "word": "조금",
+                "count": "1"
+            },
+            {
+                "word": "사용",
+                "count": "1"
+            },
+            {
+                "word": "감사",
+                "count": "1"
+            },
+            {
+                "word": "해소",
+                "count": "1"
+            },
+            {
+                "word": "문제",
+                "count": "1"
+            },
+            {
+                "word": "복용",
+                "count": "1"
+            },
+            {
+                "word": "정상적",
+                "count": "1"
+            },
+            {
+                "word": "정상",
+                "count": "1"
+            },
+            {
+                "word": "약제",
+                "count": "1"
+            },
+            {
+                "word": "반응",
+                "count": "1"
+            },
+            {
+                "word": "자극",
+                "count": "1"
+            },
+            {
+                "word": "대부분",
+                "count": "1"
+            },
+            {
+                "word": "발생",
+                "count": "1"
+            },
+            {
+                "word": "소독",
+                "count": "1"
+            },
+            {
+                "word": "경험",
+                "count": "1"
+            },
+            {
+                "word": "설화들",
+                "count": "1"
+            },
+            {
+                "word": "예상",
+                "count": "1"
+            },
+            {
+                "word": "안녕",
+                "count": "1"
+            },
+            {
+                "word": "이미지",
+                "count": "1"
+            },
+            {
+                "word": "사실",
+                "count": "1"
+            },
+            {
+                "word": "공포심",
+                "count": "1"
+            },
+            {
+                "word": "공포감",
+                "count": "1"
+            },
+            {
+                "word": "환자분들",
+                "count": "1"
+            },
+            {
+                "word": "소독액",
+                "count": "1"
+            },
+            {
+                "word": "도중",
+                "count": "1"
+            },
+            {
+                "word": "치과치료",
+                "count": "1"
+            },
+            {
+                "word": "전문",
+                "count": "1"
+            },
+            {
+                "word": "고난이도",
+                "count": "1"
+            },
+            {
+                "word": "영어식",
+                "count": "1"
+            },
+            {
+                "word": "관인",
+                "count": "1"
+            },
+            {
+                "word": "심도",
+                "count": "1"
+            },
+            {
+                "word": "실제",
+                "count": "1"
+            },
+            {
+                "word": "의학적",
+                "count": "1"
+            },
+            {
+                "word": "의학용어",
+                "count": "1"
+            },
+            {
+                "word": "담당",
+                "count": "1"
+            },
+            {
+                "word": "혈관",
+                "count": "1"
+            },
+            {
+                "word": "부위",
+                "count": "1"
+            },
+            {
+                "word": "포함",
+                "count": "1"
+            },
+            {
+                "word": "연결",
+                "count": "1"
+            },
+            {
+                "word": "근관뿌리관",
+                "count": "1"
+            },
+            {
+                "word": "표현",
+                "count": "1"
+            },
+            {
+                "word": "반쪽짜리",
+                "count": "1"
+            },
+            {
+                "word": "빨간색",
+                "count": "1"
+            },
+            {
+                "word": "안쪽",
+                "count": "1"
+            },
+            {
+                "word": "구조",
+                "count": "1"
+            },
+            {
+                "word": "부합",
+                "count": "1"
+            },
+            {
+                "word": "본래",
+                "count": "1"
+            },
+            {
+                "word": "영어",
+                "count": "1"
+            },
+            {
+                "word": "표기",
+                "count": "1"
+            },
+            {
+                "word": "무시",
+                "count": "1"
+            },
+            {
+                "word": "부분들",
+                "count": "1"
+            },
+            {
+                "word": "방법",
+                "count": "1"
+            }
+        ]
+    },
+    "extracted_keywords": [
+        {
+            "rank": "1",
+            "keyword": "신경치료",
+            "search_volume_total": "12,610",
+            "search_volume_pc": "1,710",
+            "search_volume_mobile": "10,900",
+            "clicks_pc": "1",
+            "clicks_mobile": "16",
+            "ctr_pc": "0.06%",
+            "ctr_mobile": "0.16%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "2",
+            "keyword": "서울역치과",
+            "search_volume_total": "320",
+            "search_volume_pc": "100",
+            "search_volume_mobile": "220",
+            "clicks_pc": "0",
+            "clicks_mobile": "2",
+            "ctr_pc": "0.21%",
+            "ctr_mobile": "0.83%",
+            "competition": "높음",
+            "ad_count": "10"
+        },
+        {
+            "rank": "3",
+            "keyword": "신경치료이유",
+            "search_volume_total": "80",
+            "search_volume_pc": "10",
+            "search_volume_mobile": "70",
+            "clicks_pc": "-",
+            "clicks_mobile": "-",
+            "ctr_pc": "-",
+            "ctr_mobile": "-",
+            "competition": "높음",
+            "ad_count": "3"
+        }
+    ],
+    "same_topic_posting": "신경치료 (1139), 신경치료이유 (657), 서울역치과 (23)"
+}
