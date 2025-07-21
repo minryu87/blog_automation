@@ -139,11 +139,11 @@ def fetch_nside_data_for_url(url: str, use_local_files: bool = True) -> dict | N
         else:
             # 실시간 수집 로직은 현재 사용되지 않지만, 만약을 위해 남겨둡니다.
             html_path = data_collector.fetch_html(url)
-            if not html_path:
-                return None
-            json_path = data_parser.parse_html_file(html_path)
-            if not json_path:
-                return None
+        if not html_path:
+            return None
+        json_path = data_parser.parse_html_file(html_path)
+        if not json_path:
+            return None
         
         # 1. Load the pre-parsed JSON
         with open(json_path, 'r', encoding='utf-8') as f:
@@ -256,7 +256,7 @@ def enrich_topic_cluster_data():
     # Merge this mapping into the master dataframe
     # Use a left merge to ensure all posts in master get a query if available
     df_master = pd.merge(df_master, query_mapping, on='post_identifier', how='left')
-
+    
     df_master.to_csv(output_path, index=False, encoding='utf-8-sig')
 
     print("\n--- Success! ---")

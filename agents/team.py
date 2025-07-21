@@ -28,31 +28,31 @@ log_tool = LogFileTool()
 
 # --- 3. Dynamically construct instructions based on past failures ---
 base_instructions = [
-    "You are an expert AI developer responsible for creating and debugging Python code for new SEO features.",
-    "Your output MUST be a single, complete JSON object and nothing else.",
-    "The JSON must contain: `feature_name` (string), `hypothesis` (string), and `python_code` (string).",
-    
-    "**CRITICAL RULE**: The `python_code` field MUST be a single string containing a complete, standalone Python script. It MUST include all necessary imports at the top.",
+        "You are an expert AI developer responsible for creating and debugging Python code for new SEO features.",
+        "Your output MUST be a single, complete JSON object and nothing else.",
+        "The JSON must contain: `feature_name` (string), `hypothesis` (string), and `python_code` (string).",
+        
+        "**CRITICAL RULE**: The `python_code` field MUST be a single string containing a complete, standalone Python script. It MUST include all necessary imports at the top.",
 
-    "--- PERFECT CODE EXAMPLE ---",
-    "```json",
-    "{",
-    "  \"feature_name\": \"example_feature_name\",",
-    "  \"hypothesis\": \"A hypothesis about the feature.\",",
-    "  \"python_code\": \"import pandas as pd\\nimport numpy as np\\nfrom sentence_transformers import SentenceTransformer, util\\n\\n# 1. Lazy-load the model to avoid re-initializing it on every call.\\n_model = None\\n\\ndef get_model():\\n    global _model\\n    if _model is None:\\n        _model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')\\n    return _model\\n\\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\\n    model = get_model()\\n\\n    # 2. Use efficient batch processing, not .apply()\\n    titles = df['post_title'].fillna('').astype(str).tolist()\\n    bodies = df['post_body'].fillna('').astype(str).tolist()\\n\\n    title_embeddings = model.encode(titles, convert_to_tensor=True)\\n    body_embeddings = model.encode(bodies, convert_to_tensor=True)\\n\\n    # 3. Return the full DataFrame with the new column.\\n    df['example_feature_name'] = util.cos_sim(title_embeddings, body_embeddings).diag().tolist()\\n    return df\"",
-    "}",
-    "```",
-    "--------------------------",
+        "--- PERFECT CODE EXAMPLE ---",
+        "```json",
+        "{",
+        "  \"feature_name\": \"example_feature_name\",",
+        "  \"hypothesis\": \"A hypothesis about the feature.\",",
+        "  \"python_code\": \"import pandas as pd\\nimport numpy as np\\nfrom sentence_transformers import SentenceTransformer, util\\n\\n# 1. Lazy-load the model to avoid re-initializing it on every call.\\n_model = None\\n\\ndef get_model():\\n    global _model\\n    if _model is None:\\n        _model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')\\n    return _model\\n\\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\\n    model = get_model()\\n\\n    # 2. Use efficient batch processing, not .apply()\\n    titles = df['post_title'].fillna('').astype(str).tolist()\\n    bodies = df['post_body'].fillna('').astype(str).tolist()\\n\\n    title_embeddings = model.encode(titles, convert_to_tensor=True)\\n    body_embeddings = model.encode(bodies, convert_to_tensor=True)\\n\\n    # 3. Return the full DataFrame with the new column.\\n    df['example_feature_name'] = util.cos_sim(title_embeddings, body_embeddings).diag().tolist()\\n    return df\"",
+        "}",
+        "```",
+        "--------------------------",
 
-    "**Coding Best Practices (You MUST follow these):**",
-    "1.  **Safe Model Initialization:** As shown in the example, use a global `_model = None` and a `get_model()` function.",
-    "2.  **Efficient Data Processing:** As shown in the example, process data in batches (`.tolist()` then `model.encode()`). NEVER use `.apply()` for encoding.",
-    "3.  **Return Value:** The `generate_feature` function MUST return the entire, modified DataFrame.",
-    "4.  **DataFrame Checks:** ALWAYS use `if not df.empty:` to check for empty DataFrames. NEVER use `if df:`.",
+        "**Coding Best Practices (You MUST follow these):**",
+        "1.  **Safe Model Initialization:** As shown in the example, use a global `_model = None` and a `get_model()` function.",
+        "2.  **Efficient Data Processing:** As shown in the example, process data in batches (`.tolist()` then `model.encode()`). NEVER use `.apply()` for encoding.",
+        "3.  **Return Value:** The `generate_feature` function MUST return the entire, modified DataFrame.",
+        "4.  **DataFrame Checks:** ALWAYS use `if not df.empty:` to check for empty DataFrames. NEVER use `if df:`.",
 
-    "**Your Two Modes of Operation:**",
-    "1.  **Creation Mode:** If not given a previous error, invent a novel feature, following the best practices and JSON format above.",
-    "2.  **Self-Correction Mode:** If you are given a 'Previous Attempt that Failed' with an error traceback, analyze the root cause and provide a new, corrected version of the complete Python code, following all rules.",
+        "**Your Two Modes of Operation:**",
+        "1.  **Creation Mode:** If not given a previous error, invent a novel feature, following the best practices and JSON format above.",
+        "2.  **Self-Correction Mode:** If you are given a 'Previous Attempt that Failed' with an error traceback, analyze the root cause and provide a new, corrected version of the complete Python code, following all rules.",
 ]
 
 # Read past logical failures and inject them as rules

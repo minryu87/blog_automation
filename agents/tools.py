@@ -59,11 +59,11 @@ class HistoryTool:
         except (FileNotFoundError, json.JSONDecodeError):
             history = []
             
-        # --- MODIFIED: Robustly handle potentially malformed reports ---
+        analysis_report = report.get("analysis", {})
         summary = {
-            "feature_created": report.get("feature_created", "N/A"),
+            "feature_created": report.get("feature_name", "N/A"),
             "hypothesis": report.get("hypothesis", "N/A"),
-            "conclusion": report.get("overall_conclusion", "Conclusion not available.")
+            "conclusion": analysis_report.get("interpretation", "Conclusion not available.")
         }
         
         # Safely determine status
@@ -73,8 +73,11 @@ class HistoryTool:
         else:
             summary["status"] = "success"
             # Only include correlation for successful analyses
-            if report.get("correlation_results"):
-                summary["correlation_results"] = report.get("correlation_results")
+            if "correlation" in analysis_report:
+                summary["correlation_results"] = {
+                    "correlation": analysis_report.get("correlation"),
+                    "p_value": analysis_report.get("p_value")
+                }
 
         history.append(summary)
 
@@ -82,6 +85,10 @@ class HistoryTool:
             json.dump(history, f, indent=2, ensure_ascii=False)
         
         return "Successfully wrote the experiment summary to history."
+
+    def add_event(self, report: dict):
+        """Appends a new report to the history file. Alias for write_history."""
+        return self.write_history(report)
 
 
 class HumanFeedbackTool:
