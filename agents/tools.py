@@ -49,30 +49,37 @@ class HistoryTool:
         
         try:
             with open(self.history_file, 'r+', encoding='utf-8') as f:
-                history = json.load(f)
+                # Handle empty file case
+                content = f.read()
+                if not content:
+                    history = []
+                else:
+                    f.seek(0)
+                    history = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             history = []
             
-        # --- MODIFIED LOGIC ---
-        # Summarize the report for a concise history entry.
+        # --- MODIFIED: Robustly handle potentially malformed reports ---
         summary = {
-            "feature_created": report.get("feature_created"),
-            "hypothesis": report.get("hypothesis"),
-            "conclusion": report.get("overall_conclusion")
+            "feature_created": report.get("feature_created", "N/A"),
+            "hypothesis": report.get("hypothesis", "N/A"),
+            "conclusion": report.get("overall_conclusion", "Conclusion not available.")
         }
         
-        # Check if the experiment was a failure and provide a clear status.
-        if "Error" in summary["conclusion"] or "failed" in summary["conclusion"]:
+        # Safely determine status
+        conclusion_str = str(summary["conclusion"]).lower()
+        if "error" in conclusion_str or "failed" in conclusion_str or "실패" in conclusion_str:
             summary["status"] = "failed"
         else:
             summary["status"] = "success"
             # Only include correlation for successful analyses
-            summary["correlation_results"] = report.get("correlation_results")
+            if report.get("correlation_results"):
+                summary["correlation_results"] = report.get("correlation_results")
 
         history.append(summary)
 
         with open(self.history_file, 'w', encoding='utf-8') as f:
-            json.dump(history, f, indent=2)
+            json.dump(history, f, indent=2, ensure_ascii=False)
         
         return "Successfully wrote the experiment summary to history."
 

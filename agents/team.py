@@ -21,7 +21,7 @@ LLM = Gemini(
 )
 
 # --- 2. Instantiate Tools ---
-history_tool = HistoryTool()
+# history_tool = HistoryTool() # REMOVED: This will be managed dynamically in main.py
 human_feedback_tool = HumanFeedbackTool()
 schema_tool = DataSchemaTool()
 log_tool = LogFileTool()
@@ -76,7 +76,7 @@ feature_engineer_agent = Agent(
     name="FeatureEngineerAgent",
     role="Self-Correcting AI Python Developer for SEO Feature Engineering",
     model=LLM,
-    tools=[schema_tool, history_tool, human_feedback_tool],
+    tools=[schema_tool, human_feedback_tool], # REMOVED history_tool
     instructions=final_instructions,
     show_tool_calls=True,
     markdown=True,

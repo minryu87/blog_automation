@@ -168,7 +168,8 @@ def enrich_topic_cluster_data():
     blog_automation_dir = os.path.join(script_dir, '..')
     
     clusters_path = os.path.join(blog_automation_dir, 'data', 'data_processed', 'topic_clusters.csv')
-    our_data_path = os.path.join(blog_automation_dir, 'agents', 'agent_base_dataset.csv')
+    # MODIFIED: Corrected the path to the agent_base_dataset.csv file
+    our_data_path = os.path.join(blog_automation_dir, 'data', 'data_processed', 'agent_base_dataset.csv')
     output_dir = os.path.join(blog_automation_dir, 'data', 'data_processed')
     output_path = os.path.join(output_dir, 'master_post_data.csv')
 
@@ -235,6 +236,27 @@ def enrich_topic_cluster_data():
     print("\nCombining all data into a master dataset...")
     df_master = pd.concat([df_ours_enriched, df_competitors_enriched], ignore_index=True, sort=False)
     
+    # --- NEW: Add the representative_query back to the master table --- 
+    print("\nMerging representative query information back into the master dataset...")
+    # We need a mapping from post_identifier (postId or URL) back to its query.
+    # For 'ours', the link is direct. For competitors, we use the clusters file.
+    
+    # Create a mapping for our posts
+    our_post_to_query = df_clusters[['our_postId', 'representative_query']].drop_duplicates()
+    our_post_to_query.rename(columns={'our_postId': 'post_identifier'}, inplace=True)
+    our_post_to_query['post_identifier'] = our_post_to_query['post_identifier'].astype(str)
+
+    # Create a mapping for competitor posts
+    competitor_to_query = df_clusters[['competitor_post_url', 'representative_query']].drop_duplicates()
+    competitor_to_query.rename(columns={'competitor_post_url': 'post_identifier'}, inplace=True)
+
+    # Combine the mappings
+    query_mapping = pd.concat([our_post_to_query, competitor_to_query], ignore_index=True).drop_duplicates()
+
+    # Merge this mapping into the master dataframe
+    # Use a left merge to ensure all posts in master get a query if available
+    df_master = pd.merge(df_master, query_mapping, on='post_identifier', how='left')
+
     df_master.to_csv(output_path, index=False, encoding='utf-8-sig')
 
     print("\n--- Success! ---")
@@ -243,6 +265,7 @@ def enrich_topic_cluster_data():
     print("\n--- Sample Output ---")
     print("Columns in our data:", df_ours_enriched.columns.tolist())
     print("Columns in competitor data:", df_competitors_enriched.columns.tolist())
+    print("Columns in master data:", df_master.columns.tolist()) # MODIFIED
     print(df_master.head())
     print(df_master.tail())
     print("---------------------\n")
