@@ -41,14 +41,14 @@ def load_and_prepare_data(target_key: str):
     # Load data
     feature_df = pd.read_csv(os.path.join(DATA_PATH, FEATURE_FILES[target_key]))
     master_df = pd.read_csv(MASTER_DATA_PATH)
-    
+
     # Define target and identifiers
     target_col = TARGETS[target_key]
     identifier_cols = ['post_identifier']
     
     # Merge data
     data = pd.merge(feature_df, master_df[identifier_cols + [target_col]], on='post_identifier')
-    
+
     # Clean data
     data = data.dropna(subset=[target_col])
     data = data.select_dtypes(include=np.number) # Use only numeric features
@@ -66,7 +66,7 @@ def load_and_prepare_data(target_key: str):
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
-    
+
     return X_train, y_train, X_test, y_test, scaler
 
 def train_and_evaluate_models(X_train, y_train, X_test, y_test):
@@ -153,6 +153,10 @@ def intelligent_training_pipeline(target_key: str):
     
     # 1. Data Preparation
     X_train, y_train, X_test, y_test, scaler = load_and_prepare_data(target_key)
+
+    if X_train is None:
+        print(f"'{target_key}' 모델 훈련을 위한 데이터 준비에 실패하여 건너뜁니다.")
+        return
 
     # 2. Initial Model Evaluation
     initial_results = train_and_evaluate_models(X_train, y_train, X_test, y_test)
