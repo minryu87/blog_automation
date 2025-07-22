@@ -1,0 +1,112 @@
+[
+  {
+    "feature_created": "actionability_score_ratio_vs_competitors",
+    "hypothesis": "포스트 본문이 경쟁자 그룹의 평균적인 본문보다 '해결책', '가이드', '방법'과 같은 실행 가능한 정보와 의미적으로 더 가까울수록, 사용자의 문제 해결 기대감을 높여 클릭률(CTR)이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1818)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.0778).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.1818150448902249,
+      "p_value": 0.07783590186596824
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 '제목-본문 의미적 일관성'이 동일 대표 검색어에 대한 경쟁자 그룹의 평균적인 일관성보다 높을수록, 포스트의 주제 집중도가 명확해져 사용자 만족도를 높이고, 결과적으로 비브랜드 평균 CTR(`non_brand_average_ctr`)을 향상시킬 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142660917550145,
+      "p_value": 0.3280633480976571
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트의 본문이 '방법', '해결', '팁' 등 실용적, 해결책 지향적 의미에 가까울수록, 그리고 이러한 경향이 경쟁 포스트 그룹의 평균보다 강할수록, 사용자의 문제 해결 기대감을 높여 클릭률(non_brand_average_ctr)이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0770)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4585).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.07696860701613716,
+      "p_value": 0.45847115743956096
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트 본문이 특정 대표 검색어의 경쟁자 그룹 평균보다 '방법', '해결', '가이드' 등 실용적/행동 지향적 의미와 더 가까울수록, 독자의 문제 해결 기대감을 높여 비브랜드 평균 클릭률(non_brand_average_ctr)이 높아질 것이다. 이 피처는 우리 포스트의 실용적 가치가 경쟁사 대비 얼마나 우위에 있는지를 정량화한다.",
+    "conclusion": "약한 양의 상관관계(0.1339)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1956).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.13394268979288124,
+      "p_value": 0.19564159659108277
+    }
+  },
+  {
+    "feature_created": "semantic_distance_from_ideal",
+    "hypothesis": "포스트의 제목과 본문을 결합한 의미론적 벡터가, 동일 대표 검색어에 대한 '상위 성과' 경쟁자 그룹의 평균적인 의미론적 중심(Centroid)에 가까울수록 (즉, 거리가 짧을수록), 사용자의 검색 의도에 더 부합하고 핵심 주제에 집중하는 것으로 간주되어 클릭률(CTR)이 높을 것이다. 이 피처는 단순히 모든 경쟁자를 벤치마킹하는 대신, 성과가 좋은 경쟁자들의 의미론적 특징을 '이상적인 목표'로 설정하여 거리를 측정한다.",
+    "conclusion": "약한 양의 상관관계(0.0860)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4073).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.0859909837270764,
+      "p_value": 0.40734366182824
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목과 본문 간 의미적 일관성(cohesion)이 동일 대표 검색어에 대한 경쟁자 그룹의 평균적인 일관성보다 높을수록, 사용자는 해당 포스트를 주제에 더 집중되고 신뢰할 수 있다고 판단하여 더 높은 클릭률(CTR)로 이어질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142660490691904,
+      "p_value": 0.3280633685603432
+    }
+  },
+  {
+    "feature_created": "relative_semantic_actionability",
+    "hypothesis": "포스트 본문이 경쟁사 대비 '방법', '해결', '가이드' 등 실용적/행동 지향적 의미에 더 가까울수록, 사용자는 해당 콘텐츠가 자신의 문제를 직접 해결해 줄 것이라 기대하여 클릭률(CTR)이 높아질 것이다. 이 피처는 우리 포스트의 실용적 의미 점수를 경쟁사 그룹의 평균 점수로 나눈 값으로, 1보다 크면 경쟁사보다 더 행동 지향적인 콘텐츠임을 의미한다.",
+    "conclusion": "중간 정도의 양의 상관관계(0.3050)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0027).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.3049536049760363,
+      "p_value": 0.002656747140101359
+    }
+  },
+  {
+    "feature_created": "relative_semantic_actionability_score",
+    "hypothesis": "A post's body text that is semantically more aligned with practical, 'how-to' solutions compared to the average of its competitors will attract more clicks. This increased 'relative actionability' suggests content that better matches user intent for solutions, leading to a higher `non_brand_average_ctr`.",
+    "conclusion": "약한 양의 상관관계(0.1602)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1210).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.1601918983800022,
+      "p_value": 0.12096866733918003
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "포스트 본문이 특정 검색어의 경쟁자 그룹 평균보다 '문제 해결 방법', '단계별 가이드'와 같은 실용적/행동 지향적 의미에 더 가까울수록, 사용자는 해당 콘텐츠가 자신의 검색 의도를 더 잘 충족시킬 것으로 기대하게 되어 클릭률(non_brand_average_ctr)이 높아질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1601)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1212).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.1600846736795018,
+      "p_value": 0.12122099053928387
+    }
+  },
+  {
+    "feature_created": "semantic_differentiation_from_competitors",
+    "hypothesis": "Our posts that are more semantically differentiated from their closest competitor (i.e., offer a unique angle or cover the topic differently) will attract a higher click-through rate from the SERP, as they stand out from the homogenous content.",
+    "conclusion": "약한 양의 상관관계(0.1339)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1957).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.13393062490464774,
+      "p_value": 0.19568222566948637
+    }
+  },
+  {
+    "feature_created": "body_solution_orientation_score",
+    "hypothesis": "포스트 본문이 '해결책', '방법', '가이드' 등 해결 지향적 개념을 대표하는 이상적인 벡터에 의미론적으로 가까울수록, 즉 해결 지향성 점수가 높을수록 `non_brand_average_ctr`이 높을 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.1085)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2954).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.10846781107879715,
+      "p_value": 0.29541859696881917
+    }
+  }
+]

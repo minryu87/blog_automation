@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "title_body_consistency_ratio_vs_competitors",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미 일관성 점수가 해당 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록 (즉, 이 피처 값이 1보다 클수록), 비브랜드 평균 CTR이 높을 것이다. 이는 제목에서 제시한 기대를 본문이 잘 충족시켜 사용자 만족도를 높였기 때문이다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142659922188069,
+      "p_value": 0.3280633958132242
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목과 본문 간 의미적 일관성 점수가 경쟁자 그룹의 평균 점수보다 높을수록, 즉 '제목-본문 일관성 상대 비율'이 1보다 클수록 non_brand_average_ctr이 높을 것이다. 이 피처는 제목이 제시한 약속을 본문이 얼마나 잘 이행하는지를 측정하고, 이를 경쟁 환경과 비교하여 콘텐츠의 구조적 완성도를 평가한다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142659609104629,
+      "p_value": 0.328063410821786
+    }
+  },
+  {
+    "feature_created": "relative_title_body_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 동일 대표 검색어에 대한 경쟁자 그룹의 평균 점수보다 높을수록, 사용자의 기대치를 더 잘 충족시켜 non_brand_average_ctr이 높아질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142660917550145,
+      "p_value": 0.3280633480976571
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 경쟁자 그룹의 평균 점수보다 높을수록(즉, 상대적 비율 > 1), non_brand_average_ctr이 높을 것이다. 이 피처는 개별 '우리' 포스트마다 계산되므로, 이전 시도와 달리 값의 분산이 보장된다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142659609104629,
+      "p_value": 0.328063410821786
+    }
+  },
+  {
+    "feature_created": "title_body_semantic_cohesion",
+    "hypothesis": "게시물의 제목과 본문 간 의미적 일관성(cohesion)이 높을수록, 즉 제목이 제시한 주제를 본문이 충실하게 설명할수록 사용자 의도를 더 잘 만족시켜 'non_brand_average_ctr'이 높아질 것이다. 이전 시도의 피처 값이 모두 동일했던 문제를 해결하기 위해, 그룹별 상대 비교가 아닌 각 게시물 고유의 절대적인 일관성 점수를 계산하여 모든 행이 독립적인 값을 갖도록 수정한다.",
+    "conclusion": "약한 양의 상관관계(0.2515)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0139).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.2515497740320771,
+      "p_value": 0.013931492331653162
+    }
+  },
+  {
+    "feature_created": "title_body_semantic_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목과 본문 간 의미적 일관성 점수가 동일 대표 검색어 그룹 내 경쟁 포스트들의 평균 점수보다 높을수록, 사용자가 제목에서 기대한 바를 본문이 잘 충족시킨다고 판단하여 더 높은 클릭률(non_brand_average_ctr)로 이어질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142660490691904,
+      "p_value": 0.3280633685603432
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 동일 검색어에 대한 경쟁자 그룹의 평균 점수보다 높을수록 (즉, 상대적 일관성 비율이 1보다 클수록), 사용자의 검색 의도를 더 명확하게 충족시킬 것으로 예상되어 `non_brand_average_ctr`이 높을 것입니다. 이 피처는 각 포스트의 개별 점수를 그룹 평균과 비교하므로, 그룹 내에서도 분산이 발생하여 유의미한 상관관계 분석이 가능합니다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "relative_title_body_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수(코사인 유사도)가 동일 대표 검색어 그룹 내 경쟁 포스트들의 평균 점수보다 높을수록, 사용자가 제목에서 기대한 내용을 본문에서 충족할 확률이 높아져 이탈률이 감소하고 평균 클릭률(non_brand_average_ctr)이 상승할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142659609104629,
+      "p_value": 0.328063410821786
+    }
+  },
+  {
+    "feature_created": "title_body_semantic_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 '제목-본문 의미적 일관성' 점수가 동일 대표 검색어 그룹 내 경쟁 포스트들의 평균 점수보다 높을수록, 즉 해당 비율이 1보다 클수록, 사용자가 제목에서 기대한 바를 본문이 잘 충족시켜 이탈률이 낮아지고 비브랜드 CTR은 높아질 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.1014)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3281).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10142649803131536,
+      "p_value": 0.32806388089978455
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 해당 대표 검색어의 경쟁자 포스트 그룹 평균보다 높을수록, 검색 결과에서 사용자의 기대를 더 잘 충족시켜 더 높은 CTR을 유도할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0829)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4243).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08292786993843819,
+      "p_value": 0.42431467348498525
+    }
+  }
+]

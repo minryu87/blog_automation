@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "morpheme_expansion_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹의 평균보다 대표 쿼리의 핵심 형태소를 더 다양하고 풍부하게 확장하여 사용할수록, 사용자의 검색 의도에 대한 포괄적인 답변을 제공하여 비브랜드 평균 클릭률(CTR)을 높일 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "core_morpheme_expansion_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 쿼리의 핵심 형태소와 관련된 파생/확장 형태소를 더 많이 포함할수록, 해당 쿼리에 대한 더 깊은 전문성을 보여주어 CTR이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0132)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8986).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.013247347669693474,
+      "p_value": 0.8986115995368451
+    }
+  },
+  {
+    "feature_created": "relative_morpheme_coverage",
+    "hypothesis": "우리 포스트가 동일 대표 검색어에 대한 경쟁자 그룹 전체가 사용하는 고유 형태소 집합의 더 넓은 범위를 포괄할수록, 내용의 포괄성과 관련성이 높다고 판단되어 클릭률이 증가할 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "morpheme_exclusivity_score",
+    "hypothesis": "우리 포스트가 경쟁자 그룹에서 사용하지 않는 고유한 형태소를 더 많이 포함할수록 (즉, 형태소 배타성 점수가 높을수록), 주제에 대한 차별화된 관점이나 깊이를 제공하는 것으로 인식되어 CTR이 높아질 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "query_morpheme_expansion_score",
+    "hypothesis": "우리 포스트가 대표 검색어의 핵심 형태소를 기반으로 관련 파생/확장 형태소를 경쟁자 그룹의 평균보다 더 많이 포함할수록, 검색 의도의 다각적인 측면을 더 잘 충족시켜 클릭률(CTR)이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1062)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3059).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10615962754717156,
+      "p_value": 0.3058753989604366
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 대표 검색어의 핵심 형태소를 기반으로 파생된 형태소를 경쟁자 그룹보다 더 풍부하고 다양하게 사용할수록, 사용자의 탐색 의도를 더 폭넓게 만족시켜 `non_brand_average_ctr`이 높아질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0159)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8783).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.01591528373776902,
+      "p_value": 0.8783358826960201
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁사 그룹 전체보다 대표 검색어의 핵심 형태소로부터 파생된 형태소를 더 다양하게 사용할수록, 더 깊이 있는 정보를 제공하여 사용자 만족도를 높이고 결과적으로 CTR이 향상될 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0280)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7876).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.02800960382304046,
+      "p_value": 0.7875890940827998
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 쿼리의 핵심 형태소에서 파생된 형태소를 더 다양하게 사용할수록(파생 형태소 풍부도 비율이 높을수록) 비브랜드 평균 CTR이 높을 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹에 비해 대표 쿼리의 핵심 형태소를 포함하는 파생/조합 형태소를 더 풍부하게(다양하게) 사용할수록, 사용자의 구체적인 검색 의도를 더 폭넓게 충족시켜 CTR이 높아질 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0132)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8986).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.013247347669693474,
+      "p_value": 0.8986115995368451
+    }
+  },
+  {
+    "feature_created": "core_morpheme_coverage_ratio_vs_competitors",
+    "hypothesis": "우리 포스트가 경쟁사 그룹의 평균보다 대표 검색어의 핵심 형태소를 더 많이 포함하고 있을수록(커버리지 비율이 높을수록), 검색 의도의 여러 측면을 충족시켜 클릭률(non_brand_average_ctr)이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0384)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7118).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.03840489554006754,
+      "p_value": 0.7117509100035307
+    }
+  }
+]

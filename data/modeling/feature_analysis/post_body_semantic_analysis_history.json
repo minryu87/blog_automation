@@ -1,0 +1,1702 @@
+[
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.0008247141167502733,
+        "p_value": 0.9903628805488773,
+        "interpretation": "Found a weak, negative correlation (-0.0008). However, the result is not statistically significant (p-value: 0.9904), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.14437927843471157,
+        "p_value": 0.03231283675788544,
+        "interpretation": "Found a weak, positive correlation (0.1444). The result is statistically significant (p-value: 0.0323), suggesting the relationship is unlikely due to chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts with high semantic similarity between the 'post_title' and 'post_body' are likely to be more topically focused. This focus better satisfies user search intent, leading to stronger engagement signals (like longer dwell time) that search engines reward, ultimately resulting in higher 'non_brand_inflow'.",
+    "feature_created": "semantic_coherence_title_body"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_focus_body' not found in DataFrame after execution.",
+    "hypothesis": "Posts with high internal semantic coherence (i.e., where sentences within the 'post_body' are semantically similar to each other) are more topically focused and provide a better user experience. This higher quality and focus lead to better search engine rankings and, consequently, a higher 'non_brand_inflow'. This feature directly addresses the user feedback to perform a deep semantic analysis on the 'post_body' text itself, moving beyond a simple title-to-body comparison.",
+    "feature_created": "semantic_focus_body"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'internal_semantic_coherence' not found in DataFrame after execution.",
+    "hypothesis": "Posts with high internal semantic coherence—where sentences within the 'post_body' are semantically similar to each other—are more topically focused. This focus provides a better user experience by delivering comprehensive and easy-to-understand information on a single subject. Search engines reward such high-quality, focused content with better rankings, leading to a higher 'non_brand_inflow'. This feature directly analyzes the 'post_body' text, as requested by user feedback, to quantify its thematic consistency.",
+    "feature_created": "internal_semantic_coherence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.09089008407822227,
+        "p_value": 0.18222872794680015,
+        "interpretation": "Found a weak, positive correlation (0.0909). However, the result is not statistically significant (p-value: 0.1822), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07372846506475447,
+        "p_value": 0.27623208796585896,
+        "interpretation": "Found a weak, positive correlation (0.0737). However, the result is not statistically significant (p-value: 0.2762), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that maintain a consistent thematic focus from the beginning to the end are easier for both users and search engines to comprehend. High semantic similarity between the initial and final sections of the 'post_body' indicates a coherent, on-topic article that fully addresses a specific subject without deviation. This structural and thematic integrity is a signal of high-quality content, leading to better user engagement, which search engines reward with higher rankings and, consequently, greater 'non_brand_inflow'.",
+    "feature_created": "semantic_start_end_coherence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_centroid_cohesion' not found in DataFrame after execution.",
+    "hypothesis": "Posts where individual sentences are, on average, highly similar to the document's overall central theme (semantic centroid) are more topically focused. This high level of focus and internal consistency signals high-quality content to search engines, making it easier to understand and rank. This should lead to better search performance and, consequently, higher 'non_brand_inflow'.",
+    "feature_created": "semantic_centroid_cohesion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_centroid_cohesion' not found in DataFrame after execution.",
+    "hypothesis": "Posts where individual sentences are, on average, highly similar to the document's overall central theme (the semantic centroid) are more topically focused and coherent. This high level of internal consistency signals high-quality content to search engines, making the post easier to understand and rank for relevant queries. This should lead to better user engagement and consequently, higher 'non_brand_inflow'.",
+    "feature_created": "semantic_centroid_cohesion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_topic_concentration' not found in DataFrame after execution.",
+    "hypothesis": "Posts where sentences are tightly clustered around a central semantic theme (high topic concentration) are perceived as more focused and authoritative by both users and search engines. This focus leads to better satisfaction of search intent, resulting in higher rankings and consequently, a higher 'non_brand_inflow'. This method directly analyzes the internal structure of the 'post_body' to measure its thematic consistency, avoiding reliance on pre-computed scores.",
+    "feature_created": "semantic_topic_concentration"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_topic_adherence' not found in DataFrame after execution.",
+    "hypothesis": "A post where the body content consistently stays on the topic defined by the title provides a better, more focused user experience. We measure this 'adherence' by calculating the average semantic similarity between the post title and each individual sentence in the post body. Higher adherence scores are expected to correlate with better user engagement and search engine rankings, leading to increased `non_brand_inflow` and a higher `non_brand_average_ctr` because the content directly fulfills the promise of the title.",
+    "feature_created": "title_topic_adherence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_flow_consistency' not found in DataFrame after execution.",
+    "hypothesis": "A blog post that flows logically from one point to the next maintains reader engagement and provides a better user experience. This logical flow can be measured by the semantic similarity between consecutive sentences. A high average similarity suggests a smooth, coherent narrative, which search engines may favor due to better user signals (like dwell time), leading to higher rankings and more `non_brand_inflow`.",
+    "feature_created": "semantic_flow_consistency"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_focus_consistency' not found in DataFrame after execution.",
+    "hypothesis": "A low standard deviation of sentence-to-centroid similarities indicates a highly focused article where every part consistently supports the central theme. This high level of focus and coherence signals high-quality content, making it easier for search engines to understand and rank. A more consistent article (lower standard deviation) should satisfy user intent more effectively, leading to higher engagement and thus a greater `non_brand_inflow`.",
+    "feature_created": "semantic_focus_consistency"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_outlier_penalty' not found in DataFrame after execution.",
+    "hypothesis": "Search engines and users penalize content that significantly deviates from its core topic, even if only for a short section. A single, highly irrelevant sentence can disrupt the user experience and signal a lack of focus. This feature, `semantic_outlier_penalty`, measures the presence of the *most* off-topic sentence by finding the minimum similarity between any sentence and the article's overall theme (semantic centroid). A higher penalty score (indicating a more severe outlier) is hypothesized to negatively correlate with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_outlier_penalty"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_focus_ratio' not found in DataFrame after execution.",
+    "hypothesis": "Posts where a high proportion of sentences are semantically similar to the article's overall theme (document embedding) are more focused and provide a better user experience. This high density of relevant information satisfies search intent more effectively, leading to better engagement signals (like dwell time) that search engines reward with higher rankings. This should correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_focus_ratio"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_adherence_consistency' not found in DataFrame after execution.",
+    "hypothesis": "A low standard deviation of sentence-to-title similarity scores indicates a post that consistently delivers on the promise of its title. This thematic stability provides a better, more predictable user experience and signals high quality to search engines, as every part of the content reinforces the main topic. Therefore, a lower `title_adherence_consistency` score (representing less variance and higher consistency) is expected to have a negative correlation with poor performance, which translates to a positive correlation with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_adherence_consistency"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.06783506980140713,
+        "p_value": 0.3199076407123762,
+        "interpretation": "Found a weak, positive correlation (0.0678). However, the result is not statistically significant (p-value: 0.3199), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.06806389469766856,
+        "p_value": 0.3149134593381955,
+        "interpretation": "Found a weak, positive correlation (0.0681). However, the result is not statistically significant (p-value: 0.3149), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high `peak_title_relevance` score indicates that a post contains at least one section that is extremely well-aligned with the title's topic. This strong alignment is a clear signal to both users and search engines that the content directly addresses the query implied by the title. This fulfillment of user intent leads to better engagement, higher rankings, and thus, greater `non_brand_inflow` and `non_brand_average_ctr`. This feature specifically measures the *maximum* semantic similarity between the title and any individual sentence in the body, capturing the content's most relevant point.",
+    "feature_created": "peak_title_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_topic_breadth' not found in DataFrame after execution.",
+    "hypothesis": "A post that covers a topic comprehensively will touch upon various related sub-topics. This semantic richness or 'breadth' can be measured by the average standard deviation of its sentence embeddings. A higher breadth score signifies a more thorough and in-depth article that provides greater value to the user by exploring different facets of the main topic. Search engines may reward such comprehensive content, leading to higher rankings and consequently, a greater `non_brand_inflow`.",
+    "feature_created": "semantic_topic_breadth"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'introductory_hook_strength' not found in DataFrame after execution.",
+    "hypothesis": "A strong semantic link between the post's title and its introduction (the first few sentences) is crucial for user retention. It immediately reassures the user that the content will address their query, as implied by the title they clicked. This strong initial 'hook' reduces bounce rates and increases engagement, signaling to search engines that the page is a good match. This should lead to a higher `non_brand_average_ctr` and, consequently, greater `non_brand_inflow`.",
+    "feature_created": "introductory_hook_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_progression_stability' not found in DataFrame after execution.",
+    "hypothesis": "A high-quality blog post should have a logical and smooth topical flow, moving from one point to the next without being overly repetitive or chaotically disjointed. This feature, `semantic_progression_stability`, measures the consistency of this flow by calculating the standard deviation of cosine similarities between consecutive sentences. A very low standard deviation might indicate a monotonous, repetitive text, while a very high one could signal an incoherent, hard-to-follow article. We hypothesize that a lower, more stable score (less variance in topic jumps) indicates a more focused and easier-to-read article, which improves user engagement signals like dwell time. Search engines reward this positive user experience, leading to higher `non_brand_inflow`.",
+    "feature_created": "semantic_progression_stability"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.047459447147259595,
+        "p_value": 0.48675740633952724,
+        "interpretation": "Found a weak, positive correlation (0.0475). However, the result is not statistically significant (p-value: 0.4868), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.019326212186729693,
+        "p_value": 0.7756076072806914,
+        "interpretation": "Found a weak, positive correlation (0.0193). However, the result is not statistically significant (p-value: 0.7756), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A well-structured post often concludes by summarizing its main points, directly relating them back to the topic promised in the title. High semantic similarity between the `post_title` and the final section of the `post_body` signals a strong, satisfying conclusion. This fulfillment of the title's promise enhances user experience and content quality signals, leading to better search engine performance and thus higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "concluding_title_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'concluding_theme_relevance' not found in DataFrame after execution.",
+    "hypothesis": "A well-crafted article provides a strong, clear conclusion that directly relates back to the central theme presented in the title. By measuring the semantic similarity between the `post_title` and the theme of the concluding sentences (e.g., the last 3 sentences), we can quantify the strength of the article's 'punchline' or takeaway. A higher relevance score indicates a more satisfying and complete article, which improves user experience, signals content quality to search engines, and should lead to higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "concluding_theme_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_content_breadth' not found in DataFrame after execution.",
+    "hypothesis": "Posts that cover a wider range of related sub-topics (i.e., have higher semantic diversity within the body text) are more comprehensive and valuable to the reader. This comprehensiveness is a signal of high-quality, in-depth content that satisfies user intent more fully. Search engines reward such content, leading to higher rankings and greater `non_brand_inflow`. This feature measures this 'breadth' by calculating the average pairwise semantic distance among all sentences in the `post_body`, where a higher score indicates greater diversity.",
+    "feature_created": "semantic_content_breadth"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04490760809089827,
+        "p_value": 0.5105113600549059,
+        "interpretation": "Found a weak, positive correlation (0.0449). However, the result is not statistically significant (p-value: 0.5105), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11204601524991517,
+        "p_value": 0.09738461684697908,
+        "interpretation": "Found a weak, positive correlation (0.1120). However, the result is not statistically significant (p-value: 0.0974), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article is more effective if a significant portion of its content is highly relevant to the topic promised by the title. We can measure this 'density' by calculating the proportion of sentences in the body that have a semantic similarity to the title above a certain high threshold (e.g., 0.5). A higher proportion indicates a strong, consistent focus on the title's topic, which should satisfy user intent, improve engagement signals, and thus correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_relevance_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_trajectory_return' not found in DataFrame after execution.",
+    "hypothesis": "A post that concludes by semantically returning to its starting point demonstrates a strong, coherent structure. This \"full circle\" narrative is satisfying for readers and signals a well-organized piece of content to search engines, as it indicates the main topic introduced at the beginning has been thoroughly addressed. This structural integrity should correlate with higher user engagement (e.g., dwell time) and, consequently, a higher `non_brand_inflow`.",
+    "feature_created": "semantic_trajectory_return"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_thesis_alignment' not found in DataFrame after execution.",
+    "hypothesis": "The semantic similarity between a post's title and its 'thesis sentence' (the single sentence most representative of the entire body's theme) is a strong indicator of a well-focused article. A high alignment score means the title accurately reflects the core message, fulfilling user expectations and signaling high quality to search engines. This should lead to better engagement, higher rankings, and consequently, increased `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_thesis_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'thematic_climax_position' not found in DataFrame after execution.",
+    "hypothesis": "The most effective articles build up to a key point or \"climax\" and then conclude. If the most relevant information (the sentence most semantically similar to the title) appears too early, the reader may leave without getting the full context. If it appears too late, the reader might get bored and leave before reaching it. We hypothesize that an optimal position for this thematic climax exists somewhere in the middle of the article. A climax position closer to this optimal range will correlate with higher user engagement, leading to a better `non_brand_average_ctr` and consequently, higher `non_brand_inflow`. This feature measures where the semantic peak of the article occurs relative to the title, normalized on a scale from 0 (start) to 1 (end).",
+    "feature_created": "thematic_climax_position"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_topic_variance' not found in DataFrame after execution.",
+    "hypothesis": "A post should remain consistently focused on the topic promised by its title. High variance in the semantic similarity between individual body sentences and the title suggests the article's focus is unstable, with some parts being on-topic and others drifting away. This inconsistency can harm user experience and signal poor structure to search engines. We hypothesize that a higher `semantic_topic_variance` (more drift) will negatively correlate with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_topic_variance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_driven_semantic_diversity' not found in DataFrame after execution.",
+    "hypothesis": "High-quality, comprehensive articles explore various sub-topics that are all relevant to the main title. This feature measures the semantic diversity *among sentences that are thematically related to the post title*. A higher score indicates a rich, in-depth exploration of the topic, rather than a repetitive or shallow article. This comprehensiveness is a strong quality signal for search engines, leading to better rankings and higher `non_brand_inflow`.",
+    "feature_created": "title_driven_semantic_diversity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.03646441565295874,
+        "p_value": 0.5931826492082757,
+        "interpretation": "Found a weak, positive correlation (0.0365). However, the result is not statistically significant (p-value: 0.5932), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.06469900212726869,
+        "p_value": 0.33948887929101873,
+        "interpretation": "Found a weak, positive correlation (0.0647). However, the result is not statistically significant (p-value: 0.3395), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality article should remain on-topic throughout its entire length. This feature, 'title_adherence_floor', identifies the sentence in the 'post_body' that is *least* semantically similar to the 'post_title'. A higher score for this feature (a higher 'floor') signifies that even the biggest topical detour in the article is still closely related to the main subject promised by the title. This unwavering focus prevents user confusion or abandonment, signals high structural quality to search engines, and should thus correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_adherence_floor"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_uniqueness_of_conclusion' not found in DataFrame after execution.",
+    "hypothesis": "A high-quality article provides a conclusion that synthesizes information or offers a new perspective, rather than merely repeating the introduction. This feature measures the semantic distinctiveness between a post's introductory sentences and its concluding sentences. A moderate level of uniqueness (i.e., not a simple repetition, but also not completely off-topic) is hypothesized to signal a more valuable and satisfying user experience. This enhanced quality should lead to better engagement signals, which are rewarded by search engines with higher rankings and consequently, a greater `non_brand_inflow`.",
+    "feature_created": "semantic_uniqueness_of_conclusion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04367138492493159,
+        "p_value": 0.522231474774932,
+        "interpretation": "Found a weak, positive correlation (0.0437). However, the result is not statistically significant (p-value: 0.5222), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07233759128238097,
+        "p_value": 0.28541780217155904,
+        "interpretation": "Found a weak, positive correlation (0.0723). However, the result is not statistically significant (p-value: 0.2854), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A well-structured article progresses logically. The first half typically sets up the problem or introduces the main topic, while the second half provides solutions, deeper analysis, or conclusions. This creates a natural thematic 'shift' or 'development.' We can measure this by calculating the cosine similarity between the semantic embedding of the first half of the post and the second half. A very high similarity score would indicate a repetitive, shallow article that doesn't develop its topic. We hypothesize that a lower similarity score (indicating more development) will correlate positively with user engagement signals and thus, with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_development_shift"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_anchored_semantic_cohesion' not found in DataFrame after execution.",
+    "hypothesis": "An article is highly effective if its content is not only relevant to the title but also thematically consistent. This feature first identifies sentences that are semantically related to the title (the 'on-topic core') and then measures the internal coherence of this core content. A high score indicates a focused, in-depth discussion that fulfills the title's promise without deviation, leading to better user satisfaction and higher search engine rankings, which should positively impact `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_anchored_semantic_cohesion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.05817476935234231,
+        "p_value": 0.3938030881353792,
+        "interpretation": "Found a weak, positive correlation (0.0582). However, the result is not statistically significant (p-value: 0.3938), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.016172732910176353,
+        "p_value": 0.811470466334762,
+        "interpretation": "Found a weak, negative correlation (-0.0162). However, the result is not statistically significant (p-value: 0.8115), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A well-structured article reinforces its central theme in the conclusion, often making it even more relevant to the title than the introduction. This feature, `thematic_conclusiveness_score`, quantifies this by subtracting the introduction-to-title similarity from the conclusion-to-title similarity. A higher (more positive) score indicates a strong, focused conclusion that fulfills the title's promise, leading to better user satisfaction, which search engines reward with higher rankings and thus greater `non_brand_inflow`.",
+    "feature_created": "thematic_conclusiveness_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_journey_length_normalized' not found in DataFrame after execution.",
+    "hypothesis": "A blog post that covers a topic comprehensively will explore various related facets, resulting in a longer \"semantic journey\" from one sentence to the next. By measuring the cumulative semantic distance between consecutive sentences and normalizing it by the post's word count, we can compare the semantic richness of articles regardless of their length. A higher normalized journey length signifies a more in-depth and less repetitive article per word, which provides greater value to the user. Search engines reward such comprehensive content, leading to better rankings and, consequently, a greater `non_brand_inflow`.",
+    "feature_created": "semantic_journey_length_normalized"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_topic_variance' not found in DataFrame after execution.",
+    "hypothesis": "A post should remain consistently focused on the topic promised by its title. High variance in the semantic similarity scores between individual body sentences and the title suggests the article's focus is unstable, with some parts being on-topic and others drifting away. This inconsistency can harm user experience and signal a poor content structure to search engines. We hypothesize that a higher `semantic_topic_variance` score (more drift) will negatively correlate with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_topic_variance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0007976789103886876,
+        "p_value": 0.9906787834031388,
+        "interpretation": "Found a weak, positive correlation (0.0008). However, the result is not statistically significant (p-value: 0.9907), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.16075564243077234,
+        "p_value": 0.017016581310431964,
+        "interpretation": "Found a weak, positive correlation (0.1608). The result is statistically significant (p-value: 0.0170), suggesting the relationship is unlikely due to chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article with strong 'framing'—where the introduction and conclusion are both more semantically aligned with the title than the middle section—provides a clearer, more organized user experience. This structural clarity helps users and search engines understand the content's purpose and key takeaways. This strong structure is a signal of high quality, leading to better user engagement and, consequently, higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_framing_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_relevance_decay_rate' not found in DataFrame after execution.",
+    "hypothesis": "In line with the 'inverted pyramid' or 'answer-first' writing style favored by search engines, the most relevant information should be presented at the beginning of an article. This feature measures the trend of semantic similarity between each sentence and the `post_title` as the article progresses. A negative slope (a decay in relevance) indicates that the core answer is front-loaded, which satisfies user intent quickly. This improved user experience is hypothesized to lead to better engagement signals, resulting in higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_relevance_decay_rate"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'introductory_hook_strength' not found in DataFrame after execution.",
+    "hypothesis": "A strong semantic link between the post's title and its introduction (the first few sentences) is crucial for user retention. It immediately reassures the user that the content will address their query, as implied by the title they clicked. This strong initial 'hook' reduces bounce rates and increases engagement, signaling to search engines that the page is a good match. This should lead to a higher `non_brand_average_ctr` and, consequently, greater `non_brand_inflow`.",
+    "feature_created": "introductory_hook_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.00876012798551467,
+        "p_value": 0.8979100762642237,
+        "interpretation": "Found a weak, positive correlation (0.0088). However, the result is not statistically significant (p-value: 0.8979), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.0007005565466242647,
+        "p_value": 0.9917566111085075,
+        "interpretation": "Found a weak, negative correlation (-0.0007). However, the result is not statistically significant (p-value: 0.9918), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts that follow the 'inverted pyramid' or 'answer-first' model—providing the most relevant information upfront—better satisfy user intent, leading to improved user experience signals. This can be measured by fitting a trend line to the semantic similarity scores between the title and each successive sentence in the body. A negative slope (decay) indicates the most relevant information is front-loaded. A steeper negative decay rate is hypothesized to correlate positively with `non_brand_average_ctr` and `non_brand_inflow` as search engines reward content that answers queries quickly.",
+    "feature_created": "title_relevance_decay"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.035233141814904986,
+        "p_value": 0.6057292458197056,
+        "interpretation": "Found a weak, positive correlation (0.0352). However, the result is not statistically significant (p-value: 0.6057), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.07611373920602113,
+        "p_value": 0.26094965757793104,
+        "interpretation": "Found a weak, negative correlation (-0.0761). However, the result is not statistically significant (p-value: 0.2609), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article is easier for users and search engines to understand when its introduction and conclusion are exceptionally strong 'anchors' to the main topic defined by the title. This feature measures how much more relevant the intro and conclusion are compared to the body's average relevance. A high score indicates strong structural framing, which satisfies user intent, improves engagement, and thus should positively correlate with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "structural_anchoring_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.07249694159336514,
+        "p_value": 0.28770117040420884,
+        "interpretation": "Found a weak, positive correlation (0.0725). However, the result is not statistically significant (p-value: 0.2877), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.22299448254009813,
+        "p_value": 0.0008661540692585486,
+        "interpretation": "Found a weak, positive correlation (0.2230). The result is statistically significant (p-value: 0.0009), suggesting the relationship is unlikely due to chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts with a richer 'on-topic' vocabulary—defined as having a greater number of unique words semantically relevant to the title—are more comprehensive and detailed. This depth of content provides greater value to the user, satisfying their search intent more thoroughly. Search engines recognize this comprehensiveness as a quality signal, leading to higher rankings and consequently, a greater `non_brand_inflow`.",
+    "feature_created": "semantic_vocabulary_richness"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'introductory_summary_strength' not found in DataFrame after execution.",
+    "hypothesis": "A high-quality article begins with an introduction that accurately summarizes the entire content to follow. This 'abstract-like' introduction provides a clear roadmap for both users and search engines, signaling a well-structured and focused document. We measure this `introductory_summary_strength` by calculating the semantic similarity between the embedding of the first few sentences and the embedding of the entire post body. A higher score indicates that the introduction is a faithful representation of the full content, leading to better user engagement, which is rewarded by search engines with higher rankings, thus positively impacting `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "introductory_summary_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'title_anchored_semantic_diversity' not found in DataFrame after execution.",
+    "hypothesis": "A comprehensive, high-quality article explores various sub-topics that are all relevant to the main subject defined by the `post_title`. This feature measures the semantic diversity (i.e., the average distance of on-topic sentences from their own semantic center) *only among those sentences that are strongly related to the title*. A higher score signifies a rich, in-depth exploration of the topic rather than a repetitive or shallow article. This comprehensiveness is a strong quality signal for search engines, leading to better user engagement, higher rankings, and consequently, a greater `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "title_anchored_semantic_diversity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_subtopic_coverage' not found in DataFrame after execution.",
+    "hypothesis": "Comprehensive articles provide more value by covering multiple distinct sub-topics that are all relevant to the main title. This breadth of on-topic coverage can be quantified by clustering the article's sentences and counting the number of distinct semantic groups that are highly relevant to the title. A higher number of relevant sub-topics indicates a more thorough and valuable article, which search engines reward with better rankings, leading to increased `non_brand_inflow` and a better `non_brand_average_ctr`.",
+    "feature_created": "semantic_subtopic_coverage"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0017449305702501618,
+        "p_value": 0.9796114889833513,
+        "interpretation": "Found a weak, positive correlation (0.0017). However, the result is not statistically significant (p-value: 0.9796), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.045561868870170864,
+        "p_value": 0.5013983550329578,
+        "interpretation": "Found a weak, negative correlation (-0.0456). However, the result is not statistically significant (p-value: 0.5014), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "High-performing articles answer the user's query (as represented by the title) prominently and efficiently. This can be measured by how much more semantically relevant the single *most* relevant sentence is compared to the *average* relevance of all sentences. A high score indicates a clear 'peak' of relevance, suggesting a distinct, primary answer is being provided, rather than a uniform, less focused discussion. This prominent answer is hypothesized to satisfy user intent more quickly, leading to better engagement signals (like lower bounce rate and higher CTR) and, consequently, higher `non_brand_inflow`.",
+    "feature_created": "answer_prominence_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'thematic_core_strength' not found in DataFrame after execution.",
+    "hypothesis": "High-quality articles have a strong, identifiable main theme that is directly aligned with the topic promised by the title. By first identifying the 'thematic core' of an article (the sentences most central to its overall message) and then measuring how similar this core is to the title, we can quantify the article's focus and integrity. A higher `thematic_core_strength` is expected to correlate with better user engagement and search rankings, leading to increased `non_brand_inflow` and a higher `non_brand_average_ctr`.",
+    "feature_created": "thematic_core_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.05343432631971899,
+        "p_value": 0.4335389089419977,
+        "interpretation": "Found a weak, positive correlation (0.0534). However, the result is not statistically significant (p-value: 0.4335), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.05013266857206961,
+        "p_value": 0.45941105484058165,
+        "interpretation": "Found a weak, positive correlation (0.0501). However, the result is not statistically significant (p-value: 0.4594), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality article not only uses a rich vocabulary related to its title but also ensures that this on-topic vocabulary forms a coherent semantic cluster. This indicates a deep, focused discussion of the topic's core concepts rather than a shallow mention of many disparate keywords. This semantic cohesion signals expertise and depth, leading to better search performance, and should thus correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "on_topic_vocabulary_cohesion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.04740459533132738,
+        "p_value": 0.48726168392330577,
+        "interpretation": "Found a weak, negative correlation (-0.0474). However, the result is not statistically significant (p-value: 0.4873), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.06279387808421907,
+        "p_value": 0.3539301265058233,
+        "interpretation": "Found a weak, negative correlation (-0.0628). However, the result is not statistically significant (p-value: 0.3539), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that front-load their on-topic vocabulary—meaning a high concentration of words semantically relevant to the title appears in the introductory section—will capture user attention and satisfy search intent more quickly. This 'front-loaded richness' is a strong signal of an 'answer-first' structure. This feature calculates the ratio of on-topic word density in the introduction versus the rest of the body. A ratio greater than 1 suggests effective front-loading, which is hypothesized to correlate positively with `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "frontloaded_vocabulary_focus"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04054273187033509,
+        "p_value": 0.5524943125728299,
+        "interpretation": "Found a weak, positive correlation (0.0405). However, the result is not statistically significant (p-value: 0.5525), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.00045110305169173553,
+        "p_value": 0.9946918541237557,
+        "interpretation": "Found a weak, negative correlation (-0.0005). However, the result is not statistically significant (p-value: 0.9947), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A post that uses words highly semantically aligned with the title's core concept will be perceived as more authoritative and expert. This feature measures the average relevance of 'on-topic' words (words with a semantic similarity to the title above a certain threshold). A higher precision score indicates the article's vocabulary is not just broad, but also highly focused and relevant, signaling superior quality to search engines. This should lead to a positive correlation with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "on_topic_vocabulary_precision"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.01354005175942219,
+        "p_value": 0.8427990048478835,
+        "interpretation": "Found a weak, positive correlation (0.0135). However, the result is not statistically significant (p-value: 0.8428), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.0005023595190447594,
+        "p_value": 0.9940887278240825,
+        "interpretation": "Found a weak, negative correlation (-0.0005). However, the result is not statistically significant (p-value: 0.9941), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that introduce their core, on-topic vocabulary earlier in the text are more effective at signaling relevance to both users and search engines, aligning with the 'answer-first' principle. This immediate confirmation of the topic satisfies user intent quickly, leading to better engagement (higher CTR) and improved rankings (`non_brand_inflow`). This feature measures the average normalized position of the first appearance of unique words that are semantically similar to the title. A higher score (closer to 1.0) indicates that key vocabulary is introduced very early.",
+    "feature_created": "on_topic_vocabulary_promptness"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.06315682271476158,
+        "p_value": 0.35449308209101443,
+        "interpretation": "Found a weak, negative correlation (-0.0632). However, the result is not statistically significant (p-value: 0.3545), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.053502801043282096,
+        "p_value": 0.4297498606477811,
+        "interpretation": "Found a weak, negative correlation (-0.0535). However, the result is not statistically significant (p-value: 0.4297), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "While vocabulary richness (the number of on-topic words) is important, the *semantic diversity* of that vocabulary is also crucial. A post that explores various distinct facets of the main topic (as promised by the title) provides more comprehensive value than one that repetitively discusses a single aspect. This feature measures the average semantic distance between on-topic words. A higher score signifies a broader, more in-depth exploration, which is a signal of high-quality, comprehensive content. This should be rewarded by search engines, leading to higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "on_topic_vocabulary_diversity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.08272595564466505,
+        "p_value": 0.22487284251282846,
+        "interpretation": "Found a weak, positive correlation (0.0827). However, the result is not statistically significant (p-value: 0.2249), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.0806918956445829,
+        "p_value": 0.23326877118636663,
+        "interpretation": "Found a weak, positive correlation (0.0807). However, the result is not statistically significant (p-value: 0.2333), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts with a higher proportion of their total words being semantically relevant to the title are more focused and provide a better user experience. This high density of on-topic information signals strong topical authority to search engines, satisfying user intent more effectively. This should lead to better engagement, resulting in a higher `non_brand_average_ctr` and consequently, higher `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.02639731631782036,
+        "p_value": 0.6989944346268709,
+        "interpretation": "Found a weak, positive correlation (0.0264). However, the result is not statistically significant (p-value: 0.6990), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.008308842994392752,
+        "p_value": 0.9024712844319237,
+        "interpretation": "Found a weak, positive correlation (0.0083). However, the result is not statistically significant (p-value: 0.9025), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article where the unique, on-topic vocabulary is evenly distributed throughout the text, rather than being concentrated in one section, demonstrates a more natural and sophisticated integration of key concepts. This even dispersion signals a well-structured, coherent article that reinforces its theme from start to finish. This high structural quality should lead to better user engagement, which search engines reward, resulting in a higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "on_topic_vocabulary_dispersion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0715596056783747,
+        "p_value": 0.2939957202368036,
+        "interpretation": "Found a weak, positive correlation (0.0716). However, the result is not statistically significant (p-value: 0.2940), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.08528296327054125,
+        "p_value": 0.2076543702231588,
+        "interpretation": "Found a weak, positive correlation (0.0853). However, the result is not statistically significant (p-value: 0.2077), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that establish a strong semantic link between the title and the *primary keywords* in the introduction are more effective at immediately confirming relevance to the user. This \"keyword primacy\" satisfies search intent instantly, reducing bounce rates and improving engagement signals. A higher score, indicating a stronger connection between the title and the intro's core vocabulary, is hypothesized to correlate positively with `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "introductory_keyword_primacy"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04649026094930499,
+        "p_value": 0.49570867603097135,
+        "interpretation": "Found a weak, positive correlation (0.0465). However, the result is not statistically significant (p-value: 0.4957), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.05304405318564673,
+        "p_value": 0.4337212184901582,
+        "interpretation": "Found a weak, positive correlation (0.0530). However, the result is not statistically significant (p-value: 0.4337), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article is of the highest quality when its overall semantic meaning is almost entirely composed of its core, on-topic vocabulary. This feature measures the semantic similarity between the full `post_body` and a synthesized document containing only the words from the body that are highly relevant to the `post_title`. A high 'purity' score indicates minimal semantic noise and a very strong focus, which should satisfy user intent, improve engagement signals like CTR, and consequently lead to higher `non_brand_inflow`.",
+    "feature_created": "core_topic_purity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.10548773750697132,
+        "p_value": 0.12131392530218958,
+        "interpretation": "Found a weak, positive correlation (0.1055). However, the result is not statistically significant (p-value: 0.1213), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07478481761952667,
+        "p_value": 0.26939085426490983,
+        "interpretation": "Found a weak, positive correlation (0.0748). However, the result is not statistically significant (p-value: 0.2694), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article that not only introduces a rich set of on-topic vocabulary but also strategically repeats its *most* relevant keywords demonstrates topical expertise and reinforces the core message for the reader. This repetition, or 'thematic reinforcement,' signals depth and authority to search engines. We can measure this by identifying words highly similar to the title and then calculating a weighted score based on their frequency of use. A higher reinforcement score is hypothesized to correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "thematic_keyword_reinforcement"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04187724176421677,
+        "p_value": 0.539481947485839,
+        "interpretation": "Found a weak, positive correlation (0.0419). However, the result is not statistically significant (p-value: 0.5395), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.05949656860626986,
+        "p_value": 0.3798201170549351,
+        "interpretation": "Found a weak, negative correlation (-0.0595). However, the result is not statistically significant (p-value: 0.3798), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that follow the 'inverted pyramid' structure introduce their core, on-topic vocabulary early on and then elaborate. This can be measured by calculating the trend (slope) of on-topic word density across sections of the post. A negative slope, indicating that the density of topic-relevant words is highest at the beginning and decreases over time, signals a well-structured, 'answer-first' article. This structure quickly satisfies user intent, leading to better engagement signals (higher CTR, lower bounce rate) and, consequently, higher `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_decay"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'on_topic_vocabulary_deployment_ratio' not found in DataFrame after execution.",
+    "hypothesis": "Articles that introduce a large proportion of their total on-topic vocabulary within the introductory section provide a strong, immediate signal of relevance to the user. This 'front-loading' of key concepts satisfies user intent quickly, reduces bounce rates, and increases engagement. A higher percentage of on-topic vocabulary deployed early will correlate positively with `non_brand_average_ctr` and, subsequently, `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_deployment_ratio"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.10165601997905566,
+        "p_value": 0.13551384223987925,
+        "interpretation": "Found a weak, negative correlation (-0.1017). However, the result is not statistically significant (p-value: 0.1355), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.1214574598385194,
+        "p_value": 0.07219214359114497,
+        "interpretation": "Found a weak, negative correlation (-0.1215). However, the result is not statistically significant (p-value: 0.0722), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts where the on-topic vocabulary (words closely related to the title) is also semantically central to the overall body content demonstrate exceptional thematic consistency and focus. This alignment between the 'promise' (title) and the 'substance' (body's core theme) provides a superior user experience and a clear quality signal to search engines, leading to higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "core_vocabulary_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.063102320812707,
+        "p_value": 0.35490934349550257,
+        "interpretation": "Found a weak, positive correlation (0.0631). However, the result is not statistically significant (p-value: 0.3549), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.0013819706736481249,
+        "p_value": 0.9837393001210221,
+        "interpretation": "Found a weak, positive correlation (0.0014). However, the result is not statistically significant (p-value: 0.9837), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high `thematic_vocabulary_expansion` score signifies that an article introduces its core concepts early and then builds upon them with new, relevant vocabulary throughout the text. This demonstrates topic development and comprehensiveness, rather than simple repetition. This depth is a quality signal that should correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "thematic_vocabulary_expansion"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0535245333421948,
+        "p_value": 0.4327619088637281,
+        "interpretation": "Found a weak, positive correlation (0.0535). However, the result is not statistically significant (p-value: 0.4328), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07005090032238437,
+        "p_value": 0.30096089567664724,
+        "interpretation": "Found a weak, positive correlation (0.0701). However, the result is not statistically significant (p-value: 0.3010), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts where the most frequent, substantive words in the body are highly semantically aligned with the title have a strong topic focus. This clarity and fulfillment of the title's promise lead to a better user experience, higher engagement (CTR), and are rewarded by search engines with better rankings (`non_brand_inflow`). This feature differs from previous attempts by first identifying the most important keywords from the body text itself, and then checking their relevance to the title, rather than searching the body for words that match the title.",
+    "feature_created": "keyword_title_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'optimal_topical_distance' not found in DataFrame after execution.",
+    "hypothesis": "An article is most effective when its body content provides specific examples and elaborations on the general topic promised by the title. This means the body sentences should be semantically related to the title, but not simply re-statements of it. An extremely high title-sentence similarity might indicate a repetitive, low-value article, while a very low similarity indicates an off-topic one. Therefore, we hypothesize that there is an 'optimal distance' or a 'sweet spot' of semantic similarity (e.g., around 0.65) that signifies high-quality content. This feature measures how close the average title-to-sentence similarity is to this optimal target value. A higher score (closer to the sweet spot) is expected to correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "optimal_topical_distance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.001410495106023632,
+        "p_value": 0.9835185578208674,
+        "interpretation": "Found a weak, negative correlation (-0.0014). However, the result is not statistically significant (p-value: 0.9835), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.143265170259665,
+        "p_value": 0.033684485818927884,
+        "interpretation": "Found a weak, positive correlation (0.1433). The result is statistically significant (p-value: 0.0337), suggesting the relationship is unlikely due to chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality article has a core 'thesis chunk'—a section that best represents the entire document's message. The semantic alignment between this specific chunk and the `post_title` is a powerful indicator of a focused article that delivers on its promise. This strong focus satisfies user intent, which search engines reward with better rankings (`non_brand_inflow`) and encourages clicks (`non_brand_average_ctr`).",
+    "feature_created": "thesis_chunk_title_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'core_vocabulary_title_alignment' not found in DataFrame after execution.",
+    "hypothesis": "A high-quality article is thematically consistent. The core vocabulary that defines the article's central message (its semantic centroid) should also be highly relevant to the `post_title`. This feature measures the average semantic similarity between an article's most thematically central words (those closest to the body's semantic centroid) and the `post_title`. A high alignment score indicates that the article's substance directly delivers on the title's promise, signaling quality to search engines and leading to better user engagement, thus improving `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "core_vocabulary_title_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.09765187880422974,
+        "p_value": 0.15168009371321686,
+        "interpretation": "Found a weak, positive correlation (0.0977). However, the result is not statistically significant (p-value: 0.1517), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.06049433135087995,
+        "p_value": 0.37186651236316254,
+        "interpretation": "Found a weak, positive correlation (0.0605). However, the result is not statistically significant (p-value: 0.3719), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality article should be both comprehensive (using many different on-topic words) and focused (those words should be highly relevant to the title). This feature measures the sum of semantic similarities for all unique on-topic words relative to the title, capturing both the breadth (number of words) and depth (their average relevance) of the on-topic vocabulary. A higher score signifies a text that is both rich in relevant concepts and precise in its language, which should strongly correlate with user satisfaction (CTR) and search engine authority (`non_brand_inflow`).",
+    "feature_created": "focused_lexical_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.08594800598220732,
+        "p_value": 0.20726722409452616,
+        "interpretation": "Found a weak, positive correlation (0.0859). However, the result is not statistically significant (p-value: 0.2073), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.08291438910619693,
+        "p_value": 0.220604046774405,
+        "interpretation": "Found a weak, positive correlation (0.0829). However, the result is not statistically significant (p-value: 0.2206), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that are more efficient at delivering diverse, on-topic information will better satisfy user intent. This efficiency can be measured by the number of unique, title-relevant words per 100 words of text (`on_topic_vocabulary_efficiency`). A higher efficiency score indicates a dense, high-value article that avoids filler content. This should be rewarded by search engines with better rankings (higher `non_brand_inflow`) and be more appealing to users in search results (higher `non_brand_average_ctr`).",
+    "feature_created": "on_topic_vocabulary_efficiency"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_redundancy_penalty' not found in DataFrame after execution.",
+    "hypothesis": "Articles with high semantic redundancy (i.e., a large proportion of sentences clustering into a single theme) are less informative and may bore the reader, leading to poor engagement. This lack of informational depth is a negative quality signal for search engines. Therefore, a higher `semantic_redundancy_penalty` (representing a higher percentage of sentences in the largest semantic cluster) will negatively correlate with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "semantic_redundancy_penalty"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04031836191947969,
+        "p_value": 0.5546969932702767,
+        "interpretation": "Found a weak, positive correlation (0.0403). However, the result is not statistically significant (p-value: 0.5547), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.006432672076703633,
+        "p_value": 0.9244185694832652,
+        "interpretation": "Found a weak, negative correlation (-0.0064). However, the result is not statistically significant (p-value: 0.9244), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles that continuously introduce new, relevant vocabulary throughout their length, rather than front-loading all key terms, demonstrate greater depth and comprehensiveness. This 'thematic persistence' sustains reader engagement and signals expertise to search engines. We measure this by calculating the proportion of unique, on-topic vocabulary that is first introduced in the second half of the article. A higher score is expected to correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "thematic_persistence_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04550531525923765,
+        "p_value": 0.5048941221395566,
+        "interpretation": "Found a weak, positive correlation (0.0455). However, the result is not statistically significant (p-value: 0.5049), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.06495853844931519,
+        "p_value": 0.3375509982696206,
+        "interpretation": "Found a weak, positive correlation (0.0650). However, the result is not statistically significant (p-value: 0.3376), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality introduction should be dense with concepts relevant to the title, acting as a clear 'scent of information' for the user. This feature measures the proportion of the introduction's unique vocabulary that is semantically similar to the title. A high density score indicates an efficient, focused opening that immediately addresses the user's query. This strong start is hypothesized to improve user engagement (reducing bounce rates, increasing CTR) and signal high relevance to search engines, thus positively impacting `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "introductory_topical_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'focused_subtopic_elaboration' not found in DataFrame after execution.",
+    "hypothesis": "Articles that dedicate a significant proportion of their content to a few core sub-topics directly relevant to the title are more comprehensive and easier to understand. This depth of focus, rather than a shallow coverage of many tangential points, signals high quality to search engines. This feature calculates the percentage of sentences that belong to on-topic sub-topic clusters (identified via clustering). A higher score, indicating deep elaboration on relevant themes, is expected to correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "focused_subtopic_elaboration"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'relevant_subtopic_count' not found in DataFrame after execution.",
+    "hypothesis": "A comprehensive, high-quality article explores multiple distinct sub-topics that are all relevant to the main subject promised in the title. By using sentence clustering to identify these sub-topics and then filtering them for relevance against the title, we can quantify the article's breadth of on-topic coverage. A higher number of relevant sub-topics indicates a more thorough and valuable article, which search engines should reward with better rankings, leading to increased `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "relevant_subtopic_count"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.047960411909209216,
+        "p_value": 0.48216479583606897,
+        "interpretation": "Found a weak, positive correlation (0.0480). However, the result is not statistically significant (p-value: 0.4822), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.04537256509299194,
+        "p_value": 0.503179775264397,
+        "interpretation": "Found a weak, positive correlation (0.0454). However, the result is not statistically significant (p-value: 0.5032), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article with high `topical_vocabulary_centrality` uses a semantically cohesive set of topic-related words. This demonstrates expertise and a deep, focused discussion of the subject matter, rather than a shallow 'keyword stuffing' approach where on-topic words are unrelated to each other. This depth and focus signal high quality to search engines, leading to better user engagement, higher `non_brand_average_ctr`, and consequently, greater `non_brand_inflow`. This feature measures the tightness of the semantic cluster formed by the vocabulary that is relevant to the title.",
+    "feature_created": "topical_vocabulary_centrality"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.07357910960092763,
+        "p_value": 0.2805470962288917,
+        "interpretation": "Found a weak, positive correlation (0.0736). However, the result is not statistically significant (p-value: 0.2805), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07283491912958058,
+        "p_value": 0.2821100363116894,
+        "interpretation": "Found a weak, positive correlation (0.0728). However, the result is not statistically significant (p-value: 0.2821), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article is of the highest quality when its overall semantic meaning is almost entirely composed of its core, on-topic vocabulary. This feature measures the semantic similarity between the full `post_body` and a synthesized document containing only the words from the body that are highly relevant to the `post_title`. A high 'purity' score indicates minimal semantic noise and a very strong focus, which should satisfy user intent, improve engagement signals like CTR, and consequently lead to higher `non_brand_inflow`.",
+    "feature_created": "core_topic_purity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'on_topic_subtheme_diversity' not found in DataFrame after execution.",
+    "hypothesis": "A comprehensive article explores various distinct sub-themes that are all relevant to the main title. This can be measured by the semantic diversity (e.g., average standard deviation of embeddings) of the *sentences* that are themselves on-topic. A high score signifies a rich exploration of different facets of the topic, rather than a repetitive discussion. This depth is a strong quality signal rewarded by search engines, leading to higher `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "on_topic_subtheme_diversity"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.017069409039884714,
+        "p_value": 0.8025765014528514,
+        "interpretation": "Found a weak, positive correlation (0.0171). However, the result is not statistically significant (p-value: 0.8026), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.018315208937336062,
+        "p_value": 0.7870575141750498,
+        "interpretation": "Found a weak, negative correlation (-0.0183). However, the result is not statistically significant (p-value: 0.7871), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Posts where the central semantic meaning of their on-topic vocabulary is highly congruent with the title are exceptionally well-focused. This deep alignment, beyond just the presence of keywords, signals expertise and provides a clear, satisfying user experience. This clarity and focus should lead to a higher `non_brand_average_ctr` and, subsequently, higher `non_brand_inflow`.",
+    "feature_created": "core_vocabulary_title_congruence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.10756715518746475,
+        "p_value": 0.11410711955300944,
+        "interpretation": "Found a weak, positive correlation (0.1076). However, the result is not statistically significant (p-value: 0.1141), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.08069391524742814,
+        "p_value": 0.23325703489863503,
+        "interpretation": "Found a weak, positive correlation (0.0807). However, the result is not statistically significant (p-value: 0.2333), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality, authoritative article will not only use a wide range of vocabulary relevant to the title (richness) but will also frequently use the most central and important of those words to reinforce its core message. This feature, `weighted_on_topic_vocabulary_score`, measures this by summing the semantic similarity scores of all on-topic word occurrences. This captures both breadth (variety of terms) and depth (repetition of key concepts), which is hypothesized to correlate positively with `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "weighted_on_topic_vocabulary_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04084020322333946,
+        "p_value": 0.5495805692092357,
+        "interpretation": "Found a weak, positive correlation (0.0408). However, the result is not statistically significant (p-value: 0.5496), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.02585784290083361,
+        "p_value": 0.7028970448482117,
+        "interpretation": "Found a weak, positive correlation (0.0259). However, the result is not statistically significant (p-value: 0.7029), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles with a higher conceptual density—measured as the number of unique on-topic words per sentence—are more information-rich and efficient. This efficiency satisfies user intent more effectively, leading to better engagement signals (higher `non_brand_average_ctr`) and improved search rankings (`non_brand_inflow`). This approach normalizes for article length by focusing on conceptual richness per sentence, distinguishing it from simple vocabulary richness or word-count-based density.",
+    "feature_created": "conceptual_density_per_sentence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.02343986369361662,
+        "p_value": 0.7313399520549698,
+        "interpretation": "Found a weak, negative correlation (-0.0234). However, the result is not statistically significant (p-value: 0.7313), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.09255899498903021,
+        "p_value": 0.17131542719033532,
+        "interpretation": "Found a weak, positive correlation (0.0926). However, the result is not statistically significant (p-value: 0.1713), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A high-quality article should have a strong thematic connection between its introduction and the rest of its body. The introduction sets the stage, and the body should deliver on that promise. We can measure this by calculating the semantic similarity between the embedding of the introductory sentences (e.g., the first 3) and the embedding of the remainder of the article's body. A high similarity score indicates a coherent article that follows through on its initial premise. This coherence leads to better user engagement (lower bounce rates, longer dwell time) and signals high quality to search engines, thus positively impacting `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "intro_body_thematic_bridge"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'query_answer_relevance' not found in DataFrame after execution.",
+    "hypothesis": "Search queries are fundamentally questions, and post titles often mirror these queries. Posts where the body text is highly relevant to the title, as judged by a model specifically trained for question-answering/passage-ranking tasks (a cross-encoder), provide a superior 'answer' to the user's implicit query. This direct fulfillment of search intent is a powerful quality signal for search engines, leading to higher click-through rates (`non_brand_average_ctr`) from the search results page and better rankings (`non_brand_inflow`). This feature measures the peak relevance between the title and any sentence in the body, identifying the single best 'answer' provided.",
+    "feature_created": "query_answer_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.011756892475788427,
+        "p_value": 0.8632838352303381,
+        "interpretation": "Found a weak, positive correlation (0.0118). However, the result is not statistically significant (p-value: 0.8633), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.035373458474924485,
+        "p_value": 0.6017764312315628,
+        "interpretation": "Found a weak, negative correlation (-0.0354). However, the result is not statistically significant (p-value: 0.6018), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A standard bi-encoder (like the previously used SBERT models) creates general-purpose embeddings separately. A cross-encoder, specifically trained on relevance ranking tasks, will provide a more accurate measure of how relevant each sentence in the `post_body` is to the `post_title` (viewed as a query). A higher average relevance score from a cross-encoder indicates a better and more consistent 'answer' to the user's implicit query throughout the text. This should strongly correlate with a higher `non_brand_average_ctr` (as it directly meets user expectation from the SERP) and `non_brand_inflow` (as search engines reward this superior fulfillment of search intent).",
+    "feature_created": "cross_encoder_title_body_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'cross_encoder_peak_relevance' not found in DataFrame after execution.",
+    "hypothesis": "Posts with a higher `cross_encoder_peak_relevance` score contain at least one sentence that is an extremely relevant answer to the user's query (represented by the title). This direct and high-quality fulfillment of search intent will lead to a higher click-through rate (`non_brand_average_ctr`) from the search results page, as the search engine's snippet is more likely to feature this highly relevant sentence. This improved CTR and user satisfaction will subsequently be rewarded with better rankings and higher `non_brand_inflow`.",
+    "feature_created": "cross_encoder_peak_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'cross_encoder_answer_density' not found in DataFrame after execution.",
+    "hypothesis": "An article is of high quality if a substantial portion of its content provides a direct and strong answer to the query implied by the title. Using a powerful cross-encoder (trained for relevance ranking) to judge relevance, we can calculate the percentage of sentences in the `post_body` that exceed a high relevance threshold. A higher percentage (`cross_encoder_answer_density`) indicates that the article consistently provides valuable, on-topic information, rather than just having one good sentence or being generally related. This density of high-quality 'answer' sentences will strongly satisfy user intent, leading to better engagement (higher `non_brand_average_ctr`) and improved rankings (`non_brand_inflow`).",
+    "feature_created": "cross_encoder_answer_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'cross_encoder_answer_density' not found in DataFrame after execution.",
+    "hypothesis": "An article is of high quality if a substantial portion of its content provides a direct and strong answer to the query implied by the title. Using a powerful cross-encoder (trained for relevance ranking) to judge relevance, we can calculate the percentage of sentences in the `post_body` that exceed a high relevance threshold. A higher percentage (`cross_encoder_answer_density`) indicates that the article consistently provides valuable, on-topic information, rather than just having one good sentence or being generally related. This density of high-quality 'answer' sentences will strongly satisfy user intent, leading to better engagement (higher `non_brand_average_ctr`) and improved rankings (`non_brand_inflow`).",
+    "feature_created": "cross_encoder_answer_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.045806341146781504,
+        "p_value": 0.5020773846386929,
+        "interpretation": "Found a weak, positive correlation (0.0458). However, the result is not statistically significant (p-value: 0.5021), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.0685458025965863,
+        "p_value": 0.31149137994836873,
+        "interpretation": "Found a weak, positive correlation (0.0685). However, the result is not statistically significant (p-value: 0.3115), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article that presents its most relevant content upfront, aligning with the 'inverted pyramid' or 'answer-first' writing style, provides a better user experience and signals higher quality to search engines. This feature, `cross_encoder_peak_answer_position`, uses a relevance-specialized cross-encoder to identify the single sentence in the `post_body` that serves as the best 'answer' to the `post_title` (the 'query'). It then calculates the normalized position of this peak answer (0=start, 1=end). We hypothesize that a lower score (answer closer to the beginning) will correlate positively with `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "cross_encoder_peak_answer_position"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.04572353192187485,
+        "p_value": 0.5028514169822595,
+        "interpretation": "Found a weak, negative correlation (-0.0457). However, the result is not statistically significant (p-value: 0.5029), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.010246786404712861,
+        "p_value": 0.8798790391345084,
+        "interpretation": "Found a weak, negative correlation (-0.0102). However, the result is not statistically significant (p-value: 0.8799), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "High-performing articles introduce their core on-topic vocabulary rapidly at the beginning and then spend the rest of the article elaborating. This 'answer-first' approach satisfies user intent quickly. This feature will measure the ratio of unique, on-topic words introduced in the first half of the article versus the second half. A ratio greater than 1.0 indicates that new concepts are being front-loaded, which is hypothesized to correlate positively with `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_introduction_rate"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'main_topic_focus_ratio' not found in DataFrame after execution.",
+    "hypothesis": "Articles where a large proportion of sentences belong to the single semantic cluster most relevant to the title are more focused and provide a clearer, more in-depth user experience. This high degree of focus on the primary topic signals authority and quality to search engines, leading to better rankings, higher `non_brand_average_ctr`, and increased `non_brand_inflow`.",
+    "feature_created": "main_topic_focus_ratio"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'peak_subtopic_relevance' not found in DataFrame after execution.",
+    "hypothesis": "High-performing articles contain at least one highly focused and well-developed sub-topic that directly and comprehensively answers the query posed by the `post_title`. By first identifying semantic clusters (sub-topics) within the `post_body` and then using a powerful cross-encoder to score the relevance of each cluster's theme to the title, we can find the `peak_subtopic_relevance`. A higher score signifies the presence of a strong, central \"answer chunk,\" which is a powerful signal of quality and user intent fulfillment. This should lead to higher user satisfaction, better engagement signals (`non_brand_average_ctr`), and consequently, improved search rankings (`non_brand_inflow`).",
+    "feature_created": "peak_subtopic_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'cross_encoder_relevance_volatility' not found in DataFrame after execution.",
+    "hypothesis": "Articles where the relevance to the title is consistent across all sentences provide a more focused and less jarring user experience. A high `cross_encoder_relevance_volatility` (measured as the standard deviation of relevance scores for each sentence, calculated using a powerful cross-encoder) indicates an erratic, unfocused article. Therefore, we hypothesize a *negative* correlation between this volatility score and performance metrics like `non_brand_inflow` and `non_brand_average_ctr`, as stable, consistently relevant content is a signal of higher quality.",
+    "feature_created": "cross_encoder_relevance_volatility"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.011756892475788427,
+        "p_value": 0.8632838352303381,
+        "interpretation": "Found a weak, positive correlation (0.0118). However, the result is not statistically significant (p-value: 0.8633), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.035373458474924485,
+        "p_value": 0.6017764312315628,
+        "interpretation": "Found a weak, negative correlation (-0.0354). However, the result is not statistically significant (p-value: 0.6018), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "A higher relevance score between the `post_title` (as a query) and the entire `post_body` (as a document), calculated using a highly accurate cross-encoder model, is a direct measure of how well the article fulfills search intent. This strong alignment will be rewarded by search engines with better rankings and will entice users to click, leading to a significant positive correlation with both `non_brand_inflow` and `non_brand_average_ctr`. This feature, `cross_encoder_holistic_relevance`, provides a single, powerful signal of overall topic fulfillment.",
+    "feature_created": "cross_encoder_holistic_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_subtopic_count' not found in DataFrame after execution.",
+    "hypothesis": "Comprehensive articles provide more value by covering multiple distinct sub-topics. This breadth of coverage can be quantified by clustering the article's sentences and counting the number of distinct semantic groups. A higher number of sub-topics indicates a more thorough and valuable article, which search engines reward with better rankings, leading to increased `non_brand_inflow`.",
+    "feature_created": "semantic_subtopic_count"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'framed_vocabulary_richness' not found in DataFrame after execution.",
+    "hypothesis": "An article with a high concentration of its diverse, on-topic vocabulary within its structural 'frame' (introduction and conclusion) will be exceptionally effective at signaling its relevance and quality to both users and search engines. This strong framing with rich, relevant language will satisfy user intent from the start and provide a strong concluding summary, leading to better engagement (higher `non_brand_average_ctr`) and improved rankings (`non_brand_inflow`).",
+    "feature_created": "framed_vocabulary_richness"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'framed_vocabulary_richness' not found in DataFrame after execution.",
+    "hypothesis": "An article with a high concentration of its diverse, on-topic vocabulary within its structural 'frame' (introduction and conclusion) will be exceptionally effective at signaling its relevance and quality to both users and search engines. This strong framing with rich, relevant language will satisfy user intent from the start and provide a strong concluding summary, leading to better engagement (higher `non_brand_average_ctr`) and improved rankings (`non_brand_inflow`).",
+    "feature_created": "framed_vocabulary_richness"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.03221064696525173,
+        "p_value": 0.6370164341662294,
+        "interpretation": "Found a weak, positive correlation (0.0322). However, the result is not statistically significant (p-value: 0.6370), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.006996143232779306,
+        "p_value": 0.9178203599664772,
+        "interpretation": "Found a weak, negative correlation (-0.0070). However, the result is not statistically significant (p-value: 0.9178), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "An article is of high quality if the collective meaning (semantic centroid) of its on-topic vocabulary is closely aligned with the topic promised by the title. This feature measures the semantic similarity between the `post_title` and the average semantic vector of all unique words in the `post_body` that are themselves relevant to the title. A high alignment score indicates that the article's core terminology is not only relevant but also thematically balanced and centered around the main subject. This signals a well-researched, focused article, leading to better user engagement, a higher `non_brand_average_ctr`, and consequently, greater `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_centroid_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'introductory_vocabulary_scope' not found in DataFrame after execution.",
+    "hypothesis": "Posts that introduce a wide *scope* of unique, on-topic vocabulary within the first few sentences (the introduction) provide a strong 'information scent' and signal comprehensive coverage from the outset. This immediate demonstration of depth and relevance satisfies user intent quickly, leading to a higher click-through rate (`non_brand_average_ctr`) and, subsequently, better rankings and `non_brand_inflow`. This feature differs from simple density by focusing on the *variety* (count of unique on-topic words) within the crucial introductory section.",
+    "feature_created": "introductory_vocabulary_scope"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'relevance_center_of_mass' not found in DataFrame after execution.",
+    "hypothesis": "A low 'Relevance Center of Mass' score indicates that the most relevant information is concentrated at the beginning of the article. This aligns with the 'answer-first' or 'inverted pyramid' writing principle, which is favored by users and search engines for informational content as it satisfies search intent quickly. We hypothesize that a lower score (closer to 0, indicating relevance is front-loaded) will correlate with higher user satisfaction (a better 'non_brand_average_ctr') and improved search rankings ('non_brand_inflow'). This feature is more robust than a simple linear decay model as it pinpoints the weighted focal point of relevance within the document.",
+    "feature_created": "relevance_center_of_mass"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'relevant_subtopic_count' not found in DataFrame after execution.",
+    "hypothesis": "A comprehensive, high-quality article explores multiple distinct sub-topics that are all relevant to the main subject promised in the title. By using sentence clustering to identify these sub-topics and then filtering them for relevance against the title, we can quantify the article's breadth of on-topic coverage. A higher number of relevant sub-topics indicates a more thorough and valuable article, which search engines should reward with better rankings, leading to increased `non_brand_inflow` and `non_brand_average_ctr`.",
+    "feature_created": "relevant_subtopic_count"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0780862971644947,
+        "p_value": 0.2520480203108466,
+        "interpretation": "Found a weak, positive correlation (0.0781). However, the result is not statistically significant (p-value: 0.2520), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.013289798385495646,
+        "p_value": 0.8446060293497961,
+        "interpretation": "Found a weak, positive correlation (0.0133). However, the result is not statistically significant (p-value: 0.8446), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "While a broad on-topic vocabulary is good (`semantic_vocabulary_richness` previously showed a 0.22 correlation with CTR), the count of *highly relevant* unique words is a stronger signal of expertise and focus. Articles that use a wide variety of terms that are very closely aligned with the title's core concept are more likely to be seen as authoritative by search engines. This precision and richness should lead to higher rankings (`non_brand_inflow`) and a better CTR, as the content precisely matches the user's query.",
+    "feature_created": "high_relevance_vocabulary_richness"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'keyword_context_title_alignment' not found in DataFrame after execution.",
+    "hypothesis": "Posts where the most frequent, substantive keywords appear in sentences that are themselves highly semantically aligned with the `post_title` demonstrate strong thematic consistency. This ensures that the core concepts of the article are always discussed in a relevant context, providing a clear and focused user experience. This high-quality structure is rewarded by search engines, leading to higher `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "keyword_context_title_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'topical_sentence_density' not found in DataFrame after execution.",
+    "hypothesis": "An article with a higher proportion of 'topically dense' sentences—defined as sentences where a significant percentage of words are semantically relevant to the title—delivers information more efficiently. Instead of thinly sprinkling keywords across the text, this structure concentrates relevant concepts into powerful, information-rich sentences. This signals high-quality, focused writing to search engines and provides a better user experience, as readers can quickly grasp key information. This efficiency is hypothesized to correlate positively with `non_brand_average_ctr` and, subsequently, `non_brand_inflow`.",
+    "feature_created": "topical_sentence_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'vocabulary_framing_strength' not found in DataFrame after execution.",
+    "hypothesis": "Articles with strong 'vocabulary framing'—where the unique, on-topic vocabulary is rich and relevant in both the introduction and conclusion—signal a well-structured and comprehensive piece of content. This strong framing satisfies user intent from the start and provides a powerful summary, leading to better engagement (higher `non_brand_average_ctr`) and improved search rankings (`non_brand_inflow`). This feature measures the average semantic relevance of the vocabulary in the article's 'frame' to the title.",
+    "feature_created": "vocabulary_framing_strength"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.04566167979398282,
+        "p_value": 0.5034299679835943,
+        "interpretation": "Found a weak, positive correlation (0.0457). However, the result is not statistically significant (p-value: 0.5034), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.05314798231415063,
+        "p_value": 0.43281966771130287,
+        "interpretation": "Found a weak, positive correlation (0.0531). However, the result is not statistically significant (p-value: 0.4328), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "Articles where a higher proportion of their unique vocabulary is semantically relevant to the title are more focused and less prone to off-topic tangents. This 'vocabulary focus' is a strong signal of quality and topical authority, distinguishing it from simple keyword density or raw richness (which can be biased by article length). This should correlate positively with `non_brand_average_ctr` and `non_brand_inflow`.",
+    "feature_created": "on_topic_vocabulary_ratio"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'framed_vocabulary_richness' not found in DataFrame after execution.",
+    "hypothesis": "An article with a high concentration of its diverse, on-topic vocabulary within its structural 'frame' (introduction and conclusion) will be exceptionally effective at signaling its relevance and quality to both users and search engines. This strong framing with rich, relevant language will satisfy user intent from the start and provide a strong concluding summary, leading to better engagement (higher `non_brand_average_ctr`) and improved rankings (`non_brand_inflow`).",
+    "feature_created": "framed_vocabulary_richness"
+  }
+]

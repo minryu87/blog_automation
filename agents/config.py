@@ -14,10 +14,10 @@ GOAL = "아래 제시된 핵심 목표 지표와 0.5 이상(또는 -0.5 이상)�
 
 # --- Execution Controls ---
 # Maximum number of features to generate and test for each task in the pipeline.
-MAX_ITERATIONS_PER_TASK = 1
+MAX_ITERATIONS_PER_TASK = 10
 
 # Maximum number of self-correction attempts the agent can make for a single feature.
-MAX_CORRECTION_ATTEMPTS = 3
+MAX_CORRECTION_ATTEMPTS = 10
 
 # The full pipeline of experiment tasks to run, as defined in the new 3-part framework.
 EXPERIMENT_PIPELINE = list(range(1, 13)) # Run all 12 tasks

@@ -1,0 +1,132 @@
+[
+  {
+    "feature_created": "title_is_question",
+    "hypothesis": "우리 포스트 내에서는, 제목에 물음표('?')를 포함하여 질문 형식을 가질 경우, 사용자의 궁금증을 자극하고 정보 제공의 신호를 주어 검색 결과 페이지(SERP)에서 더 높은 평균 클릭률(CTR)을 유도할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.24600490182269066,
+      "p_value": 0.01625803678961277
+    }
+  },
+  {
+    "feature_created": "lexical_diversity",
+    "hypothesis": "포스트 본문의 어휘 다양성(고유 단어 수 / 전체 단어 수)이 높을수록, 사용자는 해당 콘텐츠를 더 유익하고 덜 반복적이라고 인식하여 더 높은 `non_brand_average_ctr`로 이어질 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0591)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5694).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.059105194210075235,
+      "p_value": 0.569384938057883
+    }
+  },
+  {
+    "feature_created": "title_serp_optimization_score",
+    "hypothesis": "A title's structural composition, including its length and the presence of attention-grabbing elements like numbers and brackets, directly impacts user click-through behavior on search engine results pages (SERPs). We hypothesize that titles optimized for SERP display (40-60 characters) and containing these elements will achieve a higher `non_brand_average_ctr`.",
+    "conclusion": "약한 음의 상관관계(-0.0055)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9580).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.005470155590095536,
+      "p_value": 0.9580418125231606
+    }
+  },
+  {
+    "feature_created": "words_per_image",
+    "hypothesis": "포스트의 텍스트 길이에 비해 유효 이미지가 많을수록(즉, '이미지 당 단어 수' 비율이 낮을수록), 콘텐츠가 시각적으로 더 매력적이고 쉽게 소비될 수 있어 사용자의 클릭률(non_brand_average_ctr)이 높아질 것이라는 가설을 세웁니다. 이 지표는 콘텐츠의 시각적 밀도를 나타냅니다.",
+    "conclusion": "약한 음의 상관관계(-0.0384)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7115).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.03844186882939599,
+      "p_value": 0.7114856283343445
+    }
+  },
+  {
+    "feature_created": "title_hook_pattern_presence",
+    "hypothesis": "포스트 제목에 '방법', '후기', '비교', '추천', 'N가지' 등 사용자의 행동이나 궁금증을 유도하는 특정 패턴이 포함될 경우, 정보의 가치를 명확히 전달하여 클릭률(CTR)을 높이는 경향이 있을 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0054)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9589).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.005361623627831139,
+      "p_value": 0.9588735611987701
+    }
+  },
+  {
+    "feature_created": "intrinsic_quality_index",
+    "hypothesis": "게시물의 내재적 품질(가독성, 주제 집중도, 콘텐츠 품질, 키워드 사용)을 종합적으로 평가하는 단일 지표는 개별 지표보다 non-brand CTR과 더 높은 상관관계를 보일 것이다. 이 통합 점수가 높은 포스트일수록 사용자의 검색 의도를 더 잘 충족시켜 클릭률이 높아질 것이라고 가정한다.",
+    "conclusion": "약한 양의 상관관계(0.0690)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5067).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.06895853347763642,
+      "p_value": 0.5066787973228262
+    }
+  },
+  {
+    "feature_created": "title_hook_pattern_presence",
+    "hypothesis": "포스트 제목에 사용자의 클릭을 유도하는 특정 패턴(질문형 어미, 숫자, '방법', '후기', '비용' 등과 같은 키워드)이 포함될 경우, 검색 결과 페이지(SERP)에서 눈에 띄어 사용자의 기대를 충족시키고 정보 획득에 대한 확신을 주므로, non-brand 평균 CTR이 더 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2338)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0226).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.2338134294220695,
+      "p_value": 0.022579821320623045
+    }
+  },
+  {
+    "feature_created": "title_body_word_jaccard_similarity",
+    "hypothesis": "포스트 제목과 본문 간의 핵심 단어 일치도가 높을수록, 사용자는 제목이 콘텐츠 내용을 정확하게 반영한다고 인지하여 더 높은 신뢰를 갖고 클릭하게 된다. 따라서 제목과 본문의 '단어 집합 간 자카드 유사도'가 높을수록 non_brand_average_ctr이 높을 것이라는 가설을 설정한다.",
+    "conclusion": "약한 음의 상관관계(-0.0392)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7061).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.03919689063062099,
+      "p_value": 0.7060759368309847
+    }
+  },
+  {
+    "feature_created": "quality_score_consistency",
+    "hypothesis": "가설: '가독성', '주제 집중도', '콘텐츠 품질', '키워드 사용', '형태소' 점수 등 다양한 품질 지표들의 변동성이 적고 일관성이 높을수록, 포스트가 전반적으로 균형 잡힌 품질을 갖추게 되어 사용자의 신뢰를 얻고 평균 클릭률(`non_brand_average_ctr`)이 높아질 것입니다. 점수 편차가 큰 포스트는 특정 부분만 뛰어나고 다른 부분은 부족한, 불균형한 콘텐츠일 가능성이 높습니다.",
+    "conclusion": "약한 양의 상관관계(0.1228)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2356).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.12283930512333201,
+      "p_value": 0.23564720826694244
+    }
+  },
+  {
+    "feature_created": "title_benefit_oriented",
+    "hypothesis": "제목에 '해결', '살리기', '회복' 등 문제 해결이나 긍정적 결과를 암시하는 단어가 포함된 포스트는, 사용자의 문제 해결 니즈를 직접적으로 자극하여 더 높은 클릭률(non_brand_average_ctr)을 보일 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.1353)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1910).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.13532792659085216,
+      "p_value": 0.19101710637621216
+    }
+  },
+  {
+    "feature_created": "title_question_format_score",
+    "hypothesis": "우리 포스트 내에서는, 제목에 질문형 어구('?')가 포함될 경우, 사용자의 문제 상황이나 궁금증과 직접적으로 연결되어 검색 의도를 더 잘 충족시키므로, 'non_brand_average_ctr'이 더 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.24600490182269066,
+      "p_value": 0.01625803678961277
+    }
+  },
+  {
+    "feature_created": "title_contains_question",
+    "hypothesis": "우리 포스트 내에서, 제목에 물음표('?')를 포함하여 질문 형식을 사용하면 사용자의 궁금증을 자극하고 문제 해결에 대한 기대감을 높여, 결과적으로 'non_brand_average_ctr'이 더 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.24600490182269066,
+      "p_value": 0.01625803678961277
+    }
+  },
+  {
+    "feature_created": "title_query_semantic_similarity",
+    "hypothesis": "포스트 제목(`post_title`)이 대표 검색어(`representative_query`)와 의미적으로 유사할수록, 사용자의 검색 의도를 정확히 반영하여 높은 관련성을 보여주므로, 검색 결과 페이지(SERP)에서 더 높은 클릭률(`non_brand_average_ctr`)을 얻을 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.1322)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2015).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.13222059861635369,
+      "p_value": 0.20150252033883617
+    }
+  }
+]

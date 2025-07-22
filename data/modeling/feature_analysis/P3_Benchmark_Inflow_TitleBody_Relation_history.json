@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "title_body_consistency_ratio_vs_competitors",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미 일관성 점수가 동일 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록, 즉 제목이 제시한 기대치를 본문이 더 잘 충족시킬수록 비브랜드 유입(non_brand_inflow)이 많을 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0649274869354903,
+      "p_value": 0.531894042501456
+    }
+  },
+  {
+    "feature_created": "title_body_consistency_ratio_vs_competitors",
+    "hypothesis": "우리 포스트의 제목과 본문 간 의미적 일관성 점수가 해당 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록(즉, 비율이 1보다 클수록) 비브랜드 유입량이 증가할 것이다. 이는 제목이 제시한 주제를 본문에서 충실하게 다루는 것이 사용자 만족도를 높여 검색 엔진에서 긍정적인 평가를 받는다는 것을 의미한다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0649274791840481,
+      "p_value": 0.531894091583092
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목과 본문 간의 의미적 일관성 점수가 해당 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록, 즉 제목이 제시한 주제를 본문에서 더 충실하게 다룰수록 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.06492749157608177,
+      "p_value": 0.5318940131175294
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 해당 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록, 즉 제목이 암시한 내용을 본문이 더 충실하게 설명할수록 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0649274869354903,
+      "p_value": 0.531894042501456
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 동일 대표 검색어에 대한 경쟁사 그룹의 평균 점수보다 높을수록, 제목이 제시한 사용자 기대를 본문이 더 잘 충족시켜 비브랜드 유입에 긍정적인 영향을 미칠 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0649274869354903,
+      "p_value": 0.531894042501456
+    }
+  },
+  {
+    "feature_created": "relative_title_body_cohesion",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 동일 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록, 사용자에게 더 명확하고 만족스러운 콘텐츠 경험을 제공하여 비브랜드 유입률이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.1582)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1257).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.15820549911639603,
+      "p_value": 0.12570914103837066
+    }
+  },
+  {
+    "feature_created": "relative_title_body_semantic_cohesion",
+    "hypothesis": "우리 포스트의 제목과 본문 간의 의미적 일관성 점수가 해당 대표 검색어의 경쟁자 그룹 평균 점수보다 높을수록 (즉, 비율이 1보다 클수록) 비브랜드 유입률이 높을 것이다. 이는 제목에서 제시한 약속을 본문이 충실히 이행하는 구조적 완성도가 높은 콘텐츠가 사용자의 검색 의도를 더 잘 만족시키기 때문이다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.06492749157608177,
+      "p_value": 0.5318940131175294
+    }
+  },
+  {
+    "feature_created": "title_body_semantic_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미 일관성 점수(제목과 본문의 의미적 유사도)가 동일 대표 검색어 그룹 내 경쟁자 포스트들의 평균 점수보다 상대적으로 높을수록, 즉 피처의 값이 1보다 클수록 비브랜드 유입(`non_brand_inflow`)이 많을 것입니다. 이 피처는 각 포스트별로 고유한 상대적 점수를 계산하여 이전 시도의 '모든 행 동일 값' 문제를 해결합니다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0649274869354903,
+      "p_value": 0.531894042501456
+    }
+  },
+  {
+    "feature_created": "title_body_semantic_cohesion_vs_competitors",
+    "hypothesis": "우리 포스트의 제목-본문 간 의미적 일관성 점수가 동일 대표 검색어에 대한 경쟁자 그룹의 평균 점수보다 높을수록(비율 > 1), 사용자의 검색 의도를 더 명확하게 충족시켜 이탈률을 낮추고 'non_brand_inflow'를 증가시킬 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.06492749438793932,
+      "p_value": 0.5318939953130282
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "Posts where the semantic cohesion between the title and body is higher than the average cohesion of competitor posts for the same query will attract more non-brand inflow. This indicates that a well-structured post that effectively delivers on the promise made in its title is rewarded by users and search algorithms.",
+    "conclusion": "약한 음의 상관관계(-0.0012)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9906).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0012313596494906574,
+      "p_value": 0.9905509307703275
+    }
+  }
+]

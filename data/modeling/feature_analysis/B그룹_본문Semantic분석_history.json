@@ -1,0 +1,452 @@
+[
+  {
+    "feature_created": "semantic_similarity_to_success",
+    "hypothesis": "Within each topic category ('top_category_name'), there exists an ideal 'semantic centroid' calculated from the content of proven high-performing posts (all competitor posts + our top 30% posts based on 'non_brand_inflow'). A post's semantic similarity to this success centroid is a strong predictor of its own performance. Posts that are more semantically aligned with the success centroid will achieve higher 'non_brand_inflow'.",
+    "conclusion": "Analysis completed. See interpretations for each target.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.07101942180175005,
+        "p_value": 0.49403052248243484,
+        "interpretation": "Found a weak, negative correlation (-0.0710). However, the result is not statistically significant (p-value: 0.4940), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.03648633086929399,
+        "p_value": 0.72556296412709,
+        "interpretation": "Found a weak, negative correlation (-0.0365). However, the result is not statistically significant (p-value: 0.7256), so we cannot confidently rule out random chance."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_contrast_score",
+    "hypothesis": "Within each topic category ('top_category_name'), there exist distinct semantic centroids for high-performing content (all competitors + our top 30% posts) and low-performing content (our bottom 30% posts). A post's performance is predicted by its relative semantic position. Posts that are semantically closer to the 'high-performance' centroid and farther from the 'low-performance' centroid will achieve higher engagement. This feature calculates `(similarity_to_high_centroid - similarity_to_low_centroid)`, expecting a positive correlation with performance metrics like 'non_brand_inflow'.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.23987680014396542,
+        "p_value": 0.019212942115811902,
+        "interpretation": "약한 양의 상관관계(0.2399)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0192), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.10329578473677403,
+        "p_value": 0.31918104208496456,
+        "interpretation": "약한 양의 상관관계(0.1033)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.3192), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_gap_coverage_score",
+    "hypothesis": "Within each topic category ('top_category_name'), a specific set of 'opportunity keywords' can be identified. These keywords are highly prevalent in the content of top-performing posts (all competitors + our top 30%) but are conspicuously absent or underutilized in low-performing posts (our bottom 30%). A post's performance is therefore positively correlated with its coverage of these 'opportunity keywords'. A higher score, indicating the post successfully incorporates these differentiating topics, should predict higher performance metrics like 'non_brand_inflow'.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": "상관관계를 계산할 수 없습니다. 이는 보통 생성된 피처의 분산이 0일 때 (모든 값이 동일할 때) 발생합니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": "상관관계를 계산할 수 없습니다. 이는 보통 생성된 피처의 분산이 0일 때 (모든 값이 동일할 때) 발생합니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_outlier_score",
+    "hypothesis": "For any given topic ('top_category_name'), high-performing posts (all competitors + our top 30%) form a 'success cluster' in semantic space. Low-performing posts are often semantic outliers relative to this cluster. This feature quantifies how much of an outlier a post is by calculating its semantic distance from the success cluster's centroid, normalized by the cluster's own internal tightness (average pairwise distance). A lower score indicates the post is semantically aligned with the successful consensus, and we predict this will negatively correlate with performance (i.e., a lower outlier score leads to higher 'non_brand_inflow').",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.07101941795670873,
+        "p_value": 0.49403054592452045,
+        "interpretation": "약한 양의 상관관계(0.0710)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.4940), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.03648638530424874,
+        "p_value": 0.7255625709679984,
+        "interpretation": "약한 양의 상관관계(0.0365)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.7256), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "relative_semantic_proximity_score",
+    "hypothesis": "A post's performance is not just about its proximity to the *average* of successful content, but its relationship to the *nearest* examples of success and failure. This feature measures a post's semantic similarity to its single closest high-performing peer and its single closest low-performing peer within its topic category (`top_category_name`). The final score is calculated as `(similarity_to_nearest_high_performer) - (similarity_to_nearest_low_performer)`. A high positive score indicates the post is very similar to a specific successful example while being distinct from any particular failure, predicting better performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.08648991331797197,
+        "p_value": 0.4046175875294581,
+        "interpretation": "약한 양의 상관관계(0.0865)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.4046), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.0333314150546968,
+        "p_value": 0.7484659422852351,
+        "interpretation": "약한 양의 상관관계(0.0333)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.7485), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_theme_coverage_score",
+    "hypothesis": "Within each topic ('top_category_name'), high-performing posts (all competitors + our top 30%) do not just align with a single average 'success point', but rather cover a diverse range of 'success themes'—the primary axes of semantic variation within that successful group. Conversely, low-performing posts (our bottom 30%) align with distinct 'failure themes'. This feature uses Principal Component Analysis (PCA) to identify these semantic themes for both groups. It then scores each post based on how strongly its content projects onto the success themes, while penalizing it for projecting onto the failure themes. A high score, indicating broad alignment with successful content diversity and avoidance of common failure patterns, is predicted to positively correlate with performance metrics like 'non_brand_inflow'.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.2010886539072582,
+        "p_value": 0.05069735727481306,
+        "interpretation": "약한 양의 상관관계(0.2011)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.0507), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11489818561246616,
+        "p_value": 0.26754226685344257,
+        "interpretation": "약한 양의 상관관계(0.1149)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2675), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "optimal_topic_focus_score",
+    "hypothesis": "Within a given topic category (`top_category_name`), high-performing content (competitors + our top 30%) consistently covers a specific set of core 'sub-themes'. These sub-themes, identified via clustering on content chunks, represent the ideal thematic distribution for success. A post's performance is predicted by how well its own content chunks align with these identified success themes. A higher score, indicating the post's content is thematically similar to the established patterns of high-performing articles, should positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.01325226362221591,
+        "p_value": 0.898574175348341,
+        "interpretation": "약한 음의 상관관계(-0.0133)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.8986), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.04435220829515002,
+        "p_value": 0.6695401673094615,
+        "interpretation": "약한 양의 상관관계(0.0444)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.6695), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_archetype_alignment_score",
+    "hypothesis": "Within each topic category ('top_category_name'), high-performing content (competitors + our top 30%) is not monolithic but often conforms to one of several distinct 'success archetypes' (e.g., in-depth review, quick guide, user story). These archetypes can be identified by clustering the content of high-performing posts in semantic space. A post's performance is predicted by its ability to strongly align with the *closest* of these success archetypes, rather than its proximity to the average of all successful posts. This feature calculates a post's maximum semantic similarity to any of the archetype centroids. A higher score, indicating a strong alignment with a proven success pattern, is expected to positively correlate with performance metrics like 'non_brand_inflow'.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.030993569517502897,
+        "p_value": 0.7655806894023406,
+        "interpretation": "약한 음의 상관관계(-0.0310)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.7656), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.05652974724475645,
+        "p_value": 0.5863553397723282,
+        "interpretation": "약한 음의 상관관계(-0.0565)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.5864), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "archetypal_contrast_score",
+    "hypothesis": "Within each topic category ('top_category_name'), high-performing content (competitors + our top 30%) clusters into several distinct 'Success Archetypes' (e.g., 'detailed guide', 'comparative review'), while low-performing content (our bottom 30%) clusters into 'Failure Archetypes'. A post's success is predicted by its ability to strongly align with a winning pattern while simultaneously distancing itself from common failure patterns. This feature calculates the difference between a post's maximum similarity to any Success Archetype and its maximum similarity to any Failure Archetype. A higher score is expected to positively correlate with performance (`non_brand_inflow`).",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3405989787564634,
+        "p_value": 0.0007318021804215847,
+        "interpretation": "중간 정도의 양의 상관관계(0.3406)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0007), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.12089014109634857,
+        "p_value": 0.2432190554425769,
+        "interpretation": "약한 양의 상관관계(0.1209)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2432), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "thematic_alignment_score",
+    "hypothesis": "High-performing content within a topic (`top_category_name`) forms a relatively cohesive 'success theme,' while low-performing content forms a distinct 'failure theme.' A post's performance is predicted by its alignment with the success theme and its divergence from the failure theme. This feature measures a post's average semantic similarity to all posts in the high-performing group (all competitors + our top 30% by 'non_brand_inflow') and its average similarity to all posts in the low-performing group (our bottom 30%). The final score is `avg_sim_high - avg_sim_low`. A higher score signifies a better alignment with successful content patterns and is expected to correlate positively with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.24396614817566295,
+        "p_value": 0.017194204885550363,
+        "interpretation": "약한 양의 상관관계(0.2440)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0172), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.12469212296102598,
+        "p_value": 0.22860323088842682,
+        "interpretation": "약한 양의 상관관계(0.1247)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2286), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "competitive_positioning_score",
+    "hypothesis": "Within each topic category ('top_category_name'), high-performing content clusters into distinct 'Success Archetypes', and low-performing content forms 'Failure Archetypes'. A post's potential is best measured not by its absolute similarity to any single group, but by its relative positioning between the nearest success and failure patterns. This feature calculates a normalized score representing how much closer a post is to its nearest Success Archetype versus its nearest Failure Archetype. A score approaching 1.0 indicates strong alignment with a winning pattern and distance from losing ones, predicting higher `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.32866992593929834,
+        "p_value": 0.0011463189206592445,
+        "interpretation": "중간 정도의 양의 상관관계(0.3287)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0011), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.15960869843150388,
+        "p_value": 0.1223459566190262,
+        "interpretation": "약한 양의 상관관계(0.1596)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.1223), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "enriched_archetypal_contrast_score",
+    "hypothesis": "By creating an 'enriched' text representation that combines the `post_title` (for focus), `post_body` (for semantic context), and `morpheme_words` (for explicit keyword signals), we can generate more distinct semantic archetypes for high- and low-performing content. A post's performance is predicted by its ability to align with a dominant 'Success Archetype' while simultaneously distancing itself from any 'Failure Archetype' within its topic category. The final score, calculated as `(max similarity to success archetypes) - (max similarity to failure archetypes)`, is expected to have a strong positive correlation with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3420276110301501,
+        "p_value": 0.0006926739081232632,
+        "interpretation": "중간 정도의 양의 상관관계(0.3420)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0007), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11042405211980323,
+        "p_value": 0.28674279333712677,
+        "interpretation": "약한 양의 상관관계(0.1104)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2867), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "archetype_resonance_score",
+    "hypothesis": "Within each topic category ('top_category_name'), there are multiple distinct 'Success Archetypes' (from high-performers: all competitors + our top 30%) and 'Failure Archetypes' (from low-performers: our bottom 30%). A post's performance is driven by its holistic alignment with the entire suite of successful patterns, not just its proximity to a single one. This feature identifies these archetypes via clustering on an enriched text representation (`title` + `body` + `morphemes`). It then scores each post by calculating `(AvgSim_Success - AvgSim_Failure) / (AvgSim_Success + AvgSim_Failure)`, where `AvgSim` is the average similarity to all archetypes in a group. A high score signifies strong resonance with successful patterns and is expected to positively correlate with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.056712760022495666,
+        "p_value": 0.5851418320887928,
+        "interpretation": "약한 양의 상관관계(0.0567)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.5851), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.1820148171695939,
+        "p_value": 0.07750434910337808,
+        "interpretation": "약한 양의 상관관계(0.1820)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.0775), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "sub_topic_contrast_score",
+    "hypothesis": "Within each topic category (`top_category_name`), successful content (all competitors + our top 30%) and unsuccessful content (our bottom 30%) are not just monolithic blocks, but are themselves composed of distinct sub-topics or 'themes'. High-performing posts excel by aligning with the most potent 'success themes' while simultaneously avoiding the 'failure themes' common in low-performing content. This feature identifies these sub-topic themes via clustering on an enriched text representation (`title`+`body`+`morphemes`). It then calculates a score as `(max_similarity_to_success_themes) - (max_similarity_to_failure_themes)`. A higher score, indicating a strategic focus on winning sub-topics and avoidance of losing ones, is expected to positively correlate with performance (`non_brand_inflow`).",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3429047101486894,
+        "p_value": 0.0006696088506905236,
+        "interpretation": "중간 정도의 양의 상관관계(0.3429)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0007), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11403939957662518,
+        "p_value": 0.2711585748833745,
+        "interpretation": "약한 양의 상관관계(0.1140)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2712), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "archetypal_purity_score",
+    "hypothesis": "A post's performance is predicted by its strong, 'pure' alignment with a single, clear success archetype, while being free from the 'contamination' of any failure archetypes. The score is calculated as `max_similarity_to_success_archetypes * (1 - max_similarity_to_failure_archetypes)`. A higher score signifies a focused, uncontaminated alignment with a winning pattern and is expected to positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3580329390385438,
+        "p_value": 0.00036757465982824186,
+        "interpretation": "중간 정도의 양의 상관관계(0.3580)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0004), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.18258494768250386,
+        "p_value": 0.07656435057228472,
+        "interpretation": "약한 양의 상관관계(0.1826)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.0766), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "dominant_archetype_adherence_score",
+    "hypothesis": "Within each topic category ('top_category_name'), not all 'Success Archetypes' (clusters of high-performing content) are equally valuable. Some are more 'dominant' or 'central' based on the number of high-performing posts they contain. A post's performance is predicted by its ability to adhere strongly to one of these dominant success archetypes while simultaneously avoiding all identified 'Failure Archetypes'. This feature calculates a score as `(max similarity to a dominant success archetype) - (max similarity to any failure archetype)`. A higher score, indicating alignment with a popular, proven content strategy and avoidance of failure patterns, is expected to positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3420276110301501,
+        "p_value": 0.0006926739081232632,
+        "interpretation": "중간 정도의 양의 상관관계(0.3420)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0007), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11042405211980323,
+        "p_value": 0.28674279333712677,
+        "interpretation": "약한 양의 상관관계(0.1104)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2867), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_trajectory_score",
+    "hypothesis": "Within a topic category (`top_category_name`), there exists an 'ideal semantic trajectory' pointing from common failure patterns to successful content patterns. This trajectory is defined by the vector from a post's nearest 'Failure Archetype' (cluster of low-performing content) to its nearest 'Success Archetype' (cluster of high-performing content). A post's performance is predicted by how well its own semantic position aligns with this ideal trajectory. A higher score, indicating the post is semantically positioned 'on the path to success', is expected to positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.36381045338358636,
+        "p_value": 0.00029001211557318376,
+        "interpretation": "중간 정도의 양의 상관관계(0.3638)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0003), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.1959486721036451,
+        "p_value": 0.057029993250693814,
+        "interpretation": "약한 양의 상관관계(0.1959)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.0570), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_focus_score",
+    "hypothesis": "High-performing content is not only aligned with a success archetype but is also semantically *focused*. Low-performing content is often semantically scattered, showing moderate similarity to multiple, often conflicting, archetypes. This feature quantifies this 'semantic focus' by calculating the ratio of a post's similarity to its single best-fit success archetype versus the sum of its similarities to all other archetypes (both success and failure). A high score, indicating a clear and unambiguous alignment with a single winning pattern, is expected to positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.07687289829442284,
+        "p_value": 0.45903181795911097,
+        "interpretation": "약한 음의 상관관계(-0.0769)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.4590), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.049795010487837583,
+        "p_value": 0.6317863141299299,
+        "interpretation": "약한 음의 상관관계(-0.0498)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.6318), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_clarity_score",
+    "hypothesis": "Success is predicted not just by aligning with a winning content strategy ('Success Archetype'), but by demonstrating 'semantic clarity'. This clarity is defined as a strong, unambiguous alignment with a single Success Archetype, combined with a consistent and uniform disavowal of all common failure patterns ('Failure Archetypes'). This feature scores a post by taking its maximum similarity to any Success Archetype and subtracting a 'confusion penalty', which is the sum of its average similarity and the standard deviation of its similarities to all Failure Archetypes. A higher score, indicating clear alignment with success and a decisive rejection of failure patterns, is expected to positively correlate with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.30596802831612624,
+        "p_value": 0.002566443435592381,
+        "interpretation": "중간 정도의 양의 상관관계(0.3060)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0026), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.06684745613231097,
+        "p_value": 0.519806587817053,
+        "interpretation": "약한 양의 상관관계(0.0668)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.5198), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "archetypal_field_influence_score",
+    "hypothesis": "The performance of a post is influenced by its aggregate alignment with all identified successful content patterns ('Success Archetypes') and its aggregate repulsion from all identified failure patterns ('Failure Archetypes') within its topic category. This feature is based on an enriched text representation combining 'post_title', 'post_body', and 'morpheme_words'. It calculates a score by summing a post's semantic similarities to all Success Archetypes and subtracting the sum of its similarities to all Failure Archetypes. A high positive score signifies that the post resonates strongly and broadly with the entire 'field' of success while avoiding the 'field' of failure, predicting higher 'non_brand_inflow'.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.11018469623344476,
+        "p_value": 0.2877951373899009,
+        "interpretation": "약한 양의 상관관계(0.1102)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2878), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.08681682051071432,
+        "p_value": 0.40283725287790845,
+        "interpretation": "약한 양의 상관관계(0.0868)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.4028), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "weighted_archetype_contrast_score",
+    "hypothesis": "The performance of a blog post is not just determined by its alignment with successful content patterns ('Success Archetypes') and its distance from failure patterns ('Failure Archetypes'), but also by the internal consistency or 'coherence' of those patterns. A post that aligns with a very tight, well-defined Success Archetype while avoiding a similarly well-defined Failure Archetype will perform best. This feature will quantify this by weighting the similarity to each archetype by the archetype's own internal coherence (average similarity of its members to the centroid). The final score, `(Max Weighted Sim to Success) - (Max Weighted Sim to Failure)`, is expected to have a strong positive correlation with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.3068971390381811,
+        "p_value": 0.0024861669852600395,
+        "interpretation": "중간 정도의 양의 상관관계(0.3069)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0025), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11442241435215422,
+        "p_value": 0.2695416677202267,
+        "interpretation": "약한 양의 상관관계(0.1144)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2695), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "optimal_semantic_shift_score",
+    "hypothesis": "Within each topic category ('top_category_name'), there exists an aggregate 'Center of Success' (the centroid of all success archetype centroids) and a 'Center of Failure' (the centroid of all failure archetype centroids). The vector connecting these two centers defines the 'Optimal Semantic Shift' for that topic. A post's performance is predicted by how well its own semantic position aligns with this optimal shift. The score is calculated by projecting the vector from the 'Center of Failure' to the post onto the 'Optimal Semantic Shift' vector. A higher score, indicating the post has moved in the correct semantic direction away from failure and towards success, is expected to positively correlate with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.11189228480495664,
+        "p_value": 0.2803435860522801,
+        "interpretation": "약한 양의 상관관계(0.1119)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2803), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.059094489001019546,
+        "p_value": 0.5694549979538048,
+        "interpretation": "약한 양의 상관관계(0.0591)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.5695), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_trajectory_purity_score",
+    "hypothesis": "Within a topic category (`top_category_name`), a post's performance is predicted by the 'purity' of its semantic trajectory away from failure and towards success. This purity is a combination of (1) its directional alignment with the vector from its nearest 'Failure Archetype' to its nearest 'Success Archetype', and (2) its 'commitment' to this path, measured by its high similarity to the target success archetype and low similarity to the source failure archetype. The final score, `(Directional Alignment) * (Commitment Score)`, is expected to positively correlate with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.352309859850184,
+        "p_value": 0.0004628164027171375,
+        "interpretation": "중간 정도의 양의 상관관계(0.3523)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0005), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07199392898578952,
+        "p_value": 0.48810808986007864,
+        "interpretation": "약한 양의 상관관계(0.0720)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.4881), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "strategic_safety_score",
+    "hypothesis": "Within a topic category ('top_category_name'), a post's performance is predicted not only by its alignment with a 'Success Archetype' (clusters of high-performing content) but also by the 'strategic safety' of that archetype. A 'safe' Success Archetype is one that is semantically distant from all known 'Failure Archetypes' (clusters of low-performing content). This feature calculates a score by multiplying a post's maximum similarity to any Success Archetype by the minimum distance (1 - similarity) from that specific archetype to any Failure Archetype. A higher score signifies alignment with a robust success pattern that is well-defended from common failure modes, and is expected to positively correlate with `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.15280072821637086,
+        "p_value": 0.13932823321755816,
+        "interpretation": "약한 음의 상관관계(-0.1528)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.1393), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.05222035620867571,
+        "p_value": 0.6152552422680053,
+        "interpretation": "약한 양의 상관관계(0.0522)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.6153), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  },
+  {
+    "feature_created": "semantic_escape_velocity_score",
+    "hypothesis": "Within each topic category ('top_category_name'), a post's performance is determined by its ability to achieve 'semantic escape velocity' from the gravitational pull of common failure patterns. This is measured by its relative proximity to its nearest 'Success Archetype' (cluster of high-performers) versus its nearest 'Failure Archetype' (cluster of low-performers), using an enriched text representation ('title' + 'body' + 'morphemes'). The score is calculated as `Sim_to_Nearest_Success / (Sim_to_Nearest_Success + Sim_to_Nearest_Failure)`. A higher score, indicating a decisive move towards a winning pattern and away from a losing one, is expected to positively correlate with performance metrics like `non_brand_inflow`.",
+    "conclusion": "분석이 완료되었습니다. 각 타겟에 대한 해석을 참고하세요.",
+    "status": "success",
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.326872817108006,
+        "p_value": 0.0012246222447521444,
+        "interpretation": "중간 정도의 양의 상관관계(0.3269)를 발견했습니다. 이 결과는 통계적으로 유의미하며(p-value: 0.0012), 이 관계가 우연에 의한 것일 가능성은 낮습니다."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.11959903940038655,
+        "p_value": 0.24832620842341294,
+        "interpretation": "약한 양의 상관관계(0.1196)를 발견했습니다. 하지만 이 결과는 통계적으로 유의미하지 않으므로(p-value: 0.2483), 우연에 의한 결과일 가능성을 배제할 수 없습니다."
+      }
+    }
+  }
+]

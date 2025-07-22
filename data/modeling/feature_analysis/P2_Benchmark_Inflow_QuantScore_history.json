@@ -1,0 +1,122 @@
+[
+  {
+    "feature_created": "word_count_zscore_vs_competitors",
+    "hypothesis": "경쟁사 그룹의 단어 수 분포 대비 우리 포스트 단어 수의 Z-점수(Z-score)는 콘텐츠 깊이의 차별성을 나타내는 지표입니다. Z-점수가 특정 양수 구간(예: 0.5 ~ 1.5)에 있을 때, 이는 경쟁사 평균보다 포괄적이면서도 불필요하게 길지 않은 최적의 콘텐츠 분량을 의미하며, 결과적으로 non_brand_inflow와 높은 양의 상관관계를 보일 것이라 가정합니다.",
+    "conclusion": "약한 양의 상관관계(0.0585)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5733).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.058500639248016635,
+      "p_value": 0.5733477539645248
+    }
+  },
+  {
+    "feature_created": "word_count_ratio_vs_competitor_avg",
+    "hypothesis": "우리 포스트의 단어 수가 해당 대표 검색어의 경쟁 포스트 평균 단어 수보다 약간 많을 때 (예: 1.1배 ~ 1.5배), 자연 유입 성과가 더 높을 것이다. 이는 콘텐츠의 깊이와 정보량이 충분함을 시사하면서도, 과도하게 길어 사용자의 이탈을 유발하지 않는 최적의 지점을 나타낸다.",
+    "conclusion": "약한 양의 상관관계(0.0841)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4178).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08409702430776908,
+      "p_value": 0.4177895797369629
+    }
+  },
+  {
+    "feature_created": "word_count_ratio_vs_competitor_avg",
+    "hypothesis": "우리 포스트의 단어 수를 해당 대표 검색어의 경쟁자 포스트 평균 단어 수로 나눈 비율을 계산합니다. 이 비율이 1.0을 초과하면 (즉, 우리 포스트가 경쟁자 평균보다 길면) 콘텐츠의 깊이와 포괄성을 나타내는 긍정적인 신호로 작용하여 사용자 만족도와 검색 엔진 평가에 좋은 영향을 줄 수 있습니다. 가설: 이 비율이 1.1 ~ 1.5 사이일 때 비브랜드 유입량이 가장 높을 것이며, 이는 경쟁자보다 약간 더 상세한 콘텐츠가 선호됨을 시사합니다.",
+    "conclusion": "약한 양의 상관관계(0.0841)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4178).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08409702430776908,
+      "p_value": 0.4177895797369629
+    }
+  },
+  {
+    "feature_created": "log_quantitative_benchmark_score",
+    "hypothesis": "A composite score representing the log-ratio of a post's key quantitative metrics (word count, readability, image count) against its direct competitor average will positively correlate with `non_brand_inflow`. A positive score signifies quantitative superiority (e.g., longer, more readable content with more images), which we hypothesize attracts more organic traffic.",
+    "conclusion": "약한 음의 상관관계(-0.1224)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2372).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.12243678473285442,
+      "p_value": 0.23719726036137684
+    }
+  },
+  {
+    "feature_created": "quantitative_superiority_score",
+    "hypothesis": "포스트의 정량적/점수 특성(단어 수, 가독성 점수, 유효 이미지 수, 주제 집중도 점수)이 경쟁자 평균보다 종합적으로 우월할수록 '비브랜드 유입량(non_brand_inflow)'이 높을 것이다. 이 종합적 우월성은 각 지표의 경쟁사 평균 대비 비율의 산술 평균으로 측정된 '정량적 우월성 점수(quantitative_superiority_score)'로 정량화할 수 있다.",
+    "conclusion": "약한 음의 상관관계(-0.0892)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3899).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.089224347154128,
+      "p_value": 0.3898687454246375
+    }
+  },
+  {
+    "feature_created": "quantitative_superiority_score",
+    "hypothesis": "우리 포스트가 경쟁자 그룹의 평균에 비해 단어 수, 가독성 점수, 유효 이미지 수 등 여러 정량적 지표에서 종합적으로 우월할수록 (즉, 이들 지표의 비율을 표준화하여 합산한 '정량적 우위 점수'가 높을수록), 비브랜드 유입 성과가 높을 것이다. 이는 검색엔진이 양적, 질적 풍부함을 종합적으로 평가한다는 가정에 기반한다.",
+    "conclusion": "약한 양의 상관관계(0.0843)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4167).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08429103143231317,
+      "p_value": 0.4167124731355454
+    }
+  },
+  {
+    "feature_created": "quantitative_superiority_score",
+    "hypothesis": "포스트의 주요 정량적 지표들(단어 수, 가독성, 이미지 수, 주제 집중도)이 해당 대표 검색어의 경쟁사 평균보다 종합적으로 우월할수록 (즉, 'quantitative_superiority_score'가 높을수록) 비브랜드 유입량이 증가하는 양의 상관관계를 보일 것이다. 이 점수는 각 지표의 '우리 포스트 값 / 경쟁사 평균 값'에 로그를 취한 값들의 평균으로, 0은 경쟁사와 동등, 양수는 우위, 음수는 열위를 나타낸다.",
+    "conclusion": "약한 음의 상관관계(-0.0212)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8381).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.021237334504877588,
+      "p_value": 0.8381357200746802
+    }
+  },
+  {
+    "feature_created": "quantitative_benchmark_score",
+    "hypothesis": "우리 포스트의 단어 수와 가독성 점수를 경쟁사 평균과 비교하여 산출한 통합적인 '양적 벤치마크 점수'는 non-brand 유입량과 상관관계가 있을 것입니다. 이 점수는 경쟁사 대비 우리 포스트의 양적 특성(분량, 가독성)의 상대적 우위 또는 열위를 나타냅니다. 너무 많거나 적지 않은, 즉 경쟁사 그룹과 유사하거나 약간 우월한 특정 점수 구간에서 가장 높은 유입 성과를 보일 것이라고 가정합니다.",
+    "conclusion": "약한 양의 상관관계(0.0869)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4022).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08693166161664657,
+      "p_value": 0.4022129268095646
+    }
+  },
+  {
+    "feature_created": "quantitative_superiority_score",
+    "hypothesis": "우리 포스트의 단어 수와 가독성 점수가 경쟁사 평균보다 일정 비율 이상 높을 때(즉, '양적 우월성 점수'가 1보다 클 때) 검색엔진이 콘텐츠의 깊이와 품질을 더 높게 평가하여, 비브랜드 유입량이 증가하는 경향을 보일 것이다. 이는 단순히 길기만 한 것이 아니라, 가독성도 함께 고려된 양질의 콘텐츠가 성과에 긍정적인 영향을 미친다는 가정에 기반한다.",
+    "conclusion": "약한 양의 상관관계(0.0841)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4180).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08405302323979183,
+      "p_value": 0.418034093193541
+    }
+  },
+  {
+    "feature_created": "quantitative_benchmark_score",
+    "hypothesis": "포스트의 주요 정량적 지표(단어 수, 가독성 점수, 유효 이미지 수)를 경쟁자 그룹의 평균과 비교하여 산출한 종합 점수가 높을수록, 즉 우리 포스트가 경쟁자보다 양적, 질적으로 우수할수록 비브랜드 유입 성과('non_brand_inflow')가 높을 것입니다. 이 종합 점수는 단일 지표보다 콘텐츠의 전반적인 우수성을 더 잘 반영하여 성과와 더 강한 긍정적 상관관계를 보일 것으로 예상됩니다.",
+    "conclusion": "약한 음의 상관관계(-0.0892)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3899).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.08922442076795416,
+      "p_value": 0.38986835275111875
+    }
+  },
+  {
+    "feature_created": "word_count_percentile_in_query",
+    "hypothesis": "우리 포스트의 단어 수가 해당 대표 검색어 그룹(경쟁사 포함) 내에서 차지하는 백분위 순위가 높을수록, 더 종합적인 콘텐츠임을 나타내어 더 높은 비브랜드 유입과 관련이 있을 것입니다. 백분위 순위가 높다는 것은 동일 주제의 다른 문서들보다 단어 수가 많다는 의미입니다.",
+    "conclusion": "약한 양의 상관관계(0.0930)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3703).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09295430879697471,
+      "p_value": 0.37027708242742285
+    }
+  },
+  {
+    "feature_created": "readability_percentile_rank_in_query",
+    "hypothesis": "사용자가 콘텐츠를 얼마나 쉽게 이해할 수 있는지를 나타내는 '가독성 점수'는 중요한 품질 지표입니다. 특정 검색어 그룹 내에서 우리 포스트의 가독성 점수 백분위 순위(readability_percentile_rank_in_query)가 높을수록 (즉, 경쟁자들보다 읽기 쉬울수록) 사용자의 만족도가 높아져 체류 시간이 길어지고, 이는 검색 엔진에 긍정적인 신호로 작용하여 'non_brand_inflow'와 유의미한 양의 상관관계를 보일 것입니다. 이 순위는 그룹 내 직접적인 경쟁을 반영하므로 단순 비율보다 더 정확한 상대적 품질을 측정합니다.",
+    "conclusion": "약한 음의 상관관계(-0.1689)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1018).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.16891279605037834,
+      "p_value": 0.1017675697292799
+    }
+  }
+]

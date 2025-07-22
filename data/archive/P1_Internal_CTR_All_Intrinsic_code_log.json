@@ -1,0 +1,169 @@
+{
+  "timestamp": "2025-07-22T03:58:04.463067",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_is_question",
+  "hypothesis": "우리 포스트 내에서는, 제목에 물음표('?')를 포함하여 질문 형식을 가질 경우, 사용자의 궁금증을 자극하고 정보 제공의 신호를 주어 검색 결과 페이지(SERP)에서 더 높은 평균 클릭률(CTR)을 유도할 것이다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Generates a feature indicating if a post title contains a question mark.\n\n    Args:\n        df (pd.DataFrame): The input DataFrame, expected to have a 'post_title' column.\n\n    Returns:\n        pd.DataFrame: The DataFrame with the new 'title_is_question' feature column.\n    \"\"\"\n    # Ensure the DataFrame is not empty to avoid errors on empty inputs.\n    if df.empty:\n        return df\n\n    feature_name = 'title_is_question'\n\n    # Check if the required column 'post_title' exists.\n    if 'post_title' not in df.columns:\n        # If the column doesn't exist, create the feature column with a default value of 0.\n        df[feature_name] = 0\n        return df\n\n    # Use a vectorized string operation to create the feature.\n    # 1. Fill potential NaN values with an empty string to prevent errors.\n    # 2. Use .str.contains() to check for the presence of a question mark. `regex=False` for performance.\n    # 3. Convert the resulting boolean Series (True/False) to an integer (1/0).\n    df[feature_name] = df['post_title'].fillna('').astype(str).str.contains('?', regex=False).astype(int)\n\n    return df",
+  "analysis": {
+    "correlation": 0.24600490182269066,
+    "p_value": 0.01625803678961277,
+    "interpretation": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163)."
+  }
+}{
+  "timestamp": "2025-07-22T04:18:47.392183",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "lexical_diversity",
+  "hypothesis": "포스트 본문의 어휘 다양성(고유 단어 수 / 전체 단어 수)이 높을수록, 사용자는 해당 콘텐츠를 더 유익하고 덜 반복적이라고 인식하여 더 높은 `non_brand_average_ctr`로 이어질 것이다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef calculate_lexical_diversity(text):\n    \"\"\"Helper function to calculate lexical diversity for a single text.\"\"\"\n    # Ensure text is a non-empty string\n    if not isinstance(text, str) or not text.strip():\n        return 0.0\n\n    # Split text into words based on whitespace\n    words = text.split()\n    \n    # Handle cases where the body is empty after splitting\n    if not words:\n        return 0.0\n\n    total_words = len(words)\n    unique_words = len(set(words))\n    \n    # Calculate diversity and prevent division by zero\n    return unique_words / total_words\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates the lexical diversity of the post body.\n    Lexical diversity is the ratio of unique words to total words.\n    A higher ratio indicates a richer, less repetitive vocabulary.\n    \"\"\"\n    # 1. DataFrame Check: Ensure the DataFrame is not empty before processing.\n    if df.empty:\n        return df\n\n    # 2. Efficient Processing: For this simple string operation, .apply is clear and sufficient.\n    # It correctly maps the output to the original index, avoiding misalignment.\n    feature_series = df['post_body'].apply(calculate_lexical_diversity)\n    \n    # 3. Return Value: Assign the new feature series to the DataFrame and return the full DataFrame.\n    df['lexical_diversity'] = feature_series\n    return df",
+  "analysis": {
+    "correlation": -0.059105194210075235,
+    "p_value": 0.569384938057883,
+    "interpretation": "약한 음의 상관관계(-0.0591)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5694)."
+  }
+}{
+  "timestamp": "2025-07-22T04:37:46.161405",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_serp_optimization_score",
+  "hypothesis": "A title's structural composition, including its length and the presence of attention-grabbing elements like numbers and brackets, directly impacts user click-through behavior on search engine results pages (SERPs). We hypothesize that titles optimized for SERP display (40-60 characters) and containing these elements will achieve a higher `non_brand_average_ctr`.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates a 'SERP Optimization Score' for post titles based on structural elements\n    like length, presence of numbers, brackets/quotes, and question marks.\n    The score is a weighted average of these components, normalized to a 0-1 scale.\n    \"\"\"\n    feature_name = 'title_serp_optimization_score'\n\n    if df.empty:\n        df[feature_name] = pd.Series(dtype='float64')\n        return df\n\n    # --- Feature Configuration ---\n    # Weights for each component of the score, balanced for impact on CTR.\n    weights = {\n        'length': 2.0,    # Optimal length is highly important.\n        'number': 1.0,    # Numbers (e.g., 'Top 10') attract clicks.\n        'bracket': 1.0,   # Brackets/quotes `[]`, `\"\"` make titles stand out.\n        'question': 0.5   # Questions can be engaging but have less impact.\n    }\n\n    # --- Data Preparation ---\n    titles = df['post_title'].fillna('').astype(str)\n\n    # --- Component Score Calculation (Vectorized) ---\n\n    # 1. Length Score (based on optimal SERP display length: 40-60 chars)\n    title_lengths = titles.str.len()\n    length_score = pd.Series(0.0, index=df.index)\n    length_score.loc[title_lengths.between(40, 60)] = 1.0\n    length_score.loc[title_lengths.between(20, 39) | title_lengths.between(61, 80)] = 0.5\n\n    # 2. Number Presence Score (boolean -> float)\n    number_score = titles.str.contains(r'\\d', regex=True).astype(float)\n\n    # 3. Bracket/Quote Presence Score (boolean -> float)\n    bracket_regex = r'[\\u005B\\u005D\\u0028\\u0029\\u007B\\u007D\\\"\\'\\`\\u201c\\u201d\\u2018\\u2019]'\n    bracket_score = titles.str.contains(bracket_regex, regex=True).astype(float)\n\n    # 4. Question Score (using pre-calculated column if available)\n    if 'title_is_question' in df.columns:\n        question_score = df['title_is_question'].astype(float)\n    else:\n        question_score = titles.str.strip().str.endswith('?').astype(float)\n\n    # --- Final Score Assembly ---\n    total_score = (\n        length_score * weights['length'] +\n        number_score * weights['number'] +\n        bracket_score * weights['bracket'] +\n        question_score * weights['question']\n    )\n    \n    max_possible_score = sum(weights.values())\n\n    if max_possible_score > 0:\n        df[feature_name] = total_score / max_possible_score\n    else:\n        df[feature_name] = 0.0\n\n    return df",
+  "analysis": {
+    "correlation": -0.005470155590095536,
+    "p_value": 0.9580418125231606,
+    "interpretation": "약한 음의 상관관계(-0.0055)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9580)."
+  }
+}{
+  "timestamp": "2025-07-22T04:58:54.802073",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "words_per_image",
+  "hypothesis": "포스트의 텍스트 길이에 비해 유효 이미지가 많을수록(즉, '이미지 당 단어 수' 비율이 낮을수록), 콘텐츠가 시각적으로 더 매력적이고 쉽게 소비될 수 있어 사용자의 클릭률(non_brand_average_ctr)이 높아질 것이라는 가설을 세웁니다. 이 지표는 콘텐츠의 시각적 밀도를 나타냅니다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    포스트의 단어 수를 유효 이미지 수로 나누어 '이미지 당 단어 수'를 계산합니다.\n    이 피처는 콘텐츠의 시각적 밀도를 나타내며, 값이 낮을수록 시각적으로 풍부함을 의미합니다.\n\n    - 'valid_image_count'가 0인 경우, 나눗셈 오류를 방지하고 텍스트만 있는 \n      콘텐츠의 특성을 반영하기 위해 결과값으로 'word_count'를 사용합니다.\n    \"\"\"\n    # 1. Check for empty DataFrame\n    if df.empty:\n        return df\n\n    # 2. Define numerator and denominator for clarity\n    numerator = df['word_count']\n    denominator = df['valid_image_count']\n\n    # 3. Calculate feature using np.where to handle division by zero safely.\n    # If denominator is 0, the feature value becomes the word_count itself, \n    # representing a purely textual content with a high words_per_image ratio.\n    df['words_per_image'] = np.where(\n        denominator > 0,\n        numerator / denominator,\n        numerator  # Impute with word_count when no images are present\n    )\n\n    # 4. Fill any potential NaN/inf values just in case, though np.where should prevent them.\n    df['words_per_image'].fillna(0, inplace=True)\n    df.replace([np.inf, -np.inf], 0, inplace=True)\n\n    return df",
+  "analysis": {
+    "correlation": -0.03844186882939599,
+    "p_value": 0.7114856283343445,
+    "interpretation": "약한 음의 상관관계(-0.0384)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7115)."
+  }
+}{
+  "timestamp": "2025-07-22T05:19:17.062790",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_hook_pattern_presence",
+  "hypothesis": "포스트 제목에 '방법', '후기', '비교', '추천', 'N가지' 등 사용자의 행동이나 궁금증을 유도하는 특정 패턴이 포함될 경우, 정보의 가치를 명확히 전달하여 클릭률(CTR)을 높이는 경향이 있을 것이다.",
+  "code": "import pandas as pd\nimport re\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Analyzes post titles for the presence of 'hook' patterns that may increase CTR.\n\n    This feature identifies titles containing:\n    1. Specific keywords that suggest a list, guide, or review (e.g., '방법', '후기', '팁').\n    2. Numbered list formats (e.g., '5가지', '3단계').\n\n    A new binary column 'title_hook_pattern_presence' is added, with 1 indicating the\n    presence of a hook pattern and 0 otherwise.\n    \"\"\"\n    # Ensure the DataFrame is not empty to avoid errors.\n    if not df.empty:\n        # Define the patterns to search for in the titles.\n        # - A set of common 'hook' words in Korean.\n        # - A regex for numbered lists (e.g., '5가지', '3단계').\n        hook_words = [\n            '방법', '후기', '비교', '추천', '팁', '정리', '핵심', '이유', '총정리', '가이드'\n        ]\n        numbered_list_pattern = r'\\d+\\s*(가지|단계|개|법|원칙|가지 팁)'\n\n        # Combine all patterns into a single regex pattern for efficient searching.\n        # The '|' acts as an OR operator.\n        combined_pattern = '|'.join(hook_words) + '|' + numbered_list_pattern\n\n        # Use vectorized `.str.contains()` for efficient pattern matching.\n        # `na=False` ensures that any NaN titles are treated as not containing the pattern.\n        # The result is a boolean Series (True/False).\n        title_series = df['post_title'].astype(str) # Ensure title is string type\n        hook_found = title_series.str.contains(combined_pattern, regex=True, na=False)\n\n        # Convert the boolean Series to an integer (1 for True, 0 for False) and assign it.\n        df['title_hook_pattern_presence'] = hook_found.astype(int)\n    else:\n        # If the DataFrame is empty, create an empty column to maintain schema consistency.\n        df['title_hook_pattern_presence'] = pd.Series(dtype='int')\n\n    return df\n",
+  "analysis": {
+    "correlation": -0.005361623627831139,
+    "p_value": 0.9588735611987701,
+    "interpretation": "약한 음의 상관관계(-0.0054)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9589)."
+  }
+}{
+  "timestamp": "2025-07-22T05:42:14.062946",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "intrinsic_quality_index",
+  "hypothesis": "게시물의 내재적 품질(가독성, 주제 집중도, 콘텐츠 품질, 키워드 사용)을 종합적으로 평가하는 단일 지표는 개별 지표보다 non-brand CTR과 더 높은 상관관계를 보일 것이다. 이 통합 점수가 높은 포스트일수록 사용자의 검색 의도를 더 잘 충족시켜 클릭률이 높아질 것이라고 가정한다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates an 'Intrinsic Quality Index' by averaging several quality-related scores.\n\n    This feature provides a single, composite measure of a post's internal quality,\n    hypothesizing that a holistic quality score is a better predictor of user engagement\n    (like CTR) than any single metric alone.\n    \"\"\"\n    feature_name = 'intrinsic_quality_index'\n    \n    # Check if the dataframe is empty\n    if not df.empty:\n        # Define the columns that represent intrinsic quality\n        score_columns = [\n            'readability_score',\n            'topic_focus_score',\n            'content_quality_score',\n            'keyword_usage_score'\n        ]\n\n        # Create a copy to avoid SettingWithCopyWarning\n        df_copy = df.copy()\n\n        # Calculate the mean of the scores for each post.\n        # The .mean(axis=1) function automatically handles NaN values by ignoring them in the calculation.\n        df_copy[feature_name] = df_copy[score_columns].mean(axis=1)\n        \n        return df_copy\n    \n    # If the dataframe is empty, return it with the expected new column, also empty.\n    df[feature_name] = pd.Series(dtype='float64')\n    return df\n",
+  "analysis": {
+    "correlation": 0.06895853347763642,
+    "p_value": 0.5066787973228262,
+    "interpretation": "약한 양의 상관관계(0.0690)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5067)."
+  }
+}{
+  "timestamp": "2025-07-22T06:02:10.467118",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_hook_pattern_presence",
+  "hypothesis": "포스트 제목에 사용자의 클릭을 유도하는 특정 패턴(질문형 어미, 숫자, '방법', '후기', '비용' 등과 같은 키워드)이 포함될 경우, 검색 결과 페이지(SERP)에서 눈에 띄어 사용자의 기대를 충족시키고 정보 획득에 대한 확신을 주므로, non-brand 평균 CTR이 더 높을 것이다.",
+  "code": "import pandas as pd\nimport numpy as np\nimport re\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Generates a binary feature 'title_hook_pattern_presence' indicating if a post title\n    contains click-inducing patterns like questions, numbers, or specific keywords.\n\n    Args:\n        df (pd.DataFrame): The input DataFrame, must contain a 'post_title' column.\n\n    Returns:\n        pd.DataFrame: The DataFrame with the new 'title_hook_pattern_presence' column.\n    \"\"\"\n    # 1. Handle empty DataFrame\n    if df.empty:\n        return df\n\n    feature_name = 'title_hook_pattern_presence'\n\n    # 2. Ensure the required column exists; if not, add feature with default value and return.\n    if 'post_title' not in df.columns:\n        df[feature_name] = 0\n        return df\n\n    # 3. Define the patterns for a 'hook' title\n    # - Numbers (e.g., '5가지', '2024년')\n    # - Questions (ending with '?' or common Korean question forms like '까')\n    # - High-value keywords that promise a solution or summary (방법, 후기, 비용, 해결, 정리, 추천, 꿀팁, 비교, 총정리)\n    hook_keywords = [\n        '방법', '후기', '비용', '해결', '정리', '추천', '꿀팁', '비교', '총정리', '솔직'\n    ]\n    \n    # Combine all patterns into a single, efficient regular expression\n    # The pattern checks for:\n    #   - one or more digits (\\d+)\n    #   - a question mark or '까' at the end of the string (\\?|까\\s*?$)\n    #   - any of the specified hook keywords\n    combined_pattern = re.compile(\n        r'(\\d+)|' + \n        r'(\\?|까\\s*?$)|' + \n        f'({'|'.join(hook_keywords)})'\n    )\n\n    # 4. Create the feature column\n    # Use .fillna('') to safely handle any potential NaN values in the title column.\n    # .str.contains() returns a boolean Series based on the regex match.\n    # .astype(int) converts True/False to 1/0.\n    # na=False ensures that any remaining NaNs are treated as False (no match).\n    titles = df['post_title'].fillna('')\n    df[feature_name] = titles.str.contains(combined_pattern, regex=True, na=False).astype(int)\n\n    # 5. Return the full DataFrame with the new feature\n    return df",
+  "analysis": {
+    "correlation": 0.2338134294220695,
+    "p_value": 0.022579821320623045,
+    "interpretation": "약한 양의 상관관계(0.2338)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0226)."
+  }
+}{
+  "timestamp": "2025-07-22T06:21:05.243624",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_body_word_jaccard_similarity",
+  "hypothesis": "포스트 제목과 본문 간의 핵심 단어 일치도가 높을수록, 사용자는 제목이 콘텐츠 내용을 정확하게 반영한다고 인지하여 더 높은 신뢰를 갖고 클릭하게 된다. 따라서 제목과 본문의 '단어 집합 간 자카드 유사도'가 높을수록 non_brand_average_ctr이 높을 것이라는 가설을 설정한다.",
+  "code": "import pandas as pd\nimport re\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates the Jaccard similarity between the set of unique words in the title\n    and the set of unique words in the post body.\n\n    Hypothesis: A higher similarity indicates that the title accurately represents\n    the body's content, which could lead to a higher CTR from users confident\n    that the content will meet the expectations set by the title.\n    \"\"\"\n    feature_name = 'title_body_word_jaccard_similarity'\n\n    if not df.empty:\n        jaccard_scores = []\n\n        # Ensure 'post_title' and 'post_body' are strings and handle NaNs\n        titles = df['post_title'].fillna('').astype(str)\n        bodies = df['post_body'].fillna('').astype(str)\n\n        for title, body in zip(titles, bodies):\n            # Find all word sequences (alphanumeric) and convert to lowercase\n            title_words = set(re.findall(r'\\w+', title.lower()))\n            body_words = set(re.findall(r'\\w+', body.lower()))\n\n            # Calculate the intersection and union of the two word sets\n            intersection = title_words.intersection(body_words)\n            union = title_words.union(body_words)\n\n            # Calculate Jaccard similarity. Handle division by zero.\n            if not union:\n                jaccard_similarity = 0.0\n            else:\n                jaccard_similarity = len(intersection) / len(union)\n\n            jaccard_scores.append(jaccard_similarity)\n\n        df[feature_name] = jaccard_scores\n    else:\n        # If the DataFrame is empty, add an empty column with the correct name and type\n        df[feature_name] = pd.Series(dtype='float64')\n\n    return df",
+  "analysis": {
+    "correlation": -0.03919689063062099,
+    "p_value": 0.7060759368309847,
+    "interpretation": "약한 음의 상관관계(-0.0392)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7061)."
+  }
+}{
+  "timestamp": "2025-07-22T06:40:18.964099",
+  "attempt": 1,
+  "status": "execution_error",
+  "error": "코드 실행 실패:\n  File \"/Users/min/codes/medilawyer_sales/blog_automation/agents/_temp_feature_generator.py\", line 33\n    has_quotes = titles.str.contains(r'[\"“”\\'']', regex=True, na=False)\n                                              ^\nSyntaxError: closing parenthesis ']' does not match opening parenthesis '('\n",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates a 'title_attention_score' based on the presence of attention-grabbing\n    elements (numbers, ?, !, [], quotes) in the post title. A higher score\n    indicates more types of these elements are present.\n    \"\"\"\n    feature_name = 'title_attention_score'\n    \n    # Handle empty DataFrame by returning it with the expected empty column.\n    if not df.empty:\n        # Ensure the title column is a string type and handle potential NaNs by filling with an empty string.\n        titles = df['post_title'].astype(str).fillna('')\n\n        # Create boolean Series for each element type.\n        # na=False ensures that any remaining NaNs in the Series are treated as False.\n        has_number = titles.str.contains(r'\\d', regex=True, na=False)\n        has_question = titles.str.contains(r'\\?', regex=True, na=False)\n        has_exclamation = titles.str.contains(r'!', regex=False, na=False)\n        has_brackets = titles.str.contains(r'[\\[\\](){}]', regex=True, na=False)\n        has_quotes = titles.str.contains(r'[\"“”\\'']', regex=True, na=False)\n\n        # Sum the boolean (converted to int) Series to get the final score.\n        # Each post gets a score from 0 to 5, representing the count of unique element types found.\n        df[feature_name] = (\n            has_number.astype(int) +\n            has_question.astype(int) +\n            has_exclamation.astype(int) +\n            has_brackets.astype(int) +\n            has_quotes.astype(int)\n        )\n    else:\n        # If the DataFrame is empty, create an empty column with the correct name and type.\n        df[feature_name] = pd.Series(dtype=int)\n\n    return df"
+}{
+  "timestamp": "2025-07-22T06:41:15.352170",
+  "attempt": 2,
+  "status": "execution_error",
+  "error": "코드 실행 실패:\n  File \"/Users/min/codes/medilawyer_sales/blog_automation/agents/_temp_feature_generator.py\", line 31\n    \"\"\"\n    ^\nSyntaxError: unterminated triple-quoted string literal (detected at line 75)\n",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Analyzes whether the post title contains any form of quotation marks.\n\n    The original code failed with a SyntaxError because the regex string `r'[\"“”\\''']'`\n    was malformed. An unescaped single quote within a single-quoted string literal prematurely\n    terminated the string.\n\n    The fix is to correctly define the character set in the regex pattern to `r'[\"“”\\']'`,\n    where the single quote is properly escaped, or to use different outer quotes like `r\"\"\"[\"“”']\"\"\"`.\n    This correction ensures the regex pattern is parsed correctly.\n\n    Args:\n        df (pd.DataFrame): The input DataFrame with a 'post_title' column.\n\n    Returns:\n        pd.DataFrame: The DataFrame with a new 'title_has_quotes' column (1 if quotes are present, 0 otherwise).\n    \"\"\"\n    feature_name = 'title_has_quotes'\n\n    # Handle empty DataFrame case\n    if df.empty:\n        # Add the feature column with a default value if it doesn't exist\n        if feature_name not in df.columns:\n            df[feature_name] = np.nan\n        return df\n\n    # Ensure the target column exists, otherwise, fill with 0\n    if 'post_title' not in df.columns:\n        df[feature_name] = 0\n        return df\n\n    # Extract titles, handling potential missing values by filling with an empty string\n    titles = df['post_title'].fillna('').astype(str)\n\n    # Corrected regex pattern to find various types of quotation marks.\n    # The problematic single quote is now correctly escaped: \\'\n    quote_pattern = r'[\"“”\\']'\n\n    # Create the feature: 1 if quotes are present, 0 otherwise.\n    # .str.contains returns a boolean Series, which is converted to integer (0 or 1).\n    has_quotes = titles.str.contains(quote_pattern, regex=True, na=False)\n    df[feature_name] = has_quotes.astype(int)\n\n    return df"
+}{
+  "timestamp": "2025-07-22T06:41:49.238551",
+  "attempt": 3,
+  "status": "success",
+  "feature_name": "quality_score_consistency",
+  "hypothesis": "가설: '가독성', '주제 집중도', '콘텐츠 품질', '키워드 사용', '형태소' 점수 등 다양한 품질 지표들의 변동성이 적고 일관성이 높을수록, 포스트가 전반적으로 균형 잡힌 품질을 갖추게 되어 사용자의 신뢰를 얻고 평균 클릭률(`non_brand_average_ctr`)이 높아질 것입니다. 점수 편차가 큰 포스트는 특정 부분만 뛰어나고 다른 부분은 부족한, 불균형한 콘텐츠일 가능성이 높습니다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates the consistency of various quality scores for each post.\n\n    This feature computes the standard deviation across a set of intrinsic quality scores.\n    A lower standard deviation indicates higher consistency. The result is transformed so that\n    a higher value represents better consistency.\n\n    Args:\n        df (pd.DataFrame): The input dataframe containing post data.\n                           It must include the quality score columns.\n\n    Returns:\n        pd.DataFrame: The dataframe with the new 'quality_score_consistency' column.\n    \"\"\"\n    # 1. Check if the DataFrame is empty to prevent errors.\n    if not df.empty:\n        # 2. Define the list of quality score columns to be analyzed.\n        score_columns = [\n            'readability_score',\n            'topic_focus_score',\n            'content_quality_score',\n            'keyword_usage_score',\n            'morpheme_score'\n        ]\n\n        # 3. Ensure all required columns exist, fill missing ones with NaN if necessary.\n        for col in score_columns:\n            if col not in df.columns:\n                df[col] = np.nan\n\n        # 4. Calculate the standard deviation for each row across the score columns.\n        # The `axis=1` argument is crucial for row-wise calculation.\n        # We fill missing values with the row's mean score to avoid penalizing posts for a single missing score.\n        df_scores = df[score_columns].copy()\n        row_means = df_scores.mean(axis=1)\n        for col in score_columns:\n            df_scores[col] = df_scores[col].fillna(row_means)\n\n        std_dev = df_scores.std(axis=1)\n\n        # 5. Transform the standard deviation into a consistency score.\n        # Adding 1 to the denominator prevents division by zero.\n        # A higher value indicates higher consistency (lower standard deviation).\n        df['quality_score_consistency'] = 1 / (1 + std_dev)\n\n        # Fill any potential NaN results with the median consistency score.\n        if df['quality_score_consistency'].isnull().any():\n            median_consistency = df['quality_score_consistency'].median()\n            df['quality_score_consistency'].fillna(median_consistency, inplace=True)\n\n    return df\n",
+  "analysis": {
+    "correlation": 0.12283930512333201,
+    "p_value": 0.23564720826694244,
+    "interpretation": "약한 양의 상관관계(0.1228)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2356)."
+  }
+}{
+  "timestamp": "2025-07-22T07:04:25.496481",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_benefit_oriented",
+  "hypothesis": "제목에 '해결', '살리기', '회복' 등 문제 해결이나 긍정적 결과를 암시하는 단어가 포함된 포스트는, 사용자의 문제 해결 니즈를 직접적으로 자극하여 더 높은 클릭률(non_brand_average_ctr)을 보일 것입니다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Generates a feature indicating if the post title is benefit-oriented.\n\n    A title is considered benefit-oriented if it contains keywords suggesting a solution or a positive outcome.\n\n    Args:\n        df (pd.DataFrame): The input DataFrame with a 'post_title' column.\n\n    Returns:\n        pd.DataFrame: The DataFrame with the new 'title_benefit_oriented' feature column.\n    \"\"\"\n    # Ensure the DataFrame is not empty to avoid errors.\n    if df.empty:\n        df['title_benefit_oriented'] = pd.Series(dtype=int)\n        return df\n\n    # Define keywords that suggest a solution or a positive outcome.\n    # '해결'(solution), '살리기'(saving), '회복'(recovery), '개선'(improvement), \n    # '방법'(method), '비결'(secret/tip), '예방'(prevention)\n    benefit_keywords = ['해결', '살리기', '회복', '개선', '방법', '비결', '예방']\n    \n    # Create a regex pattern to search for any of the keywords.\n    # The pipe '|' acts as an OR operator in regex.\n    pattern = '|'.join(benefit_keywords)\n    \n    # Ensure the 'post_title' column is of string type, handling potential NaN values.\n    titles = df['post_title'].fillna('').astype(str)\n    \n    # Use vectorized string operation for efficiency.\n    # .str.contains() returns a boolean Series.\n    # We convert it to integer (1 for True, 0 for False).\n    # na=False ensures that any remaining NaNs are treated as False (no match).\n    df['title_benefit_oriented'] = titles.str.contains(pattern, na=False).astype(int)\n    \n    return df",
+  "analysis": {
+    "correlation": 0.13532792659085216,
+    "p_value": 0.19101710637621216,
+    "interpretation": "약한 양의 상관관계(0.1353)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1910)."
+  }
+}{
+  "timestamp": "2025-07-22T07:56:57.774177",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_question_format_score",
+  "hypothesis": "우리 포스트 내에서는, 제목에 질문형 어구('?')가 포함될 경우, 사용자의 문제 상황이나 궁금증과 직접적으로 연결되어 검색 의도를 더 잘 충족시키므로, 'non_brand_average_ctr'이 더 높을 것이다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    게시물 제목에 물음표('?')가 포함되어 있는지 여부를 기반으로 이진 피처를 생성합니다.\n\n    가설: 우리 포스트 내에서는, 제목에 질문형 어구가 포함될 경우, 사용자의 궁금증을 자극하여 평균 클릭률(non_brand_average_ctr)이 높을 것이다.\n\n    Args:\n        df (pd.DataFrame): 'post_title' 열을 포함하는 입력 데이터프레임. \n                           실행 환경에 의해 이 데이터프레임은 `source == 'ours'`인 데이터만으로 필터링되어 전달됩니다.\n\n    Returns:\n        pd.DataFrame: 'title_question_format_score' 열이 추가된 데이터프레임 (질문 포함 시 1, 아닐 시 0).\n    \"\"\"\n    # 1. 입력 데이터프레임이 비어 있는지 확인합니다.\n    if df.empty:\n        df['title_question_format_score'] = pd.Series(dtype=int)\n        return df\n\n    # 2. 'post_title' 열이 없는 경우를 대비하여 방어적으로 코딩합니다.\n    if 'post_title' not in df.columns:\n        df['title_question_format_score'] = 0\n        return df\n\n    # 3. 피처 이름 정의\n    feature_name = 'title_question_format_score'\n\n    # 4. 'post_title' 열의 결측값을 빈 문자열로 대체하고, 문자열 타입으로 변환합니다.\n    titles = df['post_title'].fillna('').astype(str)\n\n    # 5. 제목에 물음표('?')가 포함되어 있는지 확인하여 boolean 시리즈를 생성하고, 이를 정수(1 또는 0)로 변환합니다.\n    # str.contains는 벡터화된 연산으로, apply보다 훨씬 효율적입니다.\n    df[feature_name] = titles.str.contains(r'\\?', regex=True).astype(int)\n\n    return df\n",
+  "analysis": {
+    "correlation": 0.24600490182269066,
+    "p_value": 0.01625803678961277,
+    "interpretation": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163)."
+  }
+}{
+  "timestamp": "2025-07-22T09:59:48.668590",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_contains_question",
+  "hypothesis": "우리 포스트 내에서, 제목에 물음표('?')를 포함하여 질문 형식을 사용하면 사용자의 궁금증을 자극하고 문제 해결에 대한 기대감을 높여, 결과적으로 'non_brand_average_ctr'이 더 높을 것이다.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    우리 포스트 제목에 물음표('?')가 포함되어 있는지 여부를 나타내는 피처를 생성합니다.\n\n    가설: 제목에 질문 형식을 사용하면 사용자의 궁금증을 자극하여 클릭률(CTR)을 높일 수 있다.\n    이 피처는 'post_title'에 물음표가 있으면 1, 없으면 0을 반환합니다.\n\n    Args:\n        df (pd.DataFrame): 'post_title' 열을 포함하는 입력 데이터프레임.\n\n    Returns:\n        pd.DataFrame: 'title_contains_question' 열이 추가된 데이터프레임.\n    \"\"\"\n    # 데이터프레임이 비어있는 경우, 피처 열을 추가하고 그대로 반환합니다.\n    if df.empty:\n        df['title_contains_question'] = pd.Series(dtype=int)\n        return df\n\n    # 'post_title' 열의 결측값을 빈 문자열로 대체하여 오류를 방지합니다.\n    titles = df['post_title'].fillna('').astype(str)\n\n    # .str.contains()는 벡터화된 연산으로, 각 제목에 대해 물음표('?') 포함 여부를 효율적으로 확인합니다.\n    # regex=False는 '?'를 정규 표현식 특수 문자가 아닌 일반 문자로 취급하도록 합니다.\n    # boolean 결과를 정수(1 또는 0)로 변환하여 새로운 피처 열을 생성합니다.\n    df['title_contains_question'] = titles.str.contains('?', regex=False).astype(int)\n\n    return df",
+  "analysis": {
+    "correlation": 0.24600490182269066,
+    "p_value": 0.01625803678961277,
+    "interpretation": "약한 양의 상관관계(0.2460)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0163)."
+  }
+}{
+  "timestamp": "2025-07-22T10:06:42.257122",
+  "attempt": 1,
+  "status": "success",
+  "feature_name": "title_query_semantic_similarity",
+  "hypothesis": "포스트 제목(`post_title`)이 대표 검색어(`representative_query`)와 의미적으로 유사할수록, 사용자의 검색 의도를 정확히 반영하여 높은 관련성을 보여주므로, 검색 결과 페이지(SERP)에서 더 높은 클릭률(`non_brand_average_ctr`)을 얻을 것입니다.",
+  "code": "import pandas as pd\nimport numpy as np\nfrom sentence_transformers import SentenceTransformer, util\n\n# 1. Lazy-load the model to avoid re-initializing it on every call.\n_model = None\n\ndef get_model():\n    \"\"\"Initializes and returns a SentenceTransformer model, loading it only once.\"\"\"\n    global _model\n    if _model is None:\n        # Using a multilingual model suitable for Korean.\n        _model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')\n    return _model\n\ndef generate_feature(df: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"\n    Calculates the semantic similarity between the post title and its representative query.\n\n    Args:\n        df (pd.DataFrame): The input DataFrame with 'post_title' and 'representative_query' columns.\n\n    Returns:\n        pd.DataFrame: The DataFrame with the new 'title_query_semantic_similarity' feature.\n    \"\"\"\n    feature_name = 'title_query_semantic_similarity'\n\n    # Defensive check for empty dataframe\n    if df.empty:\n        df[feature_name] = pd.Series(dtype=np.float64)\n        return df\n\n    try:\n        model = get_model()\n\n        # 2. Prepare data for batch processing, handling potential NaN values\n        titles = df['post_title'].fillna('').astype(str).tolist()\n        queries = df['representative_query'].fillna('').astype(str).tolist()\n\n        # 3. Use efficient batch processing\n        title_embeddings = model.encode(titles, convert_to_tensor=True, show_progress_bar=False)\n        query_embeddings = model.encode(queries, convert_to_tensor=True, show_progress_bar=False)\n\n        # 4. Calculate row-wise cosine similarity.\n        # The diagonal of the resulting matrix contains the similarity of each title[i] with query[i].\n        cosine_scores = util.cos_sim(title_embeddings, query_embeddings).diag()\n\n        # 5. Assign the new feature to the DataFrame.\n        # The calculated scores will align with the DataFrame's index by default.\n        df[feature_name] = cosine_scores.cpu().numpy()\n\n    except Exception as e:\n        # In case of any error, fill with a neutral value to prevent failure.\n        print(f\"An error occurred during feature generation for '{feature_name}': {e}\")\n        df[feature_name] = 0.0\n\n    return df\n",
+  "analysis": {
+    "correlation": 0.13222059861635369,
+    "p_value": 0.20150252033883617,
+    "interpretation": "약한 양의 상관관계(0.1322)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2015)."
+  }
+}

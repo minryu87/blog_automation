@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "core_morpheme_freq_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 검색어의 핵심 형태소를 더 높은 빈도로 사용할수록, 해당 검색어 의도에 더 최적화되어 비브랜드 유입량이 증가할 것입니다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "morpheme_expansion_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹의 전체 형태소 어휘집에 포함되지 않은 '확장' 형태소를 더 높은 비율로 포함할수록, 이는 콘텐츠의 독창성과 깊이를 나타내어 사용자의 탐색적 의도를 충족시키고 더 높은 비브랜드 유입을 유도할 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "relative_morpheme_expansion",
+    "hypothesis": "우리 포스트가 대표 검색어의 핵심 형태소를 포함하는 파생/관련 형태소를 경쟁자 그룹의 평균보다 더 다양하게 사용할수록, 검색 의도에 대한 깊이 있는 답변으로 인식되어 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0126)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9037).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.012581772873433764,
+      "p_value": 0.9036805053198543
+    }
+  },
+  {
+    "feature_created": "core_morpheme_structural_ratio",
+    "hypothesis": "경쟁사 그룹에서 가장 빈번하게 사용되는 핵심 형태소(Core Morphemes)는 해당 주제의 핵심 구조를 나타냅니다. 우리 포스트가 이 핵심 형태소들을 경쟁사 평균과 유사하거나 약간 더 높은 비율로 포함할 때 더 나은 성과를 보일 것입니다. 이 비율이 1.0에 가까우면 주제 초점이 잘 맞춰졌음을 의미하며, 너무 낮으면 내용이 부실하고, 너무 높으면 키워드 스터핑으로 인식될 수 있습니다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "morpheme_differentiation_score",
+    "hypothesis": "우리 포스트가 동일 검색어에 대한 경쟁 포스트들에서 잘 사용되지 않는, 차별화된 형태소 집합을 사용할수록, 틈새 사용자 의도를 더 잘 포착하고 더 넓은 범위의 롱테일 키워드에 대해 순위를 확보하여, 결과적으로 더 높은 비브랜드 유입을 유도할 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "core_morpheme_structural_diversity",
+    "hypothesis": "우리 포스트가 대표 검색어의 핵심 형태소를 포함하는 파생/조합 형태소를, 상위 경쟁자 그룹의 평균보다 더 다양하게 사용할수록, 콘텐츠의 깊이와 전문성이 높게 평가되어 비브랜드 유입에 긍정적인 영향을 미칠 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1859)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.0712).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.18593927315948655,
+      "p_value": 0.0712175932261643
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 쿼리의 핵심 형태소를 제외한 파생 형태소를 더 다양하게(풍부하게) 포함할수록, 비브랜드 유입 성과가 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1341)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1953).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.13405119610371605,
+      "p_value": 0.19527646982997224
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 쿼리의 핵심 형태소를 포함하면서도, 그 외의 파생/관련 형태소를 더 풍부하고 다양하게 사용할수록, 콘텐츠의 깊이와 전문성이 높게 평가되어 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1341)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1953).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.1340511961030599,
+      "p_value": 0.19527646983217894
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 경쟁자 그룹보다 대표 쿼리의 핵심 형태소와 관련된 파생 형태소를 더 다양하게 포함할수록, 즉 형태소 확장성이 좋을수록 검색 유입량이 많을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0119)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9087).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.011929294612354861,
+      "p_value": 0.9086534228543669
+    }
+  },
+  {
+    "feature_created": "derivative_morpheme_richness_ratio",
+    "hypothesis": "우리 포스트가 대표 검색어의 핵심 형태소를 제외한 '파생 형태소'를 경쟁자 그룹의 평균보다 더 풍부하게 사용할수록, 사용자의 더 넓은 탐색 의도를 충족시켜 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  }
+]

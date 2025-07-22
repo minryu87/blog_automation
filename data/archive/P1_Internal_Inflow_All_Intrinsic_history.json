@@ -1,0 +1,142 @@
+[
+  {
+    "feature_created": "lexical_diversity_ratio",
+    "hypothesis": "어휘의 다양성, 즉 전체 단어 수 대비 고유 형태소의 비율이 높을수록, 콘텐츠가 더 깊이 있고 전문적이라고 판단될 수 있습니다. 이러한 어휘적 풍부함은 검색 엔진에 의해 더 높은 품질의 콘텐츠로 평가받아, 결과적으로 비브랜드 검색 유입(non_brand_inflow) 증가에 기여할 것이라는 가설을 세웁니다.",
+    "conclusion": "약한 양의 상관관계(0.0862)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4062).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08620472407316634,
+      "p_value": 0.4061745009322977
+    }
+  },
+  {
+    "feature_created": "question_answer_score",
+    "hypothesis": "포스트의 제목이 질문 형식이거나, 본문에 '방법', '이유', '해결' 등 답변형 형태소를 많이 포함할수록 사용자의 검색 의도를 직접적으로 충족시켜 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0006)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9958).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0005533141661005206,
+      "p_value": 0.995753962038219
+    }
+  },
+  {
+    "feature_created": "category_keyword_density",
+    "hypothesis": "포스트 본문 내에서 해당 카테고리의 핵심 키워드가 차지하는 비중(밀도)이 높을수록, 해당 주제에 대한 전문성과 집중도가 높다고 판단되어 비브랜드 유입에 긍정적인 영향을 미칠 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0130)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9007).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.012974303750445813,
+      "p_value": 0.900690575686882
+    }
+  },
+  {
+    "feature_created": "avg_morpheme_length",
+    "hypothesis": "우리 '건강·의학' 포스트의 경우, 평균 형태소 길이가 길수록 '임플란트' 대 '이'와 같이 더 전문적이고 복잡한 용어를 사용했음을 나타냅니다. 이러한 전문적인 언어는 더 깊이 있는 콘텐츠를 시사하며, 이는 전문 정보를 찾는 사용자 및 검색 엔진에 의해 더 높게 평가받아 'non_brand_inflow'를 증가시킬 것이라는 가설을 세웁니다.",
+    "conclusion": "약한 음의 상관관계(-0.0392)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7059).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0392152779983079,
+      "p_value": 0.7059443730803595
+    }
+  },
+  {
+    "feature_created": "content_engagement_index",
+    "hypothesis": "우리 포스트 내에서 단어 수가 많아 내용이 풍부하면서도, 가독성 점수가 높고 이미지가 적절히 사용되어 독자의 이탈을 막는 콘텐츠가 더 높은 사용자 참여를 유도하고, 결과적으로 더 높은 `non_brand_inflow`를 기록할 것이다. 이 복합적인 품질을 '콘텐츠 참여 지수'로 측정할 수 있다.",
+    "conclusion": "약한 양의 상관관계(0.0667)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5209).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.06667368868521494,
+      "p_value": 0.5208948011793133
+    }
+  },
+  {
+    "feature_created": "morpheme_density",
+    "hypothesis": "단순히 글자 수가 많은 것보다, 단어 하나에 더 많은 형태소가 포함된, 즉 '형태소 밀도'가 높은 글이 더 구체적이고 전문적인 내용을 담고 있을 가능성이 높다. 이러한 전문성은 검색 엔진과 사용자에게 고품질 콘텐츠로 인식되어, 결과적으로 `non_brand_inflow`를 높이는 핵심 요인이 될 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0955)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3575).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09546119648688892,
+      "p_value": 0.35745411748741696
+    }
+  },
+  {
+    "feature_created": "content_effort_index",
+    "hypothesis": "For our own content, posts that demonstrate higher creation 'effort', as measured by a normalized combination of word count and the number of valid images, will provide more value to the user, resulting in higher non-brand inflow.",
+    "conclusion": "약한 음의 상관관계(-0.0421)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.6852).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.04212908006375103,
+      "p_value": 0.6852073231772129
+    }
+  },
+  {
+    "feature_created": "core_morpheme_title_presence",
+    "hypothesis": "포스트 본문의 핵심 형태소(가장 빈도가 높은 N개)가 제목에 포함된 비율이 높을수록, 제목이 내용을 잘 요약하여 사용자의 검색 의도와 일치할 확률이 높아지므로, 결과적으로 비브랜드 유입(non_brand_inflow)이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.1286)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2142).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.12859774431168056,
+      "p_value": 0.21424136926216208
+    }
+  },
+  {
+    "feature_created": "intrinsic_quality_index",
+    "hypothesis": "포스트의 '내재적 품질'은 콘텐츠에 투입된 노력과 비례한다. 단어 수(분량), 유효 이미지 수(시각적 풍부함), 가독성 점수(편집 완성도)를 종합한 '내재적 품질 지수'를 생성하면, 개별 지표보다 `non_brand_inflow`와 더 높은 상관관계를 보일 것이다. 이 지수는 사용자와 검색엔진 모두에게 콘텐츠의 가치를 나타내는 강력한 신호로 작용할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.1244)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2298).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.12438138050610092,
+      "p_value": 0.22977418888024137
+    }
+  },
+  {
+    "feature_created": "lexical_diversity",
+    "hypothesis": "포스트 본문에 사용된 어휘의 다양성(고유 단어 수 / 전체 단어 수)이 높을수록, 콘텐츠가 더 전문적이고 풍부하게 인식되어 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1748)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.0903).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.17477455467525685,
+      "p_value": 0.09026426174184199
+    }
+  },
+  {
+    "feature_created": "title_length_optimization_score",
+    "hypothesis": "제목의 길이가 검색엔진 결과 페이지(SERP) 노출에 최적화된 특정 범위(예: 50~60자)에 가까울수록, 잘리거나 어색하게 표시될 확률이 낮아져 클릭률(CTR)이 향상되고, 결과적으로 non-brand 유입량이 증가할 것입니다. 이 피처는 최적 길이에 가까울수록 1에 가까운 점수를 부여합니다.",
+    "conclusion": "약한 음의 상관관계(-0.1015)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3278).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.10147939043399831,
+      "p_value": 0.32781038811869795
+    }
+  },
+  {
+    "feature_created": "image_density_per_1000_chars",
+    "hypothesis": "우리 포스트 내에서, 콘텐츠의 텍스트 길이에 비해 유효 이미지 수가 많을수록(이미지 밀도가 높을수록) 시각적 자료가 풍부하여 독자의 이해를 돕고 체류시간을 늘려, 결과적으로 비브랜드 유입에 긍정적인 영향을 미칠 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0586)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5728).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.05858970584552516,
+      "p_value": 0.5727631212534067
+    }
+  },
+  {
+    "feature_created": "lexical_diversity_score",
+    "hypothesis": "포스트에 사용된 형태소의 어휘 다양성(Lexical Diversity)이 높을수록, 즉 중복된 표현을 적게 쓰고 다양한 어휘를 구사할수록, 콘텐츠의 질이 높게 평가되어 '비브랜드 유입(non_brand_inflow)'이 증가할 것이다. 어휘 다양성은 Type-Token Ratio (고유 형태소 수 / 전체 형태소 수)로 측정한다.",
+    "conclusion": "약한 양의 상관관계(0.0747)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4719).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.074694767479413,
+      "p_value": 0.47189295557069316
+    }
+  },
+  {
+    "feature_created": "numeric_data_density",
+    "hypothesis": "포스트 본문에 구체적인 수치(예: 날짜, 개월 수, 치아 번호, 백분율 등)가 많이 포함될수록, 일반적인 정보가 아닌 실제 사례 기반의 상세하고 신뢰도 높은 콘텐츠로 인식됩니다. 이러한 데이터 기반의 구체성은 콘텐츠의 전문성을 높여 사용자 및 검색 엔진에 긍정적으로 평가받고, 결과적으로 `non_brand_inflow`를 증가시킬 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.2390)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0197).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.23898452868379216,
+      "p_value": 0.019679542336223668
+    }
+  }
+]

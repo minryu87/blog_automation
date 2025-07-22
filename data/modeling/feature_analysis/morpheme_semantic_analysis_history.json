@@ -1,0 +1,172 @@
+[
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.043790039857357604,
+        "p_value": 0.5211006286657583,
+        "interpretation": "Found a weak, negative correlation (-0.0438). However, the result is not statistically significant (p-value: 0.5211), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.07551645669714316,
+        "p_value": 0.2647207993036578,
+        "interpretation": "Found a weak, positive correlation (0.0755). However, the result is not statistically significant (p-value: 0.2647), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "게시물의 핵심 형태소('morpheme_words')와 지정된 카테고리 키워드('category_keywords') 간의 의미론적 유사성이 높을수록 검색 엔진은 해당 게시물을 주제에 더 집중된 것으로 판단할 것입니다. 이로 인해 검색 의도와의 일치성이 향상되어 'non_brand_inflow' 및 'non_brand_average_ctr'이 증가할 것입니다.",
+    "feature_created": "semantic_topic_congruence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.10268139622283606,
+        "p_value": 0.1315945982102148,
+        "interpretation": "Found a weak, negative correlation (-0.1027). However, the result is not statistically significant (p-value: 0.1316), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.048049412076908035,
+        "p_value": 0.47830112098940686,
+        "interpretation": "Found a weak, positive correlation (0.0480). However, the result is not statistically significant (p-value: 0.4783), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "게시물의 핵심 형태소('morpheme_words')들이 포괄하는 의미적 범위가 넓을수록, 즉 다양한 하위 주제를 다룰수록 검색 엔진은 해당 게시물을 더 포괄적이고 권위 있는 문서로 평가할 것입니다. 이러한 '주제적 깊이'는 더 넓은 범위의 롱테일 검색어에 대응할 수 있게 하여 'non_brand_inflow'를 증가시킬 수 있습니다. (The broader the semantic range covered by a post's core morphemes ('morpheme_words'), indicating it addresses various sub-topics, the more likely search engines are to deem it a comprehensive and authoritative document. This 'topical breadth' can answer a wider range of long-tail queries, thereby increasing 'non_brand_inflow'.)",
+    "feature_created": "topical_breadth"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'peak_topic_alignment' not found in DataFrame after execution.",
+    "hypothesis": "가설: 게시물의 검색 성과는 평균적인 주제 관련성보다, 카테고리 주제를 가장 강력하게 뒷받침하는 핵심 단어의 '최대 관련성'에 더 큰 영향을 받을 수 있습니다. 개별 'morpheme_words'와 전체 'category_keywords'의 의미적 유사도를 각각 계산한 뒤, 그 중 최댓값을 피처로 사용합니다. 이 '최대 주제 정렬도(peak_topic_alignment)'가 높을수록, 해당 게시물이 특정 검색 의도에 매우 명확하게 부합함을 나타내며, 이는 사용자의 클릭률('non_brand_average_ctr')과 검색 유입('non_brand_inflow')을 높일 것입니다.",
+    "feature_created": "peak_topic_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.07560818062921809,
+        "p_value": 0.26745895951746446,
+        "interpretation": "Found a weak, positive correlation (0.0756). However, the result is not statistically significant (p-value: 0.2675), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.04701664610880569,
+        "p_value": 0.487819789440871,
+        "interpretation": "Found a weak, negative correlation (-0.0470). However, the result is not statistically significant (p-value: 0.4878), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "게시물의 핵심 형태소('morpheme_words')들이 의미적으로 얼마나 일관성 있게 중심 주제를 형성하는지가 SEO 성과에 영향을 미칠 것입니다. 개별 형태소들이 평균적인 의미 중심(centroid)에 가깝게 분포할수록 (즉, 의미적 분산이 낮을수록) 검색 엔진은 해당 게시물을 주제에 매우 집중된 고품질 문서로 판단할 가능성이 높습니다. 이러한 '의미적 일관성'은 명확한 검색 의도에 부합하여 'non_brand_inflow'와 'non_brand_average_ctr'을 향상시킬 것입니다.",
+    "feature_created": "semantic_consistency_score"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.0041623971375868395,
+        "p_value": 0.9513894245392625,
+        "interpretation": "Found a weak, positive correlation (0.0042). However, the result is not statistically significant (p-value: 0.9514), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.13090716406799308,
+        "p_value": 0.052506478904604324,
+        "interpretation": "Found a weak, positive correlation (0.1309). However, the result is not statistically significant (p-value: 0.0525), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "게시물 제목(`post_title`)이 해당 카테고리의 핵심 키워드(`category_keywords`)와 의미적으로 유사할수록, 검색 엔진과 사용자는 해당 콘텐츠를 주제에 매우 관련성이 높다고 인식할 것입니다. 이러한 강력한 일치도는 제목이 사용자의 검색 의도와 부합한다는 신호를 효과적으로 보내므로, 검색 결과 페이지에서의 클릭률(`non_brand_average_ctr`)을 높일 것입니다. 또한, 핵심 용어에 대한 순위가 향상되어 자연 검색 유입(`non_brand_inflow`)에도 긍정적인 영향을 미칠 수 있습니다.",
+    "feature_created": "title_category_semantic_relevance"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": -0.08580307617376985,
+        "p_value": 0.20803716087284924,
+        "interpretation": "Found a weak, negative correlation (-0.0858). However, the result is not statistically significant (p-value: 0.2080), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": -0.013075586442394791,
+        "p_value": 0.8470798144189654,
+        "interpretation": "Found a weak, negative correlation (-0.0131). However, the result is not statistically significant (p-value: 0.8471), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "게시물의 SEO 성과는 개별 키워드나 형태소의 산발적인 관련성보다, 게시물 본문의 핵심 의미 중심('morpheme_words'의 센트로이드)이 카테고리 주제의 핵심 의미 중심('category_keywords'의 센트로이드)과 얼마나 일치하는지에 따라 결정될 수 있습니다. 이 '의미 중심 정렬도(semantic_centroid_alignment)'가 높을수록, 검색 엔진은 해당 게시물을 주제에 매우 집중된 고품질 문서로 판단하여 검색 노출('non_brand_inflow')과 클릭률('non_brand_average_ctr')을 높일 것입니다.",
+    "feature_created": "semantic_centroid_alignment"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_focus_density' not found in DataFrame after execution.",
+    "hypothesis": "가설: 게시물의 SEO 성과는 평균적인 주제 관련성보다, 핵심 주제('category_keywords')와 매우 높은 관련성을 보이는 핵심 형태소('morpheme_words')의 '밀도'에 의해 더 큰 영향을 받습니다. 특정 임계값 이상의 높은 유사도를 보이는 형태소의 비율이 높을수록, 검색 엔진은 해당 콘텐츠를 주제에 깊이 집중된 전문적인 문서로 판단할 가능성이 높습니다. 이러한 '주제 집중도'는 사용자의 검색 의도와 명확하게 일치하여 클릭률('non_brand_average_ctr')을 높이고, 해당 주제에 대한 권위를 인정받아 자연 검색 유입('non_brand_inflow')을 증대시킬 것입니다.",
+    "feature_created": "semantic_focus_density"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'semantic_step_size' not found in DataFrame after execution.",
+    "hypothesis": "게시물의 핵심 형태소(`morpheme_words`)들이 의미적으로 얼마나 순차적으로 연결되는지가 SEO 성과에 영향을 미칠 수 있습니다. 형태소 목록에서 연속된 단어들 간의 평균적인 의미적 거리('semantic_step_size')가 작을수록, 글의 내용이 논리적으로 긴밀하게 연결되어 있음을 의미합니다. 이렇게 의미적 \"보폭\"이 작은 글은 사용자에게 더 높은 가독성과 이해도를 제공하고, 검색 엔진에게는 주제의 일관성을 명확히 전달하여 특정 검색 의도에 대한 신뢰도를 높입니다. 이는 결국 더 높은 클릭률(`non_brand_average_ctr`)로 이어질 것입니다.",
+    "feature_created": "semantic_step_size"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": 0.08220083123859907,
+        "p_value": 0.22783983775432376,
+        "interpretation": "Found a weak, positive correlation (0.0822). However, the result is not statistically significant (p-value: 0.2278), so we cannot confidently rule out random chance."
+      },
+      "non_brand_average_ctr": {
+        "correlation": 0.0697406522665147,
+        "p_value": 0.30311205723778606,
+        "interpretation": "Found a weak, positive correlation (0.0697). However, the result is not statistically significant (p-value: 0.3031), so we cannot confidently rule out random chance."
+      }
+    },
+    "overall_conclusion": "Analysis completed. See interpretations for each target.",
+    "hypothesis": "가설: 게시물의 SEO 성과, 특히 클릭률(CTR)은 사용자의 기대치(post_title에 의해 설정됨)와 실제 콘텐츠(morpheme_words로 대표됨) 간의 일치도에 의해 영향을 받습니다. 제목의 의미가 본문 핵심 단어들의 중심 의미와 매우 유사하다면, 이는 일관성 있고 초점이 잘 맞는 글임을 의미합니다. 이러한 '제목-본문 일관성'은 사용자가 올바른 콘텐츠를 찾았다는 확신을 주어 체류 시간을 늘리고(긍정적인 순위 신호), 검색 의도를 충족시켜 'non_brand_average_ctr'을 향상시킬 수 있습니다. 또한, 검색 엔진이 이러한 일관성 있는 콘텐츠를 선호할 수 있으므로 'non_brand_inflow'에도 긍정적인 영향을 미칠 수 있습니다.",
+    "feature_created": "title_body_coherence"
+  },
+  {
+    "correlation_results": {
+      "non_brand_inflow": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      },
+      "non_brand_average_ctr": {
+        "correlation": null,
+        "p_value": null,
+        "interpretation": ""
+      }
+    },
+    "overall_conclusion": "Error during correlation analysis: Feature 'topical_coverage_strength' not found in DataFrame after execution.",
+    "hypothesis": "가설: 게시물의 SEO 성과는 해당 콘텐츠('morpheme_words')가 주요 주제의 다양한 측면('category_keywords')을 얼마나 잘 다루고 있는지에 따라 결정됩니다. 이 피처는 각 'category_keyword'에 대해 가장 관련성이 높은 'morpheme_word'와의 의미적 유사도 점수를 계산한 다음, 이 점수들의 평균을 냅니다. 'topical_coverage_strength' 점수가 높다는 것은 게시물이 주제의 여러 하위 측면을 균형 있게 다루고 있음을 의미하며, 이는 더 포괄적이고 권위 있는 콘텐츠로 인식되어 검색 엔진의 신뢰도를 높입니다. 결과적으로, 이는 더 넓은 범위의 검색 의도를 충족시켜 'non_brand_inflow'를 증가시키고, 콘텐츠의 높은 관련성으로 인해 'non_brand_average_ctr' 또한 향상시킬 것입니다.",
+    "feature_created": "topical_coverage_strength"
+  }
+]

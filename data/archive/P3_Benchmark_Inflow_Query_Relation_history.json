@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "query_intent_satisfaction_vs_competitors",
+    "hypothesis": "우리 포스트의 내용이 '대표 검색어'의 의미와 더 가까울수록(즉, 검색 의도를 더 직접적으로 충족시킬수록), 해당 검색어에 대한 경쟁사 그룹의 평균적인 의도 충족도보다 높게 측정될 것이며, 이 상대적 우위는 'non_brand_inflow'와 양의 상관관계를 가질 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581520409852558,
+      "p_value": 0.3556657645219605
+    }
+  },
+  {
+    "feature_created": "relative_query_satisfaction_score",
+    "hypothesis": "포스트가 경쟁자 그룹의 평균보다 대표 검색어의 의미(검색 의도)에 더 가까운 내용을 포함할수록, 즉 검색어와 본문 간의 의미론적 유사도가 경쟁자 평균보다 높을수록, 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0972)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3487).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09720686672312812,
+      "p_value": 0.34868940054060854
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment_score",
+    "hypothesis": "우리 포스트의 내용이 '대표 검색어'의 의미적 의도를 경쟁자 그룹의 평균보다 더 잘 충족시킬수록(즉, 시맨틱 유사도가 높을수록), 사용자의 검색 만족도가 높아져 비브랜드 유입(non_brand_inflow)이 증가할 것이다. 이 피처는 우리 콘텐츠가 경쟁사와 비교하여 얼마나 더 쿼리에 직접적으로 부합하는지를 정량화한다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581522793548534,
+      "p_value": 0.35566564429118275
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment_score",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어와의 의미적 유사성이 경쟁자 그룹의 평균보다 높을수록, 검색 의도를 더 잘 충족시켜 'non_brand_inflow'가 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581522799992363,
+      "p_value": 0.35566564396616374
+    }
+  },
+  {
+    "feature_created": "relative_query_intent_fulfillment",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어의 의미와 더 강하게 연결될수록(semantic similarity), 그리고 그 연결성이 동일 검색어에 대한 경쟁자 그룹의 평균적인 연결성보다 높을수록, 검색 의도를 더 잘 충족시켜 'non_brand_inflow'가 증가할 것입니다. 이 피처는 각 검색어별 경쟁 환경을 고려한 상대적인 의미 충족도를 측정합니다.",
+    "conclusion": "약한 양의 상관관계(0.1036)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3179).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10356920469306391,
+      "p_value": 0.317894858228946
+    }
+  },
+  {
+    "feature_created": "relative_query_body_cohesion",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어의 의도와 의미적으로 더 밀접하게 연결될수록(즉, '질의-본문 일관성'이 높을수록), 경쟁사 평균보다 높은 일관성을 보일 때 비브랜드 유입이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581520409852558,
+      "p_value": 0.3556657645219605
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어와의 의미적 일치도(검색 의도 충족도로 간주)가 동일 검색어에 대한 경쟁 포스트들의 평균적인 의미적 일치도보다 높을수록, 사용자의 검색 의도를 더 잘 만족시켜 비브랜드 유입량이 증가할 것이다. 이 피처는 개별 포스트의 절대적 점수가 아닌, 경쟁 환경 내에서의 상대적 우위를 측정합니다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.0958152759922076,
+      "p_value": 0.35566540189889007
+    }
+  },
+  {
+    "feature_created": "relative_query_body_cohesion",
+    "hypothesis": "우리 포스트의 본문이 '대표 검색어'와 의미적으로 더 강하게 연결될수록(즉, 검색 의도를 더 잘 충족시킬수록), 경쟁사 그룹의 평균적인 연결성보다 높을 때 비브랜드 유입이 증가할 것이다. 이 피처는 우리 콘텐츠가 동일 검색어에 대한 경쟁 콘텐츠보다 얼마나 더 주제에 집중하고 있는지를 측정한다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581519838640046,
+      "p_value": 0.3556657933332428
+    }
+  },
+  {
+    "feature_created": "relational_query_fulfillment_score",
+    "hypothesis": "우리 포스트가 동일 대표 검색어에 대한 경쟁자 포스트들의 평균적인 의도 충족도보다 더 높은 수준으로 검색 의도를 충족시킬수록(즉, 대표 검색어와 우리 포스트 본문 간의 의미적 유사도가 경쟁자들의 평균 유사도보다 높을수록), 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09581535592796145,
+      "p_value": 0.3556649987128454
+    }
+  },
+  {
+    "feature_created": "relational_query_fulfillment_score",
+    "hypothesis": "우리 포스트의 내용이 경쟁자 포스트 그룹의 평균적인 내용보다 '대표 검색어'의 의미에 더 가까울수록(즉, 검색 의도를 더 잘 충족시킬수록), 더 높은 비브랜드 유입량을 보일 것이다. 이 피처는 우리 콘텐츠의 상대적 의미론적 우수성을 측정한다.",
+    "conclusion": "약한 양의 상관관계(0.0958)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3557).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.0958153606658091,
+      "p_value": 0.35566497481573767
+    }
+  }
+]

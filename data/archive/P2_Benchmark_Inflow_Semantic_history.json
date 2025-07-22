@@ -1,0 +1,122 @@
+[
+  {
+    "feature_created": "semantic_distance_from_ideal",
+    "hypothesis": "우리 포스트의 제목과 본문을 결합한 텍스트가, 해당 대표 검색어의 상위 노출 경쟁자(노출 점수 상위 25%)들의 평균적인 의미 중심(semantic centroid)에 더 가까울수록(즉, 의미론적 거리가 짧을수록), 비브랜드 유입량이 높을 것이다. 이는 우리 콘텐츠가 검색 사용자의 의도와 상위 랭킹 콘텐츠의 공통된 의미적 특징을 잘 충족시키고 있음을 의미하기 때문이다.",
+    "conclusion": "약한 음의 상관관계(-0.0339)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.7440).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.0339375012692239,
+      "p_value": 0.7440483988638961
+    }
+  },
+  {
+    "feature_created": "title_body_cohesion_vs_competitors",
+    "hypothesis": "게시물의 제목과 본문이 의미적으로 더 일관성 있을수록(높은 코사인 유사도) 사용자 의도를 더 잘 충족시킵니다. 이러한 자체적인 의미적 일관성을 동일 대표 검색어의 경쟁자 평균과 비교했을 때, 우리 포스트의 일관성이 경쟁자 평균보다 높을수록 주제에 집중하고 잘 구성된 콘텐츠로 판단되어 더 높은 비브랜드 유입(non_brand_inflow)을 유도할 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.0649)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.5319).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.06492749438793932,
+      "p_value": 0.5318939953130282
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트의 본문이 경쟁자 그룹의 평균적인 본문보다 '방법', '해결', '팁' 등 실행 가능한 정보를 나타내는 의미를 더 많이 포함할수록, 사용자의 문제 해결 의도를 충족시켜 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0004)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9970).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.00039714506721615604,
+      "p_value": 0.9969523700435227
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트의 내용(제목+본문)이 상위 경쟁자 그룹의 평균적인 내용보다 '방법', '해결', '팁', '후기'와 같은 실용적/해결책 지향적 의미에 더 가까울수록(즉, 의미론적 실행 가능성 점수 비율이 높을수록), 사용자의 정보 탐색 의도를 더 잘 충족시켜 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0970)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.3495).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.09703895366291311,
+      "p_value": 0.3495265766042259
+    }
+  },
+  {
+    "feature_created": "relative_semantic_cohesion",
+    "hypothesis": "콘텐츠의 제목과 본문 간의 의미론적 일관성(cohesion)은 주제에 대한 깊이와 전문성을 나타내는 지표입니다. 우리 포스트의 의미론적 일관성을 해당 대표 검색어의 '상위 성과 경쟁자' 그룹의 평균 일관성과 비교했을 때, 우리 포스트가 상대적으로 더 높은 일관성을 보일수록(즉, 제목과 본문이 더 긴밀하게 연결될수록) 주제에 대한 집중도가 높다고 판단할 수 있으며, 이는 사용자의 검색 의도를 더 잘 만족시켜 'non_brand_inflow'에 긍정적인 영향을 미칠 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.0180)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8625).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.018009830401595404,
+      "p_value": 0.8624719574708121
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트의 본문이 경쟁사 포스트 그룹의 평균보다 '방법', '해결', '가이드'와 같은 실행 가능한 주제에 대해 의미적으로 더 가깝게 정렬될수록, 사용자의 문제 해결 의도를 더 잘 충족시켜 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 음의 상관관계(-0.0002)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9985).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.00019390504078362764,
+      "p_value": 0.9985119999304111
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "우리 포스트의 내용(제목+본문)이 경쟁자 그룹의 평균적인 내용보다 '해결 방법', '단계별 가이드', '하는 법' 등 실용적이고 실행 가능한 정보를 나타내는 의미에 더 가까울수록, 사용자의 실질적인 문제 해결 의도를 더 잘 충족시켜 'non_brand_inflow'가 높을 것이라고 예상합니다.",
+    "conclusion": "상관관계를 계산할 수 없습니다 (예: 피처의 분산이 0).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": null,
+      "p_value": null
+    }
+  },
+  {
+    "feature_created": "semantic_actionability_vs_competitors",
+    "hypothesis": "포스트 본문이 경쟁자 그룹의 평균보다 '해결책 제시', '방법 안내'와 같은 실행 가능한 정보를 의미적으로 더 많이 포함할수록, 사용자의 문제 해결 의도를 더 잘 충족시켜 비브랜드 유입량이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0864)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.4050).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.08641639561352286,
+      "p_value": 0.40501860120961436
+    }
+  },
+  {
+    "feature_created": "semantic_superiority_vs_top_competitors",
+    "hypothesis": "우리 포스트의 본문 내용이 동일 대표 검색어에 대한 '상위 성과 경쟁자' 그룹의 평균적인 의미 중심(semantic centroid)에 가까울수록(즉, 코사인 유사도가 높을수록) 비브랜드 유입 성과가 높을 것이다. 이는 성공적인 경쟁자들의 핵심 주제 및 소구 포인트를 우리 포스트가 효과적으로 반영하고 있음을 의미하기 때문이다.",
+    "conclusion": "약한 양의 상관관계(0.1079)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2981).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.10787440781995641,
+      "p_value": 0.2980841324929682
+    }
+  },
+  {
+    "feature_created": "relative_semantic_actionability_score",
+    "hypothesis": "우리 포스트의 내용(제목+본문)이 '방법', '해결', '가이드'와 같은 실행 가능한 정보를 담고 있는 의미론적 개념에 가까울수록, 경쟁 포스트 그룹 대비 더 높은 비브랜드 유입을 유도할 것입니다. 이 피처는 우리 포스트의 '실용성 점수'를 경쟁사 평균 '실용성 점수'로 나눈 값으로, 1보다 클수록 경쟁 우위를 나타냅니다.",
+    "conclusion": "약한 양의 상관관계(0.0174)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.8669).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.017430143614630664,
+      "p_value": 0.8668572772165799
+    }
+  },
+  {
+    "feature_created": "solution_oriented_score_vs_competitors",
+    "hypothesis": "우리 포스트 본문이 '해결 방법', '가이드', '팁'과 같은 실용적/해결 지향적 주제 벡터에 의미론적으로 더 가까울수록, 해당 검색어의 경쟁사 그룹 평균보다 더 높은 비브랜드 유입(non_brand_inflow)을 유도할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.0020)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.9843).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.0020435955285167144,
+      "p_value": 0.9843187190417606
+    }
+  },
+  {
+    "feature_created": "relative_semantic_richness",
+    "hypothesis": "콘텐츠의 의미론적 풍부함(semantic richness)은 주제에 대한 포괄적인 이해와 깊이를 나타냅니다. 본문 내 문장들 간의 평균적인 의미론적 거리(average pairwise semantic distance)를 풍부함의 척도로 삼을 때, 우리 포스트의 풍부함이 상위 경쟁자 그룹의 평균 풍부함보다 높을수록, 더 깊이 있고 포괄적인 정보를 제공하는 것으로 인식되어 'non_brand_inflow'에 긍정적인 영향을 미칠 것입니다.",
+    "conclusion": "약한 음의 상관관계(-0.2356)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0216).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": -0.23556418473599197,
+      "p_value": 0.02155944437304108
+    }
+  }
+]

@@ -63,16 +63,19 @@ class HistoryTool:
         summary = {
             "feature_created": report.get("feature_name", "N/A"),
             "hypothesis": report.get("hypothesis", "N/A"),
-            "conclusion": analysis_report.get("interpretation", "Conclusion not available.")
+            "conclusion": analysis_report.get("interpretation", report.get("reason", "Conclusion not available."))
         }
         
-        # Safely determine status
-        conclusion_str = str(summary["conclusion"]).lower()
-        if "error" in conclusion_str or "failed" in conclusion_str or "실패" in conclusion_str:
-            summary["status"] = "failed"
+        if 'status' in report:
+            summary['status'] = report['status']
         else:
-            summary["status"] = "success"
-            # Only include correlation for successful analyses
+            conclusion_str = str(summary["conclusion"]).lower()
+            if "error" in conclusion_str or "failed" in conclusion_str or "실패" in conclusion_str or "not available" in conclusion_str:
+                summary["status"] = "failed"
+            else:
+                summary["status"] = "success"
+
+        if summary['status'] == 'success':
             if "correlation" in analysis_report:
                 summary["correlation_results"] = {
                     "correlation": analysis_report.get("correlation"),

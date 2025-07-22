@@ -1,0 +1,102 @@
+[
+  {
+    "feature_created": "query_intent_satisfaction_vs_competitors",
+    "hypothesis": "우리 포스트가 대표 검색어와의 의미적 유사도(검색 의도 충족도로 간주)가 경쟁사 포스트 그룹의 평균 유사도보다 높을수록, 사용자는 우리 포스트가 더 관련성 높다고 판단하여 클릭할 가능성이 커지므로, `non_brand_average_ctr`이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1575)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1274).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.15751084812461594,
+      "p_value": 0.12740008519180987
+    }
+  },
+  {
+    "feature_created": "relative_query_intent_fulfillment",
+    "hypothesis": "우리 포스트가 경쟁자 그룹의 평균보다 대표 검색어의 의도를 더 충실하게 반영할수록 (즉, 포스트 본문과 검색어 간의 의미적 유사도가 높을수록), 사용자의 검색 의도 만족도가 높아져 비브랜드 평균 CTR이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2937)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0039).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.29365724695451556,
+      "p_value": 0.0038733826518317404
+    }
+  },
+  {
+    "feature_created": "relative_query_intent_fulfillment",
+    "hypothesis": "우리 포스트의 내용(제목+본문)이 '대표 검색어'와 의미적으로 더 가까울수록, 즉 검색 의도를 더 잘 충족시킬수록, 경쟁사 그룹 평균 대비 클릭률이 높을 것이다. 이 상대적인 의도 충족도를 측정하면 `non_brand_average_ctr`과 양의 상관관계를 보일 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1575)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.1274).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.15751070551138116,
+      "p_value": 0.12740043412438135
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment_score",
+    "hypothesis": "우리 포스트가 경쟁사 포스트 그룹보다 대표 검색어의 의미적 의도를 더 잘 충족시킬수록(즉, 검색어와 본문 간의 의미적 유사도가 높을수록), 사용자의 검색 의도에 더 부합하여 비브랜드 평균 CTR이 높아질 것이다.",
+    "conclusion": "중간 정도의 양의 상관관계(0.3116)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0021).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.3116492175023857,
+      "p_value": 0.0021098459808704464
+    }
+  },
+  {
+    "feature_created": "relative_query_intent_fulfillment",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어와 의미적으로 더 가까울수록(검색 의도를 더 잘 충족할수록), 그리고 이 충족도가 경쟁 포스트 그룹의 평균보다 높을수록, non-brand CTR이 높을 것이다. 이 피처는 각 '우리' 포스트의 고유한 충족도를 경쟁 그룹 평균과 비교하여 개별적인 관계 점수를 생성함으로써, 이전 시도의 '모든 값이 동일한' 문제를 해결한다.",
+    "conclusion": "약한 양의 상관관계(0.2937)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0039).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.29365724695451556,
+      "p_value": 0.0038733826518317404
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment_score",
+    "hypothesis": "포스트 본문이 대표 검색어와의 의미적 유사성을 통해 검색 의도를 더 잘 충족할수록, 그리고 이 충족도가 동일 검색어에 대한 경쟁자 평균보다 높을수록, 비브랜드 평균 CTR이 높을 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2937)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0039).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.29365719222086073,
+      "p_value": 0.0038733895900607616
+    }
+  },
+  {
+    "feature_created": "relative_query_intent_fulfillment",
+    "hypothesis": "우리 포스트가 경쟁자 그룹의 평균보다 대표 검색어의 의미적 의도를 더 잘 충족시킬수록(즉, 검색어와 콘텐츠 간의 의미적 유사도가 상대적으로 높을수록), 사용자의 검색 만족도가 높아져 비브랜드 평균 CTR이 증가할 것이다.",
+    "conclusion": "약한 양의 상관관계(0.1291)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2125).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.12908076068817995,
+      "p_value": 0.21251071859542844
+    }
+  },
+  {
+    "feature_created": "relative_query_fulfillment_score",
+    "hypothesis": "우리 포스트의 내용이 대표 검색어와 의미적으로 더 가까울수록(검색 의도를 더 잘 충족시킬수록), 경쟁자 그룹의 평균적인 의도 충족도에 비해 상대적으로 더 높은 CTR을 보일 것이다.",
+    "conclusion": "약한 양의 상관관계(0.2937)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0039).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.29365734643751684,
+      "p_value": 0.0038733700410478436
+    }
+  },
+  {
+    "feature_created": "relational_query_intent_fulfillment",
+    "hypothesis": "우리 포스트 그룹이 경쟁자 포스트 그룹의 평균보다 대표 검색어의 의미적 의도를 더 잘 충족시킬수록(즉, 검색어와 포스트 본문 간의 평균 의미적 유사도가 경쟁자 평균보다 높을수록), 사용자는 검색 결과에서 해당 포스트를 더 관련성 높다고 판단하여 클릭할 가능성이 높아지므로, 'non_brand_average_ctr'이 증가할 것입니다.",
+    "conclusion": "중간 정도의 양의 상관관계(0.3116)를 발견했습니다. 이 결과는 통계적으로 유의미합니다(p-value: 0.0021).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.3116492108329269,
+      "p_value": 0.0021098464708259757
+    }
+  },
+  {
+    "feature_created": "relational_query_fulfillment_score",
+    "hypothesis": "우리 포스트가 대표 검색어의 의도를 얼마나 충족시키는지를 의미론적으로 측정한 '쿼리 충족도'를 계산합니다. 이 점수를 동일 검색어 그룹 내 경쟁 포스트들의 평균 '쿼리 충족도'와 비교한 상대적 비율이 높을수록, 우리 포스트가 경쟁 그룹 대비 검색 의도를 더 잘 만족시킨다는 의미이므로, 사용자의 클릭을 유도할 가능성이 커져 `non_brand_average_ctr`이 높을 것입니다.",
+    "conclusion": "약한 양의 상관관계(0.1291)를 발견했습니다. 하지만 통계적으로 유의미하지 않습니다(p-value: 0.2125).",
+    "status": "success",
+    "correlation_results": {
+      "correlation": 0.12908075770449712,
+      "p_value": 0.21251072925521108
+    }
+  }
+]

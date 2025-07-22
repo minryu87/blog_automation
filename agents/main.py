@@ -3,6 +3,7 @@ import sys
 import json
 import logging
 import re
+import signal
 from dotenv import load_dotenv
 import pandas as pd
 
@@ -38,6 +39,23 @@ EXPERIMENT_PIPELINE = config.EXPERIMENT_PIPELINE
 TASK_FILE_NAMES = config.TASK_FILE_NAMES
 BASE_DATASET_PATH = config.BASE_DATASET_PATH
 FEEDBACK_FILE_PATH = config.FEEDBACK_FILE_PATH
+
+# --- Graceful Shutdown ---
+shutdown_flag = False
+force_shutdown = False
+
+def signal_handler(sig, frame):
+    global shutdown_flag, force_shutdown
+    if not shutdown_flag:
+        print("\n[Orchestrator] 종료 신호 감지. 현재 작업 완료 후 안전하게 종료합니다.")
+        print("즉시 강제 종료하려면 Ctrl+C를 다시 누르세요.")
+        shutdown_flag = True
+    else:
+        print("\n[Orchestrator] 강제 종료 신호 감지. 즉시 종료합니다.")
+        force_shutdown = True
+        sys.exit(1)
+
+signal.signal(signal.SIGINT, signal_handler)
 
 def extract_json_from_string(text: str) -> dict | None:
     """문자열에서 첫 번째 JSON 객체를 추출하여 딕셔너리로 반환합니다."""
@@ -158,7 +176,13 @@ def analyze_correlation(df: pd.DataFrame, feature_name: str, target_metric: str)
     if feature_name not in df.columns:
         raise ValueError(f"Feature '{feature_name}' not found in DataFrame.")
     
-    cleaned_df = df[[feature_name, target_metric]].replace([np.inf, -np.inf], np.nan).dropna()
+    df_for_analysis = df.copy()
+
+    # 데이터 타입을 숫자로 강제 변환합니다. 변환할 수 없는 값은 NaN으로 처리됩니다.
+    df_for_analysis[feature_name] = pd.to_numeric(df_for_analysis[feature_name], errors='coerce')
+    df_for_analysis[target_metric] = pd.to_numeric(df_for_analysis[target_metric], errors='coerce')
+
+    cleaned_df = df_for_analysis[[feature_name, target_metric]].replace([np.inf, -np.inf], np.nan).dropna()
     
     if len(cleaned_df) < 2 or cleaned_df[feature_name].nunique() <= 1:
         corr, p_value = None, None
@@ -264,153 +288,141 @@ def run_meta_orchestrator():
         print(f"치명적 오류: {BASE_DATASET_PATH} 에서 기본 데이터셋을 찾을 수 없습니다.")
         return
 
-    for task_number in EXPERIMENT_PIPELINE:
-        print(f"\n{'='*25} 파이프라인 작업 #{task_number} 시작 {'='*25}")
-        
-        task_feedback = get_task_feedback(task_number)
-        if task_feedback.startswith("오류:"):
-            print(task_feedback); continue
+    # TO-BE: 전체 파이프라인을 N번 반복하는 최상위 사이클 루프
+    for cycle in range(1, MAX_ITERATIONS_PER_TASK + 1):
+        if shutdown_flag: break
+        print(f"\n{'='*30} 전체 사이클 #{cycle}/{MAX_ITERATIONS_PER_TASK} 시작 {'='*30}")
 
-        metadata = get_task_metadata(task_feedback)
-        if not metadata:
-            print(f"[오류] 작업 #{task_number}의 피드백에서 메타데이터를 파싱할 수 없습니다."); continue
-        
-        task_type, target_metric = metadata["task_type"], metadata["target_metric"]
-        print(f"작업 유형: {task_type}, 핵심 목표 지표: {target_metric}")
-
-        task_name = TASK_FILE_NAMES.get(task_number, f"task_{task_number}")
-        history_tool = HistoryTool(history_file=os.path.join(AGENTS_DIR, f"{task_name}_history.json"))
-        feedback_tool = HumanFeedbackTool()
-        code_log_file = os.path.join(AGENTS_DIR, f"{task_name}_code_log.json") # 코드 로그 파일 경로 정의
-        
-        task_completed = False
-        last_error = None
-        
-        for attempt in range(1, MAX_CORRECTION_ATTEMPTS + 1):
-            print(f"\n--- 작업 #{task_number} / 시도 {attempt}/{MAX_CORRECTION_ATTEMPTS} ---")
-
-            print("[Orchestrator] 프롬프트 생성 중...")
-            user_feedback = feedback_tool.read_feedback()
-
-            # 작업 유형에 따라 데이터 예시를 다르게 보여줍니다.
-            df_for_prompt = master_df[master_df['source'] == 'ours'] if task_type == 'PART_1' else master_df
+        # 기존의 작업 루프가 이제 내부 루프가 됩니다.
+        for task_number in EXPERIMENT_PIPELINE:
+            if shutdown_flag: break
+            print(f"\n--- [사이클 {cycle}] 파이프라인 작업 #{task_number} ---")
             
-            prompt = f"{task_feedback}\n\n사용자 피드백:\n{user_feedback}\n\n데이터셋의 일부:\n{df_for_prompt.head(3).to_markdown(index=False)}"
-            if last_error:
-                prompt += f"\n\n이전 시도는 다음 오류로 실패했습니다:\n{last_error}\n오류의 원인을 분석하고 코드를 수정하여 다시 제안해주세요."
+            task_feedback = get_task_feedback(task_number)
+            if task_feedback.startswith("오류:"):
+                print(task_feedback); continue
+
+            metadata = get_task_metadata(task_feedback)
+            if not metadata:
+                print(f"[오류] 작업 #{task_number}의 피드백에서 메타데이터를 파싱할 수 없습니다."); continue
             
-            print("[Orchestrator] AI 에이전트 실행 중...")
-            agent_response_raw = feature_engineer_agent.run(prompt).content
-            print(f"[Orchestrator] AI 응답 수신:\n{agent_response_raw}")
+            task_type, target_metric = metadata["task_type"], metadata["target_metric"]
+            print(f"작업 유형: {task_type}, 핵심 목표 지표: {target_metric}")
 
-            print("[Orchestrator] AI 응답 검증 중...")
-            response_json = extract_json_from_string(agent_response_raw)
-
-            # 강화된 검증 로직: 키의 존재 + 값이 비어있지 않은지 확인
-            if not response_json or not all(response_json.get(k) for k in ["feature_name", "hypothesis", "python_code"]):
-                last_error = f"에이전트가 불완전한 JSON(null 또는 빈 값 포함)을 반환했습니다. Raw: {agent_response_raw}"
-                print(f"[오류] {last_error}")
-                # 코드 로그 기록
-                with open(code_log_file, 'a', encoding='utf-8') as f:
-                    log_entry = {
-                        "timestamp": datetime.now().isoformat(), 
-                        "attempt": attempt, 
-                        "status": "incomplete_response", 
-                        "error": last_error, 
-                        "raw_response": agent_response_raw
-                    }
-                    json.dump(log_entry, f, ensure_ascii=False, indent=2)
-                continue
+            task_name = TASK_FILE_NAMES.get(task_number, f"task_{task_number}")
+            history_tool = HistoryTool(history_file=os.path.join(AGENTS_DIR, f"{task_name}_history.json"))
+            feedback_tool = HumanFeedbackTool()
+            code_log_file = os.path.join(AGENTS_DIR, f"{task_name}_code_log.json")
             
-            print("[Orchestrator] AI 응답 검증 완료.")
-            feature_name, hypothesis, python_code = response_json["feature_name"], response_json["hypothesis"], response_json["python_code"]
+            # 각 작업에 대해 새로운 피처 생성을 1회 시도합니다 (내부 자가-수정 포함).
+            last_error = None
             
-            print(f"[Orchestrator] 생성된 피처: '{feature_name}'")
-            print(f"[Orchestrator] 가설: '{hypothesis}'")
-            print("[Orchestrator] 코드 실행 준비 중...")
-            df_for_analysis = master_df if task_type != "PART_1" else master_df[master_df['source'] == 'ours'].copy()
-            df_modified, execution_error = execute_feature_code(python_code, df_for_analysis)
+            for attempt in range(1, MAX_CORRECTION_ATTEMPTS + 1):
+                if shutdown_flag: break
+                print(f"\n--- 작업 #{task_number} / 시도 {attempt}/{MAX_CORRECTION_ATTEMPTS} ---")
 
-            if execution_error:
-                last_error = f"코드 실행 실패:\n{execution_error}"
-                print(f"[오류] {last_error}")
-                if "ModuleNotFoundError" not in execution_error:
-                    analyze_and_log_failure(execution_error, python_code, hypothesis)
-                # 코드 로그 기록
-                with open(code_log_file, 'a', encoding='utf-8') as f:
-                    log_entry = {
-                        "timestamp": datetime.now().isoformat(), 
-                        "attempt": attempt, 
-                        "status": "execution_error", 
-                        "error": last_error, 
-                        "code": python_code
-                    }
-                    json.dump(log_entry, f, ensure_ascii=False, indent=2)
-                continue
-            
-            print(f"피처 '{feature_name}'가 성공적으로 생성 및 검증되었습니다.")
-
-            if feature_name not in df_modified.columns:
-                last_error = f"논리적 오류: 코드는 실행됐지만 '{feature_name}' 컬럼이 생성되지 않았습니다."
-                print(f"[오류] {last_error}")
-                # 코드 로그 기록
-                with open(code_log_file, 'a', encoding='utf-8') as f:
-                    log_entry = {
-                        "timestamp": datetime.now().isoformat(), 
-                        "attempt": attempt, 
-                        "status": "logical_error", 
-                        "error": last_error, 
-                        "code": python_code
-                    }
-                    json.dump(log_entry, f, ensure_ascii=False, indent=2)
-                continue
-
-            # 올바른 방법: 새 피처 컬럼을 master_df에 직접 할당합니다.
-            master_df[feature_name] = df_modified[feature_name]
-
-            # 논리적 오류 검사 2: 피처의 분산이 있는지 확인 (상관관계 분석 전 필수)
-            if master_df[feature_name].nunique(dropna=False) <= 1:
-                last_error = (
-                    f"논리적 오류: 생성된 피처 '{feature_name}'의 값이 모두 동일하여 "
-                    f"상관관계를 계산할 수 없습니다. 모든 행에 대해 다른 값을 생성하도록 코드를 수정해주세요."
+                print("[Orchestrator] 프롬프트 생성 중...")
+                past_experiments = history_tool.read_history()
+                user_feedback = feedback_tool.read_feedback()
+                
+                df_for_prompt = master_df[master_df['source'] == 'ours'] if task_type == 'PART_1' else master_df
+                
+                prompt = (
+                    f"{task_feedback}\n\n"
+                    f"--- 이전 실험 요약 ---\n"
+                    f"{json.dumps(past_experiments, indent=2, ensure_ascii=False)}\n\n"
+                    f"--- 사용자 피드백 ---\n"
+                    f"{user_feedback}\n\n"
+                    f"--- 데이터셋의 일부 ---\n"
+                    f"{df_for_prompt.head(3).to_markdown(index=False)}\n\n"
+                    "참고: 이전 실험과 중복되지 않는 새롭고 창의적인 가설을 세워주세요."
                 )
-                print(f"[오류] {last_error}")
-                # 논리적 오류를 분석하고 기록합니다.
-                analyze_and_log_failure(last_error, python_code, hypothesis)
-                # 코드 로그 기록
-                with open(code_log_file, 'a', encoding='utf-8') as f:
-                    log_entry = {
-                        "timestamp": datetime.now().isoformat(), 
-                        "attempt": attempt, 
-                        "status": "logical_error", 
-                        "error": last_error, 
-                        "code": python_code
-                    }
-                    json.dump(log_entry, f, ensure_ascii=False, indent=2)
-                continue
-            
-            analysis_report = analyze_correlation(master_df, feature_name, target_metric)
-            history_tool.add_event({
-                "feature_name": feature_name, 
-                "hypothesis": hypothesis,
-                "analysis": analysis_report
-            })
-            print(f"상관관계 분석 완료: {analysis_report['interpretation']}")
+                
+                if last_error:
+                    prompt += f"\n\n이전 시도는 다음 오류로 실패했습니다:\n{last_error}\n오류의 원인을 분석하고 코드를 수정하여 다시 제안해주세요."
+                
+                print("[Orchestrator] AI 에이전트 실행 중...")
+                agent_response_raw = feature_engineer_agent.run(prompt).content
+                print(f"[Orchestrator] AI 응답 수신:\n{agent_response_raw}")
 
-            # 코드 로그 기록 (성공)
-            with open(code_log_file, 'a', encoding='utf-8') as f:
-                log_entry = {"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "success", "feature_name": feature_name, "hypothesis": hypothesis, "code": python_code, "analysis": analysis_report}
-                json.dump(log_entry, f, ensure_ascii=False, indent=2)
+                print("[Orchestrator] AI 응답 검증 중...")
+                response_json = extract_json_from_string(agent_response_raw)
+
+                if not response_json or not all(response_json.get(k) for k in ["feature_name", "hypothesis", "python_code"]):
+                    last_error = f"에이전트가 불완전한 JSON(null 또는 빈 값 포함)을 반환했습니다. Raw: {agent_response_raw}"
+                    print(f"[오류] {last_error}")
+                    with open(code_log_file, 'a', encoding='utf-8') as f:
+                        json.dump({"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "incomplete_response", "error": last_error, "raw_response": agent_response_raw}, f, ensure_ascii=False, indent=2)
+                    continue
+                
+                print("[Orchestrator] AI 응답 검증 완료.")
+                feature_name, hypothesis, python_code = response_json["feature_name"], response_json["hypothesis"], response_json["python_code"]
+                
+                print(f"[Orchestrator] 생성된 피처: '{feature_name}'")
+                print(f"[Orchestrator] 가설: '{hypothesis}'")
+                print("[Orchestrator] 코드 실행 준비 중...")
+                
+                df_for_analysis = master_df.copy()
+                df_modified, execution_error = execute_feature_code(python_code, df_for_analysis)
+
+                if execution_error:
+                    last_error = f"코드 실행 실패:\n{execution_error}"
+                    print(f"[오류] {last_error}")
+                    if "ModuleNotFoundError" not in execution_error:
+                        analyze_and_log_failure(execution_error, python_code, hypothesis)
+                    with open(code_log_file, 'a', encoding='utf-8') as f:
+                        json.dump({"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "execution_error", "error": last_error, "code": python_code}, f, ensure_ascii=False, indent=2)
+                    continue
+
+                print(f"피처 '{feature_name}'가 성공적으로 생성 및 검증되었습니다.")
+                if feature_name not in df_modified.columns:
+                    last_error = f"논리적 오류: 코드는 실행됐지만 '{feature_name}' 컬럼이 생성되지 않았습니다."
+                    print(f"[오류] {last_error}")
+                    # 코드 로그 기록
+                    with open(code_log_file, 'a', encoding='utf-8') as f:
+                        json.dump({"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "logical_error", "error": last_error, "code": python_code}, f, ensure_ascii=False, indent=2)
+                    continue
+
+                # 올바른 방법: 새 피처 컬럼을 master_df에 직접 할당합니다.
+                master_df[feature_name] = df_modified[feature_name]
+
+                # 논리적 오류 검사 2: 피처의 분산이 있는지 확인 (상관관계 분석 전 필수)
+                if master_df[feature_name].nunique(dropna=False) <= 1:
+                    last_error = (
+                        f"논리적 오류: 생성된 피처 '{feature_name}'의 값이 모두 동일하여 "
+                        f"상관관계를 계산할 수 없습니다. 모든 행에 대해 다른 값을 생성하도록 코드를 수정해주세요."
+                    )
+                    print(f"[오류] {last_error}")
+                    # 논리적 오류를 분석하고 기록합니다.
+                    analyze_and_log_failure(last_error, python_code, hypothesis)
+                    # 코드 로그 기록
+                    with open(code_log_file, 'a', encoding='utf-8') as f:
+                        json.dump({"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "logical_error", "error": last_error, "code": python_code}, f, ensure_ascii=False, indent=2)
+                    continue
+                
+                analysis_report = analyze_correlation(master_df, feature_name, target_metric)
+                history_tool.add_event({"feature_name": feature_name, "hypothesis": hypothesis, "analysis": analysis_report})
+                print(f"상관관계 분석 완료: {analysis_report['interpretation']}")
+
+                # 코드 로그 기록 (성공)
+                with open(code_log_file, 'a', encoding='utf-8') as f:
+                    json.dump({"timestamp": datetime.now().isoformat(), "attempt": attempt, "status": "success", "feature_name": feature_name, "hypothesis": hypothesis, "code": python_code, "analysis": analysis_report}, f, ensure_ascii=False, indent=2)
+                
+                if abs(analysis_report.get("correlation", 0) or 0) >= 0.5:
+                     print(f"🎉 목표 달성! 유의미한 피처 '{feature_name}'를 발견했습니다.")
+                
+                # 성공했으므로 이 작업의 자가-수정 루프를 탈출하고 다음 작업으로 넘어갑니다.
+                break 
             
-            if abs(analysis_report.get("correlation", 0) or 0) >= 0.5:
-                 print(f"🎉 목표 달성! 유의미한 피처 '{feature_name}'를 발견했습니다.")
-            
-            task_completed = True
-            break
-        
-        if not task_completed:
-            print(f"\n[최종 실패] 작업 #{task_number}이(가) 최대 시도 횟수({MAX_CORRECTION_ATTEMPTS}) 내에 성공하지 못했습니다.")
-            history_tool.write_history({"status": "failed", "reason": "Max correction attempts reached.", "last_error": last_error})
+            else: # for...else 구문: break 없이 루프가 끝나면 (모든 시도 실패시) 실행
+                print(f"\n[최종 실패] 작업 #{task_number}이(가) 최대 시도 횟수({MAX_CORRECTION_ATTEMPTS}) 내에 성공하지 못했습니다.")
+                history_tool.add_event({"status": "failed", "reason": f"Max correction attempts reached ({MAX_CORRECTION_ATTEMPTS}).", "last_error": last_error})
+    
+    if shutdown_flag:
+        print("\n[Orchestrator] 정상적으로 종료되었습니다.")
+    else:
+        print(f"\n{'='*30} 모든 사이클 완료 {'='*30}")
+
 
 def main():
     run_meta_orchestrator()
