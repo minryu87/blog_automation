@@ -23,51 +23,6 @@ import functools
 log_format = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(level=logging.INFO, format=log_format)
 
-# --- LLM 기반 1차 필터링 클래스 (내부로 복귀) ---
-class PreFilter:
-    """LLM을 사용하여 게시글의 관련성을 1차적으로 필터링하는 클래스"""
-    def __init__(self, agent: Agent):
-        self.agent = agent
-        self.prompt_template = """
-        당신은 네이버 카페 게시글의 관련성을 판단하는 전문가입니다.
-        주어진 게시글의 '제목', '미리보기', '댓글 미리보기' 내용을 보고, 이 글이 '동탄 지역의 치과'에 대한 후기, 추천, 질문, 정보 공유 등 직접적인 관련이 있는지 판단해주세요.
-        치과 이름이 직접 언급되거나, '동탄' 지역임이 명확해야 합니다. 단순 키워드 포함만으로는 안됩니다.
-        
-        **분석할 데이터:**
-        - 제목: {title}
-        - 본문 미리보기: {preview}
-        - 댓글 미리보기: {comment_preview}
-
-        **응답 형식:**
-        - 관련이 있다면: {"is_related": true}
-        - 관련이 없다면: {"is_related": false}
-        반드시 JSON 형식으로만 응답하고 다른 설명은 추가하지 마세요.
-        """
-    
-    async def is_related(self, title: str, preview: str, comment_preview: str) -> dict:
-        if not self.agent:
-            raise RuntimeError("LLM Agent is not initialized.")
-        
-        # LLM 호출 전 내용이 비어있는지 확인
-        if not title and not preview and not comment_preview:
-             logging.warning("LLM 필터링 건너뜀: 분석할 내용이 없습니다.")
-             return {'answer': json.dumps({"is_related": False})}
-
-        try:
-            loop = asyncio.get_event_loop()
-            run_with_params = functools.partial(
-                self.agent.run,
-                name="is_related_to_dongtan_dental_clinic",
-                description="Check if the article is related to Dongtan dental clinic reviews or recommendations.",
-                prompt=self.prompt_template,
-                prompt_params={'title': title, 'preview': preview, 'comment_preview': comment_preview}
-            )
-            response_dict = await loop.run_in_executor(None, run_with_params)
-            return response_dict
-        except Exception as e:
-            logging.error(f"LLM is_related 호출 실패 (제목: '{title}'): {e}", exc_info=True)
-            raise
-
 class HistoricalCafeCrawler:
     """
     특정 기간과 키워드로 네이버 카페 게시글을 크롤링하고,
@@ -93,14 +48,26 @@ class HistoricalCafeCrawler:
         self.test_mode = test_mode
 
         self.club_id_cache = {}
-        # LLM 에이전트 초기화
+        
+        # LLM 에이전트 및 프롬프트 초기화
         try:
             llm = Gemini(id=os.getenv("GEMINI_LITE_MODEL", "gemini-1.5-flash-latest"), api_key=os.getenv("GEMINI_API_KEY"))
-            agent = Agent(model=llm)
-            self.pre_filter_agent = PreFilter(agent) # 내부 PreFilter 인스턴스 생성
+            
+            # Agent에게는 역할과 출력 형식 등 정적인 지침만 부여합니다.
+            llm_instructions = [
+                "당신은 네이버 카페 게시글의 관련성을 판단하는 전문가입니다.",
+                "주어진 게시글의 '제목', '미리보기', '댓글 미리보기' 내용을 보고, 이 글이 '동탄 지역의 치과'에 대한 후기, 추천, 질문, 정보 공유 등 직접적인 관련이 있는지 판단해주세요.",
+                "치과 이름이 직접 언급되거나, '동탄' 지역임이 명확해야 합니다. 단순 키워드 포함만으로는 안됩니다.",
+                "응답은 반드시 JSON 형식으로만 하고 다른 설명은 추가하지 마세요.",
+                "예시:",
+                "관련이 있다면: {\"is_related\": true}",
+                "관련이 없다면: {\"is_related\": false}"
+            ]
+            self.agent = Agent(model=llm, instructions=llm_instructions, markdown=False)
+
         except Exception as e:
             logging.error(f"LLM 에이전트 초기화 실패: {e}")
-            self.pre_filter_agent = None
+            self.agent = None
         
         self.proxies = [] # 초기화
         self.semaphore = asyncio.Semaphore(8) # 동시에 최대 8개 작업만 허용
@@ -266,10 +233,18 @@ class HistoricalCafeCrawler:
         return f"https://search.naver.com/search.naver?cafe_where=&date_option=8&prdtype=0&ssc=tab.cafe.all&st=rel&query={self.keyword}&ie=utf8&date_from={date_from_str}&date_to={date_to_str}&srchby=text&dup_remove=1&sm=tab_opt&nso=so%3Ar%2Cp%3Afrom{date_from_str}to{date_to_str}&nso_open=1"
 
     async def _fetch_page_async(self, session, url):
-        """재시도 및 프록시 교체 로직을 포함하여 페이지를 안정적으로 요청하고 순수 텍스트로 반환합니다."""
+        """재시도 및 프록시 교체/보충 로직을 포함하여 페이지를 안정적으로 요청하고 순수 텍스트로 반환합니다."""
         if not url:
             logging.warning("요청할 URL이 없습니다.")
             return None
+
+        # 프록시 풀이 고갈되기 전에 미리 보충 (임계값: 3개)
+        if len(self.proxies) < 3:
+            logging.warning(f"사용 가능한 프록시가 {len(self.proxies)}개로 부족하여, 새로운 프록시 목록을 가져옵니다.")
+            await self.initialize_proxies()
+            if not self.proxies:
+                logging.error("새 프록시를 가져오지 못했습니다. 페이지 요청을 중단합니다.")
+                return None
 
         max_retries = 5
         for attempt in range(max_retries):
@@ -280,9 +255,14 @@ class HistoricalCafeCrawler:
             proxy_address = random.choice(self.proxies)
             proxy = f"http://{proxy_address}"
             
+            # 2페이지 이후 API 호출을 위한 Referer 헤더 추가
+            request_headers = {
+                'Referer': 'https://search.naver.com/'
+            }
+            
             try:
                 logging.info(f"페이지 요청 시도 ({attempt + 1}/{max_retries}) - 프록시: {proxy}, URL: {str(url)[:100]}...")
-                async with session.get(url, proxy=proxy, timeout=20) as response:
+                async with session.get(url, proxy=proxy, timeout=20, headers=request_headers) as response:
                     response.raise_for_status()
                     logging.info(f"요청 성공 (프록시: {proxy})")
                     return await response.text()
@@ -462,56 +442,85 @@ class HistoricalCafeCrawler:
             return [], None
 
     async def _process_article_batch(self, session, articles, year, month, page):
-        """게시글 묶음을 처리합니다. (LLM 필터링 비활성화, 1단계 디버깅용)"""
+        """LLM 필터링을 활성화하여 게시글 묶음을 처리하고, 관련성 있는 게시글만 상세 정보를 수집합니다."""
         if not articles:
             logging.warning(f"{year}-{month} {page}페이지에서 게시글을 찾을 수 없습니다.")
             return
 
-        # 1단계 디버깅을 위해 LLM 필터링 및 상세 정보 수집 단계를 건너뛰고,
-        # 초기 파싱 결과물을 즉시 저장합니다.
-        logging.info(f"[{year}-{month} {page}페이지] 1단계 수집 결과 {len(articles)}개를 바로 저장합니다. (LLM 필터링 생략)")
-
-        output_dir = os.path.join(os.path.dirname(__file__), 'data', 'historical_raw')
-        os.makedirs(output_dir, exist_ok=True)
-        # 파일명을 바꿔서 기존 결과와 겹치지 않게 합니다.
-        filename = os.path.join(output_dir, f"{year}-{month}_page_{page}_step1_raw_test.json")
+        logging.info(f"[{year}-{month} {page}페이지] {len(articles)}개 게시글에 대해 LLM 필터링 및 상세 정보 수집을 시작합니다.")
         
-        try:
-            with open(filename, 'w', encoding='utf-8') as f:
-                json.dump(articles, f, ensure_ascii=False, indent=4)
-            logging.info(f"1단계 수집 결과 저장 완료: {filename}")
-        except Exception as e:
-            logging.error(f"파일 저장 중 오류 발생 ({filename}): {e}")
+        async def run_with_semaphore(article):
+            """세마포어를 사용하여 동시 실행 수를 제어하는 래퍼 함수"""
+            async with self.semaphore:
+                # _filter_and_enrich 함수는 LLM 필터링 후 관련 있으면 상세 정보까지 가져옴
+                return await self._filter_and_enrich(session, article)
+
+        # 각 게시글을 병렬로 처리하기 위한 태스크 생성
+        tasks = [run_with_semaphore(article) for article in articles]
+        processed_articles_with_none = await asyncio.gather(*tasks)
+
+        # None이 아닌, 즉 관련성이 있다고 판단되고 성공적으로 처리된 게시글만 필터링
+        final_articles = [art for art in processed_articles_with_none if art]
+        
+        logging.info(f"LLM 1차 필터링 및 상세 정보 수집 완료: {len(articles)}개 중 {len(final_articles)}개가 최종 통과했습니다.")
+
+        # 최종 처리된 데이터를 파일로 저장
+        if final_articles:
+            self._save_processed_data(year, month, page, final_articles)
             
+    async def _check_relevance_with_llm(self, title: str, preview: str, comment_preview: str) -> dict:
+        """LLM 에이전트를 호출하여 게시글의 관련성을 확인합니다."""
+        if not self.agent:
+            raise RuntimeError("LLM Agent is not initialized.")
+        
+        if not title and not preview and not comment_preview:
+             logging.warning("LLM 필터링 건너뜀: 분석할 내용이 없습니다.")
+             return {'answer': json.dumps({"is_related": False})}
+
+        # 분석할 데이터는 run() 메서드의 prompt로 전달합니다.
+        prompt_content = f"""
+**분석할 데이터:**
+- 제목: {title}
+- 본문 미리보기: {preview}
+- 댓글 미리보기: {comment_preview}
+"""
+        try:
+            loop = asyncio.get_event_loop()
+            run_with_params = functools.partial(
+                self.agent.run,
+                message=prompt_content  # 지적해주신대로 'prompt'가 아닌 'message' 키워드로 전달
+            )
+            response_dict = await loop.run_in_executor(None, run_with_params)
+            return response_dict
+        except Exception as e:
+            # 에러 로그는 여기서 직접 처리하지 않고, 호출한 쪽으로 전파하여 처리합니다.
+            raise
+
     async def _filter_and_enrich(self, session, article):
         """LLM으로 필터링하고, 관련 있는 경우에만 상세 정보를 가져옵니다."""
         max_retries = 3
-        llm_response_text = "" # 변수 초기화
+        llm_response_text = ""
 
         for attempt in range(max_retries):
             try:
-                # 1. LLM 호출
-                llm_response_dict = await self.pre_filter_agent.is_related(
+                llm_response_dict = await self._check_relevance_with_llm(
                     article.get('title', ''),
                     article.get('preview', ''),
                     json.dumps(article.get('comment_preview', []), ensure_ascii=False)
                 )
 
-                # 2. 응답에서 JSON 텍스트 추출
-                llm_response_text = llm_response_dict.get('answer', '{}')
-                
-                # 3. JSON 파싱
+                # agno.agent.run()의 반환값은 .content 속성에 답변을 담고 있는 RunResponse 객체입니다.
+                llm_response_text = llm_response_dict.content
                 result_json = json.loads(llm_response_text)
                 is_related = result_json.get('is_related', False)
                 article['is_related_analysis'] = result_json
                 
-                # 성공 시 처리
                 if is_related:
                     details = await self._fetch_details_async(session, article)
                     article.update(details)
                     return article
                 else:
-                    return None # 관련 없는 게시물
+                    return None
 
             except json.JSONDecodeError:
                 logging.warning(f"LLM 필터링 JSON 파싱 오류 (시도 {attempt + 1}/{max_retries})")
@@ -519,20 +528,20 @@ class HistoricalCafeCrawler:
                 if attempt == max_retries - 1:
                     logging.error(f"LLM 필터링 최종 실패: {article['title']}")
                     article['is_related_analysis'] = {"error": "JSONDecodeError", "raw_response": llm_response_text}
-                    return None # 최종 실패 시 None 반환
+                    return None
                 await asyncio.sleep(1)
 
             except Exception as e:
                 logging.error(f"LLM/상세정보 처리 중 예상치 못한 오류: {e}", exc_info=True)
                 article['is_related_analysis'] = {"error": str(e)}
-                return None # 예외 발생 시 None 반환
+                return None
         
-        return None # 모든 재시도 실패 시
+        return None
 
     async def _fetch_details_async(self, session, article):
         """게시글의 상세 정보(조회수, 댓글 등)를 비동기적으로 가져옵니다."""
-        if 'club_id' not in article or not article['club_id']:
-            return article # club_id가 없으면 반환
+        # if 'club_id' not in article or not article['club_id']:
+        #     return article # club_id가 없으면 반환
 
         max_retries = 3
         # 프록시 리스트 복사본을 만들어, 실패 시 안전하게 제거
@@ -628,7 +637,7 @@ if __name__ == '__main__':
     async def main():
         crawler = HistoricalCafeCrawler(
             start_date=datetime(2024, 6, 1),
-            end_date=datetime(2024, 6, 30),
+            end_date=datetime(2024, 6, 15),
             keyword="동탄 치과",
             test_mode=True
         )

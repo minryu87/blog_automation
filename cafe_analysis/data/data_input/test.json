@@ -1,31 +1,4 @@
-import os
-import json
-import logging
-from dotenv import load_dotenv, find_dotenv
-
-from agno.agent import Agent
-from agno.models.google import Gemini
-
-import os
-from dotenv import load_dotenv
-
-# 사용자가 알려준 .env 파일의 절대 경로를 사용합니다.
-dotenv_path = '/Users/min/codes/medilawyer_sales/blog_automation/.env'
-
-load_dotenv(dotenv_path=dotenv_path)
-
-# 로드된 환경변수를 가져옵니다.
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-gemini_lite_model = os.getenv("GEMINI_LITE_MODEL")
-
-llm = Gemini(id=gemini_lite_model, api_key=gemini_api_key)
-
-our_agent = Agent(
-    model=llm,
-    instructions=['게시글 내용은 동탄 치과와 관련있나요? y/n으로 답하세요'],
-    markdown=True,
-)
-prompt = """[
+[
     {
         "title": "동탄 임플란트 . 크라운 치과 추천 부탁드려요",
         "link": "https://cafe.naver.com/ehdxks2/735984?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImVoZHhrczIiLCJhcnRpY2xlSWQiOjczNTk4NCwiaXNzdWVkQXQiOjE3NTM3OTY3MTQwMjJ9.lel-cxxVO3kg7c107EUtpccM-UX4DvZM9WzE9vJmwl0",
@@ -45,8 +18,4 @@ prompt = """[
             "RE임플란트는 확실히 잘하는데 가서 해야 좋아요 광교365리움치과 전문의 원장님이 엄청 꼼꼼하시고 실력도 좋으세요"
         ]
     }
-]"""
-
-response = our_agent.run(prompt)
-print(response.content)
-
+]
