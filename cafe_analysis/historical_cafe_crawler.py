@@ -18,7 +18,6 @@ import aiohttp
 from agno.agent import Agent
 from agno.models.google import Gemini
 from proxy_manager import get_working_proxies
-from llm_filter import PreFilter # 새로 만든 파일에서 PreFilter 클래스를 가져옴
 
 # --- 로깅 설정 ---
 log_format = "%(asctime)s - %(levelname)s - %(message)s"
