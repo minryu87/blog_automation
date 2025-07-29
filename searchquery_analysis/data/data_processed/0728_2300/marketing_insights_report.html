@@ -1,0 +1,916 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicontents: 블로그 성과 분석 보고서 v2.0</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+    :root {
+        --primary-color: #005AEE; --secondary-color: #4A90E2; --accent-color: #9f7aea;
+        --text-color: #2d3748; --text-light-color: #4a5568; --bg-color: #f9fafb;
+        --white-color: #ffffff; --grey-color: #e2e8f0; --dark-grey-color: #a0aec0;
+    }
+    body {
+        font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.8; color: var(--text-color); background-color: var(--bg-color);
+        margin: 0; padding: 0;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+    .header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        color: var(--white-color); padding: 60px 40px; border-radius: 20px; margin-bottom: 40px;
+        text-align: center; box-shadow: 0 10px 30px rgba(0, 90, 238, 0.2);
+    }
+    h1 { margin: 0; font-size: 3em; font-weight: 800; letter-spacing: -1px; }
+    .subtitle { margin-top: 15px; font-size: 1.3em; opacity: 0.95; font-weight: 300; }
+    .tab-container { margin: 30px 0; }
+    .tab-buttons { display: flex; border-bottom: 3px solid var(--grey-color); }
+    .tab-button {
+        flex: 1; padding: 16px 24px; background: none; border: none; cursor: pointer;
+        font-weight: 700; font-size: 1.1em; color: #555; transition: all 0.3s ease;
+        border-bottom: 4px solid transparent; margin-bottom: -3px;
+    }
+    .tab-button:hover { background-color: #f0f0f0; }
+    .tab-button.active {
+        color: var(--white-color); background-color: var(--primary-color);
+        border-bottom-color: var(--secondary-color); border-radius: 12px 12px 0 0;
+    }
+    .tab-content {
+        display: none; background: var(--white-color); padding: 40px; margin-top: -1px;
+        border: 1px solid var(--grey-color); border-top: none;
+        border-radius: 0 0 16px 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        animation: fadeIn 0.5s;
+    }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    h2 {
+        color: var(--primary-color); border-bottom: 4px solid var(--primary-color);
+        padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2em;
+        font-weight: 700; display: flex; align-items: center; gap: 15px;
+    }
+    h3 {
+        color: var(--text-light-color); margin-top: 40px; margin-bottom: 20px; font-size: 1.6em;
+        background: var(--bg-color); padding: 15px 20px; border-left: 5px solid var(--accent-color);
+        border-radius: 8px; font-weight: 700;
+    }
+    .info-box, .success-box, .warning-box, .danger-box {
+        padding: 20px; margin: 20px 0; border-radius: 8px;
+        border-left-width: 5px; border-left-style: solid; font-weight: 500;
+    }
+    .info-box { background: #ebf8ff; border-color: #4299e1; }
+    .success-box { background: #f0fff4; border-color: #48bb78; }
+    .warning-box { background: #fffaf0; border-color: #f6ad55; }
+    .danger-box { background: #fff5f5; border-color: #f56565; }
+    .roadmap-table {
+        overflow-x: auto; margin: 25px 0; border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid var(--grey-color);
+    }
+    table.data-table { width: 100%; border-collapse: collapse; background: var(--white-color); }
+    table.data-table th {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--white-color); padding: 15px; text-align: left;
+        font-weight: 600; font-size: 0.9em; letter-spacing: 0.5px;
+    }
+    table.data-table td {
+        padding: 15px; border-bottom: 1px solid var(--grey-color);
+        vertical-align: top; font-size: 0.95em;
+    }
+    table.data-table tr:hover { background-color: #f7fafc; }
+    table.data-table tr:last-child td { border-bottom: none; }
+</style>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <h1>블로그 성과 분석 보고서 (v2.0)</h1>
+        <div class="subtitle">데이터 기반 마케팅 전략 제안</div>
+    </div>
+
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab(event, 'tab-summary')">📊 요약 및 제안</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-local')">🗺️ 지역/진료 분석</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-funnel')">🚦 브랜딩 퍼널 진단</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-content')">📝 콘텐츠/의도 분석</button>
+        </div>
+
+        <div id="tab-summary" class="tab-content">
+            <h2>📊 분석 요약 및 핵심 제안</h2>
+            <div class="info-box">
+                <strong>본 보고서는 블로그 유입 검색어, 성과 데이터, 포스트 데이터를 종합하여 우리 병원의 현재 마케팅 포지션을 진단하고, 데이터 기반의 구체적인 실행 전략을 제안합니다.</strong>
+            </div>
+            <h3>핵심 발견 (Key Findings)</h3>
+            <p><strong>- '동탄역' 키워드의 높은 효율성:</strong> '동탄' 전체보다 '동탄역' 키워드의 시장 점유율이 월등히 높아, 해당 지역 타겟팅이 매우 유효함을 확인했습니다.</p>
+            <p><strong>- 시장 트렌드와 유입량의 동반 성장:</strong> 전체적인 시장의 검색량(3, 4단계)과 우리 블로그 유입량이 동반 성장하는 긍정적인 추세를 보이고 있습니다. 이는 우리의 마케팅 활동이 시장의 관심사와 잘 부합하고 있음을 시사합니다.</p>
+            <p><strong>- '비용/보험', '후기' 검색 의도의 중요성:</strong> 블로그 유입의 상당수가 '비용'과 '후기' 관련 검색 의도를 통해 발생하고 있어, 이 두 가지 주제가 고객의 핵심적인 궁금증임을 재확인했습니다.</p>
+            
+            <h3>핵심 제안 (Action Items)</h3>
+            <p><strong>- '동탄역' + '충치/신경치료' 콘텐츠 강화:</strong> 가장 효율이 높은 '동탄역' 키워드와 시장 규모가 가장 큰 '충치', '신경치료'를 조합한 콘텐츠를 집중적으로 기획해야 합니다. ('동탄역 충치치료 비용', '동탄역 신경치료 후기' 등)</p>
+            <p><strong>- '비용/보험' 및 '후기' 콘텐츠 포맷 다각화:</strong> 고객의 핵심 궁금증에 답하기 위해, '진료별 비용 총정리', '환자 케이스별 치료 과정 및 후기' 등 신뢰도를 높일 수 있는 포맷의 콘텐츠를 강화해야 합니다.</p>
+        </div>
+
+        <div id="tab-local" class="tab-content">
+            <h2>🗺️ 분석 1: 지역 시장 및 핵심 진료 분야 분석</h2>
+            <h3>1-1. '효자 지역 키워드' 월 평균 성과</h3>
+            <div class="info-box"><strong>Objective:</strong> 어떤 지역 키워드가 우리 블로그 유입에 가장 효과적인지 파악하여, 지역 타겟팅의 우선순위를 설정합니다. (월 평균 기준)</div>
+            <div class="success-box"><strong>Finding:</strong> '동탄' 키워드가 월 평균 가장 많은 유입을 만들고 있지만, '시장 점유율' 측면에서는 '화성', '로덴치과' 등 더 작은 단위의 키워드들이 높은 효율을 보입니다. '동탄역' 역시 전체 검색량 대비 높은 점유율을 기록하며 중요 타겟임을 보여줍니다.</div>
+            <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>local_label</th>
+      <th>avg_monthly_search_volume</th>
+      <th>avg_monthly_inflow</th>
+      <th>related_query_count</th>
+      <th>market_share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>내이튼치과</td>
+      <td>333102.0</td>
+      <td>23119.0</td>
+      <td>165</td>
+      <td>6.94%</td>
+    </tr>
+    <tr>
+      <td>동탄</td>
+      <td>1087816.0</td>
+      <td>5337.0</td>
+      <td>967</td>
+      <td>0.49%</td>
+    </tr>
+    <tr>
+      <td>치과</td>
+      <td>1351029.0</td>
+      <td>492.0</td>
+      <td>1003</td>
+      <td>0.04%</td>
+    </tr>
+    <tr>
+      <td>동탄역</td>
+      <td>21708.0</td>
+      <td>37.0</td>
+      <td>119</td>
+      <td>0.17%</td>
+    </tr>
+    <tr>
+      <td>화성</td>
+      <td>1490.0</td>
+      <td>34.0</td>
+      <td>57</td>
+      <td>2.25%</td>
+    </tr>
+    <tr>
+      <td>동탄2</td>
+      <td>297712.0</td>
+      <td>23.0</td>
+      <td>171</td>
+      <td>0.01%</td>
+    </tr>
+    <tr>
+      <td>내이튼치과 윤민정</td>
+      <td>238.0</td>
+      <td>21.0</td>
+      <td>23</td>
+      <td>8.67%</td>
+    </tr>
+    <tr>
+      <td>오산</td>
+      <td>2701.0</td>
+      <td>14.0</td>
+      <td>67</td>
+      <td>0.51%</td>
+    </tr>
+    <tr>
+      <td>동탄호수공원</td>
+      <td>396116.0</td>
+      <td>2.0</td>
+      <td>33</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>북광장</td>
+      <td>4328.0</td>
+      <td>1.0</td>
+      <td>10</td>
+      <td>0.02%</td>
+    </tr>
+    <tr>
+      <td>로덴치과</td>
+      <td>25.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>5.23%</td>
+    </tr>
+    <tr>
+      <td>목동</td>
+      <td>3765.0</td>
+      <td>1.0</td>
+      <td>12</td>
+      <td>0.01%</td>
+    </tr>
+    <tr>
+      <td>나노치과의원</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>2.56%</td>
+    </tr>
+    <tr>
+      <td>대구</td>
+      <td>40.0</td>
+      <td>1.0</td>
+      <td>8</td>
+      <td>1.35%</td>
+    </tr>
+    <tr>
+      <td>더새로운치과</td>
+      <td>85.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>역</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>하나로치과</td>
+      <td>20.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>1.15%</td>
+    </tr>
+    <tr>
+      <td>인천</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>1.54%</td>
+    </tr>
+    <tr>
+      <td>이편한치과</td>
+      <td>270.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.09%</td>
+    </tr>
+    <tr>
+      <td>이루다치과</td>
+      <td>30.0</td>
+      <td>0.0</td>
+      <td>6</td>
+      <td>1.03%</td>
+    </tr>
+    <tr>
+      <td>이로운치과의원</td>
+      <td>17.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.92%</td>
+    </tr>
+    <tr>
+      <td>나무치과</td>
+      <td>281.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.11%</td>
+    </tr>
+    <tr>
+      <td>예나치과</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2.56%</td>
+    </tr>
+    <tr>
+      <td>영등포</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>3.08%</td>
+    </tr>
+    <tr>
+      <td>아는치과</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>더바름치과</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>센트럴치과</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>2.05%</td>
+    </tr>
+    <tr>
+      <td>서울</td>
+      <td>20.0</td>
+      <td>0.0</td>
+      <td>4</td>
+      <td>0.77%</td>
+    </tr>
+    <tr>
+      <td>분당</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>부산</td>
+      <td>30.0</td>
+      <td>0.0</td>
+      <td>6</td>
+      <td>0.77%</td>
+    </tr>
+    <tr>
+      <td>근처</td>
+      <td>30.0</td>
+      <td>0.0</td>
+      <td>6</td>
+      <td>0.76%</td>
+    </tr>
+    <tr>
+      <td>대전</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>대표원장</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <td>대학병원</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>3.08%</td>
+    </tr>
+    <tr>
+      <td>CL치과</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>1.54%</td>
+    </tr>
+  </tbody>
+</table></div>
+            <div class="warning-box"><strong>Action Item:</strong> '동탄역', '오산동' 등 상대적으로 높은 점유율을 보이는 세부 지역 키워드를 활용하여, '동탄역 직장인 임플란트'와 같이 더 구체적이고 타겟팅된 콘텐츠를 기획하여 틈새시장을 공략할 필요가 있습니다.</div>
+
+            <h3>1-2. 핵심 진료 분야별 '지역(Local)' 월 평균 시장 점유율</h3>
+            <div class="info-box"><strong>Objective:</strong> 우리 병원의 핵심 타겟 시장인 '지역 내'에서 어떤 진료 분야에 강점과 약점이 있는지 월 평균 기준으로 진단합니다.</div>
+            <div class="success-box"><strong>Finding:</strong> '충치치료', '신경치료'가 월 평균 검색량 기준 가장 큰 시장을 형성하고 있습니다. '심미치료'는 검색량은 적지만 매우 높은 시장 점유율을 보여, 해당 분야에서 우리 블로그가 강력한 영향력을 가지고 있음을 의미합니다.</div>
+            <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>interest_areas_list</th>
+      <th>avg_monthly_search_volume</th>
+      <th>avg_monthly_inflow</th>
+      <th>market_share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>미분류</td>
+      <td>571420.0</td>
+      <td>23092.0</td>
+      <td>4.04%</td>
+    </tr>
+    <tr>
+      <td>충치치료</td>
+      <td>408216.0</td>
+      <td>53.0</td>
+      <td>0.01%</td>
+    </tr>
+    <tr>
+      <td>신경치료</td>
+      <td>375745.0</td>
+      <td>463.0</td>
+      <td>0.12%</td>
+    </tr>
+    <tr>
+      <td>치아보존술</td>
+      <td>327517.0</td>
+      <td>369.0</td>
+      <td>0.11%</td>
+    </tr>
+    <tr>
+      <td>임플란트</td>
+      <td>10269.0</td>
+      <td>19.0</td>
+      <td>0.19%</td>
+    </tr>
+    <tr>
+      <td>심미치료</td>
+      <td>3085.0</td>
+      <td>268.0</td>
+      <td>8.68%</td>
+    </tr>
+    <tr>
+      <td>잇몸치료</td>
+      <td>1877.0</td>
+      <td>48.0</td>
+      <td>2.54%</td>
+    </tr>
+  </tbody>
+</table></div>
+            <div class="warning-box"><strong>Action Item:</strong> 시장이 가장 큰 '충치치료'와 '신경치료' 분야의 지역 내 점유율을 높이는 것이 가장 시급한 과제입니다. '동탄 충치치료 잘하는 곳', '동탄역 신경치료 후기'와 같이 [지역명 + 진료명 + 검색의도] 조합의 롱테일 키워드 콘텐츠를 집중적으로 발행하여 시장 점유율을 끌어올려야 합니다.</div>
+        </div>
+
+        <div id="tab-funnel" class="tab-content">
+            <h2>🚦 분석 2: 브랜딩 퍼널(Funnel) 진단 및 최적화</h2>
+            <h3>2-1. '충성 고객' vs '신규 고객' 유입 채널 분석</h3>
+            <div class="info-box"><strong>Objective:</strong> 우리 블로그의 포스트들이 브랜드 인지 고객 유지(충성 고객)와 신규 고객 유치 역할을 각각 얼마나 잘 수행하는지 진단합니다.</div>
+            <div class="success-box">
+                <strong>Finding:</strong><br>
+                - <strong>4단계(병원 인지) 고객 유입 상위 포스트 (브랜드 유지 역할):</strong>
+                <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>postId</th>
+      <th>post_title</th>
+      <th>stage</th>
+      <th>total_inflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>223127778693</td>
+      <td>정기검진, 이렇게나 중요합니다! 동탄 내이튼 치과</td>
+      <td>4단계:병원인지</td>
+      <td>31353</td>
+    </tr>
+    <tr>
+      <td>223205080746</td>
+      <td>"교정 중인데 이가 까맣게 변했어요." 변색 원인 및 치료 과정 동탄 내이튼 치과</td>
+      <td>4단계:병원인지</td>
+      <td>9259</td>
+    </tr>
+    <tr>
+      <td>223360812566</td>
+      <td>벌어지고 튀어나온 앞니, 동탄역 치과 에서 교정 없이 개선을 도와드렸던 방법은?!</td>
+      <td>4단계:병원인지</td>
+      <td>7911</td>
+    </tr>
+    <tr>
+      <td>223829595540</td>
+      <td>잇몸에 물집 , 염증 덩어리 의심해 볼 수 있습니다 동탄동 치과 치근단 병소 치료 과정</td>
+      <td>4단계:병원인지</td>
+      <td>4978</td>
+    </tr>
+    <tr>
+      <td>223652586578</td>
+      <td>상악동 거상술 술식 측방 접근법을 통해 안전하게 임플란트 재식립 한 사례 동탄역 치과</td>
+      <td>4단계:병원인지</td>
+      <td>4974</td>
+    </tr>
+  </tbody>
+</table></div>
+                - <strong>2/3단계(정보/지역 탐색) 고객 유입 상위 포스트 (신규 고객 유치 역할):</strong>
+                <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>postId</th>
+      <th>post_title</th>
+      <th>stage</th>
+      <th>total_inflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>223277112963</td>
+      <td>동탄 치과 송곳니 충치는 레진으로 당일 치료 !</td>
+      <td>2단계:정보탐색</td>
+      <td>4343</td>
+    </tr>
+    <tr>
+      <td>223577753077</td>
+      <td>"이가 깨졌어요 발치 해야 되나요?"깨진 앞니 레진 수복으로 해결한 케이스 동탄동 치과</td>
+      <td>2단계:정보탐색</td>
+      <td>3084</td>
+    </tr>
+    <tr>
+      <td>223733898487</td>
+      <td>앞니 벌어짐 어떤 방법으로 해결할 수 있을까? 동탄2 치과 에서 자연스러운 모습으로 개선한 증례</td>
+      <td>2단계:정보탐색</td>
+      <td>1573</td>
+    </tr>
+    <tr>
+      <td>223462135488</td>
+      <td>동탄역 치과 "어른 유치, 작은 어린이 치아 이대로 괜찮을까요??"</td>
+      <td>2단계:정보탐색</td>
+      <td>1272</td>
+    </tr>
+    <tr>
+      <td>223630259710</td>
+      <td>화성 치과 앞니 신경치료 후 잇몸 변색과 뿌리 염증이 나타났다? 치아 발치 후 브릿지로 해결한 사례</td>
+      <td>2단계:정보탐색</td>
+      <td>1079</td>
+    </tr>
+  </tbody>
+</table></div>
+            </div>
+            <div class="warning-box"><strong>Action Item:</strong> 신규 고객 유치 포스트와 브랜드 유지 포스트를 내부 링크로 연결하여, 우리를 처음 알게 된 고객이 자연스럽게 우리 병원에 대한 신뢰를 쌓고 충성 고객으로 전환될 경로를 설계해야 합니다. (예: '이가 깨졌어요' 포스트 말미에 '내이튼치과의 앞니 레진 치료 실제 후기' 포스트 링크 추가)</div>
+
+            <h3>2-2. 시장 검색량(선) vs 우리 블로그 유입량(막대) 추이</h3>
+            <div class="info-box"><strong>Objective:</strong> 시장의 전체 검색량 트렌드와 우리 블로그의 유입 성과를 비교하여, 마케팅 활동의 효과를 입체적으로 분석합니다.</div>
+            <div class="success-box"><strong>Finding:</strong><br><img src="stage_inflow_trend_combined.png" alt="단계별 유입량 추이" style="width:100%; max-width:1000px; margin:auto; display:block;"></div>
+            <div class="warning-box"><strong>Action Item:</strong> 녹색 선(시장 전체 검색량)이 상승하는 시기에 파란색 막대(우리 블로그 유입량)도 함께 상승하는 것은 매우 긍정적인 신호입니다. 만약 녹색 선은 오르는데 파란 막대가 정체된다면, 시장의 관심을 우리 블로그로 가져오지 못하고 있다는 의미이므로 해당 월의 포스트 전략을 재검토해야 합니다.</div>
+        </div>
+
+        <div id="tab-content" class="tab-content">
+            <h2>📝 분석 3: 콘텐츠 및 검색 의도 분석</h2>
+            <h3>3-1. 포스트별 실질적 '주제' 분석</h3>
+            <div class="info-box"><strong>Objective:</strong> 각 포스트가 실제로 어떤 주제(관심 진료 분야)로 시장에서 인식되고 있는지 파악하여, 콘텐츠의 역할을 재정의하거나 개선 방향을 설정합니다.</div>
+            <div class="danger-box"><strong>진단 필요:</strong> '관심 진료 분야(interest_areas)' 데이터의 <strong>17.41%</strong>가 '미분류' 상태입니다. 이는 원본 데이터 생성 단계에서 대부분의 검색어에 대한 관심 진료 분야가 추출되지 않았음을 의미합니다. 정확한 분석을 위해 선행 `apply_restructured_taxonomy.py` 스크립트의 LLM 기반 'interest_areas' 추출 로직 점검이 필요합니다.</div>
+            <div class="success-box"><strong>Finding:</strong> 현재 데이터 기준, 아래는 각 포스트별로 가장 많은 유입을 발생시킨 관심 진료 분야입니다. 대부분 '미분류'로 나타나고 있어, 아래 결과는 제한적인 정보만을 제공합니다.
+            <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>postId</th>
+      <th>post_title</th>
+      <th>interest_areas_list</th>
+      <th>total_inflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>223127778693</td>
+      <td>정기검진, 이렇게나 중요합니다! 동탄 내이튼 치과</td>
+      <td>미분류</td>
+      <td>31336</td>
+    </tr>
+    <tr>
+      <td>223205080746</td>
+      <td>"교정 중인데 이가 까맣게 변했어요." 변색 원인 및 치료 과정 동탄 내이튼 치과</td>
+      <td>미분류</td>
+      <td>9296</td>
+    </tr>
+    <tr>
+      <td>223360812566</td>
+      <td>벌어지고 튀어나온 앞니, 동탄역 치과 에서 교정 없이 개선을 도와드렸던 방법은?!</td>
+      <td>미분류</td>
+      <td>7894</td>
+    </tr>
+    <tr>
+      <td>223816356433</td>
+      <td>인레이 치료 후 발생할 수 있는 문제( 충치 , 치아 파절 ) 동탄역 치과 에서 원인과 해결 방법 알아봅시다!</td>
+      <td>미분류</td>
+      <td>4986</td>
+    </tr>
+    <tr>
+      <td>223829595540</td>
+      <td>잇몸에 물집 , 염증 덩어리 의심해 볼 수 있습니다 동탄동 치과 치근단 병소 치료 과정</td>
+      <td>미분류</td>
+      <td>4978</td>
+    </tr>
+    <tr>
+      <td>223652586578</td>
+      <td>상악동 거상술 술식 측방 접근법을 통해 안전하게 임플란트 재식립 한 사례 동탄역 치과</td>
+      <td>미분류</td>
+      <td>4974</td>
+    </tr>
+    <tr>
+      <td>223260606003</td>
+      <td>신경치료를 받았던 앞니 색이 변했어요. 동탄치과 실활치 미백(walking bleach) 과정</td>
+      <td>미분류</td>
+      <td>3938</td>
+    </tr>
+    <tr>
+      <td>223619831819</td>
+      <td>치주염으로 인한 앞니 잇몸 퇴축, 치과 에서 치아 브릿지 교체와 치주 치료로 해결한 사례</td>
+      <td>미분류</td>
+      <td>3927</td>
+    </tr>
+    <tr>
+      <td>223595953482</td>
+      <td>동탄 치과 깊게 파고드는 충치 인레이 치료 과정을 통해 자연치 살리기</td>
+      <td>미분류</td>
+      <td>3802</td>
+    </tr>
+    <tr>
+      <td>223335804761</td>
+      <td>'앞니가 벌어졌어요!' 동탄치과추천 받고 오셨던 분, 레진 당일 수복 과정</td>
+      <td>미분류</td>
+      <td>3470</td>
+    </tr>
+  </tbody>
+</table></div>
+            </div>
+
+            <h3>3-2. 검색 의도 심층 분석</h3>
+            <div class="info-box"><strong>Objective:</strong> 사용자들이 어떤 의도(카테고리 및 라벨)를 가지고 검색하며, 이를 통해 우리 블로그로 유입되는지 파악합니다.</div>
+            <div class="success-box">
+                <strong>Finding 1: 카테고리별 유입 성과</strong><br>
+                '신체부위' 카테고리가 가장 많은 유입을 발생시키고 있으며, '검색의도'와 '증상/상태'가 그 뒤를 잇고 있습니다. 이는 고객들이 특정 치아나 잇몸의 문제에 대해 구체적인 해결책(비용, 후기 등)을 찾으려는 경향이 강함을 보여줍니다.
+                <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>category</th>
+      <th>total_inflow</th>
+      <th>related_query_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>지역/장소</td>
+      <td>378113</td>
+      <td>1867</td>
+    </tr>
+    <tr>
+      <td>관심진료</td>
+      <td>34827</td>
+      <td>4149</td>
+    </tr>
+    <tr>
+      <td>신체부위</td>
+      <td>28366</td>
+      <td>3303</td>
+    </tr>
+    <tr>
+      <td>증상/상태</td>
+      <td>23068</td>
+      <td>3113</td>
+    </tr>
+    <tr>
+      <td>의료/진료방식</td>
+      <td>3963</td>
+      <td>740</td>
+    </tr>
+    <tr>
+      <td>고객특성</td>
+      <td>2907</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <td>검색의도</td>
+      <td>2179</td>
+      <td>709</td>
+    </tr>
+    <tr>
+      <td>시간/시기</td>
+      <td>463</td>
+      <td>259</td>
+    </tr>
+    <tr>
+      <td>기타</td>
+      <td>92</td>
+      <td>88</td>
+    </tr>
+  </tbody>
+</table></div>
+                <strong>Finding 2: '검색의도' 카테고리 내 라벨별 유입 성과</strong><br>
+                가장 중요한 '검색의도' 카테고리 내에서는 '비용/보험'과 '병원/의사 추천' (후기, 잘하는 곳 등)에 대한 관심이 압도적으로 높습니다.
+                <div class="roadmap-table"><table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>label_name</th>
+      <th>total_inflow</th>
+      <th>related_query_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>과정/기간</td>
+      <td>1207</td>
+      <td>178</td>
+    </tr>
+    <tr>
+      <td>원인</td>
+      <td>236</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>비용</td>
+      <td>93</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>의료진</td>
+      <td>88</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>잘하는 곳</td>
+      <td>77</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>보험</td>
+      <td>76</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>후기</td>
+      <td>73</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>가능성/방법</td>
+      <td>49</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>검진/진단</td>
+      <td>39</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>사진</td>
+      <td>39</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>정보 탐색</td>
+      <td>37</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>육안 확인 방법</td>
+      <td>34</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>제작과정</td>
+      <td>31</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>성공</td>
+      <td>17</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>방법</td>
+      <td>13</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>가능성</td>
+      <td>12</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>결과</td>
+      <td>7</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>부작용</td>
+      <td>5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>가능 여부</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>관계</td>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>만족도</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>개수</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>진료 마무리</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>프랩 과정</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>교합 조정</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>단점</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>다른 치료/병원</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>성공 확률</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>의료진/전문가</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>동시진행</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>정보</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>건강보험</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>탐색</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>필요성</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>보험 청구</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>고민</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>검진 절차</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table></div>
+            </div>
+            <div class="warning-box"><strong>Action Item:</strong> '비용/보험', '병원/의사 추천' 두 핵심 의도에 직접적으로 답변하는 콘텐츠를 시리즈로 기획해야 합니다. 예를 들어, '동탄 임플란트 가격, 보험 적용 시 실제 비용은?' 또는 '실제 환자가 말하는 내이튼치과 신경치료 후기'와 같은 제목의 콘텐츠는 높은 유입을 기대할 수 있습니다.</div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tabbuttons;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tabbuttons = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tabbuttons.length; i++) {
+            tabbuttons[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        if (evt) {
+            evt.currentTarget.classList.add("active");
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstTabButton = document.querySelector(".tab-button");
+        if (firstTabButton) {
+            firstTabButton.click();
+        }
+    });
+</script>
+
+</html>
