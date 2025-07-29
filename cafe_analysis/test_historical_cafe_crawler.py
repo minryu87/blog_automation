@@ -266,23 +266,39 @@ class HistoricalCafeCrawler:
         return f"https://search.naver.com/search.naver?cafe_where=&date_option=8&prdtype=0&ssc=tab.cafe.all&st=rel&query={self.keyword}&ie=utf8&date_from={date_from_str}&date_to={date_to_str}&srchby=text&dup_remove=1&sm=tab_opt&nso=so%3Ar%2Cp%3Afrom{date_from_str}to{date_to_str}&nso_open=1"
 
     async def _fetch_page_async(self, session, url):
-        """항상 응답을 순수 텍스트(str)로만 반환하도록 역할을 단순화합니다."""
+        """재시도 및 프록시 교체 로직을 포함하여 페이지를 안정적으로 요청하고 순수 텍스트로 반환합니다."""
         if not url:
             logging.warning("요청할 URL이 없습니다.")
             return None
-        proxy = f"http://{random.choice(self.proxies)}" if self.proxies else None
-        try:
-            async with session.get(url, proxy=proxy, timeout=20) as response:
-                response.raise_for_status()
-                logging.info(f"요청 성공 (프록시: {proxy}, URL: {str(url)[:120]}...)")
-                # 어떠한 가정도 하지 않고, 순수 텍스트만 반환합니다.
-                return await response.text()
-        except Exception as e:
-            logging.error(f"비동기 페이지 요청 실패 (프록시: {proxy}, URL: {str(url)[:120]}...): {e}")
-            if proxy in self.proxies:
-                self.proxies.remove(proxy)
-                logging.warning(f"작동하지 않는 프록시 {proxy}를 목록에서 제거합니다. 남은 프록시: {len(self.proxies)}개")
-            return None
+
+        max_retries = 5
+        for attempt in range(max_retries):
+            if not self.proxies:
+                logging.error("사용 가능한 프록시가 없습니다. 페이지 요청을 중단합니다.")
+                return None
+
+            proxy_address = random.choice(self.proxies)
+            proxy = f"http://{proxy_address}"
+            
+            try:
+                logging.info(f"페이지 요청 시도 ({attempt + 1}/{max_retries}) - 프록시: {proxy}, URL: {str(url)[:100]}...")
+                async with session.get(url, proxy=proxy, timeout=20) as response:
+                    response.raise_for_status()
+                    logging.info(f"요청 성공 (프록시: {proxy})")
+                    return await response.text()
+            except Exception as e:
+                logging.warning(f"페이지 요청 실패 (시도 {attempt + 1}/{max_retries}, 프록시: {proxy}): {e}")
+                # 실패한 프록시는 목록에서 확실하게 제거
+                if proxy_address in self.proxies:
+                    self.proxies.remove(proxy_address)
+                    logging.warning(f"작동하지 않는 프록시 {proxy_address}를 목록에서 제거합니다. 남은 프록시: {len(self.proxies)}개")
+                
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(random.uniform(1, 3)) # 다음 시도 전 잠시 대기
+                else:
+                    logging.error(f"최종 페이지 요청에 실패했습니다. (URL: {str(url)[:120]}...)")
+        
+        return None # 모든 재시도 실패
 
     def _parse_article_li(self, soup):
         """BeautifulSoup 객체에서 li 태그들을 파싱하여 게시글 데이터 리스트를 반환합니다."""
