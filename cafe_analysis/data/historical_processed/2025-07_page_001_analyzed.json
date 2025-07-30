@@ -64,16 +64,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "서울0.1치과"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "서울0.1치과",
-                    "sentiment": "긍정",
-                    "reason": "임플란트 성지로 불리며, 구체적인 임플란트 가격 정보와 함께 추천 댓글이 다수 존재함."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "동탄치과",
                 "임플란트",
@@ -114,18 +106,15 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "광교리움치과병원",
-                "광교 엘포트해피치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "광교리움치과병원",
+                    "clinic_name": "광교365리움치과병원 수원",
                     "sentiment": "긍정",
                     "reason": "치주과 전문의가 있으며, 스케일링 시술로 잇몸 염증이 가라앉았다는 경험을 공유함."
                 },
                 {
-                    "clinic_name": "광교 엘포트해피치과",
+                    "clinic_name": "엘포트 해피치과의원",
                     "sentiment": "긍정",
                     "reason": "추천 댓글만 있어 긍정적인 평판으로 간주함."
                 }
@@ -138,8 +127,8 @@
                 "수원 광교 동탄 치과"
             ],
             "related_treatments": [
-                "잇몸치료",
-                "예방치료(스케일링 등)"
+                "예방치료",
+                "잇몸치료"
             ]
         }
     },
@@ -206,17 +195,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "디유치과",
-                "서울위더스치과"
+                "디유치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "디유치과",
+                    "clinic_name": "디유치과의원",
                     "sentiment": "긍정",
                     "reason": "수면 임플란트 시술, 과잉 진료 없이 필요한 치료만 진행, 친절한 원장님에 대한 긍정적인 후기가 있음."
                 },
                 {
-                    "clinic_name": "서울위더스치과",
+                    "clinic_name": "서울위더스치과의원",
                     "sentiment": "긍정",
                     "reason": "아버지 임플란트 시술을 잘 해주셨다는 정보 제공."
                 }
@@ -274,23 +262,21 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세참예쁜치과",
-                "동탄ㅇㅈ",
-                "아름다운턱치과"
+                "이즈치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세참예쁜치과",
+                    "clinic_name": "연세참예쁜치과교정과치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "교정 전문의이고 보증기간이 길다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "동탄ㅇㅈ",
+                    "clinic_name": "이즈치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉진료가 없고, 다른 치과와 달리 굳이 교정을 하지 않아도 된다는 진단을 내려 신뢰도를 높임."
                 },
                 {
-                    "clinic_name": "아름다운턱치과",
+                    "clinic_name": "아름다운턱치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉진료 없고 믿음직하며, 교정전문의도 있다는 추천이 있음."
                 }
@@ -336,12 +322,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "플란치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "플란치과",
+                    "clinic_name": "플란치과의원 경기 동탄점",
                     "sentiment": "중립",
                     "reason": "민생쿠폰 사용이 가능하여 임플란트 비용 부담을 덜 수 있다는 댓글이 있습니다. (긍정적 측면 언급)"
                 }
@@ -518,29 +502,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "센트럴아동병원 2층",
-                "바른이턱치과",
-                "위너스타",
-                "연세세브란스"
+                "동탄연세세브란스치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "센트럴아동병원 2층",
-                    "sentiment": "긍정",
-                    "reason": "아이 잇몸 치료 시 친절했다는 댓글이 있음."
-                },
-                {
-                    "clinic_name": "바른이턱치과",
+                    "clinic_name": "바른이턱치과의원 동탄점",
                     "sentiment": "긍정",
                     "reason": "신경치료 대신 충치치료만 해도 된다고 하여 치료받았고, 하루에 두 개 치료까지 해줬으며, 친절하고 실력이 출중하다는 후기가 있음. 충치치료와 교정치료를 하는 중이라는 언급이 있음."
                 },
                 {
-                    "clinic_name": "위너스타",
-                    "sentiment": "긍정",
-                    "reason": "치료를 잘한다는 언급이 있음."
-                },
-                {
-                    "clinic_name": "연세세브란스",
+                    "clinic_name": "동탄연세세브란스치과의원",
                     "sentiment": "긍정",
                     "reason": "교정치료 시 치료를 잘한다는 언급이 있음."
                 }
@@ -553,9 +524,9 @@
                 "친절한 치과"
             ],
             "related_treatments": [
-                "충치치료",
+                "교정치료",
                 "신경치료",
-                "교정치료"
+                "충치치료"
             ]
         }
     },
@@ -584,16 +555,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "이도튼튼치과"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "이도튼튼치과",
-                    "sentiment": "긍정",
-                    "reason": "원장님의 마인드가 최고라는 댓글이 있습니다."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "치주염",
                 "잇몸 치료",
@@ -655,24 +618,20 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "경ㅅㅎ치과",
-                "경승현치과",
-                "기흥 바른스마일교정치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "경ㅅㅎ치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "삼성병원 교정과 과장 출신 원장님의 풍부한 경력과 필요한 치료만 하는 점을 믿을 수 있다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "자녀들이 만족하며 치료받았다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "기흥 바른스마일교정치과",
+                    "clinic_name": "바른스마일치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "더블보드 전문의 원장님의 확실한 전문성과 과도한 진료 권유가 없는 점 때문에 다니고 있다는 후기가 있음."
                 }
@@ -756,26 +715,24 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "하나로마트 치과",
-                "목동 스마일온보철 치과",
-                "내이튼치과",
                 "동탄뉴욕치과",
-                "이편한치과",
-                "연세윤손치과"
+                "동탄하나로치과의원",
+                "스마일온치과보철과치과의원",
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "하나로마트 치과",
+                    "clinic_name": "동탄하나로치과의원",
                     "sentiment": "부정",
                     "reason": "신경치료를 섬세하게 하지 않아 2배 시간이 걸렸다는 후기, 임플란트 권유가 많다는 후기."
                 },
                 {
-                    "clinic_name": "목동 스마일온보철 치과",
+                    "clinic_name": "스마일온치과보철과치과의원",
                     "sentiment": "중립",
                     "reason": "다른 치과 추천 댓글에 언급되었으나 직접적인 평가는 없음."
                 },
                 {
-                    "clinic_name": "내이튼치과",
+                    "clinic_name": "내이튼치과의원",
                     "sentiment": "긍정",
                     "reason": "대표원장이 보존과 전문의이고 필요한 치료만 해주고 친절하다는 후기."
                 },
@@ -785,12 +742,12 @@
                     "reason": "과잉진료가 없고 좋다는 후기. 아이 치료에 추천된다는 후기."
                 },
                 {
-                    "clinic_name": "이편한치과",
+                    "clinic_name": "동탄 이편한 치과의원",
                     "sentiment": "중립",
                     "reason": "어른 치료에 추천된다는 언급만 있음."
                 },
                 {
-                    "clinic_name": "연세윤손치과",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "긍정",
                     "reason": "청계동 지역에서 충치치료로 괜찮다는 후기."
                 }
@@ -803,10 +760,10 @@
                 "신경치료"
             ],
             "related_treatments": [
-                "충치치료",
+                "보존치료",
                 "신경치료",
                 "임플란트",
-                "치아보존술"
+                "충치치료"
             ]
         }
     },
@@ -843,21 +800,9 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "유선규치과",
-                "서울뿌리치과",
                 "더웰치과"
             ],
             "clinic_sentiments": [
-                {
-                    "clinic_name": "유선규치과",
-                    "sentiment": "긍정",
-                    "reason": "과잉진료가 없고 잘하지만 사람이 많아 예약이 필수라는 언급이 있음."
-                },
-                {
-                    "clinic_name": "서울뿌리치과",
-                    "sentiment": "긍정",
-                    "reason": "서울대 치주과 전문의가 꼼꼼하게 잘한다는 언급이 있음."
-                },
                 {
                     "clinic_name": "더웰치과",
                     "sentiment": "긍정",
@@ -872,8 +817,8 @@
                 "꼼꼼한 진료"
             ],
             "related_treatments": [
-                "잇몸치료",
-                "예방치료(스케일링 등)"
+                "예방치료",
+                "잇몸치료"
             ]
         }
     },
@@ -911,17 +856,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "한림대 치과",
-                "아주대"
+                "한림대학교동탄성심병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "한림대 치과",
+                    "clinic_name": "한림대학교동탄성심병원",
                     "sentiment": "중립",
                     "reason": "소아 진료 가능 여부 및 당일 진료 가능 여부에 대한 문의가 있으며, 전화 상담을 통해 확인하라는 답변이 있습니다."
                 },
                 {
-                    "clinic_name": "아주대",
+                    "clinic_name": "아주대학교병원",
                     "sentiment": "중립",
                     "reason": "치료 의뢰서 발급 병원으로 언급되었으나, 진료 예약이 9월로 되어 있다는 정보만 있습니다."
                 }
@@ -934,9 +878,9 @@
                 "의뢰서"
             ],
             "related_treatments": [
-                "충치치료",
+                "구강외과",
                 "신경치료",
-                "구강외과(사랑니 발치 등)"
+                "충치치료"
             ]
         }
     },
@@ -957,17 +901,11 @@
         "comments": [],
         "analysis": {
             "mentioned_clinics": [
-                "동탄목동치과",
-                "동탄365바름치과"
+                "동탄365바름치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄목동치과",
-                    "sentiment": "중립",
-                    "reason": "치과 이름을 언급하며 구인 공고를 올렸으나, 진료 서비스에 대한 언급은 없습니다."
-                },
-                {
-                    "clinic_name": "동탄365바름치과",
+                    "clinic_name": "동탄365바름치과의원",
                     "sentiment": "중립",
                     "reason": "치과 이름을 언급하며 구인 공고를 올렸으나, 진료 서비스에 대한 언급은 없습니다."
                 }
@@ -1046,47 +984,41 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "채움치과",
-                "탑치과",
-                "예나치과",
-                "마이플란트치과",
-                "내이튼치과",
-                "이즈치과",
-                "서울리온치과"
+                "이즈치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "채움치과",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "과잉 진료가 없고 좋다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "친절하고 치료를 잘하며 과잉 진료가 없다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "예나치과",
+                    "clinic_name": "예나치과교정과치과의원",
                     "sentiment": "중립",
                     "reason": "이름만 언급됨."
                 },
                 {
-                    "clinic_name": "마이플란트치과",
+                    "clinic_name": "마이플란트치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "몇 년째 다니고 있다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "내이튼치과",
+                    "clinic_name": "내이튼치과의원",
                     "sentiment": "긍정",
                     "reason": "보존과 전문의가 있고 과잉 진료가 없으며 친절하다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "이즈치과",
+                    "clinic_name": "이즈치과의원",
                     "sentiment": "긍정",
                     "reason": "오랫동안 다녔고 과잉 진료 없이 꼼꼼하게 잘 본다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "서울리온치과",
+                    "clinic_name": "서울리온치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉 진료가 없고 좋다는 댓글이 있음."
                 }
@@ -1099,9 +1031,9 @@
                 "치아 통증"
             ],
             "related_treatments": [
-                "충치치료",
+                "보존치료",
                 "신경치료",
-                "치아보존술"
+                "충치치료"
             ]
         }
     },
@@ -1138,12 +1070,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "경승현치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "원장이 삼성서울병원 교정과 과장 출신이며 30년 경력 교정 전문의로 진단부터 꼼꼼하게 잘해준다는 내용의 댓글이 있음."
                 }
@@ -1211,7 +1141,7 @@
                 "사후관리"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
+                "구강외과"
             ]
         }
     },
@@ -1240,12 +1170,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "레이크치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "레이크치과",
+                    "clinic_name": "레이크치과의원",
                     "sentiment": "긍정",
                     "reason": "색상 조화와 가격이 괜찮았고, 자체 제작한다는 점에서 신뢰를 얻음."
                 }
@@ -1279,11 +1207,11 @@
         "comments": [],
         "analysis": {
             "mentioned_clinics": [
-                "센트럴치과"
+                "동탄센트럴치과병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "중립",
                     "reason": "지인할인 가능 여부를 문의하는 내용만 있어, 해당 치과에 대한 직접적인 평가는 없음."
                 }
@@ -1295,8 +1223,8 @@
                 "치료비"
             ],
             "related_treatments": [
-                "임플란트",
-                "신경치료"
+                "신경치료",
+                "임플란트"
             ]
         }
     },
@@ -1362,30 +1290,20 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "목동플란치과",
-                "바른이턱치과",
-                "초이스치과",
-                "내이튼 치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "목동플란치과",
+                    "clinic_name": "플란치과의원 경기 동탄점",
                     "sentiment": "긍정",
                     "reason": "과잉진료 없이 의사가 깔끔하며, 오스템 임플란트 가격에 대한 긍정적인 언급이 있음."
                 },
                 {
-                    "clinic_name": "바른이턱치과",
+                    "clinic_name": "바른이턱치과의원 동탄점",
                     "sentiment": "긍정",
                     "reason": "보존과 전문의와 치주과 전문의가 함께 있어 전문성을 갖춘 것으로 보임."
                 },
                 {
-                    "clinic_name": "초이스치과",
-                    "sentiment": "복합",
-                    "reason": "국내 최고라는 평가와 함께 살리지 못한 이를 살린다는 긍정적인 언급이 있지만, 예약이 어렵고 불친절하다는 부정적인 언급도 있음."
-                },
-                {
-                    "clinic_name": "내이튼 치과",
+                    "clinic_name": "내이튼치과의원",
                     "sentiment": "중립",
                     "reason": "보존과 치과로 언급되었으나, 개원한 지 얼마 되지 않았고 광고성으로 보인다는 의견이 있어 아직 명확한 평가는 없음."
                 }
@@ -1398,7 +1316,7 @@
                 "과잉진료 없는 치과"
             ],
             "related_treatments": [
-                "치아보존술",
+                "보존치료",
                 "신경치료",
                 "임플란트"
             ]
@@ -1437,12 +1355,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "서울이로움치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "서울이로움치과",
+                    "clinic_name": "서울이로움치과의원",
                     "sentiment": "중립",
                     "reason": "구인 공고 게시글로, 치과에 대한 직접적인 평가나 경험에 대한 내용은 포함되어 있지 않습니다. 댓글도 지원 관련 내용입니다."
                 }
@@ -1507,23 +1423,22 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "이편한치과",
-                "뉴욕치과",
-                "연세 ㅇ손치과"
+                "동탄뉴욕치과",
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "이편한치과",
+                    "clinic_name": "동탄 이편한 치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉 진료 없고 양심적으로 진료한다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "뉴욕치과",
+                    "clinic_name": "동탄뉴욕치과의원",
                     "sentiment": "긍정",
                     "reason": "아이들을 잘 다루고 과잉 진료가 없다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "연세 ㅇ손치과",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "긍정",
                     "reason": "양심적이라는 이유로 온 가족이 다니고 있다는 댓글이 있음."
                 }
@@ -1536,8 +1451,8 @@
                 "영천동 치과"
             ],
             "related_treatments": [
-                "신경치료",
-                "치아보존술"
+                "보존치료",
+                "신경치료"
             ]
         }
     },
@@ -1582,12 +1497,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄나무치과의원"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄나무치과의원",
+                    "clinic_name": "동탄365나무치과의원",
                     "sentiment": "중립",
                     "reason": "본문에서는 20년 만에 방문했으며 잇몸 통증으로 인해 방문했으나, 치료 경험이나 결과에 대한 구체적인 언급이 없어 중립적인 평가만 가능합니다. 댓글에서도 해당 치과에 대한 직접적인 언급은 없습니다."
                 }
@@ -1600,9 +1513,9 @@
                 "치실"
             ],
             "related_treatments": [
-                "충치치료",
+                "예방치료",
                 "잇몸치료",
-                "예방치료(스케일링 등)"
+                "충치치료"
             ]
         }
     },
@@ -1647,16 +1560,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄어린이치과의원"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "동탄어린이치과의원",
-                    "sentiment": "중립",
-                    "reason": "게시글 본문에서 치과 방문 경험을 언급하고 있으나, 구체적인 진료 내용이나 평가에 대한 정보는 부족함."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "어린이 치과",
                 "잇몸 통증",
@@ -1664,9 +1569,9 @@
                 "구강 관리"
             ],
             "related_treatments": [
-                "충치치료",
+                "예방치료",
                 "잇몸치료",
-                "예방치료(스케일링 등)"
+                "충치치료"
             ]
         }
     },
@@ -1711,16 +1616,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄씨엘치과의원"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "동탄씨엘치과의원",
-                    "sentiment": "중립",
-                    "reason": "환자가 20년 만에 방문했으며, 잇몸 통증으로 인해 치과 방문의 필요성을 언급하지만, 실제 진료 경험이나 결과에 대한 긍정/부정적 평가는 드러나지 않습니다."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "잇몸 통증",
                 "치과 방문 주기",
@@ -1729,9 +1626,9 @@
                 "구강 세정기"
             ],
             "related_treatments": [
-                "충치치료",
+                "예방치료",
                 "잇몸치료",
-                "예방치료(스케일링 등)"
+                "충치치료"
             ]
         }
     },
@@ -1798,9 +1695,9 @@
                 "치실"
             ],
             "related_treatments": [
-                "충치치료",
+                "예방치료",
                 "잇몸치료",
-                "예방치료(스케일링 등)"
+                "충치치료"
             ]
         }
     },
@@ -1914,9 +1811,9 @@
                 "구강세정기"
             ],
             "related_treatments": [
-                "충치치료",
+                "예방치료",
                 "잇몸치료",
-                "예방치료(스케일링 등)"
+                "충치치료"
             ]
         }
     },
@@ -1953,12 +1850,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "경승현치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "원장님이 검진 후 꼭 필요한 치료만 권해주셔서 과잉진료 걱정 없이 편하게 받았다는 댓글이 있음."
                 }

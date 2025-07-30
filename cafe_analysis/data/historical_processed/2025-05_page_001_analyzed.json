@@ -5,7 +5,7 @@
         "article_id": "46571",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImZmc2ZmZmZmc2wxbDFpaWUybzA1IiwiYXJ0aWNsZUlkIjo0NjU3MSwiaXNzdWVkQXQiOjE3NTM4MTA0MTIxMzZ9.yKBIiu-pfA5Fx0yJv8glppmirByYjiLP4bhuSv56sP8",
         "cafe_name": "동탄 부동산 현재와미래",
-        "date": "2025.05.23.",
+        "date": "2025.05.23",
         "preview": "안녕하세요~ 혹시 동탄에서 괜찮은 치과 알고 계신 분 계실까요? 요즘 치아가 좀 불편한데 어디로 가야 할지 몰라 고민 중이에요ㅠㅠ 1동탄쪽으로 추천 부탁드려요! 진료 친절하고 가격대 적당한곳이면 좋을 것 같은데.. 교정도 잘하는 곳 궁금해요~ 미리미리 알아보려고요! 실제로 다녀오신 곳 추천해주시면 감사하겠습니다 :)",
         "comment_preview": [
             "RE광교 리움치과 많이 가시더라구요 거리는 좀 있지만",
@@ -40,35 +40,32 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "리움치과",
-                "동탄 연세 세브란스치과",
-                "당신을 위한 치과 의원",
-                "당신을 위한 치과의원",
-                "동탄 연세윤손"
+                "동탄연세세브란스치과의원",
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "리움치과",
+                    "clinic_name": "광교365리움치과병원 수원",
                     "sentiment": "중립",
                     "reason": "거리가 있지만 많이 간다는 언급만 있음."
                 },
                 {
-                    "clinic_name": "동탄 연세 세브란스치과",
+                    "clinic_name": "동탄연세세브란스치과의원",
                     "sentiment": "중립",
                     "reason": "한번 가보라는 추천만 있음."
                 },
                 {
-                    "clinic_name": "당신을 위한 치과 의원",
+                    "clinic_name": "당신을위한치과의원",
                     "sentiment": "긍정",
                     "reason": "좋다는 직접적인 언급이 있음."
                 },
                 {
-                    "clinic_name": "당신을 위한 치과의원",
+                    "clinic_name": "당신을위한치과의원",
                     "sentiment": "중립",
                     "reason": "괜찮은가 보다는 추측성 언급이 있음."
                 },
                 {
-                    "clinic_name": "동탄 연세윤손",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "중립",
                     "reason": "다니고 있다는 사실 전달만 있음."
                 }
@@ -91,7 +88,7 @@
         "article_id": "14153",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InFuYWNsdWIiLCJhcnRpY2xlSWQiOjE0MTUzLCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzNn0.sxBPiY-ilMSHTGCljRQtPxaHnWsbWeRjSMz5-VmcH8M",
         "cafe_name": "안녕 서울",
-        "date": "2025.05.31.",
+        "date": "2025.05.31",
         "preview": "진료든 단순히 '시술이 잘 되는가'만 보는 것이 아니라 아이가 어떤 인상으로 그 경험을 받아들이는지도 같이 살피는 것이 필요합니다. 아이가 무서워하지 않았으면, 진료실에서 울지 않았으면, 나중에도 치과를 피하지 않았으면. 그 바람을 알고 있는 동탄소아치과라면 조금 더 안심하고 맡길 수 있지 않을까요. 치료만 잘하는지보다, 진료의 '과정'과 아이의 반응'까지 살피는 곳인지 살펴보시는게 좋습니다. 감사합니다.",
         "comment_preview": [
             "RE저희 아들은 첫 치과가 너무 친절해서 이후로도 잘 다니고 있어요. 분위기가 진짜 중요하더라고요",
@@ -131,11 +128,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "더새로운치과"
+                "더새로운치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "더새로운치과",
+                    "clinic_name": "더새로운치과의원",
                     "sentiment": "중립",
                     "reason": "해당 치과를 직접 언급하며 다양한 진료 과목과 시설, 치료 방법(웃음가스 등)을 상세히 설명하고 있으나, 실제 이용 경험이나 긍정/부정적 평가에 대한 직접적인 언급은 없음."
                 }
@@ -148,14 +145,14 @@
                 "웃음가스"
             ],
             "related_treatments": [
-                "충치치료",
+                "구강외과",
+                "보존치료",
                 "신경치료",
-                "잇몸치료",
-                "예방치료(스케일링 등)",
-                "구강외과(사랑니 발치 등)",
-                "임플란트",
                 "심미치료",
-                "치아보존술"
+                "예방치료",
+                "임플란트",
+                "잇몸치료",
+                "충치치료"
             ]
         }
     },
@@ -165,7 +162,7 @@
         "article_id": "170056",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImZvY3NhIiwiYXJ0aWNsZUlkIjoxNzAwNTYsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM2fQ.e5RYPGfdfe_ERWQV11MVp6v-rFFcdCsgmccBwPwxjqI",
         "cafe_name": "화성맘♥경기도 화성시 육아 맘카페♥동탄 신도시",
-        "date": "2025.05.17.",
+        "date": "2025.05.17",
         "preview": "동탄으로 이사온 후에 처음으로 임플란트를 할 일이 생겼는데 제가 치과 공포증이 있거든요..ㅎ 치과 앞에만 가면 식은땀나고 심장 떨리고ㅠ 그래서 무작정 치료를 계속 미루고 있어요 근데 임플란트를 안하니까 여간 불편한게 아니네요.. 동탄치과 정말 잘보는 곳 없을까요? 친절하고 과잉 없는 동탄치과로 추천 좀 해주세요",
         "comment_preview": [
             "RE저도 치과는 너무 무서워요.. 임플란트 하는데 엄청 고민했었네요",
@@ -220,11 +217,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "병점 디유치과"
+                "디유치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "병점 디유치과",
+                    "clinic_name": "디유치과의원",
                     "sentiment": "긍정",
                     "reason": "치과 공포증이 심한 환자에게 수면 임플란트 시술이 가능하다고 안내하고, 환자가 시술 후 별다른 문제 없이 검진만 다니고 있다는 내용의 댓글이 있음."
                 }
@@ -247,7 +244,7 @@
         "article_id": "1253936",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InNhbm1vc2Nob29sIiwiYXJ0aWNsZUlkIjoxMjUzOTM2LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzNn0.SFJ9Xe8f29fI-Hsfl-hgz3eMFBYfeDx44fbWtZ0u20Q",
         "cafe_name": "일등맘 수다방",
-        "date": "2025.05.31.",
+        "date": "2025.05.31",
         "preview": "시어머니께서 동탄에 거주하시는데요 예기치 못한 사고로 발치 하셨고 임플란트를 해야 하는데 아직 못하셨다더라고요.. 그래서 제가 해드리려고 하는데요 동탄2치과 잘하는 곳 없을까요? 요즘 식사하시는데 너무 불편하시다고 하셔서 얼른 임플란트 해드리고 싶어요 동탄2치과 과잉 없이 친절한 곳으로 정보 좀 부탁 드릴게요 ㅠㅠ",
         "comment_preview": [],
         "is_related_analysis": {
@@ -273,7 +270,7 @@
         "article_id": "6305684",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW5tb20iLCJhcnRpY2xlSWQiOjYzMDU2ODQsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM2fQ.Q9oS77zcEJG14-jheygKTBu4P9ibRLUYQBRaMrokY8A",
         "cafe_name": "◆동탄맘들 모여라",
-        "date": "2025.05.05.",
+        "date": "2025.05.05",
         "preview": "동탄에 혹시 타치과에서 교정 했는데 봐주는 곳 있을까요? 안 쪽 유지장치가 떨어져서 따갑네요 ㅠㅠ 내일 진료하는 곳 있을까요? ㅠㅠㅠ 원래 다니던 교정치과는 내일 휴무네여ㅠㅜㅠ",
         "comment_preview": [],
         "is_related_analysis": {
@@ -312,7 +309,7 @@
         "article_id": "1072929",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImJnZ2EiLCJhcnRpY2xlSWQiOjEwNzI5MjksImlzc3VlZEF0IjoxNzUzODEwNDEyMTM2fQ.6BzAIHhvNz9PWEaYy01QAvykt_Tpeuvmu31txaYnOzg",
         "cafe_name": "병점맘 스토리",
-        "date": "2025.05.14.",
+        "date": "2025.05.14",
         "preview": "임플란트 이식을 해야 하는데, 현재 다니는 치과나 인근 치과, 병점역 뒤에 치과, 동탄 치과 등 비교를 하더라도 다 가격이 다르고 임플란트 회사별로도 차이가 좀 큰 것 같아서 아직 못하고 있습니다. 임플란트 이식전에 뼈가 얇아서 인공뼈 주입해야 한다고 하는데 그 비용도 비용이고 임플란트는 치과의사 선생님별로 편차가 많이 크다고 하여 더 망설여 집니다. 혹시 추천하실 치과 있으시면 정보 부탁 드립니다....",
         "comment_preview": [],
         "is_related_analysis": {
@@ -344,17 +341,17 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "뉴욕치과",
-                "스마트치과"
+                "동탄뉴욕치과",
+                "스마트치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "뉴욕치과",
+                    "clinic_name": "동탄뉴욕치과의원",
                     "sentiment": "중립",
                     "reason": "임플란트 추천 요청에 대한 직접적인 언급만 있으며, 긍정/부정적인 경험에 대한 구체적인 내용은 없음."
                 },
                 {
-                    "clinic_name": "스마트치과",
+                    "clinic_name": "스마트치과의원",
                     "sentiment": "긍정",
                     "reason": "임플란트 비용이 저렴하고, 원장님 및 간호사분들이 친절하며 스케일링을 꼼꼼하게 잘 해준다는 댓글이 있음."
                 }
@@ -377,7 +374,7 @@
         "article_id": "6305458",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW5tb20iLCJhcnRpY2xlSWQiOjYzMDU0NTgsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.unZ5Rdptl9fM1IFYOnjuDaTI4W_qyQc1ND12dyw3nXY",
         "cafe_name": "◆동탄맘들 모여라",
-        "date": "2025.05.04.",
+        "date": "2025.05.04",
         "preview": "동탄센트럴 치과 지인 10%할인할수있다고 하는데 지인있으신분 쪽지부탁드립니다",
         "comment_preview": [],
         "is_related_analysis": {
@@ -397,11 +394,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "동탄 센트럴치과"
+                "동탄센트럴치과병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄 센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "중립",
                     "reason": "지인 할인 정보 공유 요청 및 이에 대한 긍정적인 반응만 나타나, 실제 진료에 대한 평가는 드러나지 않음."
                 }
@@ -419,7 +416,7 @@
         "article_id": "170667",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImZvY3NhIiwiYXJ0aWNsZUlkIjoxNzA2NjcsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.mpdIbx2zBSKytwivMh_HWVRssl15n56rSLCVRbJ3p6o",
         "cafe_name": "화성맘♥경기도 화성시 육아 맘카페♥동탄 신도시",
-        "date": "2025.05.22.",
+        "date": "2025.05.22",
         "preview": "투명교정 고려 중인데요, 장점도 많지만 유지관리 어려워서 중간에 포기하신 분도 있다고 하더라구요. 동탄 근처에서 설명 자세히 해주고, 중간 관리나 후처치 잘 해주는 병원 있을까요? 동탄교정치과 투명교정 정보 부탁드려요!",
         "comment_preview": [
             "RE경승현치과 다녔는데 여긴 삼성서울병원 교정과 과장 출신 원장님이세요 계획부터 끝까지 진짜 디테일하게 챙겨주세요!",
@@ -468,29 +465,28 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "경승현치과",
-                "연세윤손치과",
-                "연세바로치과",
-                "동탄센트럴치과"
+                "동탄센트럴치과병원",
+                "연세바로치과교정과치과의원",
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "삼성서울병원 교정과 과장 출신 원장님이 디테일하게 챙겨준다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "연세윤손치과",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "긍정",
                     "reason": "원장님이 전문의여서 실력이 좋고, 매달 사후 케어를 잘해줘서 만족한다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "연세바로치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "대표원장님이 아이가 불편하지 않게 꼼꼼하게 신경 써주고, 경험이 많아 상담 시 신뢰가 간다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "동탄센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "긍정",
                     "reason": "교정과 원장님이 좋다는 댓글이 있음."
                 }
@@ -513,7 +509,7 @@
         "article_id": "92578",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im1pbnNraW43Njc5IiwiYXJ0aWNsZUlkIjo5MjU3OCwiaXNzdWVkQXQiOjE3NTM4MTA0MTIxMzd9.cWm57EV2otOvVaGIpF-mKxcs3YZ0hKG55XDlzaiLeGQ",
         "cafe_name": "동탄맘♡동탄스토리 [동탄1,2신도시 동탄맘들의 카페]",
-        "date": "2025.05.30.",
+        "date": "2025.05.30",
         "preview": "임플란트를 좀 여러개 해야 하는데 동네치과 가지 말라고 하더라구요 동탄 2신도시쪽에 임플란트 전문치과 있으면 정보좀 알려주세용~",
         "comment_preview": [
             "RE저는 동탄역 채움치과 다니는데 임플란트 위주로 진료하고 일요일해도 해서 편하더라구요 ㅎㅎ",
@@ -540,17 +536,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "채움치과",
-                "윤손"
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "채움치과",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "임플란트 위주 진료 및 일요일 진료 편의성 언급"
                 },
                 {
-                    "clinic_name": "윤손",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "긍정",
                     "reason": "전문의가 있고 잘 한다는 추천"
                 }
@@ -573,7 +568,7 @@
         "article_id": "75329468",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Imltc2FuYnUiLCJhcnRpY2xlSWQiOjc1MzI5NDY4LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.WlaUB7pbDXbPVH5S8De6gdV4COCA3AGLWjXTlMIseZI",
         "cafe_name": "맘스홀릭 베이비 (350만 엄마들의 임신, 육아 지식in 카페)",
-        "date": "2025.05.14.",
+        "date": "2025.05.14",
         "preview": "저희 60대 엄마가 임플란트를 해야해서 오산, 동탄쪽 임플란트 전문치과 알아보고있어요. 오산은 ㅇㄹ치과? 잘한다고 들었고, 동탄은 너무 많네요. 1.임플란트 전문병원 2.개원한지 오래되고 3.너무 저렴하지않는 4.원장님이 실력이 좋은 임플란트 병원 추천해주세요^^",
         "comment_preview": [],
         "is_related_analysis": {
@@ -592,24 +587,15 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "ㅇㄹ치과",
-                "ㅎㅇ치과",
-                "탑치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "ㅇㄹ치과",
-                    "sentiment": "중립",
-                    "reason": "잘한다고 들었다는 언급만 있을 뿐, 구체적인 평가나 경험이 공유되지 않음."
-                },
-                {
-                    "clinic_name": "ㅎㅇ치과",
+                    "clinic_name": "하이치과의원",
                     "sentiment": "중립",
                     "reason": "주변에서 추천받았다는 내용만 있으며, 구체적인 진료 경험이나 평가는 없음."
                 },
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "임플란트 전문이고 많이들 간다는 언급이 있어 긍정적인 평가로 볼 수 있음."
                 }
@@ -632,7 +618,7 @@
         "article_id": "14089",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InFuYWNsdWIiLCJhcnRpY2xlSWQiOjE0MDg5LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.Ttufl8ghAzyRQAHer_YRMIG4ohutFy6l2XHxd0Re61k",
         "cafe_name": "안녕 서울",
-        "date": "2025.05.06.",
+        "date": "2025.05.06",
         "preview": "동탄2치과가 가까이 있어도 늘 '다음 달쯤 가야지' 하고 미루게 되죠. 하지만 그 미룸이 쌓이면, 결국 치아 하나를 지켜낼 기회도 함께 지나갈 수 있습니다. 다행인 건, 치주질환은 조기 발견과 예방만 잘 해도 충분히 관리 가능한 질환이라는 점입니다. 대표적인 예방 진료는 스케일링입니다. 치석은 양치만으로는 완전히 제거되지 않기 때문에, 정기적인 스케일링과 전문적인 관리가 필요합니다. 만 19세 이상은 연...",
         "comment_preview": [
             "RE임신 중에 잇몸 약해져서 고생했는데, 그때 알았어요. 치주질환 진짜 조용히 와요,, 무섭",
@@ -668,11 +654,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "더새로운치과"
+                "더새로운치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "더새로운치과",
+                    "clinic_name": "더새로운치과의원",
                     "sentiment": "중립",
                     "reason": "치과에서 제공하는 진료 과목 및 시설에 대한 정보를 나열하고 있으며, 긍정적 또는 부정적인 직접적인 평가나 후기는 포함하고 있지 않습니다."
                 }
@@ -685,7 +671,7 @@
                 "잇몸 관리"
             ],
             "related_treatments": [
-                "예방치료(스케일링 등)",
+                "예방치료",
                 "잇몸치료"
             ]
         }
@@ -696,7 +682,7 @@
         "article_id": "1065189",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Imp1bmthcnQiLCJhcnRpY2xlSWQiOjEwNjUxODksImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.JpFrWYmF4gydu5ui4pB7q9zKYn7WkmweG5znvRXMh6Q",
         "cafe_name": "용광맘(용인맘 광교맘 수원맘 수지맘 분당맘 판교 동탄맘 안성맘",
-        "date": "2025.05.14.",
+        "date": "2025.05.14",
         "preview": "이번에 저희 친정엄마 임플란트 해드리려고 알아보는데 동탄에 임플란트 치과 추천해주실만한 데가 있을까요?",
         "comment_preview": [],
         "is_related_analysis": {
@@ -735,12 +721,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "ㅍㄹ치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "ㅍㄹ치과",
+                    "clinic_name": "플란치과의원 경기 동탄점",
                     "sentiment": "긍정",
                     "reason": "야간진료를 하여 편하게 치료받을 수 있다는 댓글이 있음."
                 }
@@ -762,7 +746,7 @@
         "article_id": "2401090",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjI0MDEwOTAsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.6c-j7x5zmfsqicpMjydap7qg7RjfpGVBzKJnSFbHIYM",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.05.30.",
+        "date": "2025.05.30",
         "preview": "아이가 친구들이 놀리는지 교정을 해달라고 하네요 어디가 좋을지 몰라 글올려요 카림1차 주변에 잘하는 교정치과 추천부탁드려요~ 비용도 알려주시면 더 감사하겠습니다",
         "comment_preview": [
             "RE남동탄 연세참예쁜교정치과 꼼꼼히 잘 봐주세요.",
@@ -815,41 +799,38 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세참예쁜교정치과",
-                "경승현치과",
-                "연세윤손치과",
-                "연세바로치과",
-                "연세ㅂㄹ치과",
-                "동탄센트럴치과"
+                "동탄센트럴치과병원",
+                "연세바로치과교정과치과의원",
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세참예쁜교정치과",
+                    "clinic_name": "연세참예쁜치과교정과치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "꼼꼼하게 잘 봐준다는 추천 댓글이 있음."
                 },
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "꼼꼼하고 경력이 좋아서 케바케를 잘 안다는 추천 댓글이 있음."
                 },
                 {
-                    "clinic_name": "연세윤손치과",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "긍정",
                     "reason": "추천하며, 비용은 치열 상태에 따라 다르니 직접 상담받는 것이 좋다는 의견이 있음."
                 },
                 {
-                    "clinic_name": "연세바로치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "첫째 아이 교정 치료가 잘 되어 둘째도 시작하려 한다는 추천 댓글이 있음."
                 },
                 {
-                    "clinic_name": "연세ㅂㄹ치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "대표원장님이 꼼꼼하고 친절하다는 추천 댓글이 있음."
                 },
                 {
-                    "clinic_name": "동탄센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "긍정",
                     "reason": "월비 포함 시 오히려 저렴했다는 언급이 있음."
                 }
@@ -871,7 +852,7 @@
         "article_id": "25150",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InFhejU0NTQyIiwiYXJ0aWNsZUlkIjoyNTE1MCwiaXNzdWVkQXQiOjE3NTM4MTA0MTIxMzd9.G-4oR0ELtgg8oQYqk0te97BUc0kbSMH8EpdP1IPBit4",
         "cafe_name": "알고가자 동네병원",
-        "date": "2025.05.29.",
+        "date": "2025.05.29",
         "preview": "입이 남들보다 나와 보여 신경이 쓰이고 팔자주름이 깊어지는 느낌이 든다면 동탄교정치과 돌출입 교정으로 해결할 수 있었죠. 잇몸과 치아가 돌출되면서 생기는 돌출입 증상은 화가 난 인상을 주고 나이가 많아 보이는 노안 이미지의 원인이 되었습니다. 치아 기능적으로 볼 때도 문제가 될 수 있었는데요. 입으로 숨쉬는 일이 많아지고 발음이나 저작력에 부정적인 영향을 주게 됐습니다. 2. 돌출입 교정이란? 입으로...",
         "comment_preview": [
             "RE치아교정 관련해서 동탄교정치과 상담받아보려구요",
@@ -921,7 +902,7 @@
         "article_id": "492748",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImhhbmJvcmEiLCJhcnRpY2xlSWQiOjQ5Mjc0OCwiaXNzdWVkQXQiOjE3NTM4MTA0MTIxMzd9.V6OU_P0-goWlqg6vBe2ckUAfFmXSHsAb4ZXJVQ6wT84",
         "cafe_name": "용인 한보라마을",
-        "date": "2025.05.10.",
+        "date": "2025.05.10",
         "preview": "동탄쪽으로 임플란트해보신 ..추천받고싶어요. 병원이 또멀면 예약맞추기도힘들고해서 거리가 마지노선 보라동까지인데 ..보라동쪽은 차가지고 가기 너무스트레스이네요 ㅠㅠ 너무좋은동네인데ㅠㅠ주말이나 퇴근시간 교통 헬이잖아요 ㅠㅠ 두세군데 알아보고 치과정하고싶은데 추천부탁드려요~ 주말 편안한시간 되세용~ 한보라 화이팅!!!!!! 공세동화이팅!!!!!!ㅎㅎㅎㅎ",
         "comment_preview": [
             "RE동탄하나로치과 추천드려요 마트안에 있어서 주차편하고 과잉진료도 안하시는거 같고 모두 친절하시더라구요 치료받고 마트장보고 나",
@@ -961,23 +942,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "동탄하나로치과",
-                "베일*치과",
-                "당신을 위한 치과"
+                "동탄하나로치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄하나로치과",
+                    "clinic_name": "동탄하나로치과의원",
                     "sentiment": "긍정",
                     "reason": "마트 안에 있어 주차 편하고, 과잉진료 없고, 친절하다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "베일*치과",
-                    "sentiment": "긍정",
-                    "reason": "의사 선생님이 친절하고 잘하며, 뼈이식부터 임플란트까지 치료받았다는 후기가 있음."
-                },
-                {
-                    "clinic_name": "당신을 위한 치과",
+                    "clinic_name": "당신을위한치과의원",
                     "sentiment": "긍정",
                     "reason": "좋은 것 같다는 의견이 있음. (다만 주차 편의성에 대한 질문이 있어 추가 정보 필요)"
                 }
@@ -990,9 +964,9 @@
                 "주차 편리한 치과"
             ],
             "related_treatments": [
+                "구강외과",
                 "임플란트",
-                "충치치료",
-                "구강외과(사랑니 발치 등)"
+                "충치치료"
             ]
         }
     },
@@ -1002,7 +976,7 @@
         "article_id": "754",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InB1cnBsZWNxY3owIiwiYXJ0aWNsZUlkIjo3NTQsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.8FG1c7Yovcl6-5TnPZ9zMKOk2c6a1u4DSYgfGFaGSls",
         "cafe_name": "우리동내정보창고",
-        "date": "2025.05.27.",
+        "date": "2025.05.27",
         "preview": "동탄교정치과 고민하지마세요 칫솔이나 치간 칫솔 또는 부분 교정을 선호하는 분도 많아지고 있었습니다. 투명 교정 장치는 눈에 띄지 않고 심미성이 뛰어나 탈착이 용이하며 음식 제한이 없다는 장점이 있었습니다. 브 동탄교정치과 라켓 재료를 사용해서 교정을 하다 보면 음식을 섭취하고 싶다면 잘게 잘라서 섭취하는 직장인이나 심미적으로 보이는 이미지가 중요한 분들에게는 치아 교정이 부담스럽기도...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1053,7 +1027,7 @@
         "article_id": "1072542",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImJnZ2EiLCJhcnRpY2xlSWQiOjEwNzI1NDIsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.jBjcLTAl3iPuVly1dyy4N2nKdvrIqJljZRpO3WzvvfQ",
         "cafe_name": "병점맘 스토리",
-        "date": "2025.05.10.",
+        "date": "2025.05.10",
         "preview": "안녕하세요 딸 부정교합이 심해서 교정치과 알아보는 중인데 연세 선이고은치과랑 미소자인교정치과 두군데 추천을 많이 해주더라구요 병원 두군데 중 어디를 가야할지 아직 결정을 못했는데 다니시는 분들 어디가 더 나을까요? 아 그리고 미소자인교정치과는 지인할인추천이 있는것 같은데 아직도 하는걸까용??",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1084,24 +1058,20 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "연세 선이고은치과",
-                "미소자인교정치과",
-                "연세참예쁜교정치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세 선이고은치과",
+                    "clinic_name": "연세선이고은치과의원",
                     "sentiment": "중립",
                     "reason": "게시글에서 직접적인 언급은 없으나, 다른 치과와 함께 교정 치료로 추천 목록에 포함됨."
                 },
                 {
-                    "clinic_name": "미소자인교정치과",
+                    "clinic_name": "미소자인교정치과의원",
                     "sentiment": "긍정",
                     "reason": "꼼꼼하게 잘 해준다는 댓글이 있으며, 지인 할인 추천이 있는지 문의함."
                 },
                 {
-                    "clinic_name": "연세참예쁜교정치과",
+                    "clinic_name": "연세참예쁜치과교정과치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "꼼꼼히 잘 봐준다는 댓글이 있음."
                 }
@@ -1124,7 +1094,7 @@
         "article_id": "306",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImF6ZXJhdGd4eiIsImFydGljbGVJZCI6MzA2LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.gig2aru75DmbH9DA-pDW12i6u3mRFpe9g1eYZlWd5QM",
         "cafe_name": "서울삼성병원, 대학교수출신 교정 전문의, 30년 경력 경승현치과",
-        "date": "2025.05.28.",
+        "date": "2025.05.28",
         "preview": "동탄목동치과 돌출입교정 투명교정기 vs 브라켓 비교 입술이 앞으로 튀어나온 것처럼 보이는 돌출입은 단순히 미용적인 문제뿐만 아니라 저작 기능, 발음, 그리고 구강 위생에도 영향을 미칠 수 있습니다. 이러한 돌출입을 교정하기 위한 방법으로 전통적인 브라켓과 최근 인기를 얻고 있는 투명교정기가 주로 활용되고 있는데요. 두 교정 방식 모두 효과적이지만, 각각의 특성과 적합한 상황이 다릅니다. 1. 돌출입의...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1155,16 +1125,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄목동치과"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "동탄목동치과",
-                    "sentiment": "중립",
-                    "reason": "게시글은 동탄목동치과의 돌출입 교정 방법에 대한 정보를 제공하고 있지만, 직접적인 환자 경험이나 평가에 대한 언급은 없습니다."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "돌출입교정",
                 "투명교정기",
@@ -1182,7 +1144,7 @@
         "article_id": "6310293",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW5tb20iLCJhcnRpY2xlSWQiOjYzMTAyOTMsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.-Z089N9YoBzD1JLRThmRxcpyfNkxaixawZ20lqiCA04",
         "cafe_name": "◆동탄맘들 모여라",
-        "date": "2025.05.21.",
+        "date": "2025.05.21",
         "preview": "청소년 두명 하려고 하는데 하고계신곳중 만족스러운곳 있으면 알려주세요^^",
         "comment_preview": [
             "RE바른이턱에서 하고 있는데 선생님 꼼꼼하고 좋으세요",
@@ -1241,17 +1203,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "바른이턱",
-                "더바른치과"
+                "더바른치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "바른이턱",
+                    "clinic_name": "바른이턱치과의원 동탄점",
                     "sentiment": "긍정",
                     "reason": "선생님이 꼼꼼하고 좋다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "더바른치과",
+                    "clinic_name": "더바른치과의원",
                     "sentiment": "긍정",
                     "reason": "아이 둘 다 앞니 교정에 만족하며, 다른 가족들도 해당 치과에서 치료받고 만족한다는 댓글이 있음."
                 }
@@ -1275,7 +1236,7 @@
         "article_id": "33639526",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InJlbW9udGVycmFjZSIsImFydGljbGVJZCI6MzM2Mzk1MjYsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.0rE1uVvYZWYZy50-PafdNHHQgwEdvLuFnZbzmvV0T48",
         "cafe_name": "레몬테라스 [인테리어,리폼,DIY,요리,결혼,육아,커뮤니티]",
-        "date": "2025.05.14.",
+        "date": "2025.05.14",
         "preview": "치아교정 받아야 하는데.. 전문의 있고.. 사후 관리 잘하는 치과 좀 추천 해주세요",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1308,7 +1269,7 @@
         "article_id": "304",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImF6ZXJhdGd4eiIsImFydGljbGVJZCI6MzA0LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.one0pYM30iGfdNc97Y0Xpq1C-3-N1fmMWd7hJxzMxAc",
         "cafe_name": "서울삼성병원, 대학교수출신 교정 전문의, 30년 경력 경승현치과",
-        "date": "2025.05.26.",
+        "date": "2025.05.26",
         "preview": "동탄임플란트치과 65세 이상 건강보험 적용 임플란트와 비보험 차이점 치아를 상실했을 때 그 기능을 회복하는 방법 중 하나인 임플란트는 많은 어르신들에게 필요한 시술이지만, 비용 부담이 크다는 단점이 있었습니다. 그래서 좋지 않은 치아 상태를 방치하고 계시는 어르신들이 많았지요. 한편, 65세 이상 어르신들은 건강보험을 통해 임플란트 시술 비용의 상당 부분을 지원받을 수 있습니다만, 이러한 정보를...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1359,7 +1320,7 @@
         "article_id": "14098",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InFuYWNsdWIiLCJhcnRpY2xlSWQiOjE0MDk4LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.CHE6TLcOlDQOVmkrEm9ilp9a_wvB6Td2cSzpl2M-W9s",
         "cafe_name": "안녕 서울",
-        "date": "2025.05.09.",
+        "date": "2025.05.09",
         "preview": "그만큼 처음부터 얼마나 정밀하게 설계되었는지, 그리고 얼마나 다양한 케이스를 경험한 의료진이 맡았는지가 중요해집니다. 임플란트를 고민하고 계신 지금, 가장 먼저 확인해야 할 것은 '누가 어떻게 시술하는가'입니다. 좋은 장비, 좋은 시스템, 그리고 풍부한 임상 경험. 이 세 가지가 함께 갖춰진 동탄호수공원치과라면 아마 안심하고 치료 받을 수 있는 곳일 것입니다. 감사합니다.",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1379,17 +1340,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "동탄호수공원치과",
-                "더새로운치과"
+                "더새로운치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄호수공원치과",
-                    "sentiment": "중립",
-                    "reason": "임플란트 시술 시 고려해야 할 점을 제시하며, 좋은 장비, 시스템, 임상 경험을 갖춘 곳으로 언급되었으나 구체적인 긍정/부정 평가나 경험담은 없음."
-                },
-                {
-                    "clinic_name": "더새로운치과",
+                    "clinic_name": "더새로운치과의원",
                     "sentiment": "긍정",
                     "reason": "치과 전문의 진료, 대학병원 수준의 진단 체계, 원내 기공실 운영, 소아 전용 진료실, 감염 관리, 무통 마취, 웃음가스 등 다양한 장점을 나열하며 홍보함."
                 }
@@ -1402,14 +1357,14 @@
                 "상악동"
             ],
             "related_treatments": [
-                "임플란트",
-                "치주치료",
-                "충치치료",
-                "신경치료",
+                "구강외과",
                 "보철치료",
+                "신경치료",
                 "심미치료",
-                "예방치료(스케일링 등)",
-                "구강외과(사랑니 발치 등)"
+                "예방치료",
+                "임플란트",
+                "충치치료",
+                "치주치료"
             ]
         }
     },
@@ -1419,7 +1374,7 @@
         "article_id": "2400408",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjI0MDA0MDgsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.-jVk9qlAMEF4YhJrJXrV6MEop5JhHv-yPw2X3G8qp-E",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.05.28.",
+        "date": "2025.05.28",
         "preview": "불편해요ㅠ 치과에서는 맞닿는부분이 문제일수 있다며 윗쪽어금니를 조정해줬는데 전혀 효과가 없어요... 애초에 기존 인레이 제거하는 작업할때 파란쪽을 잘못건드린걸까요? 저는 원래는 전혀 통증없고 씹는데 문제없었다는 입장 치과에서는 미세한 크랙이 원래부터 있었을수 있다 입장 엑스레이말고 자세히 사진찍어서 치아손상이나 크랙인지 확인할수 있는 치과 동탄에 있다면 추천 부탁드려요 미리 감사드립니다",
         "comment_preview": [
             "RE제 경험으론 나이들수록 이치료후에 정상상태로 돌아오는게 점점 오래걸리는거 같아요. 이십대엔 사나흘, 서른중반쯤에 몇주~한두달, 마",
@@ -1440,8 +1395,8 @@
                 "정밀 진단"
             ],
             "related_treatments": [
-                "충치치료",
-                "치아보존술"
+                "보존치료",
+                "충치치료"
             ]
         }
     },
@@ -1451,7 +1406,7 @@
         "article_id": "2393716",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzOTM3MTYsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.24dhrK8CPRJAoJosv-Wy14Ix8Nmun19mjbMd1PEd77M",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.05.10.",
+        "date": "2025.05.10",
         "preview": "잇몸에 염증주머니 같은게 생겼는데 주머니 아래 치아도 예전에 크라운 했던자리인데요 오래되서 크라운한치아가 문제 생겨서 그런걸까요ㅜ.ㅜ.... 이런쪽으로 잘보는 치과 추천해주세요(청계동 영천동 목동 동탄역쪽이면 좋겠습니다~~) 동탄은 치과너무 많고 어디로 가야할지... 찾기가참 어렵네요 치과는 한번시적하면 여러번가야하고 비용도 많이들던데 걱정되네요....",
         "comment_preview": [
             "RE222저두요...최대한살려보자고 잇몸에 항생제 넣는치료받았는데 뿌리가 많이녹아있어서 결국 임플란트했어요ㅠ",
@@ -1509,12 +1464,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "내이튼치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "내이튼치과",
+                    "clinic_name": "내이튼치과의원",
                     "sentiment": "긍정",
                     "reason": "현미경을 사용하고 보존 치료를 통해 임플란트를 하지 않고 치료했으며, 마취가 세심하고 입술 마비가 없었다는 긍정적인 후기가 있습니다. 또한, 다른 치과에서 무조건 임플란트를 권했던 것을 살렸다는 경험도 있습니다."
                 }
@@ -1527,11 +1480,11 @@
                 "과잉 진료"
             ],
             "related_treatments": [
-                "충치치료",
+                "보존치료",
                 "신경치료",
+                "임플란트",
                 "잇몸치료",
-                "치아보존술",
-                "임플란트"
+                "충치치료"
             ]
         }
     },
@@ -1541,7 +1494,7 @@
         "article_id": "305",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImF6ZXJhdGd4eiIsImFydGljbGVJZCI6MzA1LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.zq5bvifsXeQXEGv-QIQCyC1njU92jUwaOly9mwACOHk",
         "cafe_name": "서울삼성병원, 대학교수출신 교정 전문의, 30년 경력 경승현치과",
-        "date": "2025.05.27.",
+        "date": "2025.05.27",
         "preview": "동탄역교정치과 하이브리드 치아 콤비교정이란? 안녕하세요. 동탄역교정치과입니다. 오늘 안내해드릴 콤비교정은 상악(위턱)과 하악(아래턱)에 서로 다른 유형의 교정장치를 사용하는 하이브리드 치아교정 방식으로, 각 교정방식의 장점을 최대화하고 단점을 최소화할 수 있는 방법입니다. 동탄역교정치과에서는 이러한 콤비교정을 단일 방식의 교정법보다 환자별 맞춤형 접근이 가능한 유연한 치료법으로 활용되고...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1572,16 +1525,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄역교정치과"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "동탄역교정치과",
-                    "sentiment": "중립",
-                    "reason": "게시글 본문은 치과에서 제공하는 콤비교정에 대한 설명이며, 댓글 역시 정보 제공 및 긍정적인 반응을 보이고 있어 특정 병원에 대한 긍정적/부정적 평판을 파악하기 어렵습니다."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "콤비교정",
                 "하이브리드 교정",
@@ -1600,7 +1545,7 @@
         "article_id": "2398773",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzOTg3NzMsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.MLgb9Wk4XEkTmVCX8cMiBOw2wGxxHLDxwxy9Izh6UMg",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.05.23.",
+        "date": "2025.05.23",
         "preview": "(교정X) 주차가능하고 과잉진료 없는 친절한 곳 추천해주세요~~ 위치는 상관없고, 주차만 편하면 좋겠습니다. 과잉진료 없구요.. 과잉진료 치과만 오래다니다가 치아가 얼마 안남아버렸어요..",
         "comment_preview": [
             "RE동탄역 내이튼치과 영천동 삼성바른치과 과잉진료없어요",
@@ -1636,41 +1581,36 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "내이튼치과",
-                "삼성바른치과",
-                "탑치과",
-                "레이크치과",
-                "굿데이 치가",
-                "동탄센트럴치과"
+                "동탄센트럴치과병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "내이튼치과",
+                    "clinic_name": "내이튼치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉진료가 없다고 언급됨."
                 },
                 {
-                    "clinic_name": "삼성바른치과",
+                    "clinic_name": "삼성바른치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉진료가 없다고 언급됨."
                 },
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "과잉진료가 없다고 추천됨. 다만 주차가 다소 불편할 수 있다는 뉘앙스."
                 },
                 {
-                    "clinic_name": "레이크치과",
+                    "clinic_name": "레이크치과의원",
                     "sentiment": "긍정",
                     "reason": "실력이 괜찮고 깨끗하며 주차가 편하다고 언급됨."
                 },
                 {
-                    "clinic_name": "굿데이 치가",
+                    "clinic_name": "연세굿데이치과의원",
                     "sentiment": "긍정",
                     "reason": "주차장이 넓고 주차 지원이 되며, 과잉진료가 없어서 몇 년째 다니는 곳으로 언급됨."
                 },
                 {
-                    "clinic_name": "동탄센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "긍정",
                     "reason": "주차가 편하고 규모가 크며, 병원급이라 과잉진료가 없다고 언급됨."
                 }
@@ -1683,8 +1623,8 @@
                 "검진"
             ],
             "related_treatments": [
-                "충치치료",
-                "예방치료(스케일링 등)"
+                "예방치료",
+                "충치치료"
             ]
         }
     },
@@ -1694,7 +1634,7 @@
         "article_id": "7703166",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImJ5dW5nczk0IiwiYXJ0aWNsZUlkIjo3NzAzMTY2LCJpc3N1ZWRBdCI6MTc1MzgxMDQxMjEzN30.Sj2g63cb9bjv770DBvHkyGAMldwNQ-iOsOcjnnlF6Jk",
         "cafe_name": "♬~수원맘 모여라",
-        "date": "2025.05.02.",
+        "date": "2025.05.02",
         "preview": "첫째 교정 좀 시켜주려구요. 교정전문치과 여러군데 봤는데 교정 치과 고를 때 어떤 기준으로 봐야할까요?. 서울에 잘하는 곳이 있다해서 서울로 보는데 근처가 좋다고 해서 서울까지 보내려니 왔다갔다 힘들 것 같아서요 교정은 처음이라 병원부터 결정하기가 쉽지가 않네요 ^^; 도움 주시면 감사드리겠습니다.",
         "comment_preview": [
             "RE저희딸 교정하고 이제 곧 끝나는데요~ 저는 교정전문으로 갔어요.매일 선생님계시는곳~그리고 집에서 가까운곳~ 초기엔 아이가 관리잘못",
@@ -1753,16 +1693,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "화이트**이"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "화이트**이",
-                    "sentiment": "중립",
-                    "reason": "한 댓글에서 교정치과로 언급되었으나, 긍정/부정적인 평가 없이 현재 교정 중이라는 정보만 제공됨."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "교정",
                 "교정 전문의",
@@ -1781,7 +1713,7 @@
         "article_id": "1726412",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im9oYW5nZ29uZyIsImFydGljbGVJZCI6MTcyNjQxMiwiaXNzdWVkQXQiOjE3NTM4MTA0MTIxMzd9.ZfpQ5ieZhuCLpr8QIbDMojh6adpmoEQK8M2gP6fa8Es",
         "cafe_name": "<오행공> 오산맘들의 행복한 공간",
-        "date": "2025.05.02.",
+        "date": "2025.05.02",
         "preview": "미치과 폐원으로 타교정치과 가야하는데요 고정식유지장치 새로 하신분 계실까요? 오래된 교정치과 한곳갔더니 과잉이 진짜 쩌내요 레진1개 떨어졌는데 3개 떨어졌다고 비용3배에 두번이나 떨어지고 제 치아가 문제라며 보철까지 강요하고 레진 엉망으로 붙여나서 계속 불편해요ㅠ 새로 제작해서 붙여야할거 같은데 치과선택을 못하겠어요 교정했던 치과 없어지니까 돈도 돈이지만 진짜 불편하네요",
         "comment_preview": [
             "RE삼성 서울치과 추천요 저희딸도 미치과에서 교정완료하고 이치과로 다녀요",
@@ -1839,18 +1771,15 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "미치과",
-                "삼성 서울치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "미치과",
+                    "clinic_name": "새로미치과의원",
                     "sentiment": "부정",
                     "reason": "폐원으로 인해 다른 치과를 찾아야 하는 상황이며, 본문에서 언급된 경험상 과잉 진료, 레진 치료 불만족, 보철 강요 등의 문제점을 제기하고 있음."
                 },
                 {
-                    "clinic_name": "삼성 서울치과",
+                    "clinic_name": "서울삼성치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "미치과에서 교정 완료 후 해당 치과로 옮긴 딸의 사례와 함께, 유지장치 관련 상담 및 관리를 잘 해준다는 추천이 있음."
                 }
@@ -1874,7 +1803,7 @@
         "article_id": "2396263",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzOTYyNjMsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.BYrJcjHRl1Bn7ZeCcdwwOoGWfhCP5DfDCrbOnF0rdBI",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.05.17.",
+        "date": "2025.05.17",
         "preview": "잇몸이 많이부어서 스케일링이라도 해야할듯한데 다니던치과는 아직이르다고 안받아주더라구요ㅠㅠ 혹시 이때에 해주는 치과있을까요?? 동탄호수공원근처에요",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1911,9 +1840,9 @@
                 "임산부 치과 치료"
             ],
             "related_treatments": [
-                "예방치료(스케일링 등)",
+                "보존치료",
                 "신경치료",
-                "치아보존술"
+                "예방치료"
             ]
         }
     },
@@ -1923,7 +1852,7 @@
         "article_id": "171714",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImZvY3NhIiwiYXJ0aWNsZUlkIjoxNzE3MTQsImlzc3VlZEF0IjoxNzUzODEwNDEyMTM3fQ.TtW-FZeUikQ7AQ0E9zrT1jk1E6KwNVQnXdy61A9LJkg",
         "cafe_name": "화성맘♥경기도 화성시 육아 맘카페♥동탄 신도시",
-        "date": "2025.05.30.",
+        "date": "2025.05.30",
         "preview": "안쪽 치아가 살짝 깨졌네요...ㅠ 갑자기 왜 깨졌는지는 모르겠네요... 화성 오산동에 치과 잘하는 곳 아시면 추천해주세요!",
         "comment_preview": [
             "RE저는 오산동에 연세바로치과 다녔었는데 치료 잘받았네요",
@@ -1964,26 +1893,24 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세바로치과",
-                "채움치과",
-                "서울베스트치과",
                 "동탄센트럴치과병원",
-                "이즈치과",
-                "동탄 윤손"
+                "연세바로치과교정과치과의원",
+                "연세윤손치과의원",
+                "이즈치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세바로치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "치료를 잘 받았다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "채움치과",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "치료를 받았고 좋았다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "서울베스트치과",
+                    "clinic_name": "서울베스트치과의원 동탄점",
                     "sentiment": "긍정",
                     "reason": "괜찮다는 추천을 지인에게 들었다는 댓글이 있음."
                 },
@@ -1993,12 +1920,12 @@
                     "reason": "단순히 치료받았다는 언급만 있음."
                 },
                 {
-                    "clinic_name": "이즈치과",
+                    "clinic_name": "이즈치과의원",
                     "sentiment": "긍정",
                     "reason": "추천한다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "동탄 윤손",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "중립",
                     "reason": "단순히 다녔다는 언급만 있음."
                 }
@@ -2010,8 +1937,8 @@
                 "잘하는 곳"
             ],
             "related_treatments": [
-                "충치치료",
-                "치아보존술"
+                "보존치료",
+                "충치치료"
             ]
         }
     }

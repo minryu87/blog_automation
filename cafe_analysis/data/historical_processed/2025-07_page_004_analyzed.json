@@ -40,12 +40,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "ㅍㄹ치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "ㅍㄹ치과",
+                    "clinic_name": "플란치과의원 경기 동탄점",
                     "sentiment": "긍정",
                     "reason": "상담부터 치료까지 꼼꼼하고 친절하게 잘 알려주며, 수술도 아프지 않게 잘 해줬다는 댓글이 있음."
                 }
@@ -76,12 +74,10 @@
         },
         "club_id": "24095040",
         "analysis": {
-            "mentioned_clinics": [
-                "마이플란트치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "마이플란트치과",
+                    "clinic_name": "마이플란트치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "게시글 본문에서 치아 건강 정보 제공 및 치료법 설명을 하고 있으나, 환자 경험이나 평판에 대한 내용은 없음."
                 }
@@ -93,9 +89,9 @@
                 "영구치 손상"
             ],
             "related_treatments": [
-                "충치치료",
+                "보존치료",
                 "신경치료",
-                "치아보존술"
+                "충치치료"
             ]
         }
     },
@@ -157,13 +153,7 @@
         ],
         "analysis": {
             "mentioned_clinics": [],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "상담받은 곳",
-                    "sentiment": "부정",
-                    "reason": "모델이 고정되어있고, 비급여 항목 영업을 너무하며 너무 비싼 병원 같다는 댓글이 있음."
-                }
-            ],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "임플란트",
                 "오스템",
@@ -172,8 +162,8 @@
                 "임플란트 종류"
             ],
             "related_treatments": [
-                "임플란트",
-                "구강외과(사랑니 발치 등)"
+                "구강외과",
+                "임플란트"
             ]
         }
     },
@@ -194,11 +184,11 @@
         "comments": [],
         "analysis": {
             "mentioned_clinics": [
-                "동탄바른이 교정치과"
+                "동탄바른이치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄바른이 교정치과",
+                    "clinic_name": "동탄바른이치과의원",
                     "sentiment": "중립",
                     "reason": "본문에서 교정치과 개원 사실과 여름방학 행사 진행을 안내하고 있으며, 교정전문의 직접 진료를 강조하고 있으나, 환자의 긍정적/부정적 경험을 나타내는 내용은 없습니다."
                 }
@@ -252,7 +242,7 @@
                 "구강내과"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
+                "구강외과"
             ]
         }
     },
@@ -272,12 +262,10 @@
         "views": 40,
         "comments": [],
         "analysis": {
-            "mentioned_clinics": [
-                "마이플란트치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "마이플란트치과",
+                    "clinic_name": "마이플란트치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "게시글 본문에서 병원 자체의 정보(경력, 전문의, 이벤트 등)를 소개하고 있으나, 환자의 직접적인 경험이나 평가가 담긴 댓글이 없어 평판을 판단하기 어렵습니다."
                 }
@@ -336,17 +324,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세참예쁜교정치과",
-                "연세바로치과"
+                "연세바로치과교정과치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세참예쁜교정치과",
+                    "clinic_name": "연세참예쁜치과교정과치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "한 회원이 추천하며 지인 추천도 가능하다고 언급함."
                 },
                 {
-                    "clinic_name": "연세바로치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "어려운 케이스도 예쁘게 마무리되고 있다는 후기와, 발치 없이 비발치 교정을 진행하며 환자의 의견을 존중하고 친절하다는 긍정적인 댓글이 있음."
                 }
@@ -388,18 +375,15 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "탑치과",
-                "경승현치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "사랑니 발치를 잘 한다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "경승현치과",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "매복 사랑니 발치를 하나도 안 아프게 잘 한다는 댓글이 있음."
                 }
@@ -411,32 +395,7 @@
                 "통증 없는 발치"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
-            ]
-        }
-    },
-    {
-        "title": "동탄 치아교정 잘하는곳 추천해주세요",
-        "link": "https://cafe.naver.com/2933coco/2800?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6IjI5MzNjb2NvIiwiYXJ0aWNsZUlkIjoyODAwLCJpc3N1ZWRBdCI6MTc1MzgxMTgwMDExOX0.oJ6_UfnbX1kKyXhzBax9T796O77E3gC-dlgGofnHHek",
-        "article_id": "2933",
-        "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6IjI5MzNjb2NvIiwiYXJ0aWNsZUlkIjoyODAwLCJpc3N1ZWRBdCI6MTc1MzgxMTgwMDExOX0.oJ6_UfnbX1kKyXhzBax9T796O77E3gC-dlgGofnHHek",
-        "cafe_name": "[동탄맘 일로오시오] 동탄신도시 동탄맘카페 동탄병원 영유아",
-        "date": "2025.07.16",
-        "preview": "동탄신도시 병원 검진 영유아 학생 공무원 운전면허 갱신 마약검사 보건증 내과 피부과 성장클리닉 안과 성형외과 정형외과 치과초등학교 중학교 고등학교 학원 피아노 영어 수학 논술 빵 안경 백화점 아파트 부동산 속눈썹연장 눈썹문신 미용실 네일 왁싱 청계동 목동 신동 영천동 산척동 청계동 봉담읍 평택시 항아리상가 카림 11자상가 동탄역 호수공원 헬스장 북광장 남광장",
-        "comment_preview": [],
-        "is_related_analysis": {
-            "is_related": true
-        },
-        "club_id": "31329479",
-        "analysis": {
-            "mentioned_clinics": [],
-            "clinic_sentiments": [],
-            "main_keywords": [
-                "동탄 치아교정",
-                "교정 잘하는 곳"
-            ],
-            "related_treatments": [
-                "교정치료"
+                "구강외과"
             ]
         }
     },
@@ -465,18 +424,15 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "탑치과",
-                "플란치과 경기 동탄점"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "겁이 많은 환자에게 친절하게 설명해준다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "플란치과 경기 동탄점",
+                    "clinic_name": "플란치과의원 경기 동탄점",
                     "sentiment": "중립",
                     "reason": "임플란트 빠짐에 대한 일반적인 원인 설명과 함께 병원에서 정기 검진 및 관리를 돕는다는 내용을 전달하고 있어, 직접적인 치료 경험에 대한 언급은 없음."
                 }
@@ -489,8 +445,8 @@
                 "임플란트 추천"
             ],
             "related_treatments": [
-                "임플란트",
-                "신경치료"
+                "신경치료",
+                "임플란트"
             ]
         }
     },
@@ -510,18 +466,8 @@
         "views": 37,
         "comments": [],
         "analysis": {
-            "mentioned_clinics": [
-                "서울라미플란트",
-                "동탄역 서울스마트교정치과",
-                "서울스마트교정치과"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "서울스마트교정치과",
-                    "sentiment": "중립",
-                    "reason": "본문 내용이 해당 치과의 임플란트 시술 경험에 대한 언급이며, 긍정/부정적 평가가 드러나지 않음. 댓글이 없어 추가적인 평판 분석이 불가."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "임플란트",
                 "재식립",
@@ -555,16 +501,8 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "ㅃㄷ병원"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "ㅃㄷ병원",
-                    "sentiment": "긍정",
-                    "reason": "장비가 좋고 꼼꼼하게 봐주며, 레포트도 작성해주고 믿음이 가는 곳이라는 댓글이 있음. 치과 전문 병원이며 유기견/유기묘를 위해 좋은 일을 많이 한다는 내용도 긍정적 요인으로 작용."
-                }
-            ],
+            "mentioned_clinics": [],
+            "clinic_sentiments": [],
             "main_keywords": [
                 "건강검진",
                 "반려동물",

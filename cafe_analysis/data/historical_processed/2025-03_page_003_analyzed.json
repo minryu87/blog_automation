@@ -5,7 +5,7 @@
         "article_id": "37237",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRlbnRhbGpvYmtvcmVhIiwiYXJ0aWNsZUlkIjozNzIzNywiaXNzdWVkQXQiOjE3NTM4MDk0Mzg4OTN9.kfNRQ0zf5yj-iKZA-oGlMRA6p1qk_j0XOeBNEC0Ijdw",
         "cafe_name": "덴탈잡코리아",
-        "date": "2025.03.31.",
+        "date": "2025.03.31",
         "preview": "치과명: 스마일온 치과보철과 치과의원 담당자 이메일: ********@*******.*** 구인담당자 연락처: ***-****-**** 문자주세요!! 사업장 주소: 화성시 동탄순환대로400 우성스타시티A동 503,504호 구인 포지션: 진료실 진료 시작시간: 9:30 (출근은 9시까지) 진료 마감시간: 18:30 점심시간: 13:00~14:00 점심식사 제공여부: 만원 지원 기숙사 지원여부: x 급여수준: 9:00~18:30 시간당 2만원, 일당17만원(30분 일찍와서...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -16,11 +16,11 @@
         "comments": [],
         "analysis": {
             "mentioned_clinics": [
-                "스마일온 치과보철과 치과의원"
+                "스마일온치과보철과치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "스마일온 치과보철과 치과의원",
+                    "clinic_name": "스마일온치과보철과치과의원",
                     "sentiment": "중립",
                     "reason": "채용 공고 게시글로, 환자의 경험이나 진료에 대한 언급이 없어 평판을 판단할 수 없습니다."
                 }
@@ -32,7 +32,7 @@
                 "일당 17만원"
             ],
             "related_treatments": [
-                "치아보존술"
+                "보존치료"
             ]
         }
     },
@@ -42,7 +42,7 @@
         "article_id": "6286884",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW5tb20iLCJhcnRpY2xlSWQiOjYyODY4ODQsImlzc3VlZEF0IjoxNzUzODA5NDM4ODkzfQ.Jc1M8y6WfZ4usTmByhvyriXAsMI43AQ_Thh3KD7Buq4",
         "cafe_name": "◆동탄맘들 모여라",
-        "date": "2025.03.05.",
+        "date": "2025.03.05",
         "preview": "1.아주대 대학병원 예약(대기가 길다는게 아쉬움) 2.동탄제일 3.동탄성모 4.동탄센트럴(박소*쌤 초진예약안받으심ㅜㅜ) 고민입니다. 동탄제일이 약값도 저렴하고 선생님 평도 갠찬다고봤는데 대한소아내분비학회 검색해보니 정유*쌤은 조회가안되서 전문의가 맞는지 모르겠어요..ㅜㅜ 가능하면 전문의로 가고싶은데 경험으로 믿고가도되는지 궁금합니다. 성모(김민*)와 센트럴(박소*,최유*) 쌤은 다 조회가...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -74,35 +74,26 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "아주대 대학병원",
-                "동탄제일",
-                "동탄성모",
-                "동탄센트럴",
-                "베스트"
+                "동탄센트럴치과병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "아주대 대학병원",
+                    "clinic_name": "아주대학교병원",
                     "sentiment": "중립",
                     "reason": "예약 대기가 길다는 점이 언급됨."
                 },
                 {
-                    "clinic_name": "동탄제일",
-                    "sentiment": "긍정",
-                    "reason": "약값이 저렴하고 선생님 평이 괜찮다는 언급이 있으며, 접근성 및 치료 편의성이 좋다는 댓글이 있음. 하지만 전문의 여부에 대한 의문 제기됨."
-                },
-                {
-                    "clinic_name": "동탄성모",
+                    "clinic_name": "가톨릭대학교 성빈센트병원",
                     "sentiment": "중립",
                     "reason": "김민* 선생님에 대한 언급이 있으며, 친절하게 잘 설명해주신다는 댓글이 있음. 다만, 전반적인 평가는 아직 명확하지 않음."
                 },
                 {
-                    "clinic_name": "동탄센트럴",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "중립",
                     "reason": "박소* 선생님 초진 예약이 어렵다는 점과, 치료보다는 추적 관찰만 이야기하는 것에 대한 부정적인 의견이 있음. 하지만 긍정적인 평가도 일부 있음."
                 },
                 {
-                    "clinic_name": "베스트",
+                    "clinic_name": "베스트치과의원",
                     "sentiment": "중립",
                     "reason": "괜찮다는 댓글이 있으나 구체적인 이유는 언급되지 않음."
                 }
@@ -115,7 +106,7 @@
                 "진료"
             ],
             "related_treatments": [
-                "예방치료(스케일링 등)"
+                "예방치료"
             ]
         }
     },
@@ -125,7 +116,7 @@
         "article_id": "2367683",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzNjc2ODMsImlzc3VlZEF0IjoxNzUzODA5NDM4ODkzfQ.1gholSEzBnrRYbIo1fgsuKikOSQNehw_x1rVxEFD2Fs",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.03.03.",
+        "date": "2025.03.03",
         "preview": "마이플란트치과는 동탄에서 개원8년차를 맞이했습니다. 한 자리에서 환자들과 항상 함께하고 있으며 1만건 이상 임플란트 임상경험이 있는 20년차 구강외과 전문의 대표원장님이 직접 상담, 치료, 사후관리까지 도와드리고 있습니다. 환자에게 맞는 맞춤 솔루션만을 제공하는 것은 물론이며 현재는 환자들의 비용 부담을 최대한 덜어고자 항상 노력하겠습니다. 처음에 Event나 비용을 보고 병원을 선택한다면 당장은...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -135,12 +126,10 @@
         "views": 105,
         "comments": [],
         "analysis": {
-            "mentioned_clinics": [
-                "마이플란트치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "마이플란트치과",
+                    "clinic_name": "마이플란트치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "게시글 본문에서 병원의 개원 연차, 임상 경험, 전문의 여부, 맞춤 솔루션 제공, 비용 부담 완화 노력 등을 언급하고 있으나, 환자들의 직접적인 경험이나 평판을 나타내는 댓글은 없어 중립으로 판단됨."
                 }
@@ -163,7 +152,7 @@
         "article_id": "6285776",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW5tb20iLCJhcnRpY2xlSWQiOjYyODU3NzYsImlzc3VlZEF0IjoxNzUzODA5NDM4ODkzfQ.84Hn9Z3LDhaOGwoazGgi2uErDJ8_8fSjOVNFiwe4Bzk",
         "cafe_name": "◆동탄맘들 모여라",
-        "date": "2025.03.01.",
+        "date": "2025.03.01",
         "preview": "저는 턱관절에 소리가 20대 때부터 났는데 통증이 없어 그냥 방치하며 살았거든요ㅠ 평생 달고 살던 두통과 어깨통증의 원인이 이거였겠구나 싶어 전문 한의원에서 치료하고 싶은데 우째 동탄에 있던 턱관절한의원들이 문닫은 곳이 많네요ㅠ 해와달경희한의원이랑 두개한의원 둘다 지금은 없어진 듯 하네요ㅠ 혹시 동탄이나 인근 턱관절 치료 가능한 한의원 다니셨던 분 계실까요? 꾸준히 치료 받아보고 싶어서요!",
         "comment_preview": [],
         "is_related_analysis": {
@@ -199,7 +188,7 @@
                 "어깨통증"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
+                "구강외과"
             ]
         }
     }

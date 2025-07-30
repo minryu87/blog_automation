@@ -5,7 +5,7 @@
         "article_id": "5533",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Imlnb3NpZGFoZWFsdGgiLCJhcnRpY2xlSWQiOjU1MzMsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg4fQ.lII7BF7i7Kh6BVRX-bbgDNSLqZgzsxJ-P5XmGDHNRZ4",
         "cafe_name": "데드라이엠푸드(이고시다카페) - 데드라(Dedra EM Food)",
-        "date": "2024.12.19.",
+        "date": "2024.12.19",
         "preview": "병원명 특징 연세다건치과의원 환자의 불편함을 최소화하는 치료 제공 첫번째치과의원 환자 중심의 쾌적한 치료 환경 제공 닥터스마일치과의원 안전하고 효과적인 치아교정 전문 행복한치과의원 개인 맞춤형 치료로 환자 만족도 높은 곳 더바른치과의원 함수 및 미소 모두를 고려한 맞춤형 치료 제공 동탄아는치과의원 자연치아 보존 전문으로 최신 기술이 도입된 곳 이러한 병원들은 비교적 저렴한 가격에...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -21,23 +21,17 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세다건치과의원",
-                "첫번째치과의원",
                 "닥터스마일치과의원",
-                "행복한치과의원",
                 "더바른치과의원",
-                "동탄아는치과의원"
+                "동탄아는치과의원",
+                "연세다건치과",
+                "행복한치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세다건치과의원",
+                    "clinic_name": "연세다건치과",
                     "sentiment": "중립",
                     "reason": "환자의 불편함을 최소화하는 치료 제공이라는 특징만 언급됨."
-                },
-                {
-                    "clinic_name": "첫번째치과의원",
-                    "sentiment": "중립",
-                    "reason": "환자 중심의 쾌적한 치료 환경 제공이라는 특징만 언급됨."
                 },
                 {
                     "clinic_name": "닥터스마일치과의원",
@@ -68,10 +62,10 @@
                 "틀니"
             ],
             "related_treatments": [
-                "임플란트",
                 "교정치료",
+                "보철치료",
                 "신경치료",
-                "틀니"
+                "임플란트"
             ]
         }
     },
@@ -81,7 +75,7 @@
         "article_id": "4273",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImhvbmdzYW1wcmltZXRlY2g1NSIsImFydGljbGVJZCI6NDI3MywiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODh9.D3-_t2yoG7YcDFqnjJdDW3ZhFFy9ihA10ns8lJjKSEs",
         "cafe_name": "◎홍삼프라임 공식카페◎ 홍삼제조기/홍삼액제조기/홍삼만들기",
-        "date": "2024.12.14.",
+        "date": "2024.12.14",
         "preview": "병원 이름 가격대 전문성 후기 수 메가젠임플란트 경기지점 100만원~300만원 임플란트 전문 클리닉 300 연세윤손치과의원 100만원~250만원 최신 의료 장비 보유, 전문의 진료 500 이즈치과의원 100만원~250만원 높은 고객 만족도, 다양한 진료 제공 1,282 채움치과의원 동탄 100만원~240만원 다양한 진료과목, 맞춤형 진료 455 서울라미플란트치과교정과치과의원 150만원~300만원 예약제 운영, 최신 의료 장비 보유 400...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -92,18 +86,11 @@
         "comments": [],
         "analysis": {
             "mentioned_clinics": [
-                "메가젠임플란트 경기지점",
+                "서울라미플란트치과교정과치과의원",
                 "연세윤손치과의원",
-                "이즈치과의원",
-                "채움치과의원 동탄",
-                "서울라미플란트치과교정과치과의원"
+                "이즈치과의원"
             ],
             "clinic_sentiments": [
-                {
-                    "clinic_name": "메가젠임플란트 경기지점",
-                    "sentiment": "중립",
-                    "reason": "가격대와 전문성에 대한 정보만 제공됨."
-                },
                 {
                     "clinic_name": "연세윤손치과의원",
                     "sentiment": "중립",
@@ -115,7 +102,7 @@
                     "reason": "가격대, 높은 고객 만족도, 다양한 진료 제공 정보만 제공됨."
                 },
                 {
-                    "clinic_name": "채움치과의원 동탄",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "가격대, 다양한 진료과목, 맞춤형 진료 정보만 제공됨."
                 },
@@ -143,7 +130,7 @@
         "article_id": "4311",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImVjb2d5bSIsImFydGljbGVJZCI6NDMxMSwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.IBhD01r2aFAOQQIp6j9ZKqA5_YMayDsIptv98cGttFw",
         "cafe_name": "에코짐ecogym",
-        "date": "2024.12.23.",
+        "date": "2024.12.23",
         "preview": "병원 이름 위치 전화번호 운영시간 메가젠 임플란트 경기지점 삼성1로 160 디지털스테이션 303호 0303-1566-2338 09:00 ~ 18:00 연세 윤손 치과의원 동탄대로시범길 148-22 5층 031-377-2248 09:00 ~ 17:30 위 표에서 보듯이 두 곳 모두 접근성이 좋고, 최신 장비와 숙련된 의료진을 보유하고 있어 안심하고 치료를 받을 수 있습니다. 임플란트 시술 프로세스 임플란트 시술은 일반적으로 세 가지 단계로 나눌 수 있습니다. 첫 번째...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -159,17 +146,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "메가젠 임플란트 경기지점",
-                "연세 윤손 치과의원"
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "메가젠 임플란트 경기지점",
-                    "sentiment": "중립",
-                    "reason": "병원 이름과 주소, 전화번호, 운영 시간이 언급되었으나, 구체적인 치료 경험이나 평가는 언급되지 않았습니다."
-                },
-                {
-                    "clinic_name": "연세 윤손 치과의원",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "중립",
                     "reason": "병원 이름과 주소, 전화번호, 운영 시간이 언급되었으나, 구체적인 치료 경험이나 평가는 언급되지 않았습니다."
                 }
@@ -192,7 +173,7 @@
         "article_id": "7495",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImJudGVhbTA1IiwiYXJ0aWNsZUlkIjo3NDk1LCJpc3N1ZWRBdCI6MTc1MzgwODA5NjY4OX0.IuZh8JTjxSzh-d1Ic8n_Ijzx9hEcqA5puWO6x70YTVo",
         "cafe_name": "메디칼리뷰 - 전문 의료 정보, 고급 의료 정보, 의료전문 상담",
-        "date": "2024.12.12.",
+        "date": "2024.12.12",
         "preview": "병원명 위치 전화번호 운영시간 장점 메가젠 임플란트 경기지점 삼성1로 160 디지털스테이션 303호 0303-1566-2338 09:00 ~ 18:00 최신 장비와 높은 전문가 기술 연세 윤손 치과의원 동탄대로시범길 148-22 5층 031-377-2248 09:00 ~ 17:30 환자 중심의 편안한 환경 제공 이들 치과는 각각의 장점이 있으며, 환자 개개인의 요구에 따라 맞춤형 서비스를 제공합니다. 최신 장비와 경험 많은 전문가가 함께하기 때문에 신뢰도 높은...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -208,17 +189,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "메가젠 임플란트 경기지점",
-                "연세 윤손 치과의원"
+                "연세윤손치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "메가젠 임플란트 경기지점",
-                    "sentiment": "중립",
-                    "reason": "위치, 전화번호, 운영 시간, 장점(최신 장비, 전문가 기술) 등 정보 제공"
-                },
-                {
-                    "clinic_name": "연세 윤손 치과의원",
+                    "clinic_name": "연세윤손치과의원",
                     "sentiment": "중립",
                     "reason": "위치, 전화번호, 운영 시간, 장점(환자 중심의 편안한 환경) 등 정보 제공"
                 }
@@ -241,7 +216,7 @@
         "article_id": "2330782",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzMzA3ODIsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.ZWjg891adrgZaWcZ3TR0-GQ_odNa7FPlkcXz_XaAXx8",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2024.12.15.",
+        "date": "2024.12.15",
         "preview": "과잉없는곳 추천부탁드려여(호수쪽) 요즘 레진 인레이는 얼마정도하나여? 치과진료안한지가 오래되서...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -293,17 +268,16 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "나노치과",
-                "동탄365바름치과"
+                "동탄365바름치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "나노치과",
+                    "clinic_name": "나노치과의원",
                     "sentiment": "긍정",
                     "reason": "댓글에서 '괜찮아요'라고 언급됨."
                 },
                 {
-                    "clinic_name": "동탄365바름치과",
+                    "clinic_name": "동탄365바름치과의원",
                     "sentiment": "긍정",
                     "reason": "친절하고 간호사들이 공감 잘해주며, 치과를 무서워하는 사람에게도 괜찮다고 언급됨."
                 }
@@ -316,8 +290,8 @@
                 "치과 가격"
             ],
             "related_treatments": [
-                "충치치료",
-                "신경치료"
+                "신경치료",
+                "충치치료"
             ]
         }
     },
@@ -327,7 +301,7 @@
         "article_id": "3519",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImpyZXlvdXR1YmUiLCJhcnRpY2xlSWQiOjM1MTksImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.5L5soHO1q9sjfRt6UjrIOi-31kIaYyAQ-vN5QQ0EZ4I",
         "cafe_name": "자유홍보 및 공유카페",
-        "date": "2024.12.24.",
+        "date": "2024.12.24",
         "preview": "채움치과의원 동탄 항목 내용 이름 채움치과의원 동탄 주소 경기 화성시 동탄대로 495 동탄역리치안 401, 402호 리뷰 개수 8 전화번호 0507-1388-2275 채움치과의원 동탄은 환자 중심의 접근 방식을 지향합니다. SRT 동탄역 가까이에 위치하여 접근성이 뛰어난 이곳은 환자들에게 우수한 치료를 제공하고 있으며, 지속적인 고객 관리와 진료 향상에 주력하고 있습니다. 강력한 전문 의료진과 현대적인 시설을 갖춘...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -346,12 +320,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "채움치과의원 동탄"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "채움치과의원 동탄",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "환자 중심 접근, 뛰어난 접근성, 우수한 치료 제공, 지속적인 고객 관리 및 진료 향상, 강력한 전문 의료진 및 현대적 시설 등 긍정적인 특징을 언급하고 있습니다. 댓글 역시 유용하고 기대된다는 긍정적인 반응을 보입니다."
                 }
@@ -374,7 +346,7 @@
         "article_id": "336939",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImV1bGt3YW4iLCJhcnRpY2xlSWQiOjMzNjkzOSwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.XrQVE0Pg8tSWheCV0-hT2ORa8KABbwnvDZRXtSbOCZg",
         "cafe_name": "동탄맘[동탄맘들모여라,동탄맘,동투맘,동탄2신도시,동탄,화성]",
-        "date": "2024.12.21.",
+        "date": "2024.12.21",
         "preview": "동탄임플란트 어디 다니시나요..? 좀 과잉없이 딱 치료만 잘 봐주시는 임플란트 전문치과 알아보고 있는데 제가 병원을 잘 몰라서 여쭤봐요 ㅠ 꼭 추천좀 부탁드려요..",
         "comment_preview": [],
         "is_related_analysis": {
@@ -420,7 +392,7 @@
         "article_id": "702",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InN1bmNoaW0iLCJhcnRpY2xlSWQiOjcwMiwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.0IlgeeJVT5i7KM__oNTm6gdJzrlgqf6WOlMK0pgVpuA",
         "cafe_name": "선침패치&디톡스패치",
-        "date": "2024.12.07.",
+        "date": "2024.12.07",
         "preview": "채움치과의원 동탄 항목 내용 이름 채움치과의원 동탄 주소 경기 화성시 동탄대로 495 동탄역리치안 401, 402호 리뷰 개수 8 전화번호 0507-1388-2275 채움치과의원 동탄은 환자에게 우수한 치과 치료를 제공하기 위해 설립된 의원으로, 환자 중심의 접근 방식을 지향합니다. 이 의원은 SRT 동탄역 인근에 위치하여 접근성이 뛰어나며, 지속적인 고객 관리와 진료 향상에 주력하고 있습니다. 이곳의 혁신적이고 현대적인...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -443,12 +415,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "채움치과의원 동탄"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "채움치과의원 동탄",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "긍정",
                     "reason": "본문 내용 자체는 정보 제공에 가깝지만, 댓글 내용에서 '아주 좋은 후기', '생활이 훨씬 편리해졌다', '좋은 가격에 좋은 서비스' 등 긍정적인 반응을 보이고 있습니다. 또한 '임플란트 잘하는 병원'으로 추천되고 있습니다."
                 }
@@ -471,7 +441,7 @@
         "article_id": "2106",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImVjb2d5bSIsImFydGljbGVJZCI6MjEwNiwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.j70iuJ0kuMc3jWNrx_9ME2p64IB6WUMUSMPRo1qMMGs",
         "cafe_name": "에코짐ecogym",
-        "date": "2024.12.01.",
+        "date": "2024.12.01",
         "preview": "채움치과의원 동탄 항목 내용 이름 채움치과의원 동탄 주소 경기 화성시 동탄대로 495 동탄역리치안 401, 402호 리뷰 개수 8 전화번호 0507-1388-2275 채움치과의원 동탄은 환자 중심의 접근 방식을 지향하는 치과 의원입니다. 이 의원은 환자들과의 꾸준한 소통을 통해 치료 과정의 불안감을 줄이고 있으며, 높은 접근성과 현대적인 시설을 갖추고 있습니다. 특히, 광범위한 진료 과목을 아우르는 통합진료로 다양한...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -498,12 +468,10 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "채움치과의원 동탄"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "채움치과의원 동탄",
+                    "clinic_name": "채움치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "본문에서 병원의 위치, 전화번호, 진료 방식 등을 설명하고 있으나, 환자의 직접적인 경험이나 평가에 대한 언급은 없습니다."
                 }
@@ -524,7 +492,7 @@
         "article_id": "2337552",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzMzc1NTIsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.Fdx07I-DRfInprwNlol8qRxylV5wZpztGGdWFgDDawE",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2024.12.28.",
+        "date": "2024.12.28",
         "preview": "매몰+절개를 같이해서 풀리지않도록 해주시더라구요..20여년전 저는 매몰을 했지만..다행히 아직 잘있어요 이젠 눈처짐이 좀있어서..몇년후 하게된다면 여기서 하려구요 열흘지난지금..아이 눈은 붓기도 80프로는 빠진것 같고 정말 이뻐졌어요 내가 이쁘지않아..이쁘게 못낳아줬지만ㅎㅎㅎ 그래도..돈들여 이쁘게 꾸며주니..뿌듯하네요^^ 홍보아님주의 추가)) 치과는 워낙 유명한곳이고 동탄역 ysㅂㄹ치과에요...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -576,17 +544,11 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "동탄역 ysㅂㄹ치과",
-                "1동탄 ㅇㅌㄴ성형외과"
+                "연세바로치과교정과치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄역 ysㅂㄹ치과",
-                    "sentiment": "중립",
-                    "reason": "게시글 본문과 댓글에서 언급만 되고, 환자의 경험이나 평가에 대한 구체적인 내용은 없습니다."
-                },
-                {
-                    "clinic_name": "1동탄 ㅇㅌㄴ성형외과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "중립",
                     "reason": "게시글 본문과 댓글에서 언급만 되고, 환자의 경험이나 평가에 대한 구체적인 내용은 없습니다."
                 }
@@ -608,7 +570,7 @@
         "article_id": "7542522",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InNwZWN1cCIsImFydGljbGVJZCI6NzU0MjUyMiwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.tl_WXQfu3L9_maSzPVq_wYlSfDElTluMoH31OxESXUs",
         "cafe_name": "스펙업｜취업,대학생,인턴,대기업,GSAT,대외활동,공모전,스펙",
-        "date": "2024.12.02.",
+        "date": "2024.12.02",
         "preview": "원데이임플란트치과, 성인교정, 65세이상임플란트가격, 안산임플란트가격, 하동 임플란트, 부평임플란트, 동탄임플란트, 광진구임플란트, 양악수술후기, 횡성 임플란트, 치아교정턱관절, 대전수면임플란트, 올세라믹크라운, 덴티스임플란트가격, 인천 임플란트, 원데이보철, 대구임플란트잘하는곳, 레이저치료, 임플란트시술기간, 세종임플란트, 임플란트회사, 파주임플란트, 치주과전문의, 이갈이, 턱뼈비대칭...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -670,7 +632,7 @@
         "article_id": "5736",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im9yZ2FuaWNmYW1pbHkiLCJhcnRpY2xlSWQiOjU3MzYsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.imvR-x82uV03wUH75DVMY62qcOm-8qSw9YmjgJfl2aw",
         "cafe_name": "♧건강한 마을♧(친환경,유기농,건강식품,다이어트,효소,오가닉)",
-        "date": "2024.12.24.",
+        "date": "2024.12.24",
         "preview": "경승현치과 교정과 치과의원 동탄 소개 주소: 경기 화성시 동탄대로시범길 134 카림상가 2층 전화번호: 031-8077-2628 리뷰개수: 7 경승현치과는 환자 중심의 치료를 통해 시스템을 마련하고, 최신 장비와 기술을 도입하여 최고의 치료를 제공합니다. 특히, 치과 치료에 대한 두려움을 덜어줄 수 있도록 전문의가 맞춤형 상담을 제공합니다. 서비스 내용 진료 분야 환자 대기 시간 전문의 상담 서비스 임플란트...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -680,12 +642,10 @@
         "views": 3,
         "comments": [],
         "analysis": {
-            "mentioned_clinics": [
-                "경승현치과 교정과 치과의원"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "경승현치과 교정과 치과의원",
+                    "clinic_name": "경승현치과 교정과 치과의원 동탄",
                     "sentiment": "중립",
                     "reason": "본문에 치과의 소개와 서비스 내용이 간략하게 기재되어 있으나, 환자들의 직접적인 경험이나 평가에 대한 정보가 부족합니다. 추천 TOP 6라는 제목과는 달리 구체적인 추천 이유나 긍정/부정적인 평가가 나타나지 않습니다."
                 }
@@ -698,8 +658,8 @@
                 "환자 중심 치료"
             ],
             "related_treatments": [
-                "임플란트",
-                "교정치료"
+                "교정치료",
+                "임플란트"
             ]
         }
     },
@@ -709,7 +669,7 @@
         "article_id": "2338582",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzMzg1ODIsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.d5e_k4B5PgnUkp2J0JzVWOpZHRkTJbdmRGbwHM8Uswg",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2024.12.30.",
+        "date": "2024.12.30",
         "preview": "아직 이가 하나도 안흔들려서 방학때 치과한번 가봐야지 하고 있었는데..이제 예비초2인데..ㅠㅠ 아랫니안쪽으로 이미 치아가 올라오고 있어요.. 치과가봐야 알겠지만 발치 해야될것 같아서요.. 겁많은 남자아이라... 혹시 카림 주변으로 치과추천 부탁드립니다...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -760,20 +720,12 @@
             }
         ],
         "analysis": {
-            "mentioned_clinics": [
-                "아이끌림 치과",
-                "카림에 있는 어린이치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "아이끌림 치과",
+                    "clinic_name": "아이끌림치과의원",
                     "sentiment": "긍정",
                     "reason": "원장님과 간호사 모두 좋다는 후기가 있음."
-                },
-                {
-                    "clinic_name": "카림에 있는 어린이치과",
-                    "sentiment": "부정",
-                    "reason": "너무 별로였다는 경험담이 있음."
                 }
             ],
             "main_keywords": [
@@ -784,7 +736,7 @@
                 "치아 맹출"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
+                "구강외과"
             ]
         }
     },
@@ -794,7 +746,7 @@
         "article_id": "12850486",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRva2NoaSIsImFydGljbGVJZCI6MTI4NTA0ODYsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.p7HpHcUtT20eSSCETkn_56xH7iwqqbM3LQKnIyguWlw",
         "cafe_name": "독취사-취업,대학생,대기업,공기업,GSAT,NCS,인턴,공모전,토익",
-        "date": "2024.12.03.",
+        "date": "2024.12.03",
         "preview": "양악수술후기, 동탄2임플란트, 돌출입수술, 치통, 치아교정할부, 메가젠임플란트주가, 안산 임플란트, 치과임플란트비용, 임플란트견적, 임플란트실밥제거후음주, 인계동사랑니, 영등포임플란트, 충치치과, 부산수면임플란트, 완주 임플란트, 포천 임플란트, 틀니잘하는치과, 대학병원임플란트, 레이저임플란트, 나주 임플란트, 광주 임플란트, 턱관절두통, 앞니임플란트임시치아, 크라운치료비용, 수면치료치과...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -852,7 +804,7 @@
         "article_id": "64735",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRsbHExMTFjdSIsImFydGljbGVJZCI6NjQ3MzUsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.MpvgkhmDalSs1mqXuBxRylvpDLTxfYNZ14JRGJvOylk",
         "cafe_name": "세상 모든 정보 여기에",
-        "date": "2024.12.30.",
+        "date": "2024.12.30",
         "preview": "최근 아이들뿐만 아니라 단정한 이미지를 중요시하여 투명교정이 유행하기도 하였습니다. 특히 야외에서 마스크를 벗고 있기 때 동탄치아교정 문에 양치질을 하면 칫솔이 잘 전달되지 않습니다. 잘못된 습관 때문에 깨질 수 있기 때문에 치과 정밀검사를 통해 세밀한 상담이 중요했습니다. 한 번 정도 받는 것도 좋았습니다. 세 번째는 정기적인 치과 방문 부담을 경감하는 방법도 다릅니",
         "comment_preview": [],
         "is_related_analysis": {
@@ -899,7 +851,7 @@
         "article_id": "2957",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImVjb2d5bSIsImFydGljbGVJZCI6Mjk1NywiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.gSf_fMq0ljtvzHg0c_T33ECHgS_5p9JLHxhhkljPr_E",
         "cafe_name": "에코짐ecogym",
-        "date": "2024.12.09.",
+        "date": "2024.12.09",
         "preview": "서울라미플란트치과교정과치과의원 항목 내용 주소 경기 화성시 동탄대로 489 우성타워 5층 전문의 구성 교정과, 치주과, 통합치의학과 전문의 4명 주된 서비스 수면임플란트, 수면매복사랑니 발치, 인비절라인 교정 서울라미플란트치과는 동탄역 근처 우성타워 5층에 위치하여 접근성이 뛰어납니다. 이 치과는 네 명의 전문의가 상주하며, 각자의 분야에서 탁월한 역량을 자랑합니다. 특히 수면 임플란트와 수면...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -953,7 +905,7 @@
         "article_id": "5692",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im9yZ2FuaWNmYW1pbHkiLCJhcnRpY2xlSWQiOjU2OTIsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.EtDmDzt1cGEpiiW9fL7OQXVXo5S0RFC8W3CBvg222Ck",
         "cafe_name": "♧건강한 마을♧(친환경,유기농,건강식품,다이어트,효소,오가닉)",
-        "date": "2024.12.23.",
+        "date": "2024.12.23",
         "preview": "서울라미플란트치과교정과치과의원 항목 내용 주소 경기 화성시 동탄대로 489, 우성타워 5층 전문의 구성 교정과, 치주과, 통합치의학과 전문의 4명 주된 서비스 수면임플란트, 수면매복사랑니발치, 인비절라인교정 서울라미플란트치과교정과치과의원은 동탄역과 가까운 우성타워 5층에 위치하여 높은 접근성을 자랑합니다. 이곳은 네 명의 전문의가 상주하며, 각 분야에서 뛰어난 역량을 발휘하고 있습니다. 특히...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -985,8 +937,8 @@
                 "사랑니 발치"
             ],
             "related_treatments": [
-                "임플란트",
-                "구강외과(사랑니 발치 등)"
+                "구강외과",
+                "임플란트"
             ]
         }
     },
@@ -996,7 +948,7 @@
         "article_id": "30382",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im5hdHJhdmlhIiwiYXJ0aWNsZUlkIjozMDM4MiwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.x9ggcwR0ITb1sQe7hb-uhs-41SkjLjUefkx6Xt_nRZo",
         "cafe_name": "설탕보다 나트라비아!! 천연 스테비아 입니다.",
-        "date": "2024.12.31.",
+        "date": "2024.12.31",
         "preview": "진료 동탄주치과 경기 화성시 동탄솔빛로 64 가희프라자 2층, 3층 0507-1434-0805 정직하고 깨끗한 치료 라미네이트 시술에 대한 이해 라미네이트는 치아의 외관을 개선하는 시술로, 손상된 치아의 모양이나 색상을 보완해주기에 효과적이에요. 이 시술은 특히 자신감을 원하는 분들에게 적합하죠. 라미네이트를 고민할 때, 고려해야 할 사항은 다음과 같습니다: 재료 종류: 라미네이트는 다양한 재료로 제작되며...",
         "comment_preview": [],
         "is_related_analysis": {
@@ -1006,12 +958,10 @@
         "views": 6,
         "comments": [],
         "analysis": {
-            "mentioned_clinics": [
-                "동탄주치과"
-            ],
+            "mentioned_clinics": [],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "동탄주치과",
+                    "clinic_name": "동탄주치과의원",
                     "sentiment": "중립",
                     "reason": "본문에서 치과 정보와 라미네이트 시술에 대한 설명만 제공하고 있으며, 환자의 경험이나 평판에 대한 언급은 없습니다."
                 }
@@ -1024,43 +974,8 @@
                 "비용"
             ],
             "related_treatments": [
-                "임플란트",
                 "교정치료",
-                "심미치료"
-            ]
-        }
-    },
-    {
-        "title": "경기도 화성시 임플란트 잘하는 병원 6곳 추천",
-        "link": "https://cafe.naver.com/2009garden/4893?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6IjIwMDlnYXJkZW4iLCJhcnRpY2xlSWQiOjQ4OTMsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.s-HrffUmDrviDLN7o7h2x214U9Zp60r-U1jzMl_k_zU",
-        "article_id": "2009",
-        "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6IjIwMDlnYXJkZW4iLCJhcnRpY2xlSWQiOjQ4OTMsImlzc3VlZEF0IjoxNzUzODA4MDk2Njg5fQ.s-HrffUmDrviDLN7o7h2x214U9Zp60r-U1jzMl_k_zU",
-        "cafe_name": "내소원內瀟園",
-        "date": "2024.12.15.",
-        "preview": "채움치과의원 동탄 항목 내용 이름 채움치과의원 동탄 주소 경기 화성시 동탄대로 495 동탄역리치안 401, 402호 리뷰 개수 8 전화번호 0507-1388-2275 채움치과의원 동탄은 환자에게 우수한 치과 치료를 제공하기 위해 설립된 치과 의원입니다. 이 의원은 SRT 동탄역 인근에 위치하여 접근성이 뛰어나며, 지속적인 고객 관리와 진료 향상에 주력하고 있습니다. 혁신적이고 현대적인 시설과 강력한 전문 의료진을 보유한...",
-        "comment_preview": [],
-        "is_related_analysis": {
-            "is_related": true
-        },
-        "club_id": "19180393",
-        "analysis": {
-            "mentioned_clinics": [
-                "채움치과의원 동탄"
-            ],
-            "clinic_sentiments": [
-                {
-                    "clinic_name": "채움치과의원 동탄",
-                    "sentiment": "중립",
-                    "reason": "본문에 병원의 위치, 시설, 의료진에 대한 정보만 제공되었고, 환자의 긍정적 또는 부정적 경험을 나타내는 내용은 없습니다."
-                }
-            ],
-            "main_keywords": [
-                "임플란트",
-                "동탄",
-                "치과 병원 추천",
-                "채움치과의원"
-            ],
-            "related_treatments": [
+                "심미치료",
                 "임플란트"
             ]
         }
@@ -1071,7 +986,7 @@
         "article_id": "2716",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InNsZW5kZXJ0biIsImFydGljbGVJZCI6MjcxNiwiaXNzdWVkQXQiOjE3NTM4MDgwOTY2ODl9.yVT1t__1h1PJW1ynIqOY8Q0ytjCLboNFwMbQIzHgPcE",
         "cafe_name": "슬랜더톤",
-        "date": "2024.12.04.",
+        "date": "2024.12.04",
         "preview": "질문 2: 서동탄역 근처 임플란트 치과의 가격대는 어떻게 되나요? 서동탄역 근처 임플란트 전문 병원들은 대체로 1,000,000원에서 1,500,000원 사이의 가격대로 형성되어 있습니다. 각 병원마다 서비스와 품질을 고려하여 적절한 가격을 제시하고 있습니다. 질문 3: 어떻게 하면 가격비교를 통해 최상의 임플란트 치료를 받을 수 있을까요? 가격비교를 통해 최상의 임플란트 치료를 받기 위해서는 다양한 병원의...",
         "comment_preview": [],
         "is_related_analysis": {

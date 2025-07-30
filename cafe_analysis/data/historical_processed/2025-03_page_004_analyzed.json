@@ -5,7 +5,7 @@
         "article_id": "2371837",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRvbmd0YW50d29tb20iLCJhcnRpY2xlSWQiOjIzNzE4MzcsImlzc3VlZEF0IjoxNzUzODA5NDc4OTY5fQ.g15PQeVrgFlIZ_A9Pq55f9V49n0YGDmm_ZQvBuFSdvY",
         "cafe_name": "동탄2신도시맘 ♣ 동탄투맘 모여요~ [동투맘] ^^ ♣",
-        "date": "2025.03.12.",
+        "date": "2025.03.12",
         "preview": "딸아이가 교정치료 완료하고 사랑니가 나오고 있는데요... 신경이랑 가깝다고 하네요 게다가 옆으로 누워 나오고 있는^^; 이런 케이스 잘하는 치과 추천부탁드려요~ 호수 인근이면 더 좋아요^^",
         "comment_preview": [],
         "is_related_analysis": {
@@ -57,23 +57,21 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "탑치과",
-                "더사랑",
-                "동탄센트럴치과"
+                "동탄센트럴치과병원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "탑치과",
+                    "clinic_name": "동탄탑치과의원",
                     "sentiment": "긍정",
                     "reason": "사랑니를 잘 뽑는다는 추천이 두 건 있음."
                 },
                 {
-                    "clinic_name": "더사랑",
+                    "clinic_name": "더사랑치과의원",
                     "sentiment": "중립",
                     "reason": "빠르게 잘 뽑았다는 후기가 있으나, 신경과 가까운 사랑니 케이스에 대한 추가적인 정보는 없음."
                 },
                 {
-                    "clinic_name": "동탄센트럴치과",
+                    "clinic_name": "동탄센트럴치과병원",
                     "sentiment": "긍정",
                     "reason": "눕고 째야 하는 케이스에 큰 치과를 추천하며 언급됨."
                 }
@@ -86,7 +84,7 @@
                 "교정 후 사랑니"
             ],
             "related_treatments": [
-                "구강외과(사랑니 발치 등)"
+                "구강외과"
             ]
         }
     },
@@ -96,7 +94,7 @@
         "article_id": "1718105",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Im9oYW5nZ29uZyIsImFydGljbGVJZCI6MTcxODEwNSwiaXNzdWVkQXQiOjE3NTM4MDk0Nzg5Njl9.hqnpLTMN_0Exdfgr5vkhTU3NOwPx2KhireBTVEDdVtk",
         "cafe_name": "<오행공> 오산맘들의 행복한 공간",
-        "date": "2025.03.14.",
+        "date": "2025.03.14",
         "preview": "다 늙은 ㅋㅋ 제가 할 거라서요. 원장님이자 전문의인 곳 추천해 주세요. 오산. 동탄 다 괜찮아용~~^^",
         "comment_preview": [],
         "is_related_analysis": {
@@ -144,47 +142,28 @@
         ],
         "analysis": {
             "mentioned_clinics": [
-                "연세바로치과",
-                "이젤",
-                "2젤",
-                "코코치과",
-                "서울수려한치과의원"
+                "연세바로치과교정과치과의원"
             ],
             "clinic_sentiments": [
                 {
-                    "clinic_name": "연세바로치과",
+                    "clinic_name": "연세바로치과교정과치과의원",
                     "sentiment": "긍정",
                     "reason": "동탄 라스플로레스에 위치하며, 전문의이고 경험이 많음. 주차 편하고 예약 시간 맞춰 진료하며 직원들이 친절하다는 댓글이 있음."
                 },
                 {
-                    "clinic_name": "이젤",
+                    "clinic_name": "이젤치과의원",
                     "sentiment": "긍정",
                     "reason": "교정을 하고 있으며, 본인도 교정을 받고 있다는 댓글이 있어 긍정적인 언급으로 판단됨."
                 },
                 {
-                    "clinic_name": "2젤",
+                    "clinic_name": "이젤치과의원",
                     "sentiment": "긍정",
                     "reason": "이젤과 동일한 곳으로 추정되며, 교정을 받고 있다는 댓글이 있어 긍정적인 언급으로 판단됨."
                 },
                 {
-                    "clinic_name": "코코치과",
+                    "clinic_name": "코코치과교정과치과의원",
                     "sentiment": "중립",
                     "reason": "단순 언급만 있어 긍정/부정 판단 근거 없음."
-                },
-                {
-                    "clinic_name": "서울수려한치과의원",
-                    "sentiment": "긍정",
-                    "reason": "선생님이 친절하다는 댓글이 있어 긍정적인 언급으로 판단됨."
-                },
-                {
-                    "clinic_name": "강남 (지역) 추천 치과",
-                    "sentiment": "긍정",
-                    "reason": "교정전문의 박사이고 자상하며 비용 면에서도 만족스럽다는 추천 댓글이 있음. (병원명 불명확, 지역명으로 표시)"
-                },
-                {
-                    "clinic_name": "카페 추천 받은 치과 (실명 미언급)",
-                    "sentiment": "부정",
-                    "reason": "카페에서 추천받은 곳으로 갔으나 진심 후회하며, 직접 상담 가야 한다고 강하게 부정적인 후기를 남김."
                 }
             ],
             "main_keywords": [
@@ -205,7 +184,7 @@
         "article_id": "9470",
         "art_token": "ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImpvaG5hZGFuMTc0MSIsImFydGljbGVJZCI6OTQ3MCwiaXNzdWVkQXQiOjE3NTM4MDk0Nzg5Njl9.SrTDzTD1BjC0IVwKyGyiBY6B8O1IeoO6uLvD1xu5xMk",
         "cafe_name": "경매아라누리",
-        "date": "2025.03.10.",
+        "date": "2025.03.10",
         "preview": "(475m) ㆍ나노치과의원(498m) ㆍ동탄S소아청소년과의원(498m) ㆍ해바라기약국(498m) ㆍ서울바른정형외과의원(531m) ㆍ삼성키즈소아청소년과의원(531m) ㆍ동탄CL치과(531m) ㆍ서울바른내과의원(531m) ㆍ메디팜동탄약국(531m) ㆍ에스케이가정의학과의원(531m) 환경 ㆍ장뱅이골(508m) ㆍ갯골(549m) ㆍ초막골(551m) 동탄2신도시한신더휴아파트 경기도 화성시 동탄순환대로20길 70",
         "comment_preview": [],
         "is_related_analysis": {
