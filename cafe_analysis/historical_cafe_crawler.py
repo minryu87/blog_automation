@@ -43,11 +43,14 @@ class HistoricalCafeCrawler:
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         # 테스트 모드일 경우 체크포인트 파일명 변경
         checkpoint_filename = 'checkpoint_test.json' if test_mode else 'checkpoint.json'
+        failed_tasks_filename = 'failed_tasks_test.json' if test_mode else 'failed_tasks.json'
         self.checkpoint_path = os.path.join(self.base_dir, 'data', 'historical_raw', checkpoint_filename)
+        self.failed_tasks_path = os.path.join(self.base_dir, 'data', failed_tasks_filename)
         self.raw_data_dir = os.path.join(self.base_dir, 'data', 'historical_raw')
         self.test_mode = test_mode
 
         self.club_id_cache = {}
+        self.failed_tasks = [] # 실패한 작업을 기록할 리스트
         
         # LLM 에이전트 및 프롬프트 초기화
         try:
@@ -106,6 +109,12 @@ class HistoricalCafeCrawler:
             json.dump(checkpoint_data, f, indent=4)
         logging.info(f"체크포인트 저장됨: {year}-{month}, page {page} 완료. 다음 URL: {str(next_page_url)[:100]}...")
 
+    def _save_failed_tasks(self):
+        """실패한 작업 목록을 JSON 파일에 저장합니다."""
+        with open(self.failed_tasks_path, 'w', encoding='utf-8') as f:
+            json.dump(self.failed_tasks, f, ensure_ascii=False, indent=4)
+        logging.info(f"실패한 작업 {len(self.failed_tasks)}개가 '{self.failed_tasks_path}'에 저장되었습니다.")
+
     async def run_async(self):
         """비동기 크롤러 실행"""
         logging.info("===== 네이버 카페 과거 데이터 크롤링 시작 (비동기) =====")
@@ -147,7 +156,29 @@ class HistoricalCafeCrawler:
                 if current_month <= self.end_date:
                     await asyncio.sleep(random.uniform(5, 10))
 
-        logging.info("===== 모든 기간 크롤링 완료 =====")
+        logging.info("===== 1차 크롤링 모든 기간 작업 완료 =====")
+
+        if self.failed_tasks:
+            logging.info(f"\n===== 실패한 {len(self.failed_tasks)}개 작업에 대한 1회 재시도를 시작합니다. =====")
+            
+            tasks_to_retry = self.failed_tasks.copy()
+            self.failed_tasks.clear() # 재시도 실행을 위해 현재 실패 목록을 비웁니다.
+
+            async with aiohttp.ClientSession(headers=headers) as session:
+                for task in tqdm(tasks_to_retry, desc="실패 작업 재시도 중"):
+                    await self._process_month_async(
+                        session, task['year'], task['month'], task['page'], task['url']
+                    )
+
+            if self.failed_tasks:
+                logging.warning(f"재시도 후에도 {len(self.failed_tasks)}개의 작업이 최종 실패했습니다.")
+                self._save_failed_tasks()
+            else:
+                logging.info("모든 재시도 작업이 성공했습니다!")
+                if os.path.exists(self.failed_tasks_path):
+                    os.remove(self.failed_tasks_path)
+        
+        logging.info("===== 모든 작업 최종 완료 =====")
 
     async def _process_month_async(self, session, year, month, start_page=1, start_url=None):
         """한 달 단위의 크롤링을 조율하고, 1페이지와 2페이지 이후 과정을 분리하여 처리합니다."""
@@ -183,6 +214,8 @@ class HistoricalCafeCrawler:
         response_text = await self._fetch_page_async(session, start_url)
         if not response_text:
             logging.error(f"[{year}-{month} {page}페이지] HTML 로딩에 실패했습니다.")
+            failed_task = {'year': year, 'month': month, 'page': page, 'url': start_url}
+            self.failed_tasks.append(failed_task)
             return None
 
         articles, next_page_url = self._parse_articles_from_html(response_text)
@@ -205,6 +238,8 @@ class HistoricalCafeCrawler:
             response_text = await self._fetch_page_async(session, current_url)
             if not response_text:
                 logging.error(f"[{year}-{month} {page}페이지] JSON 로딩에 실패했습니다. 이 달의 작업을 중단합니다.")
+                failed_task = {'year': year, 'month': month, 'page': page, 'url': current_url}
+                self.failed_tasks.append(failed_task)
                 break
 
             articles, next_page_url = self._parse_articles_from_json(response_text)
@@ -637,7 +672,7 @@ if __name__ == '__main__':
     async def main():
         crawler = HistoricalCafeCrawler(
             start_date=datetime(2024, 6, 1),
-            end_date=datetime(2024, 6, 15),
+            end_date=datetime(2025, 7, 29),
             keyword="동탄 치과",
             test_mode=True
         )

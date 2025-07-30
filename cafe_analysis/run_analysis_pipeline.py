@@ -71,8 +71,8 @@ def main():
 
     try:
         while True:
-            # 처리할 파일 목록 찾기 (숨김 파일 등 제외)
-            files_to_process = [f for f in os.listdir(dirs["raw"]) if f.endswith('_test.json')]
+            # 처리할 파일 목록 찾기 ('_processed_test.json'으로 끝나는 파일만 대상으로 지정)
+            files_to_process = [f for f in os.listdir(dirs["raw"]) if f.endswith('_processed_test.json')]
             
             if not files_to_process:
                 logging.info(f"'{dirs['raw']}'에 처리할 파일이 없습니다. 60초 후 다시 확인합니다.")

@@ -52,7 +52,7 @@ class CafePostAnalyzer:
 
         **추출할 정보:**
         1.  **mentioned_clinics (list of strings):** 게시글에서 언급된 모든 치과 병원 이름을 정확히 추출해주세요. (예: ["내이튼치과", "서울S치과"])
-        2.  **clinic_sentiments (list of objects):** 각 병원에 대한 평판(긍정, 부정, 중립)과 그 이유를 간략하게 추출해주세요. (예: [{"clinic_name": "내이튼치과", "sentiment": "긍정", "reason": "대표원장이 보존과 전문의이고 필요한 치료만 권한다는 댓글이 있음."}])
+        2.  **clinic_sentiments (list of objects):** 각 병원에 대한 평판(긍정, 부정, 중립)과 그 이유를 간략하게 추출해주세요. (예: [{{"clinic_name": "내이튼치과", "sentiment": "긍정", "reason": "대표원장이 보존과 전문의이고 필요한 치료만 권한다는 댓글이 있음."}}])
         3.  **main_keywords (list of strings):** 이 게시글에서 드러나는 환자의 핵심적인 관심사나 키워드를 5개 이내로 추출해주세요. (예: ["충치 치료", "과잉진료 없는 곳", "아이 치과", "신경치료 비용", "임플란트 후기"])
         4.  **related_treatments (list of strings):** 게시글 내용과 가장 밀접한 관련이 있는 진료 분야를 아래 **[지정된 목록]** 에서 모두 선택해주세요.
 
