@@ -4,6 +4,7 @@ import logging
 import asyncio
 import glob
 from datetime import datetime
+from collections import OrderedDict
 
 import pandas as pd
 from tqdm import tqdm
@@ -52,6 +53,34 @@ class FinalAnalyzer:
         - 언급된 치과가 없으면 `mentioned_clinics`와 `clinic_sentiments`는 빈 리스트 `[]`로 반환하세요.
         - 평판을 판단할 근거가 부족하면 `sentiment`는 '중립'으로 지정하세요.
         """
+
+    def _fix_mentioned_clinics(self, articles):
+        """
+        clinic_sentiments의 clinic_name들을 mentioned_clinics에 추가하여 중복 없는 리스트로 만듭니다.
+        """
+        for article in articles:
+            analysis = article.get('analysis', {})
+            if not analysis:
+                continue
+            
+            mentioned_clinics = analysis.get('mentioned_clinics', [])
+            clinic_sentiments = analysis.get('clinic_sentiments', [])
+            
+            # clinic_sentiments에서 clinic_name 추출
+            sentiment_clinics = []
+            for sentiment in clinic_sentiments:
+                clinic_name = sentiment.get('clinic_name')
+                if clinic_name:
+                    sentiment_clinics.append(clinic_name)
+            
+            # 모든 clinic_name을 합쳐서 중복 제거
+            all_clinics = mentioned_clinics + sentiment_clinics
+            unique_clinics = list(OrderedDict.fromkeys(all_clinics))  # 순서 유지하면서 중복 제거
+            
+            # mentioned_clinics 업데이트
+            analysis['mentioned_clinics'] = unique_clinics
+        
+        return articles
 
     def _load_all_processed_data(self):
         """historical_raw 폴더의 모든 _processed.json 파일을 로드하여 합칩니다."""
@@ -113,6 +142,11 @@ class FinalAnalyzer:
         results = []
         for f in tqdm.as_completed([asyncio.ensure_future(task) for task in analysis_tasks], total=len(analysis_tasks), desc="심층 분석 진행 중"):
             results.append(await f)
+
+        # mentioned_clinics 수정
+        logging.info("mentioned_clinics 수정 작업을 시작합니다.")
+        results = self._fix_mentioned_clinics(results)
+        logging.info("mentioned_clinics 수정 작업이 완료되었습니다.")
 
         final_df = pd.DataFrame(results)
         
