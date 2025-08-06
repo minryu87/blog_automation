@@ -246,7 +246,7 @@ class FinalRankAnalyzer:
 
 if __name__ == "__main__":
     analyzer = FinalRankAnalyzer(
-        data_path='blog_automation/place_analysis/data/raw_data/dongtan_chigwa/rank_vs60.csv',
+        data_path='blog_automation/place_analysis/data/raw_data/동탄치과/vs60.csv',
         result_path='blog_automation/place_analysis/analysis_result'
     )
     analyzer.run_all()

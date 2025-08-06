@@ -35,13 +35,13 @@ class OptimalTimeSeriesAnalyzer:
         dataframes = []
         for tp in time_points:
             try:
-                file_path = os.path.join(self.data_dir, f'rank_vs{tp}.csv')
+                file_path = os.path.join(self.data_dir, f'vs{tp}.csv')
                 df = self._clean_df(pd.read_csv(file_path))
                 df = df.add_suffix(f'_{tp}')
                 df.rename(columns={f'company_name_category_{tp}': 'company_name_category'}, inplace=True)
                 dataframes.append(df)
             except FileNotFoundError:
-                print(f"경고: rank_vs{tp}.csv 파일을 찾을 수 없습니다. 분석에서 제외합니다.")
+                print(f"경고: vs{tp}.csv 파일을 찾을 수 없습니다. 분석에서 제외합니다.")
         
         # 모든 데이터프레임을 company_name_category 기준으로 병합
         self.wide_df = reduce(lambda left, right: pd.merge(left, right, on='company_name_category', how='outer'), dataframes)
@@ -198,7 +198,7 @@ class OptimalTimeSeriesAnalyzer:
 
 if __name__ == "__main__":
     analyzer = OptimalTimeSeriesAnalyzer(
-        data_dir='blog_automation/place_analysis/data/raw_data/dongtan_chigwa',
+        data_dir='blog_automation/place_analysis/data/raw_data/동탄치과',
         result_path='blog_automation/place_analysis/analysis_result'
     )
     if analyzer.load_and_integrate_data() is not None:
