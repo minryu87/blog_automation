@@ -4,6 +4,7 @@ import os
 import glob
 import warnings
 import re
+import json
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from markdown2 import Markdown
@@ -56,11 +57,11 @@ TARGET_QUERY = '동탄치과'  # 검색 키워드
 RAW_DATA_DIR = f'blog_automation/place_analysis/data/raw_data/{TARGET_QUERY}'
 RESULT_PATH = 'blog_automation/place_analysis/analysis_result'
 os.makedirs(RESULT_PATH, exist_ok=True)
-REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'naver_place_analysis_v0.08_report.html')
+REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'naver_place_analysis_v0.09_report.html')
 TARGET_CLINIC = '내이튼치과의원'
 ANALYSIS_DATE = '2025-08-04'
 
-class NaverPlaceAnalyzerV0_08:
+class NaverPlaceAnalyzerV0_09:
     def __init__(self, data_dir, result_path):
         self.data_dir = data_dir
         self.result_path = result_path
@@ -171,7 +172,18 @@ class NaverPlaceAnalyzerV0_08:
         df_with_past_tiers = self._assign_tiers_by_rule(df_for_past_tiering)
         df_with_past_tiers.rename(columns={'tier': 'unified_tier_past'}, inplace=True)
         
+        # 30일 전 데이터도 로드
+        past_30_data = self.time_series_df[self.time_series_df['days_ago'] == 30].copy()
+        if not past_30_data.empty:
+            past_30_data = past_30_data[['company_name', 'rank', 'visitor_reviews', 'blog_reviews']].rename(
+                columns={'rank': 'rank_30d_ago', 'visitor_reviews': 'visitor_reviews_30d_ago', 'blog_reviews': 'blog_reviews_30d_ago'}
+            )
+        
         final_df = pd.merge(df_with_current_tiers, df_with_past_tiers[['company_name', 'rank', 'unified_tier_past']], on='company_name', suffixes=('_current', '_past'), how='left')
+        
+        # 30일 전 데이터 병합
+        if not past_30_data.empty:
+            final_df = pd.merge(final_df, past_30_data, on='company_name', how='left')
         
         past_reviews = self.time_series_df[self.time_series_df['days_ago'] == 60][['company_name', 'visitor_reviews', 'blog_reviews']].set_index('company_name')
         
@@ -284,17 +296,131 @@ class NaverPlaceAnalyzerV0_08:
         }
 
     def analyze_success_factors(self, final_df):
-        print("\n[단계 3] 순위 상승 핵심 요인 분석")
-        final_df['rank_change'] = pd.to_numeric(final_df['rank_past'], errors='coerce').fillna(0) - pd.to_numeric(final_df['rank_current'], errors='coerce').fillna(0)
-        climbers = final_df[final_df['rank_change'] > 10].sort_values(by='rank_change', ascending=False).head(10)
-        prompt = f"""## 순위 상승의 핵심 요인 분석 (성공 방정식)
-        ### 분석 요청사항
-        '{TARGET_QUERY}' 시장에서 최근 60일간 순위가 10계단 이상 급등한 '도전자' 그룹의 성공 요인을 분석하고, 이를 바탕으로 '성공 방정식'을 정의해주세요.
-        ### 데이터 (순위 급상승 업체)
-        {climbers.to_markdown(index=False)}
-        """
-        response = self.agent.run(prompt, max_tokens=16384)
-        return {"title": "순위 상승의 핵심 요인 분석", "content": response.content if response else "LLM 분석 실패"}
+        print("\n[단계 3] 순위 상승 핵심 요인 분석 (30일 기준)")
+        
+        # 30일 전 대비 순위 변화 계산
+        if 'rank_30d_ago' in final_df.columns:
+            final_df['rank_change_30d'] = pd.to_numeric(final_df['rank_30d_ago'], errors='coerce').fillna(0) - pd.to_numeric(final_df['rank_current'], errors='coerce').fillna(0)
+            rank_change_col = 'rank_change_30d'
+            days_ago = 30
+        else:
+            # 30일 데이터가 없으면 60일 데이터 사용
+            print("경고: 30일 전 데이터가 없어 60일 전 데이터를 사용합니다.")
+            final_df['rank_change_60d'] = pd.to_numeric(final_df['rank_past'], errors='coerce').fillna(0) - pd.to_numeric(final_df['rank_current'], errors='coerce').fillna(0)
+            rank_change_col = 'rank_change_60d'
+            days_ago = 60
+        
+        # 10계단 이상 급등한 업체만 필터링
+        rapid_climbers = final_df[final_df[rank_change_col] >= 10].copy()
+        
+        if rapid_climbers.empty:
+            return {
+                "climber_time_series": {},
+                "tier_analyses": {}
+            }
+        
+        # Tier별로 그룹화
+        climbers_by_tier = rapid_climbers.groupby('unified_tier')
+        
+        # 각 Tier별 급등 업체의 시계열 데이터 수집
+        climber_time_series = {}
+        tier_analyses = {}
+        
+        # 값 추출 헬퍼 함수
+        def get_value(data, key, default=0):
+            try:
+                val = data[key]
+                if isinstance(val, pd.Series):
+                    return val.iloc[0] if len(val) > 0 else default
+                return val if pd.notna(val) else default
+            except:
+                return default
+        
+        for tier, tier_climbers in climbers_by_tier:
+            tier_climber_data = []
+            
+            for _, company in tier_climbers.iterrows():
+                company_name = get_value(company, 'company_name', '')
+                
+                # 시계열 데이터 수집
+                series_data = {
+                    'company_name': company_name,
+                    'current_tier': get_value(company, 'unified_tier', ''),
+                    'rank_change': int(get_value(company, rank_change_col, 0)),
+                    'data_points': []
+                }
+                
+                # 시계열 데이터에서 각 시점별 데이터 가져오기
+                time_points = [30, 20, 10, 5, 0]
+                
+                for point in time_points:
+                    if point == 0:
+                        # 현재 데이터
+                        series_data['data_points'].append({
+                            'days_ago': 0,
+                            'rank': int(get_value(company, 'rank_current', 999)),
+                            'visitor_reviews': int(get_value(company, 'visitor_reviews', 0)),
+                            'blog_reviews': int(get_value(company, 'blog_reviews', 0))
+                        })
+                    else:
+                        # 과거 데이터 조회
+                        past_data = self.time_series_df[
+                            (self.time_series_df['company_name'] == company_name) & 
+                            (self.time_series_df['days_ago'] == point)
+                        ]
+                        
+                        if not past_data.empty:
+                            past_row = past_data.iloc[0]
+                            rank_val = past_row['rank'].iloc[0] if isinstance(past_row['rank'], pd.Series) else past_row['rank']
+                            visitor_val = past_row['visitor_reviews'].iloc[0] if isinstance(past_row['visitor_reviews'], pd.Series) else past_row['visitor_reviews']
+                            blog_val = past_row['blog_reviews'].iloc[0] if isinstance(past_row['blog_reviews'], pd.Series) else past_row['blog_reviews']
+                            
+                            series_data['data_points'].append({
+                                'days_ago': point,
+                                'rank': int(rank_val) if pd.notna(rank_val) else 999,
+                                'visitor_reviews': int(visitor_val) if pd.notna(visitor_val) else 0,
+                                'blog_reviews': int(blog_val) if pd.notna(blog_val) else 0
+                            })
+                
+                # 데이터 포인트가 2개 이상인 경우만 추가
+                if len(series_data['data_points']) >= 2:
+                    tier_climber_data.append(series_data)
+            
+            climber_time_series[tier] = tier_climber_data
+            
+            # LLM을 통한 Tier별 분석
+            if tier_climber_data:
+                climber_details = []
+                for climber in tier_climber_data:
+                    past_data = climber['data_points'][0]
+                    current_data = climber['data_points'][1]
+                    
+                    climber_details.append(f"""
+- **{climber['company_name']}**
+  - 순위 변화: {past_data['rank']}위 → {current_data['rank']}위 ({climber['rank_change']}계단 상승)
+  - 방문자 리뷰: {past_data['visitor_reviews']}개 → {current_data['visitor_reviews']}개 (+{current_data['visitor_reviews'] - past_data['visitor_reviews']}개)
+  - 블로그 리뷰: {past_data['blog_reviews']}개 → {current_data['blog_reviews']}개 (+{current_data['blog_reviews'] - past_data['blog_reviews']}개)
+                    """)
+                
+                prompt = f"""## {tier} 급등 업체 상세 분석
+
+### {days_ago}일 기준 10계단 이상 상승하여 {tier}에 진입한 업체들:
+{''.join(climber_details)}
+
+### 분석 요청사항:
+1. 각 업체별로 급등의 주요 원인을 분석해주세요.
+2. 리뷰 증가량과 순위 상승의 상관관계를 평가해주세요.
+3. 이들 업체의 공통된 성공 패턴이 있다면 무엇인지 정리해주세요.
+4. {tier} 진입을 위한 핵심 전략을 제시해주세요.
+"""
+                
+                response = self.agent.run(prompt, max_tokens=8192)
+                tier_analyses[tier] = response.content if response else f"{tier} 급등 업체 분석 실패"
+        
+        return {
+            "climber_time_series": climber_time_series,
+            "tier_analyses": tier_analyses
+        }
 
     def analyze_target_clinic(self, df_with_tiers):
         print(f"\n[단계 4] '{TARGET_CLINIC}' 맞춤 성장 전략")
@@ -383,7 +509,7 @@ class NaverPlaceAnalyzerV0_08:
         plt.tight_layout()
         
         # 차트 저장
-        chart_filename = 'tier_analysis_chart_v0.08.png'
+        chart_filename = 'tier_analysis_chart_v0.09.png'
         chart_path = os.path.join(self.result_path, chart_filename)
         plt.savefig(chart_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -895,8 +1021,212 @@ class NaverPlaceAnalyzerV0_08:
         
         return tier_html, extra_content
     
-    def generate_html_report_v0_08(self, sections):
-        print("\nHTML 보고서 생성 (v0.08)...")
+    def _generate_climber_chart_html(self, tier, climber_data):
+        """Tier별 급등 업체를 위한 인터랙티브 차트 HTML 생성"""
+        
+        if not climber_data:
+            return ""
+        
+        # 차트 ID를 Tier별로 고유하게 생성
+        chart_id = f"climberChart{tier.replace(' ', '')}"
+        
+        # 차트 HTML
+        chart_html = f"""
+        <div class="climber-chart-container" style="margin: 30px 0;">
+            <h4>{tier} - 30일 기준 10계단 이상 상승 업체 분석</h4>
+            <div style="position: relative; height: 500px; margin: 20px 0;">
+                <canvas id="{chart_id}"></canvas>
+            </div>
+        </div>
+        
+        <script>
+        (function() {{
+            const climberData = {json.dumps(climber_data)};
+            
+            // 데이터셋 준비
+            const datasets = [];
+            const colors = [
+                '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+                '#1abc9c', '#34495e', '#e67e22', '#95a5a6', '#d35400'
+            ];
+            
+            climberData.forEach((company, idx) => {{
+                const color = colors[idx % colors.length];
+                const data = company.data_points;
+                
+                // 순위 데이터 (굵은 선)
+                datasets.push({{
+                    label: company.company_name + ' - 순위',
+                    data: data.map(p => ({{
+                        x: 30 - p.days_ago,
+                        y: p.rank
+                    }})),
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    type: 'line',
+                    yAxisID: 'y1',
+                    companyName: company.company_name,
+                    dataType: 'rank'
+                }});
+                
+                // 방문자 리뷰 데이터
+                datasets.push({{
+                    label: company.company_name + ' - 방문자 리뷰',
+                    data: data.map(p => ({{
+                        x: 30 - p.days_ago,
+                        y: p.visitor_reviews
+                    }})),
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    type: 'line',
+                    yAxisID: 'y2',
+                    companyName: company.company_name,
+                    dataType: 'visitor'
+                }});
+                
+                // 블로그 리뷰 데이터
+                datasets.push({{
+                    label: company.company_name + ' - 블로그 리뷰',
+                    data: data.map(p => ({{
+                        x: 30 - p.days_ago,
+                        y: p.blog_reviews
+                    }})),
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    borderWidth: 1,
+                    borderDash: [2, 2],
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    type: 'line',
+                    yAxisID: 'y2',
+                    companyName: company.company_name,
+                    dataType: 'blog'
+                }});
+            }});
+            
+            // 차트 생성
+            const ctx = document.getElementById('{chart_id}').getContext('2d');
+            new Chart(ctx, {{
+                type: 'line',
+                data: {{ datasets: datasets }},
+                options: {{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {{
+                        mode: 'nearest',
+                        intersect: false
+                    }},
+                    plugins: {{
+                        legend: {{
+                            display: true,
+                            position: 'bottom',
+                            labels: {{
+                                filter: function(item) {{
+                                    return item.text.includes('순위');
+                                }}
+                            }}
+                        }},
+                        tooltip: {{
+                            callbacks: {{
+                                title: function(context) {{
+                                    const point = context[0];
+                                    const daysAgo = 60 - point.parsed.x;
+                                    return daysAgo === 0 ? '현재' : daysAgo + '일 전';
+                                }},
+                                label: function(context) {{
+                                    const dataset = context.dataset;
+                                    const value = context.parsed.y;
+                                    
+                                    if (dataset.dataType === 'rank') {{
+                                        return dataset.companyName + ': ' + value + '위';
+                                    }} else {{
+                                        return dataset.label + ': ' + value + '개';
+                                    }}
+                                }}
+                            }}
+                        }}
+                    }},
+                    scales: {{
+                        x: {{
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {{
+                                display: true,
+                                text: '시간'
+                            }},
+                            ticks: {{
+                                callback: function(value) {{
+                                    if (value === 0) return '30일 전';
+                                    if (value === 10) return '20일 전';
+                                    if (value === 20) return '10일 전';
+                                    if (value === 25) return '5일 전';
+                                    if (value === 30) return '현재';
+                                    return '';
+                                }}
+                            }},
+                            min: 0,
+                            max: 30
+                        }},
+                        y1: {{
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {{
+                                display: true,
+                                text: '순위'
+                            }},
+                            reverse: true,
+                            grid: {{
+                                drawOnChartArea: true
+                            }}
+                        }},
+                        y2: {{
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {{
+                                display: true,
+                                text: '리뷰 수'
+                            }},
+                            grid: {{
+                                drawOnChartArea: false
+                            }}
+                        }}
+                    }},
+                    onClick: function(evt, elements) {{
+                        if (elements.length > 0) {{
+                            const companyName = datasets[elements[0].datasetIndex].companyName;
+                            
+                            // 클릭한 회사의 모든 선을 하이라이트
+                            this.data.datasets.forEach((dataset, idx) => {{
+                                if (dataset.companyName === companyName) {{
+                                    dataset.hidden = false;
+                                    dataset.borderWidth = dataset.dataType === 'rank' ? 4 : 2;
+                                }} else {{
+                                    dataset.hidden = !dataset.hidden;
+                                }}
+                            }});
+                            
+                            this.update();
+                        }}
+                    }}
+                }}
+            }});
+        }})();
+        </script>
+        """
+        
+        return chart_html
+    
+    def generate_html_report_v0_09(self, sections):
+        print("\nHTML 보고서 생성 (v0.09)...")
         introduction_html = """
         <h2>1. 분석의 배경 및 목적</h2>
         <h3>네이버 플레이스, 병원 마케팅의 가장 중요한 전쟁터</h3>
@@ -943,10 +1273,31 @@ class NaverPlaceAnalyzerV0_08:
             if extra_content:
                 content_html += self.markdown_converter.convert(extra_content)
         
+        # 3. 순위 상승의 핵심 요인 분석 - 새로운 형식
         success_factors = sections.get('success_factors', {})
         if success_factors:
-            content_html += f"<h2>3. {success_factors.get('title', '')}</h2>"
-            content_html += self.markdown_converter.convert(success_factors.get('content', ''))
+            content_html += "<h2>3. 순위 상승의 핵심 요인 분석</h2>"
+            
+            climber_time_series = success_factors.get('climber_time_series', {})
+            tier_analyses = success_factors.get('tier_analyses', {})
+            
+            if climber_time_series:
+                total_climbers = sum(len(climbers) for climbers in climber_time_series.values())
+                content_html += f"<p>최근 30일간 10계단 이상 순위가 급상승한 업체는 총 <strong>{total_climbers}개</strong>입니다.</p>"
+                
+                # Tier별로 급등 업체 분석
+                for tier in ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']:
+                    if tier in climber_time_series and climber_time_series[tier]:
+                        # Tier별 차트 추가
+                        content_html += self._generate_climber_chart_html(tier, climber_time_series[tier])
+                        
+                        # Tier별 LLM 분석 추가
+                        if tier in tier_analyses:
+                            content_html += f"<div style='margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 10px;'>"
+                            content_html += self.markdown_converter.convert(tier_analyses[tier])
+                            content_html += "</div>"
+            else:
+                content_html += "<p>30일간 10계단 이상 순위가 급상승한 업체가 없습니다.</p>"
 
         target_strategy = sections.get('target_strategy', {})
         if target_strategy:
@@ -954,9 +1305,9 @@ class NaverPlaceAnalyzerV0_08:
             content_html += self.markdown_converter.convert(target_strategy.get('content', ''))
 
         html_template = f"""
-        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'{TARGET_QUERY}' 네이버 플레이스 순위 분석 보고서 v0.08</title>
+        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'{TARGET_QUERY}' 네이버 플레이스 순위 분석 보고서 v0.09</title>
         <style>body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;padding:20px;max-width:1200px;margin:auto;color:#333;}}h1,h2,h3{{color:#2c3e50;border-bottom:2px solid #3498db;padding-bottom:10px;}}table{{border-collapse:collapse;width:100%;margin:20px 0;box-shadow:0 2px 3px rgba(0,0,0,0.1);}}th,td{{border:1px solid #ddd;padding:12px;text-align:left;}}th{{background-color:#3498db;color:white;}}tr:nth-child(even){{background-color:#f2f9fd;}}.table-striped tbody tr:nth-of-type(odd){{background-color:rgba(0,0,0,.05);}}</style>
-        </head><body><h1>[V0.08] '{TARGET_QUERY}' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
+        </head><body><h1>[V0.09] '{TARGET_QUERY}' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
         {introduction_html}
         {content_html}
         </body></html>
@@ -967,7 +1318,7 @@ class NaverPlaceAnalyzerV0_08:
 
 
 def main():
-    analyzer = NaverPlaceAnalyzerV0_08(data_dir=RAW_DATA_DIR, result_path=RESULT_PATH)
+    analyzer = NaverPlaceAnalyzerV0_09(data_dir=RAW_DATA_DIR, result_path=RESULT_PATH)
     if analyzer.time_series_df.empty: return
     final_df, df_with_current_tiers = analyzer.create_and_analyze_tiers()
     if final_df is None: return
@@ -977,7 +1328,7 @@ def main():
         'success_factors': analyzer.analyze_success_factors(final_df),
         'target_strategy': analyzer.analyze_target_clinic(df_with_current_tiers)
     }
-    analyzer.generate_html_report_v0_08(sections)
+    analyzer.generate_html_report_v0_09(sections)
 
 if __name__ == "__main__":
     main()
