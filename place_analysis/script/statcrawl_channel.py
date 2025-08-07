@@ -40,7 +40,7 @@ class NaverSmartPlaceCollector:
     def fetch_data_for_date(self, date: str) -> List[Dict]:
         """특정 날짜의 데이터를 가져오기"""
         params = {
-            'dimensions': 'ref_keyword',
+            'dimensions': 'mapped_channel_name',
             'startDate': date,
             'endDate': date,
             'metrics': 'pv',
