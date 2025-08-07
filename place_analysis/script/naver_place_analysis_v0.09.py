@@ -408,7 +408,7 @@ class NaverPlaceAnalyzerV0_09:
 {''.join(climber_details)}
 
 ### 분석 요청사항:
-1. 각 업체별로 급등의 주요 원인을 분석해주세요.
+1. 각 업체별로 급등의 주요 원인을 분석해주세요. (데이터 자체의 불일치에 대한 언급은 피해주세요)
 2. 리뷰 증가량과 순위 상승의 상관관계를 평가해주세요.
 3. 이들 업체의 공통된 성공 패턴이 있다면 무엇인지 정리해주세요.
 4. {tier} 진입을 위한 핵심 전략을 제시해주세요.
@@ -1284,6 +1284,17 @@ class NaverPlaceAnalyzerV0_09:
             if climber_time_series:
                 total_climbers = sum(len(climbers) for climbers in climber_time_series.values())
                 content_html += f"<p>최근 30일간 10계단 이상 순위가 급상승한 업체는 총 <strong>{total_climbers}개</strong>입니다.</p>"
+                
+                # 데이터 유의사항 추가
+                content_html += """
+                <div style="background-color: #fff3cd; border: 1px solid #ffecb5; padding: 15px; margin: 20px 0; border-radius: 5px;">
+                    <h4 style="color: #856404; margin-top: 0;">※ 분석 전 유의사항</h4>
+                    <p style="color: #856404; margin-bottom: 0;">
+                        본 분석에서는 각 시점(30일 전, 20일 전, 10일 전, 5일 전, 현재)의 실제 순위 데이터를 기반으로 
+                        순위 변동을 계산하였습니다. 급등 업체는 30일 전 대비 현재 순위가 10계단 이상 상승한 업체를 의미합니다.
+                    </p>
+                </div>
+                """
                 
                 # Tier별로 급등 업체 분석
                 for tier in ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']:
