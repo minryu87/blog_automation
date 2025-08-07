@@ -109,8 +109,13 @@ class NaverPlaceAnalyzerV0_09:
         
         full_df = pd.concat(all_data, ignore_index=True)
         
-        # rank 컬럼은 이미 각 시점의 실제 순위를 나타내므로 별도 계산 불필요
-        # vs1.csv = 현재 순위, vs30.csv = 30일 전 순위, vs60.csv = 60일 전 순위
+        def calculate_rank(row):
+            if row['days_ago'] == 0: return row['rank']
+            if row['rank_trend'] == 1: return row['rank'] + row['rank_change']
+            elif row['rank_trend'] == 2: return row['rank']
+            elif row['rank_trend'] == 3: return row['rank'] - row['rank_change']
+            else: return row['rank']
+        full_df['rank'] = full_df.apply(calculate_rank, axis=1)
 
         current_reviews = full_df[full_df['days_ago'] == 0][['company_name', 'visitor_reviews', 'blog_reviews']].set_index('company_name')
         
@@ -167,10 +172,9 @@ class NaverPlaceAnalyzerV0_09:
         df_with_past_tiers = self._assign_tiers_by_rule(df_for_past_tiering)
         df_with_past_tiers.rename(columns={'tier': 'unified_tier_past'}, inplace=True)
         
-        # 30일 전 데이터도 로드 - vs30.csv의 rank가 30일 전 순위임
+        # 30일 전 데이터도 로드
         past_30_data = self.time_series_df[self.time_series_df['days_ago'] == 30].copy()
         if not past_30_data.empty:
-            # vs30.csv의 rank 컬럼이 30일 전 순위를 나타냄
             past_30_data = past_30_data[['company_name', 'rank', 'visitor_reviews', 'blog_reviews']].rename(
                 columns={'rank': 'rank_30d_ago', 'visitor_reviews': 'visitor_reviews_30d_ago', 'blog_reviews': 'blog_reviews_30d_ago'}
             )
@@ -1280,17 +1284,6 @@ class NaverPlaceAnalyzerV0_09:
             if climber_time_series:
                 total_climbers = sum(len(climbers) for climbers in climber_time_series.values())
                 content_html += f"<p>최근 30일간 10계단 이상 순위가 급상승한 업체는 총 <strong>{total_climbers}개</strong>입니다.</p>"
-                
-                # 데이터 유의사항 추가
-                content_html += """
-                <div style="background-color: #fff3cd; border: 1px solid #ffecb5; padding: 15px; margin: 20px 0; border-radius: 5px;">
-                    <h4 style="color: #856404; margin-top: 0;">※ 분석 전 유의사항</h4>
-                    <p style="color: #856404; margin-bottom: 0;">
-                        본 분석에서는 각 시점(30일 전, 20일 전, 10일 전, 5일 전, 현재)의 실제 순위 데이터를 기반으로 
-                        순위 변동을 계산하였습니다. 급등 업체는 30일 전 대비 현재 순위가 10계단 이상 상승한 업체를 의미합니다.
-                    </p>
-                </div>
-                """
                 
                 # Tier별로 급등 업체 분석
                 for tier in ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']:

@@ -38,18 +38,18 @@ class NaverSmartPlaceCollector:
         self.channels = set()
 
     def fetch_data_for_date(self, date: str) -> List[Dict]:
-        """특정 날짜의 데이터를 가져오기"""
+        """특정 날짜의 채널별 데이터를 가져오기"""
         params = {
-            'dimensions': 'mapped_channel_name',
+            'dimensions': 'mapped_channel_name',  # 채널별로 그룹화
             'startDate': date,
             'endDate': date,
             'metrics': 'pv',
             'sort': 'pv',
-            'useIndex': 'revenue-search-channel-detail'
+            'useIndex': 'revenue-all-channel-detail'  # 전체 채널 상세
         }
         
         try:
-            print(f"📊 {date} 데이터 수집 중...")
+            print(f"📊 {date} 데이터 수집 중...", end=' ')
             response = requests.get(
                 self.base_url,
                 params=params,
@@ -59,35 +59,41 @@ class NaverSmartPlaceCollector:
             
             if response.status_code == 200:
                 data = response.json()
-                print(f"✅ {date}: {len(data)}개 채널 데이터 수집 완료")
                 
-                # 디버깅: 첫 번째 데이터 샘플 출력
-                if data and len(data) > 0:
-                    print(f"   샘플 데이터: {json.dumps(data[0], ensure_ascii=False)}")
+                # 수집된 채널 목록 표시
+                channels_found = [item['mapped_channel_name'] for item in data if 'mapped_channel_name' in item]
+                print(f"✅ {len(data)}개 채널 ({', '.join(channels_found[:3])}{'...' if len(channels_found) > 3 else ''})")
+                
+                # 첫 날짜의 데이터 구조 확인
+                if date == '2025-07-01' and data:
+                    print(f"\n📌 데이터 구조 확인:")
+                    for i, item in enumerate(data, 1):
+                        print(f"   {i}. {json.dumps(item, ensure_ascii=False)}")
+                    print()
                 
                 return data
             else:
-                print(f"⚠️ {date}: HTTP {response.status_code} 에러")
-                print(f"   응답: {response.text[:200]}")
+                print(f"⚠️ HTTP {response.status_code} 에러")
                 return []
                 
         except requests.exceptions.RequestException as e:
-            print(f"❌ {date}: 네트워크 에러 - {str(e)}")
+            print(f"❌ 네트워크 에러 - {str(e)}")
             return []
         except json.JSONDecodeError as e:
-            print(f"❌ {date}: JSON 파싱 에러 - {str(e)}")
+            print(f"❌ JSON 파싱 에러 - {str(e)}")
             return []
 
     def collect_all_data(self):
         """2025년 7월 전체 데이터 수집"""
         print("=" * 60)
-        print("🚀 네이버 스마트플레이스 데이터 수집 시작")
+        print("🚀 네이버 스마트플레이스 채널별 PV 데이터 수집 시작")
         print("📅 기간: 2025년 7월 1일 ~ 31일")
         print("=" * 60)
         
         start_date = datetime(2025, 7, 1)
         end_date = datetime(2025, 7, 31)
         
+        # 먼저 모든 데이터 수집
         current_date = start_date
         while current_date <= end_date:
             date_str = current_date.strftime('%Y-%m-%d')
@@ -98,45 +104,34 @@ class NaverSmartPlaceCollector:
             # 데이터 저장
             self.all_data[date_str] = data
             
-            # 채널 이름 수집 - 여러 가능한 필드 체크
-            for item in data:
-                # 가능한 필드 이름들 확인
-                channel_name = None
-                
-                # 가장 가능성 높은 필드들 체크
-                if 'mapped_channel_name' in item:
-                    channel_name = item['mapped_channel_name']
-                elif 'channel_name' in item:
-                    channel_name = item['channel_name']
-                elif 'ref_keyword' in item:
-                    channel_name = item['ref_keyword']
-                elif 'keyword' in item:
-                    channel_name = item['keyword']
-                elif 'name' in item:
-                    channel_name = item['name']
-                
-                # 첫 번째 아이템에서 실제 키 확인
-                if current_date == start_date and data:
-                    print(f"\n🔍 데이터 구조 확인: {list(item.keys())}")
-                
-                if channel_name:
-                    self.channels.add(channel_name)
-            
             # 다음 날짜로
             current_date += timedelta(days=1)
             
             # API 부하 방지를 위한 딜레이
             time.sleep(0.5)
         
-        print(f"\n✅ 데이터 수집 완료!")
-        print(f"📊 총 {len(self.channels)}개 채널 발견: {self.channels}")
+        # 모든 데이터 수집 후 전체 채널 목록 파악
+        print("\n📊 전체 채널 목록 파악 중...")
+        channel_appearances = {}  # 채널별 출현 횟수
         
-        # 원본 데이터 일부 출력하여 구조 확인
-        if self.all_data:
-            first_date = sorted(self.all_data.keys())[0]
-            print(f"\n🔍 {first_date} 원본 데이터 (최대 3개):")
-            for i, item in enumerate(self.all_data[first_date][:3]):
-                print(f"  {i+1}. {json.dumps(item, ensure_ascii=False, indent=2)}")
+        for date_str, data_list in self.all_data.items():
+            for item in data_list:
+                if 'mapped_channel_name' in item and item['mapped_channel_name']:
+                    channel_name = item['mapped_channel_name']
+                    self.channels.add(channel_name)
+                    
+                    # 채널별 출현 횟수 카운트
+                    if channel_name not in channel_appearances:
+                        channel_appearances[channel_name] = 0
+                    channel_appearances[channel_name] += 1
+        
+        print(f"\n✅ 데이터 수집 완료!")
+        print(f"📊 총 {len(self.channels)}개 채널 발견:")
+        
+        # 출현 빈도순으로 정렬하여 출력
+        sorted_channels = sorted(channel_appearances.items(), key=lambda x: x[1], reverse=True)
+        for channel, count in sorted_channels:
+            print(f"   - {channel}: {count}일 출현")
 
     def create_dataframe(self) -> pd.DataFrame:
         """수집된 데이터를 DataFrame으로 변환"""
@@ -144,27 +139,30 @@ class NaverSmartPlaceCollector:
             print("⚠️ 수집된 데이터가 없습니다.")
             return pd.DataFrame()
         
-        # 채널이 없는 경우 데이터 구조 다시 분석
+        # 채널 목록이 비어있으면 다시 스캔
         if not self.channels:
-            print("\n🔄 데이터 구조 재분석 중...")
-            for date, data_list in self.all_data.items():
+            print("\n🔄 채널 정보 재스캔 중...")
+            for date_str, data_list in self.all_data.items():
                 for item in data_list:
-                    # 모든 가능한 필드 체크
-                    for key in ['mapped_channel_name', 'channel_name', 'ref_keyword', 'keyword', 'name']:
-                        if key in item and item[key]:
-                            self.channels.add(item[key])
-                            break
-            
-            print(f"📊 재분석 후 {len(self.channels)}개 채널 발견")
+                    if 'mapped_channel_name' in item and item['mapped_channel_name']:
+                        self.channels.add(item['mapped_channel_name'])
+            print(f"   재스캔 완료: {len(self.channels)}개 채널 발견")
         
         if not self.channels:
-            print("⚠️ 채널 정보를 찾을 수 없습니다. 원본 데이터를 확인해주세요.")
+            print("⚠️ 채널 정보를 찾을 수 없습니다.")
+            # 디버깅을 위해 첫 번째 날짜의 데이터 구조 출력
+            first_date = sorted(self.all_data.keys())[0] if self.all_data else None
+            if first_date and self.all_data[first_date]:
+                print(f"\n🔍 {first_date} 데이터 샘플:")
+                for item in self.all_data[first_date][:3]:
+                    print(f"   {json.dumps(item, ensure_ascii=False)}")
             return pd.DataFrame()
         
         # 날짜별로 정렬
         sorted_dates = sorted(self.all_data.keys())
         
         # DataFrame 생성
+        print(f"\n📊 데이터프레임 생성 중... (날짜: {len(sorted_dates)}일, 채널: {len(self.channels)}개)")
         data_for_df = []
         
         for date in sorted_dates:
@@ -175,21 +173,15 @@ class NaverSmartPlaceCollector:
                 # 해당 날짜의 채널 데이터 찾기
                 channel_data = None
                 for item in self.all_data[date]:
-                    # 여러 필드에서 채널 이름 확인
-                    item_channel = (item.get('mapped_channel_name') or 
-                                  item.get('channel_name') or 
-                                  item.get('ref_keyword') or 
-                                  item.get('keyword') or 
-                                  item.get('name'))
-                    
-                    if item_channel == channel:
+                    if item.get('mapped_channel_name') == channel:
                         channel_data = item
                         break
                 
-                # PV 값 추출
+                # PV 값 추출 (float 형태로 저장된 경우 처리)
                 if channel_data:
-                    pv_value = channel_data.get('pv', channel_data.get('pageviews', channel_data.get('count', 0)))
-                    row[channel] = pv_value
+                    pv_value = channel_data.get('pv', 0)
+                    # float인 경우 정수로 변환
+                    row[channel] = int(pv_value) if isinstance(pv_value, float) else pv_value
                 else:
                     row[channel] = 0
             
@@ -200,6 +192,12 @@ class NaverSmartPlaceCollector:
         # 날짜를 인덱스로 설정
         df.set_index('날짜', inplace=True)
         
+        # 채널을 PV 총합 기준으로 정렬
+        channel_totals = df.sum().sort_values(ascending=False)
+        df = df[channel_totals.index]
+        
+        print(f"   생성 완료: {df.shape[0]}행 × {df.shape[1]}열")
+        
         return df
 
     def calculate_statistics(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -209,11 +207,14 @@ class NaverSmartPlaceCollector:
         
         stats = pd.DataFrame({
             '총합': df.sum(),
-            '평균': df.mean().round(1),
+            '일평균': df.mean().round(1),
             '최대': df.max(),
             '최소': df.min(),
             '표준편차': df.std().round(1)
         })
+        
+        # PV 총합 기준으로 정렬
+        stats = stats.sort_values('총합', ascending=False)
         
         return stats.T
 
@@ -226,12 +227,17 @@ class NaverSmartPlaceCollector:
         df.to_csv(csv_filename, encoding='utf-8-sig')
         print(f"\n📁 CSV 파일 저장: {csv_filename}")
         
-        # Excel 파일 저장 (pandas 버전에 따라 openpyxl 필요할 수 있음)
+        # Excel 파일 저장
         try:
             excel_filename = f'channel_pv_data_2025_07_{timestamp}.xlsx'
             with pd.ExcelWriter(excel_filename, engine='openpyxl') as writer:
                 df.to_excel(writer, sheet_name='일별 데이터')
                 stats.to_excel(writer, sheet_name='통계 요약')
+                
+                # 월간 트렌드 차트용 데이터 추가
+                monthly_trend = df.T
+                monthly_trend.to_excel(writer, sheet_name='채널별 트렌드')
+                
             print(f"📁 Excel 파일 저장: {excel_filename}")
         except ImportError:
             print("⚠️ Excel 저장을 위해 openpyxl 설치가 필요합니다: pip install openpyxl")
@@ -246,39 +252,128 @@ class NaverSmartPlaceCollector:
 
     def display_results(self, df: pd.DataFrame, stats: pd.DataFrame):
         """결과 출력"""
-        print("\n" + "=" * 60)
+        print("\n" + "=" * 80)
         print("📊 2025년 7월 채널별 PV 데이터")
-        print("=" * 60)
+        print("=" * 80)
         
         # DataFrame 출력 설정
         pd.set_option('display.max_rows', None)
-        pd.set_option('display.max_columns', None)
-        pd.set_option('display.width', None)
-        pd.set_option('display.max_colwidth', None)
+        pd.set_option('display.max_columns', 10)
+        pd.set_option('display.width', 1000)
+        pd.set_option('display.max_colwidth', 20)
+        pd.set_option('display.float_format', lambda x: '%.0f' % x)
         
-        # 처음 10일과 마지막 5일만 출력 (전체가 너무 길 경우)
+        # 처음과 마지막 일부만 출력
         if len(df) > 15:
-            print("\n[처음 10일]")
-            print(df.head(10))
-            print("\n[마지막 5일]")
-            print(df.tail(5))
+            print("\n[처음 7일]")
+            print(df.head(7))
+            print("\n   ... 중간 생략 ...\n")
+            print("[마지막 7일]")
+            print(df.tail(7))
         else:
             print(df)
         
-        print("\n" + "=" * 60)
+        print("\n" + "=" * 80)
         print("📈 채널별 통계 요약")
-        print("=" * 60)
+        print("=" * 80)
         print(stats)
+        
+        # 주요 인사이트
+        print("\n" + "=" * 80)
+        print("🎯 주요 인사이트")
+        print("=" * 80)
         
         # 총 PV 합계
         total_pv = df.sum().sum()
-        print(f"\n🎯 전체 PV 총합: {total_pv:,.0f}")
+        print(f"📍 전체 PV 총합: {total_pv:,.0f}")
+        
+        # 일평균 PV
+        daily_avg = total_pv / len(df)
+        print(f"📍 일평균 전체 PV: {daily_avg:,.1f}")
         
         # 가장 높은 PV 채널
         if not df.empty and len(df.columns) > 0:
             best_channel = df.sum().idxmax()
             best_channel_pv = df.sum().max()
-            print(f"🏆 최고 성과 채널: {best_channel} ({best_channel_pv:,.0f} PV)")
+            best_channel_pct = (best_channel_pv / total_pv * 100)
+            print(f"📍 최고 성과 채널: {best_channel} ({best_channel_pv:,.0f} PV, {best_channel_pct:.1f}%)")
+            
+            # 상위 3개 채널
+            top3 = df.sum().nlargest(3)
+            print(f"\n📍 TOP 3 채널:")
+            for i, (channel, pv) in enumerate(top3.items(), 1):
+                pct = (pv / total_pv * 100)
+                print(f"   {i}. {channel}: {pv:,.0f} PV ({pct:.1f}%)")
+        
+        # 가장 PV가 높았던 날
+        daily_totals = df.sum(axis=1)
+        best_day = daily_totals.idxmax()
+        best_day_pv = daily_totals.max()
+        print(f"\n📍 최고 PV 날짜: {best_day} ({best_day_pv:,.0f} PV)")
+        
+        # 가장 PV가 낮았던 날
+        worst_day = daily_totals.idxmin()
+        worst_day_pv = daily_totals.min()
+        print(f"📍 최저 PV 날짜: {worst_day} ({worst_day_pv:,.0f} PV)")
+
+    def create_visual_report(self, df: pd.DataFrame):
+        """시각적 리포트 생성 (선택사항)"""
+        try:
+            import matplotlib.pyplot as plt
+            import matplotlib.font_manager as fm
+            
+            # 한글 폰트 설정
+            plt.rcParams['font.family'] = 'DejaVu Sans'
+            plt.rcParams['axes.unicode_minus'] = False
+            
+            fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+            fig.suptitle('2025년 7월 채널별 PV 분석 리포트', fontsize=16)
+            
+            # 1. 일별 전체 PV 추이
+            daily_totals = df.sum(axis=1)
+            axes[0, 0].plot(range(len(daily_totals)), daily_totals.values, marker='o')
+            axes[0, 0].set_title('일별 전체 PV 추이')
+            axes[0, 0].set_xlabel('날짜')
+            axes[0, 0].set_ylabel('PV')
+            axes[0, 0].grid(True, alpha=0.3)
+            
+            # 2. 채널별 총 PV (파이 차트)
+            channel_totals = df.sum().sort_values(ascending=False)
+            axes[0, 1].pie(channel_totals.values, labels=channel_totals.index, autopct='%1.1f%%')
+            axes[0, 1].set_title('채널별 PV 비중')
+            
+            # 3. 채널별 일별 추이 (상위 4개)
+            top_channels = df.sum().nlargest(4).index
+            for channel in top_channels:
+                axes[1, 0].plot(range(len(df)), df[channel].values, marker='o', label=channel, alpha=0.7)
+            axes[1, 0].set_title('주요 채널 일별 추이')
+            axes[1, 0].set_xlabel('날짜')
+            axes[1, 0].set_ylabel('PV')
+            axes[1, 0].legend()
+            axes[1, 0].grid(True, alpha=0.3)
+            
+            # 4. 채널별 평균 PV (막대 그래프)
+            channel_means = df.mean().sort_values(ascending=False)
+            axes[1, 1].bar(range(len(channel_means)), channel_means.values)
+            axes[1, 1].set_xticks(range(len(channel_means)))
+            axes[1, 1].set_xticklabels(channel_means.index, rotation=45, ha='right')
+            axes[1, 1].set_title('채널별 일평균 PV')
+            axes[1, 1].set_ylabel('평균 PV')
+            
+            plt.tight_layout()
+            
+            # 파일로 저장
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            chart_filename = f'channel_pv_chart_2025_07_{timestamp}.png'
+            plt.savefig(chart_filename, dpi=100, bbox_inches='tight')
+            print(f"\n📁 차트 이미지 저장: {chart_filename}")
+            
+            plt.close()
+            
+        except ImportError:
+            print("\n💡 차트 생성을 원하시면 matplotlib 설치가 필요합니다: pip install matplotlib")
+        except Exception as e:
+            print(f"\n⚠️ 차트 생성 중 오류: {str(e)}")
 
     def run(self):
         """전체 프로세스 실행"""
@@ -290,14 +385,14 @@ class NaverSmartPlaceCollector:
         
         if df.empty:
             print("\n❌ 데이터 처리 실패")
-            print("💡 JSON 파일을 확인하여 데이터 구조를 분석해보세요.")
             
             # 원본 데이터는 저장
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            json_filename = f'channel_pv_raw_data_2025_07_{timestamp}.json'
-            with open(json_filename, 'w', encoding='utf-8') as f:
-                json.dump(self.all_data, f, ensure_ascii=False, indent=2)
-            print(f"📁 원본 JSON 데이터는 저장되었습니다: {json_filename}")
+            if self.all_data:
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                json_filename = f'channel_pv_raw_data_2025_07_{timestamp}.json'
+                with open(json_filename, 'w', encoding='utf-8') as f:
+                    json.dump(self.all_data, f, ensure_ascii=False, indent=2)
+                print(f"📁 원본 JSON 데이터는 저장되었습니다: {json_filename}")
             return
         
         # 3. 통계 계산
@@ -309,6 +404,9 @@ class NaverSmartPlaceCollector:
         # 5. 파일 저장
         self.save_to_files(df, stats)
         
+        # 6. 시각적 리포트 생성 (선택사항)
+        self.create_visual_report(df)
+        
         print("\n✨ 모든 작업이 완료되었습니다!")
 
 def main():
@@ -316,7 +414,7 @@ def main():
     print("""
 ╔══════════════════════════════════════════════════════════╗
 ║     네이버 스마트플레이스 채널별 PV 데이터 수집기        ║
-║                    Version 1.1                           ║
+║                    Version 2.0                           ║
 ╚══════════════════════════════════════════════════════════╝
     """)
     
@@ -328,6 +426,8 @@ def main():
         print("❌ 필요한 패키지가 설치되지 않았습니다.")
         print("다음 명령어로 설치해주세요:")
         print("pip install requests pandas openpyxl")
+        print("\n차트 생성을 원하시면 추가로:")
+        print("pip install matplotlib")
         return
     
     # 수집기 실행
