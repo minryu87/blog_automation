@@ -12,6 +12,7 @@ from agno.agent import Agent
 from agno.models.google import Gemini
 import matplotlib.pyplot as plt
 import seaborn as sns
+from datetime import datetime
 
 warnings.filterwarnings('ignore', category=UserWarning, module='pandas')
 warnings.filterwarnings('ignore', category=FutureWarning, module='pandas')
@@ -54,10 +55,11 @@ if not font_found:
 RAW_DATA_DIR = 'blog_automation/place_analysis/data/raw_data/동탄치과'
 RESULT_PATH = 'blog_automation/place_analysis/analysis_result'
 os.makedirs(RESULT_PATH, exist_ok=True)
-REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'llm_enhanced_analysis_v9.8_report.html')
+REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'naver_place_analysis_v0.02_report.html')
 TARGET_CLINIC = '내이튼치과의원'
+ANALYSIS_DATE = '2025-08-04'
 
-class RankAnalyzerV9_8:
+class NaverPlaceAnalyzerV0_02:
     def __init__(self, data_dir, result_path):
         self.data_dir = data_dir
         self.result_path = result_path
@@ -76,90 +78,141 @@ class RankAnalyzerV9_8:
             return None
 
     def _load_and_prepare_time_series_data(self):
-        # ... (이전과 동일, 변경 없음)
+        print("시계열 데이터 로딩 및 전처리 중...")
         csv_files = glob.glob(os.path.join(self.data_dir, 'vs*.csv'))
         if not csv_files: return pd.DataFrame()
-        base_file_path = os.path.join(self.data_dir, 'vs1.csv')
-        if not os.path.exists(base_file_path): return pd.DataFrame()
-        df_t0 = pd.read_csv(base_file_path)
-        df_t0['company_name'] = df_t0['company_name_category'].apply(lambda x: x.split(',')[0] if isinstance(x, str) else None)
-        df_t0.dropna(subset=['company_name'], inplace=True)
-        rank_data = []
+        
+        all_data = []
         for f in csv_files:
             try:
                 days_ago_match = re.search(r'vs(\d+)\.csv', os.path.basename(f))
                 if not days_ago_match: continue
                 days_ago = int(days_ago_match.group(1))
-                if days_ago == 1: days_ago = 0
+                
                 df = pd.read_csv(f)
                 df['company_name'] = df['company_name_category'].apply(lambda x: x.split(',')[0] if isinstance(x, str) else None)
                 df.dropna(subset=['company_name'], inplace=True)
-                df['rank_change'] = pd.to_numeric(df['rank_change'], errors='coerce').fillna(0)
-                df['rank_trend'] = pd.to_numeric(df['rank_trend'], errors='coerce').fillna(2)
-                def calculate_rank(row):
-                    if days_ago == 0: return row['rank']
-                    if row['rank_trend'] == 1: return row['rank'] + row['rank_change']
-                    elif row['rank_trend'] == 2: return row['rank']
-                    elif row['rank_trend'] == 3: return row['rank'] - row['rank_change']
-                    else: return row['rank']
-                df['calculated_rank'] = df.apply(calculate_rank, axis=1)
-                temp_df = df[['company_name', 'calculated_rank']].copy()
-                temp_df.rename(columns={'calculated_rank': 'rank'}, inplace=True)
-                temp_df['days_ago'] = days_ago
-                rank_data.append(temp_df)
+                df['days_ago'] = 0 if days_ago == 1 else days_ago
+
+                numeric_cols = ['rank', 'rank_change', 'rank_trend', 'visitor_reviews', 'blog_reviews', 'visitor_reviews_change', 'blog_reviews_change']
+                for col in numeric_cols:
+                    if col in df.columns:
+                        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+
+                all_data.append(df)
             except Exception as e:
                 print(f"'{f}' 파일 처리 중 오류 발생: {e}")
-        if not rank_data: return pd.DataFrame()
-        full_df = pd.concat(rank_data, ignore_index=True)
-        current_reviews = df_t0[['company_name', 'visitor_reviews', 'blog_reviews']]
-        full_df = pd.merge(full_df, current_reviews, on='company_name', how='left')
-        for review_col in ['visitor_reviews', 'blog_reviews']:
-            full_df[review_col] = full_df.groupby('company_name')[review_col].transform(lambda x: x.ffill().bfill())
+
+        if not all_data: return pd.DataFrame()
+        
+        full_df = pd.concat(all_data, ignore_index=True)
+        
+        def calculate_rank(row):
+            if row['days_ago'] == 0: return row['rank']
+            if row['rank_trend'] == 1: return row['rank'] + row['rank_change']
+            elif row['rank_trend'] == 2: return row['rank']
+            elif row['rank_trend'] == 3: return row['rank'] - row['rank_change']
+            else: return row['rank']
+        full_df['rank'] = full_df.apply(calculate_rank, axis=1)
+
+        current_reviews = full_df[full_df['days_ago'] == 0][['company_name', 'visitor_reviews', 'blog_reviews']].set_index('company_name')
+        
+        def get_past_reviews(row, review_type):
+            company = row['company_name']
+            if company not in current_reviews.index: return 0
+            if row['days_ago'] == 0:
+                return current_reviews.loc[company][review_type]
+            else:
+                change_col = f"{review_type}_change"
+                change = row.get(change_col, 0)
+                return current_reviews.loc[company][review_type] - change
+        
+        full_df['visitor_reviews'] = full_df.apply(get_past_reviews, review_type='visitor_reviews', axis=1)
+        full_df['blog_reviews'] = full_df.apply(get_past_reviews, review_type='blog_reviews', axis=1)
+
         return full_df.drop_duplicates(subset=['company_name', 'days_ago']).sort_values(by=['company_name', 'days_ago']).reset_index(drop=True)
 
-    def create_hybrid_tiers(self):
-        print("\n[단계 1] 하이브리드 Tier 시스템 생성 (v9.8 규칙 적용)")
-        if self.time_series_df.empty: return None
-        current_data = self.time_series_df[self.time_series_df['days_ago'] == 0].copy()
-        rank_stability = self.time_series_df.groupby('company_name')['rank'].std().reset_index()
-        rank_stability.rename(columns={'rank': 'rank_std_60d'}, inplace=True)
-        rank_stability['rank_std_60d'].fillna(0, inplace=True)
-        df_for_tiering = pd.merge(current_data, rank_stability, on='company_name', how='left')
-        df_for_tiering.sort_values(by=['rank', 'rank_std_60d'], ascending=[True, True], inplace=True)
-        total_companies = len(df_for_tiering)
+    def _assign_tiers_by_rule(self, df):
+        df_sorted = df.sort_values(by=['rank', 'rank_std_60d'], ascending=[True, True]).reset_index(drop=True)
+        total_companies = len(df_sorted)
         tier1_count = int(total_companies * 0.025)
         tier2_count = int(total_companies * 0.05)
         tier3_count = int(total_companies * 0.10)
-        
-        df_for_tiering['unified_tier'] = ''
-        df_for_tiering.iloc[:tier1_count, df_for_tiering.columns.get_loc('unified_tier')] = 'Tier 1'
-        df_for_tiering.iloc[tier1_count:tier1_count + tier2_count, df_for_tiering.columns.get_loc('unified_tier')] = 'Tier 2'
-        df_for_tiering.iloc[tier1_count + tier2_count : tier1_count + tier2_count + tier3_count, df_for_tiering.columns.get_loc('unified_tier')] = 'Tier 3'
-        
-        remaining_df = df_for_tiering[df_for_tiering['unified_tier'] == ''].copy()
+        df_sorted['tier'] = ''
+        df_sorted.loc[:tier1_count-1, 'tier'] = 'Tier 1'
+        df_sorted.loc[tier1_count:tier1_count + tier2_count-1, 'tier'] = 'Tier 2'
+        df_sorted.loc[tier1_count + tier2_count : tier1_count + tier2_count + tier3_count-1, 'tier'] = 'Tier 3'
+        remaining_df = df_sorted[df_sorted['tier'] == ''].copy()
         if not remaining_df.empty:
             features = ['rank', 'rank_std_60d']
-            X = remaining_df[features].copy()
-            X_scaled = StandardScaler().fit_transform(X)
-            n_clusters = 2 # Tier 4, 5
+            X_scaled = StandardScaler().fit_transform(remaining_df[features])
+            n_clusters = 2
             kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init='auto')
             clusters = kmeans.fit_predict(X_scaled)
             remaining_df['cluster'] = clusters
             cluster_rank_means = remaining_df.groupby('cluster')['rank'].mean().sort_values()
             tier_map = {cluster_id: f'Tier {i+4}' for i, cluster_id in enumerate(cluster_rank_means.index)}
-            df_for_tiering.loc[remaining_df.index, 'unified_tier'] = remaining_df['cluster'].map(tier_map)
-        print("하이브리드 Tier 생성 완료.")
-        final_cols = ['company_name', 'rank', 'visitor_reviews', 'blog_reviews', 'rank_std_60d', 'unified_tier']
-        return df_for_tiering[final_cols].reset_index(drop=True)
+            df_sorted.loc[remaining_df.index, 'tier'] = remaining_df['cluster'].map(tier_map)
+        return df_sorted
 
-    def analyze_market_overview(self, df_with_tiers):
+    def create_and_analyze_tiers(self):
+        print("\n[단계 1] Tier 시스템 생성 및 시장 분석")
+        if self.time_series_df.empty: return None, None
+        
+        current_data = self.time_series_df[self.time_series_df['days_ago'] == 0].copy()
+        rank_stability = self.time_series_df.groupby('company_name')['rank'].std().reset_index(name='rank_std_60d').fillna(0)
+        df_for_current_tiering = pd.merge(current_data, rank_stability, on='company_name', how='left').fillna(0)
+        df_with_current_tiers = self._assign_tiers_by_rule(df_for_current_tiering)
+        df_with_current_tiers.rename(columns={'tier': 'unified_tier'}, inplace=True)
+
+        past_data = self.time_series_df[self.time_series_df['days_ago'] == 60].copy()
+        df_for_past_tiering = pd.merge(past_data, rank_stability, on='company_name', how='left').fillna(0)
+        df_with_past_tiers = self._assign_tiers_by_rule(df_for_past_tiering)
+        df_with_past_tiers.rename(columns={'tier': 'unified_tier_past'}, inplace=True)
+        
+        final_df = pd.merge(df_with_current_tiers, df_with_past_tiers[['company_name', 'rank', 'unified_tier_past']], on='company_name', suffixes=('_current', '_past'), how='left')
+        
+        past_reviews = self.time_series_df[self.time_series_df['days_ago'] == 60][['company_name', 'visitor_reviews', 'blog_reviews']].set_index('company_name')
+        
+        def get_change(row, review_type):
+            if row['company_name'] in past_reviews.index:
+                return row[review_type] - past_reviews.loc[row['company_name']][review_type]
+            return 0
+            
+        final_df['visitor_reviews_change'] = final_df.apply(get_change, review_type='visitor_reviews', axis=1)
+        final_df['blog_reviews_change'] = final_df.apply(get_change, review_type='blog_reviews', axis=1)
+
+        return final_df, df_with_current_tiers
+
+    def analyze_market_overview(self, df_with_tiers, final_df):
         print("\n[단계 2] 시장 경쟁 현황 분석")
-        tier_summary = df_with_tiers.groupby('unified_tier').agg(
-            업체_수=('company_name', 'count'),
-            평균_순위=('rank', 'mean'),
-            평균_방문자_리뷰=('visitor_reviews', 'mean'),
-            평균_블로그_리뷰=('blog_reviews', 'mean')
-        ).round(0).reset_index().sort_values(by='unified_tier')
+        
+        # 컬럼명 변경
+        display_df = final_df.rename(columns={
+            'company_name': '병원명', 'unified_tier': '현재 Tier', 'rank_current': '현재 순위', 
+            'unified_tier_past': '60일 전 Tier', 'rank_past': '60일 전 순위',
+            'visitor_reviews': '방문자 리뷰 수', 'visitor_reviews_change': '방문자 리뷰 수 증가량',
+            'blog_reviews': '블로그 리뷰 수', 'blog_reviews_change': '블로그 리뷰 수 증가량'
+        })
+        
+        # 요청된 컬럼만 선택
+        final_columns = ['병원명', '현재 Tier', '현재 순위', '60일 전 Tier', '60일 전 순위', '방문자 리뷰 수', '방문자 리뷰 수 증가량', '블로그 리뷰 수', '블로그 리뷰 수 증가량']
+        
+        # 숫자형 컬럼 변환
+        for col in final_columns:
+            if col not in ['병원명', '현재 Tier', '60일 전 Tier']:
+                display_df[col] = pd.to_numeric(display_df[col], errors='coerce').fillna(0)
+        
+        # 정수형으로 변환
+        display_df['방문자 리뷰 수'] = display_df['방문자 리뷰 수'].astype(int)
+        display_df['블로그 리뷰 수'] = display_df['블로그 리뷰 수'].astype(int)
+        display_df = display_df[final_columns].astype({'현재 순위': 'int', '60일 전 순위': 'Int64', '방문자 리뷰 수 증가량': 'Int64', '블로그 리뷰 수 증가량': 'Int64'})
+        
+        for col in ['rank', 'visitor_reviews', 'blog_reviews']:
+            df_with_tiers[col] = pd.to_numeric(df_with_tiers[col], errors='coerce').fillna(0)
+
+        tier_summary = df_with_tiers.groupby('unified_tier').agg(업체_수=('company_name', 'count'), 평균_순위=('rank', 'mean'), 평균_방문자_리뷰=('visitor_reviews', 'mean'), 평균_블로그_리뷰=('blog_reviews', 'mean')).round(0).reset_index().sort_values(by='unified_tier')
+        
         prompt = f"""## '동탄치과' 네이버 플레이스 경쟁 현황 분석
         ### 분석 요청사항
         1. **Tier별 현황표 제시**: 아래 'Tier별 요약' 데이터를 마크다운 테이블 형식으로 그대로 제시해주세요.
@@ -169,18 +222,12 @@ class RankAnalyzerV9_8:
         {tier_summary.to_markdown(index=False)}
         """
         response = self.agent.run(prompt, max_tokens=16384)
-        return {
-            "title": "동탄치과 플레이스 경쟁 현황",
-            "content": response.content if response else "LLM 분석에 실패했습니다.",
-            "full_data_table": df_with_tiers.to_html(index=False, classes='table table-striped'),
-        }
-    
-    def analyze_success_factors(self, df_with_tiers):
+        return {"title": f"동탄치과 플레이스 경쟁 현황 (기준 일자: {ANALYSIS_DATE})", "content": response.content if response else "LLM 분석 실패", "full_data_table": display_df.to_html(index=False, classes='table table-striped')}
+
+    def analyze_success_factors(self, final_df):
         print("\n[단계 3] 순위 상승 핵심 요인 분석")
-        past_data = self.time_series_df[self.time_series_df['days_ago'] == 60].copy()
-        merged = pd.merge(df_with_tiers, past_data[['company_name', 'rank']], on='company_name', suffixes=('_current', '_past'))
-        merged['rank_change'] = merged['rank_past'] - merged['rank_current']
-        climbers = merged[merged['rank_change'] > 10].sort_values(by='rank_change', ascending=False).head(10)
+        final_df['rank_change'] = pd.to_numeric(final_df['rank_past'], errors='coerce').fillna(0) - pd.to_numeric(final_df['rank_current'], errors='coerce').fillna(0)
+        climbers = final_df[final_df['rank_change'] > 10].sort_values(by='rank_change', ascending=False).head(10)
         prompt = f"""## 순위 상승의 핵심 요인 분석 (성공 방정식)
         ### 분석 요청사항
         '동탄치과' 시장에서 최근 60일간 순위가 10계단 이상 급등한 '도전자' 그룹의 성공 요인을 분석하고, 이를 바탕으로 '성공 방정식'을 정의해주세요.
@@ -188,7 +235,7 @@ class RankAnalyzerV9_8:
         {climbers.to_markdown(index=False)}
         """
         response = self.agent.run(prompt, max_tokens=16384)
-        return {"title": "순위 상승의 핵심 요인 분석", "content": response.content if response else "LLM 분석에 실패했습니다."}
+        return {"title": "순위 상승의 핵심 요인 분석", "content": response.content if response else "LLM 분석 실패"}
 
     def analyze_target_clinic(self, df_with_tiers):
         print(f"\n[단계 4] '{TARGET_CLINIC}' 맞춤 성장 전략")
@@ -210,10 +257,10 @@ class RankAnalyzerV9_8:
         - 목표 Tier ({upper_tier}) 평균: 방문자 리뷰 {upper_tier_avg['visitor_reviews']:.0f}개, 블로그 리뷰 {upper_tier_avg['blog_reviews']:.0f}개
         """
         response = self.agent.run(prompt, max_tokens=16384)
-        return {"title": f"'{TARGET_CLINIC}' 맞춤 성장 전략", "content": response.content if response else "LLM 분석에 실패했습니다."}
+        return {"title": f"'{TARGET_CLINIC}' 맞춤 성장 전략", "content": response.content if response else "LLM 분석 실패"}
 
-    def generate_html_report_v9_8(self, sections):
-        print("\nHTML 보고서 생성 (v9.8)...")
+    def generate_html_report_v0_02(self, sections):
+        print("\nHTML 보고서 생성 (v0.02)...")
         introduction_html = """
         <h2>1. 분석의 배경 및 목적</h2>
         <h3>네이버 플레이스, 병원 마케팅의 가장 중요한 전쟁터</h3>
@@ -230,18 +277,21 @@ class RankAnalyzerV9_8:
             content_html += "<h3>전체 업체 리스트 및 통합 Tier 현황</h3>"
             content_html += market_overview.get('full_data_table', '')
             content_html += self.markdown_converter.convert(market_overview.get('content', ''))
+        
         success_factors = sections.get('success_factors', {})
         if success_factors:
             content_html += f"<h2>3. {success_factors.get('title', '')}</h2>"
             content_html += self.markdown_converter.convert(success_factors.get('content', ''))
+
         target_strategy = sections.get('target_strategy', {})
         if target_strategy:
             content_html += f"<h2>4. {target_strategy.get('title', '')}</h2>"
             content_html += self.markdown_converter.convert(target_strategy.get('content', ''))
+
         html_template = f"""
-        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'동탄치과' 네이버 플레이스 순위 분석 보고서 v9.8</title>
+        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'동탄치과' 네이버 플레이스 순위 분석 보고서 v0.02</title>
         <style>body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;padding:20px;max-width:1000px;margin:auto;color:#333;}}h1,h2,h3{{color:#2c3e50;border-bottom:2px solid #3498db;padding-bottom:10px;}}table{{border-collapse:collapse;width:100%;margin:20px 0;box-shadow:0 2px 3px rgba(0,0,0,0.1);}}th,td{{border:1px solid #ddd;padding:12px;text-align:left;}}th{{background-color:#3498db;color:white;}}tr:nth-child(even){{background-color:#f2f9fd;}}</style>
-        </head><body><h1>[V9.8] '동탄치과' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
+        </head><body><h1>[V0.02] '동탄치과' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
         {introduction_html}
         {content_html}
         </body></html>
@@ -250,17 +300,19 @@ class RankAnalyzerV9_8:
             f.write(html_template)
         print(f"HTML 보고서가 다음 경로에 저장되었습니다: {REPORT_OUTPUT_PATH_HTML}")
 
+
 def main():
-    analyzer = RankAnalyzerV9_8(data_dir=RAW_DATA_DIR, result_path=RESULT_PATH)
+    analyzer = NaverPlaceAnalyzerV0_02(data_dir=RAW_DATA_DIR, result_path=RESULT_PATH)
     if analyzer.time_series_df.empty: return
-    df_with_tiers = analyzer.create_hybrid_tiers()
-    if df_with_tiers is None: return
+    final_df, df_with_current_tiers = analyzer.create_and_analyze_tiers()
+    if final_df is None: return
+    
     sections = {
-        'market_overview': analyzer.analyze_market_overview(df_with_tiers),
-        'success_factors': analyzer.analyze_success_factors(df_with_tiers),
-        'target_strategy': analyzer.analyze_target_clinic(df_with_tiers)
+        'market_overview': analyzer.analyze_market_overview(df_with_current_tiers, final_df),
+        'success_factors': analyzer.analyze_success_factors(final_df),
+        'target_strategy': analyzer.analyze_target_clinic(df_with_current_tiers)
     }
-    analyzer.generate_html_report_v9_8(sections)
+    analyzer.generate_html_report_v0_02(sections)
 
 if __name__ == "__main__":
     main()
