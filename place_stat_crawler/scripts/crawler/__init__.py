@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-네이버 크롤링 모듈
+크롤러 모듈
 """
 
-from .auth_manager import NaverAuthManager
-from .naver_crawler_base import NaverCrawlerBase
-from .stat_crawler import NaverStatCrawler
+from .naver_place_pv_auth_manager import NaverAuthManager
+from .naver_place_pv_crawler_base import NaverCrawlerBase
+from .naver_place_pv_stat_crawler import NaverStatCrawler
+from .naver_place_pv_monthly_crawler import MonthlyStatisticsCrawler
+from .naver_booking_stat_crawler import NaverBookingStatCrawler
+from .naver_booking_monthly_crawler import MonthlyBookingCrawler
 
 __all__ = [
     'NaverAuthManager',

@@ -175,8 +175,11 @@ class NaverCrawlerBase:
                 )
                 
                 if response.status_code == 200:
-                    self.success_count += 1
-                    return response
+                    try:
+                        return response.json()
+                    except json.JSONDecodeError:
+                        logger.error(f"JSON 디코딩 실패: {response.text[:200]}")
+                        return None
                 else:
                     logger.warning(f"HTTP {response.status_code} 에러 (시도 {attempt + 1}/{self.max_retries})")
                     if response.status_code == 401:

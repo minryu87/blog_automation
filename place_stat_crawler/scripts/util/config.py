@@ -51,8 +51,9 @@ class ClientInfo:
     naver_url: str = ""
     id: str = ""
     pw: str = ""
-    cookie: str = ""
-    auth_token: str = ""
+    cookie: Optional[str] = None
+    auth_token: Optional[str] = None
+    booking_id: Optional[str] = None
 
 
 @dataclass
@@ -103,7 +104,7 @@ class ConfigManager:
         """환경 변수에서 클라이언트별 설정 로드"""
         clients_data = {}
         # 클라이언트별 환경 변수 접미사 (_AUTH_TOKEN 및 _AUTH 모두 지원)
-        client_suffixes = ['_NAVER_URL', '_ID', '_PW', '_COOKIE', '_AUTH_TOKEN', '_AUTH']
+        client_suffixes = ['_NAVER_URL', '_ID', '_PW', '_COOKIE', '_AUTH_TOKEN', '_AUTH', '_BOOKING_ID']
 
         for key, value in os.environ.items():
             for suffix in client_suffixes:
@@ -120,6 +121,8 @@ class ConfigManager:
                         mapped_key = 'cookie'
                     elif suffix in ('_AUTH_TOKEN', '_AUTH'):
                         mapped_key = 'auth_token'
+                    elif suffix == '_BOOKING_ID':
+                        mapped_key = 'booking_id'
                     else:
                         mapped_key = suffix[1:].lower()
 
@@ -141,6 +144,7 @@ class ConfigManager:
                 pw=data.get('pw', ''),
                 cookie=data.get('cookie', ''),
                 auth_token=data.get('auth_token', ''),
+                booking_id=data.get('booking_id', ''),
             )
             valid_clients[name] = ci
         self.config.auth.clients = valid_clients
