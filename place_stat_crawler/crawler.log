@@ -215,3 +215,883 @@
 ============================================================ (run_crawler.py:96)
 2025-08-11 16:38:29,543 - performance_analyzer - INFO - 🎉 모든 요청된 기간의 데이터 수집이 완료되었습니다. (run_crawler.py:97)
 2025-08-11 16:38:29,543 - performance_analyzer - INFO - ============================================================ (run_crawler.py:98)
+2025-08-11 18:26:56,137 - performance_analyzer - ERROR - '.env' 파일에 'CLIENT_LIST'가 설정되지 않았습니다. (correlation_analyzer.py:231)
+2025-08-11 18:30:22,538 - performance_analyzer - INFO - 자동으로 클라이언트 'GOODMORNINGHANIGURO'에 대한 분석을 시작합니다. (correlation_analyzer.py:245)
+2025-08-11 18:30:22,538 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 18:30:22,538 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:30:22,539 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:30:22,539 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:30:22,539 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:30:22,539 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,543 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,544 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_10_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,545 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,546 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_11_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,548 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,549 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_12_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,551 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,552 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_01_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,554 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,555 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_02_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,559 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,561 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_03_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,565 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,566 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_04_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,571 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,573 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_05_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,577 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,578 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_06_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,583 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,585 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_07_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:30:22,590 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:30:22,630 - performance_analyzer - INFO - 종합 상관관계 분석을 시작합니다... (correlation_analyzer.py:117)
+2025-08-11 18:30:22,633 - performance_analyzer - INFO - 
+상관관계 상위 20개:
+                        feature1                     feature2  correlation  abs_correlation
+59                total_place_pv               place_pv_네이버검색     0.998446         0.998446
+442  keyword_pv_type1_brand_like               total_place_pv     0.941737         0.941737
+455  keyword_pv_type1_brand_like               place_pv_네이버검색     0.941111         0.941111
+61                total_place_pv               place_pv_네이버지도     0.661606         0.661606
+394               place_pv_네이버지도  keyword_pv_type1_brand_like     0.634326         0.634326
+389               place_pv_네이버지도               place_pv_네이버검색     0.621083         0.621083
+423               place_pv_인스타그램         booking_visits_네이버기타     0.597478         0.597478
+22     total_booking_page_visits       total_booking_requests     0.587222         0.587222
+221        booking_visits_플레이스목록    total_booking_page_visits     0.477266         0.477266
+177            booking_visits_지도    total_booking_page_visits     0.472394         0.472394
+193            booking_visits_지도               place_pv_네이버지도     0.431782         0.431782
+174         booking_visits_외부서비스  keyword_pv_type1_brand_like     0.413232         0.413232
+51                total_place_pv         booking_visits_외부서비스     0.390507         0.390507
+337               place_pv_네이버검색         booking_visits_외부서비스     0.387171         0.387171
+159         booking_visits_외부서비스         booking_visits_네이버기타     0.379241         0.379241
+476      keyword_pv_type2_others          place_pv_네이버 플레이스광고     0.350865         0.350865
+237        booking_visits_플레이스목록               place_pv_네이버지도     0.349755         0.349755
+173         booking_visits_외부서비스               place_pv_인스타그램     0.324817         0.324817
+8         total_booking_requests            booking_visits_지도     0.319819         0.319819
+33     total_booking_page_visits        booking_visits_플레이스상세     0.316151         0.316151 (correlation_analyzer.py:138)
+2025-08-11 18:30:23,394 - performance_analyzer - INFO - 종합 상관관계 히트맵 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/GOODMORNINGHANIGURO/comprehensive_correlation_heatmap.png (correlation_analyzer.py:151)
+2025-08-11 18:30:23,394 - performance_analyzer - INFO - 
+상관계수 행렬:
+                             total_booking_requests  ...  keyword_pv_type2_others
+total_booking_requests                     1.000000  ...                -0.048050
+total_booking_page_visits                  0.587222  ...                 0.118381
+total_place_pv                             0.052438  ...                 0.185687
+booking_visits_PC플랫폼                       0.080124  ...                 0.162236
+booking_visits_기타                          0.063157  ...                 0.018207
+booking_visits_네이버기타                       0.241210  ...                 0.005089
+booking_visits_블로그                         0.048835  ...                -0.079488
+booking_visits_외부서비스                       0.035872  ...                -0.067133
+booking_visits_지도                          0.319819  ...                 0.033147
+booking_visits_플레이스광고                      0.119830  ...                 0.004559
+booking_visits_플레이스목록                      0.306799  ...                 0.188942
+booking_visits_플레이스상세                      0.128344  ...                 0.081277
+place_pv_네이버 모바일메인                        -0.019823  ...                -0.061945
+place_pv_네이버 블로그                          -0.077450  ...                -0.046207
+place_pv_네이버 플레이스광고                       -0.045593  ...                 0.350865
+place_pv_네이버검색                             0.048725  ...                 0.191225
+place_pv_네이버공통                             0.066510  ...                -0.002442
+place_pv_네이버지도                             0.098838  ...                -0.022010
+place_pv_웹사이트                              0.081254  ...                -0.064678
+place_pv_인스타그램                             0.055417  ...                -0.010451
+keyword_pv_type1_brand_like                0.065234  ...                -0.151603
+keyword_pv_type2_others                   -0.048050  ...                 1.000000
+
+[22 rows x 22 columns] (correlation_analyzer.py:152)
+2025-08-11 18:30:23,418 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:219)
+2025-08-11 18:32:07,165 - performance_analyzer - INFO - 자동으로 클라이언트 'GOODMORNINGHANIGURO'에 대한 분석을 시작합니다. (correlation_analyzer.py:281)
+2025-08-11 18:32:07,165 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 18:32:07,165 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:32:07,165 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:32:07,166 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:32:07,166 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:32:07,166 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,169 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,170 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_10_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,171 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,173 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_11_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,175 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,176 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_12_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,178 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,179 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_01_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,182 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,183 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_02_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,186 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,187 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_03_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,190 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,191 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_04_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,195 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,196 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_05_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,200 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,202 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_06_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,206 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,208 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_07_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:32:07,213 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:32:07,253 - performance_analyzer - INFO - 종합 상관관계 분석을 시작합니다... (correlation_analyzer.py:117)
+2025-08-11 18:32:07,256 - performance_analyzer - INFO - 
+상관관계 상위 20개:
+                        feature1                     feature2  correlation  abs_correlation
+59                total_place_pv               place_pv_네이버검색     0.998446         0.998446
+442  keyword_pv_type1_brand_like               total_place_pv     0.941737         0.941737
+455  keyword_pv_type1_brand_like               place_pv_네이버검색     0.941111         0.941111
+61                total_place_pv               place_pv_네이버지도     0.661606         0.661606
+394               place_pv_네이버지도  keyword_pv_type1_brand_like     0.634326         0.634326
+389               place_pv_네이버지도               place_pv_네이버검색     0.621083         0.621083
+423               place_pv_인스타그램         booking_visits_네이버기타     0.597478         0.597478
+22     total_booking_page_visits       total_booking_requests     0.587222         0.587222
+221        booking_visits_플레이스목록    total_booking_page_visits     0.477266         0.477266
+177            booking_visits_지도    total_booking_page_visits     0.472394         0.472394
+193            booking_visits_지도               place_pv_네이버지도     0.431782         0.431782
+174         booking_visits_외부서비스  keyword_pv_type1_brand_like     0.413232         0.413232
+51                total_place_pv         booking_visits_외부서비스     0.390507         0.390507
+337               place_pv_네이버검색         booking_visits_외부서비스     0.387171         0.387171
+159         booking_visits_외부서비스         booking_visits_네이버기타     0.379241         0.379241
+476      keyword_pv_type2_others          place_pv_네이버 플레이스광고     0.350865         0.350865
+237        booking_visits_플레이스목록               place_pv_네이버지도     0.349755         0.349755
+173         booking_visits_외부서비스               place_pv_인스타그램     0.324817         0.324817
+8         total_booking_requests            booking_visits_지도     0.319819         0.319819
+33     total_booking_page_visits        booking_visits_플레이스상세     0.316151         0.316151 (correlation_analyzer.py:138)
+2025-08-11 18:32:07,926 - performance_analyzer - INFO - 종합 상관관계 히트맵 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/GOODMORNINGHANIGURO/comprehensive_correlation_heatmap.png (correlation_analyzer.py:151)
+2025-08-11 18:32:07,926 - performance_analyzer - INFO - 
+상관계수 행렬:
+                             total_booking_requests  ...  keyword_pv_type2_others
+total_booking_requests                     1.000000  ...                -0.048050
+total_booking_page_visits                  0.587222  ...                 0.118381
+total_place_pv                             0.052438  ...                 0.185687
+booking_visits_PC플랫폼                       0.080124  ...                 0.162236
+booking_visits_기타                          0.063157  ...                 0.018207
+booking_visits_네이버기타                       0.241210  ...                 0.005089
+booking_visits_블로그                         0.048835  ...                -0.079488
+booking_visits_외부서비스                       0.035872  ...                -0.067133
+booking_visits_지도                          0.319819  ...                 0.033147
+booking_visits_플레이스광고                      0.119830  ...                 0.004559
+booking_visits_플레이스목록                      0.306799  ...                 0.188942
+booking_visits_플레이스상세                      0.128344  ...                 0.081277
+place_pv_네이버 모바일메인                        -0.019823  ...                -0.061945
+place_pv_네이버 블로그                          -0.077450  ...                -0.046207
+place_pv_네이버 플레이스광고                       -0.045593  ...                 0.350865
+place_pv_네이버검색                             0.048725  ...                 0.191225
+place_pv_네이버공통                             0.066510  ...                -0.002442
+place_pv_네이버지도                             0.098838  ...                -0.022010
+place_pv_웹사이트                              0.081254  ...                -0.064678
+place_pv_인스타그램                             0.055417  ...                -0.010451
+keyword_pv_type1_brand_like                0.065234  ...                -0.151603
+keyword_pv_type2_others                   -0.048050  ...                 1.000000
+
+[22 rows x 22 columns] (correlation_analyzer.py:152)
+2025-08-11 18:32:07,950 - performance_analyzer - INFO - 분석 결과를 마크다운 파일로 저장합니다... (correlation_analyzer.py:158)
+2025-08-11 18:32:07,956 - performance_analyzer - INFO - 분석 리포트 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/GOODMORNINGHANIGURO/analysis_report.md (correlation_analyzer.py:186)
+2025-08-11 18:32:07,956 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:255)
+2025-08-11 18:54:09,548 - performance_analyzer - INFO - 자동으로 클라이언트 'GOODMORNINGHANIGURO'에 대한 분석을 시작합니다. (correlation_analyzer.py:336)
+2025-08-11 18:54:09,549 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 18:54:09,549 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:54:09,549 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:54:09,549 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 18:54:09,549 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 18:54:09,550 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,555 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,556 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_10_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,558 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,559 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_11_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,561 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,563 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2024_12_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,565 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,566 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_01_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,570 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,572 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_02_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,575 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,577 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_03_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,580 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,582 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_04_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,586 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,588 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_05_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,596 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,599 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_06_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,608 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,609 - performance_analyzer - INFO - 로딩 (PV): GOODMORNINGHANIGURO_2025_07_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 18:54:09,615 - performance_analyzer - INFO - 로딩 (Booking): GOODMORNINGHANIGURO_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 18:54:09,663 - performance_analyzer - INFO - 퍼널 단계별 집중 상관관계 분석을 시작합니다... (correlation_analyzer.py:117)
+2025-08-11 18:54:09,664 - performance_analyzer - INFO - 
+전체 기간 상관관계:
+         category                                               pair  correlation
+0     1. 예약 전환 분석  total_booking_requests vs total_booking_page_v...     0.587222
+1     1. 예약 전환 분석        total_booking_requests vs booking_visits_지도     0.319819
+2     1. 예약 전환 분석    total_booking_requests vs booking_visits_플레이스목록     0.306799
+3     1. 예약 전환 분석        total_booking_page_visits vs total_place_pv     0.097467
+4  2. 플레이스 트래픽 분석                   total_place_pv vs place_pv_네이버검색     0.998446
+5  2. 플레이스 트래픽 분석                   total_place_pv vs place_pv_네이버지도     0.661606
+6  2. 플레이스 트래픽 분석      total_place_pv vs keyword_pv_type1_brand_like     0.941737
+7  2. 플레이스 트래픽 분석          total_place_pv vs keyword_pv_type2_others     0.185687 (correlation_analyzer.py:136)
+2025-08-11 18:54:09,683 - performance_analyzer - INFO - 
+월별 상관관계:
+               category                                               pair  correlation
+month                                                                                  
+2024-09     1. 예약 전환 분석  total_booking_requests vs total_booking_page_v...     0.566185
+2024-09     1. 예약 전환 분석        total_booking_requests vs booking_visits_지도     0.770515
+2024-09     1. 예약 전환 분석    total_booking_requests vs booking_visits_플레이스목록     0.208851
+2024-09     1. 예약 전환 분석        total_booking_page_visits vs total_place_pv     0.258052
+2024-09  2. 플레이스 트래픽 분석                   total_place_pv vs place_pv_네이버검색     0.889789
+...                 ...                                                ...          ...
+2025-07     1. 예약 전환 분석        total_booking_page_visits vs total_place_pv     0.353383
+2025-07  2. 플레이스 트래픽 분석                   total_place_pv vs place_pv_네이버검색     0.725349
+2025-07  2. 플레이스 트래픽 분석                   total_place_pv vs place_pv_네이버지도     0.835313
+2025-07  2. 플레이스 트래픽 분석      total_place_pv vs keyword_pv_type1_brand_like     0.518229
+2025-07  2. 플레이스 트래픽 분석          total_place_pv vs keyword_pv_type2_others     0.630186
+
+[88 rows x 3 columns] (correlation_analyzer.py:149)
+2025-08-11 18:54:09,689 - performance_analyzer - INFO - 
+상관관계 안정성 (표준편차 오름차순):
+                                                pair   std_dev
+3  total_booking_requests vs total_booking_page_v...  0.129934
+2    total_booking_requests vs booking_visits_플레이스목록  0.190133
+6                   total_place_pv vs place_pv_네이버검색  0.192030
+0        total_booking_page_visits vs total_place_pv  0.214517
+1        total_booking_requests vs booking_visits_지도  0.247623
+4      total_place_pv vs keyword_pv_type1_brand_like  0.319955
+7                   total_place_pv vs place_pv_네이버지도  0.415045
+5          total_place_pv vs keyword_pv_type2_others  0.458065 (correlation_analyzer.py:155)
+2025-08-11 18:54:09,691 - performance_analyzer - INFO - 월별 상관관계 트렌드 그래프를 생성합니다... (correlation_analyzer.py:178)
+2025-08-11 18:54:10,478 - performance_analyzer - INFO - 월별 트렌드 그래프 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/GOODMORNINGHANIGURO/monthly_correlation_trends.png (correlation_analyzer.py:204)
+2025-08-11 18:54:10,478 - performance_analyzer - INFO - 분석 결과를 마크다운 파일로 저장합니다... (correlation_analyzer.py:209)
+2025-08-11 18:54:10,484 - performance_analyzer - INFO - 분석 리포트 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/GOODMORNINGHANIGURO/focused_analysis_report.md (correlation_analyzer.py:243)
+2025-08-11 18:54:10,484 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:310)
+2025-08-11 19:11:32,362 - performance_analyzer - INFO - .env 파일을 다음 경로에서 로드했습니다: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/.env (main.py:33)
+2025-08-11 19:16:15,455 - performance_analyzer - INFO - .env 파일을 다음 경로에서 로드했습니다: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/.env (main.py:33)
+2025-08-11 19:16:15,459 - performance_analyzer - INFO - 
+==================== 클라이언트: [GOODMORNINGHANIGURO] 작업 시작 ==================== (main.py:116)
+2025-08-11 19:16:15,459 - performance_analyzer - INFO - TASK: Data Crawling for GOODMORNINGHANIGURO (main.py:120)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - ===== GOODMORNINGHANIGURO 대상 2024년 9월 데이터 수집 시작 ===== (main.py:54)
+2025-08-11 19:16:15,460 - performance_analyzer - ERROR - 심각한 오류가 감지되어 해당 클라이언트의 남은 크롤링 작업을 중단합니다. (main.py:129)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - TASK: Data Analysis for GOODMORNINGHANIGURO (main.py:134)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - ===== GOODMORNINGHANIGURO 대상 2024-9 ~ 2024-9 데이터 분석 시작 ===== (main.py:81)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 19:16:15,460 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:16:15,460 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:16:15,460 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:312)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - ==================== 클라이언트: [GOODMORNINGHANIGURO] 작업 완료 ==================== (main.py:137)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - 
+==================== 클라이언트: [NATENCLINIC] 작업 시작 ==================== (main.py:116)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - TASK: Data Crawling for NATENCLINIC (main.py:120)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - ===== NATENCLINIC 대상 2024년 9월 데이터 수집 시작 ===== (main.py:54)
+2025-08-11 19:16:15,460 - performance_analyzer - ERROR - 심각한 오류가 감지되어 해당 클라이언트의 남은 크롤링 작업을 중단합니다. (main.py:129)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - TASK: Data Analysis for NATENCLINIC (main.py:134)
+2025-08-11 19:16:15,460 - performance_analyzer - INFO - ===== NATENCLINIC 대상 2024-9 ~ 2024-9 데이터 분석 시작 ===== (main.py:81)
+2025-08-11 19:16:15,461 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 19:16:15,461 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:16:15,461 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:16:15,461 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:312)
+2025-08-11 19:16:15,461 - performance_analyzer - INFO - ==================== 클라이언트: [NATENCLINIC] 작업 완료 ==================== (main.py:137)
+2025-08-11 19:16:15,461 - performance_analyzer - INFO - 
+🎉 모든 작업이 완료되었습니다. (main.py:139)
+2025-08-11 19:19:04,209 - performance_analyzer - INFO - ============================================================ (main.py:46)
+2025-08-11 19:19:04,209 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 및 분석 스크립트 (main.py:47)
+2025-08-11 19:19:04,209 - performance_analyzer - INFO - ============================================================ (main.py:48)
+2025-08-11 19:19:07,813 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (main.py:56)
+2025-08-11 19:19:38,134 - performance_analyzer - INFO - 총 11개월의 데이터를 처리합니다: [2024-09 ~ 2025-07] (main.py:77)
+2025-08-11 19:19:38,136 - performance_analyzer - INFO - 
+######################### [1/2] 데이터 수집 단계 시작 ######################### (main.py:80)
+2025-08-11 19:21:42,084 - performance_analyzer - INFO - ============================================================ (main.py:46)
+2025-08-11 19:21:42,085 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 및 분석 스크립트 (main.py:47)
+2025-08-11 19:21:42,085 - performance_analyzer - INFO - ============================================================ (main.py:48)
+2025-08-11 19:21:43,007 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (main.py:56)
+2025-08-11 19:21:46,337 - performance_analyzer - INFO - 총 11개월의 데이터를 처리합니다: [2024-09 ~ 2025-07] (main.py:77)
+2025-08-11 19:21:46,337 - performance_analyzer - INFO - 
+######################### [1/2] 데이터 수집 단계 시작 ######################### (main.py:80)
+2025-08-11 19:21:46,338 - performance_analyzer - INFO - 
+========================= 2024년 09월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:46,338 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:46,621 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:46,638 - performance_analyzer - INFO - ✅ 2024년 09월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:46,638 - performance_analyzer - INFO - 
+========================= 2024년 10월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:46,638 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:46,676 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:46,701 - performance_analyzer - INFO - ✅ 2024년 10월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:46,701 - performance_analyzer - INFO - 
+========================= 2024년 11월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:46,701 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:46,779 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:46,811 - performance_analyzer - INFO - ✅ 2024년 11월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:46,811 - performance_analyzer - INFO - 
+========================= 2024년 12월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:46,811 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:46,874 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:46,917 - performance_analyzer - INFO - ✅ 2024년 12월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:46,917 - performance_analyzer - INFO - 
+========================= 2025년 01월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:46,917 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:46,994 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:47,044 - performance_analyzer - INFO - ✅ 2025년 01월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:47,044 - performance_analyzer - INFO - 
+========================= 2025년 02월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:47,044 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:47,132 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:47,189 - performance_analyzer - INFO - ✅ 2025년 02월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:47,190 - performance_analyzer - INFO - 
+========================= 2025년 03월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:47,190 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:47,291 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:47,356 - performance_analyzer - INFO - ✅ 2025년 03월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:47,356 - performance_analyzer - INFO - 
+========================= 2025년 04월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:47,356 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:47,846 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:47,949 - performance_analyzer - INFO - ✅ 2025년 04월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:47,949 - performance_analyzer - INFO - 
+========================= 2025년 05월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:47,949 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:48,081 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:48,165 - performance_analyzer - INFO - ✅ 2025년 05월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:48,165 - performance_analyzer - INFO - 
+========================= 2025년 06월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:48,165 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:48,304 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:48,392 - performance_analyzer - INFO - ✅ 2025년 06월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:48,392 - performance_analyzer - INFO - 
+========================= 2025년 07월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:21:48,392 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:21:48,549 - performance_analyzer - INFO - --- (2) Booking 통계 수집 중... --- (main.py:91)
+2025-08-11 19:21:48,648 - performance_analyzer - INFO - ✅ 2025년 07월 데이터 수집 완료 (main.py:94)
+2025-08-11 19:21:48,648 - performance_analyzer - INFO - 
+######################### [1/2] 데이터 수집 단계 완료 ######################### (main.py:108)
+2025-08-11 19:21:48,648 - performance_analyzer - INFO - 
+######################### [2/2] 데이터 분석 단계 시작 ######################### (main.py:111)
+2025-08-11 19:21:48,648 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 19:21:48,648 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,648 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,650 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,650 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,650 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,651 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,651 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,651 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,652 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,652 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,652 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,652 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,653 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,653 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,654 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,654 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,655 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,655 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,655 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,655 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,656 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:21:48,656 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 19:21:48,657 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:312)
+2025-08-11 19:21:48,657 - performance_analyzer - INFO - ✅ 데이터 분석 완료 (main.py:124)
+2025-08-11 19:21:48,657 - performance_analyzer - INFO - 
+============================================================ (main.py:128)
+2025-08-11 19:21:48,657 - performance_analyzer - INFO - 🎉 모든 작업이 완료되었습니다. (main.py:129)
+2025-08-11 19:21:48,657 - performance_analyzer - INFO - ============================================================ (main.py:130)
+2025-08-11 19:27:42,701 - performance_analyzer - INFO - ============================================================ (main.py:46)
+2025-08-11 19:27:42,701 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 및 분석 스크립트 (main.py:47)
+2025-08-11 19:27:42,701 - performance_analyzer - INFO - ============================================================ (main.py:48)
+2025-08-11 19:27:43,808 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (main.py:56)
+2025-08-11 19:27:47,540 - performance_analyzer - INFO - 총 11개월의 데이터를 처리합니다: [2024-09 ~ 2025-07] (main.py:77)
+2025-08-11 19:27:47,540 - performance_analyzer - INFO - 
+######################### [1/2] 데이터 수집 단계 시작 ######################### (main.py:80)
+2025-08-11 19:27:47,541 - performance_analyzer - INFO - 
+========================= 2024년 09월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,541 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:47,688 - performance_analyzer - CRITICAL - 💥 2024년 09월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:47,689 - performance_analyzer - INFO - 
+========================= 2024년 10월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,689 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:47,727 - performance_analyzer - CRITICAL - 💥 2024년 10월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:47,727 - performance_analyzer - INFO - 
+========================= 2024년 11월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,727 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:47,782 - performance_analyzer - CRITICAL - 💥 2024년 11월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:47,782 - performance_analyzer - INFO - 
+========================= 2024년 12월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,782 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:47,885 - performance_analyzer - CRITICAL - 💥 2024년 12월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:47,885 - performance_analyzer - INFO - 
+========================= 2025년 01월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,885 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:47,964 - performance_analyzer - CRITICAL - 💥 2025년 01월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:47,964 - performance_analyzer - INFO - 
+========================= 2025년 02월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:47,965 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,055 - performance_analyzer - CRITICAL - 💥 2025년 02월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,055 - performance_analyzer - INFO - 
+========================= 2025년 03월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:48,055 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,157 - performance_analyzer - CRITICAL - 💥 2025년 03월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,157 - performance_analyzer - INFO - 
+========================= 2025년 04월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:48,157 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,274 - performance_analyzer - CRITICAL - 💥 2025년 04월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,274 - performance_analyzer - INFO - 
+========================= 2025년 05월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:48,274 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,399 - performance_analyzer - CRITICAL - 💥 2025년 05월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,399 - performance_analyzer - INFO - 
+========================= 2025년 06월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:48,399 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,537 - performance_analyzer - CRITICAL - 💥 2025년 06월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,537 - performance_analyzer - INFO - 
+========================= 2025년 07월 데이터 수집 시작 ========================= (main.py:86)
+2025-08-11 19:27:48,537 - performance_analyzer - INFO - --- (1) Place PV 통계 수집 중... --- (main.py:88)
+2025-08-11 19:27:48,689 - performance_analyzer - CRITICAL - 💥 2025년 07월 처리 중 심각한 오류 발생. 다음 달로 넘어갑니다. (main.py:101)
+Traceback (most recent call last):
+  File "/Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/scripts/main.py", line 89, in main
+    await pv_crawler.run_monthly_analysis(year, month, client_info.name)
+TypeError: object NoneType can't be used in 'await' expression
+2025-08-11 19:27:48,690 - performance_analyzer - INFO - 
+######################### [1/2] 데이터 수집 단계 완료 ######################### (main.py:108)
+2025-08-11 19:27:48,690 - performance_analyzer - INFO - 
+######################### [2/2] 데이터 분석 단계 시작 ######################### (main.py:111)
+2025-08-11 19:27:48,690 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,690 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 19:27:48,691 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 19:27:48,691 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:312)
+2025-08-11 19:27:48,691 - performance_analyzer - INFO - ✅ 데이터 분석 완료 (main.py:124)
+2025-08-11 19:27:48,691 - performance_analyzer - INFO - 
+============================================================ (main.py:128)
+2025-08-11 19:27:48,691 - performance_analyzer - INFO - 🎉 모든 작업이 완료되었습니다. (main.py:129)
+2025-08-11 19:27:48,691 - performance_analyzer - INFO - ============================================================ (main.py:130)
+2025-08-11 19:28:36,251 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-11 19:28:36,251 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-11 19:28:36,251 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-11 19:28:37,147 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (run_crawler.py:47)
+2025-08-11 19:28:41,408 - performance_analyzer - INFO - 총 11개월의 데이터를 수집합니다: [2024-09 ~ 2025-07] (run_crawler.py:68)
+2025-08-11 19:28:41,410 - performance_analyzer - INFO - 
+========================= 2024년 09월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:28:41,410 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:37:26,507 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-11 19:37:26,507 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-11 19:37:26,507 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-11 19:41:56,329 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-11 19:41:56,329 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-11 19:41:56,329 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-11 19:41:57,362 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (run_crawler.py:47)
+2025-08-11 19:42:01,207 - performance_analyzer - INFO - 총 11개월의 데이터를 수집합니다: [2024-09 ~ 2025-07] (run_crawler.py:68)
+2025-08-11 19:43:26,579 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-11 19:43:26,579 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-11 19:43:26,579 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-11 19:43:27,123 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (run_crawler.py:47)
+2025-08-11 19:43:30,081 - performance_analyzer - INFO - 총 11개월의 데이터를 수집합니다: [2024-09 ~ 2025-07] (run_crawler.py:68)
+2025-08-11 19:43:30,083 - performance_analyzer - INFO - 
+========================= 2024년 09월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:43:30,083 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:44:39,701 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-11 19:44:39,702 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-11 19:44:39,702 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-11 19:44:40,515 - performance_analyzer - INFO - ✅ 'NATENCLINIC' 클라이언트에 대한 작업을 시작합니다. (run_crawler.py:47)
+2025-08-11 19:44:44,369 - performance_analyzer - INFO - 총 11개월의 데이터를 수집합니다: [2024-09 ~ 2025-07] (run_crawler.py:68)
+2025-08-11 19:44:44,370 - performance_analyzer - INFO - 
+========================= 2024년 09월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:44:44,371 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:44:49,499 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:44:54,443 - performance_analyzer - INFO - ✅ 2024년 09월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:44:54,443 - performance_analyzer - INFO - 
+========================= 2024년 10월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:44:54,443 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:45:04,709 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:45:09,092 - performance_analyzer - INFO - ✅ 2024년 10월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:45:09,092 - performance_analyzer - INFO - 
+========================= 2024년 11월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:45:09,092 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:45:19,006 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:45:23,243 - performance_analyzer - INFO - ✅ 2024년 11월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:45:23,243 - performance_analyzer - INFO - 
+========================= 2024년 12월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:45:23,243 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:45:32,947 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:45:37,456 - performance_analyzer - INFO - ✅ 2024년 12월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:45:37,456 - performance_analyzer - INFO - 
+========================= 2025년 01월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:45:37,456 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:45:42,243 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:45:46,206 - performance_analyzer - INFO - ✅ 2025년 01월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:45:46,206 - performance_analyzer - INFO - 
+========================= 2025년 02월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:45:46,206 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:46:01,031 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:46:06,055 - performance_analyzer - INFO - ✅ 2025년 02월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:46:06,055 - performance_analyzer - INFO - 
+========================= 2025년 03월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:46:06,055 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:46:11,755 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:46:16,612 - performance_analyzer - INFO - ✅ 2025년 03월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:46:16,612 - performance_analyzer - INFO - 
+========================= 2025년 04월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:46:16,612 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:46:31,394 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:46:35,362 - performance_analyzer - INFO - ✅ 2025년 04월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:46:35,362 - performance_analyzer - INFO - 
+========================= 2025년 05월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:46:35,363 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:46:50,170 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:46:54,774 - performance_analyzer - INFO - ✅ 2025년 05월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:46:54,774 - performance_analyzer - INFO - 
+========================= 2025년 06월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:46:54,774 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:47:09,391 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:47:13,749 - performance_analyzer - INFO - ✅ 2025년 06월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:47:13,749 - performance_analyzer - INFO - 
+========================= 2025년 07월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-11 19:47:13,749 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-11 19:47:28,868 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-11 19:47:32,652 - performance_analyzer - INFO - ✅ 2025년 07월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-11 19:47:32,652 - performance_analyzer - INFO - 
+============================================================ (run_crawler.py:96)
+2025-08-11 19:47:32,652 - performance_analyzer - INFO - 🎉 모든 요청된 기간의 데이터 수집이 완료되었습니다. (run_crawler.py:97)
+2025-08-11 19:47:32,652 - performance_analyzer - INFO - ============================================================ (run_crawler.py:98)
+2025-08-11 20:00:33,759 - performance_analyzer - INFO - 분석할 클라이언트를 선택해주세요: (correlation_analyzer.py:284)
+2025-08-11 20:00:33,760 - performance_analyzer - INFO - 1. GOODMORNINGHANIGURO (correlation_analyzer.py:286)
+2025-08-11 20:00:33,760 - performance_analyzer - INFO - 2. NATENCLINIC (correlation_analyzer.py:286)
+2025-08-11 20:00:33,760 - performance_analyzer - INFO - 기본값으로 첫 번째 클라이언트 'GOODMORNINGHANIGURO'를 선택했습니다. (correlation_analyzer.py:289)
+2025-08-11 20:00:33,760 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,760 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:00:33,761 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:00:33,761 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:257)
+2025-08-11 20:01:26,957 - performance_analyzer - INFO - 분석할 클라이언트를 선택해주세요: (correlation_analyzer.py:284)
+2025-08-11 20:01:26,958 - performance_analyzer - INFO - 1. GOODMORNINGHANIGURO (correlation_analyzer.py:286)
+2025-08-11 20:01:26,958 - performance_analyzer - INFO - 2. NATENCLINIC (correlation_analyzer.py:286)
+2025-08-11 20:01:26,958 - performance_analyzer - INFO - 기본값으로 첫 번째 클라이언트 'GOODMORNINGHANIGURO'를 선택했습니다. (correlation_analyzer.py:289)
+2025-08-11 20:01:26,958 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,958 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (PV): GOODMORNINGHANIGURO_2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:26,959 - performance_analyzer - WARNING - 파일 없음 (Booking): GOODMORNINGHANIGURO_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:26,959 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:257)
+2025-08-11 20:01:52,873 - performance_analyzer - INFO - 분석할 클라이언트를 선택해주세요: (correlation_analyzer.py:284)
+2025-08-11 20:01:52,873 - performance_analyzer - INFO - 1. GOODMORNINGHANIGURO (correlation_analyzer.py:286)
+2025-08-11 20:01:52,873 - performance_analyzer - INFO - 2. NATENCLINIC (correlation_analyzer.py:286)
+2025-08-11 20:01:52,873 - performance_analyzer - INFO - 기본값으로 첫 번째 클라이언트 'NATENCLINIC'를 선택했습니다. (correlation_analyzer.py:289)
+2025-08-11 20:01:52,874 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,874 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:01:52,875 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:01:52,875 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:257)
+2025-08-11 20:03:07,996 - performance_analyzer - INFO - 분석할 클라이언트를 선택해주세요: (correlation_analyzer.py:284)
+2025-08-11 20:03:07,997 - performance_analyzer - INFO - 1. GOODMORNINGHANIGURO (correlation_analyzer.py:286)
+2025-08-11 20:03:07,997 - performance_analyzer - INFO - 2. NATENCLINIC (correlation_analyzer.py:286)
+2025-08-11 20:03:07,997 - performance_analyzer - INFO - 기본값으로 첫 번째 클라이언트 'NATENCLINIC'를 선택했습니다. (correlation_analyzer.py:289)
+2025-08-11 20:03:07,997 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:03:07,997 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:03:07,997 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:03:07,997 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:03:07,997 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:03:07,997 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,006 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,010 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_10_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,011 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,015 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_11_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,017 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,018 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_12_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,020 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,021 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_01_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,024 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,025 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_02_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,028 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,029 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_03_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,032 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,034 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_04_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,037 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,039 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_05_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,042 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,043 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_06_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,048 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,050 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_07_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:03:08,054 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:03:08,110 - performance_analyzer - INFO - 종합 상관관계 분석을 시작합니다... (correlation_analyzer.py:117)
+2025-08-11 20:03:08,115 - performance_analyzer - INFO - 
+상관관계 상위 20개:
+                    feature1                 feature2  correlation  abs_correlation
+398           place_pv_네이버지도           total_place_pv     0.958308         0.958308
+373           place_pv_네이버검색  keyword_pv_type2_others     0.949406         0.949406
+464  keyword_pv_type2_others           total_place_pv     0.895531         0.895531
+354           place_pv_네이버검색           total_place_pv     0.870995         0.870995
+181        booking_visits_지도     booking_visits_네이버기타     0.761962         0.761962
+178        booking_visits_지도           total_place_pv     0.744960         0.744960
+480  keyword_pv_type2_others           place_pv_네이버지도     0.743855         0.743855
+370           place_pv_네이버검색           place_pv_네이버지도     0.733933         0.733933
+404           place_pv_네이버지도        booking_visits_지도     0.728480         0.728480
+247    booking_visits_플레이스상세     booking_visits_네이버기타     0.702181         0.702181
+477  keyword_pv_type2_others      place_pv_네이버 플레이스광고     0.687765         0.687765
+49            total_place_pv     booking_visits_네이버기타     0.685341         0.685341
+128     booking_visits_네이버기타           place_pv_네이버지도     0.657858         0.657858
+360           place_pv_네이버검색        booking_visits_지도     0.646544         0.646544
+357           place_pv_네이버검색     booking_visits_네이버기타     0.636835         0.636835
+470  keyword_pv_type2_others        booking_visits_지도     0.634425         0.634425
+131     booking_visits_네이버기타  keyword_pv_type2_others     0.605538         0.605538
+332      place_pv_네이버 플레이스광고           total_place_pv     0.568681         0.568681
+244    booking_visits_플레이스상세           total_place_pv     0.559650         0.559650
+187        booking_visits_지도    booking_visits_플레이스상세     0.540071         0.540071 (correlation_analyzer.py:138)
+2025-08-11 20:03:09,148 - performance_analyzer - INFO - 종합 상관관계 히트맵 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/NATENCLINIC/comprehensive_correlation_heatmap.png (correlation_analyzer.py:151)
+2025-08-11 20:03:09,148 - performance_analyzer - INFO - 
+상관계수 행렬:
+                           total_booking_requests  ...  keyword_pv_type2_others
+total_booking_requests                   1.000000  ...                 0.028994
+total_booking_page_visits                0.381400  ...                 0.230976
+total_place_pv                           0.006674  ...                 0.895531
+booking_visits_PC플랫폼                     0.105807  ...                 0.054107
+booking_visits_기타                        0.016121  ...                 0.245528
+booking_visits_네이버기타                    -0.202848  ...                 0.605538
+booking_visits_블로그                       0.005727  ...                 0.258721
+booking_visits_외부서비스                     0.098637  ...                 0.169328
+booking_visits_지도                       -0.038380  ...                 0.634425
+booking_visits_플레이스광고                    0.029335  ...                 0.462403
+booking_visits_플레이스목록                   -0.074996  ...                 0.425913
+booking_visits_플레이스상세                   -0.072954  ...                 0.516314
+place_pv_구글검색                            0.004843  ...                 0.105188
+place_pv_네이버 모바일메인                       0.103265  ...                -0.063216
+place_pv_네이버 블로그                        -0.002681  ...                 0.252879
+place_pv_네이버 플레이스광고                      0.033290  ...                 0.687765
+place_pv_네이버검색                           0.021732  ...                 0.949406
+place_pv_네이버공통                          -0.052869  ...                 0.070340
+place_pv_네이버지도                          -0.022283  ...                 0.743855
+place_pv_웹사이트                            0.149460  ...                 0.137403
+place_pv_인스타그램                          -0.045450  ...                 0.021825
+keyword_pv_type2_others                  0.028994  ...                 1.000000
+
+[22 rows x 22 columns] (correlation_analyzer.py:152)
+2025-08-11 20:03:09,172 - performance_analyzer - INFO - 분석 결과를 마크다운 파일로 저장합니다... (correlation_analyzer.py:158)
+2025-08-11 20:03:09,189 - performance_analyzer - INFO - 분석 리포트 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/NATENCLINIC/analysis_report.md (correlation_analyzer.py:186)
+2025-08-11 20:03:09,189 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:255)
+2025-08-11 20:06:50,136 - performance_analyzer - INFO - 분석할 클라이언트를 선택해주세요: (correlation_analyzer.py:284)
+2025-08-11 20:06:50,137 - performance_analyzer - INFO - 1. GOODMORNINGHANIGURO (correlation_analyzer.py:286)
+2025-08-11 20:06:50,137 - performance_analyzer - INFO - 2. NATENCLINIC (correlation_analyzer.py:286)
+2025-08-11 20:06:50,137 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_09_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_10_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_11_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2024_12_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_01_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_02_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,137 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_03_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_04_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_05_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_06_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (PV): _2025_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:06:50,138 - performance_analyzer - WARNING - 파일 없음 (Booking): _2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:06:50,138 - performance_analyzer - ERROR - 분석에 필요한 데이터 파일이 충분하지 않습니다. (correlation_analyzer.py:257)
+2025-08-11 20:08:14,985 - performance_analyzer - INFO - 클라이언트 'NATENCLINIC'를 선택했습니다. (correlation_analyzer.py:292)
+2025-08-11 20:08:14,990 - performance_analyzer - INFO - 데이터 로딩 및 전처리를 시작합니다... (correlation_analyzer.py:35)
+2025-08-11 20:08:14,990 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_07_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:08:14,990 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_07_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:08:14,990 - performance_analyzer - WARNING - 파일 없음 (PV): NATENCLINIC_2024_08_integrated_statistics.csv (correlation_analyzer.py:51)
+2025-08-11 20:08:14,990 - performance_analyzer - WARNING - 파일 없음 (Booking): NATENCLINIC_2024_08_booking_integrated_statistics.csv (correlation_analyzer.py:58)
+2025-08-11 20:08:14,991 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_09_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,009 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_09_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,011 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_10_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,012 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_10_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,014 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_11_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,016 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_11_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,017 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2024_12_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,019 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2024_12_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,021 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_01_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,026 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_01_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,027 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_02_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,030 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_02_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,032 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_03_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,035 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_03_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,037 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_04_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,040 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_04_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,042 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_05_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,045 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_05_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,049 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_06_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,053 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_06_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,056 - performance_analyzer - INFO - 로딩 (PV): NATENCLINIC_2025_07_integrated_statistics.csv (correlation_analyzer.py:48)
+2025-08-11 20:08:15,060 - performance_analyzer - INFO - 로딩 (Booking): NATENCLINIC_2025_07_booking_integrated_statistics.csv (correlation_analyzer.py:55)
+2025-08-11 20:08:15,098 - performance_analyzer - INFO - 종합 상관관계 분석을 시작합니다... (correlation_analyzer.py:117)
+2025-08-11 20:08:15,101 - performance_analyzer - INFO - 
+상관관계 상위 20개:
+                    feature1                 feature2  correlation  abs_correlation
+398           place_pv_네이버지도           total_place_pv     0.958308         0.958308
+373           place_pv_네이버검색  keyword_pv_type2_others     0.949406         0.949406
+464  keyword_pv_type2_others           total_place_pv     0.895531         0.895531
+354           place_pv_네이버검색           total_place_pv     0.870995         0.870995
+181        booking_visits_지도     booking_visits_네이버기타     0.761962         0.761962
+178        booking_visits_지도           total_place_pv     0.744960         0.744960
+480  keyword_pv_type2_others           place_pv_네이버지도     0.743855         0.743855
+370           place_pv_네이버검색           place_pv_네이버지도     0.733933         0.733933
+404           place_pv_네이버지도        booking_visits_지도     0.728480         0.728480
+247    booking_visits_플레이스상세     booking_visits_네이버기타     0.702181         0.702181
+477  keyword_pv_type2_others      place_pv_네이버 플레이스광고     0.687765         0.687765
+49            total_place_pv     booking_visits_네이버기타     0.685341         0.685341
+128     booking_visits_네이버기타           place_pv_네이버지도     0.657858         0.657858
+360           place_pv_네이버검색        booking_visits_지도     0.646544         0.646544
+357           place_pv_네이버검색     booking_visits_네이버기타     0.636835         0.636835
+470  keyword_pv_type2_others        booking_visits_지도     0.634425         0.634425
+131     booking_visits_네이버기타  keyword_pv_type2_others     0.605538         0.605538
+332      place_pv_네이버 플레이스광고           total_place_pv     0.568681         0.568681
+244    booking_visits_플레이스상세           total_place_pv     0.559650         0.559650
+187        booking_visits_지도    booking_visits_플레이스상세     0.540071         0.540071 (correlation_analyzer.py:138)
+2025-08-11 20:08:15,771 - performance_analyzer - INFO - 종합 상관관계 히트맵 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/NATENCLINIC/comprehensive_correlation_heatmap.png (correlation_analyzer.py:151)
+2025-08-11 20:08:15,771 - performance_analyzer - INFO - 
+상관계수 행렬:
+                           total_booking_requests  total_booking_page_visits  ...  place_pv_인스타그램  keyword_pv_type2_others
+total_booking_requests                   1.000000                   0.381400  ...       -0.045450                 0.028994
+total_booking_page_visits                0.381400                   1.000000  ...        0.063042                 0.230976
+total_place_pv                           0.006674                   0.201806  ...        0.003817                 0.895531
+booking_visits_PC플랫폼                     0.105807                   0.363204  ...        0.177256                 0.054107
+booking_visits_기타                        0.016121                   0.203833  ...       -0.031396                 0.245528
+booking_visits_네이버기타                    -0.202848                  -0.210980  ...       -0.032650                 0.605538
+booking_visits_블로그                       0.005727                   0.096600  ...       -0.013753                 0.258721
+booking_visits_외부서비스                     0.098637                   0.119147  ...       -0.010598                 0.169328
+booking_visits_지도                       -0.038380                   0.115138  ...       -0.011089                 0.634425
+booking_visits_플레이스광고                    0.029335                   0.380016  ...        0.023620                 0.462403
+booking_visits_플레이스목록                   -0.074996                   0.223079  ...       -0.012017                 0.425913
+booking_visits_플레이스상세                   -0.072954                   0.007316  ...       -0.015709                 0.516314
+place_pv_구글검색                            0.004843                   0.012326  ...       -0.004236                 0.105188
+place_pv_네이버 모바일메인                       0.103265                   0.083056  ...       -0.008600                -0.063216
+place_pv_네이버 블로그                        -0.002681                  -0.020163  ...       -0.027435                 0.252879
+place_pv_네이버 플레이스광고                      0.033290                   0.266282  ...       -0.000137                 0.687765
+place_pv_네이버검색                           0.021732                   0.172808  ...        0.027324                 0.949406
+place_pv_네이버공통                          -0.052869                   0.012980  ...       -0.007193                 0.070340
+place_pv_네이버지도                          -0.022283                   0.158731  ...       -0.004896                 0.743855
+place_pv_웹사이트                            0.149460                   0.146695  ...       -0.021215                 0.137403
+place_pv_인스타그램                          -0.045450                   0.063042  ...        1.000000                 0.021825
+keyword_pv_type2_others                  0.028994                   0.230976  ...        0.021825                 1.000000
+
+[22 rows x 22 columns] (correlation_analyzer.py:152)
+2025-08-11 20:08:15,796 - performance_analyzer - INFO - 분석 결과를 마크다운 파일로 저장합니다... (correlation_analyzer.py:158)
+2025-08-11 20:08:15,803 - performance_analyzer - INFO - 분석 리포트 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/analysis_results/NATENCLINIC/analysis_report.md (correlation_analyzer.py:186)
+2025-08-11 20:08:15,803 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:255)

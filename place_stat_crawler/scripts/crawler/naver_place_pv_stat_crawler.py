@@ -59,7 +59,7 @@ class NaverStatCrawler(NaverCrawlerBase):
         self.smart_place_id = None
         
         # 스마트플레이스 API 설정
-        self.base_url = "https://new.smartplace.naver.com/proxy/bizadvisor/api/v3/sites/sp_18123cf1aec42/report"
+        self.base_url = "https://new.smartplace.naver.com/proxy/bizadvisor/api/v3/sites/sp_311b9ba993e974/report"
         
         # 데이터 저장소
         self.all_data = {}
