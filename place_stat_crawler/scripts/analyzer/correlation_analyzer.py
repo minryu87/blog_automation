@@ -23,12 +23,24 @@ class PerformanceAnalyzer:
         self.end_month = end_month
         self.base_path = Path(__file__).resolve().parents[2]
         self.processed_data_path = self.base_path / 'data' / 'processed' / client_name
-        self.analysis_results_path = self.base_path / 'analysis_results' / client_name
+        self.analysis_results_path = self.base_path / 'data' / 'analyzed' / client_name
         self.analysis_results_path.mkdir(parents=True, exist_ok=True)
         
         # 한글 폰트 설정
         plt.rcParams['font.family'] = 'AppleGothic'
         plt.rcParams['axes.unicode_minus'] = False
+
+        # 분석할 주요 지표 쌍 정의
+        self.focused_pairs = [
+            ("1. 예약 전환 분석", "total_booking_requests", "total_booking_page_visits"),
+            ("1. 예약 전환 분석", "total_booking_requests", "booking_visits_지도"),
+            ("1. 예약 전환 분석", "total_booking_requests", "booking_visits_플레이스목록"),
+            ("1. 예약 전환 분석", "total_booking_page_visits", "total_place_pv"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "place_pv_네이버검색"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "place_pv_네이버지도"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "keyword_pv_type1_brand_like"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "keyword_pv_type2_others"),
+        ]
 
     def load_and_prepare_data(self) -> pd.DataFrame:
         """지정된 기간의 데이터를 로드하고 분석에 맞게 전처리합니다."""
@@ -100,7 +112,16 @@ class PerformanceAnalyzer:
         
         def classify_keyword(k):
             k_str = str(k).lower()
-            if '내이튼' in k_str or '네이튼' in k_str:
+            # 클라이언트별 브랜드 키워드를 여기서 동적으로 설정할 수 있습니다.
+            # 지금은 하드코딩된 예시를 사용합니다.
+            if self.client_name == 'GOODMORNINGHANIGURO':
+                brand_keywords = ['아침', '285']
+            elif self.client_name == 'NATENCLINIC':
+                brand_keywords = ['내이튼', '네이튼']
+            else:
+                brand_keywords = []
+
+            if any(kw in k_str for kw in brand_keywords):
                 return 'type1_brand_like'
             return 'type2_others'
 
@@ -111,147 +132,119 @@ class PerformanceAnalyzer:
         ).add_prefix('keyword_pv_')
         
         return keyword_summary.reset_index()
-
-    def analyze_correlation(self, df: pd.DataFrame):
-        """요청된 모든 주요 지표 간의 상관관계를 분석하고 히트맵으로 시각화합니다."""
-        logger.info("종합 상관관계 분석을 시작합니다...")
         
-        # 분석할 지표 선택
-        metrics = [
-            'total_booking_requests', 'total_booking_page_visits', 'total_place_pv',
-        ]
-        metrics.extend([col for col in df.columns if col.startswith('booking_visits_')])
-        metrics.extend([col for col in df.columns if col.startswith('place_pv_')])
-        metrics.extend([col for col in df.columns if col.startswith('keyword_pv_')])
+    def _calculate_correlations(self, df: pd.DataFrame, pairs: list) -> dict:
+        """정의된 쌍에 대한 상관계수를 계산합니다."""
+        results = {}
+        for category, col1, col2 in pairs:
+            pair_key = f"{col1} vs {col2}"
+            # 데이터프레임에 두 컬럼이 모두 존재할 경우에만 계산
+            if col1 in df.columns and col2 in df.columns and df[col1].nunique() > 1 and df[col2].nunique() > 1:
+                correlation = df[col1].corr(df[col2])
+                results[pair_key] = {'category': category, 'correlation': correlation}
+            else:
+                results[pair_key] = {'category': category, 'correlation': np.nan}
+        return results
 
-        # 일부 열이 없을 수도 있으므로, df에 존재하는 열만 필터링
-        metrics = [m for m in metrics if m in df.columns]
+    def run_focused_analysis(self, df: pd.DataFrame):
+        """요청된 형식의 리포트를 위한 분석을 수행합니다."""
+        logger.info("포커스 분석(월별, 안정성)을 시작합니다...")
         
-        corr_matrix = df[metrics].corr()
-
-        # 상관관계가 높은 순으로 정렬하여 출력
-        corr_pairs = corr_matrix.stack().reset_index()
-        corr_pairs.columns = ['feature1', 'feature2', 'correlation']
-        corr_pairs = corr_pairs[corr_pairs['feature1'] != corr_pairs['feature2']]
-        corr_pairs['abs_correlation'] = corr_pairs['correlation'].abs()
-        sorted_corr = corr_pairs.sort_values(by='abs_correlation', ascending=False).drop_duplicates(subset=['abs_correlation'])
-        logger.info("\n상관관계 상위 20개:\n%s", sorted_corr.head(20))
-
-
-        plt.figure(figsize=(20, 18))
-        sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f", annot_kws={"size": 8})
-        plt.title('주요 마케팅 지표 간 종합 상관관계 히트맵', fontsize=20)
-        plt.xticks(rotation=45, ha='right')
-        plt.yticks(rotation=0)
+        # 전체 기간 상관관계
+        overall_corr_results = self._calculate_correlations(df, self.focused_pairs)
+        overall_corr_df = pd.DataFrame.from_dict(overall_corr_results, orient='index').reset_index().rename(columns={'index': 'pair'})
         
-        save_path = self.analysis_results_path / 'comprehensive_correlation_heatmap.png'
-        plt.savefig(save_path, bbox_inches='tight')
+        # 월별 상관관계
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue # 데이터가 2개 미만이면 상관관계 계산 불가
+            month_str = month.strftime('%Y-%m')
+            monthly_results = self._calculate_correlations(group, self.focused_pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'month': month_str,
+                    'category': values['category'],
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        monthly_corr_df = pd.DataFrame(monthly_corr_list)
+
+        # 안정성 분석 (표준편차)
+        stability_df = monthly_corr_df.groupby('pair')['correlation'].std().reset_index()
+        stability_df.rename(columns={'correlation': 'std_dev'}, inplace=True)
+        stability_df = stability_df.sort_values(by='std_dev').dropna()
+
+        self.plot_monthly_correlation_trends(monthly_corr_df)
+
+        return overall_corr_df, stability_df, monthly_corr_df
+
+    def plot_monthly_correlation_trends(self, monthly_corr_df: pd.DataFrame):
+        """월별 상관관계 트렌드를 시각화합니다."""
+        logger.info("월별 상관관계 트렌드 그래프를 생성합니다...")
+        
+        pivot_df = monthly_corr_df.pivot(index='month', columns='pair', values='correlation')
+        
+        plt.figure(figsize=(20, 12))
+        for column in pivot_df.columns:
+            plt.plot(pivot_df.index, pivot_df[column], marker='o', linestyle='-', label=column)
+            
+        plt.title('월별 주요 지표 상관관계 트렌드', fontsize=20)
+        plt.xlabel('월')
+        plt.ylabel('상관계수')
+        plt.xticks(rotation=45)
+        plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+        plt.tight_layout(rect=[0, 0, 0.85, 1])
+        
+        save_path = self.analysis_results_path / 'monthly_correlation_trends.png'
+        plt.savefig(save_path)
         plt.close()
-        
-        logger.info(f"종합 상관관계 히트맵 저장 완료: {save_path}")
-        logger.info("\n상관계수 행렬:\n%s", corr_matrix)
+        logger.info(f"월별 트렌드 그래프 저장 완료: {save_path}")
 
-        return corr_matrix, sorted_corr.head(20)
+    def save_analysis_summary_to_md(self, overall_corr, stability_df, monthly_corr_df):
+        """요청된 형식에 맞춰 분석 결과를 마크다운 파일로 저장합니다."""
+        logger.info("새로운 형식의 분석 리포트를 마크다운 파일로 저장합니다...")
 
-    def save_analysis_summary_to_md(self, corr_matrix: pd.DataFrame, top_corr: pd.DataFrame):
-        """분석 결과를 마크다운 파일로 저장합니다."""
-        logger.info("분석 결과를 마크다운 파일로 저장합니다...")
-        
         md_content = f"""# {self.client_name} 마케팅 퍼널 상관관계 분석 리포트
 
-## 분석 요약
+## 1. 전체 기간 주요 퍼널 단계별 상관관계
 
-- **예약 퍼널의 기본 작동 확인**: `예약 페이지 방문수`와 `예약 신청 수`는 0.59의 뚜렷한 양의 상관관계를 보여, 예약 페이지 방문이 늘면 실제 예약도 증가하는 기본적인 퍼널이 작동함을 확인했습니다.
-- **트래픽의 핵심 동력**: `플레이스 페이지 총 조회수`는 **'네이버 검색'** 유입(0.99) 및 **'브랜드성 키워드'**('아침', '285' 포함) 유입(0.94)과 매우 강한 상관관계를 보입니다. 이는 현재 트래픽이 대부분 병원 이름을 아는 사용자의 직접 검색에서 발생함을 의미합니다.
-- **가장 중요한 발견 (트래픽의 양 vs 질)**: `플레이스 페이지 총 조회수`와 최종 `예약 신청 수`의 상관관계는 **0.05로 매우 낮습니다**. 이는 단순히 전체 방문자 수를 늘리는 것만으로는 예약 전환에 큰 영향을 주지 못하며, **트래픽의 질이 훨씬 중요함**을 시사합니다.
-- **실제 예약에 효과적인 채널**: 최종 `예약 신청 수`와 가장 유의미한 상관관계를 보인 채널은 **'지도'(0.32)**와 **'플레이스목록'(0.31)**으로 나타났습니다. 이 채널을 통한 방문자의 예약 전환 가능성이 더 높습니다.
+전체 분석 기간동안의 평균적인 관계입니다.
 
-## 종합 상관관계 히트맵
+{overall_corr.to_markdown(index=False)}
 
-![종합 상관관계 히트맵](./comprehensive_correlation_heatmap.png)
+## 2. 상관관계 안정성 분석 (변동성 낮은 순)
 
-## 상관관계가 높은 지표 Top 20
+월별 상관관계의 표준편차입니다. 값이 낮을수록 기간에 상관없이 꾸준하고 안정적인 관계임을 의미합니다.
 
-{top_corr.to_markdown(index=False)}
+{stability_df.to_markdown(index=False)}
 
-## 전체 상관계수 행렬
+## 3. 월별 상관관계 트렌드
 
-{corr_matrix.to_markdown()}
+주요 관계들이 월별로 어떻게 변하는지 보여줍니다. 특정 마케팅 활동이나 이벤트와의 연관성을 파악하는 데 유용합니다.
 
+![월별 상관관계 트렌드](monthly_correlation_trends.png)
+
+## 4. 월별 상관관계 상세 데이터
+
+{monthly_corr_df.sort_values(by=['month', 'category']).to_markdown(index=False)}
 """
-        report_path = self.analysis_results_path / 'analysis_report.md'
+        report_path = self.analysis_results_path / f'{self.client_name}_focused_analysis_report.md'
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write(md_content)
             
         logger.info(f"분석 리포트 저장 완료: {report_path}")
 
-
-    def analyze_conversion_rate(self, df: pd.DataFrame):
-        """단계별 전환율을 시계열로 분석하고 그래프로 시각화합니다."""
-        logger.info("전환율 분석을 시작합니다...")
-        
-        df['cvr_place_to_booking_page'] = (df['page_visits'] / df['total_place_pv']).replace([np.inf, -np.inf], 0) * 100
-        df['cvr_booking_page_to_request'] = (df['booking_requests'] / df['page_visits']).replace([np.inf, -np.inf], 0) * 100
-        
-        df.set_index('date', inplace=True)
-        
-        plt.figure(figsize=(15, 10))
-        
-        plt.subplot(2, 1, 1)
-        df['cvr_place_to_booking_page'].plot(title='전환율: 플레이스 조회 → 예약 페이지 유입 (%)')
-        plt.grid(True)
-        
-        plt.subplot(2, 1, 2)
-        df['cvr_booking_page_to_request'].plot(title='전환율: 예약 페이지 유입 → 예약 신청 (%)', color='orange')
-        plt.grid(True)
-        
-        plt.tight_layout()
-        save_path = self.analysis_results_path / 'conversion_rate_timeseries.png'
-        plt.savefig(save_path)
-        plt.close()
-        
-        logger.info(f"전환율 시계열 그래프 저장 완료: {save_path}")
-        logger.info("\n월별 평균 전환율:\n%s", df[['cvr_place_to_booking_page', 'cvr_booking_page_to_request']].resample('M').mean())
-
-
-    def analyze_keyword_impact(self, df: pd.DataFrame):
-        """브랜드/논브랜드 키워드 유입과 예약 신청의 관계를 분석합니다."""
-        logger.info("키워드 영향력 분석을 시작합니다...")
-
-        plt.figure(figsize=(15, 12))
-
-        # 1. 브랜드/논브랜드 키워드 PV 시계열
-        plt.subplot(3, 1, 1)
-        df[['brand_keyword_pv', 'non_brand_keyword_pv']].plot(ax=plt.gca(), title='일별 브랜드/논브랜드 키워드 PV')
-        plt.grid(True)
-
-        # 2. 브랜드 키워드 PV와 예약 신청 수
-        plt.subplot(3, 1, 2)
-        sns.regplot(x='brand_keyword_pv', y='booking_requests', data=df, scatter_kws={'alpha':0.3})
-        plt.title('브랜드 키워드 PV와 예약 신청 수의 관계')
-        plt.grid(True)
-
-        # 3. 논브랜드 키워드 PV와 예약 신청 수
-        plt.subplot(3, 1, 3)
-        sns.regplot(x='non_brand_keyword_pv', y='booking_requests', data=df, scatter_kws={'alpha':0.3}, color='g')
-        plt.title('논브랜드 키워드 PV와 예약 신청 수의 관계')
-        plt.grid(True)
-
-        plt.tight_layout()
-        save_path = self.analysis_results_path / 'keyword_impact_analysis.png'
-        plt.savefig(save_path)
-        plt.close()
-        logger.info(f"키워드 영향력 분석 그래프 저장 완료: {save_path}")
-
     def run_analysis(self):
         """전체 분석 파이프라인을 실행합니다."""
         try:
             merged_df = self.load_and_prepare_data()
-            corr_matrix, top_corr = self.analyze_correlation(merged_df)
-            self.save_analysis_summary_to_md(corr_matrix, top_corr)
-            # 기존 다른 분석들도 필요 시 여기에 추가 가능
-            # self.analyze_conversion_rate(merged_df.copy())
-            # self.analyze_keyword_impact(merged_df.set_index('date').copy())
+            overall_corr, stability_df, monthly_corr_df = self.run_focused_analysis(merged_df)
+            self.save_analysis_summary_to_md(overall_corr, stability_df, monthly_corr_df)
+
             logger.info("🎉 모든 분석이 성공적으로 완료되었습니다.")
         except FileNotFoundError as e:
             logger.error(e)
@@ -304,7 +297,7 @@ if __name__ == '__main__':
     analyzer = PerformanceAnalyzer(
         client_name=client_name,
         start_year=2024,
-        start_month=7,
+        start_month=9,
         end_year=2025,
         end_month=7
     )

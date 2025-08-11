@@ -54,7 +54,7 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
             raise ValueError(f"클라이언트 '{self.client_info.name}'의 BOOKING_KEY가 .env에 설정되지 않았습니다.")
 
         # 예약 통계 API URL (새로운 엔드포인트로 변경)
-        self.booking_stat_url = f"https://new.smartplace.naver.com/api/statistics/booking/{self.booking_key}"
+        self.booking_stat_url = f"https://partner.booking.naver.com/api/businesses/{self.booking_key}/reports"
         
         # 채널 코드 매핑
         self.channel_mapping = {
@@ -94,49 +94,64 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         return {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'application/json, text/plain, */*',
-            'Referer': f'https://new.smartplace.naver.com/statistics/booking?businessId={self.booking_key}'
+            'Referer': f'https://partner.booking.naver.com/reports/stats?businessId={self.booking_key}'
         }
+
+    def _fetch_booking_requests(self, date: str) -> int:
+        """특정 날짜의 예약 신청 건수를 가져옵니다."""
+        params = {
+            'bucket': 'bookingCount_sum,day_trend',
+            'startDate': date,
+            'endDate': date,
+            'metric': 'REQUESTED'
+        }
+        api_data = self.make_request('GET', self.booking_stat_url, params=params)
+        if not api_data or 'result' not in api_data or not api_data['result']:
+            logger.warning(f"⚠️ {date} 예약 신청 건수 데이터 없음: {api_data}")
+            return 0
+        
+        # 'bookingCount_sum' 값을 찾아 반환
+        return api_data['result'][0].get('bookingCount_sum', 0)
+
+    def _fetch_page_visits(self, date: str) -> (int, List[Dict[str, Any]]):
+        """특정 날짜의 페이지 유입 수와 채널별 통계를 가져옵니다."""
+        params = {
+            'bucket': 'areaCode,sessionCount_sum,day_trend',
+            'startDate': date,
+            'endDate': date,
+            'metric': 'UV'
+        }
+        api_data = self.make_request('GET', self.booking_stat_url, params=params)
+        if not api_data or 'result' not in api_data:
+            logger.warning(f"⚠️ {date} 페이지 유입 데이터 없음: {api_data}")
+            return 0, []
+
+        total_visits = 0
+        channel_stats = []
+        for item in api_data.get('result', []):
+            visits = item.get('sessionCount_sum', 0)
+            total_visits += visits
+            
+            area_code = item.get('areaCode', 'Unknown')
+            channel_name = self.channel_mapping.get(area_code, area_code)
+            channel_stats.append({
+                'channel_name': channel_name,
+                'count': visits,
+                'channel_code': area_code
+            })
+            
+        return total_visits, channel_stats
 
     def fetch_booking_data_for_date(self, date: str) -> Optional[Dict[str, Any]]:
         """특정 날짜의 예약 데이터를 새로운 API 엔드포인트에서 수집하고 파싱합니다."""
         logger.info(f"📊 {date} 예약 데이터 수집 중 (신규 API)...")
         
-        params = {
-            'bucket': 'areaCode,day_trend',
-            'startDate': date,
-            'endDate': date,
-            'metric': 'UV,REQUESTED'  # 유입량과 신청수를 한번에 요청
-        }
-
         try:
-            api_data = self.make_request('GET', self.booking_stat_url, params=params)
+            # 1. 예약 신청 건수 수집
+            total_requested = self._fetch_booking_requests(date)
 
-            if not api_data or 'result' not in api_data:
-                logger.warning(f"⚠️ {date} 예약 데이터 수집 실패 또는 응답에 'result' 키 없음: {api_data}")
-                return None
-            
-            result_list = api_data.get('result', [])
-            
-            # 새로운 응답 구조에 맞춰 데이터 파싱
-            total_uv = 0
-            total_requested = 0
-            channel_uv = {}
-            
-            for item in result_list:
-                metric = item.get('metric')
-                count = item.get('count', 0)
-                
-                if metric == 'UV':
-                    area_code = item.get('areaCode', 'Unknown')
-                    total_uv += count
-                    channel_uv[area_code] = channel_uv.get(area_code, 0) + count
-                elif metric == 'REQUESTED':
-                    total_requested += count
-
-            channel_stats_list = [
-                {'channel_name': self.channel_mapping.get(code, code), 'count': count}
-                for code, count in channel_uv.items()
-            ]
+            # 2. 페이지 유입 수 및 채널별 통계 수집
+            total_uv, channel_stats_list = self._fetch_page_visits(date)
 
             logger.info(f"✅ {date} 완료 - 페이지 유입: {total_uv}, 예약 신청: {total_requested}, 채널: {len(channel_stats_list)}개")
 
