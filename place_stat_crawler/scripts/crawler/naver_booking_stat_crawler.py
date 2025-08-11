@@ -53,20 +53,14 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         if not self.booking_key:
             raise ValueError(f"클라이언트 '{self.client_info.name}'의 BOOKING_KEY가 .env에 설정되지 않았습니다.")
 
-        # 예약 통계 API URL
-        self.booking_channel_url = f"https://partner.booking.naver.com/api/businesses/{self.booking_key}/reports"
+        # 예약 통계 API URL (새로운 엔드포인트로 변경)
+        self.booking_stat_url = f"https://new.smartplace.naver.com/api/statistics/booking/{self.booking_key}"
         
         # 채널 코드 매핑
         self.channel_mapping = {
-            'bee': '기타',
-            'bet': '외부서비스',
-            'bmp': '지도',
-            'bnb': '블로그',
-            'bne': '네이버기타',
-            'ple': '플레이스상세',
-            'pll': '플레이스목록',
-            'plt': 'PC플랫폼',
-            'psa': '플레이스광고'
+            'bee': '기타', 'bet': '외부서비스', 'bmp': '지도', 'bnb': '블로그',
+            'bne': '네이버기타', 'ple': '플레이스상세', 'pll': '플레이스목록',
+            'plt': 'PC플랫폼', 'psa': '플레이스광고'
         }
         
         # 클라이언트 ID (기본값, 실제로는 설정에서 가져옴)
@@ -79,34 +73,8 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         self.client_id = client_id
         logger.info(f"클라이언트 ID 설정: {client_id}")
     
-    def fetch_booking_statistics(self, start_date: str, end_date: str) -> Dict[str, Any]:
-        """예약 통계 데이터 수집 (예약 신청 수, 예약 페이지 유입 수)"""
-        logger.info(f"📊 {start_date} ~ {end_date} 예약 통계 수집 중...")
-        
-        params = {
-            'startDate': start_date,
-            'endDate': end_date
-        }
-        
-        # API 엔드포인트가 하나로 통합되었으므로 booking_channel_url 사용
-        url = self.booking_channel_url
-        
-        try:
-            response = self.make_request('GET', url, params=params)
-            
-            if response and 'result' in response:
-                logger.info(f"✅ 예약 통계 수집 완료: {len(response['result'])}개 데이터")
-                return response
-            else:
-                logger.error(f"❌ 예약 통계 응답 형식 오류: {response}")
-                return {'result': []}
-                
-        except Exception as e:
-            logger.error(f"❌ 예약 통계 수집 실패: {e}")
-            return {'result': []}
-    
     def get_cookies(self) -> Dict[str, str]:
-        """Booking용 쿠키를 파싱하여 반환합니다."""
+        """Booking용 쿠키를 파싱하여 반환합니다. (인증 방식 유지)"""
         cookie_str = self.client_info.booking_cookie or ""
         cookies = {}
         for part in cookie_str.split(';'):
@@ -119,125 +87,72 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         return cookies
 
     def get_auth_headers(self) -> Dict[str, str]:
-        """Booking 크롤러는 별도의 인증 헤더가 필요 없습니다."""
+        """
+        Booking 크롤러는 별도의 인증 헤더가 필요 없습니다. 
+        대신 new.smartplace.naver.com에 맞는 Referer와 User-Agent를 사용합니다.
+        """
         return {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'application/json, text/plain, */*',
-            'Referer': 'https://partner.booking.naver.com/'
+            'Referer': f'https://new.smartplace.naver.com/statistics/booking?businessId={self.booking_key}'
         }
-    
-    def fetch_booking_channel_statistics(self, start_date: str, end_date: str) -> Dict[str, Any]:
-        """채널별 예약 페이지 유입 수 수집"""
-        logger.info(f"📊 {start_date} ~ {end_date} 채널별 예약 통계 수집 중...")
+
+    def fetch_booking_data_for_date(self, date: str) -> Optional[Dict[str, Any]]:
+        """특정 날짜의 예약 데이터를 새로운 API 엔드포인트에서 수집하고 파싱합니다."""
+        logger.info(f"📊 {date} 예약 데이터 수집 중 (신규 API)...")
         
         params = {
             'bucket': 'areaCode,day_trend',
-            'startDate': start_date,
-            'endDate': end_date,
-            'metric': 'UV'
+            'startDate': date,
+            'endDate': date,
+            'metric': 'UV,REQUESTED'  # 유입량과 신청수를 한번에 요청
         }
-        
+
         try:
-            data = self.make_request('GET', self.booking_channel_url, params=params)
+            api_data = self.make_request('GET', self.booking_stat_url, params=params)
+
+            if not api_data or 'result' not in api_data:
+                logger.warning(f"⚠️ {date} 예약 데이터 수집 실패 또는 응답에 'result' 키 없음: {api_data}")
+                return None
             
-            if data:
-                 return data
+            result_list = api_data.get('result', [])
             
-            logger.error(f"❌ 채널별 예약 통계 수집 실패: 응답 없음")
-            return {'result': []}
+            # 새로운 응답 구조에 맞춰 데이터 파싱
+            total_uv = 0
+            total_requested = 0
+            channel_uv = {}
+            
+            for item in result_list:
+                metric = item.get('metric')
+                count = item.get('count', 0)
                 
+                if metric == 'UV':
+                    area_code = item.get('areaCode', 'Unknown')
+                    total_uv += count
+                    channel_uv[area_code] = channel_uv.get(area_code, 0) + count
+                elif metric == 'REQUESTED':
+                    total_requested += count
+
+            channel_stats_list = [
+                {'channel_name': self.channel_mapping.get(code, code), 'count': count}
+                for code, count in channel_uv.items()
+            ]
+
+            logger.info(f"✅ {date} 완료 - 페이지 유입: {total_uv}, 예약 신청: {total_requested}, 채널: {len(channel_stats_list)}개")
+
+            # 기존 데이터 구조와 호환되도록 반환
+            return {
+                'page_visits': [{'count': total_uv}],
+                'booking_requests': [{'count': total_requested}],
+                'channel_stats': channel_stats_list,
+            }
+
         except ApiCallError as e:
-            logger.error(f"❌ 채널별 예약 통계 수집 실패 (ApiCallError): {e}")
-            # 이 경우, 보통 쿠키 만료를 의미하므로 스크립트 중단을 위해 예외를 다시 발생시킴
+            logger.error(f"❌ {date} 예약 데이터 수집 중 API 오류: {e}")
             raise
         except Exception as e:
-            logger.error(f"❌ 채널별 예약 통계 수집 실패 (Exception): {e}")
-            return {'result': []}
-    
-    def parse_booking_statistics(self, data: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
-        """예약 통계 데이터 파싱"""
-        result = {
-            'page_visits': [],  # 예약 페이지 유입 수 (UV)
-            'booking_requests': []  # 예약 신청 수 (REQUESTED)
-        }
-        
-        if 'result' not in data:
-            return result
-        
-        for item in data['result']:
-            date = item.get('day_trend', '')
-            count = item.get('count', 0)
-            metric = item.get('metric', '')
-            
-            if metric == 'UV':
-                result['page_visits'].append({
-                    'date': date,
-                    'count': count,
-                    'sessionCount_sum': item.get('sessionCount_sum', 0)
-                })
-            elif metric == 'REQUESTED':
-                result['booking_requests'].append({
-                    'date': date,
-                    'count': count,
-                    'sessionCount_sum': item.get('sessionCount_sum', 0)
-                })
-        
-        logger.info(f"📊 파싱 완료 - 페이지 유입: {len(result['page_visits'])}일, 예약 신청: {len(result['booking_requests'])}일")
-        return result
-    
-    def parse_channel_statistics(self, data: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """채널별 예약 통계 데이터 파싱"""
-        result = []
-        
-        if 'result' not in data:
-            return result
-        
-        for item in data['result']:
-            date = item.get('day_trend', '')
-            count = item.get('count', 0)
-            area_code = item.get('areaCode', '')
-            
-            # 채널명 매핑
-            channel_name = self.channel_mapping.get(area_code, area_code)
-            
-            result.append({
-                'date': date,
-                'channel_code': area_code,
-                'channel_name': channel_name,
-                'count': count
-            })
-        
-        logger.info(f"📊 채널별 통계 파싱 완료: {len(result)}개 데이터")
-        return result
-    
-    def fetch_booking_data_for_date(self, date: str) -> Dict[str, Any]:
-        """특정 날짜의 예약 데이터 수집"""
-        logger.info(f"📊 {date} 예약 데이터 수집 중...")
-        
-        # 예약 통계 수집
-        booking_stats = self.fetch_booking_statistics(date, date)
-        parsed_stats = self.parse_booking_statistics(booking_stats)
-        
-        # 채널별 통계 수집
-        channel_stats = self.fetch_booking_channel_statistics(date, date)
-        parsed_channels = self.parse_channel_statistics(channel_stats)
-        
-        # 결과 통합
-        result = {
-            'date': date,
-            'page_visits': parsed_stats['page_visits'],
-            'booking_requests': parsed_stats['booking_requests'],
-            'channel_stats': parsed_channels
-        }
-        
-        # 요약 정보
-        total_page_visits = sum(item['count'] for item in parsed_stats['page_visits'])
-        total_booking_requests = sum(item['count'] for item in parsed_stats['booking_requests'])
-        total_channels = len(parsed_channels)
-        
-        logger.info(f"✅ {date} 완료 - 페이지 유입: {total_page_visits}, 예약 신청: {total_booking_requests}, 채널: {total_channels}개")
-        
-        return result
+            logger.error(f"❌ {date} 예약 데이터 수집 중 예상치 못한 오류: {e}", exc_info=True)
+            return None
     
     def collect_booking_data(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
         """기간별 예약 데이터 수집"""
@@ -254,12 +169,19 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
             
             try:
                 daily_data = self.fetch_booking_data_for_date(date_str)
-                all_data.append(daily_data)
+                if daily_data: # fetch_booking_data_for_date가 None을 반환할 수 있으므로 체크
+                    all_data.append(daily_data)
+                else:
+                    logger.warning(f"⚠️ {date_str} 데이터 수집 실패 또는 데이터 없음")
+                    all_data.append({
+                        'page_visits': [],
+                        'booking_requests': [],
+                        'channel_stats': []
+                    })
             except Exception as e:
                 logger.error(f"❌ {date_str} 데이터 수집 실패: {e}")
                 # 빈 데이터로 추가
                 all_data.append({
-                    'date': date_str,
                     'page_visits': [],
                     'booking_requests': [],
                     'channel_stats': []
