@@ -18,6 +18,8 @@ import logging
 try:
     from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase
     from scripts.crawler.naver_place_pv_auth_manager import NaverAuthManager
+    from scripts.util.logger import logger
+    from scripts.util.config import ClientInfo, AuthConfig
 except ImportError:
     # 직접 실행 시를 위한 절대 import
     import sys
@@ -28,16 +30,33 @@ except ImportError:
     sys.path.insert(0, current_dir)
     from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase
     from scripts.crawler.naver_place_pv_auth_manager import NaverAuthManager
+    from scripts.util.logger import logger
+    from scripts.util.config import ClientInfo, AuthConfig
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class NaverStatCrawler(NaverCrawlerBase):
-    """네이버 스마트플레이스 통계 크롤러"""
-    
-    def __init__(self, naver_id: str = None, naver_password: str = None):
-        super().__init__(naver_id, naver_password)
+    """네이버 스마트플레이스 통계 데이터 크롤러"""
+
+    def __init__(self, client_info: ClientInfo, auth_config: AuthConfig):
+        """
+        NaverStatCrawler 초기화
+        Args:
+            client_info (ClientInfo): 클라이언트 정보
+            auth_config (AuthConfig): 인증 설정
+        """
+        auth_manager = NaverAuthManager(
+            client_info=client_info,
+            auth_config=auth_config,
+            auth_type='place'
+        )
+        super().__init__(client_info=client_info, auth_manager=auth_manager) # 부모 클래스 초기화
+        self.logger = logging.getLogger(self.__class__.__name__)
+        self.client_info = client_info
+        self.naver_place_id = None
+        self.smart_place_id = None
         
         # 스마트플레이스 API 설정
         self.base_url = "https://new.smartplace.naver.com/proxy/bizadvisor/api/v3/sites/sp_18123cf1aec42/report"
@@ -56,197 +75,76 @@ class NaverStatCrawler(NaverCrawlerBase):
         self.available_metrics = ['pv', 'visitors', 'reviews', 'rating', 'clicks', 'impressions']
         self.available_dimensions = ['mapped_channel_name', 'mapped_channel_id', 'mapped_channel_type', 'mapped_channel_category', 'ref_keyword']
     
-    async def get_smartplace_data(self, metrics: List[str] = None, dimensions: List[str] = None) -> Dict[str, Any]:
-        """스마트플레이스 데이터를 가져옵니다."""
-        try:
-            logger.info("스마트플레이스 API 호출 시작")
-            
-            # 기본 파라미터
-            if metrics is None:
-                metrics = ['pv']
-            if dimensions is None:
-                dimensions = ['mapped_channel_name']
-            
-            params = {
-                'dimensions': ','.join(dimensions),
-                'startDate': datetime.now().strftime('%Y-%m-%d'),
-                'endDate': datetime.now().strftime('%Y-%m-%d'),
-                'metrics': ','.join(metrics),
-                'sort': 'pv',
-                'useIndex': 'revenue-all-channel-detail'
-            }
-            
-            # API 호출
-            response = self.get(
-                self.base_url,
-                params=params,
-                timeout=self.timeout
-            )
-            
-            if response and response.status_code == 200:
-                data = response.json()
-                logger.info(f"API 호출 성공: {len(data) if isinstance(data, list) else 'N/A'}개 데이터")
-                return {
-                    'success': True,
-                    'data': data,
-                    'status_code': response.status_code,
-                    'headers': dict(response.headers),
-                    'params': params
-                }
-            else:
-                status_code = response.status_code if response else "No response"
-                logger.error(f"API 호출 실패: HTTP {status_code}")
-                return {
-                    'success': False,
-                    'error': f"HTTP {status_code}",
-                    'status_code': status_code
-                }
-                
-        except Exception as e:
-            logger.error(f"API 호출 중 오류: {e}")
-            return {
-                'success': False,
-                'error': str(e)
-            }
-    
-    def fetch_data_for_date(self, date: str, metrics: List[str] = None, dimensions: List[str] = None) -> List[Dict]:
+    def fetch_channel_data_for_date(self, date: str) -> List[Dict[str, Any]]:
         """특정 날짜의 채널별 데이터를 가져오기"""
-        if metrics is None:
-            metrics = ['pv']
-        if dimensions is None:
-            dimensions = ['mapped_channel_name']
-        
-        params = {
-            'dimensions': ','.join(dimensions),
-            'startDate': date,
-            'endDate': date,
-            'metrics': ','.join(metrics),
-            'sort': 'pv',
-            'useIndex': 'revenue-all-channel-detail'
-        }
-        
-        try:
-            logger.info(f"📊 {date} 데이터 수집 중...")
-            
-            response = self.get(
-                self.base_url,
-                params=params,
-                timeout=self.timeout
-            )
-            
-            if response and response.status_code == 200:
-                data = response.json()
-                
-                # 수집된 채널 목록 표시
-                channels_found = [item.get('mapped_channel_name', 'Unknown') for item in data if 'mapped_channel_name' in item]
-                logger.info(f"✅ {len(data)}개 채널 수집 완료 ({', '.join(channels_found[:3])}{'...' if len(channels_found) > 3 else ''})")
-                
-                # 첫 날짜의 데이터 구조 확인 (디버깅용)
-                if date == list(self.all_data.keys())[0] if self.all_data else False:
-                    logger.info(f"📌 데이터 구조 확인 (첫 번째 날짜):")
-                    for i, item in enumerate(data[:3], 1):
-                        logger.info(f"   {i}. {json.dumps(item, ensure_ascii=False)}")
-                
-                return data
-            else:
-                status_code = response.status_code if response else "No response"
-                logger.error(f"⚠️ HTTP {status_code} 에러")
-                return []
-                
-        except Exception as e:
-            logger.error(f"❌ 데이터 수집 오류 - {str(e)}")
-            return []
-    
-    def fetch_keyword_data_for_date(self, date: str, metrics: List[str] = None) -> List[Dict]:
-        """특정 날짜의 키워드별 데이터를 가져오기"""
-        if metrics is None:
-            metrics = ['pv']
-        
-        params = {
-            'dimensions': 'ref_keyword',
-            'startDate': date,
-            'endDate': date,
-            'metrics': ','.join(metrics),
-            'sort': 'pv',
-            'useIndex': 'revenue-search-channel-detail'
-        }
-        
-        try:
-            logger.info(f"📊 {date} 키워드 데이터 수집 중...")
-            
-            response = self.get(
-                self.base_url,
-                params=params,
-                timeout=self.timeout
-            )
-            
-            if response and response.status_code == 200:
-                data = response.json()
-                
-                # 수집된 키워드 목록 표시
-                keywords_found = [item.get('ref_keyword', 'Unknown') for item in data if 'ref_keyword' in item]
-                logger.info(f"✅ {len(data)}개 키워드 수집 완료 ({', '.join(keywords_found[:3])}{'...' if len(keywords_found) > 3 else ''})")
-                
-                # 첫 날짜의 데이터 구조 확인 (디버깅용)
-                if date == list(self.all_data.keys())[0] if self.all_data else False:
-                    logger.info(f"📌 키워드 데이터 구조 확인 (첫 번째 날짜):")
-                    for i, item in enumerate(data[:3], 1):
-                        logger.info(f"   {i}. {json.dumps(item, ensure_ascii=False)}")
-                
-                return data
-            else:
-                status_code = response.status_code if response else "No response"
-                logger.error(f"⚠️ 키워드 데이터 수집 실패: HTTP {status_code}")
-                return []
-                
-        except Exception as e:
-            logger.error(f"❌ 키워드 데이터 수집 오류 - {str(e)}")
-            return []
-    
-    def fetch_channel_data_for_date(self, date: str, metrics: List[str] = None) -> List[Dict]:
-        """특정 날짜의 채널별 데이터를 가져오기 (기존 메서드와 동일하지만 명확성을 위해 별도 메서드)"""
-        if metrics is None:
-            metrics = ['pv']
-        
+        url = self.base_url
         params = {
             'dimensions': 'mapped_channel_name',
             'startDate': date,
             'endDate': date,
-            'metrics': ','.join(metrics),
+            'metrics': 'pv',
             'sort': 'pv',
             'useIndex': 'revenue-all-channel-detail'
         }
         
         try:
             logger.info(f"📊 {date} 채널 데이터 수집 중...")
-            
-            response = self.get(
-                self.base_url,
-                params=params,
-                timeout=self.timeout
-            )
-            
-            if response and response.status_code == 200:
-                data = response.json()
-                
-                # 수집된 채널 목록 표시
-                channels_found = [item.get('mapped_channel_name', 'Unknown') for item in data if 'mapped_channel_name' in item]
-                logger.info(f"✅ {len(data)}개 채널 수집 완료 ({', '.join(channels_found[:3])}{'...' if len(channels_found) > 3 else ''})")
-                
-                # 첫 날짜의 데이터 구조 확인 (디버깅용)
-                if date == list(self.all_data.keys())[0] if self.all_data else False:
-                    logger.info(f"📌 채널 데이터 구조 확인 (첫 번째 날짜):")
-                    for i, item in enumerate(data[:3], 1):
-                        logger.info(f"   {i}. {json.dumps(item, ensure_ascii=False)}")
-                
+            data = self.make_request('GET', url, params=params)
+
+            print("\n--- [채널 API] 서버 응답 ---")
+            print(data)
+            print("--------------------------\n")
+
+            if data and isinstance(data, list):
+                logger.info(f"✅ {date} 채널 데이터 수집 성공: {len(data)}개 항목")
                 return data
-            else:
-                status_code = response.status_code if response else "No response"
-                logger.error(f"⚠️ 채널 데이터 수집 실패: HTTP {status_code}")
+            elif data:
+                logger.warning(f"⚠️ 채널 데이터가 리스트 형태가 아님: {data}")
                 return []
-                
+            else:
+                logger.info(f"ℹ️ {date} 채널 데이터 없음.")
+                return []
+        except ApiCallError as e:
+            logger.error(f"❌ {date} 채널 데이터 수집 중 API 오류: {e}")
+            raise
         except Exception as e:
-            logger.error(f"❌ 채널 데이터 수집 오류 - {str(e)}")
+            logger.error(f"❌ {date} 채널 데이터 수집 중 예상치 못한 오류: {e}", exc_info=True)
+            return []
+
+    def fetch_keyword_data_for_date(self, date: str) -> List[Dict[str, Any]]:
+        """특정 날짜의 키워드별 데이터를 가져오기"""
+        url = self.base_url
+        params = {
+            'dimensions': 'ref_keyword',
+            'startDate': date,
+            'endDate': date,
+            'metrics': 'pv',
+            'sort': 'pv',
+            'useIndex': 'revenue-search-channel-detail'
+        }
+        
+        try:
+            logger.info(f"📊 {date} 키워드 데이터 수집 중...")
+            data = self.make_request('GET', url, params=params)
+
+            print("\n--- [키워드 API] 서버 응답 ---")
+            print(data)
+            print("----------------------------\n")
+
+            if data and isinstance(data, list):
+                logger.info(f"✅ {date} 키워드 데이터 수집 성공: {len(data)}개 항목")
+                return data
+            elif data:
+                logger.warning(f"⚠️ 키워드 데이터가 리스트 형태가 아님: {data}")
+                return []
+            else:
+                logger.info(f"ℹ️ {date} 키워드 데이터 없음.")
+                return []
+        except ApiCallError as e:
+            logger.error(f"❌ {date} 키워드 데이터 수집 중 API 오류: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"❌ {date} 키워드 데이터 수집 중 예상치 못한 오류: {e}", exc_info=True)
             return []
     
     def fetch_comprehensive_data_for_date(self, date: str) -> Dict[str, List[Dict]]:
@@ -254,27 +152,27 @@ class NaverStatCrawler(NaverCrawlerBase):
         comprehensive_data = {}
         
         # 1. 기본 PV 데이터
-        pv_data = self.fetch_data_for_date(date, ['pv'], ['mapped_channel_name'])
+        pv_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['pv'] = pv_data
         
         # 2. 방문자 데이터
-        visitors_data = self.fetch_data_for_date(date, ['visitors'], ['mapped_channel_name'])
+        visitors_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['visitors'] = visitors_data
         
         # 3. 리뷰 데이터
-        reviews_data = self.fetch_data_for_date(date, ['reviews'], ['mapped_channel_name'])
+        reviews_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['reviews'] = reviews_data
         
         # 4. 평점 데이터
-        rating_data = self.fetch_data_for_date(date, ['rating'], ['mapped_channel_name'])
+        rating_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['rating'] = rating_data
         
         # 5. 클릭 데이터
-        clicks_data = self.fetch_data_for_date(date, ['clicks'], ['mapped_channel_name'])
+        clicks_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['clicks'] = clicks_data
         
         # 6. 노출 데이터
-        impressions_data = self.fetch_data_for_date(date, ['impressions'], ['mapped_channel_name'])
+        impressions_data = self.fetch_channel_data_for_date(date)
         comprehensive_data['impressions'] = impressions_data
         
         return comprehensive_data
@@ -301,7 +199,7 @@ class NaverStatCrawler(NaverCrawlerBase):
                 self.all_data[date_str] = comprehensive_data
             else:
                 # 기본 PV 데이터 수집
-                data = self.fetch_data_for_date(date_str)
+                data = self.fetch_channel_data_for_date(date_str)
                 self.all_data[date_str] = data
             
             # 다음 날짜로
@@ -985,7 +883,7 @@ def main():
         print(f"✅ 선택된 클라이언트: {client.name}")
         
         # 크롤러 생성 (클라이언트 설정 사용)
-        crawler = NaverStatCrawler()
+        crawler = NaverStatCrawler(client, client.auth_config)
         
         # 테스트 기간 설정
         end_date = datetime.now().strftime('%Y-%m-%d')

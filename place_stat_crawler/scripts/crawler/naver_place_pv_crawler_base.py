@@ -25,6 +25,7 @@ except Exception:
 try:
     from scripts.crawler.naver_place_pv_auth_manager import NaverAuthManager
     from ..util.data_saver import DataSaver
+    from ..util.config import ClientInfo
 except ImportError:
     # 직접 실행 시를 위한 절대 import
     import sys
@@ -40,99 +41,44 @@ except ImportError:
         from data_saver import DataSaver
     except ImportError:
         DataSaver = None  # DataSaver가 없어도 작동하도록
+    from ..util.config import ClientInfo
 
 from ..util.config import get_config_manager
+
+# 추가: API 호출 오류를 위한 사용자 정의 예외
+class ApiCallError(Exception):
+    """API 호출 관련 오류(인증 실패 등)"""
+    pass
 
 logger = logging.getLogger(__name__)
 
 class NaverCrawlerBase:
-    """네이버 크롤링 기본 클래스"""
-    
-    def __init__(self, 
-                 naver_id: str = None, 
-                 naver_password: str = None,
-                 auth_manager: NaverAuthManager = None):
-        """
-        Args:
-            naver_id: 네이버 아이디 (환경 변수에서 자동 로드) - 클라이언트 선택 시 무시됨
-            naver_password: 네이버 비밀번호 (환경 변수에서 자동 로드) - 클라이언트 선택 시 무시됨
-            auth_manager: 기존 인증 매니저 인스턴스
-        """
-        import os
-        
-        # 설정 매니저에서 클라이언트 정보 조회
-        client_id = None
-        client_pw = None
-        client_login_url = None
-        client_name = None
-        auth_file_path = None
-        token_expiry_hours = 12
-        try:
-            config_manager = get_config_manager()
-            auth_config = config_manager.get_auth_config()
-            selected_client = config_manager.get_selected_client_config()
-            if selected_client:
-                client_id = selected_client.id
-                client_pw = selected_client.pw
-                client_login_url = selected_client.naver_url or "https://nid.naver.com/nidlogin.login"
-                client_name = selected_client.name
-                token_expiry_hours = auth_config.token_expiry_hours
-                # 클라이언트별 인증 파일 경로
-                template = auth_config.auth_file_path_template or "{client_name}_auth.json"
-                auth_file_path = template.format(client_name=client_name)
-        except Exception as e:
-            logger.warning(f"설정 매니저 초기화 중 문제 발생: {e}. 환경 변수로 폴백합니다.")
-        
-        # 환경 변수에서 인증 정보 로드 (클라이언트 설정 미존재 시 폴백)
-        if not client_id:
-            client_id = naver_id or os.getenv('NAVER_ID')
-        if not client_pw:
-            client_pw = naver_password or os.getenv('NAVER_PASSWORD')
-        if not client_login_url:
-            client_login_url = "https://nid.naver.com/nidlogin.login"
-        if not client_name:
-            client_name = "default"
-        if not auth_file_path:
-            auth_file_path = "naver_auth.json"
-        
-        if not client_id or not client_pw:
-            logger.warning("네이버 인증 정보가 설정되지 않았습니다. .env 또는 클라이언트 설정을 확인해주세요.")
-        
-        # 인증 매니저 설정
-        if auth_manager:
-            self.auth_manager = auth_manager
-        else:
-            self.auth_manager = NaverAuthManager(
-                naver_id=client_id,
-                naver_password=client_pw,
-                auth_file_path=auth_file_path,
-                token_expiry_hours=token_expiry_hours,
-                naver_login_url=client_login_url,
-                client_name=client_name
-            )
-        
-        # 세션 설정
+    """네이버 스마트플레이스 API 크롤러의 기본 클래스"""
+
+    def __init__(self, client_info: ClientInfo, auth_manager: Optional[NaverAuthManager] = None):
+        self.config_manager = get_config_manager()
+        self.auth_manager = auth_manager
+        self.client_info = client_info # client_info 직접 저장
         self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': 'application/json, text/plain, */*',
-            'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
-            'Referer': 'https://new.smartplace.naver.com/'
-        })
-        
-        # 재시도 설정
-        self.max_retries = 3
-        self.retry_delay = 1
-        
-        # 통계
+        self.timeout = 10
+        self.base_url = ""
         self.request_count = 0
         self.success_count = 0
         self.error_count = 0
+        self.max_retries = 3
+        self.retry_delay = 1
         
-        logger.info("네이버 크롤러 기본 클래스 초기화 완료")
+        # auth_manager로부터 직접 클라이언트 정보 가져오기 -> client_info를 직접 사용하도록 변경
+        self.selected_client = self.client_info
+        
+        if self.selected_client:
+            self.base_url = self.selected_client.naver_url.split('/statistics')[0]
+            logger.info("네이버 크롤러 기본 클래스 초기화 완료")
+        else:
+            logger.warning("NaverCrawlerBase 초기화 시 클라이언트 정보가 없습니다.")
 
     def get_auth_headers(self) -> Dict[str, str]:
-        """인증 헤더 반환"""
+        """인증 헤더 반환 (서브클래스에서 필요시 오버라이드)"""
         return self.auth_manager.get_auth_headers()
 
     def get_cookies(self) -> Dict[str, str]:
@@ -146,26 +92,33 @@ class NaverCrawlerBase:
                     data: Dict = None,
                     json_data: Dict = None,
                     headers: Dict = None,
-                    timeout: int = 30) -> Optional[requests.Response]:
-        """HTTP 요청 실행"""
-        # 인증 정보 갱신
-        self.auth_manager.refresh_auth_if_needed()
-        
+                    timeout: int = 30) -> Optional[Any]:
+        """
+        재시도 로직을 포함하여 HTTP 요청을 보냅니다.
+        """
+        # self.auth_manager.refresh_auth_if_needed() # 더 이상 필요 없으므로 삭제
+
         # 헤더 설정
-        request_headers = self.get_auth_headers()
+        if self.auth_manager:
+            request_headers = self.auth_manager.get_auth_headers()
+        else: # booking crawler의 경우
+            request_headers = self.get_auth_headers()
+            
         if headers:
             request_headers.update(headers)
-        
+
         # 쿠키 설정
-        cookies = self.get_cookies()
-        
+        if self.auth_manager:
+            cookies = self.auth_manager.get_cookies()
+        else: # booking crawler의 경우
+            cookies = self.get_cookies()
+
+        self.request_count += 1
         for attempt in range(self.max_retries):
             try:
-                self.request_count += 1
-                
                 response = self.session.request(
-                    method=method,
-                    url=url,
+                    method,
+                    url,
                     params=params,
                     data=data,
                     json=json_data,
@@ -174,29 +127,33 @@ class NaverCrawlerBase:
                     timeout=timeout
                 )
                 
-                if response.status_code == 200:
-                    try:
-                        return response.json()
-                    except json.JSONDecodeError:
-                        logger.error(f"JSON 디코딩 실패: {response.text[:200]}")
-                        return None
+                # 200이 아닌 상태 코드에 대한 명시적 에러 발생
+                response.raise_for_status()
+
+                # 성공(200) 시, JSON 파싱 시도. 실패 시 ApiCallError 발생
+                try:
+                    self.success_count += 1
+                    return response.json()
+                except requests.exceptions.JSONDecodeError:
+                    # 200 응답이지만 JSON이 아닌 경우, 인증 오류로 간주
+                    raise ApiCallError("API 응답이 올바른 JSON 형식이 아닙니다. 쿠키(cookie) 또는 인증 토큰(auth_token)이 만료되었을 수 있습니다.")
+
+            except requests.exceptions.HTTPError as e:
+                # 4xx, 5xx 에러 처리
+                self.error_count += 1
+                logger.warning(f"⚠️ HTTP {e.response.status_code} 에러 (시도 {attempt + 1}/{self.max_retries}): {e.response.text[:200]}")
+                if attempt < self.max_retries - 1:
+                    time.sleep(self.retry_delay)
                 else:
-                    logger.warning(f"HTTP {response.status_code} 에러 (시도 {attempt + 1}/{self.max_retries})")
-                    if response.status_code == 401:
-                        # 인증 오류 시 토큰 갱신 시도
-                        self.auth_manager.refresh_auth_if_needed()
-                    elif response.status_code == 429:
-                        # Rate limit 시 더 긴 대기
-                        time.sleep(self.retry_delay * 2)
-                    
-            except requests.exceptions.RequestException as e:
-                logger.warning(f"요청 오류 (시도 {attempt + 1}/{self.max_retries}): {e}")
+                    raise ApiCallError(f"HTTP {e.response.status_code} 에러 후 재시도 실패") from e
             
-            if attempt < self.max_retries - 1:
-                time.sleep(self.retry_delay)
-        
-        self.error_count += 1
-        logger.error(f"⚠️ HTTP No response 에러")
+            except requests.exceptions.RequestException as e:
+                self.error_count += 1
+                logger.error(f"❌ HTTP 요청 실패 (시도 {attempt + 1}/{self.max_retries}): {e}")
+                if attempt < self.max_retries - 1:
+                    time.sleep(self.retry_delay)
+
+        logger.error("⚠️ 모든 재시도 실패 후에도 응답을 받지 못했습니다.")
         return None
 
     def get(self, url: str, params: Dict = None, headers: Dict = None, timeout: int = 30) -> Optional[requests.Response]:
@@ -272,7 +229,21 @@ class NaverCrawlerBase:
 
 def main():
     """테스트용 메인 함수"""
-    crawler = NaverCrawlerBase()
+    # 이 부분은 실제 사용 시에는 클라이언트 정보를 가져와서 인스턴스화해야 합니다.
+    # 예: client_info = get_config_manager().get_client_info("your_client_name")
+    # crawler = NaverCrawlerBase(client_info)
+    
+    # 임시로 클라이언트 정보를 생성하여 사용
+    client_info = ClientInfo(
+        client_name="test_client",
+        naver_url="https://www.naver.com/statistics",
+        client_id="test_client_id",
+        client_secret="test_client_secret",
+        auth_token="test_auth_token",
+        auth_token_expires_at=datetime.now() + timedelta(hours=1)
+    )
+    auth_manager = NaverAuthManager(client_info)
+    crawler = NaverCrawlerBase(client_info, auth_manager)
     
     # 연결 테스트
     if crawler.test_connection():

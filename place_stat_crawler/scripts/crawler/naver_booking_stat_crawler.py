@@ -17,30 +17,44 @@ from typing import Dict, List, Any, Optional
 
 # 상대 import를 절대 import로 변경
 try:
-    from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase
+    from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase, ApiCallError
     from scripts.crawler.naver_place_pv_auth_manager import NaverAuthManager
+    from scripts.util.logger import logger
+    from scripts.util.config import ClientInfo, AuthConfig
 except ImportError:
     # 직접 실행 시를 위한 절대 import
     current_dir = Path(__file__).parent
     parent_dir = current_dir.parent.parent
     sys.path.insert(0, str(parent_dir))
     sys.path.insert(0, str(current_dir))
-    from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase
+    from scripts.crawler.naver_place_pv_crawler_base import NaverCrawlerBase, ApiCallError
     from scripts.crawler.naver_place_pv_auth_manager import NaverAuthManager
+    from scripts.util.logger import logger
+    from scripts.util.config import ClientInfo, AuthConfig
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class NaverBookingStatCrawler(NaverCrawlerBase):
-    """네이버 예약 통계 크롤러"""
-    
-    def __init__(self, auth_manager: Optional[NaverAuthManager] = None):
-        super().__init__(auth_manager)
+    """네이버 예약 통계 데이터 크롤러"""
+
+    def __init__(self, client_info: ClientInfo, auth_config: AuthConfig):
+        """
+        Args:
+            client_info: 사용할 클라이언트의 정보
+            auth_config: 인증 관련 설정 정보 (여기서는 사용되지 않음)
+        """
+        # Booking 크롤러는 NaverAuthManager를 사용하지 않음
+        self.client_info = client_info
+        super().__init__(client_info=client_info, auth_manager=None) # 부모 클래스 초기화 (auth_manager 없이)
         
+        self.booking_key = self.client_info.booking_key
+        if not self.booking_key:
+            raise ValueError(f"클라이언트 '{self.client_info.name}'의 BOOKING_KEY가 .env에 설정되지 않았습니다.")
+
         # 예약 통계 API URL
-        self.booking_stat_url = "https://new.smartplace.naver.com/api/statistics/booking"
-        self.booking_channel_url = "https://partner.booking.naver.com/api/businesses"
+        self.booking_channel_url = f"https://partner.booking.naver.com/api/businesses/{self.booking_key}/reports"
         
         # 채널 코드 매핑
         self.channel_mapping = {
@@ -69,13 +83,13 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         """예약 통계 데이터 수집 (예약 신청 수, 예약 페이지 유입 수)"""
         logger.info(f"📊 {start_date} ~ {end_date} 예약 통계 수집 중...")
         
-        url = f"{self.booking_stat_url}/{self.client_id}"
         params = {
-            'bucket': 'sessionCount_sum,day_trend',
             'startDate': start_date,
-            'endDate': end_date,
-            'metric': 'UV,REQUESTED,COMPLETED,CONFIRMED'
+            'endDate': end_date
         }
+        
+        # API 엔드포인트가 하나로 통합되었으므로 booking_channel_url 사용
+        url = self.booking_channel_url
         
         try:
             response = self.make_request('GET', url, params=params)
@@ -91,11 +105,31 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
             logger.error(f"❌ 예약 통계 수집 실패: {e}")
             return {'result': []}
     
+    def get_cookies(self) -> Dict[str, str]:
+        """Booking용 쿠키를 파싱하여 반환합니다."""
+        cookie_str = self.client_info.booking_cookie or ""
+        cookies = {}
+        for part in cookie_str.split(';'):
+            part = part.strip()
+            if not part:
+                continue
+            if '=' in part:
+                name, value = part.split('=', 1)
+                cookies[name.strip()] = value.strip()
+        return cookies
+
+    def get_auth_headers(self) -> Dict[str, str]:
+        """Booking 크롤러는 별도의 인증 헤더가 필요 없습니다."""
+        return {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Referer': 'https://partner.booking.naver.com/'
+        }
+    
     def fetch_booking_channel_statistics(self, start_date: str, end_date: str) -> Dict[str, Any]:
         """채널별 예약 페이지 유입 수 수집"""
         logger.info(f"📊 {start_date} ~ {end_date} 채널별 예약 통계 수집 중...")
         
-        url = f"{self.booking_channel_url}/{self.client_id}/reports"
         params = {
             'bucket': 'areaCode,day_trend',
             'startDate': start_date,
@@ -104,17 +138,20 @@ class NaverBookingStatCrawler(NaverCrawlerBase):
         }
         
         try:
-            response = self.make_request('GET', url, params=params)
+            data = self.make_request('GET', self.booking_channel_url, params=params)
             
-            if response and 'result' in response:
-                logger.info(f"✅ 채널별 예약 통계 수집 완료: {len(response['result'])}개 데이터")
-                return response
-            else:
-                logger.error(f"❌ 채널별 예약 통계 응답 형식 오류: {response}")
-                return {'result': []}
+            if data:
+                 return data
+            
+            logger.error(f"❌ 채널별 예약 통계 수집 실패: 응답 없음")
+            return {'result': []}
                 
+        except ApiCallError as e:
+            logger.error(f"❌ 채널별 예약 통계 수집 실패 (ApiCallError): {e}")
+            # 이 경우, 보통 쿠키 만료를 의미하므로 스크립트 중단을 위해 예외를 다시 발생시킴
+            raise
         except Exception as e:
-            logger.error(f"❌ 채널별 예약 통계 수집 실패: {e}")
+            logger.error(f"❌ 채널별 예약 통계 수집 실패 (Exception): {e}")
             return {'result': []}
     
     def parse_booking_statistics(self, data: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
@@ -372,7 +409,18 @@ def main():
     
     try:
         # 크롤러 생성
-        crawler = NaverBookingStatCrawler()
+        # 테스트용 클라이언트 정보 생성 (실제 사용 시에는 설정에서 가져와야 함)
+        client_info = ClientInfo(
+            booking_id="563688",
+            booking_secret="your_booking_secret",
+            booking_name="test_booking_place"
+        )
+        auth_config = AuthConfig(
+            client_id="your_client_id",
+            client_secret="your_client_secret",
+            redirect_uri="your_redirect_uri"
+        )
+        crawler = NaverBookingStatCrawler(client_info=client_info, auth_config=auth_config)
         
         # 테스트 데이터 수집
         test_date = "2025-07-01"

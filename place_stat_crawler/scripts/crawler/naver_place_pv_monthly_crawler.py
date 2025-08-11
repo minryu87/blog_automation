@@ -18,8 +18,10 @@ import logging
 project_root = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(project_root))
 
-from scripts.util.config import get_config_manager
+from scripts.util.logger import logger
+from scripts.util.config import ClientInfo, AuthConfig, get_config_manager
 from scripts.crawler.naver_place_pv_stat_crawler import NaverStatCrawler
+from scripts.crawler.naver_place_pv_crawler_base import ApiCallError
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
@@ -28,18 +30,27 @@ logger = logging.getLogger(__name__)
 class MonthlyStatisticsCrawler:
     """월별 통계 데이터 수집 및 통합 클래스"""
     
-    def __init__(self):
-        self.config_manager = get_config_manager()
-        self.client = self.config_manager.get_selected_client_config()
-        self.crawler = NaverStatCrawler()
+    def __init__(self, client_info: ClientInfo, auth_config: AuthConfig):
+        """
+        Args:
+            client_info: 사용할 클라이언트의 정보
+            auth_config: 인증 관련 설정 정보
+        """
+        self.client = client_info
+        self.crawler = NaverStatCrawler(client_info, auth_config)
         
         # 데이터 저장 경로
-        self.raw_data_dir = project_root / "data" / "raw"
-        self.processed_data_dir = project_root / "data" / "processed"
-        
-        # 디렉토리 생성
+        self.base_dir = Path(__file__).resolve().parents[2]
+        self.raw_data_dir = self.base_dir / 'data' / 'raw'
+        self.processed_data_dir = self.base_dir / 'data' / 'processed'
         self.raw_data_dir.mkdir(parents=True, exist_ok=True)
         self.processed_data_dir.mkdir(parents=True, exist_ok=True)
+
+        self.column_order = [
+            'date', 'year', 'month', 'day', 'day_of_week', 'data_type', 'name',
+            'pv', 'total_pv', 'channel_id', 'channel_type', 'channel_category',
+            'keyword', 'keyword_id', 'keyword_type', 'keyword_category'
+        ]
         
         # 수집된 데이터 저장소
         self.daily_channel_data = {}  # {date: [{channel, pv, ...}]}
@@ -93,127 +104,118 @@ class MonthlyStatisticsCrawler:
             current_date += timedelta(days=1)
         
         logger.info(f"🎉 {year}년 {month}월 데이터 수집 완료")
-    
-    def save_raw_data(self, year: int, month: int, client_name: str):
-        """원본 데이터를 raw 폴더에 저장"""
+        
+        # 마지막에 수집된 데이터를 반환하도록 수정
+        return {
+            "channel_data": self.daily_channel_data,
+            "keyword_data": self.daily_keyword_data,
+            "total_pv": self.daily_total_pv,
+        }
+
+    def save_raw_data(self, collected_data: Dict, year: int, month: int, client_name: str):
+        """수집한 원본 데이터를 날짜별 JSON 파일로 저장합니다."""
         logger.info("💾 원본 데이터 저장 중...")
+        month_str = f"{month:02d}"
+
+        data_to_save = {
+            "channel_data": collected_data["channel_data"],
+            "keyword_data": collected_data["keyword_data"],
+            "total_pv": collected_data["total_pv"],
+        }
+
+        saved_files = []
+        for data_type, data in data_to_save.items():
+            file_path = self.raw_data_dir / f"{client_name}_{data_type}_{year}_{month_str}.json"
+            try:
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    import json
+                    json.dump(data, f, ensure_ascii=False, indent=4, default=str)
+                saved_files.append(str(file_path))
+            except (IOError, TypeError) as e:
+                logger.error(f"❌ {file_path} 저장 실패: {e}", exc_info=True)
         
-        # 채널 데이터 저장
-        channel_file = self.raw_data_dir / f"{client_name}_channel_data_{year}_{month:02d}.json"
-        with open(channel_file, 'w', encoding='utf-8') as f:
-            import json
-            json.dump(self.daily_channel_data, f, ensure_ascii=False, indent=2, default=str)
-        
-        # 키워드 데이터 저장
-        keyword_file = self.raw_data_dir / f"{client_name}_keyword_data_{year}_{month:02d}.json"
-        with open(keyword_file, 'w', encoding='utf-8') as f:
-            import json
-            json.dump(self.daily_keyword_data, f, ensure_ascii=False, indent=2, default=str)
-        
-        # 총 PV 데이터 저장
-        total_pv_file = self.raw_data_dir / f"{client_name}_total_pv_{year}_{month:02d}.json"
-        with open(total_pv_file, 'w', encoding='utf-8') as f:
-            import json
-            json.dump(self.daily_total_pv, f, ensure_ascii=False, indent=2, default=str)
-        
-        logger.info(f"✅ 원본 데이터 저장 완료: {channel_file}, {keyword_file}, {total_pv_file}")
-    
-    def create_integrated_table(self, year: int, month: int) -> pd.DataFrame:
-        """통합 테이블 생성"""
+        if saved_files:
+            logger.info(f"✅ 원본 데이터 저장 완료: {', '.join(saved_files)}")
+
+    def create_integrated_table(self, collected_data: Dict[str, Dict]) -> pd.DataFrame:
+        """수집된 데이터를 기반으로 통합 테이블 생성"""
         logger.info("📊 통합 테이블 생성 중...")
-        
-        rows = []
-        
-        # 모든 날짜에 대해 데이터 생성
-        for date_str in sorted(self.daily_channel_data.keys()):
+
+        all_rows = []
+        # total_pv에 있는 모든 날짜를 기준으로 반복
+        all_dates = sorted(collected_data.get('total_pv', {}).keys())
+
+        for date_str in all_dates:
             date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            total_pv = collected_data.get('total_pv', {}).get(date_str, 0)
             
-            # 기본 행 (총 PV)
             base_row = {
                 'date': date_str,
                 'year': date_obj.year,
                 'month': date_obj.month,
                 'day': date_obj.day,
                 'day_of_week': date_obj.strftime('%A'),
-                'total_pv': self.daily_total_pv.get(date_str, 0)
+                'total_pv': total_pv
             }
             
-            # 채널별 데이터 추가
-            channel_data = self.daily_channel_data.get(date_str, [])
-            for item in channel_data:
-                channel_name = item.get('mapped_channel_name', 'Unknown')
-                pv = item.get('pv', 0)
-                
-                row = base_row.copy()
-                row['data_type'] = 'channel'
-                row['name'] = channel_name
-                row['pv'] = pv
-                row['channel_id'] = item.get('mapped_channel_id', '')
-                row['channel_type'] = item.get('mapped_channel_type', '')
-                row['channel_category'] = item.get('mapped_channel_category', '')
-                row['keyword'] = ''  # 채널 데이터는 키워드 없음
-                row['keyword_id'] = ''
-                row['keyword_type'] = ''
-                row['keyword_category'] = ''
-                
-                rows.append(row)
+            # 채널 데이터 처리
+            channel_items = collected_data.get('channel_data', {}).get(date_str, [])
+            if channel_items:
+                for item in channel_items:
+                    row = base_row.copy()
+                    row.update({'data_type': 'channel', 'name': item.get('mapped_channel_name'), 'pv': item.get('pv')})
+                    # API 응답의 다른 모든 키도 추가
+                    row.update(item)
+                    all_rows.append(row)
             
-            # 키워드별 데이터 추가
-            keyword_data = self.daily_keyword_data.get(date_str, [])
-            for item in keyword_data:
-                keyword_name = item.get('ref_keyword', 'Unknown')
-                pv = item.get('pv', 0)
-                
+            # 키워드 데이터 처리
+            keyword_items = collected_data.get('keyword_data', {}).get(date_str, [])
+            if keyword_items:
+                for item in keyword_items:
+                    row = base_row.copy()
+                    row.update({'data_type': 'keyword', 'name': item.get('ref_keyword'), 'pv': item.get('pv')})
+                    # API 응답의 다른 모든 키도 추가
+                    row.update(item)
+                    all_rows.append(row)
+            
+            # 해당 날짜에 채널/키워드 데이터가 모두 없는 경우
+            if not channel_items and not keyword_items:
                 row = base_row.copy()
-                row['data_type'] = 'keyword'
-                row['name'] = keyword_name
-                row['pv'] = pv
-                row['channel_id'] = ''  # 키워드 데이터는 채널 정보 없음
-                row['channel_type'] = ''
-                row['channel_category'] = ''
-                row['keyword'] = keyword_name
-                row['keyword_id'] = item.get('ref_keyword_id', '')
-                row['keyword_type'] = item.get('ref_keyword_type', '')
-                row['keyword_category'] = item.get('ref_keyword_category', '')
-                
-                rows.append(row)
+                row.update({'data_type': 'summary_only', 'name': None, 'pv': 0})
+                all_rows.append(row)
+
+        if not all_rows:
+            logger.warning("통합할 데이터가 없습니다.")
+            return pd.DataFrame()
+
+        df = pd.DataFrame(all_rows)
         
-        df = pd.DataFrame(rows)
-        
-        # 컬럼 순서 정리
-        column_order = [
-            'date', 'year', 'month', 'day', 'day_of_week', 'data_type',
-            'name', 'pv', 'total_pv',
-            'channel_id', 'channel_type', 'channel_category',
-            'keyword', 'keyword_id', 'keyword_type', 'keyword_category'
-        ]
-        
-        df = df[column_order]
+        # 모든 컬럼이 존재하는지 확인하고 없으면 None으로 추가
+        for col in self.column_order:
+            if col not in df.columns:
+                df[col] = None
         
         logger.info(f"✅ 통합 테이블 생성 완료: {len(df)}행")
-        return df
+        return df[self.column_order] # 정의된 순서로 컬럼 정렬
     
     def save_processed_data(self, df: pd.DataFrame, year: int, month: int, client_name: str):
-        """가공된 데이터를 processed 폴더에 저장"""
+        """가공된 통합 데이터를 CSV 및 Excel 파일로 저장합니다."""
         logger.info("💾 가공 데이터 저장 중...")
-        
-        # CSV 파일로 저장
-        output_file = self.processed_data_dir / f"{client_name}_{year}_{month:02d}_integrated_statistics.csv"
-        df.to_csv(output_file, index=False, encoding='utf-8-sig')
-        
-        # 엑셀 파일 생성 (날짜별 요약 테이블)
-        excel_file = self.processed_data_dir / f"{client_name}_{year}_{month:02d}_daily_summary.xlsx"
-        self._create_daily_summary_excel(df, excel_file, year, month, client_name)
-        
-        logger.info(f"✅ 가공 데이터 저장 완료: {output_file}, {excel_file}")
-        logger.info(f"📊 통계 요약:")
-        logger.info(f"  - 총 레코드 수: {len(df):,}개")
-        logger.info(f"  - 채널 데이터: {len(df[df['data_type'] == 'channel']):,}개")
-        logger.info(f"  - 키워드 데이터: {len(df[df['data_type'] == 'keyword']):,}개")
-        logger.info(f"  - 총 PV: {df['pv'].sum():,}")
-        logger.info(f"  - 일평균 총 PV: {df.groupby('date')['total_pv'].first().mean():.1f}")
+        month_str = f"{month:02d}"
+
+        # CSV 저장
+        csv_file = self.processed_data_dir / f"{client_name}_{year}_{month_str}_integrated_statistics.csv"
+        df.to_csv(csv_file, index=False, encoding='utf-8-sig')
+
+        # Excel 저장
+        excel_file = self.processed_data_dir / f"{client_name}_{year}_{month_str}_daily_summary.xlsx"
+        try:
+            self._create_daily_summary_excel(df, excel_file, client_name, year, month)
+            logger.info(f"✅ 가공 데이터 저장 완료: {csv_file}, {excel_file}")
+        except Exception as e:
+            logger.error(f"❌ Excel 파일 저장 실패: {e}", exc_info=True)
     
-    def _create_daily_summary_excel(self, df: pd.DataFrame, excel_file: Path, year: int, month: int, client_name: str):
+    def _create_daily_summary_excel(self, df: pd.DataFrame, excel_file: Path, client_name: str, year: int, month: int):
         """일자별 요약 엑셀 파일 생성"""
         logger.info("📊 일자별 요약 엑셀 파일 생성 중...")
         
@@ -289,7 +291,7 @@ class MonthlyStatisticsCrawler:
             summary_df.to_excel(writer, sheet_name='일자별 요약', index=False)
             
             # 통계 요약 시트
-            self._create_statistics_sheet(writer, summary_df, year, month, client_name)
+            self._create_statistics_sheet(writer, summary_df, client_name, year, month)
             
             # 채널별 통계 시트
             self._create_channel_statistics_sheet(writer, summary_df, year, month)
@@ -309,7 +311,7 @@ class MonthlyStatisticsCrawler:
         logger.info(f"  - 상위 5개 채널: {[f'{name}({pv:.0f})' for name, pv in top_channels]}")
         logger.info(f"  - 상위 5개 키워드: {[f'{name}({pv:.0f})' for name, pv in top_keywords]}")
     
-    def _create_statistics_sheet(self, writer, summary_df: pd.DataFrame, year: int, month: int, client_name: str):
+    def _create_statistics_sheet(self, writer, summary_df: pd.DataFrame, client_name: str, year: int, month: int):
         """통계 요약 시트 생성"""
         stats_data = []
         
@@ -394,81 +396,54 @@ class MonthlyStatisticsCrawler:
     
     def run_monthly_analysis(self, year: int, month: int, client_name: str):
         """월별 분석 실행"""
-        logger.info(f"🚀 {year}년 {month}월 통계 분석 시작")
-        
         try:
-            # 1. 데이터 수집
-            self.collect_monthly_data(year, month)
+            logger.info(f"🚀 {year}년 {month}월 플레이스 PV 통계 분석 시작")
             
+            # 1. 데이터 수집
+            collected_data = self.collect_monthly_data(year, month)
+            if not collected_data.get("total_pv"):
+                logger.warning(f"{year}년 {month}월 수집된 플레이스 PV 데이터가 없습니다.")
+                return
+
             # 2. 원본 데이터 저장
-            self.save_raw_data(year, month, client_name)
+            self.save_raw_data(collected_data, year, month, client_name)
             
             # 3. 통합 테이블 생성
-            df = self.create_integrated_table(year, month)
-            
+            df = self.create_integrated_table(collected_data)
+            if df.empty:
+                logger.warning(f"{year}년 {month}월 데이터가 비어있어 가공 파일을 생성하지 않습니다.")
+                return
+
             # 4. 가공 데이터 저장
             self.save_processed_data(df, year, month, client_name)
             
             logger.info(f"🎉 {year}년 {month}월 분석 완료!")
-            return True
-            
+
+        except ApiCallError as e:
+            logger.error(f"❌ API 호출 오류가 발생하여 {year}년 {month}월 분석을 중단합니다.")
+            logger.error(f"   오류 메시지: {e}")
+            logger.error("   .env 파일의 AUTH_TOKEN과 COOKIE 값을 최신으로 갱신해주세요.")
+            # sys.exit(1) # 전체 스크립트 중단
+            raise  # 예외를 다시 발생시켜 상위 호출자(run_crawler.py)가 처리하도록 함
         except Exception as e:
-            logger.error(f"❌ 월별 분석 실패: {e}")
-            import traceback
-            traceback.print_exc()
-            return False
+            logger.error(f"❌ {year}년 {month}월 분석 중 예상치 못한 오류 발생: {e}", exc_info=True)
 
 
-def main():
-    """메인 함수"""
-    print("🚀 월별 통계 데이터 수집 및 통합 스크립트")
+def main_test():
+    """스크립트 개별 테스트를 위한 메인 함수"""
+    config_manager = get_config_manager()
+    client = config_manager.get_selected_client_config()
+    if not client:
+        print("❌ 클라이언트 설정을 찾을 수 없습니다.")
+        return
     
-    try:
-        # 설정 확인
-        config_manager = get_config_manager()
-        client = config_manager.get_selected_client_config()
-        
-        if not client:
-            print("❌ 클라이언트 설정을 찾을 수 없습니다.")
-            return
-        
-        print(f"✅ 선택된 클라이언트: {client.name}")
-        
-        # 연월 입력 받기
-        while True:
-            try:
-                year_month = input("\n📅 수집할 연월을 입력하세요 (예: 2025-07): ").strip()
-                if len(year_month) == 7 and year_month[4] == '-':
-                    year = int(year_month[:4])
-                    month = int(year_month[5:7])
-                    if 2020 <= year <= 2030 and 1 <= month <= 12:
-                        break
-                    else:
-                        print("❌ 유효하지 않은 연월입니다. 2020-2030년, 1-12월 범위로 입력해주세요.")
-                else:
-                    print("❌ 형식이 올바르지 않습니다. 'YYYY-MM' 형식으로 입력해주세요.")
-            except ValueError:
-                print("❌ 숫자 형식이 올바르지 않습니다. 'YYYY-MM' 형식으로 입력해주세요.")
-        
-        print(f"📊 {year}년 {month}월 데이터 수집을 시작합니다...")
-        
-        # 월별 분석 실행
-        crawler = MonthlyStatisticsCrawler()
-        success = crawler.run_monthly_analysis(year, month, client.name)
-        
-        if success:
-            print("🎉 월별 분석이 성공적으로 완료되었습니다!")
-            print(f"📁 결과 파일 위치:")
-            print(f"  - 원본 데이터: {crawler.raw_data_dir}")
-            print(f"  - 가공 데이터: {crawler.processed_data_dir}")
-        else:
-            print("❌ 월별 분석이 실패했습니다.")
-            
-    except Exception as e:
-        print(f"❌ 오류 발생: {e}")
-        import traceback
-        traceback.print_exc()
-
+    auth_config = config_manager.get_auth_config()
+    
+    crawler = MonthlyStatisticsCrawler(client, auth_config)
+    crawler.run_monthly_analysis(2024, 9, client.name)
 
 if __name__ == "__main__":
-    main()
+    # 이 스크립트는 이제 run_crawler.py를 통해 실행되는 것이 기본입니다.
+    # 단독으로 테스트하고 싶을 경우 아래 함수를 호출하세요.
+    # main_test()
+    print("이 스크립트는 단독 실행용이 아닙니다. scripts/run_crawler.py를 실행해주세요.")

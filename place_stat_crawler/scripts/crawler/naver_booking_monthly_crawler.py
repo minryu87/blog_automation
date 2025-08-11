@@ -18,8 +18,9 @@ import logging
 project_root = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(project_root))
 
-from scripts.util.config import get_config_manager
+from scripts.util.config import get_config_manager, ClientInfo, AuthConfig
 from scripts.crawler.naver_booking_stat_crawler import NaverBookingStatCrawler
+from scripts.crawler.naver_place_pv_crawler_base import ApiCallError
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
@@ -28,12 +29,14 @@ logger = logging.getLogger(__name__)
 class MonthlyBookingCrawler:
     """월별 예약 통계 데이터 수집 및 통합 클래스"""
     
-    def __init__(self):
-        self.config_manager = get_config_manager()
-        self.client = self.config_manager.get_selected_client_config()
-        self.crawler = NaverBookingStatCrawler()
-        if self.client and self.client.booking_id:
-            self.crawler.set_client_id(self.client.booking_id)
+    def __init__(self, client_info: ClientInfo, auth_config: AuthConfig):
+        """
+        Args:
+            client_info: 사용할 클라이언트의 정보
+            auth_config: 인증 관련 설정 정보
+        """
+        self.client = client_info
+        self.crawler = NaverBookingStatCrawler(client_info, auth_config)
         
         # 데이터 저장 경로
         self.raw_data_dir = project_root / "data" / "raw"
@@ -46,7 +49,7 @@ class MonthlyBookingCrawler:
         # 수집된 데이터 저장소
         self.daily_booking_data = {}  # {date: {page_visits, booking_requests, channel_stats}}
     
-    def collect_monthly_data(self, year: int, month: int):
+    def collect_monthly_data(self, year: int, month: int) -> List[Dict]:
         """지정된 년월의 데이터 수집"""
         logger.info(f"🚀 {year}년 {month}월 예약 데이터 수집 시작")
         
@@ -96,29 +99,31 @@ class MonthlyBookingCrawler:
             current_date += timedelta(days=1)
         
         logger.info(f"🎉 {year}년 {month}월 예약 데이터 수집 완료")
+        return self.daily_booking_data
     
-    def save_raw_data(self, year: int, month: int, client_name: str):
-        """원본 데이터를 raw 폴더에 저장"""
+    def save_raw_data(self, all_data: List[Dict], year: int, month: int, client_name: str):
+        """수집한 원본 데이터를 JSON 파일로 저장합니다."""
         logger.info("💾 원본 데이터 저장 중...")
+        month_str = f"{month:02d}"
+        file_path = self.raw_data_dir / f"{client_name}_booking_data_{year}_{month_str}.json"
         
-        # 예약 데이터 저장
-        booking_file = self.raw_data_dir / f"{client_name}_booking_data_{year}_{month:02d}.json"
-        with open(booking_file, 'w', encoding='utf-8') as f:
-            import json
-            json.dump(self.daily_booking_data, f, ensure_ascii=False, indent=2, default=str)
-        
-        logger.info(f"✅ 원본 데이터 저장 완료: {booking_file}")
-    
-    def create_integrated_table(self, year: int, month: int) -> pd.DataFrame:
-        """통합 테이블 생성"""
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                import json
+                json.dump(all_data, f, ensure_ascii=False, indent=4)
+            if not file_path.exists():
+                logger.error(f"‼️ 파일 생성 실패! 저장 경로를 확인하세요: {file_path}")
+                sys.exit(1)
+            logger.info(f"✅ 파일 생성 확인 완료: {file_path}")
+        except (IOError, TypeError) as e:
+            logger.error(f"❌ 원본 데이터 저장 실패: {e}", exc_info=True)
+
+    def create_integrated_table(self, collected_data: Dict[str, Dict]) -> pd.DataFrame:
+        """수집된 데이터를 기반으로 통합 테이블 생성"""
         logger.info("📊 통합 테이블 생성 중...")
-        
-        rows = []
-        
-        # 모든 날짜에 대해 데이터 생성
-        for date_str in sorted(self.daily_booking_data.keys()):
+        all_rows = []
+        for date_str, daily_data in collected_data.items():
             date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-            daily_data = self.daily_booking_data[date_str]
             
             # 페이지 유입 수와 예약 신청 수
             page_visits = daily_data.get('page_visits', [])
@@ -147,7 +152,7 @@ class MonthlyBookingCrawler:
                 row['channel_name'] = channel.get('channel_name', '')
                 row['channel_count'] = channel.get('count', 0)
                 
-                rows.append(row)
+                all_rows.append(row)
             
             # 요약 행 추가 (채널별 데이터가 없는 경우)
             if not channel_stats:
@@ -157,9 +162,9 @@ class MonthlyBookingCrawler:
                 row['channel_name'] = ''
                 row['channel_count'] = 0
                 
-                rows.append(row)
+                all_rows.append(row)
         
-        df = pd.DataFrame(rows)
+        df = pd.DataFrame(all_rows)
         
         # 컬럼 순서 정리
         column_order = [
@@ -173,25 +178,21 @@ class MonthlyBookingCrawler:
         return df
     
     def save_processed_data(self, df: pd.DataFrame, year: int, month: int, client_name: str):
-        """가공된 데이터를 processed 폴더에 저장"""
+        """가공된 통합 데이터를 CSV 및 Excel 파일로 저장합니다."""
         logger.info("💾 가공 데이터 저장 중...")
-        
-        # CSV 파일로 저장
-        output_file = self.processed_data_dir / f"{client_name}_{year}_{month:02d}_booking_integrated_statistics.csv"
-        df.to_csv(output_file, index=False, encoding='utf-8-sig')
-        
-        # 엑셀 파일 생성 (날짜별 요약 테이블)
-        excel_file = self.processed_data_dir / f"{client_name}_{year}_{month:02d}_booking_daily_summary.xlsx"
-        self._create_booking_daily_summary_excel(df, excel_file, year, month, client_name)
-        
-        logger.info(f"✅ 가공 데이터 저장 완료: {output_file}, {excel_file}")
-        logger.info(f"📊 통계 요약:")
-        logger.info(f"  - 총 레코드 수: {len(df):,}개")
-        logger.info(f"  - 채널 데이터: {len(df[df['data_type'] == 'channel']):,}개")
-        logger.info(f"  - 총 페이지 유입: {df['page_visits'].sum():,}")
-        logger.info(f"  - 총 예약 신청: {df['booking_requests'].sum():,}")
-        logger.info(f"  - 일평균 페이지 유입: {df.groupby('date')['page_visits'].first().mean():.1f}")
-        logger.info(f"  - 일평균 예약 신청: {df.groupby('date')['booking_requests'].first().mean():.1f}")
+        month_str = f"{month:02d}"
+
+        # CSV 저장
+        csv_file = self.processed_data_dir / f"{client_name}_{year}_{month_str}_booking_integrated_statistics.csv"
+        df.to_csv(csv_file, index=False, encoding='utf-8-sig')
+
+        # Excel 저장
+        excel_file = self.processed_data_dir / f"{client_name}_{year}_{month_str}_booking_daily_summary.xlsx"
+        try:
+            self._create_booking_daily_summary_excel(df, excel_file, client_name, year, month)
+            logger.info(f"✅ 가공 데이터 저장 완료: {csv_file}, {excel_file}")
+        except Exception as e:
+            logger.error(f"❌ Excel 파일 저장 실패: {e}", exc_info=True)
     
     def _create_booking_daily_summary_excel(self, df: pd.DataFrame, excel_file: Path, year: int, month: int, client_name: str):
         """일자별 요약 엑셀 파일 생성"""
@@ -322,81 +323,58 @@ class MonthlyBookingCrawler:
     
     def run_monthly_analysis(self, year: int, month: int, client_name: str):
         """월별 분석 실행"""
-        logger.info(f"🚀 {year}년 {month}월 예약 통계 분석 시작")
-        
         try:
+            logger.info(f"🚀 {year}년 {month}월 예약 통계 분석 시작")
+
             # 1. 데이터 수집
-            self.collect_monthly_data(year, month)
-            
+            all_data = self.collect_monthly_data(year, month)
+            if not all_data:
+                logger.warning(f"{year}년 {month}월 수집된 예약 데이터가 없습니다. 다음 달로 넘어갑니다.")
+                return
+
+            total_requests = sum(d.get('booking_requests', [{}])[0].get('count', 0) for d in all_data.values() if d.get('booking_requests'))
+            if total_requests == 0:
+                logger.warning(f"⚠️ {year}년 {month}월의 총 예약 신청 수가 0입니다.")
+
             # 2. 원본 데이터 저장
-            self.save_raw_data(year, month, client_name)
-            
+            self.save_raw_data(all_data, year, month, client_name)
+
             # 3. 통합 테이블 생성
-            df = self.create_integrated_table(year, month)
-            
+            df = self.create_integrated_table(all_data)
+            if df.empty:
+                logger.warning(f"{year}년 {month}월 데이터가 비어있어 가공 파일을 생성하지 않습니다.")
+                return
+
             # 4. 가공 데이터 저장
             self.save_processed_data(df, year, month, client_name)
             
-            logger.info(f"🎉 {year}년 {month}월 예약 분석 완료!")
-            return True
-            
+            logger.info(f"🎉 {year}년 {month}월 분석 완료!")
+
+        except ApiCallError as e:
+            logger.error(f"❌ API 호출 오류가 발생하여 {year}년 {month}월 예약 분석을 중단합니다.")
+            logger.error(f"   오류 메시지: {e}")
+            logger.error("   .env 파일의 AUTH_TOKEN과 COOKIE 값을 최신으로 갱신해주세요.")
+            raise # 예외를 다시 발생시켜 상위 호출자(run_crawler.py)가 처리하도록 함
         except Exception as e:
-            logger.error(f"❌ 월별 예약 분석 실패: {e}")
-            import traceback
-            traceback.print_exc()
-            return False
+            logger.critical(f"💥 {year}년 {month}월 분석 중 심각한 오류 발생. 스크립트를 중단합니다.", exc_info=True)
+            sys.exit(1)
 
 
-def main():
-    """메인 함수"""
-    print("🚀 월별 예약 통계 데이터 수집 및 통합 스크립트")
-    
-    try:
-        # 설정 확인
-        config_manager = get_config_manager()
-        client = config_manager.get_selected_client_config()
+def main_test():
+    """스크립트 개별 테스트를 위한 메인 함수"""
+    config_manager = get_config_manager()
+    client = config_manager.get_selected_client_config()
+    if not client:
+        print("❌ 클라이언트 설정을 찾을 수 없습니다.")
+        return
         
-        if not client:
-            print("❌ 클라이언트 설정을 찾을 수 없습니다.")
-            return
-        
-        print(f"✅ 선택된 클라이언트: {client.name}")
-        
-        # 연월 입력 받기
-        while True:
-            try:
-                year_month = input("\n📅 수집할 연월을 입력하세요 (예: 2025-07): ").strip()
-                if len(year_month) == 7 and year_month[4] == '-':
-                    year = int(year_month[:4])
-                    month = int(year_month[5:7])
-                    if 2020 <= year <= 2030 and 1 <= month <= 12:
-                        break
-                    else:
-                        print("❌ 유효하지 않은 연월입니다. 2020-2030년, 1-12월 범위로 입력해주세요.")
-                else:
-                    print("❌ 형식이 올바르지 않습니다. 'YYYY-MM' 형식으로 입력해주세요.")
-            except ValueError:
-                print("❌ 숫자 형식이 올바르지 않습니다. 'YYYY-MM' 형식으로 입력해주세요.")
-        
-        print(f"📊 {year}년 {month}월 예약 데이터 수집을 시작합니다...")
-        
-        # 월별 분석 실행
-        crawler = MonthlyBookingCrawler()
-        success = crawler.run_monthly_analysis(year, month, client.name)
-        
-        if success:
-            print("🎉 월별 예약 분석이 성공적으로 완료되었습니다!")
-            print(f"📁 결과 파일 위치:")
-            print(f"  - 원본 데이터: {crawler.raw_data_dir}")
-            print(f"  - 가공 데이터: {crawler.processed_data_dir}")
-        else:
-            print("❌ 월별 예약 분석이 실패했습니다.")
-            
-    except Exception as e:
-        print(f"❌ 오류 발생: {e}")
-        import traceback
-        traceback.print_exc()
+    auth_config = config_manager.get_auth_config()
 
+    crawler = MonthlyBookingCrawler(client, auth_config)
+    crawler.run_monthly_analysis(2024, 9, client.name)
 
 if __name__ == "__main__":
-    main()
+    # 이 스크립트는 이제 run_crawler.py를 통해 실행되는 것이 기본입니다.
+    # 단독으로 테스트하고 싶을 경우 아래 함수를 호출하세요.
+    # main_test()
+    print("이 스크립트는 단독 실행용이 아닙니다. scripts/run_crawler.py를 실행해주세요.")
