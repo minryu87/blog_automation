@@ -60,6 +60,9 @@ function build() {
   const brandHomepageInPath = path.join(rawDir, 'keyword_naver_homepage_in.csv');
   const brandBlogInElzaPath = path.join(rawDir, 'keyword_blog_in_elza79.csv');
   const brandBlogInNatenPath = path.join(rawDir, 'keyword_blog_in_natenclinic.csv');
+  const homepageTotalsPath = path.join(rawDir, 'channel_homepage.csv');
+  const blogTotalsPath = path.join(rawDir, 'cnt_blog.csv');
+  const channelPlaceDetailPath = path.join(rawDir, 'channel_place_detail.csv');
 
   const placeRaw = fs.readFileSync(placeCsvPath, 'utf-8');
   const bookingRaw = fs.readFileSync(bookingCsvPath, 'utf-8');
@@ -67,6 +70,9 @@ function build() {
   const brandHomepageRaw = fs.readFileSync(brandHomepageInPath, 'utf-8');
   const brandBlogElzaRaw = fs.readFileSync(brandBlogInElzaPath, 'utf-8');
   const brandBlogNatenRaw = fs.readFileSync(brandBlogInNatenPath, 'utf-8');
+  const homepageTotalsRaw = fs.readFileSync(homepageTotalsPath, 'utf-8');
+  const blogTotalsRaw = fs.readFileSync(blogTotalsPath, 'utf-8');
+  const channelPlaceDetailRaw = fs.readFileSync(channelPlaceDetailPath, 'utf-8');
 
   const placeRows = parseCSV(placeRaw);
   const bookingRows = parseCSV(bookingRaw);
@@ -74,6 +80,9 @@ function build() {
   const brandHomepageRows = parseCSV(brandHomepageRaw);
   const brandBlogElzaRows = parseCSV(brandBlogElzaRaw);
   const brandBlogNatenRows = parseCSV(brandBlogNatenRaw);
+  const homepageTotalRows = parseCSV(homepageTotalsRaw);
+  const blogTotalRows = parseCSV(blogTotalsRaw);
+  const channelPlaceDetailRows = parseCSV(channelPlaceDetailRaw);
 
   // 월별 집계 컨테이너
   const monthToMetrics = {};
@@ -120,7 +129,7 @@ function build() {
       else if (name.includes('카페')) sumInto(monthToMetrics[key], 'search_to_cafe', pv);
       else if (name.includes('플레이스광고')) sumInto(monthToMetrics[key], 'list_to_placeAds', pv);
       else if (name.includes('플레이스목록')) sumInto(monthToMetrics[key], 'map_to_list', pv);
-      else if (name.includes('플레이스상세')) sumInto(monthToMetrics[key], 'placeDetailPV', pv);
+      else if (name.includes('플레이스상세')) sumInto(monthToMetrics[key], 'placeDetailBase', pv);
     }
   }
 
@@ -139,22 +148,11 @@ function build() {
     }
     // 목록→상세가 없으면 기본 전환율로 생성
     if (!m.list_to_placeDetail) m.list_to_placeDetail = Math.round(m.map_to_list * 0.5);
-    // 브랜드 수요는 관측치 없으므로 전체의 30%를 가정하고 분배
-    const brandTotal = Math.round((m.nonBrand_to_search + m.nonBrand_to_map) * 0.3);
-    m.brand_to_search_direct = Math.round(brandTotal * 0.4);
-    m.brand_to_map_direct = Math.round(brandTotal * 0.3);
-    m.brand_to_blog_direct = Math.round(brandTotal * 0.15);
-    m.brand_to_site_direct = Math.round(brandTotal * 0.15);
-    // 일반→브랜드 전환 가정
+    // 일반→브랜드 전환 가정 (브랜드 유입 엣지에는 포함하지 않음)
     const convRate = 0.3;
     m.blog_to_brand = Math.round(m.search_to_blog * convRate);
     m.site_to_brand = Math.round(m.search_to_site * convRate);
     m.cafe_to_brand = Math.round(m.search_to_cafe * convRate);
-    // 플레이스 상세 PV 합산
-    m.placeDetailPV = (m.placeDetailPV || 0)
-      + m.brand_to_search_direct + m.brand_to_map_direct
-      + m.brand_to_blog_direct + m.brand_to_site_direct
-      + m.ads_to_placeDetail + m.list_to_placeDetail;
   }
 
   // 예약 통계 반영 (bookingRows)
@@ -168,12 +166,11 @@ function build() {
     const code = (r.channel_code || '').trim();
     const m = monthToMetrics[key];
 
-    if (code === 'ple') sumInto(m, 'placeDetailPV', pageVisits);
+    if (code === 'ple') sumInto(m, 'placeDetailBase', pageVisits);
     if (code === 'psa') sumInto(m, 'ads_to_placeDetail', pageVisits);
     if (code === 'pll') sumInto(m, 'list_to_placeDetail', pageVisits);
-    // 예약 시도/완료 추정: booking_requests는 예약 완료로 사용, 시도는 상세 PV의 25% 기준으로 보수적으로 설정
-    m.bookingPageVisits = Math.max(m.bookingPageVisits, Math.round(m.placeDetailPV * 0.25));
-    m.bookings = Math.max(m.bookings, bookingRequests);
+    // 예약 완료는 월 합산
+    m.bookings = (m.bookings || 0) + bookingRequests;
   }
 
   // 브랜드 노드 및 엣지 주입 (명세 기반)
@@ -196,7 +193,7 @@ function build() {
     if (!key || isBrand !== 'Y') continue;
     if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
     const cnt = Number(r.cnt || '0');
-    monthToMetrics[key].brand_to_site_direct = (monthToMetrics[key].brand_to_site_direct || 0) + cnt;
+    monthToMetrics[key].brand_to_site_from_csv = (monthToMetrics[key].brand_to_site_from_csv || 0) + cnt;
   }
 
   // 3) 브랜드 -> 블로그 엣지: 두 파일 합계 (is_brand(Y))
@@ -207,17 +204,59 @@ function build() {
       if (!key || isBrand !== 'Y') continue;
       if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
       const cnt = Number(r.cnt || '0');
-      monthToMetrics[key].brand_to_blog_direct = (monthToMetrics[key].brand_to_blog_direct || 0) + cnt;
+      monthToMetrics[key].brand_to_blog_from_csv = (monthToMetrics[key].brand_to_blog_from_csv || 0) + cnt;
     }
   };
   blogBrandAdd(brandBlogElzaRows);
   blogBrandAdd(brandBlogNatenRows);
 
-  // 명세에 없는 브랜드 엣지는 0으로 보정
+  // 브랜드 엣지 확정: CSV 값으로 덮어쓰기, 나머지는 0
   for (const key of Object.keys(monthToMetrics)) {
     const m = monthToMetrics[key];
+    m.brand_to_blog_direct = m.brand_to_blog_from_csv || 0;
+    m.brand_to_site_direct = m.brand_to_site_from_csv || 0;
     m.brand_to_search_direct = 0;
-    m.brand_to_map_direct = m.brand_to_map_direct || 0; // 유지하되 없으면 0
+    m.brand_to_map_direct = 0;
+  }
+
+  // 홈페이지/블로그 노드 총량 주입
+  for (const r of homepageTotalRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const tot = Number(r.tot || '0');
+    monthToMetrics[key].homepage_node_total = (monthToMetrics[key].homepage_node_total || 0) + tot;
+  }
+  for (const r of blogTotalRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const tot = Number(r.tot || '0');
+    monthToMetrics[key].blog_node_total = (monthToMetrics[key].blog_node_total || 0) + tot;
+  }
+
+  // 홈페이지/네이버 블로그 → 플레이스상세 엣지 주입
+  for (const r of channelPlaceDetailRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const ch = (r.channel || '').trim();
+    const pv = Number(r.pv || '0');
+    if (ch === '웹사이트') sumInto(monthToMetrics[key], 'homepage_to_place_detail', pv);
+    if (ch === '네이버 블로그') sumInto(monthToMetrics[key], 'blog_to_place_detail', pv);
+  }
+
+  // 최종 placeDetailPV 및 예약 시도 재계산
+  for (const key of Object.keys(monthToMetrics)) {
+    const m = monthToMetrics[key];
+    const base = m.placeDetailBase || 0;
+    m.placeDetailPV = base
+      + (m.list_to_placeDetail || 0)
+      + (m.ads_to_placeDetail || 0)
+      + (m.homepage_to_place_detail || 0)
+      + (m.blog_to_place_detail || 0);
+    // 예약 시도는 상세 PV의 25% 보수적 가정
+    m.bookingPageVisits = Math.round(m.placeDetailPV * 0.25);
   }
 
   const months = Object.keys(monthToMetrics).sort();

@@ -239,6 +239,10 @@ const HospitalMarketingDashboard = () => {
     setMetrics({
       ...baseMetrics,
       brand_node_search: m.brand_node_search || 0,
+      homepage_node_total: m.homepage_node_total || 0,
+      blog_node_total: m.blog_node_total || 0,
+      homepage_to_place_detail: m.homepage_to_place_detail || 0,
+      blog_to_place_detail: m.blog_to_place_detail || 0,
       nonBrandDemand,
       brandDemand,
       nonBrand_to_search: m.nonBrand_to_search || 0,
@@ -517,20 +521,15 @@ const HospitalMarketingDashboard = () => {
           <g>
             <rect x="350" y="30" width="65" height="40" fill="white" stroke="#3F51B5" strokeWidth="2" rx="6" />
             <text x="382" y="46" textAnchor="middle" fontSize="8" fontWeight="600" fill="#3F51B5">홈페이지</text>
-            <text x="382" y="61" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#3F51B5">{metrics.search_to_site}</text>
+            <text x="382" y="61" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#3F51B5">{metrics.homepage_node_total || 0}</text>
           </g>
 
           <g>
             <rect x="350" y="90" width="65" height="40" fill="white" stroke="#FF5722" strokeWidth="2" rx="6" />
-            <text x="382" y="106" textAnchor="middle" fontSize="8" fontWeight="600" fill="#FF5722">블로그</text>
-            <text x="382" y="121" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#FF5722">{metrics.search_to_blog}</text>
+            <text x="382" y="106" textAnchor="middle" fontSize="8" fontWeight="600" fill="#FF5722">네이버 블로그</text>
+            <text x="382" y="121" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#FF5722">{metrics.blog_node_total || 0}</text>
           </g>
-
-          <g>
-            <rect x="350" y="150" width="65" height="40" fill="white" stroke="#E91E63" strokeWidth="2" rx="6" />
-            <text x="382" y="166" textAnchor="middle" fontSize="8" fontWeight="600" fill="#E91E63">카페</text>
-            <text x="382" y="181" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#E91E63">{metrics.search_to_cafe}</text>
-          </g>
+          
 
           <g>
             <rect x="350" y="220" width="65" height="40" fill="white" stroke="#00BCD4" strokeWidth="2" rx="6" />
@@ -595,36 +594,7 @@ const HospitalMarketingDashboard = () => {
             {metrics.nonBrand_to_map}
           </text>
 
-          {/* 일반 키워드 → 네이버 검색 */}
-          <path 
-            d={createPath(160, 310, 220, 110, getStrokeWidth(metrics.nonBrand_to_search))}
-            fill="url(#nonBrandGradient)"
-            opacity="0.7"
-          />
-          <text x="190" y="210" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
-            {metrics.nonBrand_to_search}
-          </text>
-
-          {/* 네이버 검색 → 홈페이지 */}
-          <path 
-            d={createPath(290, 100, 350, 50, getStrokeWidth(metrics.search_to_site))}
-            fill="url(#searchGradient)"
-            opacity="0.6"
-          />
-
-          {/* 네이버 검색 → 블로그 */}
-          <path 
-            d={createHorizontalPath(290, 105, 350, 110, getStrokeWidth(metrics.search_to_blog))}
-            fill="url(#searchGradient)"
-            opacity="0.6"
-          />
-
-          {/* 네이버 검색 → 카페 */}
-          <path 
-            d={createPath(290, 110, 350, 170, getStrokeWidth(metrics.search_to_cafe))}
-            fill="url(#searchGradient)"
-            opacity="0.6"
-          />
+          {/* 검색/카페 파생 엣지 제거 */}
 
           {/* 네이버 지도 → 플레이스 목록 */}
           <path 
@@ -640,30 +610,26 @@ const HospitalMarketingDashboard = () => {
             opacity="0.5"
           />
 
-          {/* 모든 채널 → 플레이스 상세 */}
-          {/* 홈페이지 → 플레이스 상세 */}
+          {/* 홈페이지 → 플레이스 상세 (실데이터) */}
           <path 
-            d={createPath(415, 50, 480, 160, getStrokeWidth(metrics.brand_to_site_direct))}
+            d={createPath(415, 50, 480, 160, getStrokeWidth(metrics.homepage_to_place_detail || 0))}
             fill="#3F51B5"
-            opacity="0.4"
+            opacity="0.6"
           />
-
-          {/* 블로그 → 플레이스 상세 */}
-          <path 
-            d={createPath(415, 110, 480, 165, getStrokeWidth(metrics.brand_to_blog_direct))}
-            fill="#FF5722"
-            opacity="0.4"
-          />
-
-          {/* 카페 → 플레이스 상세 (브랜드 전환 표시) */}
-          <path 
-            d={createPath(415, 170, 480, 170, getStrokeWidth(metrics.cafe_to_brand))}
-            fill="#E91E63"
-            opacity="0.4"
-          />
-          <text x="447" y="170" textAnchor="middle" fontSize="7" fill="#E91E63" fontWeight="600">
-            전환 {metrics.cafe_to_brand}
+          <text x="447" y="100" textAnchor="middle" fontSize="8" fill="#3F51B5" fontWeight="600">
+            {metrics.homepage_to_place_detail || 0}
           </text>
+
+          {/* 네이버 블로그 → 플레이스 상세 (실데이터) */}
+          <path 
+            d={createPath(415, 110, 480, 165, getStrokeWidth(metrics.blog_to_place_detail || 0))}
+            fill="#FF5722"
+            opacity="0.6"
+          />
+          <text x="447" y="135" textAnchor="middle" fontSize="8" fill="#FF5722" fontWeight="600">
+            {metrics.blog_to_place_detail || 0}
+          </text>
+          
 
           {/* 플레이스 목록 → 플레이스 상세 */}
           <path 
