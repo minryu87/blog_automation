@@ -150,10 +150,6 @@ class PerformanceAnalyzer:
         """요청된 형식의 리포트를 위한 분석을 수행합니다."""
         logger.info("포커스 분석(월별, 안정성)을 시작합니다...")
         
-        # 전체 기간 상관관계
-        overall_corr_results = self._calculate_correlations(df, self.focused_pairs)
-        overall_corr_df = pd.DataFrame.from_dict(overall_corr_results, orient='index').reset_index().rename(columns={'index': 'pair'})
-        
         # 월별 상관관계
         df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
         monthly_corr_list = []
@@ -172,6 +168,9 @@ class PerformanceAnalyzer:
         
         monthly_corr_df = pd.DataFrame(monthly_corr_list)
 
+        # 전체 기간 상관관계를 월별 상관관계의 평균으로 계산
+        overall_corr_df = monthly_corr_df.groupby(['pair', 'category'])['correlation'].mean().reset_index()
+
         # 안정성 분석 (표준편차)
         stability_df = monthly_corr_df.groupby('pair')['correlation'].std().reset_index()
         stability_df.rename(columns={'correlation': 'std_dev'}, inplace=True)
@@ -180,6 +179,90 @@ class PerformanceAnalyzer:
         self.plot_monthly_correlation_trends(monthly_corr_df)
 
         return overall_corr_df, stability_df, monthly_corr_df
+
+    def run_channel_correlation_analysis(self, df: pd.DataFrame) -> pd.DataFrame:
+        """예약 채널과 플레이스 채널 간의 상관관계를 분석합니다."""
+        logger.info("채널 간 상관관계 분석을 시작합니다...")
+        
+        booking_channel_cols = [col for col in df.columns if col.startswith('booking_visits_')]
+        place_channel_cols = [col for col in df.columns if col.startswith('place_pv_')]
+        
+        if not booking_channel_cols or not place_channel_cols:
+            logger.warning("분석에 필요한 예약 또는 플레이스 채널 데이터가 부족합니다.")
+            return pd.DataFrame()
+
+        channel_pairs = []
+        for b_col in booking_channel_cols:
+            for p_col in place_channel_cols:
+                channel_pairs.append(("", b_col, p_col)) # category는 사용하지 않으므로 비워둠
+                
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue
+            
+            monthly_results = self._calculate_correlations(group, channel_pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        if not monthly_corr_list:
+            logger.warning("채널 간 월별 상관관계 데이터를 계산할 수 없습니다.")
+            return pd.DataFrame()
+
+        monthly_channel_corr_df = pd.DataFrame(monthly_corr_list)
+        
+        avg_channel_corr_df = monthly_channel_corr_df.groupby('pair')['correlation'].mean().reset_index()
+        avg_channel_corr_df = avg_channel_corr_df.sort_values(by='correlation', ascending=False).dropna()
+        
+        logger.info(f"채널 간 상관관계 분석 완료: {len(avg_channel_corr_df)}개의 유효한 쌍을 찾았습니다.")
+        
+        return avg_channel_corr_df
+
+    def run_keyword_channel_correlation_analysis(self, df: pd.DataFrame) -> pd.DataFrame:
+        """플레이스 채널과 키워드 유형 간의 상관관계를 분석합니다."""
+        logger.info("플레이스 채널-키워드 유형 간 상관관계 분석을 시작합니다...")
+        
+        place_channel_cols = [col for col in df.columns if col.startswith('place_pv_')]
+        keyword_type_cols = [col for col in df.columns if col.startswith('keyword_pv_')]
+        
+        if not place_channel_cols or not keyword_type_cols:
+            logger.warning("분석에 필요한 플레이스 채널 또는 키워드 유형 데이터가 부족합니다.")
+            return pd.DataFrame()
+
+        pairs = []
+        for p_col in place_channel_cols:
+            for k_col in keyword_type_cols:
+                pairs.append(("", p_col, k_col))
+                
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue
+            
+            monthly_results = self._calculate_correlations(group, pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        if not monthly_corr_list:
+            logger.warning("플레이스 채널-키워드 월별 상관관계 데이터를 계산할 수 없습니다.")
+            return pd.DataFrame()
+
+        monthly_corr_df = pd.DataFrame(monthly_corr_list)
+        
+        avg_corr_df = monthly_corr_df.groupby('pair')['correlation'].mean().reset_index()
+        avg_corr_df = avg_corr_df.sort_values(by='correlation', ascending=False).dropna()
+        
+        logger.info(f"플레이스 채널-키워드 상관관계 분석 완료: {len(avg_corr_df)}개의 유효한 쌍을 찾았습니다.")
+        
+        return avg_corr_df
 
     def plot_monthly_correlation_trends(self, monthly_corr_df: pd.DataFrame):
         """월별 상관관계 트렌드를 시각화합니다."""
@@ -204,9 +287,29 @@ class PerformanceAnalyzer:
         plt.close()
         logger.info(f"월별 트렌드 그래프 저장 완료: {save_path}")
 
-    def save_analysis_summary_to_md(self, overall_corr, stability_df, monthly_corr_df):
+    def save_analysis_summary_to_md(self, overall_corr, stability_df, monthly_corr_df, channel_corr_df, keyword_channel_corr_df):
         """요청된 형식에 맞춰 분석 결과를 마크다운 파일로 저장합니다."""
         logger.info("새로운 형식의 분석 리포트를 마크다운 파일로 저장합니다...")
+
+        channel_corr_md_section = ""
+        if not channel_corr_df.empty:
+            channel_corr_md_section = f"""
+## 5. 채널 간 상호 영향 분석 (상관관계 높은 순)
+
+예약 페이지의 각 채널 유입이 플레이스 페이지의 어떤 채널 유입과 가장 관련이 깊은지 보여줍니다.
+
+{channel_corr_df.to_markdown(index=False)}
+"""
+
+        keyword_channel_corr_md_section = ""
+        if not keyword_channel_corr_df.empty:
+            keyword_channel_corr_md_section = f"""
+## 6. 플레이스 채널-키워드 유형 간 상관관계 (상관관계 높은 순)
+
+플레이스 페이지의 각 채널별 유입이 어떤 유형의 검색어 유입과 가장 관련이 깊은지 보여줍니다.
+
+{keyword_channel_corr_df.to_markdown(index=False)}
+"""
 
         md_content = f"""# {self.client_name} 마케팅 퍼널 상관관계 분석 리포트
 
@@ -231,7 +334,7 @@ class PerformanceAnalyzer:
 ## 4. 월별 상관관계 상세 데이터
 
 {monthly_corr_df.sort_values(by=['month', 'category']).to_markdown(index=False)}
-"""
+{channel_corr_md_section}{keyword_channel_corr_md_section}"""
         report_path = self.analysis_results_path / f'{self.client_name}_focused_analysis_report.md'
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write(md_content)
@@ -243,7 +346,9 @@ class PerformanceAnalyzer:
         try:
             merged_df = self.load_and_prepare_data()
             overall_corr, stability_df, monthly_corr_df = self.run_focused_analysis(merged_df)
-            self.save_analysis_summary_to_md(overall_corr, stability_df, monthly_corr_df)
+            channel_corr_df = self.run_channel_correlation_analysis(merged_df)
+            keyword_channel_corr_df = self.run_keyword_channel_correlation_analysis(merged_df)
+            self.save_analysis_summary_to_md(overall_corr, stability_df, monthly_corr_df, channel_corr_df, keyword_channel_corr_df)
 
             logger.info("🎉 모든 분석이 성공적으로 완료되었습니다.")
         except FileNotFoundError as e:
