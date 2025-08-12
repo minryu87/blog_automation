@@ -243,6 +243,11 @@ const HospitalMarketingDashboard = () => {
       blog_node_total: m.blog_node_total || 0,
       homepage_to_place_detail: m.homepage_to_place_detail || 0,
       blog_to_place_detail: m.blog_to_place_detail || 0,
+      general_node_search: m.general_node_search || 0,
+      general_to_site_direct: m.general_to_site_direct || 0,
+      general_to_blog_direct: m.general_to_blog_direct || 0,
+      general_to_map_direct: m.general_to_map_direct || 0,
+      map_node_total: m.map_node_total || 0,
       nonBrandDemand,
       brandDemand,
       nonBrand_to_search: m.nonBrand_to_search || 0,
@@ -263,7 +268,14 @@ const HospitalMarketingDashboard = () => {
       brand_to_site_direct: m.brand_to_site_direct || 0,
       placeDetailPV: m.placeDetailPV || 0,
       bookingPageVisits: m.bookingPageVisits || 0,
-      bookings: m.bookings || 0
+      bookings: m.bookings || 0,
+      place_to_booking_page: m.place_to_booking_page || 0,
+      booking_page_to_requests: m.booking_page_to_requests || 0,
+      place_list_to_detail: m.place_list_to_detail || 0,
+      place_ad_node_total: m.place_ad_node_total || 0,
+      place_ad_to_detail: m.place_ad_to_detail || 0,
+      general_search_to_detail: m.general_search_to_detail || 0,
+      brand_search_to_detail: m.brand_search_to_detail || 0
     });
     setTargetBookings(m.bookings || 0);
   }, [isMonthlyMode, monthlyData, selectedMonthIndex]);
@@ -501,65 +513,138 @@ const HospitalMarketingDashboard = () => {
             })()}
           </g>
 
+          {/* 일반 키워드 네이버 검색량 (원형 노드) */}
           <g>
-            <rect x="80" y="280" width="80" height="60" fill="#FFFDE7" stroke="#FBC02D" strokeWidth="2" rx="6" />
-            <text x="120" y="300" textAnchor="middle" fontSize="10" fontWeight="600" fill="#FBC02D">일반</text>
-            <text x="120" y="320" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#FBC02D">{metrics.nonBrandDemand}</text>
+            {(() => {
+              const cx = 120; const cy = 300;
+              const r = getNodeRadius(metrics.general_node_search || 0, 700000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFDE7" stroke="#FBC02D" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 10} textAnchor="middle" fontSize="10" fontWeight="600" fill="#FBC02D">일반 키워드 네이버 검색량</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="14" fontWeight="bold" fill="#FBC02D">{metrics.general_node_search || 0}</text>
+                </>
+              );
+            })()}
           </g>
 
           {/* 채널: 네이버 검색 노드는 제거 (비주얼 표시 없음). 좌표는 기존 엣지 출발점으로만 사용 */}
 
+          {/* 네이버 지도 (원형 노드) */}
           <g>
-            <rect x="220" y="260" width="70" height="50" fill="white" stroke="#4CAF50" strokeWidth="2" rx="6" />
-            <text x="255" y="280" textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">지도</text>
-            <text x="255" y="298" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#4CAF50">
-              {metrics.nonBrand_to_map + metrics.brand_to_map_direct}
-            </text>
+            {(() => {
+              const cx = 255; const cy = 285;
+              const r = getNodeRadius(metrics.map_node_total || 0, 2000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#4CAF50" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">네이버 지도</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="12" fontWeight="bold" fill="#4CAF50">{metrics.map_node_total || 0}</text>
+                </>
+              );
+            })()}
           </g>
 
-          {/* 인지 채널들 */}
+          {/* 인지 채널들 (원형 노드) */}
           <g>
-            <rect x="350" y="30" width="65" height="40" fill="white" stroke="#3F51B5" strokeWidth="2" rx="6" />
-            <text x="382" y="46" textAnchor="middle" fontSize="8" fontWeight="600" fill="#3F51B5">홈페이지</text>
-            <text x="382" y="61" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#3F51B5">{metrics.homepage_node_total || 0}</text>
-          </g>
-
-          <g>
-            <rect x="350" y="90" width="65" height="40" fill="white" stroke="#FF5722" strokeWidth="2" rx="6" />
-            <text x="382" y="106" textAnchor="middle" fontSize="8" fontWeight="600" fill="#FF5722">네이버 블로그</text>
-            <text x="382" y="121" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#FF5722">{metrics.blog_node_total || 0}</text>
-          </g>
-          
-
-          <g>
-            <rect x="350" y="220" width="65" height="40" fill="white" stroke="#00BCD4" strokeWidth="2" rx="6" />
-            <text x="382" y="236" textAnchor="middle" fontSize="8" fontWeight="600" fill="#00BCD4">플레이스목록</text>
-            <text x="382" y="251" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#00BCD4">{metrics.map_to_list}</text>
-          </g>
-
-          <g>
-            <rect x="350" y="320" width="65" height="40" fill="white" stroke="#FFC107" strokeWidth="2" rx="6" />
-            <text x="382" y="336" textAnchor="middle" fontSize="8" fontWeight="600" fill="#FFC107">플레이스광고</text>
-            <text x="382" y="351" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#FFC107">{metrics.list_to_placeAds}</text>
-          </g>
-
-          {/* 전환 지점들 */}
-          <g>
-            <rect x="480" y="145" width="80" height="55" fill="#F3E5F5" stroke="#9C27B0" strokeWidth="2" rx="6" />
-            <text x="520" y="162" textAnchor="middle" fontSize="9" fontWeight="600" fill="#9C27B0">플레이스상세</text>
-            <text x="520" y="185" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#9C27B0">{metrics.placeDetailPV}</text>
+            {(() => {
+              const cx = 382; const cy = 50;
+              const r = getNodeRadius(metrics.homepage_node_total || 0);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#3F51B5" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#3F51B5">홈페이지</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="12" fontWeight="bold" fill="#3F51B5">{metrics.homepage_node_total || 0}</text>
+                </>
+              );
+            })()}
           </g>
 
           <g>
-            <rect x="620" y="145" width="80" height="55" fill="#E1F5FE" stroke="#03A9F4" strokeWidth="2" rx="6" />
-            <text x="660" y="162" textAnchor="middle" fontSize="9" fontWeight="600" fill="#03A9F4">네이버예약</text>
-            <text x="660" y="185" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#03A9F4">{metrics.bookingPageVisits}</text>
+            {(() => {
+              const cx = 382; const cy = 110;
+              const r = getNodeRadius(metrics.blog_node_total || 0);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#FF5722" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#FF5722">네이버 블로그</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="12" fontWeight="bold" fill="#FF5722">{metrics.blog_node_total || 0}</text>
+                </>
+              );
+            })()}
+          </g>
+
+          {/* 플레이스 목록 (원형, 값 0 고정) */}
+          <g>
+            {(() => {
+              const cx = 382; const cy = 240;
+              const r = getNodeRadius(0, 2000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#00BCD4" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#00BCD4">플레이스 목록</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="bold" fill="#00BCD4">0</text>
+                </>
+              );
+            })()}
+          </g>
+
+          {/* 플레이스 광고 (원형: 노출수) */}
+          <g>
+            {(() => {
+              const cx = 382; const cy = 320;
+              const r = getNodeRadius(metrics.place_ad_node_total || 0, 10000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#FFC107" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#FFC107">플레이스 광고</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="bold" fill="#FFC107">{metrics.place_ad_node_total || 0}</text>
+                </>
+              );
+            })()}
+          </g>
+
+          {/* 전환 지점들 (원형 노드) */}
+          <g>
+            {(() => {
+              const cx = 520; const cy = 172;
+              const r = getNodeRadius(metrics.placeDetailPV || 0, 4000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FDF7FF" stroke="#9C27B0" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#9C27B0">플레이스상세</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="16" fontWeight="bold" fill="#9C27B0">{metrics.placeDetailPV}</text>
+                </>
+              );
+            })()}
           </g>
 
           <g>
-            <rect x="760" y="145" width="80" height="55" fill="#E8F5E9" stroke="#4CAF50" strokeWidth="3" rx="6" />
-            <text x="800" y="162" textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">예약완료</text>
-            <text x="800" y="185" textAnchor="middle" fontSize="18" fontWeight="bold" fill="#4CAF50">{metrics.bookings}</text>
+            {(() => {
+              const cx = 675; const cy = 172;
+              const r = getNodeRadius(metrics.bookingPageVisits || 0, 2000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#EFFFFE" stroke="#03A9F4" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#03A9F4">네이버 예약 페이지(session)</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="16" fontWeight="bold" fill="#03A9F4">{metrics.bookingPageVisits}</text>
+                </>
+              );
+            })()}
+          </g>
+
+          <g>
+            {(() => {
+              const cx = 810; const cy = 172;
+              const r = getNodeRadius(metrics.bookings || 0, 1000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#E8F5E9" stroke="#4CAF50" strokeWidth="3" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">예약 신청 (UV)</text>
+                  <text x={cx} y={cy + 5} textAnchor="middle" fontSize="18" fontWeight="bold" fill="#4CAF50">{metrics.bookings}</text>
+                </>
+              );
+            })()}
           </g>
 
           {/* 플로우 연결선들 (Sankey 스타일) - x 좌표 조정 */}
@@ -584,14 +669,33 @@ const HospitalMarketingDashboard = () => {
             {metrics.brand_to_blog_direct || 0}
           </text>
 
-          {/* 일반 키워드 → 네이버 지도 */}
+          {/* 일반 → 네이버 지도 (임시값 1000 기준) */}
           <path 
-            d={createHorizontalPath(160, 310, 220, 285, getStrokeWidth(metrics.nonBrand_to_map))}
+            d={createHorizontalPath(140, 300, 255 - (getNodeRadius(metrics.map_node_total || 0, 2000)), 285, getStrokeWidth(metrics.general_to_map_direct || 0))}
             fill="url(#nonBrandGradient)"
             opacity="0.7"
           />
           <text x="190" y="298" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
-            {metrics.nonBrand_to_map}
+            {metrics.general_to_map_direct || 0}
+          </text>
+          {/* 일반 → 홈페이지 */}
+          <path
+            d={createPath(120, 300, 382, 50, getStrokeWidth(metrics.general_to_site_direct || 0))}
+            fill="url(#nonBrandGradient)"
+            opacity="0.7"
+          />
+          <text x="250" y="175" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
+            {metrics.general_to_site_direct || 0}
+          </text>
+
+          {/* 일반 → 네이버 블로그 */}
+          <path
+            d={createPath(120, 300, 382, 110, getStrokeWidth(metrics.general_to_blog_direct || 0))}
+            fill="url(#nonBrandGradient)"
+            opacity="0.7"
+          />
+          <text x="250" y="205" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
+            {metrics.general_to_blog_direct || 0}
           </text>
 
           {/* 검색/카페 파생 엣지 제거 */}
@@ -629,40 +733,66 @@ const HospitalMarketingDashboard = () => {
           <text x="447" y="135" textAnchor="middle" fontSize="8" fill="#FF5722" fontWeight="600">
             {metrics.blog_to_place_detail || 0}
           </text>
+
+          {/* 브랜드 검색 → 플레이스 상세 */}
+          <path
+            d={createPath(120, 90, 480, 160, getStrokeWidth(metrics.brand_search_to_detail || 0))}
+            fill="#FF9800"
+            opacity="0.35"
+          />
+          <text x="300" y="140" textAnchor="middle" fontSize="8" fill="#FF9800" fontWeight="600">
+            {metrics.brand_search_to_detail || 0}
+          </text>
+
+          {/* 일반 검색 → 플레이스 상세 */}
+          <path
+            d={createPath(120, 300, 480, 175, getStrokeWidth(metrics.general_search_to_detail || 0))}
+            fill="#FBC02D"
+            opacity="0.35"
+          />
+          <text x="300" y="200" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
+            {metrics.general_search_to_detail || 0}
+          </text>
           
 
-          {/* 플레이스 목록 → 플레이스 상세 */}
+          {/* 플레이스 목록 → 플레이스 상세 (네이버지도 pv) */}
           <path 
-            d={createPath(415, 240, 480, 175, getStrokeWidth(metrics.list_to_placeDetail))}
+            d={createPath(415, 240, 480, 175, getStrokeWidth(metrics.place_list_to_detail || 0))}
             fill="#00BCD4"
             opacity="0.5"
           />
+          <text x="447" y="210" textAnchor="middle" fontSize="8" fill="#00BCD4" fontWeight="600">
+            {metrics.place_list_to_detail || 0}
+          </text>
 
-          {/* 플레이스 광고 → 플레이스 상세 */}
+          {/* 플레이스 광고 → 플레이스 상세 (클릭수) */}
           <path 
-            d={createPath(415, 340, 480, 180, getStrokeWidth(metrics.ads_to_placeDetail))}
+            d={createPath(415, 340, 480, 180, getStrokeWidth(metrics.place_ad_to_detail || 0))}
             fill="#FFC107"
             opacity="0.5"
           />
+          <text x="447" y="300" textAnchor="middle" fontSize="8" fill="#FFC107" fontWeight="600">
+            {metrics.place_ad_to_detail || 0}
+          </text>
 
-          {/* 플레이스 상세 → 네이버 예약 */}
+          {/* 플레이스 상세 → 네이버 예약 페이지(session) */}
           <path 
-            d={createHorizontalPath(560, 172, 620, 172, getStrokeWidth(metrics.bookingPageVisits))}
+            d={createHorizontalPath(560, 172, 620, 172, getStrokeWidth(metrics.place_to_booking_page))}
             fill="url(#placeGradient)"
             opacity="0.6"
           />
           <text x="590" y="172" textAnchor="middle" fontSize="8" fill="#9C27B0" fontWeight="600">
-            {metrics.bookingPageVisits}
+            {metrics.place_to_booking_page}
           </text>
 
-          {/* 네이버 예약 → 예약 완료 */}
+          {/* 네이버 예약 페이지(session) → 예약 신청 (UV) */}
           <path 
-            d={createHorizontalPath(700, 172, 760, 172, getStrokeWidth(metrics.bookings))}
+            d={createHorizontalPath(700, 172, 760, 172, getStrokeWidth(metrics.booking_page_to_requests))}
             fill="#4CAF50"
             opacity="0.7"
           />
           <text x="730" y="172" textAnchor="middle" fontSize="8" fill="#4CAF50" fontWeight="600">
-            {metrics.bookings}
+            {metrics.booking_page_to_requests}
           </text>
 
           {/* 전환율 표시 */}

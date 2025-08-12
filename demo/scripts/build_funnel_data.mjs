@@ -63,6 +63,10 @@ function build() {
   const homepageTotalsPath = path.join(rawDir, 'channel_homepage.csv');
   const blogTotalsPath = path.join(rawDir, 'cnt_blog.csv');
   const channelPlaceDetailPath = path.join(rawDir, 'channel_place_detail.csv');
+  const placeToBookingPath = path.join(rawDir, 'placedetail_to_bookingpage.csv');
+  const bookingRequestsPath = path.join(rawDir, 'cnt_booking_requests.csv');
+  const placeAdPath = path.join(rawDir, 'placead.csv');
+  const keywordPlaceDetailPath = path.join(rawDir, 'keyword_placedetail.csv');
 
   const placeRaw = fs.readFileSync(placeCsvPath, 'utf-8');
   const bookingRaw = fs.readFileSync(bookingCsvPath, 'utf-8');
@@ -73,6 +77,10 @@ function build() {
   const homepageTotalsRaw = fs.readFileSync(homepageTotalsPath, 'utf-8');
   const blogTotalsRaw = fs.readFileSync(blogTotalsPath, 'utf-8');
   const channelPlaceDetailRaw = fs.readFileSync(channelPlaceDetailPath, 'utf-8');
+  const placeToBookingRaw = fs.readFileSync(placeToBookingPath, 'utf-8');
+  const bookingRequestsRaw = fs.readFileSync(bookingRequestsPath, 'utf-8');
+  const placeAdRaw = fs.readFileSync(placeAdPath, 'utf-8');
+  const keywordPlaceDetailRaw = fs.readFileSync(keywordPlaceDetailPath, 'utf-8');
 
   const placeRows = parseCSV(placeRaw);
   const bookingRows = parseCSV(bookingRaw);
@@ -83,6 +91,26 @@ function build() {
   const homepageTotalRows = parseCSV(homepageTotalsRaw);
   const blogTotalRows = parseCSV(blogTotalsRaw);
   const channelPlaceDetailRows = parseCSV(channelPlaceDetailRaw);
+  const placeToBookingRows = parseCSV(placeToBookingRaw);
+  const bookingRequestsRows = parseCSV(bookingRequestsRaw);
+  const placeAdRows = parseCSV(placeAdRaw);
+  const keywordPlaceDetailRows = parseCSV(keywordPlaceDetailRaw);
+
+  // helper: parse date like 'Sep.24' to '2024-09'
+  const monthAbbrevToNum = {
+    Jan: '01', Feb: '02', Mar: '03', Apr: '04', May: '05', Jun: '06', Jul: '07', Aug: '08', Sep: '09', Oct: '10', Nov: '11', Dec: '12'
+  };
+  function parseMonthToken(token) {
+    // e.g., 'Sep.24' or 'Jan.25'
+    if (!token) return null;
+    const m = token.match(/^(\w{3})\.(\d{2})$/);
+    if (!m) return null;
+    const mon = monthAbbrevToNum[m[1]];
+    if (!mon) return null;
+    const yy = Number(m[2]);
+    const yyyy = yy >= 70 ? 1900 + yy : 2000 + yy;
+    return `${yyyy}-${mon}`;
+  }
 
   // 월별 집계 컨테이너
   const monthToMetrics = {};
@@ -173,38 +201,38 @@ function build() {
     m.bookings = (m.bookings || 0) + bookingRequests;
   }
 
-  // 브랜드 노드 및 엣지 주입 (명세 기반)
-  // 1) 브랜드 노드 값: keyword_search_amount_agg.csv 에서 is_brand(Y) cnt
+  // 브랜드/일반 노드 주입: keyword_search_amount_agg.csv
   for (const r of brandSearchRows) {
     const key = (r.date || '').trim();
-    const isBrand = (r.is_brand ?? r.is_Brand ?? '').trim();
-    if (!key || isBrand !== 'Y') continue;
-    if (!monthToMetrics[key]) {
-      monthToMetrics[key] = { month: key };
-    }
-    const cnt = Number(r.cnt || '0');
-    monthToMetrics[key].brand_node_search = (monthToMetrics[key].brand_node_search || 0) + cnt;
-  }
-
-  // 2) 브랜드 -> 홈페이지 엣지: keyword_naver_homepage_in.csv 에서 is_brand(Y) cnt
-  for (const r of brandHomepageRows) {
-    const key = (r.date || '').trim();
-    const isBrand = (r.is_brand ?? r.is_Brand ?? '').trim();
-    if (!key || isBrand !== 'Y') continue;
+    const flag = (r.is_brand ?? r.is_Brand ?? '').trim();
+    if (!key || !flag) continue;
     if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
     const cnt = Number(r.cnt || '0');
-    monthToMetrics[key].brand_to_site_from_csv = (monthToMetrics[key].brand_to_site_from_csv || 0) + cnt;
+    if (flag === 'Y') monthToMetrics[key].brand_node_search = (monthToMetrics[key].brand_node_search || 0) + cnt;
+    if (flag === 'N') monthToMetrics[key].general_node_search = (monthToMetrics[key].general_node_search || 0) + cnt;
   }
 
-  // 3) 브랜드 -> 블로그 엣지: 두 파일 합계 (is_brand(Y))
+  // 2) 브랜드/일반 -> 홈페이지 엣지
+  for (const r of brandHomepageRows) {
+    const key = (r.date || '').trim();
+    const flag = (r.is_brand ?? r.is_Brand ?? '').trim();
+    if (!key || !flag) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const cnt = Number(r.cnt || '0');
+    if (flag === 'Y') monthToMetrics[key].brand_to_site_from_csv = (monthToMetrics[key].brand_to_site_from_csv || 0) + cnt;
+    if (flag === 'N') monthToMetrics[key].general_to_site_from_csv = (monthToMetrics[key].general_to_site_from_csv || 0) + cnt;
+  }
+
+  // 3) 브랜드/일반 -> 블로그 엣지: 두 파일 합계
   const blogBrandAdd = (rows) => {
     for (const r of rows) {
       const key = (r.date || '').trim();
-      const isBrand = (r.is_brand ?? r.is_Brand ?? '').trim();
-      if (!key || isBrand !== 'Y') continue;
+      const flag = (r.is_brand ?? r.is_Brand ?? '').trim();
+      if (!key || !flag) continue;
       if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
       const cnt = Number(r.cnt || '0');
-      monthToMetrics[key].brand_to_blog_from_csv = (monthToMetrics[key].brand_to_blog_from_csv || 0) + cnt;
+      if (flag === 'Y') monthToMetrics[key].brand_to_blog_from_csv = (monthToMetrics[key].brand_to_blog_from_csv || 0) + cnt;
+      if (flag === 'N') monthToMetrics[key].general_to_blog_from_csv = (monthToMetrics[key].general_to_blog_from_csv || 0) + cnt;
     }
   };
   blogBrandAdd(brandBlogElzaRows);
@@ -217,6 +245,11 @@ function build() {
     m.brand_to_site_direct = m.brand_to_site_from_csv || 0;
     m.brand_to_search_direct = 0;
     m.brand_to_map_direct = 0;
+    m.general_to_blog_direct = m.general_to_blog_from_csv || 0;
+    m.general_to_site_direct = m.general_to_site_from_csv || 0;
+    // 지도 임시값
+    m.general_to_map_direct = 1000;
+    m.map_node_total = m.general_to_map_direct;
   }
 
   // 홈페이지/블로그 노드 총량 주입
@@ -244,19 +277,63 @@ function build() {
     const pv = Number(r.pv || '0');
     if (ch === '웹사이트') sumInto(monthToMetrics[key], 'homepage_to_place_detail', pv);
     if (ch === '네이버 블로그') sumInto(monthToMetrics[key], 'blog_to_place_detail', pv);
+    if (ch === '네이버지도') sumInto(monthToMetrics[key], 'place_list_to_detail', pv);
+    // 플레이스상세 노드 총량은 월별 pv 합계
+    sumInto(monthToMetrics[key], 'place_detail_node_total', pv);
   }
 
   // 최종 placeDetailPV 및 예약 시도 재계산
   for (const key of Object.keys(monthToMetrics)) {
     const m = monthToMetrics[key];
-    const base = m.placeDetailBase || 0;
-    m.placeDetailPV = base
-      + (m.list_to_placeDetail || 0)
-      + (m.ads_to_placeDetail || 0)
-      + (m.homepage_to_place_detail || 0)
-      + (m.blog_to_place_detail || 0);
-    // 예약 시도는 상세 PV의 25% 보수적 가정
-    m.bookingPageVisits = Math.round(m.placeDetailPV * 0.25);
+    // 플레이스상세 노드 값: channel_place_detail.csv 월별 pv 합계로 정의
+    m.placeDetailPV = m.place_detail_node_total || 0;
+  }
+
+  // 플레이스상세 → 네이버 예약 페이지(session) 엣지 및 노드: placedetail_to_bookingpage.csv cnt
+  for (const r of placeToBookingRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const cnt = Number(r.cnt || '0');
+    monthToMetrics[key].bookingPageVisits = cnt; // 노드 값
+    monthToMetrics[key].place_to_booking_page = cnt; // 엣지 값 (동일)
+  }
+
+  // 네이버 예약 페이지(session) → 예약 신청 (UV) 엣지 및 노드: cnt_booking_requests.csv cnt
+  for (const r of bookingRequestsRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const cnt = Number(r.cnt || '0');
+    monthToMetrics[key].bookings = cnt; // 노드 값
+    monthToMetrics[key].booking_page_to_requests = cnt; // 엣지 값
+  }
+
+  // 플레이스 광고: 노드(노출수), 엣지(클릭수)
+  for (const r of placeAdRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const exposure = Number(r.exposure || '0');
+    const click = Number(r.click || '0');
+    monthToMetrics[key].place_ad_node_total = exposure;
+    monthToMetrics[key].place_ad_to_detail = click;
+  }
+
+  // 플레이스 목록 노드: 0으로 고정
+  for (const key of Object.keys(monthToMetrics)) {
+    monthToMetrics[key].place_list_node_total = 0;
+  }
+
+  // 브랜드/일반 검색 → 플레이스 상세 (keyword_placedetail.csv, search_cnt)
+  for (const r of keywordPlaceDetailRows) {
+    const ym = parseMonthToken((r.date || '').trim());
+    if (!ym) continue;
+    if (!monthToMetrics[ym]) monthToMetrics[ym] = { month: ym };
+    const flag = (r.is_brand || '').trim();
+    const searchCnt = Number(r.search_cnt || '0');
+    if (flag === 'Y') sumInto(monthToMetrics[ym], 'brand_search_to_detail', searchCnt);
+    if (flag === 'N') sumInto(monthToMetrics[ym], 'general_search_to_detail', searchCnt);
   }
 
   const months = Object.keys(monthToMetrics).sort();
