@@ -1704,3 +1704,17 @@ KeyError: 'page_visits'
 2025-08-11 21:51:09,196 - performance_analyzer - INFO - 새로운 형식의 분석 리포트를 마크다운 파일로 저장합니다... (correlation_analyzer.py:292)
 2025-08-11 21:51:09,203 - performance_analyzer - INFO - 분석 리포트 저장 완료: /Users/min/codes/medilawyer_sales/blog_automation/place_stat_crawler/data/analyzed/NATENCLINIC/NATENCLINIC_focused_analysis_report.md (correlation_analyzer.py:342)
 2025-08-11 21:51:09,203 - performance_analyzer - INFO - 🎉 모든 분석이 성공적으로 완료되었습니다. (correlation_analyzer.py:353)
+2025-08-13 01:40:35,771 - performance_analyzer - INFO - ============================================================ (run_crawler.py:37)
+2025-08-13 01:40:35,771 - performance_analyzer - INFO - 📊 네이버 플레이스 & 예약 월별 데이터 수집 스크립트 (run_crawler.py:38)
+2025-08-13 01:40:35,771 - performance_analyzer - INFO - ============================================================ (run_crawler.py:39)
+2025-08-13 01:40:36,929 - performance_analyzer - INFO - ✅ 'GOODMORNINGHANIGURO' 클라이언트에 대한 작업을 시작합니다. (run_crawler.py:47)
+2025-08-13 01:40:45,233 - performance_analyzer - INFO - 총 1개월의 데이터를 수집합니다: [2025-07 ~ 2025-07] (run_crawler.py:68)
+2025-08-13 01:40:45,234 - performance_analyzer - INFO - 
+========================= 2025년 07월 데이터 수집 시작 ========================= (run_crawler.py:76)
+2025-08-13 01:40:45,234 - performance_analyzer - INFO - --- [1/2] Place PV 통계 수집 중... --- (run_crawler.py:79)
+2025-08-13 01:40:59,895 - performance_analyzer - INFO - --- [2/2] Booking 통계 수집 중... --- (run_crawler.py:82)
+2025-08-13 01:41:08,222 - performance_analyzer - INFO - ✅ 2025년 07월 데이터 수집 완료 (run_crawler.py:85)
+2025-08-13 01:41:08,222 - performance_analyzer - INFO - 
+============================================================ (run_crawler.py:96)
+2025-08-13 01:41:08,222 - performance_analyzer - INFO - 🎉 모든 요청된 기간의 데이터 수집이 완료되었습니다. (run_crawler.py:97)
+2025-08-13 01:41:08,222 - performance_analyzer - INFO - ============================================================ (run_crawler.py:98)

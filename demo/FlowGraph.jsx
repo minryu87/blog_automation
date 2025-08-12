@@ -56,10 +56,17 @@ const CircleNode = ({ id, data }) => {
       <Handle id="top" type="source" position={Position.Top} style={{ width: 8, height: 8, background: color, border: 'none' }} />
       {/* 노드 상단 타이틀 */}
       <div style={{ position: 'absolute', top: -26, left: '50%', transform: 'translateX(-50%)', fontSize: 10, fontWeight: 700, color: '#111', width: Math.max(140, size*2), textAlign: 'center', lineHeight: 1.2 }} dangerouslySetInnerHTML={{ __html: data.titleHtml || data.title }} />
-      <div style={{ textAlign: 'center', lineHeight: 1.15 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: data.valueColor || color }}>{fmt(data.value)}</div>
-        {data.sub && <div style={{ fontSize: 10, color: '#666' }}>{data.sub}</div>}
-      </div>
+      {data.contentHtml ? (
+        <div style={{ textAlign: 'center', lineHeight: 1.15, fontSize: 10, fontWeight: 700 }} dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+      ) : (
+        <div style={{ textAlign: 'center', lineHeight: 1.15 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <div style={{ fontSize: 14, fontWeight: 800, color: data.valueColor || color }}>{fmt(data.value)}</div>
+            {/* 증감률 표시 제거 */}
+          </div>
+          {data.sub && <div style={{ fontSize: 10, color: '#666' }}>{data.sub}</div>}
+        </div>
+      )}
     </div>
   );
 };
@@ -68,7 +75,7 @@ const nodeTypes = { circle: CircleNode };
 
 // 테이퍼 엣지: 좌측은 굵고, 우측으로 갈수록 1/5 수준으로 얇아지는 그라데이션 스트립
 const TaperEdge = ({ id, sourceX, sourceY, targetX, targetY, data }) => {
-  const { colorL = '#bbb', colorR = '#888', widthStart = 10, widthEnd = 2, label = '', arrow = false } = data || {};
+  const { colorL = '#bbb', colorR = '#888', widthStart = 10, widthEnd = 2, label = '', arrow = false, deltaLabel = '', deltaColor = '#111827' } = data || {};
   const midX = (sourceX + targetX) / 2;
   const path = `M ${sourceX} ${sourceY - widthStart/2}
                Q ${midX} ${sourceY - widthStart/2} ${targetX} ${targetY - widthEnd/2}
@@ -90,6 +97,9 @@ const TaperEdge = ({ id, sourceX, sourceY, targetX, targetY, data }) => {
         <>
           <text x={midX} y={(sourceY + targetY) / 2 - (Math.max(widthStart, widthEnd) / 2 + 10)} textAnchor="middle" fontSize={20} fontWeight={900} fill="#ffffff" stroke="#ffffff" strokeWidth={4} dominantBaseline="middle" style={{ pointerEvents: 'none' }}>{label}</text>
           <text x={midX} y={(sourceY + targetY) / 2 - (Math.max(widthStart, widthEnd) / 2 + 10)} textAnchor="middle" fontSize={20} fontWeight={800} fill="#111827" dominantBaseline="middle" style={{ pointerEvents: 'none' }}>{label}</text>
+          {deltaLabel && (
+            <text x={midX + 60} y={(sourceY + targetY) / 2 - (Math.max(widthStart, widthEnd) / 2 + 10)} textAnchor="start" fontSize={12} fontWeight={800} fill={deltaColor} dominantBaseline="middle" style={{ pointerEvents: 'none' }}>{deltaLabel}</text>
+          )}
         </>
       )}
       {arrow && (
@@ -122,7 +132,7 @@ const ArrowEdge = ({ id, sourceX, sourceY, targetX, targetY, data }) => {
 
 const baseNode = (id, type, x, y, props) => ({ id, type, position: { x, y }, data: { ...props } });
 
-export default function FlowGraph({ data, history = [] }) {
+export default function FlowGraph({ data, history = [], currentMonth }) {
   const initialNodes = useMemo(() => {
     if (!data) return [];
     const n = [];
@@ -141,11 +151,12 @@ export default function FlowGraph({ data, history = [] }) {
 
     const PALETTE = { general: '#f3f4f6', brand: '#e5e7eb', homepage: '#bfdbfe', blog: '#93c5fd', maplist: '#60a5fa', ad: '#3b82f6', detail: '#2563eb', booking: '#1d4ed8', request: '#1e40af', cafe: '#f9a8d4' };
     n.push(baseNode('cafe', 'circle', COL_X[0], ROW_Y.cafe, { title: '지역 카페 조회수', value: data.cafe_view || 0, color: PALETTE.cafe, size: scale(data.cafe_view, 28, 84, maxCafe) }));
-    n.push(baseNode('brand', 'circle', COL_X[1], ROW_Y.brand, { title: '브랜드 키워드 네이버 검색량', value: data.brand_node_search || 0, color: PALETTE.brand, size: scale(data.brand_node_search, 28, 84, maxBrand) }));
-    n.push(baseNode('general', 'circle', COL_X[1], ROW_Y.general, { title: '일반 키워드 네이버 검색량', value: data.general_node_search || 0, color: PALETTE.general, size: scale((data.general_node_search||0)/10, 28, 84, maxGeneral) }));
+    n.push(baseNode('brand', 'circle', COL_X[1], ROW_Y.brand, { title: '브랜드 키워드 네이버 검색량', value: data.brand_node_search || 0, color: PALETTE.brand, size: scale(data.brand_node_search, 28, 84, maxBrand), valueColor: '#374151' }));
+    n.push(baseNode('general', 'circle', COL_X[1], ROW_Y.general, { title: '일반 키워드 네이버 검색량', value: data.general_node_search || 0, color: PALETTE.general, size: scale((data.general_node_search||0)/10, 28, 84, maxGeneral), valueColor: '#374151' }));
     n.push(baseNode('homepage', 'circle', COL_X[2], ROW_Y.homepage, { title: '홈페이지', value: data.homepage_node_total || 0, color: PALETTE.homepage, size: scale(data.homepage_node_total, 28, 84, maxHome) }));
     n.push(baseNode('blog', 'circle', COL_X[2], ROW_Y.blog, { title: '네이버 블로그', value: data.blog_node_total || 0, color: PALETTE.blog, size: scale(data.blog_node_total, 28, 84, maxBlog) }));
-    n.push(baseNode('maplist', 'circle', COL_X[2], ROW_Y.maplist, { title: '네이버 지도(플레이스 목록)', value: data.place_list_to_detail || 0, sub: `순위: ${data.map_rank||0}`, color: PALETTE.maplist, size: scale(data.place_list_to_detail, 28, 84, maxMapList) }));
+    // 네이버 지도(플레이스 목록): 값 표시 제거, 내부에 순위와 '동탄치과'만 표시
+    n.push(baseNode('maplist', 'circle', COL_X[2], ROW_Y.maplist, { title: '네이버 지도(플레이스 목록)', value: null, color: PALETTE.maplist, size: scale(data.place_list_to_detail, 28, 84, maxMapList), contentHtml: `순위: ${data.map_rank || 0}<br/>'동탄치과'` }));
     n.push(baseNode('ad', 'circle', COL_X[2], ROW_Y.ad, { title: '플레이스 광고', value: data.place_ad_node_total || 0, color: PALETTE.ad, size: scale(data.place_ad_node_total, 28, 84, maxAd) }));
     n.push(baseNode('detail', 'circle', COL_X[3], ROW_Y.detail, { title: '플레이스 상세', value: data.placeDetailPV || 0, color: PALETTE.detail, size: scale(data.placeDetailPV, 28, 84, maxDetail) }));
     n.push(baseNode('booking', 'circle', COL_X[4], ROW_Y.booking, { title: '네이버 예약 페이지', value: data.bookingPageVisits || 0, color: PALETTE.booking, size: scale(data.bookingPageVisits, 28, 84, maxBooking) }));

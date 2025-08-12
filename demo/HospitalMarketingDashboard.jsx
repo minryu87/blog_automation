@@ -53,6 +53,7 @@ const HospitalMarketingDashboard = () => {
   // 실데이터 연동 상태
   const [monthlyData, setMonthlyData] = useState([]);
   const [selectedMonthIndex, setSelectedMonthIndex] = useState(0);
+  const [startIndex, setStartIndex] = useState(0);
   const [isMonthlyMode, setIsMonthlyMode] = useState(true);
   
   // 인지 단계 분석을 위한 상태
@@ -220,6 +221,9 @@ const HospitalMarketingDashboard = () => {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
           setMonthlyData(data);
+          // 슬라이더 시작을 2024-09로 설정
+          const sIdx = Math.max(0, data.findIndex((m) => m.month === '2024-09'));
+          setStartIndex(sIdx === -1 ? 0 : sIdx);
           setSelectedMonthIndex(data.length - 1);
         }
       } catch (e) {
@@ -843,8 +847,7 @@ const HospitalMarketingDashboard = () => {
 
       <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-800">통합 퍼널 구조</h2>
-        <FlowGraph data={metrics} history={monthlyData} />
-        <ImprovedFunnelFlow />
+        <FlowGraph data={metrics} history={monthlyData} currentMonth={monthlyData[selectedMonthIndex]?.month} />
         {/* 월 선택 슬라이더 */}
         <div className="mt-4 p-3 bg-gray-50 rounded-lg">
           <div className="flex items-center justify-between mb-2">
@@ -862,79 +865,18 @@ const HospitalMarketingDashboard = () => {
           </div>
           <input
             type="range"
-            min={0}
-            max={Math.max(0, monthlyData.length - 1)}
+            min={startIndex}
+            max={Math.max(startIndex, monthlyData.length - 1)}
             value={selectedMonthIndex}
             onChange={(e) => setSelectedMonthIndex(Number(e.target.value))}
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
           />
           <div className="flex justify-between mt-1 text-xs text-gray-500">
-            <span>{monthlyData[0]?.month || '-'}</span>
+            <span>{monthlyData[startIndex]?.month || '-'}</span>
             <span>{monthlyData[monthlyData.length - 1]?.month || '-'}</span>
           </div>
         </div>
       </div>
-
-      <AwarenessAnalysis />
-
-      <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-        <div className="flex items-center mb-4">
-          <Sliders className="w-5 h-5 text-gray-600 mr-2" />
-          <h2 className="text-lg font-semibold text-gray-800">퍼널 구간별 조정</h2>
-        </div>
-        
-        <div className="space-y-4">
-          <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-semibold text-gray-700">📊 전체 목표</span>
-              <span className="text-lg font-bold text-purple-600">{sliders.main}%</span>
-            </div>
-            <input
-              type="range"
-              min="50"
-              max="200"
-              value={sliders.main}
-              onChange={(e) => handleSliderChange('main', Number(e.target.value))}
-              className="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer"
-            />
-            <div className="flex justify-between mt-1 text-xs text-gray-500">
-              <span>50%</span>
-              <span>기준 100%</span>
-              <span>200%</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { key: 'nonBrand', label: '일반 키워드', icon: '🔍' },
-              { key: 'brand', label: '브랜드 키워드', icon: '🏷️' },
-              { key: 'brandConversion', label: '브랜드 전환', icon: '🔄' },
-              { key: 'mapRanking', label: '지도 순위', icon: '📍' },
-              { key: 'placeAds', label: '광고 예산', icon: '💰' },
-              { key: 'detailConversion', label: '상세→예약', icon: '🎯' }
-            ].map((slider) => (
-              <div key={slider.key} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-gray-700">
-                    {slider.icon} {slider.label}
-                  </span>
-                  <span className="text-sm font-bold text-gray-800">{sliders[slider.key]}%</span>
-                </div>
-                <input
-                  type="range"
-                  min="50"
-                  max="150"
-                  value={sliders[slider.key]}
-                  onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
-                  className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-lg shadow-sm p-4">
