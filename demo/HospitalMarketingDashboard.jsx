@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, ComposedChart } from 'recharts';
+import FlowGraph from './FlowGraph.jsx';
 import { ChevronRight, TrendingUp, Users, MousePointer, Search, Map, FileText, DollarSign, Target, Activity, Award, Settings, Sliders, BookOpen, MessageCircle, Globe } from 'lucide-react';
 
 const HospitalMarketingDashboard = () => {
@@ -842,6 +843,7 @@ const HospitalMarketingDashboard = () => {
 
       <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-800">통합 퍼널 구조</h2>
+        <FlowGraph data={metrics} history={monthlyData} />
         <ImprovedFunnelFlow />
         {/* 월 선택 슬라이더 */}
         <div className="mt-4 p-3 bg-gray-50 rounded-lg">

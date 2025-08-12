@@ -361,7 +361,42 @@ function build() {
   }
 
   const months = Object.keys(monthToMetrics).sort();
-  const out = months.map((k) => monthToMetrics[k]);
+  const allowedKeys = new Set([
+    'month',
+    // 노드 값
+    'brand_node_search',
+    'general_node_search',
+    'homepage_node_total',
+    'blog_node_total',
+    'place_ad_node_total',
+    'placeDetailPV',
+    'bookingPageVisits',
+    'bookings',
+    'map_rank',
+    'cafe_view',
+    // 엣지 값
+    'brand_to_site_direct',
+    'brand_to_blog_direct',
+    'general_to_site_direct',
+    'general_to_blog_direct',
+    'place_list_to_detail',
+    'place_ad_to_detail',
+    'homepage_to_place_detail',
+    'blog_to_place_detail',
+    'place_to_booking_page',
+    'booking_page_to_requests',
+    'brand_search_to_detail',
+    'general_search_to_detail',
+  ]);
+
+  const out = months.map((k) => {
+    const src = monthToMetrics[k];
+    const pruned = { month: k };
+    for (const key of Object.keys(src)) {
+      if (allowedKeys.has(key)) pruned[key] = src[key];
+    }
+    return pruned;
+  });
 
   fs.writeFileSync(path.join(outDir, 'funnel_monthly.json'), JSON.stringify(out, null, 2), 'utf-8');
   console.log(`Built ${out.length} month records -> data/service/funnel_monthly.json`);
