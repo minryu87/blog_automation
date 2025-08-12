@@ -276,7 +276,8 @@ const HospitalMarketingDashboard = () => {
       place_ad_node_total: m.place_ad_node_total || 0,
       place_ad_to_detail: m.place_ad_to_detail || 0,
       general_search_to_detail: m.general_search_to_detail || 0,
-      brand_search_to_detail: m.brand_search_to_detail || 0
+      brand_search_to_detail: m.brand_search_to_detail || 0,
+      cafe_view: m.cafe_view || 0
     });
     setTargetBookings(m.bookings || 0);
   }, [isMonthlyMode, monthlyData, selectedMonthIndex]);
@@ -576,6 +577,21 @@ const HospitalMarketingDashboard = () => {
             })()}
           </g>
 
+          {/* 지역 카페 조회수 (원형 노드) */}
+          <g>
+            {(() => {
+              const cx = 300; const cy = 150;
+              const r = getNodeRadius(metrics.cafe_view || 0, 4000);
+              return (
+                <>
+                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#E91E63" strokeWidth="2" />
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#E91E63">지역 카페 조회수</text>
+                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="12" fontWeight="bold" fill="#E91E63">{metrics.cafe_view || 0}</text>
+                </>
+              );
+            })()}
+          </g>
+
           {/* (삭제됨) 플레이스 목록 노드 */}
 
           {/* 플레이스 광고 (원형: 노출수) */}
@@ -678,6 +694,27 @@ const HospitalMarketingDashboard = () => {
           <text x="250" y="205" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
             {metrics.general_to_blog_direct || 0}
           </text>
+
+          {/* 일반 → 지역 카페 조회수 (화살표만, 값 라벨 없음) */}
+          <defs>
+            <marker id="arrowHeadSmall" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L6,3 z" fill="#E91E63" />
+            </marker>
+          </defs>
+          <path
+            d={createPath(120, 300, 300, 150, 6)}
+            fill="#E91E63"
+            opacity="0.35"
+            markerEnd="url(#arrowHeadSmall)"
+          />
+
+          {/* 지역 카페 조회수 → 브랜드 검색 (화살표만) */}
+          <path
+            d={createPath(300, 150, 120, 90, 6)}
+            fill="#E91E63"
+            opacity="0.35"
+            markerEnd="url(#arrowHeadSmall)"
+          />
 
           {/* 검색/카페 파생 엣지 제거 */}
 

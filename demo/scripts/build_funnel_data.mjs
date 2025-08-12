@@ -68,6 +68,7 @@ function build() {
   const placeAdPath = path.join(rawDir, 'placead.csv');
   const keywordPlaceDetailPath = path.join(rawDir, 'keyword_placedetail.csv');
   const mapRankPath = path.join(rawDir, 'map_rank.csv');
+  const cafeViewPath = path.join(rawDir, 'cafe_view.csv');
 
   const placeRaw = fs.readFileSync(placeCsvPath, 'utf-8');
   const bookingRaw = fs.readFileSync(bookingCsvPath, 'utf-8');
@@ -83,6 +84,7 @@ function build() {
   const placeAdRaw = fs.readFileSync(placeAdPath, 'utf-8');
   const keywordPlaceDetailRaw = fs.readFileSync(keywordPlaceDetailPath, 'utf-8');
   const mapRankRaw = fs.readFileSync(mapRankPath, 'utf-8');
+  const cafeViewRaw = fs.readFileSync(cafeViewPath, 'utf-8');
 
   const placeRows = parseCSV(placeRaw);
   const bookingRows = parseCSV(bookingRaw);
@@ -98,6 +100,7 @@ function build() {
   const placeAdRows = parseCSV(placeAdRaw);
   const keywordPlaceDetailRows = parseCSV(keywordPlaceDetailRaw);
   const mapRankRows = parseCSV(mapRankRaw);
+  const cafeViewRows = parseCSV(cafeViewRaw);
 
   // helper: parse date like 'Sep.24' to '2024-09'
   const monthAbbrevToNum = {
@@ -346,6 +349,15 @@ function build() {
     if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
     const rank = Number(r.rank || '0');
     monthToMetrics[key].map_rank = rank;
+  }
+
+  // 지역 카페 조회수 노드 값
+  for (const r of cafeViewRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const v = Number(r.cafe_view || r.cnt || '0');
+    monthToMetrics[key].cafe_view = v;
   }
 
   const months = Object.keys(monthToMetrics).sort();
