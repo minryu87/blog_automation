@@ -67,6 +67,7 @@ function build() {
   const bookingRequestsPath = path.join(rawDir, 'cnt_booking_requests.csv');
   const placeAdPath = path.join(rawDir, 'placead.csv');
   const keywordPlaceDetailPath = path.join(rawDir, 'keyword_placedetail.csv');
+  const mapRankPath = path.join(rawDir, 'map_rank.csv');
 
   const placeRaw = fs.readFileSync(placeCsvPath, 'utf-8');
   const bookingRaw = fs.readFileSync(bookingCsvPath, 'utf-8');
@@ -81,6 +82,7 @@ function build() {
   const bookingRequestsRaw = fs.readFileSync(bookingRequestsPath, 'utf-8');
   const placeAdRaw = fs.readFileSync(placeAdPath, 'utf-8');
   const keywordPlaceDetailRaw = fs.readFileSync(keywordPlaceDetailPath, 'utf-8');
+  const mapRankRaw = fs.readFileSync(mapRankPath, 'utf-8');
 
   const placeRows = parseCSV(placeRaw);
   const bookingRows = parseCSV(bookingRaw);
@@ -95,6 +97,7 @@ function build() {
   const bookingRequestsRows = parseCSV(bookingRequestsRaw);
   const placeAdRows = parseCSV(placeAdRaw);
   const keywordPlaceDetailRows = parseCSV(keywordPlaceDetailRaw);
+  const mapRankRows = parseCSV(mapRankRaw);
 
   // helper: parse date like 'Sep.24' to '2024-09'
   const monthAbbrevToNum = {
@@ -334,6 +337,15 @@ function build() {
     const searchCnt = Number(r.search_cnt || '0');
     if (flag === 'Y') sumInto(monthToMetrics[ym], 'brand_search_to_detail', searchCnt);
     if (flag === 'N') sumInto(monthToMetrics[ym], 'general_search_to_detail', searchCnt);
+  }
+
+  // 네이버 지도(플레이스 목록) 노드 내부 표시용: 월별 지도 순위
+  for (const r of mapRankRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const rank = Number(r.rank || '0');
+    monthToMetrics[key].map_rank = rank;
   }
 
   const months = Object.keys(monthToMetrics).sort();

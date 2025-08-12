@@ -248,6 +248,7 @@ const HospitalMarketingDashboard = () => {
       general_to_blog_direct: m.general_to_blog_direct || 0,
       general_to_map_direct: m.general_to_map_direct || 0,
       map_node_total: m.map_node_total || 0,
+      map_rank: m.map_rank || 0,
       nonBrandDemand,
       brandDemand,
       nonBrand_to_search: m.nonBrand_to_search || 0,
@@ -530,16 +531,17 @@ const HospitalMarketingDashboard = () => {
 
           {/* 채널: 네이버 검색 노드는 제거 (비주얼 표시 없음). 좌표는 기존 엣지 출발점으로만 사용 */}
 
-          {/* 네이버 지도 (원형 노드) */}
+          {/* 네이버 지도(플레이스 목록) - 값 대신 순위 표시 */}
           <g>
             {(() => {
               const cx = 255; const cy = 285;
-              const r = getNodeRadius(metrics.map_node_total || 0, 2000);
+              const r = 22; // 고정 반경으로 단순 표시
               return (
                 <>
                   <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#4CAF50" strokeWidth="2" />
-                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">네이버 지도</text>
-                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="12" fontWeight="bold" fill="#4CAF50">{metrics.map_node_total || 0}</text>
+                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="9" fontWeight="600" fill="#4CAF50">네이버 지도(플레이스 목록)</text>
+                  <text x={cx} y={cy + 2} textAnchor="middle" fontSize="10" fontWeight="600" fill="#4CAF50">순위: {metrics.map_rank || 0}</text>
+                  <text x={cx} y={cy + 16} textAnchor="middle" fontSize="8" fill="#4CAF50">('동탄치과'에 대한 순위)</text>
                 </>
               );
             })()}
@@ -574,20 +576,7 @@ const HospitalMarketingDashboard = () => {
             })()}
           </g>
 
-          {/* 플레이스 목록 (원형, 값 0 고정) */}
-          <g>
-            {(() => {
-              const cx = 382; const cy = 240;
-              const r = getNodeRadius(0, 2000);
-              return (
-                <>
-                  <circle cx={cx} cy={cy} r={r} fill="#FFFFFF" stroke="#00BCD4" strokeWidth="2" />
-                  <text x={cx} y={cy - r - 8} textAnchor="middle" fontSize="8" fontWeight="600" fill="#00BCD4">플레이스 목록</text>
-                  <text x={cx} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="bold" fill="#00BCD4">0</text>
-                </>
-              );
-            })()}
-          </g>
+          {/* (삭제됨) 플레이스 목록 노드 */}
 
           {/* 플레이스 광고 (원형: 노출수) */}
           <g>
@@ -669,15 +658,7 @@ const HospitalMarketingDashboard = () => {
             {metrics.brand_to_blog_direct || 0}
           </text>
 
-          {/* 일반 → 네이버 지도 (임시값 1000 기준) */}
-          <path 
-            d={createHorizontalPath(140, 300, 255 - (getNodeRadius(metrics.map_node_total || 0, 2000)), 285, getStrokeWidth(metrics.general_to_map_direct || 0))}
-            fill="url(#nonBrandGradient)"
-            opacity="0.7"
-          />
-          <text x="190" y="298" textAnchor="middle" fontSize="8" fill="#FBC02D" fontWeight="600">
-            {metrics.general_to_map_direct || 0}
-          </text>
+          {/* 일반 → 네이버 지도 엣지 제거 */}
           {/* 일반 → 홈페이지 */}
           <path
             d={createPath(120, 300, 382, 50, getStrokeWidth(metrics.general_to_site_direct || 0))}
@@ -700,19 +681,9 @@ const HospitalMarketingDashboard = () => {
 
           {/* 검색/카페 파생 엣지 제거 */}
 
-          {/* 네이버 지도 → 플레이스 목록 */}
-          <path 
-            d={createPath(290, 285, 350, 240, getStrokeWidth(metrics.map_to_list))}
-            fill="url(#mapGradient)"
-            opacity="0.6"
-          />
+          {/* 네이버 지도 → 플레이스 목록 엣지 제거 */}
 
-          {/* 플레이스 목록 → 플레이스 광고 */}
-          <path 
-            d={createPath(382, 260, 382, 320, getStrokeWidth(metrics.list_to_placeAds))}
-            fill="#FFC107"
-            opacity="0.5"
-          />
+          {/* 플레이스 목록 → 플레이스 광고 엣지 제거 */}
 
           {/* 홈페이지 → 플레이스 상세 (실데이터) */}
           <path 
@@ -755,13 +726,13 @@ const HospitalMarketingDashboard = () => {
           </text>
           
 
-          {/* 플레이스 목록 → 플레이스 상세 (네이버지도 pv) */}
+          {/* 네이버 지도(플레이스 목록) → 플레이스상세 (네이버지도 pv) */}
           <path 
-            d={createPath(415, 240, 480, 175, getStrokeWidth(metrics.place_list_to_detail || 0))}
+            d={createPath(255, 285, 520, 172, getStrokeWidth(metrics.place_list_to_detail || 0))}
             fill="#00BCD4"
             opacity="0.5"
           />
-          <text x="447" y="210" textAnchor="middle" fontSize="8" fill="#00BCD4" fontWeight="600">
+          <text x="390" y="230" textAnchor="middle" fontSize="8" fill="#00BCD4" fontWeight="600">
             {metrics.place_list_to_detail || 0}
           </text>
 
