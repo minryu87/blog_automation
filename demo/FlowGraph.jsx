@@ -175,7 +175,7 @@ export default function FlowGraph({ data, history = [], currentMonth }) {
     [
       data.brand_to_site_direct, data.brand_to_blog_direct, data.general_to_site_direct, data.general_to_blog_direct,
       data.place_list_to_detail, data.place_ad_to_detail, data.homepage_to_place_detail, data.blog_to_place_detail,
-      data.place_to_booking_page, data.booking_page_to_requests
+      data.place_to_booking_page, data.homepage_to_booking_page_direct, data.booking_page_to_requests
     ].forEach(pushVal);
     const vmax = Math.max(1, ...values);
     const width = (v) => Math.max(8, Math.round(8 + 36 * (v / vmax))); // 최대 ~44px
@@ -202,6 +202,8 @@ export default function FlowGraph({ data, history = [], currentMonth }) {
     add('blog', 'detail', data.blog_to_place_detail || 0, 'blog-detail', P.blog, P.detail);
     // detail -> booking -> request
     add('detail', 'booking', data.place_to_booking_page || 0, 'detail-booking', P.detail, P.booking);
+    // homepage -> booking (direct)
+    add('homepage', 'booking', data.homepage_to_booking_page_direct || 0, 'home-booking', P.homepage, P.booking);
     add('booking', 'request', data.booking_page_to_requests || 0, 'booking-request', P.booking, P.request);
     return e;
   }, [data]);

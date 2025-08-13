@@ -64,6 +64,7 @@ function build() {
   const blogTotalsPath = path.join(rawDir, 'cnt_blog.csv');
   const channelPlaceDetailPath = path.join(rawDir, 'channel_place_detail.csv');
   const placeToBookingPath = path.join(rawDir, 'placedetail_to_bookingpage.csv');
+  const directHomeToBookingPath = path.join(rawDir, 'direct_homepage_to_bookingpage.csv');
   const bookingRequestsPath = path.join(rawDir, 'cnt_booking_requests.csv');
   const placeAdPath = path.join(rawDir, 'placead.csv');
   const keywordPlaceDetailPath = path.join(rawDir, 'keyword_placedetail.csv');
@@ -80,6 +81,7 @@ function build() {
   const blogTotalsRaw = fs.readFileSync(blogTotalsPath, 'utf-8');
   const channelPlaceDetailRaw = fs.readFileSync(channelPlaceDetailPath, 'utf-8');
   const placeToBookingRaw = fs.readFileSync(placeToBookingPath, 'utf-8');
+  const directHomeToBookingRaw = fs.readFileSync(directHomeToBookingPath, 'utf-8');
   const bookingRequestsRaw = fs.readFileSync(bookingRequestsPath, 'utf-8');
   const placeAdRaw = fs.readFileSync(placeAdPath, 'utf-8');
   const keywordPlaceDetailRaw = fs.readFileSync(keywordPlaceDetailPath, 'utf-8');
@@ -96,6 +98,7 @@ function build() {
   const blogTotalRows = parseCSV(blogTotalsRaw);
   const channelPlaceDetailRows = parseCSV(channelPlaceDetailRaw);
   const placeToBookingRows = parseCSV(placeToBookingRaw);
+  const directHomeToBookingRows = parseCSV(directHomeToBookingRaw);
   const bookingRequestsRows = parseCSV(bookingRequestsRaw);
   const placeAdRows = parseCSV(placeAdRaw);
   const keywordPlaceDetailRows = parseCSV(keywordPlaceDetailRaw);
@@ -305,6 +308,15 @@ function build() {
     monthToMetrics[key].place_to_booking_page = cnt; // 엣지 값 (동일)
   }
 
+  // 홈페이지 → 네이버 예약 페이지(session) 직접 진입: direct_homepage_to_bookingpage.csv cnt
+  for (const r of directHomeToBookingRows) {
+    const key = (r.date || '').trim();
+    if (!key) continue;
+    if (!monthToMetrics[key]) monthToMetrics[key] = { month: key };
+    const cnt = Number(r.cnt || '0');
+    monthToMetrics[key].homepage_to_booking_page_direct = cnt; // 엣지 값
+  }
+
   // 네이버 예약 페이지(session) → 예약 신청 (UV) 엣지 및 노드: cnt_booking_requests.csv cnt
   for (const r of bookingRequestsRows) {
     const key = (r.date || '').trim();
@@ -384,6 +396,7 @@ function build() {
     'homepage_to_place_detail',
     'blog_to_place_detail',
     'place_to_booking_page',
+    'homepage_to_booking_page_direct',
     'booking_page_to_requests',
     'brand_search_to_detail',
     'general_search_to_detail',

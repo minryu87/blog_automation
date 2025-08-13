@@ -248,6 +248,7 @@ const HospitalMarketingDashboard = () => {
       blog_node_total: m.blog_node_total || 0,
       homepage_to_place_detail: m.homepage_to_place_detail || 0,
       blog_to_place_detail: m.blog_to_place_detail || 0,
+      homepage_to_booking_page_direct: m.homepage_to_booking_page_direct || 0,
       general_node_search: m.general_node_search || 0,
       general_to_site_direct: m.general_to_site_direct || 0,
       general_to_blog_direct: m.general_to_blog_direct || 0,
