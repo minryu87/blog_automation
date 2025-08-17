@@ -61,7 +61,7 @@ const CircleNode = ({ id, data }) => {
       ) : (
         <div style={{ textAlign: 'center', lineHeight: 1.15 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: data.valueColor || color }}>{fmt(data.value)}</div>
+            <div style={{ fontSize: (data.valueFontSize || 14), fontWeight: 800, color: data.valueColor || color }}>{fmt(data.value)}</div>
             {/* 증감률 표시 제거 */}
           </div>
           {data.sub && <div style={{ fontSize: 10, color: '#666' }}>{data.sub}</div>}
@@ -132,7 +132,7 @@ const ArrowEdge = ({ id, sourceX, sourceY, targetX, targetY, data }) => {
 
 const baseNode = (id, type, x, y, props) => ({ id, type, position: { x, y }, data: { ...props } });
 
-export default function FlowGraph({ data, history = [], currentMonth }) {
+export default function FlowGraph({ data, history = [], currentMonth, highlightedNodeIds = [] }) {
   const initialNodes = useMemo(() => {
     if (!data) return [];
     const n = [];
@@ -149,20 +149,29 @@ export default function FlowGraph({ data, history = [], currentMonth }) {
     const maxBooking = maxOf('bookingPageVisits');
     const maxRequest = maxOf('bookings');
 
-    const PALETTE = { general: '#f3f4f6', brand: '#e5e7eb', homepage: '#bfdbfe', blog: '#93c5fd', maplist: '#60a5fa', ad: '#3b82f6', detail: '#2563eb', booking: '#1d4ed8', request: '#1e40af', cafe: '#f9a8d4' };
-    n.push(baseNode('cafe', 'circle', COL_X[0], ROW_Y.cafe, { title: '지역 카페 조회수', value: data.cafe_view || 0, color: PALETTE.cafe, size: scale(data.cafe_view, 28, 84, maxCafe) }));
-    n.push(baseNode('brand', 'circle', COL_X[1], ROW_Y.brand, { title: '브랜드 키워드 네이버 검색량', value: data.brand_node_search || 0, color: PALETTE.brand, size: scale(data.brand_node_search, 28, 84, maxBrand), valueColor: '#374151' }));
-    n.push(baseNode('general', 'circle', COL_X[1], ROW_Y.general, { title: '일반 키워드 네이버 검색량', value: data.general_node_search || 0, color: PALETTE.general, size: scale((data.general_node_search||0)/10, 28, 84, maxGeneral), valueColor: '#374151' }));
-    n.push(baseNode('homepage', 'circle', COL_X[2], ROW_Y.homepage, { title: '홈페이지', value: data.homepage_node_total || 0, color: PALETTE.homepage, size: scale(data.homepage_node_total, 28, 84, maxHome) }));
-    n.push(baseNode('blog', 'circle', COL_X[2], ROW_Y.blog, { title: '네이버 블로그', value: data.blog_node_total || 0, color: PALETTE.blog, size: scale(data.blog_node_total, 28, 84, maxBlog) }));
+    const PALETTE = { general: '#f3f4f6', brand: '#e5e7eb', homepage: '#bfdbfe', blog: '#93c5fd', maplist: '#60a5fa', ad: '#3b82f6', detail: '#2563eb', booking: '#1d4ed8', request: '#1e40af', cafe: '#4ade80' };
+    const HIGHLIGHT = '#f472b6';
+    const highlightSet = new Set(highlightedNodeIds || []);
+    const cafeSize = Math.round(scale(data.cafe_view, 28, 84, maxCafe) * 0.6);
+    const cafeValueFont = 11; // 카페 및 보조 노드의 값 폰트 크기 통일
+    n.push(baseNode('cafe', 'circle', COL_X[0], ROW_Y.cafe, { title: '지역 카페 조회수', value: data.cafe_view || 0, color: (highlightSet.has('cafe') ? HIGHLIGHT : PALETTE.cafe), size: cafeSize, valueFontSize: cafeValueFont }));
+    n.push(baseNode('brand', 'circle', COL_X[1], ROW_Y.brand, { title: '브랜드 키워드 네이버 검색량', value: data.brand_node_search || 0, color: (highlightSet.has('brand') ? HIGHLIGHT : PALETTE.brand), size: scale(data.brand_node_search, 28, 84, maxBrand), valueColor: '#374151' }));
+    n.push(baseNode('general', 'circle', COL_X[1], ROW_Y.general, { title: '일반 키워드 네이버 검색량', value: data.general_node_search || 0, color: (highlightSet.has('general') ? HIGHLIGHT : PALETTE.general), size: scale((data.general_node_search||0)/10, 28, 84, maxGeneral), valueColor: '#374151' }));
+    n.push(baseNode('homepage', 'circle', COL_X[2], ROW_Y.homepage, { title: '홈페이지', value: data.homepage_node_total || 0, color: (highlightSet.has('homepage') ? HIGHLIGHT : PALETTE.homepage), size: scale(data.homepage_node_total, 28, 84, maxHome) }));
+    n.push(baseNode('blog', 'circle', COL_X[2], ROW_Y.blog, { title: '네이버 블로그', value: data.blog_node_total || 0, color: (highlightSet.has('blog') ? HIGHLIGHT : PALETTE.blog), size: scale(data.blog_node_total, 28, 84, maxBlog) }));
     // 네이버 지도(플레이스 목록): 값 표시 제거, 내부에 순위와 '동탄치과'만 표시
-    n.push(baseNode('maplist', 'circle', COL_X[2], ROW_Y.maplist, { title: '네이버 지도(플레이스 목록)', value: null, color: PALETTE.maplist, size: scale(data.place_list_to_detail, 28, 84, maxMapList), contentHtml: `순위: ${data.map_rank || 0}<br/>'동탄치과'` }));
-    n.push(baseNode('ad', 'circle', COL_X[2], ROW_Y.ad, { title: '플레이스 광고', value: data.place_ad_node_total || 0, color: PALETTE.ad, size: scale(data.place_ad_node_total, 28, 84, maxAd) }));
-    n.push(baseNode('detail', 'circle', COL_X[3], ROW_Y.detail, { title: '플레이스 상세', value: data.placeDetailPV || 0, color: PALETTE.detail, size: scale(data.placeDetailPV, 28, 84, maxDetail) }));
-    n.push(baseNode('booking', 'circle', COL_X[4], ROW_Y.booking, { title: '네이버 예약 페이지', value: data.bookingPageVisits || 0, color: PALETTE.booking, size: scale(data.bookingPageVisits, 28, 84, maxBooking) }));
-    n.push(baseNode('request', 'circle', COL_X[5], ROW_Y.request, { title: '예약 신청 (UV)', value: data.bookings || 0, color: PALETTE.request, size: scale(data.bookings, 28, 84, maxRequest) }));
+    n.push(baseNode('maplist', 'circle', COL_X[2], ROW_Y.maplist, { title: '네이버 지도(플레이스 목록)', value: null, color: (highlightSet.has('maplist') ? HIGHLIGHT : PALETTE.maplist), size: scale(data.place_list_to_detail, 28, 84, maxMapList), contentHtml: `순위: ${data.map_rank || 0}<br/>'동탄치과'` }));
+    // 카페 보조 노드: 좌측 하단 _홈페이지, 우측 하단 _블로그
+    const cafeX = COL_X[0];
+    const cafeY = ROW_Y.cafe;
+    n.push(baseNode('cafe_home_proxy', 'circle', Math.max(20, cafeX - 40), cafeY + 50, { title: '_홈페이지', value: data.homepage_node_total || 0, color: (highlightSet.has('cafe_home_proxy') ? HIGHLIGHT : '#bbf7d0'), size: cafeSize, valueFontSize: cafeValueFont, contentHtml: '' }));
+    n.push(baseNode('cafe_blog_proxy', 'circle', cafeX + 40, cafeY + 50, { title: '_블로그', value: data.blog_node_total || 0, color: (highlightSet.has('cafe_blog_proxy') ? HIGHLIGHT : '#86efac'), size: cafeSize, valueFontSize: cafeValueFont, contentHtml: '' }));
+    n.push(baseNode('ad', 'circle', COL_X[2], ROW_Y.ad, { title: '플레이스 광고', value: data.place_ad_node_total || 0, color: (highlightSet.has('ad') ? HIGHLIGHT : PALETTE.ad), size: scale(data.place_ad_node_total, 28, 84, maxAd) }));
+    n.push(baseNode('detail', 'circle', COL_X[3], ROW_Y.detail, { title: '플레이스 상세', value: data.placeDetailPV || 0, color: (highlightSet.has('detail') ? HIGHLIGHT : PALETTE.detail), size: scale(data.placeDetailPV, 28, 84, maxDetail) }));
+    n.push(baseNode('booking', 'circle', COL_X[4], ROW_Y.booking, { title: '네이버 예약 페이지', value: data.bookingPageVisits || 0, color: (highlightSet.has('booking') ? HIGHLIGHT : PALETTE.booking), size: scale(data.bookingPageVisits, 28, 84, maxBooking) }));
+    n.push(baseNode('request', 'circle', COL_X[5], ROW_Y.request, { title: '예약 신청 (UV)', value: data.bookings || 0, color: (highlightSet.has('request') ? HIGHLIGHT : PALETTE.request), size: scale(data.bookings, 28, 84, maxRequest) }));
     return n;
-  }, [data, history]);
+  }, [data, history, highlightedNodeIds]);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   useEffect(() => setNodes(initialNodes), [initialNodes, setNodes]);
 
@@ -180,16 +189,24 @@ export default function FlowGraph({ data, history = [], currentMonth }) {
     const vmax = Math.max(1, ...values);
     const width = (v) => Math.max(8, Math.round(8 + 36 * (v / vmax))); // 최대 ~44px
 
-    const P = { general: '#f3f4f6', brand: '#e5e7eb', homepage: '#bfdbfe', blog: '#93c5fd', maplist: '#60a5fa', ad: '#3b82f6', detail: '#2563eb', booking: '#1d4ed8', request: '#1e40af', cafe: '#f9a8d4' };
+    const P = { general: '#f3f4f6', brand: '#e5e7eb', homepage: '#bfdbfe', blog: '#93c5fd', maplist: '#60a5fa', ad: '#3b82f6', detail: '#2563eb', booking: '#1d4ed8', request: '#1e40af', cafe: '#4ade80' };
+    const HIGHLIGHT = '#f472b6';
+    const highlightSet = new Set(highlightedNodeIds || []);
 
     const add = (source, target, value, id, colorL = P.general, colorR = P.detail) => {
       if (!value || value <= 0) return;
       const w = width(value);
-      e.push({ id: id || `${source}-${target}`, source, target, type: 'taper', data: { value, colorL, colorR, widthStart: w, widthEnd: w, label: fmt(value) } });
+      const useColor = highlightSet.has(source) ? HIGHLIGHT : null;
+      e.push({ id: id || `${source}-${target}`, source, target, type: 'taper', data: { value, colorL: useColor || colorL, colorR: useColor || colorR, widthStart: w, widthEnd: w, label: fmt(value) } });
     };
     // 일반 -> 카페 화살표, 카페 -> 브랜드 화살표 (값 라벨 없음)
-    e.push({ id: 'general-cafe', source: 'general', target: 'cafe', type: 'arrow', data: { color: P.cafe, width: 1, label: '' } });
-    e.push({ id: 'cafe-brand', source: 'cafe', target: 'brand', type: 'arrow', sourceHandle: 'top', data: { color: P.cafe, width: 1, label: '' } });
+    e.push({ id: 'general-cafe', source: 'general', target: 'cafe', type: 'arrow', data: { color: (highlightSet.has('general') ? HIGHLIGHT : P.cafe), width: 1, label: '' } });
+    e.push({ id: 'cafe-brand', source: 'cafe', target: 'brand', type: 'arrow', sourceHandle: 'top', data: { color: (highlightSet.has('cafe') ? HIGHLIGHT : P.cafe), width: 1, label: '' } });
+    // 카페 보조 노드 엣지 (동일한 화살표 방식)
+    e.push({ id: 'general-cafe-home', source: 'general', target: 'cafe_home_proxy', type: 'arrow', data: { color: '#bbf7d0', width: 1, label: '' } });
+    e.push({ id: 'cafe-home-brand', source: 'cafe_home_proxy', target: 'brand', type: 'arrow', sourceHandle: 'top', data: { color: '#bbf7d0', width: 1, label: '' } });
+    e.push({ id: 'general-cafe-blog', source: 'general', target: 'cafe_blog_proxy', type: 'arrow', data: { color: '#86efac', width: 1, label: '' } });
+    e.push({ id: 'cafe-blog-brand', source: 'cafe_blog_proxy', target: 'brand', type: 'arrow', sourceHandle: 'top', data: { color: '#86efac', width: 1, label: '' } });
     // brand/general -> homepage/blog
     add('brand', 'homepage', data.brand_to_site_direct || 0, 'brand-home', P.brand, P.homepage);
     add('brand', 'blog', data.brand_to_blog_direct || 0, 'brand-blog', P.brand, P.blog);
@@ -206,7 +223,7 @@ export default function FlowGraph({ data, history = [], currentMonth }) {
     add('homepage', 'booking', data.homepage_to_booking_page_direct || 0, 'home-booking', P.homepage, P.booking);
     add('booking', 'request', data.booking_page_to_requests || 0, 'booking-request', P.booking, P.request);
     return e;
-  }, [data]);
+  }, [data, highlightedNodeIds]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   useEffect(() => setEdges(initialEdges), [initialEdges, setEdges]);
 

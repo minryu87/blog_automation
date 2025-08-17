@@ -55,6 +55,7 @@ const HospitalMarketingDashboard = () => {
   const [selectedMonthIndex, setSelectedMonthIndex] = useState(0);
   const [startIndex, setStartIndex] = useState(0);
   const [isMonthlyMode, setIsMonthlyMode] = useState(true);
+  const [highlightedNodeIds, setHighlightedNodeIds] = useState([]);
   
   // 인지 단계 분석을 위한 상태
   const [selectedKeywords, setSelectedKeywords] = useState({
@@ -848,33 +849,54 @@ const HospitalMarketingDashboard = () => {
 
       <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-800">통합 퍼널 구조</h2>
-        <FlowGraph data={metrics} history={monthlyData} currentMonth={monthlyData[selectedMonthIndex]?.month} />
-        {/* 월 선택 슬라이더 */}
-        <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-          <div className="flex items-center justify-between mb-2">
-            <div className="text-sm text-gray-700">
-              {monthlyData[selectedMonthIndex]?.month ? `선택: ${monthlyData[selectedMonthIndex].month}` : '데이터 로딩 중'}
-            </div>
-            <label className="text-xs text-gray-600 flex items-center gap-2">
+        <div className="flex gap-4">
+          {/* 좌측: 그래프 컨테이너 80% 폭 */}
+          <div className="w-4/5">
+            <FlowGraph data={metrics} history={monthlyData} currentMonth={monthlyData[selectedMonthIndex]?.month} highlightedNodeIds={highlightedNodeIds} />
+            {/* 월 선택 슬라이더 */}
+            <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm text-gray-700">
+                  {monthlyData[selectedMonthIndex]?.month ? `선택: ${monthlyData[selectedMonthIndex].month}` : '데이터 로딩 중'}
+                </div>
+                <label className="text-xs text-gray-600 flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={isMonthlyMode}
+                    onChange={(e) => setIsMonthlyMode(e.target.checked)}
+                  />
+                  실데이터 반영
+                </label>
+              </div>
               <input
-                type="checkbox"
-                checked={isMonthlyMode}
-                onChange={(e) => setIsMonthlyMode(e.target.checked)}
+                type="range"
+                min={startIndex}
+                max={Math.max(startIndex, monthlyData.length - 1)}
+                value={selectedMonthIndex}
+                onChange={(e) => setSelectedMonthIndex(Number(e.target.value))}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
-              실데이터 반영
-            </label>
+              <div className="flex justify-between mt-1 text-xs text-gray-500">
+                <span>{monthlyData[startIndex]?.month || '-'}</span>
+                <span>{monthlyData[monthlyData.length - 1]?.month || '-'}</span>
+              </div>
+            </div>
           </div>
-          <input
-            type="range"
-            min={startIndex}
-            max={Math.max(startIndex, monthlyData.length - 1)}
-            value={selectedMonthIndex}
-            onChange={(e) => setSelectedMonthIndex(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-          />
-          <div className="flex justify-between mt-1 text-xs text-gray-500">
-            <span>{monthlyData[startIndex]?.month || '-'}</span>
-            <span>{monthlyData[monthlyData.length - 1]?.month || '-'}</span>
+          {/* 우측: 시나리오 패널 */}
+          <div className="w-1/5">
+            <div className="bg-gray-50 rounded-lg p-3 h-full">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm font-semibold text-gray-700">시나리오</div>
+                <button onClick={() => setHighlightedNodeIds([])} className="text-xs text-gray-500 hover:text-gray-700">해제</button>
+              </div>
+              <div className="space-y-2">
+                <button onClick={() => setHighlightedNodeIds(['maplist'])} className="w-full text-left px-3 py-2 text-xs bg-white rounded border hover:bg-pink-50">네이버 지도 순위 10위권으로 상승</button>
+                <button onClick={() => setHighlightedNodeIds(['homepage', 'cafe_home_proxy'])} className="w-full text-left px-3 py-2 text-xs bg-white rounded border hover:bg-pink-50">홈페이지 통한 예약 수 50% 증가</button>
+                <button onClick={() => setHighlightedNodeIds(['blog', 'cafe_blog_proxy'])} className="w-full text-left px-3 py-2 text-xs bg-white rounded border hover:bg-pink-50">네이버 블로그 통한 예약 수 20% 증가</button>
+                <button onClick={() => setHighlightedNodeIds(['cafe'])} className="w-full text-left px-3 py-2 text-xs bg-white rounded border hover:bg-pink-50">지역 카페 조회수 20% 증가</button>
+                <button onClick={() => setHighlightedNodeIds(['cafe','brand','general','homepage','blog','maplist','ad','cafe_home_proxy','cafe_blog_proxy'])} className="w-full text-left px-3 py-2 text-xs bg-white rounded border hover:bg-pink-50">고객 의도 타겟하여 키워드 통일시키기</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
