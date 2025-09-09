@@ -53,13 +53,13 @@ if not font_found:
     plt.rcParams['axes.unicode_minus'] = False
 
 # --- Configuration ---
-TARGET_QUERY = '동탄치과'  # 검색 키워드
+TARGET_QUERY = '티유치과'  # 검색 키워드
 RAW_DATA_DIR = f'place_analysis/data/raw_data/{TARGET_QUERY}'
 RESULT_PATH = 'place_analysis/analysis_result'
 os.makedirs(RESULT_PATH, exist_ok=True)
-REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'naver_place_analysis_v0.10_report.html')
-TARGET_CLINIC = '내이튼치과의원'
-ANALYSIS_DATE = '2025-08-04'
+REPORT_OUTPUT_PATH_HTML = os.path.join(RESULT_PATH, 'naver_place_analysis_v0.11_report.html')
+TARGET_CLINIC = '티유치과의원'
+ANALYSIS_DATE = '2025-09-09'
 
 class NaverPlaceAnalyzerV0_10:
     def __init__(self, data_dir, result_path):
@@ -526,7 +526,7 @@ class NaverPlaceAnalyzerV0_10:
         plt.tight_layout()
         
         # 차트 저장
-        chart_filename = 'tier_analysis_chart_v0.10.png'
+        chart_filename = 'tier_analysis_chart_v0.11.png'
         chart_path = os.path.join(self.result_path, chart_filename)
         plt.savefig(chart_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -1273,7 +1273,7 @@ class NaverPlaceAnalyzerV0_10:
         return chart_html
     
     def generate_html_report_v0_10(self, sections):
-        print("\nHTML 보고서 생성 (v0.10)...")
+        print("\nHTML 보고서 생성 (v0.11)...")
         introduction_html = """
         <h2>1. 분석의 배경 및 목적</h2>
         <h3>네이버 플레이스, 병원 마케팅의 가장 중요한 전쟁터</h3>
@@ -1364,7 +1364,7 @@ class NaverPlaceAnalyzerV0_10:
             content_html += self.markdown_converter.convert(target_strategy.get('content', ''))
 
         html_template = f"""
-        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'{TARGET_QUERY}' 네이버 플레이스 순위 분석 보고서 v0.10</title>
+        <!DOCTYPE html><html><head><meta charset="UTF-8"><title>'{TARGET_QUERY}' 네이버 플레이스 순위 분석 보고서 v0.11</title>
         <style>
             body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;padding:20px;max-width:1200px;margin:auto;color:#333;}}
             h1,h2,h3{{color:#2c3e50;border-bottom:2px solid #3498db;padding-bottom:10px;}}
@@ -1447,7 +1447,7 @@ class NaverPlaceAnalyzerV0_10:
                 }}
             }}
         </script>
-        </head><body><h1>[V0.10] '{TARGET_QUERY}' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
+        </head><body><h1>[V0.11] '{TARGET_QUERY}' 네이버 플레이스 경쟁력 분석 및 성장 전략 제안</h1>
         {introduction_html}
         {content_html}
         </body></html>

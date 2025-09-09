@@ -5,10 +5,12 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 import sys
+from dotenv import load_dotenv
+import json
 
-# 프로젝트 루트 경로를 sys.path에 추가
-project_root = Path(__file__).resolve().parents[3]
-sys.path.append(str(project_root))
+# 프로젝트 루트 경로를 sys.path에 추가 (모듈 임포트를 위함)
+project_root_for_imports = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(project_root_for_imports))
 
 from blog_automation.place_stat_crawler.scripts.util.logger import logger
 
@@ -20,18 +22,29 @@ class PerformanceAnalyzer:
         self.end_year = end_year
         self.end_month = end_month
         self.base_path = Path(__file__).resolve().parents[2]
-        self.processed_data_path = self.base_path / 'data' / 'processed'
-        self.analysis_results_path = self.base_path / 'analysis_results' / client_name
+        self.processed_data_path = self.base_path / 'data' / 'processed' / client_name
+        self.analysis_results_path = self.base_path / 'data' / 'analyzed' / client_name
         self.analysis_results_path.mkdir(parents=True, exist_ok=True)
         
         # 한글 폰트 설정
         plt.rcParams['font.family'] = 'AppleGothic'
         plt.rcParams['axes.unicode_minus'] = False
 
+        # 분석할 주요 지표 쌍 정의
+        self.focused_pairs = [
+            ("1. 예약 전환 분석", "total_booking_requests", "total_booking_page_visits"),
+            ("1. 예약 전환 분석", "total_booking_requests", "booking_visits_지도"),
+            ("1. 예약 전환 분석", "total_booking_requests", "booking_visits_플레이스목록"),
+            ("1. 예약 전환 분석", "total_booking_page_visits", "total_place_pv"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "place_pv_네이버검색"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "place_pv_네이버지도"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "keyword_pv_type1_brand_like"),
+            ("2. 플레이스 트래픽 분석", "total_place_pv", "keyword_pv_type2_others"),
+        ]
 
-    def load_data(self) -> pd.DataFrame:
-        """지정된 기간의 플레이스 PV 및 예약 데이터를 로드하고 병합합니다."""
-        logger.info("데이터 로드를 시작합니다...")
+    def load_and_prepare_data(self) -> pd.DataFrame:
+        """지정된 기간의 데이터를 로드하고 분석에 맞게 전처리합니다."""
+        logger.info("데이터 로딩 및 전처리를 시작합니다...")
         
         all_place_pv_df = []
         all_booking_df = []
@@ -42,8 +55,6 @@ class PerformanceAnalyzer:
 
             for month in range(s_month, e_month + 1):
                 month_str = f"{month:02d}"
-                
-                # 플레이스 PV 데이터 로드
                 pv_file = self.processed_data_path / f"{self.client_name}_{year}_{month_str}_integrated_statistics.csv"
                 if pv_file.exists():
                     logger.info(f"로딩 (PV): {pv_file.name}")
@@ -51,7 +62,6 @@ class PerformanceAnalyzer:
                 else:
                     logger.warning(f"파일 없음 (PV): {pv_file.name}")
 
-                # 예약 데이터 로드
                 booking_file = self.processed_data_path / f"{self.client_name}_{year}_{month_str}_booking_integrated_statistics.csv"
                 if booking_file.exists():
                     logger.info(f"로딩 (Booking): {booking_file.name}")
@@ -65,134 +75,281 @@ class PerformanceAnalyzer:
         place_pv_df = pd.concat(all_place_pv_df, ignore_index=True)
         booking_df = pd.concat(all_booking_df, ignore_index=True)
 
-        # 날짜 타입 변환
         place_pv_df['date'] = pd.to_datetime(place_pv_df['date'])
         booking_df['date'] = pd.to_datetime(booking_df['date'])
+        
+        # 1. 일별 총 플레이스 조회수
+        daily_total_pv = place_pv_df[place_pv_df['data_type'] == 'channel'].groupby('date')['pv'].sum().reset_index()
+        daily_total_pv.rename(columns={'pv': 'total_place_pv'}, inplace=True)
 
-        # 일별 총 플레이스 조회수 집계
-        daily_total_pv = place_pv_df.groupby('date')['total_count'].sum().reset_index()
-        daily_total_pv.rename(columns={'total_count': 'total_place_pv'}, inplace=True)
+        # 2. 플레이스 페이지 채널별 조회수
+        place_channel_pv = place_pv_df[place_pv_df['data_type'] == 'channel'].pivot_table(
+            index='date', columns='name', values='pv', aggfunc='sum').add_prefix('place_pv_')
+        
+        # 3. 키워드 유형별 PV
+        keyword_pv = self.extract_keyword_data(place_pv_df)
+        
+        # 4. 예약 페이지 총 유입수 및 예약 신청 수
+        booking_summary = booking_df.groupby('date').agg(
+            total_booking_page_visits=('page_visits', 'first'),
+            total_booking_requests=('booking_requests', 'first')
+        ).reset_index()
 
-        # 예약 데이터에서 필요한 컬럼만 선택
-        booking_summary_df = booking_df.groupby('date')[['page_visits', 'booking_requests']].first().reset_index()
-        
-        # 데이터 병합
-        merged_df = pd.merge(daily_total_pv, booking_summary_df, on='date', how='inner')
-        logger.info("데이터 병합 완료. 최종 데이터프레임 Shape: %s", merged_df.shape)
-        
-        # 키워드 데이터 추가
-        keyword_df = self.extract_keyword_data(place_pv_df)
-        merged_df = pd.merge(merged_df, keyword_df, on='date', how='left').fillna(0)
-        
-        return merged_df
+        # 5. 예약 페이지 채널별 유입수
+        booking_channel_visits = booking_df.pivot_table(
+            index='date', columns='channel_name', values='channel_count', aggfunc='sum').add_prefix('booking_visits_')
+
+        # 모든 데이터 병합
+        merged_df = daily_total_pv
+        for df in [place_channel_pv, keyword_pv, booking_summary, booking_channel_visits]:
+            merged_df = pd.merge(merged_df, df, on='date', how='left')
+            
+        return merged_df.fillna(0)
 
     def extract_keyword_data(self, place_pv_df: pd.DataFrame) -> pd.DataFrame:
-        """플레이스 PV 데이터에서 브랜드/논브랜드 키워드 PV를 추출합니다."""
+        """키워드를 유형별로 분류하고 PV를 집계합니다."""
         keyword_df = place_pv_df[place_pv_df['data_type'] == 'keyword'].copy()
         
-        # 브랜드 키워드 식별 (병원 이름의 일부가 포함된 경우)
-        # client_name에서 영어 제외하고 한글만 추출하여 브랜드 키워드 리스트 생성
-        brand_name = ''.join(filter(str.isalpha, self.client_name.replace("GOODMORNINGHANIGURO", "좋은아침한의원구로")))
-        
-        brand_keywords = [brand_name]
-        # '좋은아침한의원' 과 같이 client_name의 일부를 포함하는 경우도 브랜드 키워드로 간주
-        if "한의원" in brand_name:
-            brand_keywords.append(brand_name.replace("한의원", ""))
+        def classify_keyword(k):
+            k_str = str(k).lower()
+            # 클라이언트별 브랜드 키워드를 여기서 동적으로 설정할 수 있습니다.
+            # 지금은 하드코딩된 예시를 사용합니다.
+            if self.client_name == 'GOODMORNINGHANIGURO':
+                brand_keywords = ['아침', '285']
+            elif self.client_name == 'NATENCLINIC':
+                brand_keywords = ['내이튼', '네이튼']
+            else:
+                brand_keywords = []
 
-        keyword_df['is_brand'] = keyword_df['keyword'].apply(lambda x: any(brand in str(x) for brand in brand_keywords))
-        
-        brand_pv = keyword_df[keyword_df['is_brand']].groupby('date')['total_count'].sum()
-        non_brand_pv = keyword_df[~keyword_df['is_brand']].groupby('date')['total_count'].sum()
-        
-        keyword_summary = pd.DataFrame({
-            'brand_keyword_pv': brand_pv,
-            'non_brand_keyword_pv': non_brand_pv
-        }).reset_index()
+            if any(kw in k_str for kw in brand_keywords):
+                return 'type1_brand_like'
+            return 'type2_others'
 
-        return keyword_summary
-
-    def analyze_correlation(self, df: pd.DataFrame):
-        """주요 지표 간의 상관관계를 분석하고 히트맵으로 시각화합니다."""
-        logger.info("상관관계 분석을 시작합니다...")
+        keyword_df['keyword_type'] = keyword_df['name'].apply(classify_keyword)
         
-        metrics = ['total_place_pv', 'page_visits', 'booking_requests', 'brand_keyword_pv', 'non_brand_keyword_pv']
-        corr_matrix = df[metrics].corr()
-
-        plt.figure(figsize=(10, 8))
-        sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
-        plt.title('주요 지표 간 상관관계 히트맵')
+        keyword_summary = keyword_df.pivot_table(
+            index='date', columns='keyword_type', values='pv', aggfunc='sum'
+        ).add_prefix('keyword_pv_')
         
-        save_path = self.analysis_results_path / 'correlation_heatmap.png'
+        return keyword_summary.reset_index()
+        
+    def _calculate_correlations(self, df: pd.DataFrame, pairs: list) -> dict:
+        """정의된 쌍에 대한 상관계수를 계산합니다."""
+        results = {}
+        for category, col1, col2 in pairs:
+            pair_key = f"{col1} vs {col2}"
+            # 데이터프레임에 두 컬럼이 모두 존재할 경우에만 계산
+            if col1 in df.columns and col2 in df.columns and df[col1].nunique() > 1 and df[col2].nunique() > 1:
+                correlation = df[col1].corr(df[col2])
+                results[pair_key] = {'category': category, 'correlation': correlation}
+            else:
+                results[pair_key] = {'category': category, 'correlation': np.nan}
+        return results
+
+    def run_focused_analysis(self, df: pd.DataFrame):
+        """요청된 형식의 리포트를 위한 분석을 수행합니다."""
+        logger.info("포커스 분석(월별, 안정성)을 시작합니다...")
+        
+        # 월별 상관관계
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue # 데이터가 2개 미만이면 상관관계 계산 불가
+            month_str = month.strftime('%Y-%m')
+            monthly_results = self._calculate_correlations(group, self.focused_pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'month': month_str,
+                    'category': values['category'],
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        monthly_corr_df = pd.DataFrame(monthly_corr_list)
+
+        # 전체 기간 상관관계를 월별 상관관계의 평균으로 계산
+        overall_corr_df = monthly_corr_df.groupby(['pair', 'category'])['correlation'].mean().reset_index()
+
+        # 안정성 분석 (표준편차)
+        stability_df = monthly_corr_df.groupby('pair')['correlation'].std().reset_index()
+        stability_df.rename(columns={'correlation': 'std_dev'}, inplace=True)
+        stability_df = stability_df.sort_values(by='std_dev').dropna()
+
+        self.plot_monthly_correlation_trends(monthly_corr_df)
+
+        return overall_corr_df, stability_df, monthly_corr_df
+
+    def run_channel_correlation_analysis(self, df: pd.DataFrame) -> pd.DataFrame:
+        """예약 채널과 플레이스 채널 간의 상관관계를 분석합니다."""
+        logger.info("채널 간 상관관계 분석을 시작합니다...")
+        
+        booking_channel_cols = [col for col in df.columns if col.startswith('booking_visits_')]
+        place_channel_cols = [col for col in df.columns if col.startswith('place_pv_')]
+        
+        if not booking_channel_cols or not place_channel_cols:
+            logger.warning("분석에 필요한 예약 또는 플레이스 채널 데이터가 부족합니다.")
+            return pd.DataFrame()
+
+        channel_pairs = []
+        for b_col in booking_channel_cols:
+            for p_col in place_channel_cols:
+                channel_pairs.append(("", b_col, p_col)) # category는 사용하지 않으므로 비워둠
+                
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue
+            
+            monthly_results = self._calculate_correlations(group, channel_pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        if not monthly_corr_list:
+            logger.warning("채널 간 월별 상관관계 데이터를 계산할 수 없습니다.")
+            return pd.DataFrame()
+
+        monthly_channel_corr_df = pd.DataFrame(monthly_corr_list)
+        
+        avg_channel_corr_df = monthly_channel_corr_df.groupby('pair')['correlation'].mean().reset_index()
+        avg_channel_corr_df = avg_channel_corr_df.sort_values(by='correlation', ascending=False).dropna()
+        
+        logger.info(f"채널 간 상관관계 분석 완료: {len(avg_channel_corr_df)}개의 유효한 쌍을 찾았습니다.")
+        
+        return avg_channel_corr_df
+
+    def run_keyword_channel_correlation_analysis(self, df: pd.DataFrame) -> pd.DataFrame:
+        """플레이스 채널과 키워드 유형 간의 상관관계를 분석합니다."""
+        logger.info("플레이스 채널-키워드 유형 간 상관관계 분석을 시작합니다...")
+        
+        place_channel_cols = [col for col in df.columns if col.startswith('place_pv_')]
+        keyword_type_cols = [col for col in df.columns if col.startswith('keyword_pv_')]
+        
+        if not place_channel_cols or not keyword_type_cols:
+            logger.warning("분석에 필요한 플레이스 채널 또는 키워드 유형 데이터가 부족합니다.")
+            return pd.DataFrame()
+
+        pairs = []
+        for p_col in place_channel_cols:
+            for k_col in keyword_type_cols:
+                pairs.append(("", p_col, k_col))
+                
+        df_monthly = df.set_index('date').groupby(pd.Grouper(freq='M'))
+        monthly_corr_list = []
+
+        for month, group in df_monthly:
+            if len(group) < 2: continue
+            
+            monthly_results = self._calculate_correlations(group, pairs)
+            for pair, values in monthly_results.items():
+                monthly_corr_list.append({
+                    'pair': pair,
+                    'correlation': values['correlation']
+                })
+        
+        if not monthly_corr_list:
+            logger.warning("플레이스 채널-키워드 월별 상관관계 데이터를 계산할 수 없습니다.")
+            return pd.DataFrame()
+
+        monthly_corr_df = pd.DataFrame(monthly_corr_list)
+        
+        avg_corr_df = monthly_corr_df.groupby('pair')['correlation'].mean().reset_index()
+        avg_corr_df = avg_corr_df.sort_values(by='correlation', ascending=False).dropna()
+        
+        logger.info(f"플레이스 채널-키워드 상관관계 분석 완료: {len(avg_corr_df)}개의 유효한 쌍을 찾았습니다.")
+        
+        return avg_corr_df
+
+    def plot_monthly_correlation_trends(self, monthly_corr_df: pd.DataFrame):
+        """월별 상관관계 트렌드를 시각화합니다."""
+        logger.info("월별 상관관계 트렌드 그래프를 생성합니다...")
+        
+        pivot_df = monthly_corr_df.pivot(index='month', columns='pair', values='correlation')
+        
+        plt.figure(figsize=(20, 12))
+        for column in pivot_df.columns:
+            plt.plot(pivot_df.index, pivot_df[column], marker='o', linestyle='-', label=column)
+            
+        plt.title('월별 주요 지표 상관관계 트렌드', fontsize=20)
+        plt.xlabel('월')
+        plt.ylabel('상관계수')
+        plt.xticks(rotation=45)
+        plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+        plt.tight_layout(rect=[0, 0, 0.85, 1])
+        
+        save_path = self.analysis_results_path / 'monthly_correlation_trends.png'
         plt.savefig(save_path)
         plt.close()
-        
-        logger.info(f"상관관계 히트맵 저장 완료: {save_path}")
-        logger.info("\n상관계수 행렬:\n%s", corr_matrix)
+        logger.info(f"월별 트렌드 그래프 저장 완료: {save_path}")
 
-    def analyze_conversion_rate(self, df: pd.DataFrame):
-        """단계별 전환율을 시계열로 분석하고 그래프로 시각화합니다."""
-        logger.info("전환율 분석을 시작합니다...")
-        
-        df['cvr_place_to_booking_page'] = (df['page_visits'] / df['total_place_pv']).replace([np.inf, -np.inf], 0) * 100
-        df['cvr_booking_page_to_request'] = (df['booking_requests'] / df['page_visits']).replace([np.inf, -np.inf], 0) * 100
-        
-        df.set_index('date', inplace=True)
-        
-        plt.figure(figsize=(15, 10))
-        
-        plt.subplot(2, 1, 1)
-        df['cvr_place_to_booking_page'].plot(title='전환율: 플레이스 조회 → 예약 페이지 유입 (%)')
-        plt.grid(True)
-        
-        plt.subplot(2, 1, 2)
-        df['cvr_booking_page_to_request'].plot(title='전환율: 예약 페이지 유입 → 예약 신청 (%)', color='orange')
-        plt.grid(True)
-        
-        plt.tight_layout()
-        save_path = self.analysis_results_path / 'conversion_rate_timeseries.png'
-        plt.savefig(save_path)
-        plt.close()
-        
-        logger.info(f"전환율 시계열 그래프 저장 완료: {save_path}")
-        logger.info("\n월별 평균 전환율:\n%s", df[['cvr_place_to_booking_page', 'cvr_booking_page_to_request']].resample('M').mean())
+    def save_analysis_summary_to_md(self, overall_corr, stability_df, monthly_corr_df, channel_corr_df, keyword_channel_corr_df):
+        """요청된 형식에 맞춰 분석 결과를 마크다운 파일로 저장합니다."""
+        logger.info("새로운 형식의 분석 리포트를 마크다운 파일로 저장합니다...")
 
+        channel_corr_md_section = ""
+        if not channel_corr_df.empty:
+            channel_corr_md_section = f"""
+## 5. 채널 간 상호 영향 분석 (상관관계 높은 순)
 
-    def analyze_keyword_impact(self, df: pd.DataFrame):
-        """브랜드/논브랜드 키워드 유입과 예약 신청의 관계를 분석합니다."""
-        logger.info("키워드 영향력 분석을 시작합니다...")
+예약 페이지의 각 채널 유입이 플레이스 페이지의 어떤 채널 유입과 가장 관련이 깊은지 보여줍니다.
 
-        plt.figure(figsize=(15, 12))
+{channel_corr_df.to_markdown(index=False)}
+"""
 
-        # 1. 브랜드/논브랜드 키워드 PV 시계열
-        plt.subplot(3, 1, 1)
-        df[['brand_keyword_pv', 'non_brand_keyword_pv']].plot(ax=plt.gca(), title='일별 브랜드/논브랜드 키워드 PV')
-        plt.grid(True)
+        keyword_channel_corr_md_section = ""
+        if not keyword_channel_corr_df.empty:
+            keyword_channel_corr_md_section = f"""
+## 6. 플레이스 채널-키워드 유형 간 상관관계 (상관관계 높은 순)
 
-        # 2. 브랜드 키워드 PV와 예약 신청 수
-        plt.subplot(3, 1, 2)
-        sns.regplot(x='brand_keyword_pv', y='booking_requests', data=df, scatter_kws={'alpha':0.3})
-        plt.title('브랜드 키워드 PV와 예약 신청 수의 관계')
-        plt.grid(True)
+플레이스 페이지의 각 채널별 유입이 어떤 유형의 검색어 유입과 가장 관련이 깊은지 보여줍니다.
 
-        # 3. 논브랜드 키워드 PV와 예약 신청 수
-        plt.subplot(3, 1, 3)
-        sns.regplot(x='non_brand_keyword_pv', y='booking_requests', data=df, scatter_kws={'alpha':0.3}, color='g')
-        plt.title('논브랜드 키워드 PV와 예약 신청 수의 관계')
-        plt.grid(True)
+{keyword_channel_corr_df.to_markdown(index=False)}
+"""
 
-        plt.tight_layout()
-        save_path = self.analysis_results_path / 'keyword_impact_analysis.png'
-        plt.savefig(save_path)
-        plt.close()
-        logger.info(f"키워드 영향력 분석 그래프 저장 완료: {save_path}")
+        md_content = f"""# {self.client_name} 마케팅 퍼널 상관관계 분석 리포트
+
+## 1. 전체 기간 주요 퍼널 단계별 상관관계
+
+전체 분석 기간동안의 평균적인 관계입니다.
+
+{overall_corr.to_markdown(index=False)}
+
+## 2. 상관관계 안정성 분석 (변동성 낮은 순)
+
+월별 상관관계의 표준편차입니다. 값이 낮을수록 기간에 상관없이 꾸준하고 안정적인 관계임을 의미합니다.
+
+{stability_df.to_markdown(index=False)}
+
+## 3. 월별 상관관계 트렌드
+
+주요 관계들이 월별로 어떻게 변하는지 보여줍니다. 특정 마케팅 활동이나 이벤트와의 연관성을 파악하는 데 유용합니다.
+
+![월별 상관관계 트렌드](monthly_correlation_trends.png)
+
+## 4. 월별 상관관계 상세 데이터
+
+{monthly_corr_df.sort_values(by=['month', 'category']).to_markdown(index=False)}
+{channel_corr_md_section}{keyword_channel_corr_md_section}"""
+        report_path = self.analysis_results_path / f'{self.client_name}_focused_analysis_report.md'
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write(md_content)
+            
+        logger.info(f"분석 리포트 저장 완료: {report_path}")
 
     def run_analysis(self):
         """전체 분석 파이프라인을 실행합니다."""
         try:
-            merged_df = self.load_data()
-            self.analyze_correlation(merged_df.copy())
-            self.analyze_conversion_rate(merged_df.copy())
-            self.analyze_keyword_impact(merged_df.set_index('date').copy())
+            merged_df = self.load_and_prepare_data()
+            overall_corr, stability_df, monthly_corr_df = self.run_focused_analysis(merged_df)
+            channel_corr_df = self.run_channel_correlation_analysis(merged_df)
+            keyword_channel_corr_df = self.run_keyword_channel_correlation_analysis(merged_df)
+            self.save_analysis_summary_to_md(overall_corr, stability_df, monthly_corr_df, channel_corr_df, keyword_channel_corr_df)
+
             logger.info("🎉 모든 분석이 성공적으로 완료되었습니다.")
         except FileNotFoundError as e:
             logger.error(e)
@@ -201,11 +358,51 @@ class PerformanceAnalyzer:
 
 
 if __name__ == '__main__':
+    # .env 파일 경로를 스크립트 위치 기준으로 정확하게 지정
+    dotenv_path = Path(__file__).resolve().parents[2] / '.env'
+    load_dotenv(dotenv_path=dotenv_path)
+    
+    client_list_str = os.getenv("CLIENT_LIST")
+    if not client_list_str:
+        logger.error(f"'{dotenv_path}' 경로에 '.env' 파일이 없거나 파일 내에 'CLIENT_LIST'가 설정되지 않았습니다.")
+        sys.exit(1)
+        
+    try:
+        client_list = json.loads(client_list_str)
+    except json.JSONDecodeError:
+        logger.error("CLIENT_LIST 형식이 잘못되었습니다. 예: '[\"CLIENT1\", \"CLIENT2\"]'")
+        sys.exit(1)
+
+    client_name = ""
+    if len(client_list) == 1:
+        client_name = client_list[0]
+        logger.info(f"자동으로 클라이언트 '{client_name}'에 대한 분석을 시작합니다.")
+    else:
+        print("\n=== 분석할 클라이언트를 선택하세요 ===")
+        for i, name in enumerate(client_list):
+            print(f"  {i + 1}. {name}")
+        
+        while True:
+            try:
+                choice = int(input(f"\n번호를 입력하세요 (1-{len(client_list)}): "))
+                if 1 <= choice <= len(client_list):
+                    client_name = client_list[choice - 1]
+                    logger.info(f"클라이언트 '{client_name}'를 선택했습니다.")
+                    break
+                else:
+                    print(f"❌ 1에서 {len(client_list)} 사이의 숫자를 입력해주세요.")
+            except ValueError:
+                print("❌ 유효한 숫자를 입력해주세요.")
+    
+    if not client_name:
+        logger.error("클라이언트가 선택되지 않았습니다. 분석을 종료합니다.")
+        sys.exit(1)
+        
     # 분석할 클라이언트와 기간 설정
     analyzer = PerformanceAnalyzer(
-        client_name='GOODMORNINGHANIGURO',
+        client_name=client_name,
         start_year=2024,
-        start_month=7,
+        start_month=9,
         end_year=2025,
         end_month=7
     )

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병원 마케팅 대시보드</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.8.0/umd/Recharts.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: #d1d5db;
+            outline: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useCallback } = React;
+        const { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, ComposedChart } = Recharts;
+        
+        // Lucide 아이콘들을 간단한 텍스트로 대체
+        const ChevronRight = () => <span>▶</span>;
+        const TrendingUp = () => <span>📈</span>;
+        const Users = () => <span>👥</span>;
+        const MousePointer = () => <span>👆</span>;
+        const Search = () => <span>🔍</span>;
+        const Map = () => <span>🗺️</span>;
+        const FileText = () => <span>📄</span>;
+        const DollarSign = () => <span>💰</span>;
+        const Target = () => <span>🎯</span>;
+        const Activity = () => <span>📊</span>;
+        const Award = () => <span>🏆</span>;
+        const Settings = () => <span>⚙️</span>;
+        const Sliders = () => <span>🎚️</span>;
+        const BookOpen = () => <span>📖</span>;
+        const MessageCircle = () => <span>💬</span>;
+        const Globe = () => <span>🌐</span>;
+
+        const HospitalMarketingDashboard = () => {
+            // 초기 기준값
+            const baseMetrics = {
+                nonBrandDemand: 3000,
+                brandDemand: 800,
+                nonBrand_to_search: 1800,
+                nonBrand_to_map: 1200,
+                search_to_blog: 700,
+                search_to_site: 500,
+                search_to_cafe: 600,
+                blog_to_brand: 210,
+                site_to_brand: 150,
+                cafe_to_brand: 240,
+                map_to_list: 800,
+                list_to_placeAds: 180,
+                list_to_placeDetail: 400,
+                ads_to_placeDetail: 160,
+                brand_to_search_direct: 320,
+                brand_to_map_direct: 240,
+                brand_to_blog_direct: 120,
+                brand_to_site_direct: 120,
+                placeDetailPV: 2400,
+                bookingPageVisits: 600,
+                bookings: 120,
+                cvr_detail_to_booking: 0.25,
+                cvr_booking_to_complete: 0.20
+            };
+
+            const [metrics, setMetrics] = useState(baseMetrics);
+            const [targetBookings, setTargetBookings] = useState(baseMetrics.bookings);
+            
+            const [selectedKeywords, setSelectedKeywords] = useState({
+                '동탄 치과': true,
+                '동탄 임플란트': false,
+                '동탄 신경치료': false
+            });
+            
+            const [awarenessSliders, setAwarenessSliders] = useState({
+                contentVolume: 100,
+                viralBudget: 100
+            });
+
+            const generateTimeSeriesData = () => {
+                const baseData = [
+                    { month: '2024-07', blog: 320, site: 280, cafe: 180, brandSearch: 450 },
+                    { month: '2024-08', blog: 350, site: 310, cafe: 200, brandSearch: 480 },
+                    { month: '2024-09', blog: 380, site: 320, cafe: 220, brandSearch: 520 },
+                    { month: '2024-10', blog: 410, site: 350, cafe: 250, brandSearch: 580 },
+                    { month: '2024-11', blog: 450, site: 380, cafe: 280, brandSearch: 650 },
+                    { month: '2024-12', blog: 480, site: 400, cafe: 310, brandSearch: 720 },
+                    { month: '2025-01', blog: 520, site: 430, cafe: 340, brandSearch: 790 },
+                    { month: '2025-02', blog: 560, site: 460, cafe: 370, brandSearch: 860 },
+                    { month: '2025-03', blog: 600, site: 490, cafe: 400, brandSearch: 930 },
+                    { month: '2025-04', blog: 640, site: 520, cafe: 430, brandSearch: 1000 },
+                    { month: '2025-05', blog: 680, site: 550, cafe: 460, brandSearch: 1070 },
+                    { month: '2025-06', blog: 720, site: 580, cafe: 490, brandSearch: 1140 },
+                    { month: '2025-07', blog: 760, site: 610, cafe: 520, brandSearch: 1210 }
+                ];
+
+                const august2025 = {
+                    month: '2025-08',
+                    blog: Math.round(800 * awarenessSliders.contentVolume / 100),
+                    site: Math.round(640 * awarenessSliders.contentVolume / 100),
+                    cafe: Math.round(550 * awarenessSliders.viralBudget / 100),
+                    brandSearch: Math.round(1280 * ((awarenessSliders.contentVolume + awarenessSliders.viralBudget) / 200)),
+                    isPrediction: true
+                };
+
+                return [...baseData, august2025];
+            };
+
+            const timeSeriesData = generateTimeSeriesData();
+            
+            const [sliders, setSliders] = useState({
+                main: 100,
+                nonBrand: 100,
+                brand: 100,
+                brandConversion: 100,
+                mapRanking: 100,
+                placeAds: 100,
+                detailConversion: 100
+            });
+
+            const handleSliderChange = (sliderName, value) => {
+                setSliders(prev => {
+                    const newSliders = { ...prev, [sliderName]: value };
+                    
+                    if (sliderName === 'main') {
+                        const ratio = value / 100;
+                        Object.keys(newSliders).forEach(key => {
+                            if (key !== 'main') {
+                                newSliders[key] = Math.round(100 * ratio);
+                            }
+                        });
+                    }
+                    
+                    return newSliders;
+                });
+            };
+
+            useEffect(() => {
+                const calculateMetrics = () => {
+                    const s = sliders;
+                    
+                    const nonBrandDemand = Math.round(baseMetrics.nonBrandDemand * s.nonBrand / 100);
+                    const brandDemandBase = Math.round(baseMetrics.brandDemand * s.brand / 100);
+                    
+                    const nonBrand_to_search = Math.round(nonBrandDemand * 0.6);
+                    const nonBrand_to_map = Math.round(nonBrandDemand * 0.4);
+                    
+                    const search_to_blog = Math.round(nonBrand_to_search * 0.39);
+                    const search_to_site = Math.round(nonBrand_to_search * 0.28);
+                    const search_to_cafe = Math.round(nonBrand_to_search * 0.33);
+                    
+                    const convRate = 0.3 * s.brandConversion / 100;
+                    const blog_to_brand = Math.round(search_to_blog * convRate);
+                    const site_to_brand = Math.round(search_to_site * convRate);
+                    const cafe_to_brand = Math.round(search_to_cafe * convRate);
+                    
+                    const totalBrandDemand = brandDemandBase + blog_to_brand + site_to_brand + cafe_to_brand;
+                    
+                    const map_to_list = Math.round(nonBrand_to_map * 0.67 * s.mapRanking / 100);
+                    const list_to_placeAds = Math.round(map_to_list * 0.23 * s.placeAds / 100);
+                    const list_to_placeDetail = Math.round(map_to_list * 0.5);
+                    const ads_to_placeDetail = Math.round(list_to_placeAds * 0.89);
+                    
+                    const brand_to_search_direct = Math.round(totalBrandDemand * 0.4);
+                    const brand_to_map_direct = Math.round(totalBrandDemand * 0.3);
+                    const brand_to_blog_direct = Math.round(totalBrandDemand * 0.15);
+                    const brand_to_site_direct = Math.round(totalBrandDemand * 0.15);
+                    
+                    const placeDetailPV = list_to_placeDetail + ads_to_placeDetail +
+                                       brand_to_search_direct + brand_to_map_direct + 
+                                       brand_to_blog_direct + brand_to_site_direct;
+                    
+                    const bookingPageVisits = Math.round(placeDetailPV * 0.25 * s.detailConversion / 100);
+                    const bookings = Math.round(bookingPageVisits * 0.2);
+                    
+                    setMetrics({
+                        ...baseMetrics,
+                        nonBrandDemand,
+                        brandDemand: totalBrandDemand,
+                        nonBrand_to_search,
+                        nonBrand_to_map,
+                        search_to_blog,
+                        search_to_site,
+                        search_to_cafe,
+                        blog_to_brand,
+                        site_to_brand,
+                        cafe_to_brand,
+                        map_to_list,
+                        list_to_placeAds,
+                        list_to_placeDetail,
+                        ads_to_placeDetail,
+                        brand_to_search_direct,
+                        brand_to_map_direct,
+                        brand_to_blog_direct,
+                        brand_to_site_direct,
+                        placeDetailPV,
+                        bookingPageVisits,
+                        bookings
+                    });
+                    
+                    setTargetBookings(bookings);
+                };
+                
+                calculateMetrics();
+            }, [sliders]);
+
+            const formatPercent = (current, target) => {
+                if (!current || current === 0) return '0%';
+                const change = ((target / current - 1) * 100).toFixed(1);
+                if (change > 0) return `+${change}%`;
+                return `${change}%`;
+            };
+
+            const AwarenessAnalysis = () => {
+                return (
+                    <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <div className="flex items-center justify-between mb-4">
+                            <h2 className="text-lg font-semibold text-gray-800">인지 단계 분석 - 내이튼치과</h2>
+                            <div className="flex gap-2">
+                                {Object.keys(selectedKeywords).map(keyword => (
+                                    <button
+                                        key={keyword}
+                                        onClick={() => setSelectedKeywords(prev => ({...prev, [keyword]: !prev[keyword]}))}
+                                        className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                                            selectedKeywords[keyword] 
+                                                ? 'bg-blue-500 text-white' 
+                                                : 'bg-gray-200 text-gray-600'
+                                        }`}
+                                    >
+                                        {keyword}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <ResponsiveContainer width="100%" height={300}>
+                            <ComposedChart data={timeSeriesData}>
+                                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                                <XAxis 
+                                    dataKey="month" 
+                                    tick={{ fontSize: 10 }}
+                                    angle={-45}
+                                    textAnchor="end"
+                                    height={60}
+                                />
+                                <YAxis yAxisId="left" tick={{ fontSize: 11 }} />
+                                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} />
+                                <Tooltip />
+                                <Legend />
+                                
+                                <Bar 
+                                    yAxisId="right"
+                                    dataKey="brandSearch" 
+                                    fill="#E3F2FD" 
+                                    name="내이튼치과 검색량"
+                                    opacity={0.7}
+                                />
+                                
+                                <Line 
+                                    yAxisId="left"
+                                    type="monotone" 
+                                    dataKey="blog" 
+                                    stroke="#FF5722" 
+                                    strokeWidth={2}
+                                    name="블로그 유입"
+                                    dot={{ r: 3 }}
+                                />
+                                <Line 
+                                    yAxisId="left"
+                                    type="monotone" 
+                                    dataKey="site" 
+                                    stroke="#3F51B5" 
+                                    strokeWidth={2}
+                                    name="홈페이지 유입"
+                                    dot={{ r: 3 }}
+                                />
+                                <Line 
+                                    yAxisId="left"
+                                    type="monotone" 
+                                    dataKey="cafe" 
+                                    stroke="#E91E63" 
+                                    strokeWidth={2}
+                                    name="카페 언급 조회수"
+                                    dot={{ r: 3 }}
+                                />
+                            </ComposedChart>
+                        </ResponsiveContainer>
+
+                        <div className="mt-6 space-y-4">
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="p-4 bg-gray-50 rounded-lg">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-medium text-gray-700">
+                                            📝 메디컨텐츠 발행량
+                                        </span>
+                                        <span className="text-sm font-bold text-blue-600">{awarenessSliders.contentVolume}%</span>
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="50"
+                                        max="150"
+                                        value={awarenessSliders.contentVolume}
+                                        onChange={(e) => setAwarenessSliders(prev => ({...prev, contentVolume: Number(e.target.value)}))}
+                                        className="slider w-full"
+                                    />
+                                    <div className="text-xs text-gray-500 mt-2">
+                                        블로그 및 홈페이지 유입량에 영향
+                                    </div>
+                                </div>
+
+                                <div className="p-4 bg-gray-50 rounded-lg">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-medium text-gray-700">
+                                            💰 바이럴 마케팅 비용
+                                        </span>
+                                        <span className="text-sm font-bold text-purple-600">{awarenessSliders.viralBudget}%</span>
+                                    </div>
+                                    <input
+                                        type="range"
+                                        min="50"
+                                        max="150"
+                                        value={awarenessSliders.viralBudget}
+                                        onChange={(e) => setAwarenessSliders(prev => ({...prev, viralBudget: Number(e.target.value)}))}
+                                        className="slider w-full"
+                                    />
+                                    <div className="text-xs text-gray-500 mt-2">
+                                        카페 언급 및 조회수에 영향
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            const brandConversionData = [
+                { channel: '네이버 카페', value: metrics.cafe_to_brand },
+                { channel: '네이버 블로그', value: metrics.blog_to_brand },
+                { channel: '홈페이지', value: metrics.site_to_brand }
+            ];
+
+            const placeDetailSourceData = [
+                { name: '지도→목록', value: metrics.list_to_placeDetail },
+                { name: '플레이스광고', value: metrics.ads_to_placeDetail },
+                { name: '브랜드검색', value: metrics.brand_to_search_direct },
+                { name: '브랜드지도', value: metrics.brand_to_map_direct },
+                { name: '브랜드블로그', value: metrics.brand_to_blog_direct },
+                { name: '브랜드사이트', value: metrics.brand_to_site_direct }
+            ];
+
+            const chartColors = ['#E91E63', '#FF5722', '#3F51B5', '#4CAF50', '#FFC107', '#2196F3'];
+
+            return (
+                <div className="p-6 bg-gray-50 min-h-screen">
+                    <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <h1 className="text-2xl font-bold text-gray-800 mb-2">병원 마케팅 통합 퍼널 대시보드</h1>
+                        <p className="text-gray-600">일반 키워드와 브랜드 키워드의 전체 여정 분석 및 최적화</p>
+                    </div>
+
+                    <AwarenessAnalysis />
+
+                    <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <div className="flex items-center mb-4">
+                            <Sliders />
+                            <h2 className="text-lg font-semibold text-gray-800 ml-2">퍼널 구간별 조정</h2>
+                        </div>
+                        
+                        <div className="space-y-4">
+                            <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-sm font-semibold text-gray-700">📊 전체 목표</span>
+                                    <span className="text-lg font-bold text-purple-600">{sliders.main}%</span>
+                                </div>
+                                <input
+                                    type="range"
+                                    min="50"
+                                    max="200"
+                                    value={sliders.main}
+                                    onChange={(e) => handleSliderChange('main', Number(e.target.value))}
+                                    className="slider w-full"
+                                />
+                                <div className="flex justify-between mt-1 text-xs text-gray-500">
+                                    <span>50%</span>
+                                    <span>기준 100%</span>
+                                    <span>200%</span>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                {[
+                                    { key: 'nonBrand', label: '일반 키워드', icon: '🔍' },
+                                    { key: 'brand', label: '브랜드 키워드', icon: '🏷️' },
+                                    { key: 'brandConversion', label: '브랜드 전환', icon: '🔄' },
+                                    { key: 'mapRanking', label: '지도 순위', icon: '📍' },
+                                    { key: 'placeAds', label: '광고 예산', icon: '💰' },
+                                    { key: 'detailConversion', label: '상세→예약', icon: '🎯' }
+                                ].map((slider) => (
+                                    <div key={slider.key} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-medium text-gray-700">
+                                                {slider.icon} {slider.label}
+                                            </span>
+                                            <span className="text-sm font-bold text-gray-800">{sliders[slider.key]}%</span>
+                                        </div>
+                                        <input
+                                            type="range"
+                                            min="50"
+                                            max="150"
+                                            value={sliders[slider.key]}
+                                            onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
+                                            className="slider w-full"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div className="bg-white rounded-lg shadow-sm p-4">
+                            <div className="flex items-center justify-between mb-2">
+                                <Target />
+                                <span className="text-xs text-gray-500">최종 목표</span>
+                            </div>
+                            <div className="text-2xl font-bold text-gray-800">{metrics.bookings}</div>
+                            <div className="text-xs text-green-600">예약 완료</div>
+                            <div className="text-xs text-gray-500 mt-1">
+                                {formatPercent(baseMetrics.bookings, metrics.bookings)} vs 기준
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-sm p-4">
+                            <div className="flex items-center justify-between mb-2">
+                                <Users />
+                                <span className="text-xs text-gray-500">브랜드 전환</span>
+                            </div>
+                            <div className="text-2xl font-bold text-gray-800">
+                                {metrics.blog_to_brand + metrics.site_to_brand + metrics.cafe_to_brand}
+                            </div>
+                            <div className="text-xs text-purple-600">신규 브랜드 인지</div>
+                            <div className="text-xs text-gray-500 mt-1">
+                                전환율 {((metrics.blog_to_brand + metrics.site_to_brand + metrics.cafe_to_brand) / 
+                                        Math.max(1, metrics.search_to_blog + metrics.search_to_site + metrics.search_to_cafe) * 100).toFixed(1)}%
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-sm p-4">
+                            <div className="flex items-center justify-between mb-2">
+                                <FileText />
+                                <span className="text-xs text-gray-500">플레이스 집중</span>
+                            </div>
+                            <div className="text-2xl font-bold text-gray-800">{metrics.placeDetailPV}</div>
+                            <div className="text-xs text-blue-600">플레이스 상세 PV</div>
+                            <div className="text-xs text-gray-500 mt-1">
+                                예약 전환 {(metrics.bookingPageVisits / Math.max(1, metrics.placeDetailPV) * 100).toFixed(1)}%
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-sm p-4">
+                            <div className="flex items-center justify-between mb-2">
+                                <Activity />
+                                <span className="text-xs text-gray-500">총 수요</span>
+                            </div>
+                            <div className="text-2xl font-bold text-gray-800">
+                                {metrics.nonBrandDemand + metrics.brandDemand}
+                            </div>
+                            <div className="text-xs text-orange-600">전체 키워드 검색</div>
+                            <div className="text-xs text-gray-500 mt-1">
+                                브랜드 비중 {(metrics.brandDemand / Math.max(1, metrics.nonBrandDemand + metrics.brandDemand) * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6 mb-6">
+                        <div className="bg-white rounded-lg shadow-sm p-6">
+                            <h3 className="text-md font-semibold mb-4 text-gray-800">일반 키워드 → 브랜드 전환 경로</h3>
+                            <ResponsiveContainer width="100%" height={200}>
+                                <BarChart data={brandConversionData}>
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                                    <XAxis dataKey="channel" tick={{ fontSize: 11 }} />
+                                    <YAxis tick={{ fontSize: 11 }} />
+                                    <Tooltip />
+                                    <Bar dataKey="value" fill="#8884d8">
+                                        {brandConversionData.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={chartColors[index]} />
+                                        ))}
+                                    </Bar>
+                                </BarChart>
+                            </ResponsiveContainer>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-sm p-6">
+                            <h3 className="text-md font-semibold mb-4 text-gray-800">플레이스 상세 유입 구성</h3>
+                            <ResponsiveContainer width="100%" height={200}>
+                                <PieChart>
+                                    <Pie
+                                        data={placeDetailSourceData}
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={40}
+                                        outerRadius={70}
+                                        paddingAngle={2}
+                                        dataKey="value"
+                                    >
+                                        {placeDetailSourceData.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={chartColors[index % chartColors.length]} />
+                                        ))}
+                                    </Pie>
+                                    <Tooltip formatter={(value) => value.toLocaleString()} />
+                                </PieChart>
+                            </ResponsiveContainer>
+                        </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg p-6 text-white">
+                        <h3 className="text-lg font-semibold mb-4">🚀 실시간 액션 실행 상태</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {[
+                                { 
+                                    service: '카페 바이럴',
+                                    current: metrics.cafe_to_brand,
+                                    base: baseMetrics.cafe_to_brand,
+                                    unit: '건',
+                                    desc: '브랜드 전환'
+                                },
+                                {
+                                    service: '메디컨텐츠',
+                                    current: metrics.search_to_blog,
+                                    base: baseMetrics.search_to_blog,
+                                    unit: 'PV',
+                                    desc: '블로그 유입'
+                                },
+                                {
+                                    service: '리뷰부스터',
+                                    current: metrics.map_to_list,
+                                    base: baseMetrics.map_to_list,
+                                    unit: '건',
+                                    desc: '지도 노출'
+                                },
+                                {
+                                    service: '플레이스광고',
+                                    current: metrics.list_to_placeAds,
+                                    base: baseMetrics.list_to_placeAds,
+                                    unit: '클릭',
+                                    desc: '광고 성과'
+                                },
+                                {
+                                    service: '메디페이지',
+                                    current: metrics.search_to_site,
+                                    base: baseMetrics.search_to_site,
+                                    unit: 'PV',
+                                    desc: '사이트 유입'
+                                },
+                                {
+                                    service: '전환 최적화',
+                                    current: metrics.bookingPageVisits,
+                                    base: baseMetrics.bookingPageVisits,
+                                    unit: '건',
+                                    desc: '예약 시도'
+                                }
+                            ].map((action, idx) => (
+                                <div key={`action-${idx}`} className="bg-white/10 rounded-lg p-3">
+                                    <div className="text-xs opacity-80 mb-1">{action.service}</div>
+                                    <div className="text-xl font-bold">{action.current} {action.unit}</div>
+                                    <div className="text-xs opacity-80">
+                                        {action.desc} {formatPercent(action.base, action.current)}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<HospitalMarketingDashboard />, document.getElementById('root'));
+    </script>
+</body>
+</html>

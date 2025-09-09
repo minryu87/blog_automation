@@ -187,4 +187,3 @@ def get_config_manager() -> ConfigManager:
     if _config_manager is None:
         _config_manager = ConfigManager()
     return _config_manager
-
